@@ -8,6 +8,11 @@
   @include outer-container;
 }
 
+.c-content {
+  @include row();
+  padding: $base-spacing-unit-small;
+}
+
 // Standard Row
 .row {
   @include row();
