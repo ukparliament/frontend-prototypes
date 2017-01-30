@@ -1,53 +1,58 @@
 extends ../../layouts/layout.pug
 block content
   // Back Button
-  a(href='house-commons-members-current.html') &lt; MPs and Lords
+  .c-content
+    a(href='house-commons-members-current.html') &lt; MPs and Lords
   // Profile Card
-  .profile-card
-    h1 Diane Abbott
-    p
-      a(href='#') Labour
-      |  MP for
-      a(href='#') Hackney North and Stoke Newington
+  .c-content
+    .profile-card
+      h1 Diane Abbott
+      p
+        a(href='#') Labour
+        |  MP for
+        | #[a(href='#') Hackney North and Stoke Newington]
   // Representative Information
-  .highlight-box
-    p
-      | Your MP is your representative in Parliament and can help with issues that are the responsiblity of UK Parliament.
-    p
-      a(href='#') Find out who to contact with your issue
+  .c-content
+    .highlight-box
+      p
+        | Your MP is your representative in Parliament and can help with issues that are the responsiblity of UK Parliament.
+      p
+        a(href='#') Find out who to contact with your issue
   // Contact Details
-  .contact-details
-    h2 Contact Details
-    dl
-      dt Email:
-      dd
-        a(href='mailto:ayo.sanusi@parliament.uk') ayo.sanusi@parliament.uk
+  .c-content
+    .contact-details
+      h2 Contact Details
+      dl
+        dt Email:
         dd
-          dt Phone:
+          a(href='mailto:ayo.sanusi@parliament.uk') ayo.sanusi@parliament.uk
           dd
-            a(href='tel:02072194426') 020 7219 4426
+            dt Phone:
             dd
-              dt Address:
+              a(href='tel:02072194426') 020 7219 4426
               dd
-                | House of Commons, London, SW1A 0AA
+                dt Address:
                 dd
+                  | House of Commons, London, SW1A 0AA
+                  dd
   // Electoral History
-  .electoral-history
-    h2 Election History
-    ol.electoral-history-list
-      li.electoral-history-list-item
-        ul.electory-history-list-item-details
-          li
-            | MP for
-            a(href='#') Hackney North and Stoke Newington
-          li 2015 - Current
-          li
-            a(href='#') Labour
-      li.electoral-history-list-item
-        ul.electory-history-list-item-details
-          li
-            | MP for
-            a(href='#') Hackney North and Stoke Newington
-          li 1987 - 2015
-          li
-            a(href='#') Labour
+  .c-content
+    .electoral-history
+      h2 Election History
+      ol.electoral-history-list
+        li.electoral-history-list-item
+          ul.electory-history-list-item-details
+            li
+              | MP for
+              a(href='#') Hackney North and Stoke Newington
+            li 2015 - Current
+            li
+              a(href='#') Labour
+        li.electoral-history-list-item
+          ul.electory-history-list-item-details
+            li
+              | MP for
+              a(href='#') Hackney North and Stoke Newington
+            li 1987 - 2015
+            li
+              a(href='#') Labour
