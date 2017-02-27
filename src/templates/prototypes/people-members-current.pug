@@ -2,7 +2,8 @@ extends ../../layouts/layout.pug
 block content
   //- Page Title
   h1 Current MPs and Lords
-  //- Option Tags  
-  h2.link__button #[+link('house-commons-members-current.html', 'MPs')(role="button")]
-  h2.link__button #[+link('house-lords-members-current.html', 'Members of the House of Lords')(role="button")]
-  h2.link__button #[+link('party-current.html', 'Parties and groups')(role="button")]
+  //- Option Tags
+  ul.link__button
+    li #[+link('house-commons-members-current.html', 'MPs')]#[span]
+    li #[+link('house-lords-members-current.html', 'Members of the House of Lords')]#[span]
+    li #[+link('party-current.html', 'Parties and groups')]#[span]
