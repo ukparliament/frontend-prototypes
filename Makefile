@@ -39,7 +39,7 @@ css:
 
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/map_data.js $(JAVASCRIPTS_LOC)/map.js $(JAVASCRIPTS_LOC)/main.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
 
 images:
 	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
@@ -55,7 +55,7 @@ build: css js images templates
 build_prod: lint build
 
 deploytos3: build
-	aws s3 sync --acl=public-read --delete --exclude "members/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website
+	aws s3 sync --acl=public-read --delete --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website
 #	aws s3 cp --acl=public-read ./index.html $(S3_BUCKET)
 
 test:
