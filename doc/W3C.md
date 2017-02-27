@@ -1,7 +1,7 @@
 # W3C Validation
 Automated W3C validation testing (HTML only)
 
-## Run test
+## Usage
 Multiple terminals are required in order test, one to start a local web server and another to run the test
 
 ### Start local server
