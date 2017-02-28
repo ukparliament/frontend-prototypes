@@ -1,10 +1,10 @@
-# Accessibility Validation
+# WCAG Validation
 Automated accessibility testing
 
-## URL or Files to test
-Specify url(s) or file(s) to test by amending the file `./config/pa11y.config.js`
+## Configuration
+Configure setting at `./config/pa11y.config.js`
 
-## Run test
+## Usage
 ### `make test`
 
 ## Reports
