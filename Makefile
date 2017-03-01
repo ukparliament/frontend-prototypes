@@ -20,6 +20,7 @@ IMAGEMIN=./node_modules/.bin/imagemin
 BROWSER_SYNC=./node_modules/.bin/browser-sync
 ONCHANGE=./node_modules/.bin/onchange
 PUG=./node_modules/.bin/pug
+LEAFLET=./node_modules/leaflet/dist/leaflet.js
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -45,7 +46,11 @@ css:
 
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/map_data.js $(JAVASCRIPTS_LOC)/map.js $(JAVASCRIPTS_LOC)/main.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+	@$(UGLIFY_JS) $(LEAFLET) $(JAVASCRIPTS_LOC)/map.js $(JAVASCRIPTS_LOC)/main.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+
+json:
+	@mkdir -p $(PUBLIC_FOLDER)/json
+	@cp $(SRC_FOLDER)/json/* $(PUBLIC_FOLDER)/json
 
 images:
 	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
@@ -57,7 +62,7 @@ templates:
 	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)
 	@$(BROWSER_SYNC) reload --files "$(PUBLIC_FOLDER)/templates/*.html"
 
-build: css js images templates
+build: css js json images templates
 build_prod: lint build
 
 deploytos3: build

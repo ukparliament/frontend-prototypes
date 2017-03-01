@@ -25,6 +25,7 @@
     "browser-sync": "^2.18.6",
     "express": "^4.14.0",
     "imagemin-cli": "^3.0.0",
+    "leaflet": "^1.0.3",
     "node-sass": "^4.3.0",
     "postcss-cli": "^2.6.0",
     "pug-cli": "^1.0.0-alpha6",
