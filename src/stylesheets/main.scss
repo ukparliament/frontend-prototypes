@@ -10,6 +10,7 @@
 
 // Vendor files
 @import '../../node_modules/bourbon-neat/app/assets/stylesheets/neat';
+@import '../../node_modules/leaflet/dist/leaflet';
 
 // Import generic styles
 @import 'generic/normalize';
@@ -38,6 +39,7 @@
 @import 'components/highlight-status';
 @import 'components/link-button';
 @import 'components/list-styles';
+@import 'components/map';
 @import 'components/navigation-letter';
 
 // Import Trumps
