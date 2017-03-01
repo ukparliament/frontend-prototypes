@@ -8,16 +8,16 @@ h1, h2, h3, h4, h5, h6, p {
 
 // Base Typography Settings - Non-Media Query Browsers and Tablet dimensions (pixels)
 h1 {
-  @include fontsize(34, 46);
+  @include fontsize(34, 50);
 }
 h2 {
-  @include fontsize(30, 38);
+  @include fontsize(30, 46);
 }
 h3 {
-  @include fontsize(26, 34);
+  @include fontsize(26, 42);
 }
 h4 {
-  @include fontsize(22, 30);
+  @include fontsize(22, 38);
 }
 p {
   @include fontsize(14, 26);
@@ -26,16 +26,16 @@ p {
 // Mobile Typography Settings (pixels)
 @include media($mobile) {
   h1 {
-    @include fontsize(24, 36);
+    @include fontsize(24, 40);
   }
   h2 {
-    @include fontsize(20, 28);
+    @include fontsize(20, 36);
   }
   h3 {
-    @include fontsize(16, 24);
+    @include fontsize(18, 34);
   }
   h4 {
-    @include fontsize(16, 24);
+    @include fontsize(16, 32);
   }
   p {
     @include fontsize(14, 26);
@@ -48,13 +48,13 @@ p {
     @include fontsize(40, 56);
   }
   h2 {
-    @include fontsize(34, 42);
+    @include fontsize(34, 50);
   }
   h3 {
-    @include fontsize(28, 36);
+    @include fontsize(28, 44);
   }
   h4 {
-    @include fontsize(24, 32);
+    @include fontsize(24, 40);
   }
   p {
     @include fontsize(16, 28);

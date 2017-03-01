@@ -13,8 +13,8 @@ block content
   //- Result List
   ol.list
     each object in [{name: 'Nigel Adams', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Adam Afriyie', constituency: 'MP for Windsor', party: 'Conservative'},{name: 'Peter Aldous', constituency: 'MP for Waveney', party: 'Conservative'},{name: 'Lucy Allan', constituency: 'MP for Telford', party: 'Conservative'},{name: 'Heidi Allen', constituency: 'MP for South Cambridgeshire', party: 'Conservative'}]
-      li.list--item
-        ul.list
+      li.list__item
+        ul
           li #[+link('#', object.name)]
           li= object.constituency
           li= object.party

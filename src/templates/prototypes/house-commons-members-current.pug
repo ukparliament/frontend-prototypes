@@ -4,14 +4,14 @@ block content
   .block
     p &lt; #[+link('people-members-current.html', 'Previous page')]
   //- Page Title
-  h1.bordered-commons Current MPs in the House of Commons
+  h1.bordered--commons Current MPs in the House of Commons
   //- Letter Navigation
   include ../../components/letter-navigation.pug
   //- Result List
   ol.list
     each object in [{name: 'Abbott, Diane', constituency: 'MP for Hackney North and Stoke Newington', party: 'Labour'},{name: 'Abrahams, Debbie', constituency: 'MP for Oldham East and Saddleworth', party: 'Labour'},{name: 'Adams, Nigel', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Ahmed-Sheikh, Tasmina', constituency: 'MP for Ochil and South Perthshire', party: 'Scottish National Party'},{name: 'Aldous, Peter', constituency: 'MP for Waveney', party: 'Conservative'}]
-      li.list--item
-        ul.list
+      li.list__item
+        ul
           li #[+link(object.name === 'Abbott, Diane' ? 'people-id.html' : '#', object.name)]
           li= object.constituency
           li= object.party

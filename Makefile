@@ -40,7 +40,7 @@ css:
 
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(LEAFLET) $(JAVASCRIPTS_LOC)/map.js $(JAVASCRIPTS_LOC)/main.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+	@$(UGLIFY_JS) $(LEAFLET) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
 
 json:
 	@mkdir -p $(PUBLIC_FOLDER)/json

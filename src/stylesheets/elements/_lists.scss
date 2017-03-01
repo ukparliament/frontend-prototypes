@@ -13,13 +13,13 @@ li {
 
 // Non-Media Query Browsers and Tablet dimensions (pixels)
 li {
-  @include fontsize(14, 22);
+  @include fontsize(14, 26);
 }
 
 // Mobile List Item Size (pixels)
 @include media($mobile) {
   li {
-    @include fontsize(14, 22);
+    @include fontsize(14, 26);
   }
 }
 
@@ -39,19 +39,19 @@ dl, dt, dd {
 
 // Non-Media Query Browsers and Tablet dimensions (pixels)
 dt, dd {
-  @include fontsize(14, 22);
+  @include fontsize(14, 26);
 }
 
 // Mobile Definition List Sizes (pixels)
 @include media($mobile) {
   dt, dd {
-    @include fontsize(14, 22);
+    @include fontsize(14, 26);
   }
 }
 
 // Desktop Definition List Sizes (pixels)
 @include media($desktop) {
   dt, dd {
-    @include fontsize(16, 24);
+    @include fontsize(16, 28);
   }
 }

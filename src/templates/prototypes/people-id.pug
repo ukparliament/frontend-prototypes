@@ -26,8 +26,8 @@ block content
   h2.bordered Election History
   ol.list
     each object in [{constituency: 'Hackney North and Stoke Newington', sitting_duration: '2015 - Current', party: "Labour"},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '1987 - 2015', party: 'Labour'}]
-      li.list--item
-        ul.list
+      li.list__item--borderless-top
+        ul
           li MP for #[+link('#', object.constituency)]
           li=object.sitting_duration
           li #[+link('#', object.party)]
