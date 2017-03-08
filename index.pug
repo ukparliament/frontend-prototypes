@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    title Parliamentary Digital Service
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="_public/stylesheets/main.css")
+    link(rel="favicon", type="image/x-icon", href="_public/images/favicon.ico")
+  body.no-js
+    include elements/mixins.pug
+    include elements/skip-content.pug
+    +link()(id='top')
+    main(id='content')
+      .container--full-grid
+        .row--indent-full
+          h1 Parliamentary Digital Service
+          h2 [Prototypes] - Members
+          .block
+            ul
+              li #[+link('_public/members/beta-services.html', 'Beta Services')]
+              li #[+link('_public/members/conservative-current.html', 'Conservative current')]
+              li #[+link('_public/members/contact.html', 'Contact')]
+              li #[+link('_public/members/feedback.html', 'Feedback')]
+              li #[+link('_public/members/house-commons-members-current.html', 'House of Commons Members')]
+              li #[+link('_public/members/house-lords-members-current.html', 'House of Lords Members Current')]
+              li #[+link('_public/members/party-current.html', 'Party Current')]
+              li #[+link('_public/members/people-id.html', 'People ID')]
+              li #[+link('_public/members/people-members-current.html', 'People Members Current')]
+          h3 Notes:
+          .block
+            ul
+              li These are static html files
+              li Links will either not be working or go to the correct location
+              li Styles for desktop view are not complete
+          //- Back to Top
+          .block
+            p #[+link('#top', 'Back to the top')]

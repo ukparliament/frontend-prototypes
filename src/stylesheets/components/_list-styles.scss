@@ -20,6 +20,11 @@
     border-top-style: solid;
     border-top-color: $grey-4;
   }
+  h2 {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: normal;
+  }
 }
 
 .list__item--borderless-top {
@@ -27,7 +32,7 @@
   &:first-of-type {
     border-top-width: 0;
     border-top-style: none;
-    border-top-color: none;
+    border-top-color: transparent;
     padding-top: 0;
   }
 }
@@ -41,7 +46,19 @@
     padding-right: $base-spacing-unit-tiny;
     font-weight: bold;
   }
-  & dd {
-    padding-bottom: $base-spacing-unit-tiny;
+  & dt, dd {
+    @include fontsize(14, 32);
   }
+  @include media($desktop) {
+    dt, dd {
+      @include fontsize(16, 36);
+    }
+  }
+}
+
+// Definition List - Nested Within Normal List
+.list__definition--list-item {
+  @extend .list__definition;
+  padding-top: 0;
+  padding-bottom: 0;
 }

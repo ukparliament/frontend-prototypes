@@ -6,7 +6,7 @@ mixin slider(title)
 
 //- Links
 mixin link(href, name)
-  //- Attributes can include rel, target, title and tabindex
+  //- Attributes can include rel, role, target, title and tabindex
   a(href=href)&attributes(attributes)= name
     if block
       block

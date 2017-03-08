@@ -3,7 +3,7 @@ html(lang="en")
   head
     title Parliamentary Digital Service
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     link(rel="stylesheet", href="../../_public/stylesheets/main.css")
     link(rel="favicon", type="image/x-icon", href="../../_public/images/favicon.ico")
   body.no-js
@@ -17,5 +17,6 @@ html(lang="en")
         .row--indent-full
           block content
     include ../components/footer.pug
+    script(src='https://unpkg.com/leaflet@1.0.3/dist/leaflet.js')
     script(src="../../_public/javascripts/main.js")
     block script

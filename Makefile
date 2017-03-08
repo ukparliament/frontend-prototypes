@@ -1,4 +1,5 @@
 .PHONY: install clean serve build
+
 # When run in gocd it will be injected by environment variable
 AWS_ACCOUNT?=unknown
 
@@ -21,8 +22,13 @@ ONCHANGE=./node_modules/.bin/onchange
 PUG=./node_modules/.bin/pug
 LEAFLET=./node_modules/leaflet/dist/leaflet.js
 
-# AWS S3 bucket to deploy to
-# TODO: move "pdswebops" to an environment variable that GoCD will pickup
+# Github variables
+GITHUB_API=https://api.github.com
+ORG=ukparliament
+REPO=parliament.uk-pugin
+LATEST_REL=$(GITHUB_API)/repos/$(ORG)/$(REPO)/releases/latest
+REL_TAG=$(shell curl -s $(LATEST_REL) | jq -r '.tag_name')
+
 
 install:
 	@npm i

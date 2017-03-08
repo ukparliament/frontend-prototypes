@@ -14,7 +14,7 @@ block content
       p Your MP is your representative in Parliament and can help with issues that are the responsiblity of UK Parliament.
       p #[+link('contact.html', 'Find out who to contact with your issue')]
   //- Contact Details
-  h2.bordered Contact Details
+  h2 Contact Details
   dl.list__definition
     dt Email:
     dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
@@ -23,10 +23,10 @@ block content
     dt Address:
     dd House of Commons, London, SW1A 0AA
   //- Election History
-  h2.bordered Election History
+  h2 Election History
   ol.list
     each object in [{constituency: 'Hackney North and Stoke Newington', sitting_duration: '2015 - Current', party: "Labour"},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '1987 - 2015', party: 'Labour'}]
-      li.list__item--borderless-top
+      li.list__item
         ul
           li MP for #[+link('#', object.constituency)]
           li=object.sitting_duration

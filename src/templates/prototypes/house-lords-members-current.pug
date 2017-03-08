@@ -11,8 +11,8 @@ block content
   ol.list
     each object in [{name: 'Lord Aberdare', party: 'Crossbench'},{name: 'Baroness Adams of Craigielea', party: 'Labour'},{name: 'Lord Addington', party: 'Liberal Democrats'},{name: 'Lord Adebowale', party: 'Crossbench'},{name: 'Lord Adonis', party: 'Non-affiliated'}]
       li.list__item
+        h2 #[+link('#', object.name)]
         ul
-          li #[+link('#', object.name)]
           li= object.party
   //- Back to Top
   .block

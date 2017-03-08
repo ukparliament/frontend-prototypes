@@ -1,44 +1,52 @@
 .navigation__letter {
+  @include clearfix;
   list-style: none;
   margin-top: $base-spacing-unit-small;
   margin-left: 0;
   & > li {
     display: inline-block;
-    width: 3.5%;
-    margin: 0;
+    width: 54px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 1px;
     padding: 0;
-    background-color: $grey-4;
+    line-height: ($base-spacing-unit-large - 4);
+    background-color: $white;
     border-style: solid;
-    border-width: 0 3px 3px 0;
-    border-color: white;
-    color: $grey-1;
+    border-width: 1px;
+    border-color: $grey-3;
+    color: $black;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    &:last-child {
+      margin-right: 0;
+    }
     & > a {
       display: block;
-      padding-top: $base-spacing-unit-tiny;
-      padding-bottom: $base-spacing-unit-tiny;
-      padding-left: $base-spacing-unit-tiny;
-      padding-right: $base-spacing-unit-tiny;
+      background-color: $grey-4;
+      outline-color: $grey-4;
+      outline-style: solid;
+      outline-width: 1px;
       color: $black;
       text-decoration: none;
     }
-    @include media($mobile) {
-      width: 13%;
-    }
-    @include media($tablet) {
-      width: 10%;
-    }
-    @include media($desktop) {
-      width: 3.5%;
-    }
-  }
-  & > li.active,
-  & > li:hover {
-    background-color: $grey-1;
-    & > a {
+    & > a:hover,
+    & > a:active,
+    & > a:focus {
+      background-color: $grey-1;
+      outline-color: $grey-1;
       color: $white;
     }
+    @include media($desktop) {
+      width: 43px;
+      line-height: ($base-spacing-unit-large - 10);
+    }
+  }
+  & li.active > a {
+    background-color: $grey-1;
+    outline-color: $grey-1;
+    color: $white;
   }
 }
