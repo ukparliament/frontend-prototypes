@@ -5,11 +5,13 @@
   height: 150px; // equal to body margin bottom
   padding-top: $base-spacing-unit-small;
   padding-bottom: $base-spacing-unit;
-  background-color: $grey-5;
-  border-top-width: 4px;
-  border-top-style: solid;
-  border-top-color: $grey-3;
+  background-color: $footer-background;
+  color: $footer-text;
+  a:link, a:hover, a:active, a:focus, a:visited {
+  	color: $footer-text;
+  }
   &__logo {
+  	font-weight: bold;
     img {
       display: block;
       width: 118px;
@@ -18,7 +20,7 @@
   }
   &__list {
     list-style: none;
-    margin-top: $base-spacing-unit-small;
+    font-weight: normal;
     margin-left: 0;
   }
 }

@@ -1,11 +1,32 @@
 .highlight__box {
   margin-bottom: $base-spacing-unit-small;
   padding-top: $base-spacing-unit-small;
-  padding-right: $base-spacing-unit-tiny;
-  padding-bottom: $base-spacing-unit-tiny;
+  padding-right: $base-spacing-unit-small;
+  padding-bottom: $base-spacing-unit-small;
   padding-left: $base-spacing-unit-small;
-  background-color: $grey-5;
-  border-left-width: 3px;
+  background-color: $highlight-information-soft;
+  border-left-width: 5px;
   border-left-style: solid;
-  border-left-color: $grey-3;
+  border-left-color: $highlight-information-bold;
+  color: $paragraph;
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      color: $paragraph;
+    }
+  }
+}
+
+.highlight__box--important {
+	@extend .highlight__box;
+	background-color: $highlight-important-soft;
+	border-left-color: $highlight-important-bold;
+}
+.highlight__box--caution {
+	@extend .highlight__box;
+	background-color: $highlight-caution-soft;
+	border-left-color: $highlight-caution-bold;
 }

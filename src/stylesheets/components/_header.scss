@@ -1,8 +1,13 @@
 .header {
-  background-color: $grey-1;
+  background-color: $header-background;
   padding-top: $base-spacing-unit-small;
   padding-bottom: $base-spacing-unit-small;
+  border-bottom: 3px solid $header-bottom-border;
   &__logo {
+  	a {
+  		text-decoration: none;
+  		color: $headings;
+  	}
     img {
       display: block;
       width: 268px;

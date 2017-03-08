@@ -1,17 +1,17 @@
 .highlight__status {
   @extend .block;
-  background-color: $bright-blue;
-  color: white;
+  background-color: $beta-banner;
+  color: $headings;
   a {
     &:link,
     &:visited {
-      color: $white;
+      color: $headings;
       text-decoration: underline;
     }
     &:hover,
     &:active,
     &:focus {
-      color: $white;
+      color: $headings;
       text-decoration: none;
     }
   }

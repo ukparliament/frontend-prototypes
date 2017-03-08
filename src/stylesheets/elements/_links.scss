@@ -1,14 +1,18 @@
 // Variables inherited from 'settings/_colours.scss'
 a {
-  color: $bright-blue;
+  color: $links;
   text-decoration: underline;
-  &:hover,
-  &:active,
+  &:hover {
+  	color: $links-hover;
+  }
+  &:active {
+  	color: $links-hover;
+  }
   &:focus {
-    color: $bright-blue;
+    color: $links;
     text-decoration: none;
   }
   &:visited {
-    color: $purple-heart;
+    color: $links-visited;
   }
 }
