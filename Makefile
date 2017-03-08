@@ -1,4 +1,4 @@
-.PHONY: install clean serve build
+.PHONY: install install_to_release clean serve build build_prod test
 
 # When run in gocd it will be injected by environment variable
 AWS_ACCOUNT?=unknown
@@ -20,7 +20,6 @@ IMAGEMIN=./node_modules/.bin/imagemin
 BROWSER_SYNC=./node_modules/.bin/browser-sync
 ONCHANGE=./node_modules/.bin/onchange
 PUG=./node_modules/.bin/pug
-LEAFLET=./node_modules/leaflet/dist/leaflet.js
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -31,6 +30,10 @@ REL_TAG=$(shell curl -s $(LATEST_REL) | jq -r '.tag_name')
 
 
 install:
+	@npm i
+
+install_to_release:
+	git checkout -b release $(REL_TAG)
 	@npm i
 
 clean:
@@ -46,11 +49,7 @@ css:
 
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(LEAFLET) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
-
-json:
-	@mkdir -p $(PUBLIC_FOLDER)/json
-	@cp $(SRC_FOLDER)/json/* $(PUBLIC_FOLDER)/json
+	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
 
 images:
 	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
@@ -62,12 +61,18 @@ templates:
 	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)
 	@$(BROWSER_SYNC) reload --files "$(PUBLIC_FOLDER)/templates/*.html"
 
-build: css js json images templates
+build: css js images templates
+
 build_prod: lint build
 
-deploytos3: build
+deploy:
 	aws s3 sync --acl=public-read --delete --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website
-#	aws s3 cp --acl=public-read ./index.html $(S3_BUCKET)
+
+deploy_prototypes:
+	aws s3 sync --acl=public-read --delete ./_public/ s3://$(AWS_ACCOUNT).pugin-website/prototypes/
+
+deploy_to_release:
+	aws s3 sync --acl=public-read --delete --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website/$(REL_TAG)
 
 test:
 	@mkdir -p $(REPORTS_FOLDER)
