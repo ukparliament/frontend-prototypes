@@ -30,6 +30,10 @@ After setting up, run `make serve`. Browse to http://localhost:3000 to view Pugi
 * [W3C](doc/W3C.md)
 * [WCAG](doc/WCAG.md)
 
+## Documentation
+* [W3C](doc/W3C.md)
+* [WCAG](doc/WCAG.md)
+
 ## Contributing
 If you wish to submit a bug fix or feature, you can create a pull request and it will be merged pending a code review.
 
