@@ -5,29 +5,31 @@ block content
     p &lt; #[+link('house-commons-members-current.html', 'MPs and Lords')]
   //- Profile Card
   h1 Diane Abbott
-  .block--border
-    p.lead MP for #[+link('#', 'Hackney North and Stoke Newington')]
-  .block--border
-    p.lead Labour
-    .line-break-heavy
-    a(href='#') View all current Labour MPs
-  h2 Contact Details
-  //- Representative Information
   .block
-    .highlight__box
-      p Your MP is your representative in Parliament and can help with issues that are the responsiblity of UK Parliament.
-      p #[+link('contact.html', 'Find out who to contact with your issue')]
-    .highlight__box--caution
-      p Please include your postcode when emailing an MP.
+    .block--border
+      p.lead MP for #[+link('#', 'Hackney North and Stoke Newington')]
+    .block--border
+      p.lead Labour
+      .line-break-heavy
+      a(class='lead' href='#') View all current Labour MPs
+  .block
+    h2 Contact Diane Abbott
+    //- Representative Information
+    .block
+      .highlight__box
+        p Your MP is your representative in Parliament and can help with issues that are the responsiblity of UK Parliament.
+        p #[+link('contact.html', 'Find out who to contact with your issue')]
+      .highlight__box--caution
+        p Please include your postcode when emailing an MP.
 
-  //- Contact Details
-  dl.list__definition
-    dt Email:
-    dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
-    dt Phone:
-    dd #[+link('tel:02072194426', '020 7219 4426')]
-    dt Address:
-    dd House of Commons, London, SW1A 0AA
+    //- Contact Details
+    dl.list__definition
+      dt Email:
+      dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
+      dt Phone:
+      dd #[+link('tel:02072194426', '020 7219 4426')]
+      dt Address:
+      dd House of Commons, London, SW1A 0AA
   //- Election History
   h2 Election History
   ol.list
@@ -37,6 +39,3 @@ block content
           li MP for #[+link('#', object.constituency)]
           li=object.sitting_duration
           li #[+link('#', object.party)]
-  //- Back to Top
-  .block
-    p #[+link('#top', 'Back to the top')]

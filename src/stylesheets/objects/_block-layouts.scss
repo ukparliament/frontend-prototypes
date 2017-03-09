@@ -5,6 +5,11 @@
   padding-bottom: $base-spacing-unit-small;
 }
 
+.block--border-bottom {
+	@extend .block;
+	border-bottom: 1px solid $dividers;
+}
+
 .block--border {
 	@extend .block;
 	border-bottom: 1px solid $dividers;

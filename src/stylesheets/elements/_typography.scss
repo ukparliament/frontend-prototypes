@@ -34,11 +34,13 @@ h5 {
 h6 {
 	@include fontsize(18, 34);
 }
-p {
+p, a {
   @include fontsize(18, 30);
 }
-p.lead {
-	@include fontsize(21, 37);
+p, a {
+	.lead {
+		@include fontsize(21, 37);
+	}
 }
 
 // Mobile Typography Settings (pixels)

@@ -4,6 +4,6 @@ $base-spacing-unit: ($base-font-size * $base-line-height) + 0px;
 // Using base spacing value create consistent spacing variations
 $base-spacing-unit-tiny: round($base-spacing-unit / 3);
 $base-spacing-unit-small: round($base-spacing-unit / 2);
-$base-spacing-unit-medium: $base-spacing-unit;
-$base-spacing-unit-large: round($base-spacing-unit * 2);
-$base-spacing-unit-extra-large: round($base-spacing-unit * 3);
+$base-spacing-unit-medium: round($base-spacing-unit * 0.75);
+$base-spacing-unit-large: round($base-spacing-unit * 1.25);
+$base-spacing-unit-extra-large: round($base-spacing-unit * 1.5);

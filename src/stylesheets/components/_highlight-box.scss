@@ -18,15 +18,24 @@
       color: $paragraph;
     }
   }
+  & + .highlight__box--caution {
+		margin-bottom: 0;
+	}
 }
 
 .highlight__box--secondary {
 	@extend .highlight__box;
 	background-color: $highlight-secondary-soft;
 	border-left-color: $highlight-secondary-bold;
+	& + .hightlight__box {
+		margin-bottom: 0;
+	}
 }
 .highlight__box--caution {
 	@extend .highlight__box;
 	background-color: $highlight-caution-soft;
 	border-left-color: $highlight-caution-bold;
+	& + .hightlight__box {
+		margin-bottom: 0;
+	}
 }

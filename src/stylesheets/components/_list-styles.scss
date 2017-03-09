@@ -7,6 +7,11 @@
     margin: 0;
     list-style: none;
   }
+  h2,h3,h4,h5,h6 {
+  	font-size: inherit;
+    line-height: inherit;
+    font-weight: normal;
+  }
 }
 
 .list__item {
@@ -20,11 +25,15 @@
     border-top-style: solid;
     border-top-color: $grey-4;
   }
-  h2 {
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: normal;
-  }
+}
+
+.list__item--secondary {
+	@extend .list;
+	background: $white;
+	padding: $base-spacing-unit-medium;
+	&:not(:last-child){
+		margin-bottom: $base-spacing-unit-tiny;
+	}
 }
 
 .list__item--borderless-top {
@@ -47,11 +56,11 @@
     font-weight: bold;
   }
   & dt, dd {
-    @include fontsize(14, 32);
+    @include fontsize(16, 26);
   }
   @include media($desktop) {
     dt, dd {
-      @include fontsize(16, 36);
+      @include fontsize(18, 36);
     }
   }
 }
