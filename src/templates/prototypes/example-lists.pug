@@ -1,0 +1,71 @@
+extends ../../layouts/layout.pug
+block content
+  
+  h1 Lists
+  .block
+    p Examples of the lists that currently implemented on the members service.
+  br
+  //- List Type 1 - Contact Details
+  h3.bordered Contact Details
+  ol.list
+    li
+      ol.list__item--borderless-top
+        li MP for Hackney North and Stoke Newington
+        li 1987-06-11 - 1992-04-09
+  br
+  //- List Type 2 - Current Members
+  h3 Current Members
+  //- Letter Navigation
+  include ../../components/letter-navigation.pug
+  ol.list
+    li
+      ol.list__item
+        h2 #[+link('', 'Diane Abbott')]
+        li MP for Hackney North and Stoke Newington
+        li Labour
+      ol.list__item
+        li Diane Abbott
+        li MP for Hackney North and Stoke Newington
+        li Labour
+  br
+  //- List Type 3 - Constituencies
+  h3 Hackney North and Stoke Newington
+  h4 1983-06-09 - 1997-05-01
+  ol.list
+    li
+      ol.list__item
+        li Diane Abbott
+        li 1987-06-11 - 1992-04-09
+      ol.list__item
+        li Diane Abbott
+        li 1992-04-09 - 1997-05-01
+      ol.list__item
+        li Ernest Roberts
+        li 1983-06-09 - 1987-06-11
+  br
+  //- List Type 4 - Current Labour Party Members
+  h3 Labour - Current Members
+  ol.list
+    li.list__item Barbara Keeley
+      ol
+        li 2015-05-07
+    li.list__item Maria Eagle
+      ol
+        li 2015-05-07
+    li.list__item Margaret Beckett
+      ol
+        li 2015-05-07
+  br
+  //- List Type 5 - Labour Party Members
+  h3 Labour
+  ol.list
+    li.list__item Barbara Keeley
+    li.list__item Maria Eagle
+    li.list__item Margaret Beckett
+  br
+  //- List Type 6 - Single List Item
+  h3 Single List Item
+  .block
+    ol.list__item
+      li Item 1
+      li Item 2

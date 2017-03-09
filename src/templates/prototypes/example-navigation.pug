@@ -1,0 +1,60 @@
+extends ../../layouts/layout.pug
+block content
+  h1.bordered--commons Current MPs in the House of Commons
+  .block
+    nav(aria-label='Paged navigation')
+      h3 Surnames starting with:
+      ol.navigation__letter
+        <li class="active" data-letter="A"><a data-atoz-see="true" href="#">A</a></li>
+        <li data-letter="B"><a data-atoz-see="true" href="#">B</a></li>
+        <li data-letter="C"><a data-atoz-see="true" href="#">C</a></li>
+        <li data-letter="D"><a data-atoz-see="true" href="#">D</a></li>
+        <li data-letter="E">E</li>
+        <li data-letter="F"><a data-atoz-see="true" href="#">F</a></li>
+        <li data-letter="G"><a data-atoz-see="true" href="#">G</a></li>
+        <li data-letter="H"><a data-atoz-see="true" href="#">H</a></li>
+        <li data-letter="I"><a data-atoz-see="true" href="#">I</a></li>
+        <li data-letter="J"><a data-atoz-see="true" href="#">J</a></li>
+        <li data-letter="K"><a data-atoz-see="true" href="#">K</a></li>
+        <li data-letter="L">L</li>
+        <li data-letter="M"><a data-atoz-see="true" href="#">M</a></li>
+        <li data-letter="N"><a data-atoz-see="true" href="#">N</a></li>
+        <li data-letter="O"><a data-atoz-see="true" href="#">O</a></li>
+        <li data-letter="P"><a data-atoz-see="true" href="#">P</a></li>
+        <li data-letter="Q"><a data-atoz-see="true" href="#">Q</a></li>
+        <li data-letter="R"><a data-atoz-see="true" href="#">R</a></li>
+        <li data-letter="S"><a data-atoz-see="true" href="#">S</a></li>
+        <li data-letter="T"><a data-atoz-see="true" href="#">T</a></li>
+        <li data-letter="U"><a data-atoz-see="true" href="#">U</a></li>
+        <li data-letter="V"><a data-atoz-see="true" href="#">V</a></li>
+        <li data-letter="W"><a data-atoz-see="true" href="#">W</a></li>
+        <li data-letter="X"><a data-atoz-see="true" href="#">X</a></li>
+        <li data-letter="Y"><a data-atoz-see="true" href="#">Y</a></li>
+        <li data-letter="Z"><a data-atoz-see="true" href="#">Z</a></li>
+  .block
+  h2 Definition Lists
+  ol.list
+    li.list__item
+      dl.list__definition--list-item
+        dt Email:
+        dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
+        dt Phone:
+        dd #[+link('tel:02072194426', '020 7219 4426')]
+        dt Address:
+        dd House of Commons, London, SW1A 0AA
+    li.list__item
+      dl.list__definition--list-item
+        dt Email:
+        dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
+        dt Phone:
+        dd #[+link('tel:02072194426', '020 7219 4426')]
+        dt Address:
+        dd House of Commons, London, SW1A 0AA
+    li.list__item
+      dl.list__definition--list-item
+        dt Email:
+        dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
+        dt Phone:
+        dd #[+link('tel:02072194426', '020 7219 4426')]
+        dt Address:
+        dd House of Commons, London, SW1A 0AA
