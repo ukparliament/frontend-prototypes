@@ -5,16 +5,22 @@ block content
     p &lt; #[+link('house-commons-members-current.html', 'MPs and Lords')]
   //- Profile Card
   h1 Diane Abbott
-  .block
-    p MP for #[+link('#', 'Hackney North and Stoke Newington')]
-    p #[+link('#', 'Labour')]
+  .block--border
+    p.lead MP for #[+link('#', 'Hackney North and Stoke Newington')]
+  .block--border
+    p.lead Labour
+    .line-break-heavy
+    a(href='#') View all current Labour MPs
+  h2 Contact Details
   //- Representative Information
   .block
-    .highlight__box--important
+    .highlight__box
       p Your MP is your representative in Parliament and can help with issues that are the responsiblity of UK Parliament.
       p #[+link('contact.html', 'Find out who to contact with your issue')]
+    .highlight__box--caution
+      p Please include your postcode when emailing an MP.
+
   //- Contact Details
-  h2 Contact Details
   dl.list__definition
     dt Email:
     dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]

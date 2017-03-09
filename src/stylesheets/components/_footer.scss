@@ -7,7 +7,7 @@
   padding-bottom: $base-spacing-unit;
   background-color: $footer-background;
   color: $footer-text;
-  a:link, a:hover, a:active, a:focus, a:visited {
+  a:link, a:hover, a:active, a:focus, a:visited, p {
   	color: $footer-text;
   }
   &__logo {

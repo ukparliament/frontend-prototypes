@@ -1,15 +1,15 @@
 // Container - Full Grid Width
-.c-fg {
-  @include outer-container;
-}
 .container--full-grid {
-  @include outer-container;
+  //@include outer-container;
+  max-width: 768px;
+  margin-left:auto;
+  margin-right:auto;
+  @include media($mobile) {
+  	max-width:100%;
+  }
 }
 
 // Container - Full Screen
-.c-fs {
-  @include outer-container(100%);
-}
 .container--full-screen {
   @include outer-container(100%);
 }

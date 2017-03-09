@@ -4,3 +4,13 @@
   padding-top: $base-spacing-unit-small;
   padding-bottom: $base-spacing-unit-small;
 }
+
+.block--border {
+	@extend .block;
+	border-bottom: 1px solid $dividers;
+	border-top: 1px solid $dividers;
+	& + .block--border {
+		border-top: none;
+	}
+}
+

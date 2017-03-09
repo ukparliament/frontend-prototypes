@@ -4,6 +4,15 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 
+// Font Colors
+h1,h2,h3,h4,h5,h6 {
+	color: $headings;
+}
+
+p {
+	color: $paragraph;
+}
+
 // Fontsize Mixin Creates 'font-size' & 'line-height' in REM with PX fallback
 
 // Base Typography Settings - Non-Media Query Browsers and Tablet dimensions (pixels)

@@ -4,10 +4,10 @@
   padding-right: $base-spacing-unit-small;
   padding-bottom: $base-spacing-unit-small;
   padding-left: $base-spacing-unit-small;
-  background-color: $highlight-information-soft;
+  background-color: $highlight-primary-soft;
   border-left-width: 5px;
   border-left-style: solid;
-  border-left-color: $highlight-information-bold;
+  border-left-color: $highlight-primary-bold;
   color: $paragraph;
   a {
     &:link,
@@ -20,10 +20,10 @@
   }
 }
 
-.highlight__box--important {
+.highlight__box--secondary {
 	@extend .highlight__box;
-	background-color: $highlight-important-soft;
-	border-left-color: $highlight-important-bold;
+	background-color: $highlight-secondary-soft;
+	border-left-color: $highlight-secondary-bold;
 }
 .highlight__box--caution {
 	@extend .highlight__box;
