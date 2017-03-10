@@ -1,6 +1,7 @@
 .line-break-heavy {
-	margin: $base-spacing-unit-tiny 0;
+  height: 4px;
+  width: 60px;
+  margin-top: $base-spacing-unit-tiny;
+  margin-bottom: $base-spacing-unit-tiny;
 	background-color: $headings;
-	height: 4px;
-	width: 60px;
 }
