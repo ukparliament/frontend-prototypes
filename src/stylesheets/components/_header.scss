@@ -6,10 +6,14 @@
   border-bottom-style: solid;
   border-bottom-color: $header-bottom-border;
   &__logo {
-    a {
-      text-decoration: none;
-      color: $headings;
-    }
+  	span {
+	    a {
+	      text-decoration: none;
+	      color: $headings;
+	      @include fontsize(36, 52);
+    		font-weight: bold;
+	    }
+	  }
     img {
       display: block;
       width: 268px;

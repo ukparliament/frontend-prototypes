@@ -12,12 +12,12 @@ block content
       p.lead Labour
       .line-break-heavy
       p #[+link('#', 'View all current Labour MPs')]
-  h2 Contact Diane Abbott
+  h2 Contact Details
   //- Representative Information
   .block
     .highlight__box
-      p Your MP is your representative in Parliament and can help with issues that are the responsiblity of UK Parliament.
-      p #[+link('contact.html', 'Find out who to contact with your issue')]
+      p Find out #[+link('#', "When an MP can help you and when they can't")].
+      p If you contact an MP who does not represent your constituency, they may not get back to you.
     .highlight__box--caution
       p Please include your postcode when emailing an MP.
     //- Contact Details
@@ -28,8 +28,24 @@ block content
       dd #[+link('tel:02072194426', '020 7219 4426')]
       dt Address:
       dd House of Commons, London, SW1A 0AA
+    .line-break-heavy
+    dl.list__definition
+      dt Email:
+      dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
+      dt Phone:
+      dd #[+link('tel:02072194426', '020 7219 4426')]
+      dt Address:
+      dd House of Commons, London, SW1A 0AA
   //- Membership History
   h2 Membership History
+  h3 Lords
+  ol.list
+    each object in [{sitting_duration: '1987 - 2015', party: 'Labour'}]
+      li.list__item
+        ul
+          li=object.sitting_duration
+          li #[+link('#', object.party)]
+  h3 Commons
   ol.list
     each object in [{constituency: 'Hackney North and Stoke Newington', sitting_duration: '2015 - Current', party: "Labour"},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '1987 - 2015', party: 'Labour'}]
       li.list__item

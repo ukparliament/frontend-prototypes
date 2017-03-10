@@ -7,7 +7,6 @@ h1, h2, h3, h4, h5, h6, p {
 // Font Colors
 h1, h2, h3, h4, h5, h6 {
   color: $headings;
-  font-weight: normal;
 }
 
 p {
@@ -35,7 +34,7 @@ h5 {
 h6 {
   @include fontsize(18, 34);
 }
-p {
+p,a {
   @include fontsize(18, 30);
 }
 .lead {
@@ -62,7 +61,7 @@ p {
   h6 {
     @include fontsize(16, 32);
   }
-  p {
+  p,a {
     @include fontsize(16, 26);
   }
   .lead {
@@ -90,7 +89,7 @@ p {
   h6 {
     @include fontsize(18, 34);
   }
-  p {
+  p,a {
     @include fontsize(18, 30);
   }
   .lead {

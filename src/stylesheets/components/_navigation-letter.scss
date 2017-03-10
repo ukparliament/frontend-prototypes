@@ -5,19 +5,13 @@
   margin-left: 0;
   & > li {
     display: inline-block;
-    width: 54px;
+    width: 11.1111111111%;
     margin-top: 0;
     margin-bottom: 5px;
     margin-left: 0;
-    margin-right: 1px;
+    float: left;
     padding: 0;
     line-height: ($base-spacing-unit-large - 4);
-    background-color: $white;
-    border-style: solid;
-    border-width: 1px;
-    border-color: $grey-3;
-    color: $black;
-    font-weight: bold;
     text-align: center;
     text-transform: uppercase;
     &:last-child {
@@ -25,28 +19,24 @@
     }
     & > a {
       display: block;
-      background-color: $grey-4;
-      outline-color: $grey-4;
-      outline-style: solid;
-      outline-width: 1px;
-      color: $black;
-      text-decoration: none;
     }
     & > a:hover,
     & > a:active,
     & > a:focus {
-      background-color: $grey-1;
-      outline-color: $grey-1;
-      color: $white;
     }
     @include media($desktop) {
-      width: 43px;
+    	width: 7.69230769231%;
       line-height: ($base-spacing-unit-large - 10);
     }
   }
   & li.active > a {
-    background-color: $grey-1;
-    outline-color: $grey-1;
-    color: $white;
+  	color: $headings;
+  	text-decoration: none;
+  	font-weight: bold;
+  }
+  &:after {
+  	content: "";
+	  display: table;
+	  clear: both;
   }
 }

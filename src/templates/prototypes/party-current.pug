@@ -1,12 +1,21 @@
 extends ../../layouts/layout.pug
 block content
-  //- Back Button
-  .block
-    p &lt; #[+link('people-members-current.html', 'Previous page')]
   //- Page Title
   h1 Parties and groups
+  .block
+    .link__tab
+      .link__tab--item.active
+        p Commons
+      .link__tab--item
+        +link('#', "Lords")
   //- Option Tags
-  ul.link__button
-    li #[+link('conservative-current.html', 'Conservative Party')]#[span]
-    li #[+link('#', 'Labour Party')]#[span]
-    li #[+link('#', 'Liberal Democrats')]#[span]
+  ol.list
+    each object in [{name: 'Conservative', description: 'All current Conservative MPs', count: '345'},{name: 'Labour', description: 'All current Labour MPs', count: '9'},{name: 'Vanguard Unionist Progressive Party', description: 'All current Vanguard Unionist Progressive Party MPs', count: '786'}]
+      li.list__item
+        .column__float--left-80
+          h2 #[+link('#', object.name)]
+          p= object.description
+        .column__float--right-20
+          p
+            =object.count
+            span MPs

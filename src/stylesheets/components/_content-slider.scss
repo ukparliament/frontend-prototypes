@@ -36,8 +36,8 @@
 .has-js {
   .slider-link {
     padding-right: $base-spacing-unit-large;
-    color: $bright-blue;
-    font-weight: normal;
+    color: $links;
+    font-weight: bold;
     text-decoration: underline;
     cursor: pointer;
     &:hover,

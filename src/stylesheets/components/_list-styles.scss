@@ -1,6 +1,7 @@
 // Ordered / Unordered Lists - Lists Of Things
 .list {
   @extend .block;
+  position: relative;
   margin: 0;
   list-style: none;
   ol, ul {
@@ -11,6 +12,11 @@
   	font-size: inherit;
     line-height: inherit;
     font-weight: normal;
+  }
+  &:after {
+  	content: "";
+	  display: table;
+	  clear: both;
   }
 }
 
@@ -53,7 +59,6 @@
     float: left;
     clear: left;
     padding-right: $base-spacing-unit-tiny;
-    font-weight: bold;
   }
   & dt, dd {
     @include fontsize(16, 26);
@@ -70,4 +75,30 @@
   @extend .list__definition;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+// BURN CODE
+.list-details {
+	width: 80%;
+	float: left;
+	display: inline-block;
+}
+
+.list-count {
+	width: 20%;
+	float: left;
+	display: inline-block;
+	text-align: right;
+	position: absolute;
+	right: $base-spacing-unit-medium;
+	top: calc(50% - 26px);
+	p {
+    font-size: 30px;
+    font-weight: bold;
+    span {
+    	font-size: 18px;
+    	display:block;
+    	font-weight: normal;
+    }
+	}
 }

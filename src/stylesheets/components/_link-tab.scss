@@ -1,0 +1,25 @@
+.link__tab {
+	border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: $dividers;
+
+  &--item {
+  	display: inline-block;
+  	margin-right: $base-spacing-unit-medium;
+  	position: relative;
+  	top: 5px;
+  	padding-bottom: 2px;
+  	a {
+  		position: inherit;
+  		top:-1px;
+  	}
+  	&.active {
+  		p {
+  			font-weight: bold;
+  		}
+  		border-bottom-width: 5px;
+		  border-bottom-style: solid;
+		  border-bottom-color: blue;
+  	}
+  }
+}
