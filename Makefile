@@ -17,7 +17,6 @@ NODE_SASS=./node_modules/.bin/node-sass
 POSTCSS=./node_modules/.bin/postcss
 UGLIFY_JS=./node_modules/.bin/uglifyjs
 IMAGEMIN=./node_modules/.bin/imagemin
-BROWSER_SYNC=./node_modules/.bin/browser-sync
 ONCHANGE=./node_modules/.bin/onchange
 PUG=./node_modules/.bin/pug
 
@@ -55,11 +54,9 @@ images:
 	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
 
 serve: clean build
-	@$(BROWSER_SYNC) start --server --files "$(PUBLIC_FOLDER)/stylesheets/*.css, $(PUBLIC_FOLDER)/javascripts/*.js, **/*.pug, !node_modules/**/*.html"
 
 templates:
 	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)
-	@$(BROWSER_SYNC) reload --files "$(PUBLIC_FOLDER)/templates/*.html"
 
 build: css js images templates
 
@@ -74,9 +71,6 @@ test:
 	@rm -rf $(REPORTS_FOLDER)/*
 	@node scripts/pa11y.js
 	@node scripts/w3c.js
-
-watch:
-	@node scripts/watch.js $(STYLESHEETS_LOC)=css $(JAVASCRIPTS_LOC)=js $(IMAGES_LOC)=images $(SRC_FOLDER)/layouts=templates $(SRC_FOLDER)/elements=templates $(SRC_FOLDER)/components=templates $(SRC_FOLDER)/templates=templates
 
 heroku: build
 	@cp index.html $(PUBLIC_FOLDER) || :
