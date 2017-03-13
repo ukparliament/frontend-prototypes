@@ -19,6 +19,7 @@ UGLIFY_JS=./node_modules/.bin/uglifyjs
 IMAGEMIN=./node_modules/.bin/imagemin
 ONCHANGE=./node_modules/.bin/onchange
 PUG=./node_modules/.bin/pug
+HTTP_SERVER=./node_modules/.bin/http-server
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -53,7 +54,8 @@ js:
 images:
 	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
 
-serve: clean build
+server: clean build
+	@$(HTTP_SERVER)
 
 templates:
 	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)
