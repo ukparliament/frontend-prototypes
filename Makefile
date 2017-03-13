@@ -1,4 +1,4 @@
-.PHONY: install clean serve build
+.PHONY: install clean server build
 
 # When run in gocd it will be injected by environment variable
 AWS_ACCOUNT?=unknown
@@ -29,50 +29,54 @@ LATEST_REL=$(GITHUB_API)/repos/$(ORG)/$(REPO)/releases/latest
 REL_TAG=$(shell curl -s $(LATEST_REL) | jq -r '.tag_name')
 
 
-install:
-	@npm i
 
+# Build assets and start a http server
+server: clean build
+	@$(HTTP_SERVER) -p 5000
+
+
+# Git auto release
 install_release:
 	git checkout -b release $(REL_TAG)
 	@npm i
 
-clean:
-	@rm -rf $(PUBLIC_FOLDER)
 
-lint:
-	@$(ESLINT) $(JAVASCRIPTS_LOC)
-
-css:
-	@mkdir -p $(PUBLIC_FOLDER)/stylesheets
-	@$(NODE_SASS) --output-style compressed -o $(PUBLIC_FOLDER)/stylesheets $(STYLESHEETS_LOC)
-	@$(POSTCSS) -u autoprefixer -r $(PUBLIC_FOLDER)/stylesheets/*
-
-js:
-	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
-
-images:
-	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
-
-server: clean build
-	@$(HTTP_SERVER)
-
-templates:
-	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)
-
-build: css js images templates
-
-build_prod: lint build
-
+# Deploy compiled assets to CDN
 deploy:
 	aws s3 sync --acl=public-read --delete --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website/$(REL_TAG)
-#	aws s3 cp --acl=public-read ./index.html $(S3_BUCKET)
 
+
+# Test application against W3C & WCAG
 test:
 	@mkdir -p $(REPORTS_FOLDER)
 	@rm -rf $(REPORTS_FOLDER)/*
 	@node scripts/pa11y.js
 	@node scripts/w3c.js
 
-heroku: build
-	@cp index.html $(PUBLIC_FOLDER) || :
+
+# Util
+install:
+	@npm i
+clean:
+	@rm -rf $(PUBLIC_FOLDER)
+
+
+# Commands to compile application assets
+lint:
+	@$(ESLINT) $(JAVASCRIPTS_LOC)
+css:
+	@mkdir -p $(PUBLIC_FOLDER)/stylesheets
+	@$(NODE_SASS) --output-style compressed -o $(PUBLIC_FOLDER)/stylesheets $(STYLESHEETS_LOC)
+	@$(POSTCSS) -u autoprefixer -r $(PUBLIC_FOLDER)/stylesheets/*
+js:
+	@mkdir -p $(PUBLIC_FOLDER)/javascripts
+	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+images:
+	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
+templates:
+	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)
+
+## Command to compile all application assets
+build: css js images templates
+build_prod: lint build
+
