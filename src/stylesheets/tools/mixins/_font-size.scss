@@ -1,9 +1,16 @@
-// Pass in desired Pixel and Line Height values to get REM/Pixel fallback
+// Pass in desired Pixel and Line Height values to get REM/Pixel fallback, Sets margin to
+// half of difference between total sizre and font size if margin=true.
 
-@mixin fontsize($size, $line){
-  //$line-calc: $size * $line;
+@mixin fontsize($size, $line, $margin:true){
   font-size:   $size + 0px;
   line-height: $line + 0px;
   font-size:   ($size / 16) + 0rem;
   line-height: ($line / 16) + 0rem;
+  @if $margin == true {
+    margin: (($line - $size) / 2 + 0px) auto;
+  }
+  @else {
+  	margin: 0;
+  }
+
 }

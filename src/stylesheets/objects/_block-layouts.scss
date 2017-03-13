@@ -19,3 +19,10 @@
 	}
 }
 
+.block--top {
+	@extend .block;
+	padding-top: $base-spacing-unit-medium;
+	padding-bottom: 0;
+}
+
+

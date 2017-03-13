@@ -29,11 +29,36 @@
 // Row - Indented Top & Bottom
 .row--indent-full {
   @include row();
-  padding-top: $base-spacing-unit-small;
+  padding-top: $base-spacing-unit-large;
   padding-bottom: $base-spacing-unit-extra-large;
   padding-left: $base-spacing-unit-small;
   padding-right: $base-spacing-unit-small;
   @include media($mobile) {
     padding-top: $base-spacing-unit-small;
   }
+}
+
+.column__float--left-80 {
+	width: 80%;
+	float: left;
+	display: inline-block;
+}
+
+.column__float--right-20 {
+	width: 20%;
+	float: left;
+	display: inline-block;
+	text-align: right;
+	p {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+		right: $base-spacing-unit-medium;
+		top: calc(50% - 29px);
+    span {
+    	font-size: 18px;
+    	display:block;
+    	font-weight: normal;
+    }
+	}
 }

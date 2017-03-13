@@ -1,8 +1,5 @@
 extends ../../layouts/layout.pug
 block content
-  //- Back Button
-  .block
-    p &lt; #[+link('people-members-current.html', 'Previous page')]
   //- Page Title
   h1 Lords
   p A to Z - select a letter
@@ -12,6 +9,6 @@ block content
   //- Result List
   ol.list
     each object in [{name: 'Lord Aberdare', party: 'Crossbench'},{name: 'Baroness Adams of Craigielea', party: 'Labour'},{name: 'Lord Addington', party: 'Liberal Democrats'},{name: 'Lord Adebowale', party: 'Crossbench'},{name: 'Lord Adonis', party: 'Non-affiliated'}]
-      li.list__item--secondary
+      li.list__item
         h2 #[+link('#', object.name)]
         p= object.party

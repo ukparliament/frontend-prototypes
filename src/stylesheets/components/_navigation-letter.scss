@@ -20,10 +20,6 @@
     & > a {
       display: block;
     }
-    & > a:hover,
-    & > a:active,
-    & > a:focus {
-    }
     @include media($desktop) {
     	width: 7.69230769231%;
       line-height: ($base-spacing-unit-large - 10);
