@@ -32,7 +32,7 @@ REL_TAG=$(shell curl -s $(LATEST_REL) | jq -r '.tag_name')
 install:
 	@npm i
 
-install_release: 
+install_release:
 	git checkout -b release $(REL_TAG)
 	@npm i
 
@@ -80,4 +80,3 @@ watch:
 
 heroku: build
 	@cp index.html $(PUBLIC_FOLDER) || :
-	@node server.js
