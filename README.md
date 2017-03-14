@@ -43,6 +43,7 @@ If you wish to submit a bug fix or feature, you can create a pull request and it
 
 [parliament.uk-pugin]:  https://github.com/ukparliament/parliament.uk-pugin
 [pds]:             		  https://www.parliament.uk/mps-lords-and-offices/offices/bicameral/parliamentary-digital-service/
+[augustus-pugin]:       https://en.wikipedia.org/wiki/Augustus_Pugin
 
 [info-license]:    	  	http://www.parliament.uk/site-information/copyright/open-parliament-licence/
 [shield-license]:  		  https://img.shields.io/badge/license-Open%20Parliament%20Licence-blue.svg
