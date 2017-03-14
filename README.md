@@ -1,5 +1,5 @@
 # Pugin (UK Parliament Brand)
-The brand of UK Parliament created by the [Parliamentary Digital Service][pds] for Parliamentary websites. It is named after the designer [Augustus Welby Northmore Pugin][augustus-pugin], who provided designs for the interior of the Palace of Westminster.
+The brand of UK Parliament created by the [Parliamentary Digital Service][pds] for Parliamentary websites. It is named after the Palace of Westminster interior designer [Augustus Welby Northmore Pugin][augustus-pugin].
 
 [![License][shield-license]][info-license]
 
