@@ -44,7 +44,8 @@ h6 {
 p,a {
   @include fontsize(18, 30);
 }
-.lead {
+.lead,
+.lead > a {
   @include fontsize(21, 33);
 }
 
@@ -99,7 +100,8 @@ p,a {
   p,a {
     @include fontsize(18, 30);
   }
-  .lead {
+  .lead,
+  .lead > a {
     @include fontsize(21, 33);
   }
 }
