@@ -17,7 +17,7 @@ NODE_SASS=./node_modules/.bin/node-sass
 POSTCSS=./node_modules/.bin/postcss
 UGLIFY_JS=./node_modules/.bin/uglifyjs
 IMAGEMIN=./node_modules/.bin/imagemin
-BROWSER_SYNC=./node_modules/.bin/browser-sync
+#BROWSER_SYNC=./node_modules/.bin/browser-sync
 ONCHANGE=./node_modules/.bin/onchange
 PUG=./node_modules/.bin/pug
 
@@ -55,17 +55,22 @@ images:
 	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
 
 serve: clean build
-	@$(BROWSER_SYNC) start --server --files "$(PUBLIC_FOLDER)/stylesheets/*.css, $(PUBLIC_FOLDER)/javascripts/*.js, **/*.pug, !node_modules/**/*.html"
+	@cp index.html $(PUBLIC_FOLDER)
+	@node server.js
+#	@$(BROWSER_SYNC) start --server --files "$(PUBLIC_FOLDER)/stylesheets/*.css, $(PUBLIC_FOLDER)/javascripts/*.js, **/*.pug, !node_modules/**/*.html"
 
 templates:
 	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)
-	@$(BROWSER_SYNC) reload --files "$(PUBLIC_FOLDER)/templates/*.html"
+#	@$(BROWSER_SYNC) reload --files "$(PUBLIC_FOLDER)/templates/*.html"
 
 build: css js images templates
 
 build_prod: lint build
 
-deploy:
+deploy-continously:
+	aws s3 sync --acl=public-read --delete ./_public/ s3://$(AWS_ACCOUNT).pugin-prototypes
+	
+deploy-to-release:
 	aws s3 sync --acl=public-read --delete --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website/$(REL_TAG)
 #	aws s3 cp --acl=public-read ./index.html $(S3_BUCKET)
 
