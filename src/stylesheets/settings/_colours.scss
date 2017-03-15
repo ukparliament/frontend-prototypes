@@ -1,38 +1,47 @@
 // PDS Base Colours
-$black: #000;
-$white: #FFF;
-$commons-green: #00BA56;
-$lords-red: #C90D38;
-$bright-blue: #165FEA;
-$purple-heart: #5D2EB4;
-$blizzard-blue: #A3DFED;
+$black: #000000;
+$white: #FFFFFF;
+$commons-green: #006E46;
+$lords-red: #A10700;
 
 // PDS Grey Palette
-$grey-1: #333333; // Nightrider
-$grey-2: #5C5C5C; // Dark Grey
-$grey-3: #9B9B9B; // Hard Grey
-$grey-4: #C1C1C1; // Soft Grey
-$grey-5: #F4F4F4; // Light Grey
+$grey-1: #2E2E2E; // Nightrider
+$grey-2: #4D4D4D; // Dark Grey
+$grey-3: #CBC9CD; // Hard Grey
+$grey-4: #EBE9E8; // Soft Grey
+$grey-5: #F8F7F7; // Light Grey
 
-// Branding Palette
-
+// Components
 $header-background: #FFFFFF;
 $header-bottom-border: #CBC9CD;
 $beta-banner: #96DCBE;
 $main-background: #F8F7F7;
+$footer-background: #373151;
+$footer-text: #F8F7F7;
+
+// Typography
 $headings: #373151;
+$paragraph: #4D4D4D;
 $dividers: #CBC9CD;
+
+// Links
 $links: #2B57AB;
 $links-hover: #373151;
 $links-active: #2B57AB;
 $links-visited: #7C1389;
 
-$paragraph: #4D4D4D;
+// Buttons
+$button-primary: #2B57AB;
+$button-secondary: #BFCDE6;
+
+// Notifications
 $highlight-primary-bold: #5F2DB4;
 $highlight-primary-soft: #E7DFF4;
 $highlight-secondary-bold: #96DCBE;
 $highlight-secondary-soft: #DFF4EB;
 $highlight-caution-bold: #FBCF20;
 $highlight-caution-soft: #FEF3C7;
-$footer-background: #373151;
-$footer-text: #F8F7F7;
+$highlight-warning-bold: #DE2E32;
+$highlight-warning-soft: #F7CBCC;
+$highlight-success-bold: #00B95D;
+$highlight-success-soft: #BFEDD6;

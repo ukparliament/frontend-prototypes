@@ -6,23 +6,21 @@
 }
 
 .block--border-bottom {
-	@extend .block;
-	border-bottom: 1px solid $dividers;
+  @extend .block;
+  border-bottom: 1px solid $dividers;
 }
 
 .block--border {
-	@extend .block;
-	border-bottom: 1px solid $dividers;
-	border-top: 1px solid $dividers;
-	& + .block--border {
-		border-top: none;
-	}
+  @extend .block;
+  border-bottom: 1px solid $dividers;
+  border-top: 1px solid $dividers;
+  & + .block--border {
+    border-top: none;
+  }
 }
 
 .block--top {
-	@extend .block;
-	padding-top: $base-spacing-unit-medium;
-	padding-bottom: 0;
+  @extend .block;
+  padding-top: $base-spacing-unit-medium;
+  padding-bottom: 0;
 }
-
-

@@ -9,14 +9,14 @@
     list-style: none;
   }
   h2,h3,h4,h5,h6 {
-  	font-size: inherit;
+    font-size: inherit;
     line-height: inherit;
     font-weight: bold;
   }
   &:after {
-  	content: "";
-	  display: table;
-	  clear: both;
+    content: "";
+    display: table;
+    clear: both;
   }
 }
 
@@ -34,13 +34,13 @@
 }
 
 .list__item {
-	@extend .list;
-	background: $white;
-	padding: $base-spacing-unit-medium;
-	margin-bottom: $base-spacing-unit-tiny;
-	&:last-child {
-		margin-bottom: 0;
-	}
+  @extend .list;
+  background: $white;
+  padding: $base-spacing-unit-medium;
+  margin-bottom: $base-spacing-unit-tiny;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // Definition List - Horizontally Aligned

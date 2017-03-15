@@ -38,27 +38,28 @@
   }
 }
 
+// Column - Float Layout 80:20
 .column__float--left-80 {
-	width: 80%;
-	float: left;
-	display: inline-block;
+  width: 80%;
+  float: left;
+  display: inline-block;
 }
 
 .column__float--right-20 {
-	width: 20%;
-	float: left;
-	display: inline-block;
-	text-align: right;
-	p {
+  width: 20%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  p {
     font-size: 30px;
     font-weight: bold;
     position: absolute;
-		right: $base-spacing-unit-medium;
-		top: calc(50% - 29px);
+    right: $base-spacing-unit-medium;
+    top: calc(50% - 29px);
     span {
-    	font-size: 18px;
-    	display:block;
-    	font-weight: normal;
+    font-size: 18px;
+    display:block;
+    font-weight: normal;
     }
-	}
+  }
 }

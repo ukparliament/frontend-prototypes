@@ -7,18 +7,13 @@
   padding-bottom: $base-spacing-unit;
   background-color: $footer-background;
   a:link, a:hover, a:active, a:focus, a:visited, p {
-  	color: $footer-text;
+    color: $footer-text;
   }
   a:hover, a:active, a:focus {
     text-decoration: none;
   }
   &__logo {
-  	font-weight: bold;
-    img {
-      display: block;
-      width: 118px;
-      height: 22px;
-    }
+    font-weight: bold;
   }
   &__list {
     list-style: none;
