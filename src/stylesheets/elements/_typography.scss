@@ -44,7 +44,9 @@ h6 {
 p,a {
   @include fontsize(18, 30);
 }
-.lead,
+.lead {
+  @include fontsize(21, 33);
+}
 .lead > a {
   @include fontsize(21, 33);
 }
@@ -75,6 +77,9 @@ p,a {
   .lead {
     @include fontsize(18, 27);
   }
+  .lead > a {
+    @include fontsize(18, 27);
+  }
 }
 
 // Desktop Typography Settings (pixels)
@@ -100,7 +105,9 @@ p,a {
   p,a {
     @include fontsize(18, 30);
   }
-  .lead,
+  .lead {
+    @include fontsize(21, 33);
+  }
   .lead > a {
     @include fontsize(21, 33);
   }
