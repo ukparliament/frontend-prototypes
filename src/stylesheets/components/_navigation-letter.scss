@@ -11,22 +11,14 @@
     margin-left: 0;
     float: left;
     padding: 0;
-    line-height: ($base-spacing-unit-large - 4);
     text-align: center;
     text-transform: uppercase;
     &:last-child {
       margin-right: 0;
     }
-    & > a {
-      display: block;
-    }
-    & > a:hover,
-    & > a:active,
-    & > a:focus {
-    }
     @include media($desktop) {
-    	width: 7.69230769231%;
-      line-height: ($base-spacing-unit-large - 10);
+      //width: 7.69230769231%;
+      width: 3.84615384615%;
     }
   }
   & li.active > a {

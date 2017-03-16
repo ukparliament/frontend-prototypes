@@ -2,6 +2,13 @@
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
+  font-weight: normal;
+  // font-smoothing - anti aliasing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // font-feature-settings - vertically aligned typeface
+  // https://developer.mozilla.org/en/docs/Web/CSS/font-feature-settings
+  font-feature-settings: 'pnum';
 }
 
 // Font Colors
@@ -17,82 +24,91 @@ p {
 
 // Base Typography Settings - Non-Media Query Browsers and Tablet dimensions (pixels)
 h1 {
-  @include fontsize(36, 52);
+  @include fontsize(36, 44);
 }
 h2 {
-  @include fontsize(32, 48);
+  @include fontsize(32, 40);
 }
 h3 {
-  @include fontsize(26, 42);
+  @include fontsize(26, 34);
 }
 h4 {
-  @include fontsize(22, 38);
+  @include fontsize(22, 30);
 }
 h5 {
-  @include fontsize(20, 36);
+  @include fontsize(20, 28);
 }
 h6 {
-  @include fontsize(18, 34);
+  @include fontsize(18, 26);
 }
 p,a {
   @include fontsize(18, 30);
 }
 .lead {
-  @include fontsize(21, 37);
+  @include fontsize(21, 33);
+}
+.lead > a {
+  @include fontsize(21, 33);
 }
 
 // Mobile Typography Settings (pixels)
 @include media($mobile) {
   h1 {
-    @include fontsize(32, 48);
+    @include fontsize(32, 40);
   }
   h2 {
-    @include fontsize(28, 44);
+    @include fontsize(28, 36);
   }
   h3 {
-    @include fontsize(24, 40);
+    @include fontsize(24, 32);
   }
   h4 {
-    @include fontsize(21, 37);
+    @include fontsize(21, 32);
   }
   h5 {
-    @include fontsize(18, 34);
+    @include fontsize(18, 26);
   }
   h6 {
-    @include fontsize(16, 32);
+    @include fontsize(16, 23);
   }
   p,a {
-    @include fontsize(16, 26);
+    @include fontsize(16, 25);
   }
   .lead {
-    @include fontsize(18, 28);
+    @include fontsize(18, 27);
+  }
+  .lead > a {
+    @include fontsize(18, 27);
   }
 }
 
 // Desktop Typography Settings (pixels)
 @include media($desktop) {
   h1 {
-   @include fontsize(36, 52);
+   @include fontsize(36, 44);
   }
   h2 {
-    @include fontsize(32, 48);
+    @include fontsize(32, 40);
   }
   h3 {
-    @include fontsize(26, 42);
+    @include fontsize(26, 34);
   }
   h4 {
-    @include fontsize(22, 38);
+    @include fontsize(22, 30);
   }
   h5 {
-    @include fontsize(20, 36);
+    @include fontsize(20, 28);
   }
   h6 {
-    @include fontsize(18, 34);
+    @include fontsize(18, 26);
   }
   p,a {
     @include fontsize(18, 30);
   }
   .lead {
-    @include fontsize(21, 37);
+    @include fontsize(21, 33);
+  }
+  .lead > a {
+    @include fontsize(21, 33);
   }
 }

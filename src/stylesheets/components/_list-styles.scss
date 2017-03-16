@@ -9,18 +9,18 @@
     list-style: none;
   }
   h2,h3,h4,h5,h6 {
-  	font-size: inherit;
+    font-size: inherit;
     line-height: inherit;
-    font-weight: normal;
+    font-weight: bold;
   }
   &:after {
-  	content: "";
-	  display: table;
-	  clear: both;
+    content: "";
+    display: table;
+    clear: both;
   }
 }
 
-.list__item {
+.list__item--secondary {
   @extend .list;
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -33,22 +33,13 @@
   }
 }
 
-.list__item--secondary {
-	@extend .list;
-	background: $white;
-	padding: $base-spacing-unit-medium;
-	&:not(:last-child){
-		margin-bottom: $base-spacing-unit-tiny;
-	}
-}
-
-.list__item--borderless-top {
-  @extend .list__item;
-  &:first-of-type {
-    border-top-width: 0;
-    border-top-style: none;
-    border-top-color: transparent;
-    padding-top: 0;
+.list__item {
+  @extend .list;
+  background: $white;
+  padding: $base-spacing-unit-medium;
+  margin-bottom: $base-spacing-unit-tiny;
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -60,12 +51,12 @@
     clear: left;
     padding-right: $base-spacing-unit-tiny;
   }
-  & dt, dd {
-    @include fontsize(16, 26);
+  & dt, dd, dd > a {
+    @include fontsize(16, 26, false);
   }
   @include media($desktop) {
-    dt, dd {
-      @include fontsize(18, 36);
+    dt, dd, dd > a {
+      @include fontsize(18, 36, false);
     }
   }
 }
@@ -75,30 +66,4 @@
   @extend .list__definition;
   padding-top: 0;
   padding-bottom: 0;
-}
-
-// BURN CODE
-.list-details {
-	width: 80%;
-	float: left;
-	display: inline-block;
-}
-
-.list-count {
-	width: 20%;
-	float: left;
-	display: inline-block;
-	text-align: right;
-	position: absolute;
-	right: $base-spacing-unit-medium;
-	top: calc(50% - 26px);
-	p {
-    font-size: 30px;
-    font-weight: bold;
-    span {
-    	font-size: 18px;
-    	display:block;
-    	font-weight: normal;
-    }
-	}
 }

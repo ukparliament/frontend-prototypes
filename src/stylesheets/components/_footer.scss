@@ -2,23 +2,18 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 150px; // equal to body margin bottom
+  height: 165px; // equal to body margin bottom
   padding-top: $base-spacing-unit-small;
   padding-bottom: $base-spacing-unit;
   background-color: $footer-background;
   a:link, a:hover, a:active, a:focus, a:visited, p {
-  	color: $footer-text;
+    color: $footer-text;
   }
   a:hover, a:active, a:focus {
     text-decoration: none;
   }
   &__logo {
-  	font-weight: bold;
-    img {
-      display: block;
-      width: 118px;
-      height: 22px;
-    }
+    font-weight: bold;
   }
   &__list {
     list-style: none;
