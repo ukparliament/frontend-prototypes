@@ -20,7 +20,7 @@ make install
 ```
 
 ## Usage
-After setting up, run `make serve`. Browse to http://localhost:3000 to view Pugin (UK Parliament Brand) on example prototypes.
+After setting up, run `make server`. Browse to http://localhost:5000 to view Pugin (UK Parliament Brand) on example prototypes.
 
 ## Documentation
 * [W3C](docs/W3C.md)
