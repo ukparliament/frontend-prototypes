@@ -1,4 +1,4 @@
-.PHONY: install clean server build
+.PHONY: install clean server build test
 
 # When run in gocd it will be injected by environment variable
 AWS_ACCOUNT?=unknown
