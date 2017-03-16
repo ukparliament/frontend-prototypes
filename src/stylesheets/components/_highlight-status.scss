@@ -1,19 +1,24 @@
 .highlight__status {
   @extend .block;
-  background-color: $beta-banner;
+  background-color: $footer-background;
+  padding-top: $base-spacing-unit-tiny;
+  padding-bottom: $base-spacing-unit-tiny;
+  p {
+  	color: $white;
+  }
   a {
     &:link {
-      color: $paragraph;
+      color: $white;
       text-decoration: underline;
     }
     &:visited {
-      color: $links-visited;
+      color: $white;
       text-decoration: underline;
     }
     &:hover,
     &:active,
     &:focus {
-      color: $headings;
+      color: $white;
       text-decoration: none;
     }
   }
