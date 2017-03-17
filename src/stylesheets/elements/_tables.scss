@@ -8,7 +8,7 @@ table {
     padding: $base-spacing-unit-tiny;
   }
 
-  thead {
+  thead, tfoot {
   	border-bottom: 2px solid $black;
   	th {
   		background: $white;
@@ -19,8 +19,12 @@ table {
   	}
   }
 
+  tfoot {
+  	border-bottom: none;
+  	border-top: 2px solid $black;
+  }
+
   thead th, tfoot td {
-    border: solid 1px $grey-4;
     text-align: left;
   }
 
