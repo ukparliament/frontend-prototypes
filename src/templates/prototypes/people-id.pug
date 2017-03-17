@@ -38,16 +38,17 @@ block content
   section
     //- Membership History
     h2 Membership History
-    h3 Lords
-    ol.list
-      each object in [{sitting_duration: '1987 - 2015', party: 'Labour'}]
-        li.list__item--secondary
-          p= object.sitting_duration
-          p #[+link('#', object.party)]
-    h3 Commons
-    ol.list
-      each object in [{constituency: 'Hackney North and Stoke Newington', sitting_duration: '2015 - Current', party: "Labour"},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '1987 - 2015', party: 'Labour'}]
-        li.list__item--secondary
-          p MP for #[+link('#', object.constituency)]
-          p= object.sitting_duration
-          p #[+link('#', object.party)]
+    .block
+      h3 Lords
+      ol.list
+        each object in [{sitting_duration: '1987 - 2015', party: 'Labour'}]
+          li.list__item--secondary
+            p= object.sitting_duration
+            p #[+link('#', object.party)]
+      h3 Commons
+      ol.list
+        each object in [{constituency: 'Hackney North and Stoke Newington', sitting_duration: '2015 - Current', party: "Labour"},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '1987 - 2015', party: 'Labour'}]
+          li.list__item--secondary
+            p MP for #[+link('#', object.constituency)]
+            p= object.sitting_duration
+            p #[+link('#', object.party)]

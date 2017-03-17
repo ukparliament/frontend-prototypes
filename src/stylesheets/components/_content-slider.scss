@@ -4,25 +4,33 @@
   padding-bottom: 0;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: $grey-4;
+  border-bottom-color: $dividers;
 }
 
 .slider-link {
   display: block;
   position: relative;
-  padding-top: $base-spacing-unit-small;
+  padding-top: $base-spacing-unit;
   padding-bottom: $base-spacing-unit-small;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: $grey-4;
-  color: $grey-1;
+  border-top-color: $dividers;
+  color: $headings;
   text-decoration: none;
+  @include fontsize(28, 36);
+  @include media($mobile) {
+    @include fontsize(24, 32);
+  }
 }
 
 .slider-content {
   padding-bottom: $base-spacing-unit-tiny;
   & > h3 {
     padding-bottom: $base-spacing-unit-small;
+    @include fontsize(24, 32);
+    @include media($mobile) {
+      @include fontsize(20, 28);
+    }
   }
   & > p {
     padding-bottom: $base-spacing-unit-small;
@@ -36,15 +44,18 @@
 .has-js {
   .slider-link {
     padding-right: $base-spacing-unit-large;
-    color: $links;
-    font-weight: bold;
-    text-decoration: underline;
-    cursor: pointer;
+    color: $headings;
+    //color: $links;
+    //font-weight: bold;
+    //text-decoration: underline;
+    //cursor: pointer;
+    /*
     &:hover,
     &:active,
     &:focus {
       text-decoration: none;
     }
+    */
     & > span.open,
     & > span.close {
       display:block;
