@@ -4,10 +4,22 @@ html {
 }
 // Variables inherited from 'settings/_fonts.scss'
 body {
+  direction: ltr;
   margin-bottom: 165px; // equal to footer height
   padding: 0;
   background-color: $main-background;
-  direction: ltr;
+  color: $paragraph;
   font-family: $base-font-stack;
-  color: $grey-1;
+  p, a, ol, ul, dl {
+    // Baseline Typography Settings (pixels)
+    @include fontsize(18, 30);
+    // Mobile Typography Settings (pixels)
+    @include media($mobile) {
+      @include fontsize(16, 25);
+    }
+    // Desktop Typography Settings (pixels)
+    @include media($desktop) {
+      @include fontsize(18, 30);
+    }
+  }
 }

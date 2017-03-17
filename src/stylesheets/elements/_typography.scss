@@ -1,5 +1,5 @@
 // Base Typography Resets
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   // font-smoothing - anti aliasing
@@ -10,13 +10,9 @@ h1, h2, h3, h4, h5, h6, p {
   font-feature-settings: 'pnum';
 }
 
-// Font Colors
+// Heading Colors
 h1, h2, h3, h4, h5, h6 {
   color: $headings;
-}
-
-p {
-  color: $paragraph;
 }
 
 // Fontsize Mixin Creates 'font-size' & 'line-height' in REM with PX fallback
@@ -40,13 +36,7 @@ h5 {
 h6 {
   @include fontsize(18, 26);
 }
-p,a {
-  @include fontsize(18, 30);
-}
 .lead {
-  @include fontsize(21, 33);
-}
-.lead > a {
   @include fontsize(21, 33);
 }
 
@@ -70,13 +60,7 @@ p,a {
   h6 {
     @include fontsize(16, 23);
   }
-  p,a {
-    @include fontsize(16, 25);
-  }
   .lead {
-    @include fontsize(18, 27);
-  }
-  .lead > a {
     @include fontsize(18, 27);
   }
 }
@@ -101,13 +85,7 @@ p,a {
   h6 {
     @include fontsize(18, 26);
   }
-  p,a {
-    @include fontsize(18, 30);
-  }
   .lead {
-    @include fontsize(21, 33);
-  }
-  .lead > a {
     @include fontsize(21, 33);
   }
 }

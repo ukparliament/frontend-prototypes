@@ -1,12 +1,6 @@
 // Container - Full Grid Width
 .container--full-grid {
-  //@include outer-container;
-  max-width: 768px;
-  margin-left:auto;
-  margin-right:auto;
-  @include media($mobile) {
-  	max-width:100%;
-  }
+  @include outer-container;
 }
 
 // Container - Full Screen

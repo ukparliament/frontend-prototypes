@@ -24,7 +24,7 @@
   & + .highlight__box--caution {
     margin-bottom: 0;
   }
-  @include media($tablet) {
+  @include media($desktop) {
     padding-right: $base-spacing-unit-medium;
     padding-left: $base-spacing-unit-medium;
   }
