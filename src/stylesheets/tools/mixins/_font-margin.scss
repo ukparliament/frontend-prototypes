@@ -1,0 +1,10 @@
+// Sets margin to half of difference between line-height and font size if margin=true.
+
+@mixin fontmargin($size, $line, $margin:true){
+  @if $margin == true {
+    margin: (($line - $size) / 2 + 0px) auto;
+  }
+  @else {
+    margin: 0;
+  }
+}

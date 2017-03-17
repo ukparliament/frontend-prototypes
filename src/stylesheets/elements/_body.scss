@@ -10,16 +10,14 @@ body {
   background-color: $main-background;
   color: $paragraph;
   font-family: $base-font-stack;
-  p, a, ol, ul, dl {
-    // Baseline Typography Settings (pixels)
+  // Baseline Typography Settings (pixels)
+  @include fontsize(18, 30);
+  // Mobile Typography Settings (pixels)
+  @include media($mobile) {
+    @include fontsize(16, 25);
+  }
+  // Desktop Typography Settings (pixels)
+  @include media($desktop) {
     @include fontsize(18, 30);
-    // Mobile Typography Settings (pixels)
-    @include media($mobile) {
-      @include fontsize(16, 25);
-    }
-    // Desktop Typography Settings (pixels)
-    @include media($desktop) {
-      @include fontsize(18, 30);
-    }
   }
 }
