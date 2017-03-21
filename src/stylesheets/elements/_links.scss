@@ -19,7 +19,4 @@ a {
   &:visited {
     color: $links-visited;
   }
-  // Experimental text decoration declaration (webkit only)
-  // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
-  -webkit-text-decoration-skip: ink;
 }

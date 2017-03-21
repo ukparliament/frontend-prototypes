@@ -2,22 +2,12 @@
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
-  // font-smoothing - anti aliasing
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  // font-feature-settings - vertically aligned typeface
-  // https://developer.mozilla.org/en/docs/Web/CSS/font-feature-settings
-  font-feature-settings: 'pnum';
   color: $headings;
 }
 
 p, a, ol, ul, dl {
   // Baseline Typography Settings (pixels)
-  @include fontmargin(18, 30);
-  // Mobile Typography Settings (pixels)
-  @include media($mobile) {
-    @include fontmargin(16, 25);
-  }
+  @include fontmargin(16, 25);
   // Desktop Typography Settings (pixels)
   @include media($desktop) {
     @include fontmargin(18, 30);
