@@ -15,7 +15,6 @@ p, a, ol, ul, dl {
 }
 
 // Fontsize Mixin Creates 'font-size' & 'line-height' in REM with PX fallback
-<<<<<<< HEAD
 // Base Typography Settings (pixels)
 h1 {
   @include fontsize(32, 40);
