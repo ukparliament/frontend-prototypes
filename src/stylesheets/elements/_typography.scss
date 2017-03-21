@@ -25,36 +25,34 @@ p, a, ol, ul, dl {
 }
 
 // Fontsize Mixin Creates 'font-size' & 'line-height' in REM with PX fallback
-// Mobile Typography Settings (pixels)
-@include media($mobile) {
-  h1 {
-    @include fontsize(32, 40);
-    @include fontmargin(32, 40);
-  }
-  h2 {
-    @include fontsize(28, 36);
-    @include fontmargin(28, 36);
-  }
-  h3 {
-    @include fontsize(24, 32);
-    @include fontmargin(24, 32);
-  }
-  h4 {
-    @include fontsize(21, 32);
-    @include fontmargin(21, 32);
-  }
-  h5 {
-    @include fontsize(18, 26);
-    @include fontmargin(18, 26);
-  }
-  h6 {
-    @include fontsize(16, 23);
-    @include fontmargin(16, 23);
-  }
-  .lead {
-    @include fontsize(18, 27);
-    @include fontmargin(18, 27);
-  }
+// Base Typography Settings (pixels)
+h1 {
+  @include fontsize(32, 40);
+  @include fontmargin(32, 40);
+}
+h2 {
+  @include fontsize(28, 36);
+  @include fontmargin(28, 36);
+}
+h3 {
+  @include fontsize(24, 32);
+  @include fontmargin(24, 32);
+}
+h4 {
+  @include fontsize(21, 32);
+  @include fontmargin(21, 32);
+}
+h5 {
+  @include fontsize(18, 26);
+  @include fontmargin(18, 26);
+}
+h6 {
+  @include fontsize(16, 23);
+  @include fontmargin(16, 23);
+}
+.lead {
+  @include fontsize(18, 27);
+  @include fontmargin(18, 27);
 }
 
 // Desktop Typography Settings (pixels)
