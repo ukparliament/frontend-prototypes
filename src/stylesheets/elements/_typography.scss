@@ -39,9 +39,11 @@ h5 {
 h6 {
   @include fontsize(16, 23);
   @include fontmargin(16, 23);
+}
 .lead {
   @include fontsize(18, 27);
   @include fontmargin(18, 27);
+}
 
 // Desktop Typography Settings (pixels)
 @include media($desktop) {
