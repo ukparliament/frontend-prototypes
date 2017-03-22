@@ -4,7 +4,14 @@
   padding-top: $base-spacing-unit-tiny;
   padding-bottom: $base-spacing-unit-tiny;
   p {
-  	color: $white;
+    color: $white;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    @include media($desktop) {
+      font-size: 18px;
+    }
   }
   a {
     &:link {
