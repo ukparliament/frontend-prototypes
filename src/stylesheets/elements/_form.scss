@@ -1,5 +1,10 @@
 .form-group {
   margin-bottom: $base-spacing-unit;
+
+  input {
+    float: left;
+    margin-left: -1px;
+  }
 }
 
 button,
@@ -42,11 +47,11 @@ label {
 input[type="text"],
 input[type="password"],
 textarea {
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
   border-color: $black;
   display: block;
-  padding: ($base-spacing-unit-tiny - 2);
+  padding: ($base-spacing-unit-tiny);
   width: 50%;
 }
 
@@ -69,8 +74,8 @@ input[type="submit"] {
   border-style: solid;
   border-color: $black;
   font-weight: 600;
-  padding-top: $base-spacing-unit-small;
-  padding-bottom: $base-spacing-unit-small;
+  padding-top: $base-spacing-unit-tiny;
+  padding-bottom: $base-spacing-unit-tiny;
   padding-left: ($base-spacing-unit - 8);
   padding-right: ($base-spacing-unit - 8);
 }
@@ -84,3 +89,4 @@ input[type="submit"] {
     display: none;
   }
 }
+
