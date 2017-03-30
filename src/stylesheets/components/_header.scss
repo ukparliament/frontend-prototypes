@@ -1,22 +1,19 @@
-.header {
-  background-color: $header-background;
-  padding-top: $base-spacing-unit-small;
-  padding-bottom: $base-spacing-unit-small;
+header {
+  padding: $base-spacing-unit-small 0;
   border-bottom-width: 3px;
   border-bottom-style: solid;
   border-bottom-color: $header-bottom-border;
-  &__logo {
-    a {
-      text-decoration: none;
-      color: $headings;
-      @include fontsize(36, 52);
-      font-weight: bold;
-    }
-  }
 }
+.header__logo:link {
+  text-decoration: none;
+  color: $headings;
+  @include fontsize(36, 52);
+  font-weight: bold;
+}
+
 // Physical Print Styles
 @media print {
-  .header {
+  header {
     display: none;
   }
 }

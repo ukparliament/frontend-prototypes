@@ -1,23 +1,18 @@
 // Container - Full Grid Width
 .container--full-grid {
+  padding: 0 $base-spacing-unit-small;
   @include outer-container;
 }
 
 // Container - Full Screen
 .container--full-screen {
+  padding: 0 $base-spacing-unit-small;
   @include outer-container(100%);
 }
 
 // Row - Full Width
 .row {
   @include row();
-}
-
-// Row - Indented Left & Right
-.row--indent-horizontal {
-  @include row();
-  padding-left: $base-spacing-unit-small;
-  padding-right: $base-spacing-unit-small;
 }
 
 // Row - Indented Top & Bottom
