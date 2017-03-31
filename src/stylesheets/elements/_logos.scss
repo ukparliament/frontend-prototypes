@@ -1,5 +1,5 @@
 header {
-  .logo:link {
+  .logo {
     text-decoration: none;
     color: $headings;
     @include fontsize(36, 52);
