@@ -1,14 +1,7 @@
 header {
-  padding: $base-spacing-unit-small 0;
   border-bottom-width: 3px;
   border-bottom-style: solid;
   border-bottom-color: $header-bottom-border;
-}
-.header__logo:link {
-  text-decoration: none;
-  color: $headings;
-  @include fontsize(36, 52);
-  font-weight: bold;
 }
 
 // Physical Print Styles

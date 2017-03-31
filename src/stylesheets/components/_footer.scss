@@ -1,4 +1,4 @@
-.footer {
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -13,19 +13,10 @@
   a:hover, a:active, a:focus {
     text-decoration: none;
   }
-  &__logo p {
-    color: $footer-text;
-    @include fontsize(18, 27);
-    font-weight: bold;
-  }
-  &__list {
-    list-style: none;
-    margin-left: 0;
-  }
 }
 // Physical Print Styles
 @media print {
-  .footer {
+  footer {
     display: none;
   }
 }

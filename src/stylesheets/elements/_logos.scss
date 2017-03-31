@@ -1,0 +1,15 @@
+header {
+  .logo:link {
+    text-decoration: none;
+    color: $headings;
+    @include fontsize(36, 52);
+    font-weight: bold;
+  }
+}
+footer {
+  .logo {
+    color: $footer-text;
+    @include fontsize(18, 27);
+    margin: $base-spacing-unit-tiny 0;
+  }
+}

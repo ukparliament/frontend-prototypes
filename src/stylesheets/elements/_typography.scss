@@ -1,21 +1,20 @@
-// Base Typography Resets
+// Base Heading Settings
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   color: $headings;
 }
 
+// Base Typography Settings (pixels)
 p, a, ol, ul, dl {
-  // Baseline Typography Settings (pixels)
   @include fontmargin(16, 25);
-  // Desktop Typography Settings (pixels)
   @include media($desktop) {
     @include fontmargin(18, 30);
   }
 }
 
-// Fontsize Mixin Creates 'font-size' & 'line-height' in REM with PX fallback
-// Base Typography Settings (pixels)
+// Brand Heading Settings
+/* fontsize mixin creates 'font-size' & 'line-height' in rem with px fallback */
 h1 {
   @include fontsize(32, 40);
   @include fontmargin(32, 40);
@@ -40,12 +39,9 @@ h6 {
   @include fontsize(16, 23);
   @include fontmargin(16, 23);
 }
-.lead {
-  @include fontsize(18, 27);
-  @include fontmargin(18, 27);
-}
 
-// Desktop Typography Settings (pixels)
+// Brand Heading Settings - Desktop
+/* fontsize mixin creates 'font-size' & 'line-height' in rem with px fallback */
 @include media($desktop) {
   h1 {
     @include fontsize(36, 44);
@@ -74,5 +70,14 @@ h6 {
   .lead {
     @include fontsize(21, 33);
     @include fontmargin(21, 33);
+  }
+}
+
+// Component Heading Settings
+.list {
+  h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: bold;
   }
 }
