@@ -39,6 +39,10 @@ h6 {
   @include fontsize(16, 23);
   @include fontmargin(16, 23);
 }
+.lead {
+  @include fontsize(18, 27);
+  @include fontmargin(18, 27);
+}
 
 // Brand Heading Settings - Desktop
 /* fontsize mixin creates 'font-size' & 'line-height' in rem with px fallback */
