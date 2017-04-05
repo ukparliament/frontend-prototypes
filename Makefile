@@ -68,9 +68,6 @@ build_prod: lint build
 deploy:
 	aws s3 sync --acl=public-read --delete --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website
 
-deploy_prototypes:
-	aws s3 sync --acl=public-read --delete ./_public/ s3://$(AWS_ACCOUNT).pugin-website/prototypes/
-
 deploy_to_release:
 	aws s3 sync --acl=public-read --delete --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website/$(REL_TAG)
 
