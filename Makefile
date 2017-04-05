@@ -66,9 +66,9 @@ build: css js images templates
 build_prod: lint build
 
 deploy:
-	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/images
-	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/javascripts
-	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/stylesheets
+	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/images --recursive
+	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/javascripts --recursive
+	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/stylesheets --recursive
 	aws s3 sync --acl=public-read --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website
 
 deploy_to_release:
