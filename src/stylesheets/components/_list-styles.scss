@@ -51,11 +51,25 @@ footer .list {
 
 .list__item {
   @extend .list;
+  padding: 0;
   background: $white;
-  padding: $base-spacing-unit-medium;
   margin-bottom: $base-spacing-unit-tiny;
   &:last-child {
     margin-bottom: 0;
+  }
+  a {
+    @extend .list;
+    padding: $base-spacing-unit-small;
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    &:hover,
+    &:focus {
+      background-color: $grey-4;
+    }
   }
 }
 
