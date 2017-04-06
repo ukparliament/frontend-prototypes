@@ -76,7 +76,7 @@ footer {
   }
 }
 
-.slider-link {
+h2.slider-link {
   @include fontsize(24, 32);
   @include media($desktop) {
     @include fontsize(26, 34);
@@ -85,6 +85,7 @@ footer {
 
 .slider-content {
   h3 {
+    padding-bottom: $base-spacing-unit-small;
     @include fontsize(20, 28);
     @include media($desktop) {
       @include fontsize(24, 32);

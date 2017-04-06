@@ -19,13 +19,11 @@
     &:link,
     &:visited {
       color: $white;
-      text-decoration: underline;
     }
     &:hover,
     &:active,
     &:focus {
       color: $white;
-      text-decoration: none;
     }
   }
   @include media($mobile) {
