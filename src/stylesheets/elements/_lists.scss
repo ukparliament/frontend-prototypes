@@ -1,6 +1,6 @@
-// ORDERED & UNORDERED LISTS
 // Variables inherited from 'settings/_spacing.scss'
 
+// Ordered & Unordered Lists
 ul, ol {
   margin: 0 0 0 $base-spacing-unit-small;
   padding: 0;
@@ -11,8 +11,7 @@ li {
   margin: 0;
 }
 
-// DEFINITION LISTS
-
+// Definition Lists
 dl, dt, dd {
   margin: 0;
   padding: 0;

@@ -62,14 +62,13 @@ block content
           li= val
       p #[+link('http://www.niassembly.gov.uk/your-mlas/', 'Find your MLA')(target="_blank" title="website opens in new window")]
 
-
 //-block script
   script(type='text/javascript').
-    if (document.addEventListener) {
-      document.addEventListener("DOMContentLoaded", function() {
-        // Pass in id of slider's container followed by class name of element(s) you want as slider trigger(s)
-        contentSlider('content-slider', 'slider-link');
-      });
-    } else {
-      document.body.className = 'no-js';
-    }
+  if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", function() {
+      // Pass in id of slider's container followed by class name of element(s) you want as slider trigger(s)
+      contentSlider('content-slider', 'slider-link');
+    });
+  } else {
+    document.body.className = 'no-js';
+  }

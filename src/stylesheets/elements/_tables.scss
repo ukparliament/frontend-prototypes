@@ -1,4 +1,5 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 table {
   width: 100%;
   background: $white;
@@ -7,31 +8,28 @@ table {
   th, td {
     padding: $base-spacing-unit-tiny;
   }
-
   thead {
-  	border-bottom: 2px solid $black;
-  	th {
-  		background: $white;
-  		&:nth-child(even) {
-  			border-left: 1px solid $grey-4;
-  			border-right: 1px solid $grey-4;
-  		}
-  	}
+    border-bottom: 2px solid $black;
+      th {
+        background: $white;
+      &:nth-child(even) {
+        border-left: 1px solid $grey-4;
+        border-right: 1px solid $grey-4;
+      }
+    }
   }
-
   thead th, tfoot td {
     border: solid 1px $grey-4;
     text-align: left;
   }
-
   tbody tr {
-  	border-bottom: 1px solid $grey-4;
-  	&:last-of-type {
-  		border-bottom: 0;
-  	}
-  	td:nth-child(even) {
-  		border-left: 1px solid $grey-4;
-  		border-right: 1px solid $grey-4;
-  	}
+    border-bottom: 1px solid $grey-4;
+    &:last-of-type {
+      border-bottom: 0;
+    }
+    td:nth-child(even) {
+      border-left: 1px solid $grey-4;
+      border-right: 1px solid $grey-4;
+    }
   }
 }

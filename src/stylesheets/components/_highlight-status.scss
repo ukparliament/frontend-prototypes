@@ -1,6 +1,8 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 .highlight__status {
   @extend .block;
-  background-color: $footer-background;
+  background-color: $navy;
   padding-top: $base-spacing-unit-tiny;
   padding-bottom: $base-spacing-unit-tiny;
   p {
@@ -14,10 +16,7 @@
     }
   }
   a {
-    &:link {
-      color: $white;
-      text-decoration: underline;
-    }
+    &:link,
     &:visited {
       color: $white;
       text-decoration: underline;

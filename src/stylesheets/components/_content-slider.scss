@@ -1,61 +1,52 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 // Basic (non js) slider styling
 #content-slider {
   margin-bottom: $base-spacing-unit-small;
   padding-bottom: 0;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: $dividers;
+  border-bottom-color: $grey-3;
 }
 
 .slider-link {
   display: block;
   position: relative;
-  padding-top: $base-spacing-unit;
+  padding-top: $base-spacing-unit-small;
   padding-bottom: $base-spacing-unit-small;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: $dividers;
-  color: $headings;
+  border-top-color: $grey-3;
+  color: $navy;
   text-decoration: none;
-  @include fontsize(28, 36);
-  @include media($mobile) {
-    @include fontsize(24, 32);
-  }
 }
 
 .slider-content {
   padding-bottom: $base-spacing-unit-tiny;
-  & > h3 {
-    padding-bottom: $base-spacing-unit-small;
-    @include fontsize(24, 32);
-    @include media($mobile) {
-      @include fontsize(20, 28);
-    }
-  }
-  & > p {
+  h3 {
     padding-bottom: $base-spacing-unit-small;
   }
-  & > ul {
+  p {
+    padding-bottom: $base-spacing-unit-tiny;
+  }
+  ul {
     margin-left: $base-spacing-unit;
     padding-bottom: $base-spacing-unit-small;
   }
 }
+
 // Javascript enabled slider styling
 .has-js {
   .slider-link {
     padding-right: $base-spacing-unit-large;
-    color: $headings;
-    //color: $links;
-    //font-weight: bold;
-    //text-decoration: underline;
-    //cursor: pointer;
-    /*
+    color: $blue;
+    text-decoration: underline;
+    cursor: pointer;
     &:hover,
     &:active,
     &:focus {
       text-decoration: none;
     }
-    */
     & > span.open,
     & > span.close {
       display:block;

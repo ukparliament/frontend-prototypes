@@ -6,15 +6,18 @@
 .sr-only {
 	@include screenreader;
 }
+
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 .sr-only--focusable {
-	&:focus, &:active {
-		margin: 0;
-		clip: auto;
-    	width: auto;
-    	height: auto;
-    	color: $white;
-    	overflow: visible;
-    	background-color: $black;
-    	padding: $base-spacing-unit-tiny;
-	}
+  &:focus, &:active {
+    margin: 0;
+    clip: auto;
+    width: auto;
+    height: auto;
+    color: $white;
+    overflow: visible;
+    background-color: $black;
+    padding: $base-spacing-unit-tiny;
+  }
 }

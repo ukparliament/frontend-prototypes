@@ -1,0 +1,93 @@
+// Base Heading Settings
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  color: $navy;
+}
+
+// fontsize mixin creates 'font-size' & 'line-height' in rem with px fallback
+
+// Brand Heading Settings (pixels)
+h1 {
+  @include fontsize(32, 40);
+  @include fontmargin(32, 40);
+}
+h2 {
+  @include fontsize(28, 36);
+  @include fontmargin(28, 36);
+}
+h3 {
+  @include fontsize(24, 32);
+  @include fontmargin(24, 32);
+}
+h4 {
+  @include fontsize(21, 32);
+  @include fontmargin(21, 32);
+}
+h5 {
+  @include fontsize(18, 26);
+  @include fontmargin(18, 26);
+}
+h6 {
+  @include fontsize(16, 23);
+  @include fontmargin(16, 23);
+}
+
+// Brand Heading Settings - Desktop (pixels)
+@include media($desktop) {
+  h1 {
+    @include fontsize(36, 44);
+    @include fontmargin(36, 44);
+  }
+  h2 {
+    @include fontsize(32, 40);
+    @include fontmargin(32, 40);
+  }
+  h3 {
+    @include fontsize(26, 34);
+    @include fontmargin(26, 34);
+  }
+  h4 {
+    @include fontsize(22, 30);
+    @include fontmargin(22, 30);
+  }
+  h5 {
+    @include fontsize(20, 28);
+    @include fontmargin(20, 28);
+  }
+  h6 {
+    @include fontsize(18, 26);
+    @include fontmargin(18, 26);
+  }
+}
+
+// Component Heading Settings (pixels)
+footer {
+  h2 {
+    @include fontsize(18, 27);
+  }
+}
+
+.list {
+  h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: bold;
+  }
+}
+
+.slider-link {
+  @include fontsize(24, 32);
+  @include media($desktop) {
+    @include fontsize(26, 34);
+  }
+}
+
+.slider-content {
+  h3 {
+    @include fontsize(20, 28);
+    @include media($desktop) {
+      @include fontsize(24, 32);
+    }
+  }
+}

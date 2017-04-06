@@ -1,15 +1,15 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 header {
   .logo {
     text-decoration: none;
-    color: $headings;
-    @include fontsize(36, 52);
-    font-weight: bold;
+    color: $navy;
   }
 }
+
 footer {
   .logo {
-    color: $footer-text;
-    @include fontsize(18, 27);
+    color: $grey-5;
     margin: $base-spacing-unit-tiny 0;
   }
 }

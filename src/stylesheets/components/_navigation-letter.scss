@@ -1,3 +1,5 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 .navigation__letter {
   @include clearfix;
   list-style: none;
@@ -5,7 +7,7 @@
   margin-left: 0;
   & > li {
     display: inline-block;
-    width: 11.1111111111%;
+    width: 11.11111111111%;
     margin-top: 0;
     margin-bottom: 5px;
     margin-left: 0;
@@ -17,18 +19,17 @@
       margin-right: 0;
     }
     @include media($desktop) {
-      //width: 7.69230769231%;
       width: 3.84615384615%;
     }
   }
   & li.active > a {
-  	color: $headings;
-  	text-decoration: none;
-  	font-weight: bold;
+    color: $navy;
+    text-decoration: none;
+    font-weight: bold;
   }
   &:after {
-  	content: "";
-	  display: table;
-	  clear: both;
+    content: "";
+    display: table;
+    clear: both;
   }
 }

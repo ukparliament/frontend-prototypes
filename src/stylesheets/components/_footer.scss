@@ -1,19 +1,20 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 118px; // equal to body margin bottom
+  height: 118px; // equal to 'body' margin bottom
   padding-top: $base-spacing-unit-tiny;
-  background-color: $footer-background;
+  background-color: $navy;
   a:link, a:hover, a:active, a:focus, a:visited {
-    color: $footer-text;
-    @include fontsize(16, 24);
-    font-weight: normal;
+    color: $grey-5;
   }
   a:hover, a:active, a:focus {
     text-decoration: none;
   }
 }
+
 // Physical Print Styles
 @media print {
   footer {

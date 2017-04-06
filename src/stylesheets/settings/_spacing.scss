@@ -1,10 +1,7 @@
-// Create uniform spacing value by setting it equal to line height set in the fonts.scss file
-$base-spacing-unit-calc: $base-font-size * $base-line-height; // 24px
-$base-spacing-unit: ($base-spacing-unit-calc * 0.75) + 0px; // 18px
-
-// Using base spacing value create consistent spacing variations
-$base-spacing-unit-tiny: round($base-spacing-unit / 3); // 6px
-$base-spacing-unit-small: round($base-spacing-unit-tiny * 2); // 12px
-$base-spacing-unit-medium: round($base-spacing-unit); // 18px
-$base-spacing-unit-large: round($base-spacing-unit + $base-spacing-unit-tiny); // 24px
-$base-spacing-unit-extra-large: round($base-spacing-unit + $base-spacing-unit-small); // 30px
+// Create base vertcial spacing value and scale up accordingly.
+$base-spacing-unit: 6px;
+$base-spacing-unit-tiny: round($base-spacing-unit); // 6px
+$base-spacing-unit-small: round($base-spacing-unit * 2); // 12px
+$base-spacing-unit-medium: round($base-spacing-unit * 3); // 18px
+$base-spacing-unit-large: round($base-spacing-unit * 4); // 24px
+$base-spacing-unit-extra-large: round($base-spacing-unit * 5); // 30px

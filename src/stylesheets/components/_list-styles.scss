@@ -1,12 +1,16 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 // List resets
 ul, ol {
   margin: 0 0 0 $base-spacing-unit-small;
   padding: 0;
 }
+
 li {
   padding: 0;
   margin: 0;
 }
+
 dl, dt, dd {
   margin: 0;
   padding: 0;
@@ -40,12 +44,12 @@ footer .list {
   @extend .list;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: $dividers;
-  color: $paragraph;
+  border-bottom-color: $grey-3;
+  color: $grey-1;
   &:first-of-type {
     border-top-width: 1px;
     border-top-style: solid;
-    border-top-color: $dividers;
+    border-top-color: $grey-3;
   }
 }
 

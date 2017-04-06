@@ -1,3 +1,5 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 .block {
   display: block;
   margin: 0;
@@ -7,13 +9,13 @@
 
 .block--border-bottom {
   @extend .block;
-  border-bottom: 1px solid $dividers;
+  border-bottom: 1px solid $grey-3;
 }
 
 .block--border {
   @extend .block;
-  border-bottom: 1px solid $dividers;
-  border-top: 1px solid $dividers;
+  border-bottom: 1px solid $grey-3;
+  border-top: 1px solid $grey-3;
   & + .block--border {
     border-top: none;
   }

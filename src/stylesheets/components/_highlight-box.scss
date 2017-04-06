@@ -1,21 +1,23 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 .highlight__box {
   margin-bottom: $base-spacing-unit-small;
-  background-color: $highlight-primary-soft;
+  background-color: $primary-soft;
   padding-top: $base-spacing-unit-small;
   padding-right: $base-spacing-unit-small;
   padding-bottom: $base-spacing-unit-small;
   padding-left: $base-spacing-unit-small;
-  border-left-width: 5px;
+  border-left-width: $base-spacing-unit-tiny;
   border-left-style: solid;
-  border-left-color: $highlight-primary-bold;
-  color: $paragraph;
+  border-left-color: $primary;
+  color: $grey-1;
   a {
     &:link,
     &:visited,
     &:hover,
     &:active,
     &:focus {
-      color: $paragraph;
+      color: $grey-1;
     }
   }
   & + .highlight__box--secondary {
@@ -32,16 +34,17 @@
 
 .highlight__box--secondary {
   @extend .highlight__box;
-  background-color: $highlight-secondary-soft;
-  border-left-color: $highlight-secondary-bold;
+  background-color: $secondary-soft;
+  border-left-color: $secondary;
   & + .highlight__box {
     margin-bottom: 0;
   }
 }
+
 .highlight__box--caution {
   @extend .highlight__box;
-  background-color: $highlight-caution-soft;
-  border-left-color: $highlight-caution-bold;
+  background-color: $caution-soft;
+  border-left-color: $caution;
   & + .highlight__box {
     margin-bottom: 0;
   }

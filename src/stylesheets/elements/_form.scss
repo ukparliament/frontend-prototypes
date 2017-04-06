@@ -1,19 +1,11 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 .form-group {
   margin-bottom: $base-spacing-unit;
-
   input {
     float: left;
     margin-left: -1px;
   }
-}
-
-button,
-input,
-label,
-optgroup,
-select,
-textarea {
-  @include fontsize(14, 22);
 }
 
 form {
@@ -80,7 +72,7 @@ input[type="submit"] {
   padding-right: ($base-spacing-unit - 8);
 }
 
-
+// Physical Print Styles
 @media print {
   button,
   input[type="reset"],
@@ -89,4 +81,3 @@ input[type="submit"] {
     display: none;
   }
 }
-

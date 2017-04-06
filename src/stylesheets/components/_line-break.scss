@@ -1,7 +1,9 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
 .line-break-heavy {
   height: 4px;
   width: 60px;
   margin-top: $base-spacing-unit-small;
   margin-bottom: $base-spacing-unit-small;
-  background-color: $headings;
+  background-color: $navy;
 }

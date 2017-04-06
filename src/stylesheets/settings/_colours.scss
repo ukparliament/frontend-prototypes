@@ -1,45 +1,28 @@
-// PDS Base Colours
+// Parliament UK Core Colours
 $black: #000000;
 $white: #FFFFFF;
-$commons-green: #006E46;
-$lords-red: #A10700;
+$red: #A10700;
+$green: #006E46;
+$blue: #2B57AB;
+$blue-soft: #BFCDE6;
+$navy: #373151;
+$purple: #7C1389;
 
-// PDS Grey Palette
-$grey-2: #4D4D4D; // Dark Grey
-$grey-3: #CBC9CD; // Hard Grey
-$grey-4: #EBE9E8; // Soft Grey
-$grey-5: #F8F7F7; // Light Grey
+// Parliament UK Grey Colours
+$grey-1: #4D4D4D;
+$grey-2: #666666;
+$grey-3: #CBC9CD;
+$grey-4: #EBE9E8;
+$grey-5: #F8F7F7;
 
-// Components
-$header-bottom-border: #CBC9CD;
-$beta-banner: #96DCBE;
-$main-background: #F8F7F7;
-$footer-background: #373151;
-$footer-text: #F8F7F7;
-
-// Typography
-$headings: #373151;
-$paragraph: #4D4D4D;
-$dividers: #CBC9CD;
-
-// Links
-$links: #2B57AB;
-$links-hover: #373151;
-$links-active: #2B57AB;
-$links-visited: #7C1389;
-
-// Buttons
-$button-primary: #2B57AB;
-$button-secondary: #BFCDE6;
-
-// Notifications
-$highlight-primary-bold: #5F2DB4;
-$highlight-primary-soft: #E7DFF4;
-$highlight-secondary-bold: #96DCBE;
-$highlight-secondary-soft: #DFF4EB;
-$highlight-caution-bold: #FBCF20;
-$highlight-caution-soft: #FEF3C7;
-$highlight-warning-bold: #DE2E32;
-$highlight-warning-soft: #F7CBCC;
-$highlight-success-bold: #00B95D;
-$highlight-success-soft: #BFEDD6;
+// Parliament UK Status Colours
+$primary: #5F2DB4;
+$primary-soft: #E7DFF4;
+$secondary: #96DCBE;
+$secondary-soft: #DFF4EB;
+$caution: #FBCF20;
+$caution-soft: #FEF3C7;
+$warning: #DE2E32;
+$warning-soft: #F7CBCC;
+$success: #00B95D;
+$success-soft: #BFEDD6;
