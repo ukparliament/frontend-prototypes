@@ -1,70 +1,90 @@
 // Base Heading Settings
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+  margin-top: $base-spacing-unit-medium;
+  margin-bottom: $base-spacing-unit;
   padding: 0;
   color: $navy;
+  @include media($desktop) {
+    margin-top: $base-spacing-unit-large;
+  }
 }
 
-// fontsize mixin creates 'font-size' & 'line-height' in rem with px fallback
+// fontsize mixin creates 'font-size' in both REM & Pixels
 
-// Brand Heading Settings (pixels)
+// Brand Heading Settings - Mobile (pixels)
+
 h1 {
-  @include fontsize(32, 40);
-  @include fontmargin(32, 40);
+  @include fontsize(32);
+  line-height: 1.125; // 36px;
+  margin-top: $base-spacing-unit-extra-large;
+  margin-bottom: $base-spacing-unit-tiny;
 }
+
 h2 {
-  @include fontsize(28, 36);
-  @include fontmargin(28, 36);
+  @include fontsize(28);
+  line-height: 1.286; // 36px;
+  margin-top: $base-spacing-unit-extra-large;
+  margin-bottom: $base-spacing-unit-tiny;
 }
+
 h3 {
-  @include fontsize(24, 32);
-  @include fontmargin(24, 32);
+  @include fontsize(24);
+  line-height: 1.250; // 30px;
 }
+
 h4 {
-  @include fontsize(21, 32);
-  @include fontmargin(21, 32);
+  @include fontsize(21);
+  line-height: 1.143; // 24px;
 }
+
 h5 {
-  @include fontsize(18, 26);
-  @include fontmargin(18, 26);
+  @include fontsize(18);
+  line-height: 1.334; // 24px;
 }
+
 h6 {
-  @include fontsize(16, 23);
-  @include fontmargin(16, 23);
+  @include fontsize(16);
+  line-height: 1.5; // 24px;
 }
 
 // Brand Heading Settings - Desktop (pixels)
+
 @include media($desktop) {
   h1 {
-    @include fontsize(36, 44);
-    @include fontmargin(36, 44);
+    @include fontsize(36);
+    line-height: 1.167; // 42px
+    margin-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
+    margin-bottom: $base-spacing-unit-small;
   }
   h2 {
-    @include fontsize(32, 40);
-    @include fontmargin(32, 40);
+    @include fontsize(32);
+    line-height: 1.125; // 36px
+    margin-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
+    margin-bottom: $base-spacing-unit-small;
   }
   h3 {
-    @include fontsize(26, 34);
-    @include fontmargin(26, 34);
+    @include fontsize(26);
+    line-height: 1.154; // 30px
   }
   h4 {
-    @include fontsize(22, 30);
-    @include fontmargin(22, 30);
+    @include fontsize(22);
+    line-height: 1.364; // 30px
   }
   h5 {
-    @include fontsize(20, 28);
-    @include fontmargin(20, 28);
+    @include fontsize(20);
+    line-height: 1.2; // 24px
   }
   h6 {
-    @include fontsize(18, 26);
-    @include fontmargin(18, 26);
+    @include fontsize(18);
+    line-height: 1.334; // 24px;
   }
 }
 
 // Component Heading Settings (pixels)
+
 footer {
   h2 {
-    @include fontsize(18, 27);
+    @include fontsize(18);
   }
 }
 
@@ -77,18 +97,18 @@ footer {
 }
 
 h2.slider-link {
-  @include fontsize(24, 32);
+  @include fontsize(24);
   @include media($desktop) {
-    @include fontsize(26, 34);
+    @include fontsize(26);
   }
 }
 
 .slider-content {
   h3 {
-    padding-bottom: $base-spacing-unit-small;
-    @include fontsize(20, 28);
+    margin-bottom: $base-spacing-unit-tiny;
+    @include fontsize(20);
     @include media($desktop) {
-      @include fontsize(24, 32);
+      @include fontsize(24);
     }
   }
 }

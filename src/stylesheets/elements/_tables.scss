@@ -2,6 +2,8 @@
 
 table {
   width: 100%;
+  margin-top: 0;
+  margin-bottom: $base-spacing-unit-small;
   background: $white;
   border-collapse: collapse;
   border-spacing: 0;
@@ -9,9 +11,8 @@ table {
     padding: $base-spacing-unit-tiny;
   }
   thead {
-    border-bottom: 2px solid $black;
-      th {
-        background: $white;
+    th {
+      background: $white;
       &:nth-child(even) {
         border-left: 1px solid $grey-4;
         border-right: 1px solid $grey-4;
@@ -19,7 +20,7 @@ table {
     }
   }
   thead th, tfoot td {
-    border: solid 1px $grey-4;
+    border: solid 3px $grey-4;
     text-align: left;
   }
   tbody tr {
@@ -31,5 +32,10 @@ table {
       border-left: 1px solid $grey-4;
       border-right: 1px solid $grey-4;
     }
+  }
+  caption {
+    margin-top: 0;
+    margin-bottom: $base-spacing-unit-small;
+    text-align: left;
   }
 }

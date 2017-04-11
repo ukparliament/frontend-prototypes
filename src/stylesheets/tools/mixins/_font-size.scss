@@ -1,8 +1,6 @@
-// Pass in desired Pixel and Line Height values to get REM/Pixel fallback,
+// Pass in desired Pixel value to get REM/Pixel fallback
 
-@mixin fontsize($size, $line){
+@mixin fontsize($size){
   font-size:   $size + 0px;
-  line-height: $line + 0px;
   font-size:   ($size / 16) + 0rem;
-  line-height: ($line / 16) + 0rem;
 }

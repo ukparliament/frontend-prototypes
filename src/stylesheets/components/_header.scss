@@ -1,12 +1,14 @@
 // Variables inherited from 'settings/_colours.scss'
 
 header {
-  border-bottom-width: 3px;
+  border-bottom-width: 4px;
   border-bottom-style: solid;
   border-bottom-color: $grey-3;
+  padding: ($base-spacing-unit-small - 2) 0; // -4px to compensate for border height
 }
 
 // Physical Print Styles
+
 @media print {
   header {
     display: none;

@@ -1,23 +1,27 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
 .highlight__box {
+  margin-top: $base-spacing-unit-small;
   margin-bottom: $base-spacing-unit-small;
+  padding: $base-spacing-unit-small;
   background-color: $primary-soft;
-  padding-top: $base-spacing-unit-small;
-  padding-right: $base-spacing-unit-small;
-  padding-bottom: $base-spacing-unit-small;
-  padding-left: $base-spacing-unit-small;
-  border-left-width: $base-spacing-unit-tiny;
+  border-left-width: $base-spacing-unit;
   border-left-style: solid;
   border-left-color: $primary;
   color: $grey-1;
+  & > :first-child {
+    margin-top: 0;
+  }
+  & > :last-child {
+    margin-bottom: 0;
+  }
   a {
     &:link,
-    &:visited,
-    &:hover,
-    &:active,
-    &:focus {
+    &:visited {
       color: $grey-1;
+    }
+    &:hover {
+      color: $navy;
     }
   }
   & + .highlight__box--secondary {
@@ -26,16 +30,18 @@
   & + .highlight__box--caution {
     margin-bottom: 0;
   }
-  @include media($desktop) {
-    padding-right: $base-spacing-unit-medium;
-    padding-left: $base-spacing-unit-medium;
-  }
 }
 
 .highlight__box--secondary {
   @extend .highlight__box;
   background-color: $secondary-soft;
   border-left-color: $secondary;
+  &:focus {
+    background-color: $primary-soft;
+    outline: 3px solid $primary-soft;
+    color: $grey-1;
+    text-decoration: none;
+  }
   & + .highlight__box {
     margin-bottom: 0;
   }

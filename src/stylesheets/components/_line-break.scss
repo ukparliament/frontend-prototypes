@@ -3,7 +3,7 @@
 .line-break-heavy {
   height: 4px;
   width: 60px;
-  margin-top: $base-spacing-unit-small;
-  margin-bottom: $base-spacing-unit-small;
+  margin-top: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
+  margin-bottom: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
   background-color: $navy;
 }

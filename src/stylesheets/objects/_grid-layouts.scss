@@ -17,16 +17,12 @@
   @include row();
 }
 
-// Row - Indented Top & Bottom
+// Row - Indented Bottom, Left & Right
 .row--indent-full {
   @include row();
-  padding-top: $base-spacing-unit-large;
   padding-bottom: $base-spacing-unit-extra-large;
   padding-left: $base-spacing-unit-small;
   padding-right: $base-spacing-unit-small;
-  @include media($mobile) {
-    padding-top: $base-spacing-unit-small;
-  }
 }
 
 // Column - Float Layout 80:20

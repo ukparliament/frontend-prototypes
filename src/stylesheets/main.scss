@@ -5,7 +5,6 @@
 
 // Import tools & mixins
 @import 'tools/mixins/border-radius';
-@import 'tools/mixins/font-margin';
 @import 'tools/mixins/font-size';
 @import 'tools/mixins/screenreader';
 
@@ -31,6 +30,7 @@
 @import 'elements/media';
 @import 'elements/semantic-elements';
 @import 'elements/tables';
+@import 'elements/text-and-images';
 @import 'elements/typography';
 
 // Import site-wide components

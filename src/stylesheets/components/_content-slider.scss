@@ -21,17 +21,6 @@
   text-decoration: none;
 }
 
-.slider-content {
-  padding-bottom: $base-spacing-unit-tiny;
-  p {
-    padding-bottom: $base-spacing-unit-tiny;
-  }
-  ul {
-    margin-left: $base-spacing-unit;
-    padding-bottom: $base-spacing-unit-small;
-  }
-}
-
 // Javascript enabled slider styling
 .has-js {
   .slider-link {

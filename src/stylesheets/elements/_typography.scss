@@ -1,51 +1,49 @@
 // fontsize mixin creates 'font-size' & 'line-height' in rem with px fallback
 
 // Base Typography Settings (pixels)
-p, a, ol, ul, dl {
-  @include fontmargin(16, 25);
-  @include media($desktop) {
-    @include fontmargin(18, 30);
-  }
+
+p {
+  margin-top: 0;
+  margin-bottom: $base-spacing-unit-small;
+  line-height: 1.5 // 24px
 }
 
 .lead {
-  @include fontsize(18, 27);
-  @include fontmargin(18, 27);
+  @include fontsize(21);
+  line-height: 1.333; // 24px;
+  margin-bottom: $base-spacing-unit-extra-large;
   @include media($desktop) {
-    @include fontsize(21, 33);
-    @include fontmargin(21, 33);
+    @include fontsize(24);
+    line-height: 1.250; // 30px;
   }
 }
 
 // Component Typography Settings (pixels)
+
 header {
-  @include fontsize(36, 52);
+  @include fontsize(36);
+  line-height: 1.167; // 42px
   font-weight: bold;
 }
 
 footer {
   a {
-    @include fontsize(16, 24);
+    @include fontsize(16);
     font-weight: normal;
   }
 }
 
 .column__float--right-20 {
   p {
-    @include fontsize(30, 30);
+    @include fontsize(30);
     font-weight: bold;
     span {
-      @include fontsize(18, 30);
+      @include fontsize(18);
     font-weight: normal;
     }
   }
 }
 
-button,
-input,
-label,
-optgroup,
-select,
-textarea {
-  @include fontsize(14, 22);
+button, input, label, optgroup, select, textarea, figcaption {
+  @include fontsize(14);
 }

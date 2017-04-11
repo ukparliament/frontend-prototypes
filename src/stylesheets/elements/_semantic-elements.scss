@@ -1,11 +1,35 @@
-// Variables inherited from 'settings/_spacing.scss'
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
 header {
-  padding-top: $base-spacing-unit-small;
-  padding-bottom: $base-spacing-unit-small;
+  padding-top: ($base-spacing-unit-small - 2); // -2px to compensate for border height
+  padding-bottom: ($base-spacing-unit-small - 2); // -2px to compensate for border height
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: $grey-3;
 }
 
 main {
-  padding-top: $base-spacing-unit-large;
   padding-bottom: $base-spacing-unit-extra-large;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 118px; // equal to 'body' margin bottom
+  padding-top: $base-spacing-unit-tiny;
+  background-color: $navy;
+  a:link,
+  a:hover,
+  a:visited {
+    color: $grey-5;
+  }
+}
+
+// Physical Print Styles
+
+@media print {
+  header, footer {
+    display: none;
+  }
 }

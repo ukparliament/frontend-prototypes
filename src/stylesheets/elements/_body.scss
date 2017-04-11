@@ -4,6 +4,7 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   direction: ltr;
   margin-bottom: 118px; // equal to footer height
@@ -11,10 +12,12 @@ body {
   background-color: $grey-5;
   color: $grey-1;
   font-family: $base-font-stack;
-  // fontsize mixin creates 'font-size' & 'line-height' in rem with px fallback
-  @include fontsize(16, 25);
+  // fontsize mixin creates 'font-size' in both REM & Pixels
+  @include fontsize(14);
+  line-height: 1.286; // 18px
   @include media($desktop) {
-    @include fontsize(18, 30);
+    @include fontsize(16);
+    line-height: 1.5; // 24px
   }
   // font-smoothing - anti aliasing
   -webkit-font-smoothing: antialiased;

@@ -5,6 +5,9 @@ a {
     color: $blue;
     text-decoration: underline;
   }
+  &:visited {
+    color: $purple;
+  }
   &:hover {
     color: $navy;
     text-decoration: none;
@@ -14,10 +17,9 @@ a {
     text-decoration: none;
   }
   &:focus {
-    color: $blue;
+    background-color: $secondary;
+    outline: 3px solid $secondary;
+    color: $navy;
     text-decoration: none;
-  }
-  &:visited {
-    color: $purple;
   }
 }
