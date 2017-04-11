@@ -1,5 +1,5 @@
 nav(aria-label='Paged navigation')
-  ol.navigation__letter
+  ol.navigation
     each val, index in ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
       li(data-letter=val, class= (index === 0 ? "active" : undefined))
         a(data-atoz-see='true', href='#')= val

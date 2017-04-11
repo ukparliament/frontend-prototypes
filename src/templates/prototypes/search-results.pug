@@ -1,0 +1,14 @@
+extends ../../layouts/layout.pug
+block content
+
+	h1 Search results
+	form(action='search')
+		.form-group
+			label(for='search_box')
+			|
+			input#search_box(name='q', placeholder='Enter a keyword', type='text')
+			|
+			button(type='submit', value='Search') Search
+
+	.block
+		include ../../components/number-navigation.pug

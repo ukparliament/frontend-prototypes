@@ -1,25 +1,23 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
-.navigation__letter {
+.navigation {
   @include clearfix;
   list-style: none;
   margin-top: $base-spacing-unit-small;
   margin-left: 0;
   & > li {
     display: inline-block;
-    width: 11.11111111111%;
     margin-top: 0;
     margin-bottom: 5px;
     margin-left: 0;
-    float: left;
-    padding: 0;
-    text-align: center;
+    padding: 0 5.7px;
     text-transform: uppercase;
+    //width: 11.11111111111%;
     &:last-child {
       margin-right: 0;
     }
     @include media($desktop) {
-      width: 3.84615384615%;
+      //width: 3.84615384615%;
     }
   }
   & li.active > a {
@@ -31,5 +29,22 @@
     content: "";
     display: table;
     clear: both;
+  }
+}
+.navigation-control {
+  margin: 0;
+}
+.navigation-control--left {
+  float: left;
+  margin-right: $base-spacing-unit-small;
+}
+
+@include media($desktop) {
+  .navigation--number {
+    text-align: center;
+    padding: 0 $base-spacing-unit-extra-large * 3;
+  }
+  .navigation-control--right {
+    float: right;
   }
 }
