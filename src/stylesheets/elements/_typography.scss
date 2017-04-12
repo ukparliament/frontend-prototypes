@@ -26,24 +26,22 @@ header {
   font-weight: bold;
 }
 
-footer {
-  a {
-    @include fontsize(16);
-    font-weight: normal;
-  }
-}
-
 .column__float--right-20 {
   p {
-    @include fontsize(30);
+    @include fontsize(32);
+    line-height: 1.125; // 36px
     font-weight: bold;
     span {
       @include fontsize(18);
-    font-weight: normal;
+      line-height: 1.334; // 24px;
+      font-weight: normal;
     }
   }
 }
 
 button, input, label, optgroup, select, textarea, figcaption {
   @include fontsize(14);
+  @include media($desktop) {
+    @include fontsize(16);
+  }
 }

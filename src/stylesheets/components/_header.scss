@@ -1,10 +1,11 @@
-// Variables inherited from 'settings/_colours.scss'
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
 header {
+  padding-top: ($base-spacing-unit-small - 2); // -2px to compensate for border height
+  padding-bottom: ($base-spacing-unit-small - 2); // -2px to compensate for border height
   border-bottom-width: 4px;
   border-bottom-style: solid;
   border-bottom-color: $grey-3;
-  padding: ($base-spacing-unit-small - 2) 0; // -4px to compensate for border height
 }
 
 // Physical Print Styles

@@ -1,1 +1,22 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 126px; // equal to 'body' margin bottom
+  background-color: $navy;
+  a:link,
+  a:visited,
+  a:hover, {
+    color: $grey-5;
+  }
+}
+
+// Physical Print Styles
+
+@media print {
+  footer {
+    display: none;
+  }
+}

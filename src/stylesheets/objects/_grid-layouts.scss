@@ -25,24 +25,32 @@
   padding-right: $base-spacing-unit-small;
 }
 
-// Column - Float Layout 80:20
+// Column - Layout 80:20
 .column__float--left-80 {
-  width: 80%;
-  float: left;
+  width: 75%;
   display: inline-block;
 }
 
 .column__float--right-20 {
-  width: 20%;
-  float: left;
   display: inline-block;
   text-align: right;
   p {
     position: absolute;
-    right: $base-spacing-unit-medium;
-    top: calc(50% - 29px);
+    right: $base-spacing-unit-small;
+    top: calc(50% - 32px);
     span {
     display:block;
+    margin-top: $base-spacing-unit;
     }
+  }
+}
+
+.column__float--left-80,
+.column__float--right-20 {
+  & > :first-child {
+    margin-top: 0;
+  }
+  & > :last-child {
+    margin-bottom: 0;
   }
 }

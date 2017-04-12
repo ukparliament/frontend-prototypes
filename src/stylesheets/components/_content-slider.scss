@@ -13,7 +13,7 @@
   display: block;
   position: relative;
   padding-top: $base-spacing-unit-small;
-  padding-bottom: $base-spacing-unit-small;
+  padding-bottom: $base-spacing-unit;
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: $grey-3;
@@ -28,6 +28,10 @@
     color: $blue;
     text-decoration: underline;
     cursor: pointer;
+    &:hover {
+      color: $navy;
+      text-decoration: none;
+    }
     & > span.open,
     & > span.close {
       display:block;

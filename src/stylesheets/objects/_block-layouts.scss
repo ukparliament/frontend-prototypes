@@ -4,17 +4,6 @@
   display: block;
   margin: 0;
   padding: 0;
-  &:after,
-  &:before {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
-.block--border-bottom {
-  @extend .block;
-  border-bottom: 1px solid $grey-3;
 }
 
 .block--border {
@@ -36,4 +25,9 @@
 .block--top {
   @extend .block;
   padding-top: $base-spacing-unit-small;
+}
+
+.block--border-bottom {
+  @extend .block;
+  border-bottom: 1px solid $grey-3;
 }

@@ -84,7 +84,10 @@ h6 {
 
 footer {
   h2 {
-    @include fontsize(18);
+    @include fontsize(16);
+    @include media($desktop) {
+      @include fontsize(18);
+    }
   }
 }
 
@@ -98,17 +101,20 @@ footer {
 
 h2.slider-link {
   @include fontsize(24);
+  line-height: 1.250; // 30px;
   @include media($desktop) {
     @include fontsize(26);
+    line-height: 1.154; // 30px
   }
 }
 
 .slider-content {
   h3 {
-    margin-bottom: $base-spacing-unit-tiny;
     @include fontsize(20);
+    line-height: 1.2; // 24px
     @include media($desktop) {
       @include fontsize(24);
+      line-height: 1.250; // 30px;
     }
   }
 }

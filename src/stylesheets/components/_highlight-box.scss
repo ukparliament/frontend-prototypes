@@ -36,11 +36,9 @@
   @extend .highlight__box;
   background-color: $secondary-soft;
   border-left-color: $secondary;
-  &:focus {
+  a:focus {
     background-color: $primary-soft;
-    outline: 3px solid $primary-soft;
-    color: $grey-1;
-    text-decoration: none;
+    outline-color: $primary-soft;
   }
   & + .highlight__box {
     margin-bottom: 0;

@@ -65,11 +65,11 @@ input[type="submit"] {
   border-width: 1px;
   border-style: solid;
   border-color: $black;
-  font-weight: 600;
   padding-top: $base-spacing-unit-tiny;
   padding-bottom: $base-spacing-unit-tiny;
   padding-left: ($base-spacing-unit - 8);
   padding-right: ($base-spacing-unit - 8);
+  cursor: pointer;
 }
 
 // Physical Print Styles

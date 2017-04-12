@@ -10,7 +10,7 @@
     margin-top: 0;
     margin-bottom: 5px;
     margin-left: 0;
-    padding: 0 5.7px;
+    padding: 0 6.5px;
     text-transform: uppercase;
     //width: 11.11111111111%;
     &:last-child {
@@ -42,7 +42,7 @@
 @include media($desktop) {
   .navigation--number {
     text-align: center;
-    padding: 0 $base-spacing-unit-extra-large * 3;
+    padding: 0 ($base-spacing-unit-extra-large * 3);
   }
   .navigation-control--right {
     float: right;

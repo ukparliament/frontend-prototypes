@@ -1,35 +1,25 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
-header {
-  padding-top: ($base-spacing-unit-small - 2); // -2px to compensate for border height
-  padding-bottom: ($base-spacing-unit-small - 2); // -2px to compensate for border height
-  border-bottom-width: 4px;
-  border-bottom-style: solid;
-  border-bottom-color: $grey-3;
-}
-
 main {
   padding-bottom: $base-spacing-unit-extra-large;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 118px; // equal to 'body' margin bottom
-  padding-top: $base-spacing-unit-tiny;
-  background-color: $navy;
-  a:link,
-  a:hover,
-  a:visited {
-    color: $grey-5;
-  }
+blockquote {
+  margin-left: 0;
+  padding-left: $base-spacing-unit-small;
+  border-left: $base-spacing-unit solid $grey-3;
 }
 
-// Physical Print Styles
+figure {
+  margin: 0;
+}
 
-@media print {
-  header, footer {
-    display: none;
-  }
+figcaption {
+  margin-top: 0;
+  margin-bottom: $base-spacing-unit-small;
+  color: $grey-2;
+}
+
+mark {
+  background-color: $grey-3;
 }

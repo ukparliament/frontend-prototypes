@@ -5,7 +5,7 @@
 .list {
   @extend .block;
   position: relative;
-  margin-top: $base-spacing-unit-small;
+  margin-top: $base-spacing-unit-tiny;
   margin-bottom: $base-spacing-unit-small;
   list-style: none;
   ol, ul {
@@ -14,12 +14,23 @@
   }
 }
 
-// Variation - List
+// Variation Lists
 
-footer .list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.list__item {
+  @extend .list;
+  background: $white;
+  padding: $base-spacing-unit-small;
+  margin-top: $base-spacing-unit;
+  margin-bottom: $base-spacing-unit;
+  & > :first-child {
+    margin-top: 0;
+  }
+  & > :last-child {
+    margin-bottom: 0;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .list__item--secondary {
@@ -36,26 +47,14 @@ footer .list {
     margin-bottom: 0;
   }
   &:first-of-type {
+    margin-top: 0;
     padding-top: ($base-spacing-unit-small - 1); // -1px to compensate for border height
     padding-bottom: ($base-spacing-unit-small - 1); // -1px to compensate for border height
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: $grey-3;
   }
-}
-
-.list__item {
-  @extend .list;
-  background: $white;
-  padding: $base-spacing-unit-small;
-  margin-bottom: $base-spacing-unit-tiny;
-  & > :first-child {
-    margin-top: 0;
-  }
-  & > :last-child {
-    margin-bottom: 0;
-  }
-  &:last-of-type {
+  p {
     margin-bottom: 0;
   }
 }
@@ -72,6 +71,9 @@ footer .list {
   &:first-of-type {
     margin-top: $base-spacing-unit-small;
   }
+  &:last-of-type {
+    margin-bottom: $base-spacing-unit-small;
+  }
 }
 
 // Definition List - Nested Within Normal List
@@ -80,4 +82,12 @@ footer .list {
   @extend .list__definition;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+// Footer list
+
+footer .list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
