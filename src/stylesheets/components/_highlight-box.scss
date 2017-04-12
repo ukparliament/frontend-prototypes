@@ -24,9 +24,7 @@
       color: $navy;
     }
   }
-  & + .highlight__box--secondary {
-    margin-bottom: 0;
-  }
+  & + .highlight__box--secondary,
   & + .highlight__box--caution {
     margin-bottom: 0;
   }

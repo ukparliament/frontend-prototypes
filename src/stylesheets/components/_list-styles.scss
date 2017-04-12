@@ -5,8 +5,7 @@
 .list {
   @extend .block;
   position: relative;
-  margin-top: $base-spacing-unit-tiny;
-  margin-bottom: $base-spacing-unit-small;
+  margin: $base-spacing-unit-tiny 0 $base-spacing-unit-small;
   list-style: none;
   ol, ul {
     margin: 0;
