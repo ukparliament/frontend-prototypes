@@ -2,6 +2,8 @@
 
 main {
   padding-bottom: $base-spacing-unit-extra-large;
+  box-sizing: border-box;
+  min-height: 100%;
 }
 
 blockquote {
