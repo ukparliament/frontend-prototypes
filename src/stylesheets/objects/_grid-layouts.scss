@@ -1,15 +1,9 @@
 // Variables inherited from 'settings/_spacing.scss'
 
 // Container - Full Grid Width
-.container--full-grid {
+.container {
   padding: 0 $base-spacing-unit-small;
   @include outer-container;
-}
-
-// Container - Full Screen
-.container--full-screen {
-  padding: 0 $base-spacing-unit-small;
-  @include outer-container(100%);
 }
 
 // Row - Full Width
