@@ -3,7 +3,7 @@
 footer {
   width: 100%;
 	box-sizing: border-box; // 'box-sizing' basic support for our supported browsers
-	padding-top: $base-spacing-unit-small;
+	display: inline-block;
 	padding-bottom: $base-spacing-unit-small;
   background-color: $navy;
   a:link,
