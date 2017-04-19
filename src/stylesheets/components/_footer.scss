@@ -1,10 +1,10 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
 footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  height: 126px; // equal to 'body' margin bottom
+	box-sizing: border-box; // 'box-sizing' basic support for our supported browsers
+	display: inline-block;
+	padding-bottom: $base-spacing-unit-small;
   background-color: $navy;
   a:link,
   a:visited,

@@ -1,13 +1,18 @@
 extends ../../layouts/layout.pug
 block content
-  //- Page Title
-  h1 Lords
-  p A to Z - select a letter
-  //- Letter Navigation
-  include ../../components/letter-navigation.pug
-  //- Result List
-  ol.list
-    each object in [{name: 'Lord Aberdare', party: 'Crossbench'},{name: 'Baroness Adams of Craigielea', party: 'Labour'},{name: 'Lord Addington', party: 'Liberal Democrats'},{name: 'Lord Adebowale', party: 'Crossbench'},{name: 'Lord Adonis', party: 'Non-affiliated'}]
-      li.list__item
-        h2 #[+link('#', object.name)]
-        p= object.party
+  .section--primary
+    .container
+      //- Page Title
+      h1 Lords
+      p A to Z - select a letter
+      //- Letter Navigation
+      include ../../components/letter-navigation.pug
+
+  section
+    .container
+      //- Result List
+      ol.list
+        each object in [{name: 'Lord Aberdare', party: 'Crossbench'},{name: 'Baroness Adams of Craigielea', party: 'Labour'},{name: 'Lord Addington', party: 'Liberal Democrats'},{name: 'Lord Adebowale', party: 'Crossbench'},{name: 'Lord Adonis', party: 'Non-affiliated'}]
+          li.list__item
+            h2 #[+link('#', object.name)]
+            p= object.party

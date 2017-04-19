@@ -1,28 +1,32 @@
 extends ../../layouts/layout.pug
 block content
+  .section--primary
+    .container
+      h1 Welcome to the UK Parliament test website
+      .block
+        p We’re building a #[+link('#', 'new website for Parliament')]. These pages are being tested and improved - they may be inaccurate or misleading.
+        p Test pages are separate from the current #[+link('#', 'parliament.uk')] website.
+
   section
-    h1 Welcome to the UK Parliament test website
-    .block
-      p We’re building a #[+link('#', 'new website for Parliament')]. These pages are being tested and improved - they may be inaccurate or misleading.
-      p Test pages are separate from the current #[+link('#', 'parliament.uk')] website.
-    h2 Give feedback
-    .block
-      p We want your feedback to #[+link('#', 'help us improve these pages')] further.
-    h2 What's on our test website
-    .block
-      h3 Member information
-      ol.list
-        li.list__item
-          h4 #[+link('#', 'MPs')]
-          p All current members of the House of Commons
-        li.list__item
-          h4 #[+link('#', 'Lords')]
-          p All current members of the House of Lords
-        li.list__item
-          h4 #[+link('#', 'Constituencies')]
-          p Find MPs by the area they represent
-        li.list__item
-          h4 #[+link('#', 'Parties and groups')]
-          p Find MPs and Lords by their party or group
-    h2 Follow our progress
-    p Follow all #[+link('#', 'new website developments on our blog')].
+    .container
+      h2 Give feedback
+      .block
+        p We want your feedback to #[+link('#', 'help us improve these pages')] further.
+      h2 What's on our test website
+      .block
+        h3 Member information
+        ol.list
+          li.list__item
+            h4 #[+link('#', 'MPs')]
+            p All current members of the House of Commons
+          li.list__item
+            h4 #[+link('#', 'Lords')]
+            p All current members of the House of Lords
+          li.list__item
+            h4 #[+link('#', 'Constituencies')]
+            p Find MPs by the area they represent
+          li.list__item
+            h4 #[+link('#', 'Parties and groups')]
+            p Find MPs and Lords by their party or group
+      h2 Follow our progress
+      p Follow all #[+link('#', 'new website developments on our blog')].

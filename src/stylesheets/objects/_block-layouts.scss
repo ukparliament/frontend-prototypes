@@ -31,3 +31,24 @@
   @extend .block;
   border-bottom: 1px solid $grey-3;
 }
+.section--primary {
+  padding-top: $base-spacing-unit-extra-large;
+}
+.section--primary.highlight {
+  padding-bottom: $base-spacing-unit-extra-large;
+}
+.section--major {
+  padding: $base-spacing-unit-extra-large 0;
+}
+
+@include media($desktop) {
+  .section--primary {
+    padding-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
+  }
+  .section--primary.highlight {
+    padding-bottom: ($base-spacing-unit-extra-large + $base-spacing-unit);
+  }
+  .section--major {
+    padding: ($base-spacing-unit-extra-large + $base-spacing-unit) 0;
+  }
+}
