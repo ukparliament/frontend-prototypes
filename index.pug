@@ -8,7 +8,6 @@ html(lang="en")
   body.no-js
     include elements/mixins.pug
     include elements/skip-content.pug
-    +link()(id='top')
       .container
         h1 Parliamentary Digital Service
         h2 [Prototypes] - Members
@@ -27,5 +26,3 @@ html(lang="en")
           li These are static html files
           li Links will either not be working or go to the correct location
           li Styles for desktop view are not complete
-        //- Back to Top
-        p #[+link('#top', 'Back to the top')]

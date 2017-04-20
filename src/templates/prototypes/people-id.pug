@@ -6,11 +6,9 @@ block content
       h1 Diane Abbott
       .block--border
         p.lead MP for #[+link('#', 'Hackney North and Stoke Newington')(class='lead')]
+        p #[+link('#', 'View all current Labour MPs')]
       .block--border
         p.lead Labour
-        .line-break-heavy
-        p #[+link('#', 'View all current Labour MPs')]
-
   section
     .container
       h2 Contact Details
@@ -40,7 +38,7 @@ block content
   section
     .container
       //- Membership History
-      h2 Membership History
+      h2 Biography
       h3 Lords
       ol.list
         each object in [{sitting_duration: '1987 - 2015', party: 'Labour'}]
