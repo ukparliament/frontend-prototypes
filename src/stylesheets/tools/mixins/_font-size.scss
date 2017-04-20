@@ -1,6 +1,0 @@
-// Pass in desired Pixel value to get REM/Pixel fallback
-
-@mixin fontsize($size){
-  font-size:   $size + 0px;
-  font-size:   ($size / 16) + 0rem;
-}

@@ -2,16 +2,15 @@ extends ../../layouts/layout.pug
 
 block content
   //- Page Title
-  .section--primary
+  .section--primary(id="content")
     .container
       h1 Who should I contact with my issue?
-      .block
-        each val in ['MPs and Lords can help with issues that are the responsibility of UK Parliament.', 'But often the right person to contact will be a local councillor, Citizens Advice or an ombudsman.', 'If you live in Scotland, Wales or Northern Ireland you may need to contact your Member of the Scottish Parliament, Welsh Assembly Member or Member of the Legislative Assembly.']
-          p= val
+      each val in ['MPs and Lords can help with issues that are the responsibility of UK Parliament.', 'But often the right person to contact will be a local councillor, Citizens Advice or an ombudsman.', 'If you live in Scotland, Wales or Northern Ireland you may need to contact your Member of the Scottish Parliament, Welsh Assembly Member or Member of the Legislative Assembly.']
+        p= val
 
   section
     .container
-      .block#content-slider
+      div(id="content-slider")
         //- When to contact your MP
         +slider('When should I contact an MP or Lord?')
           p Members of Parliament (MPs) and Lords represent you in Parliament and can help with issues such as:
