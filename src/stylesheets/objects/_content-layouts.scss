@@ -1,0 +1,78 @@
+// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+
+// Section Options
+
+.section--primary {
+  padding-top: $base-spacing-unit-extra-large;
+}
+.section--minor {
+  padding: $base-spacing-unit-tiny 0;
+}
+.section--major {
+  padding: $base-spacing-unit-extra-large 0;
+}
+
+@include media($desktop) {
+  .section--primary {
+    padding-top: $base-spacing-unit-large;
+  }
+  .section--major {
+    padding: $base-spacing-unit-extra-large 0;
+  }
+  .section--minor {
+    padding: $base-spacing-unit-tiny 0 $base-spacing-unit-small;
+  }
+}
+
+// Container Options
+
+.container {
+  padding: 0 $base-spacing-unit-small;
+  @include outer-container;
+}
+
+// Block Options
+
+.block--border {
+  padding-top: ($base-spacing-unit-small - 1); // -1px to compensate for border height
+  padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
+  border-bottom: 1px solid $grey-3;
+  border-top: 1px solid $grey-3;
+  p {
+    margin-bottom: $base-spacing-unit;
+  }
+  & + .block--border {
+    border-top: none;
+    padding-top: $base-spacing-unit-small;
+    padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
+  }
+}
+
+// Column Layout Options
+
+.column-75,
+.column-25 {
+  display: inline-block;
+  & > :first-child {
+    margin-top: 0;
+  }
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.column-75 {
+  width: 75%;
+}
+
+.column-25 {
+  p {
+    position: absolute;
+    right: $base-spacing-unit-small;
+    top: calc(50% - 28px);
+    text-align: right;
+    span {
+    display:block;
+    }
+  }
+}
