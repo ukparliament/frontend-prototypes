@@ -4,7 +4,7 @@
 
 .list {
   position: relative;
-  margin: 0 0 $base-spacing-unit-small;
+  margin: $base-spacing-unit-tiny 0 $base-spacing-unit-small;
   list-style: none;
   ol, ul {
     margin: 0;
@@ -20,12 +20,11 @@
   padding: $base-spacing-unit-small;
   margin-top: $base-spacing-unit;
   margin-bottom: $base-spacing-unit;
-  & > :first-child {
+  & > :first-child,
+  &:first-of-type {
     margin-top: 0;
   }
-  & > :last-child {
-    margin-bottom: 0;
-  }
+  & > :last-child,
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -33,6 +32,9 @@
 
 .list__item--secondary {
   @extend .list;
+  margin-top: 0;
+  margin-bottom:0;
+  padding-top: $base-spacing-unit-tiny;
   padding-bottom: ($base-spacing-unit-small - 1); // -1px to compensate for border height
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -41,18 +43,15 @@
   & > :first-child {
     margin-top: 0;
   }
-  & > :last-child {
-    margin-bottom: 0;
-  }
   &:first-of-type {
-    margin-top: 0;
     padding-top: ($base-spacing-unit-small - 1); // -1px to compensate for border height
     padding-bottom: ($base-spacing-unit-small - 1); // -1px to compensate for border height
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: $grey-3;
   }
-  p {
+  & > :last-child,
+  &:last-of-type {
     margin-bottom: 0;
   }
 }
@@ -75,10 +74,11 @@
 
 // Definition List - Nested Within Normal List
 
-.list__definition--list-item {
+.list__definition--secondary {
   @extend .list__definition;
-  padding-top: 0;
-  padding-bottom: 0;
+  &:first-of-type {
+    margin-top: 0;
+  }
 }
 
 // Footer list

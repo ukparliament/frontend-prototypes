@@ -12,12 +12,8 @@
     margin-left: 0;
     padding: 0 6.5px;
     text-transform: uppercase;
-    //width: 11.11111111111%;
     &:last-child {
       margin-right: 0;
-    }
-    @include media($desktop) {
-      //width: 3.84615384615%;
     }
   }
   & li.active > a {
@@ -31,9 +27,11 @@
     clear: both;
   }
 }
+
 .navigation-control {
   margin: 0;
 }
+
 .navigation-control--left {
   float: left;
   margin-right: $base-spacing-unit-small;
