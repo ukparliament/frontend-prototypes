@@ -3,9 +3,8 @@
 // Base lists (ordered/unordered)
 
 .list {
-  @extend .block;
   position: relative;
-  margin: $base-spacing-unit-tiny 0 $base-spacing-unit-small;
+  margin: 0 0 $base-spacing-unit-small;
   list-style: none;
   ol, ul {
     margin: 0;
@@ -61,7 +60,6 @@
 // Definition List - Horizontally Aligned
 
 .list__definition {
-  @extend .block;
   & dt {
     float: left;
     clear: left;

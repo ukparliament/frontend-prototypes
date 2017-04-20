@@ -1,57 +1,57 @@
 extends ../../layouts/layout.pug
 block content
-  .section--primary
+  .section--primary(id="content")
     .container
       //- Name & Affliation
       h1 Diane Abbott
-      .block
-        .block--border
-          p.lead MP for #[+link('#', 'Hackney North and Stoke Newington')(class='lead')]
-        .block--border
-          p.lead Labour
-          .line-break-heavy
-          p #[+link('#', 'View all current Labour MPs')]
+      .block--border
+        p.lead MP for #[+link('#', 'Hackney North and Stoke Newington')(class='lead')]
+      .block--border
+        p.lead Labour
+        .line-break-heavy
+        p #[+link('#', 'View all current Labour MPs')]
+
   section
     .container
       h2 Contact Details
       //- Representative Information
-      .block
-        .highlight__box
-          p Find out #[+link('#', "When an MP can help you and when they can't")].
-          p If you contact an MP who does not represent your constituency, they may not get back to you.
-        .highlight__box--caution
-          p Please include your postcode when emailing an MP.
-        //- Contact Details
-        dl.list__definition
-          dt Email:
-          dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
-          dt Phone:
-          dd #[+link('tel:02072194426', '020 7219 4426')]
-          dt Address:
-          dd House of Commons, London, SW1A 0AA
-        .line-break-heavy
-        dl.list__definition
-          dt Email:
-          dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
-          dt Phone:
-          dd #[+link('tel:02072194426', '020 7219 4426')]
-          dt Address:
-          dd House of Commons, London, SW1A 0AA
+      .highlight__box.highlight--primary
+        p Find out #[+link('#', "When an MP can help you and when they can't")].
+        p If you contact an MP who does not represent your constituency, they may not get back to you.
+      .highlight__box.highlight--caution
+        p Please include your postcode when emailing an MP.
+      //- Contact Details
+      dl.list__definition
+        dt Email:
+        dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
+        dt Phone:
+        dd #[+link('tel:02072194426', '020 7219 4426')]
+        dt Address:
+        dd House of Commons, London, SW1A 0AA
+      .line-break-heavy
+      dl.list__definition
+        dt Email:
+        dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
+        dt Phone:
+        dd #[+link('tel:02072194426', '020 7219 4426')]
+        dt Address:
+        dd House of Commons, London, SW1A 0AA
+
   section
     .container
       //- Membership History
       h2 Membership History
-      .block
-        h3 Lords
-        ol.list
-          each object in [{sitting_duration: '1987 - 2015', party: 'Labour'}]
-            li.list__item--secondary
-              p= object.sitting_duration
-              p #[+link('#', object.party)]
-        h3 Commons
-        ol.list
-          each object in [{constituency: 'Hackney North and Stoke Newington', sitting_duration: '2015 - Current', party: "Labour"},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '1987 - 2015', party: 'Labour'}]
-            li.list__item--secondary
-              p MP for #[+link('#', object.constituency)]
-              p= object.sitting_duration
-              p #[+link('#', object.party)]
+      h3 Lords
+      ol.list
+        each object in [{sitting_duration: '1987 - 2015', party: 'Labour'}]
+          li.list__item--secondary
+            p= object.sitting_duration
+            p #[+link('#', object.party)]
+
+      h3 Commons
+      ol.list
+        each object in [{constituency: 'Hackney North and Stoke Newington', sitting_duration: '2015 - Current', party: "Labour"},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '1987 - 2015', party: 'Labour'}]
+          li.list__item--secondary
+            p MP for #[+link('#', object.constituency)]
+            p= object.sitting_duration
+            p #[+link('#', object.party)]
