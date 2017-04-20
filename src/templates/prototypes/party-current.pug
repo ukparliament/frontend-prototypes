@@ -4,14 +4,13 @@ block content
     .container
       //- Page Title
       h1 Parties and groups
-      .block
-        .link__tab
-          .link__tab--item.active
-            p Commons
-          .link__tab--item
-            +link('#', "Lords")
+      .link__tab
+        .link__tab--item.active
+          p Commons
+        .link__tab--item
+          +link('#', "Lords")
 
-  section
+  section(id="content")
     .container
       //- Option Tags
       ol.list

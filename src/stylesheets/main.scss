@@ -4,9 +4,7 @@
 @import 'settings/colours';
 
 // Import tools & mixins
-@import 'tools/mixins/border-radius';
-@import 'tools/mixins/font-size';
-@import 'tools/mixins/screenreader';
+@import 'tools/mixins';
 
 // Vendor files
 @import '../../node_modules/bourbon-neat/app/assets/stylesheets/neat';
@@ -36,8 +34,7 @@
 @import 'components/content-slider';
 @import 'components/footer';
 @import 'components/header';
-@import 'components/highlight-box';
-@import 'components/highlight-status';
+@import 'components/highlight';
 @import 'components/line-break';
 @import 'components/link-tab';
 @import 'components/list-styles';
