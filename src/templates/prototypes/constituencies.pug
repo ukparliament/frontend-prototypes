@@ -1,0 +1,16 @@
+extends ../../layouts/layout.pug
+block content
+	//- Page Title
+	h1 Current and former constituencies
+	p A to Z - Showing results for A
+	//- Letter Navigation
+	include ../../components/letter-navigation.pug
+	//- Result List
+	ol.list
+		each object in [{name: 'Aberdeen North', state: 'Former constituency', date: 'From 9 Jun 1983 to 1 May 1997'},{name: 'Aberdeen North', state: 'Current constituency', date: 'From 5 Apr 2005 to present'},{name: 'Aberdeen North', state: 'Former constituency', date: 'From 14 Dec 1918 to 23 Feb 1950'}]
+			li.list__item
+				h2
+					a(href='#')
+						= object.name
+						span.sr-only
+							= object.state + ', ' + object.date
