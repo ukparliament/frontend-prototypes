@@ -1,0 +1,37 @@
+// Pass in desired Pixel value to get REM/Pixel fallback
+@mixin fontsize($size){
+  font-size:   $size + 0px;
+  font-size:   ($size / 16) + 0rem;
+}
+
+// Pass in background colour, border color, typography, hover colour
+@mixin highlight-color($background, $border, $color, $hover-color){
+  background-color: $background !important;
+  border-color: $border !important;
+  color: $color;
+
+  a {
+    &:link,
+    &:visited {
+      color: $color;
+    }
+    &:focus {
+      color: $black;
+    }
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+// Screen reader visible only
+@mixin screenreader {
+  width: 1px;
+  padding: 0;
+  height: 1px;
+  margin: -1px;
+  border: none;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+}

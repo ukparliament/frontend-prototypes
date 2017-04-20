@@ -6,10 +6,11 @@ block content
       h1 Current MPs in the House of Commons
       p A to Z - select a letter
 
-  section
-    .container
       //- Letter Navigation
       include ../../components/letter-navigation.pug
+
+  section(id="content")
+    .container
       //- Result List
       ol.list
         each object in [{name: 'Abbott, Diane', constituency: 'MP for Hackney North and Stoke Newington', party: 'Labour'},{name: 'Abrahams, Debbie', constituency: 'MP for Oldham East and Saddleworth', party: 'Labour'},{name: 'Adams, Nigel', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Ahmed-Sheikh, Tasmina', constituency: 'MP for Ochil and South Perthshire', party: 'Scottish National Party'},{name: 'Aldous, Peter', constituency: 'MP for Waveney', party: 'Conservative'}]
