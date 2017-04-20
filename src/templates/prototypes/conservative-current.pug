@@ -1,15 +1,19 @@
 extends ../../layouts/layout.pug
 block content
-  //- Page Title
-  h1 Current Conservative members of Parliament
-  .block
-    p.lead A to Z - select a letter
-    //- Letter Navigation
-    include ../../components/letter-navigation.pug
-  //- Result List
-  ol.list
-    each object in [{name: 'Nigel Adams', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Adam Afriyie', constituency: 'MP for Windsor', party: 'Conservative'},{name: 'Peter Aldous', constituency: 'MP for Waveney', party: 'Conservative'},{name: 'Lucy Allan', constituency: 'MP for Telford', party: 'Conservative'},{name: 'Heidi Allen', constituency: 'MP for South Cambridgeshire', party: 'Conservative'}]
-      li.list__item
-        h2 #[+link('#', object.name)]
-        p= object.constituency
-        p= object.party
+  .section--primary
+    .container
+      //- Page Title
+      h1 Current Conservative members of Parliament
+      p.lead A to Z - select a letter
+      //- Letter Navigation
+      include ../../components/letter-navigation.pug
+
+  section(id="content")
+    .container
+      //- Result List
+      ol.list
+        each object in [{name: 'Nigel Adams', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Adam Afriyie', constituency: 'MP for Windsor', party: 'Conservative'},{name: 'Peter Aldous', constituency: 'MP for Waveney', party: 'Conservative'},{name: 'Lucy Allan', constituency: 'MP for Telford', party: 'Conservative'},{name: 'Heidi Allen', constituency: 'MP for South Cambridgeshire', party: 'Conservative'}]
+          li.list__item
+            h2 #[+link('#', object.name)]
+            p= object.constituency
+            p= object.party

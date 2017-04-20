@@ -2,65 +2,69 @@ extends ../../layouts/layout.pug
 
 block content
   //- Page Title
-  h1 Who should I contact with my issue?
-  .block
-    each val in ['MPs and Lords can help with issues that are the responsibility of UK Parliament.', 'But often the right person to contact will be a local councillor, Citizens Advice or an ombudsman.', 'If you live in Scotland, Wales or Northern Ireland you may need to contact your Member of the Scottish Parliament, Welsh Assembly Member or Member of the Legislative Assembly.']
-      p= val
-  .block#content-slider
-    //- When to contact your MP
-    +slider('When should I contact an MP or Lord?')
-      p Members of Parliament (MPs) and Lords represent you in Parliament and can help with issues such as:
-      ul
-        each val in ['Hospitals and the NHS', 'Problems with benefits, pensions and national insurance', 'Immigration', 'School closures and funding', 'Transport facilities']
-          li= val
-      p #[+link('https://beta.parliament.uk/houses/4b77dd58-f6ba-4121-b521-c8ad70465f52/members/current/a-z/a', 'Find MPs')(target="_blank" title="website opens in new window")]
-      p #[+link('https://beta.parliament.uk/houses/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4/members/current/a-z/a', 'Find Lords')(target="_blank" title="website opens in new window")]
-    //- When to contact your local council
-    +slider('When should I contact my Local Council?')
-      p Your local council can help with local issues such as:
-      ul
-        each val in ['Council Tax', 'Housing', 'Bins and recycling', 'Street repairs and parking', 'Children and families', 'Schools and learning']
-          li= val
-      p #[+link('https://www.gov.uk/find-local-council', 'Find your local council')(target="_blank" title="website opens in new window")]
-    //- When to contact Citizens Advice
-    +slider('When should I contact Citizens Advice?')
-      p For free, impartial advice on money, legal and consumer issues contact #[+link('https://www.citizensadvice.org.uk', 'Citizens Advice')(target="_blank" title="website opens in new window")]
-    //- When to contact an Ombudsman
-    +slider('When should I contact the Ombudsman Association?')
-      p If you have a private dispute with a landlord, employer or company, the #[+link('http://www.ombudsmanassociation.org', 'Ombudsman Association')(target="_blank" title="website opens in new window")] may be able to help.
-    //- When to contact the Government
-    +slider('When should I contact the government?')
-      p Visit #[+link('https://www.gov.uk', 'GOV.UK')(target="_blank" title="website opens in new window")] for Government services such as:
-      ul
-        each val in ['Benefits entitlement', 'Money and tax', 'Business guidance', 'Visas and citizenship', 'Licence applications', 'Passports and travel advice']
-          li= val
-    //- When to contact your MEP
-    +slider('When should I contact my Member of European Parliament?')
-      p Your MEP (Member of European Parliament) can help with EU-wide issues such as:
-      ul
-        each val in ['Employment and working conditions', 'Consumer protection (for example roaming charges for mobile phones)', 'Environment standards']
-          li= val
-      p #[+link('http://www.europarl.org.uk/en/your-meps/uk_meps.html', 'Find your MEP')(target="_blank" title="website opens in new window")]
-    //- If you live in Scotland, Wales or Northern Ireland
-    +slider('Do you live in Scotland, Wales or Northern Ireland?')
-      h3 Scotland
-      p Your MSP (Member of the Scottish Parliament) can help you with issues such as:
-      ul
-        each val in ['Health services', 'Education', 'Law and courts', 'Transport', 'Social services']
-          li= val
-      p #[+link('http://www.parliament.scot/msps.aspx', 'Find your MSP')(target="_blank" title="website opens in new window")]
-      h3 Wales
-      p AMs (Welsh Assembly Members) can help you with issues such as:
-      ul
-        each val in ['Health services', 'Education', 'Law and courts', 'Flood defences', 'Social services']
-          li= val
-      p #[+link('http://senedd.assembly.wales/mgFindMember.aspx', 'Find your AM')(target="_blank" title="website opens in new window")]
-      h3 Northern Ireland
-      p MLAs (Members of the Legislative Assembly) can help you with issues such as:
-      ul
-        each val in ['Health services', 'Education', 'Employment', 'Social services', 'Trade and investment']
-          li= val
-      p #[+link('http://www.niassembly.gov.uk/your-mlas/', 'Find your MLA')(target="_blank" title="website opens in new window")]
+  .section--primary(id="content")
+    .container
+      h1 Who should I contact with my issue?
+      each val in ['MPs and Lords can help with issues that are the responsibility of UK Parliament.', 'But often the right person to contact will be a local councillor, Citizens Advice or an ombudsman.', 'If you live in Scotland, Wales or Northern Ireland you may need to contact your Member of the Scottish Parliament, Welsh Assembly Member or Member of the Legislative Assembly.']
+        p= val
+
+  section
+    .container
+      div(id="content-slider")
+        //- When to contact your MP
+        +slider('When should I contact an MP or Lord?')
+          p Members of Parliament (MPs) and Lords represent you in Parliament and can help with issues such as:
+          ul
+            each val in ['Hospitals and the NHS', 'Problems with benefits, pensions and national insurance', 'Immigration', 'School closures and funding', 'Transport facilities']
+              li= val
+          p #[+link('https://beta.parliament.uk/houses/4b77dd58-f6ba-4121-b521-c8ad70465f52/members/current/a-z/a', 'Find MPs')(target="_blank" title="website opens in new window")]
+          p #[+link('https://beta.parliament.uk/houses/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4/members/current/a-z/a', 'Find Lords')(target="_blank" title="website opens in new window")]
+        //- When to contact your local council
+        +slider('When should I contact my Local Council?')
+          p Your local council can help with local issues such as:
+          ul
+            each val in ['Council Tax', 'Housing', 'Bins and recycling', 'Street repairs and parking', 'Children and families', 'Schools and learning']
+              li= val
+          p #[+link('https://www.gov.uk/find-local-council', 'Find your local council')(target="_blank" title="website opens in new window")]
+        //- When to contact Citizens Advice
+        +slider('When should I contact Citizens Advice?')
+          p For free, impartial advice on money, legal and consumer issues contact #[+link('https://www.citizensadvice.org.uk', 'Citizens Advice')(target="_blank" title="website opens in new window")]
+        //- When to contact an Ombudsman
+        +slider('When should I contact the Ombudsman Association?')
+          p If you have a private dispute with a landlord, employer or company, the #[+link('http://www.ombudsmanassociation.org', 'Ombudsman Association')(target="_blank" title="website opens in new window")] may be able to help.
+        //- When to contact the Government
+        +slider('When should I contact the government?')
+          p Visit #[+link('https://www.gov.uk', 'GOV.UK')(target="_blank" title="website opens in new window")] for Government services such as:
+          ul
+            each val in ['Benefits entitlement', 'Money and tax', 'Business guidance', 'Visas and citizenship', 'Licence applications', 'Passports and travel advice']
+              li= val
+        //- When to contact your MEP
+        +slider('When should I contact my Member of European Parliament?')
+          p Your MEP (Member of European Parliament) can help with EU-wide issues such as:
+          ul
+            each val in ['Employment and working conditions', 'Consumer protection (for example roaming charges for mobile phones)', 'Environment standards']
+              li= val
+          p #[+link('http://www.europarl.org.uk/en/your-meps/uk_meps.html', 'Find your MEP')(target="_blank" title="website opens in new window")]
+        //- If you live in Scotland, Wales or Northern Ireland
+        +slider('Do you live in Scotland, Wales or Northern Ireland?')
+          h3 Scotland
+          p Your MSP (Member of the Scottish Parliament) can help you with issues such as:
+          ul
+            each val in ['Health services', 'Education', 'Law and courts', 'Transport', 'Social services']
+              li= val
+          p #[+link('http://www.parliament.scot/msps.aspx', 'Find your MSP')(target="_blank" title="website opens in new window")]
+          h3 Wales
+          p AMs (Welsh Assembly Members) can help you with issues such as:
+          ul
+            each val in ['Health services', 'Education', 'Law and courts', 'Flood defences', 'Social services']
+              li= val
+          p #[+link('http://senedd.assembly.wales/mgFindMember.aspx', 'Find your AM')(target="_blank" title="website opens in new window")]
+          h3 Northern Ireland
+          p MLAs (Members of the Legislative Assembly) can help you with issues such as:
+          ul
+            each val in ['Health services', 'Education', 'Employment', 'Social services', 'Trade and investment']
+              li= val
+          p #[+link('http://www.niassembly.gov.uk/your-mlas/', 'Find your MLA')(target="_blank" title="website opens in new window")]
 
 //-block script
   script(type='text/javascript').

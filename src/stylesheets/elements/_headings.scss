@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   @include fontsize(32);
   line-height: 1.125; // 36px;
-  margin-top: $base-spacing-unit-extra-large;
+  margin-top: 0;
   margin-bottom: $base-spacing-unit-tiny;
 }
 
@@ -53,7 +53,7 @@ h6 {
   h1 {
     @include fontsize(36);
     line-height: 1.167; // 42px
-    margin-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
+    margin-top: 0;
     margin-bottom: $base-spacing-unit-small;
   }
   h2 {

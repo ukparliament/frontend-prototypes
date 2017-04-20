@@ -11,9 +11,8 @@ html(lang="en")
     include ../elements/skip-content.pug
     include ../components/header.pug
     include ../components/status.pug
-    main(id="content")
-      .container--full-grid
-        block content
+    main
+      block content
     include ../components/footer.pug
     script(src="../../_public/javascripts/main.js")
     block script

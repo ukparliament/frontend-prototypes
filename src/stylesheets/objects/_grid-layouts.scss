@@ -1,28 +1,8 @@
 // Variables inherited from 'settings/_spacing.scss'
 
-// Container - Full Grid Width
-.container--full-grid {
+.container {
   padding: 0 $base-spacing-unit-small;
   @include outer-container;
-}
-
-// Container - Full Screen
-.container--full-screen {
-  padding: 0 $base-spacing-unit-small;
-  @include outer-container(100%);
-}
-
-// Row - Full Width
-.row {
-  @include row();
-}
-
-// Row - Indented Bottom, Left & Right
-.row--indent-full {
-  @include row();
-  padding-bottom: $base-spacing-unit-extra-large;
-  padding-left: $base-spacing-unit-small;
-  padding-right: $base-spacing-unit-small;
 }
 
 // Column - Layout 80:20
