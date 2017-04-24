@@ -1,0 +1,51 @@
+.nav {
+	background: $grey-4;
+	padding-top: 12px;
+  padding-bottom: 12px;
+
+	ul {
+		@include clearfix;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		& > li {
+			display: block;
+			padding: 0 $base-spacing-unit;
+			float: left;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			@include media($desktop) {
+				padding: 0 $base-spacing-unit-small;
+			}
+		}
+
+		& > li a {
+			&:link,
+			&:visited {
+				color: $black;
+				text-decoration: none;
+			}
+
+			&:hover{
+				border-bottom-width: 2px;
+				border-bottom-style: solid;
+				border-bottom-color: $black;
+			}
+		}
+	}
+}
+
+
+@media print {
+  .nav {
+    display: none;
+  }
+}
