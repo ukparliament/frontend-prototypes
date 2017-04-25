@@ -1,12 +1,5 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
-.line-break-heavy {
-  height: 4px;
-  width: 60px;
-  margin-top: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
-  margin-bottom: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
-  background-color: $navy;
-}
 .line-break--sm {
   @include line-break($base-spacing-unit-tiny / 3, $base-spacing-unit-large * 2, $navy);
 }

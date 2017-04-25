@@ -17,9 +17,29 @@
   }
 }
 
+// Highlight box
+.highlight__box {
+  margin-top: $base-spacing-unit-small;
+  margin-bottom: $base-spacing-unit-small;
+  padding: $base-spacing-unit-small;
+  border-left-width: $base-spacing-unit;
+  border-left-style: solid;
+  background-color: $grey-4;
+
+  & + .highlight__box {
+    margin-top: 0;
+  }
+}
+
+// Highlight status
+.highlight__status {
+  padding: $base-spacing-unit-tiny 0;
+  background-color: $grey-4;
+}
+
 // Highlight colours - Pass in colours for (background, border, typography, hover, line-break)
 .highlight--default {
-  @include highlight-color($navy, $navy, $white, $primary-soft, $white);
+  @include highlight-color($navy, $grey-3, $white, $primary-soft, $white);
 }
 .highlight--primary {
   @include highlight-color($primary, $primary-soft, $white, $primary-soft, $primary-soft);
@@ -59,26 +79,6 @@
     background-color: $grey-4;
     outline-color: $grey-4;
   }
-}
-
-// Highlight box
-.highlight__box {
-  margin-top: $base-spacing-unit-small;
-  margin-bottom: $base-spacing-unit-small;
-  padding: $base-spacing-unit-small;
-  border-left-width: $base-spacing-unit;
-  border-left-style: solid;
-  background-color: $grey-4;
-
-  & + .highlight__box {
-    margin-top: 0;
-  }
-}
-
-// Highlight status
-.highlight__status {
-  padding: $base-spacing-unit-tiny 0;
-  background-color: $grey-4;
 }
 
 @include media($desktop) {
