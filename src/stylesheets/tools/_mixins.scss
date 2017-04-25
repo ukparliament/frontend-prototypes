@@ -6,8 +6,8 @@
 
 // Pass in background colour, border color, typography, hover colour
 @mixin highlight-color($background, $border, $color, $hover-color, $line-break){
-  background-color: $background !important;
-  border-color: $border !important;
+  background-color: $background;
+  border-color: $border;
   color: $color;
 
   a {
