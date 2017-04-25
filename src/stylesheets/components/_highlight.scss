@@ -19,7 +19,7 @@
 
 // Highlight colours - Pass in colours for (background, border, typography, hover, line-break)
 .highlight--default {
-  @include highlight-color($navy, $navy, $white, $primary-soft, $white);
+  @include highlight-color($navy, $grey-3, $white, $primary-soft, $white);
 }
 .highlight--primary {
   @include highlight-color($primary, $primary-soft, $white, $primary-soft, $primary-soft);
