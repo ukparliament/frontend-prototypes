@@ -5,7 +5,7 @@
 }
 
 // Pass in background colour, border color, typography, hover colour
-@mixin highlight-color($background, $border, $color, $hover-color){
+@mixin highlight-color($background, $border, $color, $hover-color, $line-break){
   background-color: $background !important;
   border-color: $border !important;
   color: $color;
@@ -22,6 +22,13 @@
       color: $hover-color;
     }
   }
+  h1 {
+    color: $color;
+
+    &:after {
+      background-color: $line-break !important;
+    }
+  }
 }
 
 // Screen reader visible only
@@ -34,4 +41,13 @@
   overflow: hidden;
   position: absolute;
   clip: rect(0 0 0 0);
+}
+
+// Pass in desired line-break sizes
+@mixin line-break($height, $width, $color) {
+  height: $height;
+  width: $width;
+  margin-top: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
+  margin-bottom: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
+  background-color: $color;
 }

@@ -82,6 +82,20 @@ h6 {
 
 // Component Heading Settings (pixels)
 
+[class*="highlight--"] {
+  h1 {
+    position: relative;
+    margin-bottom: $base-spacing-unit-large;
+  }
+  h1:after {
+    @extend .line-break--lg;
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: - $base-spacing-unit-extra-large;
+  }
+}
+
 footer {
   h2 {
     @include fontsize(16);

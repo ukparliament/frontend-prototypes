@@ -7,3 +7,9 @@
   margin-bottom: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
   background-color: $navy;
 }
+.line-break--sm {
+  @include line-break($base-spacing-unit-tiny / 3, $base-spacing-unit-large * 2, $navy);
+}
+.line-break--lg {
+  @include line-break($base-spacing-unit-tiny / 3, $base-spacing-unit-large * 4, $navy);
+}

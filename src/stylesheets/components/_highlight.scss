@@ -17,25 +17,44 @@
   }
 }
 
-// Highlight colours
+// Highlight colours - Pass in colours for (background, border, typography, hover, line-break)
 .highlight--default {
-  @include highlight-color($navy, $navy, $white, $primary-soft);
+  @include highlight-color($navy, $navy, $white, $primary-soft, $white);
 }
 .highlight--primary {
-  @include highlight-color($primary-soft, $primary, $grey-1, $black);
+  @include highlight-color($primary, $primary-soft, $white, $primary-soft, $primary-soft);
+}
+.highlight--primary__soft {
+  @include highlight-color($primary-soft, $primary, $grey-1, $black, $primary);
 }
 .highlight--secondary {
-  @include highlight-color($secondary-soft, $secondary, $grey-1, $black);
+  @include highlight-color($secondary, $secondary-soft, $navy, $black, $secondary-soft);
+}
+.highlight--secondary__soft {
+  @include highlight-color($secondary-soft, $secondary, $grey-1, $black, $secondary);
 }
 .highlight--caution {
-  @include highlight-color($caution-soft, $caution, $grey-1, $black);
+  @include highlight-color($caution, $caution-soft, $navy, $black, $caution-soft);
+}
+.highlight--caution__soft {
+  @include highlight-color($caution-soft, $caution, $navy, $black, $caution);
 }
 .highlight--warning {
-  @include highlight-color($warning-soft, $warning, $grey-1, $black);
+  @include highlight-color($warning, $warning-soft, $white, $warning-soft, $warning-soft);
+}
+.highlight--warning__soft {
+  @include highlight-color($warning-soft, $warning, $navy, $black, $warning);
 }
 .highlight--success {
-  @include highlight-color($success-soft, $success, $grey-1, $black);
-
+  @include highlight-color($success, $success-soft, $navy, $black, $success-soft);
+}
+.highlight--success__soft {
+  @include highlight-color($success-soft, $success, $navy, $black, $success);
+}
+.highlight--secondary,
+.highlight--secondary__soft
+.highlight--success,
+.highlight--success__soft {
   a:focus {
     background-color: $grey-4;
     outline-color: $grey-4;
