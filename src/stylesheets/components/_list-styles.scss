@@ -56,6 +56,21 @@
   }
 }
 
+.list--inline {
+	@extend .list;
+	margin: 0;
+	li {
+		display: inline-block;
+		margin: 0;
+		padding: 0 6.45px;
+	}
+	li.active {
+		color: $navy;
+		text-decoration: none;
+		font-weight: bold;
+	}
+}
+
 // Definition List - Horizontally Aligned
 
 .list__definition {

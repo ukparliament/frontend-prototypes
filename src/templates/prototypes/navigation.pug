@@ -1,0 +1,13 @@
+extends ../../layouts/layout.pug
+block content
+	.section--primary(id="content")
+		.container
+			//- Page Title
+			h1 Navigation preview
+
+			//- Letter Navigation
+			include ../../components/navigation-letter.pug
+
+	section
+		.container
+			include ../../components/navigation-number.pug

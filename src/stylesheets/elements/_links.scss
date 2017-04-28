@@ -1,25 +1,14 @@
 // Variables inherited from 'settings/_colours.scss'
+// Mixins from 'tools/_mixins.scss'
 
-a {
-  &:link {
-    color: $blue;
-    text-decoration: underline;
-  }
-  &:visited {
-    color: $purple;
-  }
-  &:hover {
-    color: $blue-soft;
-    text-decoration: none;
-  }
-  &:active {
-    color: $navy;
-    text-decoration: none;
-  }
-  &:focus {
-    background-color: $secondary;
-    outline: 3px solid $secondary;
-    color: $navy;
-    text-decoration: none;
-  }
-}
+@include links(
+	$blue, // a:link colour
+	underline, // a:link decoration
+	$purple, // a:visited color
+	$blue-soft, // a:hover color
+	$navy, // a:active color
+	none, // a:active decoration
+	$secondary, // a:focus background-color
+	$navy, // a:focus color
+	none // a:focus decoration
+);

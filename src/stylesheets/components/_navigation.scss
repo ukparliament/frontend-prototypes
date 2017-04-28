@@ -1,48 +1,65 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+// Mixins from 'tools/_mixins.scss'
 
-.navigation {
-  @include clearfix;
-  list-style: none;
-  margin-top: $base-spacing-unit-small;
-  margin-left: 0;
-  & > li {
-    display: inline-block;
-    margin-top: 0;
-    margin-bottom: 5px;
-    margin-left: 0;
-    padding: 0 6.45px;
-    text-transform: uppercase;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  & li.active > a {
-    color: $navy;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.navigation-main {
+	@include links(
+		$black, // a:link colour
+		none, // a:link decoration
+		$black, // a:visited color
+		$black, // a:hover color
+		$black, // a:active color
+		none, // a:active decoration
+		$secondary, //  a:focus background-color
+		$navy, // a:focus color
+		none // a:focus decoration
+	);
+	@include navigation($grey-4, 12px, 12px);
+	ol,
+	ul {
+		li {
+			padding: 0 $base-spacing-unit-small;
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+		li a {
+			&:hover {
+				text-decoration: none;
+			}
+			&:hover {
+				border-bottom: 2px solid $black;
+			}
+		}
+	}
 }
 
-.navigation-control {
-  margin: 0;
+.navigation-letter {
+	@include navigation(none, 0, 0);
+}
+
+.navigation-number {
+	@include navigation(none, 0, 0);
 }
 
 .navigation-control--left {
-  float: left;
-  margin-right: $base-spacing-unit-small;
+	@include navigation-control(left, 0, $base-spacing-unit-small);
 }
 
+
 @include media($desktop) {
-  .navigation--number {
+  .navigation-number {
     text-align: center;
-    padding: 0 ($base-spacing-unit-extra-large * 3);
   }
-  .navigation-control--right {
-    float: right;
+	.navigation-control--right {
+		@include navigation-control(right, $base-spacing-unit-small, 0);
+	}
+}
+
+@media print {
+  nav {
+    display: none;
   }
 }

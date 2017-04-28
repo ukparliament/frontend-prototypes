@@ -51,3 +51,44 @@
   margin-bottom: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
   background-color: $color;
 }
+
+
+@mixin links($link-color, $link-decoration, $visited-color, $hover-color, $active-color, $active-decoration, $focus-bg-color, $focus-color, $focus-decoration) {
+	a {
+		&:link {
+			color: $link-color;
+			text-decoration: $link-decoration;
+		}
+		&:visited {
+			color: $visited-color;
+		}
+		&:hover {
+			color: $hover-color;
+			text-decoration: underline;
+		}
+		&:active {
+			color: $active-color;
+			text-decoration: $active-decoration;
+		}
+		&:focus {
+			background-color: $focus-bg-color;
+			outline: 3px solid $focus-bg-color;
+			color: $focus-color;
+			text-decoration: $focus-decoration;
+		}
+	}
+}
+
+
+@mixin navigation($background, $padding-top, $padding-bottom) {
+	@extend .list--inline;
+	background: $background;
+	padding-top: $padding-top;
+	padding-bottom: $padding-bottom;
+}
+
+@mixin navigation-control($float, $margin-left, $margin-right) {
+	float: $float;
+	margin-left: $margin-left;
+	margin-right: $margin-right;
+}

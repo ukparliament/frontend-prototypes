@@ -1,8 +1,8 @@
-nav(aria-label='Pagination')
+nav(class='navigation-number', aria-label='Pagination')
   each object in [{val: 'Previous', class: 'navigation-control--left'}, {val: 'Next', class: 'navigation-control--right'}]
     a(data-number-see='true', href='#', class='navigation-control ' + object.class)= object.val
 
-  ol.navigation.navigation--number
+  ol
     each val, index in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
       li(data-number=val, class= (index === 0 ? "active" : undefined))
         a(data-number-see='true', href='#')= val
