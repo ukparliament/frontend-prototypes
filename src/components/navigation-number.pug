@@ -1,4 +1,4 @@
-nav(class='navigation-number', aria-label='Pagination')
+nav(class='navigation--number', aria-label='Pagination')
   each object in [{val: 'Previous', class: 'navigation-control--left'}, {val: 'Next', class: 'navigation-control--right'}]
     a(data-number-see='true', href='#', class='navigation-control ' + object.class)= object.val
 

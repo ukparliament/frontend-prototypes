@@ -1,7 +1,7 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 // Mixins from 'tools/_mixins.scss'
 
-.navigation-main {
+.navigation--main {
 	@include links(
 		$black, // a:link colour
 		none, // a:link decoration
@@ -36,11 +36,11 @@
 	}
 }
 
-.navigation-letter {
+.navigation--letter {
 	@include navigation(none, 0, 0);
 }
 
-.navigation-number {
+.navigation--number {
 	@include navigation(none, 0, 0);
 }
 
@@ -50,7 +50,7 @@
 
 
 @include media($desktop) {
-  .navigation-number {
+  .navigation--number {
     text-align: center;
   }
 	.navigation-control--right {
