@@ -2,15 +2,25 @@
 
 footer {
   width: 100%;
-	box-sizing: border-box; // 'box-sizing' basic support for our supported browsers
 	display: inline-block;
-	padding-bottom: $base-spacing-unit-small;
+	box-sizing: border-box;
   background-color: $navy;
-  a:link,
-  a:visited,
-  a:hover {
-    color: $grey-5;
-  }
+	padding-bottom: $base-spacing-unit-small;
+
+	a {
+		@include links(
+			$grey-5, 		// a:link colour
+			underline,	// a:link decoration
+			$grey-5, 		// a:visited color
+			$grey-3, 		// a:hover color
+			$black, 		// a:active color
+			none	 			// a:active decoration
+		);
+		&:focus {
+			color: $navy;
+			text-decoration: none;
+		}
+	}
 }
 
 // Physical Print Styles

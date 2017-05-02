@@ -4,17 +4,6 @@
 
 .navigation--main {
 	@include navigation($grey-4, 12px, 12px);
-	@include links(
-		$black, 		// a:link colour
-		none, 			// a:link decoration
-		$black, 		// a:visited color
-		$black, 		// a:hover color
-		$black, 		// a:active color
-		none, 			// a:active decoration
-		$secondary, // a:focus background-color
-		$navy, 			// a:focus color
-		none 				// a:focus decoration
-	);
 
 	li {
 		&:first-child {
@@ -23,7 +12,17 @@
 		&:last-child {
 			padding-right: 0;
 		}
-		a:hover {
+	}
+	a {
+		@include links(
+			$black, 		// a:link colour
+			none,				// a:link decoration
+			$black, 		// a:visited color
+			$black, 		// a:hover color
+			$black, 		// a:active color
+			none	 			// a:active decoration
+		);
+		&:hover {
 			text-decoration: none;
 			border-bottom: 2px solid $black;
 		}

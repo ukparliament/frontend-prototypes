@@ -11,16 +11,18 @@
   color: $color;
 
   a {
-    &:link,
-    &:visited {
-      color: $color;
-    }
-    &:focus {
-      color: $black;
-    }
-    &:hover {
-      color: $hover-color;
-    }
+		@include links(
+			$color, 			// a:link colour
+			underline,		// a:link decoration
+			$color, 			// a:visited color
+			$hover-color,	// a:hover color
+			$navy,	 			// a:active color
+			none	 				// a:active decoration
+		);
+		&:focus {
+			color: $navy;
+			text-decoration: none;
+		}
   }
   h1 {
     color: $color;
@@ -53,29 +55,21 @@
 }
 
 
-@mixin links($link-color, $link-decoration, $visited-color, $hover-color, $active-color, $active-decoration, $focus-bg-color, $focus-color, $focus-decoration) {
-	a {
-		&:link {
-			color: $link-color;
-			text-decoration: $link-decoration;
-		}
-		&:visited {
-			color: $visited-color;
-		}
-		&:hover {
-			color: $hover-color;
-			text-decoration: underline;
-		}
-		&:active {
-			color: $active-color;
-			text-decoration: $active-decoration;
-		}
-		&:focus {
-			background-color: $focus-bg-color;
-			outline: 3px solid $focus-bg-color;
-			color: $focus-color;
-			text-decoration: $focus-decoration;
-		}
+@mixin links($link-color, $link-decoration, $visited-color, $hover-color, $active-color, $active-decoration) {
+	&:link {
+		color: $link-color;
+		text-decoration: $link-decoration;
+	}
+	&:visited {
+		color: $visited-color;
+	}
+	&:hover {
+		color: $hover-color;
+		text-decoration: underline;
+	}
+	&:active {
+		color: $active-color;
+		text-decoration: $active-decoration;
 	}
 }
 

@@ -20,7 +20,6 @@ dl, dt, dd {
 
 .list {
   list-style: none;
-  position: relative;
   margin: $base-spacing-unit-tiny 0 $base-spacing-unit-small;
 
   ol, ul {
@@ -28,6 +27,8 @@ dl, dt, dd {
     list-style: none;
   }
   li {
+    position: relative;
+
     * {
       margin-bottom: $base-spacing-unit;
     }
