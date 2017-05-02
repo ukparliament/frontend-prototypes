@@ -12,9 +12,9 @@ block content
 	section
 		.container
 			//- Result List
-			ol.list
+			ol.list--box
 				each object in [{name: 'Aberdeen North', state: 'Former constituency', date: 'From 9 Jun 1983 to 1 May 1997'},{name: 'Aberdeen North', state: 'Current constituency', date: 'From 5 Apr 2005 to present'},{name: 'Aberdeen North', state: 'Former constituency', date: 'From 14 Dec 1918 to 23 Feb 1950'}]
-					li.list__item
+					li
 						h2
 							a(href='#')
 								= object.name

@@ -1,82 +1,85 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
-// Base lists (ordered/unordered)
+//  List Core Settings
+
+ul, ol {
+  padding: 0;
+  margin: 0 0 $base-spacing-unit-small $base-spacing-unit-small;
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
+}
+dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+// List Base Settings
 
 .list {
+  list-style: none;
   position: relative;
   margin: $base-spacing-unit-tiny 0 $base-spacing-unit-small;
-  list-style: none;
+
   ol, ul {
     margin: 0;
     list-style: none;
   }
-}
-
-// Variation Lists
-
-.list__item {
-  @extend .list;
-  background: $white;
-  padding: $base-spacing-unit-small;
-  margin-top: $base-spacing-unit;
-  margin-bottom: $base-spacing-unit;
-  & > :first-child,
-  &:first-of-type {
-    margin-top: 0;
-  }
-  & > :last-child,
-  &:last-of-type {
-    margin-bottom: 0;
+  li {
+    * {
+      margin-bottom: $base-spacing-unit;
+    }
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+    &.active {
+      color: $navy;
+      font-weight: bold;
+      text-decoration: none;
+    }
   }
 }
 
-.list__item--secondary {
-  @extend .list;
-  margin-top: 0;
-  margin-bottom:0;
-  padding-top: $base-spacing-unit-tiny;
-  padding-bottom: ($base-spacing-unit-small - 1); // -1px to compensate for border height
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: $grey-3;
-  color: $grey-1;
-  & > :first-child {
-    margin-top: 0;
-  }
-  &:first-of-type {
-    padding-top: ($base-spacing-unit-small - 1); // -1px to compensate for border height
-    padding-bottom: ($base-spacing-unit-small - 1); // -1px to compensate for border height
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: $grey-3;
-  }
-  & > :last-child,
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
+// List Options
 
 .list--inline {
-	@extend .list;
-	margin: 0;
-	li {
-		display: inline-block;
-		margin: 0;
-		padding: 0 6.45px;
-	}
-	li.active {
-		color: $navy;
-		text-decoration: none;
-		font-weight: bold;
-	}
+  @extend .list;
+  margin: 0;
+
+  li {
+    margin: 0;
+    padding: 0 6.45px;
+    display: inline-block;
+  }
 }
+.list--box {
+  @extend .list;
 
-// Definition List - Horizontally Aligned
+  li {
+    background: $white;
+    padding: $base-spacing-unit-small;
+    margin-bottom: $base-spacing-unit;
+  }
+}
+.list--pipe {
+  @extend .list;
 
-.list__definition {
+  li {
+    border-bottom: solid 1px $grey-3;
+    padding: $base-spacing-unit-tiny 0 $base-spacing-unit-tiny - 1 0;
+  }
+  li:first-of-type {
+    border-top: solid 1px $grey-3;
+  }
+}
+.list--definition {
   & dt {
     float: left;
-    clear: left;
     padding-right: $base-spacing-unit-tiny;
   }
   &:first-of-type {
@@ -87,12 +90,19 @@
   }
 }
 
-// Definition List - Nested Within Normal List
+// List Combination Settings
 
-.list__definition--secondary {
-  @extend .list__definition;
+[class*="list"] .list--definition {
+  margin-bottom: $base-spacing-unit-tiny;
+
+  & * {
+    margin-bottom: 0;
+  }
   &:first-of-type {
-    margin-top: 0;
+    margin-top: $base-spacing-unit-small;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
   }
 }
 

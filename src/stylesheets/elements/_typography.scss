@@ -26,14 +26,6 @@ header {
   font-weight: bold;
 }
 
-.list {
-  p, li {
-    font-size: inherit;
-    line-height: inherit;
-    margin-bottom: $base-spacing-unit;
-  }
-}
-
 .column-25 {
   p {
     @include fontsize(26);

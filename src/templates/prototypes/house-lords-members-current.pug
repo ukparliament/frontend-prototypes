@@ -11,8 +11,8 @@ block content
   section(id="content")
     .container
       //- Result List
-      ol.list
+      ol.list--box
         each object in [{name: 'Lord Aberdare', party: 'Crossbench'},{name: 'Baroness Adams of Craigielea', party: 'Labour'},{name: 'Lord Addington', party: 'Liberal Democrats'},{name: 'Lord Adebowale', party: 'Crossbench'},{name: 'Lord Adonis', party: 'Non-affiliated'}]
-          li.list__item
+          li
             h2 #[+link('#', object.name)]
             p= object.party

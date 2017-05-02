@@ -13,13 +13,13 @@ block content
     .container
       h2 Contact Details
       //- Representative Information
-      .highlight__box.highlight--primary__soft
+      .highlight--box.highlight--primary__soft
         p Find out #[+link('#', "When an MP can help you and when they can't")].
         p If you contact an MP who does not represent your constituency, they may not get back to you.
-      .highlight__box.highlight--caution__soft
+      .highlight--box.highlight--caution__soft
         p Please include your postcode when emailing an MP.
       //- Contact Details
-      dl.list__definition
+      dl.list--definition
         dt Email:
         dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
         dt Phone:
@@ -27,7 +27,7 @@ block content
         dt Address:
         dd House of Commons, London, SW1A 0AA
       .line-break--sm
-      dl.list__definition
+      dl.list--definition
         dt Email:
         dd #[+link('mailto:ayo.sanusi@parliament.uk', 'ayo.sanusi@parliament.uk')]
         dt Phone:
@@ -40,16 +40,16 @@ block content
       //- Membership History
       h2 Biography
       h3 Lords
-      ol.list
+      ol.list--pipe
         each object in [{sitting_duration: '1987 - 2015', party: 'Labour'}]
-          li.list__item--secondary
+          li
             p= object.sitting_duration
             p #[+link('#', object.party)]
 
       h3 Commons
-      ol.list
+      ol.list--pipe
         each object in [{constituency: 'Hackney North and Stoke Newington', sitting_duration: '2015 - Current', party: "Labour"},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '1987 - 2015', party: 'Labour'}]
-          li.list__item--secondary
+          li
             p MP for #[+link('#', object.constituency)]
             p= object.sitting_duration
             p #[+link('#', object.party)]
