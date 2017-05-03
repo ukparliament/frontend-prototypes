@@ -4,6 +4,14 @@
   font-size:   ($size / 16) + 0rem;
 }
 
+// Pass in desired pixel value for top left, top right, bottom right, bottom left border radius declarations
+@mixin border-radius($top-left, $top-right, $bot-right, $bot-left) {
+  border-top-left-radius: ($top-left + 0px);
+  border-top-right-radius: ($top-right + 0px);
+  border-bottom-right-radius: ($bot-right + 0px);
+  border-bottom-left-radius: ($bot-left + 0px);
+}
+
 // Pass in background colour, border color, typography, hover colour
 @mixin highlight-color($background, $border, $color, $hover-color, $line-break){
   background-color: $background;
@@ -11,18 +19,18 @@
   color: $color;
 
   a {
-		@include links(
-			$color, 			// a:link colour
-			underline,		// a:link decoration
-			$color, 			// a:visited color
-			$hover-color,	// a:hover color
-			$navy,	 			// a:active color
-			none	 				// a:active decoration
-		);
-		&:focus {
-			color: $navy;
-			text-decoration: none;
-		}
+    @include links(
+      $color, 			// a:link colour
+      underline,		// a:link decoration
+      $color, 			// a:visited color
+      $hover-color,	// a:hover color
+      $navy,	 			// a:active color
+      none	 				// a:active decoration
+    );
+    &:focus {
+      color: $navy;
+      text-decoration: none;
+    }
   }
   h1 {
     color: $color;
@@ -54,35 +62,33 @@
   background-color: $color;
 }
 
-
 @mixin links($link-color, $link-decoration, $visited-color, $hover-color, $active-color, $active-decoration) {
-	&:link {
-		color: $link-color;
-		text-decoration: $link-decoration;
-	}
-	&:visited {
-		color: $visited-color;
-	}
-	&:hover {
-		color: $hover-color;
-		text-decoration: underline;
-	}
-	&:active {
-		color: $active-color;
-		text-decoration: $active-decoration;
-	}
+  &:link {
+    color: $link-color;
+    text-decoration: $link-decoration;
+  }
+  &:visited {
+    color: $visited-color;
+  }
+  &:hover {
+    color: $hover-color;
+    text-decoration: underline;
+  }
+  &:active {
+    color: $active-color;
+    text-decoration: $active-decoration;
+  }
 }
 
-
 @mixin navigation($background, $padding-top, $padding-bottom) {
-	@extend .list--inline;
-	background: $background;
-	padding-top: $padding-top;
-	padding-bottom: $padding-bottom;
+  @extend .list--inline;
+  background: $background;
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
 }
 
 @mixin navigation-control($float, $margin-left, $margin-right) {
-	float: $float;
-	margin-left: $margin-left;
-	margin-right: $margin-right;
+  float: $float;
+  margin-left: $margin-left;
+  margin-right: $margin-right;
 }

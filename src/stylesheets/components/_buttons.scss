@@ -1,0 +1,22 @@
+[class*="btn"] {
+  border: none;
+  @include border-radius($base-spacing-unit, $base-spacing-unit, $base-spacing-unit, $base-spacing-unit);
+}
+
+.form-group [class*="btn"] {
+  @include border-radius(0, $base-spacing-unit, $base-spacing-unit, 0);
+}
+
+.btn--primary {
+  @extend .highlight--default;
+  &:hover {
+    background-color: darken($navy, 10%);
+  }
+}
+
+.btn--secondary {
+  @extend .highlight--secondary;
+  &:hover {
+    background-color: darken($secondary, 10%);
+  }
+}

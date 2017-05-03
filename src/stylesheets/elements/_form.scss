@@ -1,7 +1,7 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
 .form-group {
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: $base-spacing-unit-small;
   input {
     float: left;
     margin-left: -1px;
@@ -26,8 +26,7 @@ legend {
 label {
   cursor: pointer;
   display: block;
-  padding-bottom: ($base-spacing-unit-tiny - 4);
-
+  padding-bottom: $base-spacing-unit-tiny;
   .form-hint {
     color: $grey-3;
     display: block;
@@ -41,16 +40,19 @@ input[type="password"],
 textarea {
   border-width: 1px;
   border-style: solid;
-  border-color: $black;
+  border-color: $grey-3;
   display: block;
-  padding: ($base-spacing-unit-tiny);
+  padding-top: ($base-spacing-unit-tiny - 1);
+  padding-bottom: ($base-spacing-unit-tiny - 1);
+  padding-left: ($base-spacing-unit-tiny - 1);
+  padding-right: ($base-spacing-unit-tiny - 1);
   width: 50%;
 }
 
 select {
   border-width: 1px;
   border-style: solid;
-  border-color: $black;
+  border-color: $grey-3;
   padding: ($base-spacing-unit-tiny - 4);
   width: 50%;
 }
@@ -62,13 +64,10 @@ textarea {
 button,
 input[type="reset"],
 input[type="submit"] {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $black;
   padding-top: $base-spacing-unit-tiny;
   padding-bottom: $base-spacing-unit-tiny;
-  padding-left: ($base-spacing-unit - 8);
-  padding-right: ($base-spacing-unit - 8);
+  padding-left: $base-spacing-unit-small;
+  padding-right: $base-spacing-unit-small;
   cursor: pointer;
 }
 

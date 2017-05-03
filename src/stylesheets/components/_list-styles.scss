@@ -72,10 +72,11 @@ dl, dt, dd {
 
   li {
     border-bottom: solid 1px $grey-3;
-    padding: $base-spacing-unit-tiny 0 $base-spacing-unit-tiny - 1 0;
+    padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
   }
   li:first-of-type {
     border-top: solid 1px $grey-3;
+    padding-top: ($base-spacing-unit-tiny - 1);
   }
 }
 .list--definition {

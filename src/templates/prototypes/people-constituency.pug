@@ -1,26 +1,19 @@
 extends ../../layouts/layout.pug
 block content
-	.section--primary(id="content")
-		.container
-			//- Page Title
-			h1 Ms Diane Abbott - Current and former constituencies
+  .section--primary(id="content")
+    .container
+      h1 Ms Diane Abbott - Current and former constituencies
 
-	section
-		.container
-			ol.list--box
-				li
-					h2
-						a(href='/constituencies/42a9e90d-7582-45f1-98ff-48f01f1a9ba7')
-							| Hackney North and Stoke Newington
-							span.sr-only constituency from 7 May 2015 to present
-					ol
-						li
-							span(aria-hidden='true') 7 May 2015 to present
-				li
-					h2
-						a(href='/constituencies/42a9e90d-7582-45f1-98ff-48f01f1a9ba7')
-							| Hackney North and Stoke Newington
-							span.sr-only constituency from 6 May 2010 to 30 Mar 2015
-					ol
-						li
-							span(aria-hidden='true') 6 May 2010 to 30 Mar 2015
+  section
+    .container
+      ol.list--box
+        li
+          h2 #[+link('#', 'Hackney North and Stoke Newington')]
+            span.sr-only constituency from 7 May 2015 to present
+          p 
+            span(aria-hidden='true') 7 May 2015 to present
+        li
+          h2 #[+link('#', 'Hackney North and Stoke Newington')]
+            span.sr-only constituency from 6 May 2010 to 30 Mar 2015
+          p
+            span(aria-hidden='true') 6 May 2010 to 30 Mar 2015

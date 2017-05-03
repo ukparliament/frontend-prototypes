@@ -2,14 +2,29 @@ extends ../../layouts/layout.pug
 block content
   .section--primary
     .container
-      h1 Search results
+      h2 Search results
 
       form(action='search')
         .form-group
-          label(for='search_box')
+          label(for='search_box') Search
           |
           input#search_box(name='q', placeholder='Enter a keyword', type='text')
           |
-          button(type='submit', value='Search') Search
+          button(type='submit', value='Search' class='btn--secondary') Search
 
       include ../../components/navigation-number.pug
+
+  section
+    .container
+      h2 Find your MP and constituency
+      p Search by postcode, for example; SW1A 0AA
+
+      form(action='postcode')
+        .form-group
+          label(for='postcode_box') Check
+          |
+          input#postcode_box(name='q', placeholder='Enter a postcode', type='text')
+          |
+          button(type='submit', value='Search', class='btn--primary') Check
+
+      p Don’t know your postcode? Find your postcode on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
