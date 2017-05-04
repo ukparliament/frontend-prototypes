@@ -26,7 +26,7 @@ header {
   font-weight: bold;
 }
 
-.column-25 {
+.column--25 {
   p {
     @include fontsize(26);
     line-height: 1.154; // 30px

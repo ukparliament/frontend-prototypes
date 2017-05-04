@@ -50,8 +50,8 @@
 
 // Column Layout Options
 
-.column-75,
-.column-25 {
+.column--75,
+.column--25 {
   display: inline-block;
   & > :first-child {
     margin-top: 0;
@@ -61,11 +61,11 @@
   }
 }
 
-.column-75 {
+.column--75 {
   width: 75%;
 }
 
-.column-25 {
+.column--25 {
   p {
     position: absolute;
     right: $base-spacing-unit-small;
