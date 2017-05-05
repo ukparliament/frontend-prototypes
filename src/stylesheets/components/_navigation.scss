@@ -33,7 +33,17 @@
 
 .navigation--letter {
 	@include navigation(none, 0, 0);
-	text-transform: capitalize;
+	font-size: 0;
+	li {
+		@include fontsize(16);
+		text-align: center;
+		text-transform: capitalize;
+		padding: 0;
+		a {
+			display: block;
+			min-width: 28px;
+		}
+	}
 }
 
 // Number Navigation Settings
