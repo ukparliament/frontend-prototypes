@@ -34,12 +34,15 @@
 .navigation--letter {
 	@include navigation(none, 0, 0);
 	font-size: 0;
+	margin-bottom: $base-spacing-unit-small;
+
 	li {
 		@include fontsize(16);
 		text-align: center;
 		text-transform: capitalize;
 		padding: 0;
-		a {
+		a,
+		span {
 			display: block;
 			min-width: 28px;
 		}
@@ -50,9 +53,24 @@
 
 .navigation--number {
 	@include navigation(none, 0, 0);
+
+	font-size: 0;
+	margin-bottom: $base-spacing-unit-small;
+
+	li {
+		@include fontsize(16);
+		text-transform: capitalize;
+		padding: 0;
+		a,
+		span {
+			display: block;
+			min-width: 28px;
+		}
+	}
 }
 .navigation-control--left {
 	@include navigation-control(left, 0, $base-spacing-unit-small);
+	@include fontsize(16);
 }
 
 
@@ -69,6 +87,7 @@
 
 	.navigation-control--right {
 		@include navigation-control(right, $base-spacing-unit-small, 0);
+		@include fontsize(16);
 	}
 }
 

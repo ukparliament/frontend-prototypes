@@ -14,7 +14,7 @@
 
 @include media($desktop) {
   .section--primary {
-    padding-top: $base-spacing-unit-large;
+    padding-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
   }
   .section--major {
     padding: $base-spacing-unit-extra-large 0;
