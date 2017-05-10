@@ -20,3 +20,21 @@ video {
     width: 100%;
   }
 }
+
+// Section Specific Styles
+
+.section--primary {
+  img {
+    width: 126px;
+    border-radius: 4px;
+    margin-bottom: $base-spacing-unit-small;
+  }
+}
+
+@include media($desktop) {
+  .section--primary {
+    img {
+      width: 144px;
+    }
+  }
+}
