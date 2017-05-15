@@ -1,4 +1,4 @@
-(function () {
+/*(function () {
 
   // CONTENT SLIDER
   contentSlider = function (ids, cls) {
@@ -64,3 +64,4 @@
     blk.addEventListener('click', toggleContent, false);
   };
 })();
+*/

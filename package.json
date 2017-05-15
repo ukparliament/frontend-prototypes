@@ -16,22 +16,12 @@
     "url": "https://github.com/ukparliament/parliament.uk-pugin/issues"
   },
   "scripts": {
-    "start": "make heroku"
+    "start": "make serve"
   },
   "main": "server.js",
   "dependencies": {
-    "autoprefixer": "^6.7.0",
-    "bourbon-neat": "^1.8.0",
-    "browser-sync": "^2.18.6",
-    "express": "^4.14.0",
-    "imagemin-cli": "^3.0.0",
-    "node-sass": "^4.3.0",
-    "postcss-cli": "^2.6.0",
-    "pug-cli": "^1.0.0-alpha6",
-    "uglify-js": "^2.7.5"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.6",
     "chokidar": "^1.6.1",
     "eslint": "^3.14.0",
     "eslint-config-standard": "^6.2.1",
@@ -40,6 +30,14 @@
     "minimist": "^1.2.0",
     "pa11y": "^4.4.0",
     "readdir": "0.0.13",
-    "valimate": "^2.3.0"
+    "valimate": "^2.3.0",
+    "autoprefixer": "^6.7.0",
+    "bourbon-neat": "^1.8.0",
+    "express": "^4.14.0",
+    "imagemin-cli": "^3.0.0",
+    "node-sass": "^4.3.0",
+    "postcss-cli": "^2.6.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "uglify-js": "^2.7.5"
   }
 }
