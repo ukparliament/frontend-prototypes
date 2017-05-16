@@ -3,17 +3,17 @@
 // Main Navigation Settings
 
 .navigation--main {
-	@include navigation($grey-4, 12px, 12px);
+	@include navigation(0, 0);
+	background-color: $grey-4;
 
+	ul {
+		margin-left: (- $base-spacing-unit);
+	}
 	li {
-		&:first-child {
-			padding-left: 0;
-		}
-		&:last-child {
-			padding-right: 0;
-		}
+		padding: 0 $base-spacing-unit;
 	}
 	a {
+		padding: $base-spacing-unit-tiny 0;
 		@include links(
 			$black, 		// a:link colour
 			none,				// a:link decoration
@@ -24,7 +24,15 @@
 		);
 		&:hover {
 			text-decoration: none;
-			border-bottom: 2px solid $black;
+
+			&:after {
+				content: "";
+				left: 0;
+				width: 100%;
+				bottom: $base-spacing-unit-tiny - 1;
+				position: absolute;
+				border-bottom: 2px solid $black;
+			}
 		}
 	}
 }
@@ -33,42 +41,38 @@
 
 .navigation--letter,
 .navigation--number {
-	@include navigation(none, 0, 0);
-	margin-bottom: $base-spacing-unit-small;
+	@include navigation(0, $base-spacing-unit-tiny);
 
 	li {
 		text-align: center;
 		text-transform: capitalize;
 		padding: 0;
-
-		a,
-		span {
-			display: block;
-			min-width: 23.5px;
-		}
+	}
+	a,
+	span {
+		min-width: 24px;
 	}
 }
 
+// Number Navigation Controls Settings
 
-// Number Navigation Settings
-
-.navigation--number {
-	ol {
-		margin: $base-spacing-unit-tiny 0 0 (-$base-spacing-unit-tiny + 4);
-	}
-}
 .navigation-control--left {
-	@include navigation-control(left, 0, $base-spacing-unit-small);
+	@include navigation-control(left, - $base-spacing-unit, $base-spacing-unit-tiny);
 }
-
+.navigation-control--right {
+	float: none;
+	display: inline-block !important;
+}
 
 @include media($desktop) {
-  .navigation--main {
-    li {
-      padding: 0 $base-spacing-unit-small;
-    }
-  }
-
+	.navigation--main {
+		ul {
+			margin-left: (- $base-spacing-unit-small);
+		}
+		li {
+			padding: 0 $base-spacing-unit-small;
+		}
+	}
   .navigation--number {
 		text-align: center;
 
@@ -77,7 +81,7 @@
 		}
   }
 	.navigation-control--right {
-		@include navigation-control(right, $base-spacing-unit-small, 0);
+		@include navigation-control(right, $base-spacing-unit-small, - $base-spacing-unit);
 	}
 }
 

@@ -50,12 +50,18 @@ dl, dt, dd {
 
 .list--inline {
   @extend .list;
-  margin: 0;
 
+  ol, ul {
+    margin: 0 (-$base-spacing-unit-tiny + 6);
+  }
   li {
     margin: 0;
-    padding: 0 6.45px;
     display: inline-block;
+  }
+  a, span {
+    display: block;
+    position: relative;
+    padding: ($base-spacing-unit-tiny / 2);
   }
 }
 .list--box {
@@ -89,6 +95,22 @@ dl, dt, dd {
   }
   &:last-of-type {
     margin-bottom: $base-spacing-unit-small;
+  }
+}
+.list--tab {
+  @extend .list--inline;
+  border-bottom: 2px solid $grey-4;
+  margin-bottom: $base-spacing-unit-small;
+
+  li {
+    margin-right: $base-spacing-unit-medium;
+  }
+  li.active {
+    padding: 8px 0;
+    border-bottom: 4px solid $primary;
+  }
+  a {
+    padding: $base-spacing-unit-tiny 0;
   }
 }
 

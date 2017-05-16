@@ -80,11 +80,11 @@
   }
 }
 
-@mixin navigation($background, $padding-top, $padding-bottom) {
+@mixin navigation($margin-top, $margin-bottom) {
   @extend .list--inline;
-  background: $background;
-  padding-top: $padding-top;
-  padding-bottom: $padding-bottom;
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+
 }
 
 @mixin navigation-control($float, $margin-left, $margin-right) {
