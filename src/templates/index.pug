@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+  head
+    title Parliamentary Digital Service
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    link(rel="stylesheet", href="_public/stylesheets/main.css")
+    link(rel="icon", type="image/x-icon", href="_public/images/favicon.ico")
+  body.no-js
+    include ../elements/mixins.pug
+    include ../elements/skip-content.pug
+      .section--primary
+        .container
+          h1 Parliamentary Digital Service
+
+      section#content
+        .container
+          h2 Templates
+          ul
+            li #[+link('_public/templates/prototypes/conservative-current.html', 'Conservative current')]
+            li #[+link('_public/templates/prototypes/contact.html', 'Contact')]
+            li #[+link('_public/templates/prototypes/front-page.html', 'Front Page')]
+            li #[+link('_public/templates/prototypes/house-commons-members-current.html', 'House of Commons Members')]
+            li #[+link('_public/templates/prototypes/house-lords-members-current.html', 'House of Lords Members Current')]
+            li #[+link('_public/templates/prototypes/party-current.html', 'Party Current')]
+            li #[+link('_public/templates/prototypes/people-id.html', 'People ID')]
+            li #[+link('_public/templates/prototypes/people-constituency.html', 'People Constituency')]
+            li #[+link('_public/templates/prototypes/constituencies.html', 'Constituencies')]
+
+      section
+        .container
+          h2 Elements
+          ul
+            li #[+link('_public/templates/prototypes/navigation.html', 'Navigations')]
+            li #[+link('_public/templates/prototypes/forms.html', 'Forms')]
+
+      section
+        .container
+          h3 Notes:
+          ul
+            li These are static html files
+            li Links will either not be working or go to the correct location
+            li Styles for desktop view are not complete

@@ -7,7 +7,7 @@ app.use('/_public', express.static(path.join(__dirname, '/_public')));
 
 // app root
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/_public/index.html'));
+  res.sendFile(path.join(__dirname, '/_public/templates/index.html'));
 });
 
 // requested views

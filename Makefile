@@ -32,7 +32,7 @@ install:
 	@npm i
 
 # When run in gocd it creates a version folder then installs npm packages
-install_to_release: 
+install_to_release:
 	git checkout -b release $(REL_TAG)
 	@npm i
 
@@ -57,7 +57,7 @@ images:
 
 # Outputs pug files to html within public folder
 templates:
-	@$(PUG) index.pug $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)
+	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)/templates
 
 # Runs tests on javascript files
 lint:
