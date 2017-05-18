@@ -2,13 +2,15 @@ extends ../../layouts/layout.pug
 block content
   .section--primary(id="content")
     .container
-      +image('../../images/diane_abbott.png', 'Dianne Abbott')
-      h1 Diane Abbott
-      .block--border
-        p MP for #[+link('#', 'Hackney North and Stoke Newington')]
-        p #[+link('#', 'View all current Labour MPs')]
-      .block--border
-        p Labour
+      .section--primary__container
+        +image('../../images/diane_abbott.png', 'Dianne Abbott')
+        .section--primary__block
+          h1 Diane Abbott
+          .block--border
+            p MP for #[+link('#', 'Hackney North and Stoke Newington')]
+            p #[+link('#', 'View all current Labour MPs')]
+          .block--border
+            p Labour
   section
     .container
       h2 Contact Details

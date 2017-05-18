@@ -2,12 +2,16 @@ extends ../../layouts/layout.pug
 block content
 	.section--primary(id="content")
 		.container
-			//- Page Title
-			h1 Navigation preview
+			.section--primary__container
+				.section--primary__block
+					//- Page Title
+					h1 Navigation options
 
-			h2 A to Z (navigation-letter)
-			//- Letter Navigation
-			include ../../components/navigation-letter.pug
+			.section--primary__container
+				.section--primary__block
+					h2 A to Z (navigation-letter)
+					//- Letter Navigation
+					include ../../components/navigation-letter.pug
 
 	section
 		.container

@@ -30,6 +30,9 @@
   padding: 0 $base-spacing-unit-small;
   @include outer-container;
 }
+.section--primary__container {
+  @include clearfix;
+}
 
 // Block Options
 
@@ -71,8 +74,9 @@
     right: $base-spacing-unit-small;
     top: calc(50% - 28px);
     text-align: right;
+
     span {
-    display:block;
+      display:block;
     }
   }
 }

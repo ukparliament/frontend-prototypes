@@ -4,9 +4,11 @@ block content
   //- Page Title
   .section--primary(id="content")
     .container
-      h1 Who should I contact with my issue?
-      each val in ['MPs and Lords can help with issues that are the responsibility of UK Parliament.', 'But often the right person to contact will be a local councillor, Citizens Advice or an ombudsman.', 'If you live in Scotland, Wales or Northern Ireland you may need to contact your Member of the Scottish Parliament, Welsh Assembly Member or Member of the Legislative Assembly.']
-        p= val
+      .section--primary__container
+        .section--primary__block
+          h1 Who should I contact with my issue?
+          each val in ['MPs and Lords can help with issues that are the responsibility of UK Parliament.', 'But often the right person to contact will be a local councillor, Citizens Advice or an ombudsman.', 'If you live in Scotland, Wales or Northern Ireland you may need to contact your Member of the Scottish Parliament, Welsh Assembly Member or Member of the Legislative Assembly.']
+            p= val
 
   section
     .container

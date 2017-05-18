@@ -2,38 +2,42 @@ extends ../../layouts/layout.pug
 block content
   #content.section--primary
     .container
-      h1 Search
-      form(action='search')
-        .form-group
-          label(for='search_box') Enter a keyword
-          |
-          input#search_box(name='searchinput', type='text')
-          |
-          button(type='submit', value='Search' class='btn--secondary') Search
+      .section--primary__container
+        .section--primary__block
+          h1 Search
+          form(action='search')
+            .form-group
+              label(for='search_box') Enter a keyword
+              |
+              input#search_box(name='searchinput', type='text')
+              |
+              button(type='submit', value='Search' class='btn--secondary') Search
 
   .section--primary
     .container
-      h1 Find your MP and constituency
+      .section--primary__container
+        .section--primary__block
+          h1 Find your MP and constituency
 
-      form(action='postcode')
-        .form-group
-          label(for='postcode_main') Search by postcode, for example; SW1A 0AA
-          |
-          input#postcode_main(name='postcodemain', type='text')
-          |
-          button(type='submit', value='Search', class='btn--secondary') Find
+          form(action='postcode')
+            .form-group
+              label(for='postcode_main') Search by postcode, for example; SW1A 0AA
+              |
+              input#postcode_main(name='postcodemain', type='text')
+              |
+              button(type='submit', value='Search', class='btn--secondary') Find
 
-      p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
+          p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
 
 
-      h2 Check if this is your constituency
+          h2 Check if this is your constituency
 
-      form(action='postcode')
-        .form-group
-          label(for='postcode_partial') Search by postcode, for example; SW1A 0AA
-          |
-          input#postcode_partial(name='postcodepartial', type='text')
-          |
-          button(type='submit', value='Search', class='btn--secondary') Check
+          form(action='postcode')
+            .form-group
+              label(for='postcode_partial') Search by postcode, for example; SW1A 0AA
+              |
+              input#postcode_partial(name='postcodepartial', type='text')
+              |
+              button(type='submit', value='Search', class='btn--secondary') Check
 
-      p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
+          p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].

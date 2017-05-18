@@ -34,7 +34,13 @@ video {
 @include media($desktop) {
   .section--primary {
     img {
+      float: right;
       width: 144px;
+      margin-bottom: 0;
+    }
+    img + .section--primary__block {
+      float: left;
+      width: 75%;
     }
   }
 }

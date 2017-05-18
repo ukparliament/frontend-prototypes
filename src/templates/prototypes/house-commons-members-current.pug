@@ -2,11 +2,13 @@ extends ../../layouts/layout.pug
 block content
   .section--primary
     .container
-      //- Page Title
-      h1 Current MPs in the House of Commons
-      p A to Z - select a letter
-      //- Letter Navigation
-      include ../../components/navigation-letter.pug
+      .section--primary__container
+        .section--primary__block
+          //- Page Title
+          h1 Current MPs in the House of Commons
+          p A to Z - select a letter
+          //- Letter Navigation
+          include ../../components/navigation-letter.pug
 
   section#content
     .container

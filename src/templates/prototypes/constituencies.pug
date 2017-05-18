@@ -2,12 +2,16 @@ extends ../../layouts/layout.pug
 block content
 	.section--primary(id="content")
 		.container
-			//- Page Title
-			h1 Current and former constituencies
-			p A to Z - Showing results for A
+			.section--primary__container
+				.section--primary__block
+					//- Page Title
+					h1 Current and former constituencies
 
-			//- Letter Navigation
-			include ../../components/navigation-letter.pug
+			.section--primary__container
+				.section--primary__block
+					p A to Z - Showing results for A
+					//- Letter Navigation
+					include ../../components/navigation-letter.pug
 
 	section
 		.container
