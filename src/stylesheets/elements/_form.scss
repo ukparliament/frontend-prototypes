@@ -1,84 +1,83 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
+// Core form element styling
+
 form {
   width: 100%;
 }
 
-fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-legend {
-  @include screenreader;
-}
-
 label {
-  cursor: pointer;
   display: block;
   padding-bottom: $base-spacing-unit-tiny;
   .form-hint {
-    color: $grey-3;
     display: block;
-    margin: 0;
+    padding-top: $base-spacing-unit;
     padding-bottom: 0;
+    color: $grey-2;
   }
 }
 
-input[type="text"],
-input[type="password"],
-textarea {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $grey-3;
-  display: block;
-  padding-top: ($base-spacing-unit-tiny - 1);
-  padding-bottom: ($base-spacing-unit-tiny - 1);
+input[type="text"] {
+  height: 48px;
+  width: 100%;
   padding-left: ($base-spacing-unit-tiny - 1);
   padding-right: ($base-spacing-unit-tiny - 1);
-  width: 50%;
-}
-
-select {
-  border-width: 1px;
-  border-style: solid;
-  border-color: $grey-3;
-  padding: ($base-spacing-unit-tiny - 1);
-  width: 50%;
-}
-
-textarea {
-  padding: ($base-spacing-unit-tiny - 2);
+  border: solid 1px $grey-3;
+  @include media($desktop) {
+    width: 70%;
+  }
 }
 
 button,
-input[type="reset"],
 input[type="submit"] {
-  padding-top: $base-spacing-unit-tiny;
-  padding-bottom: $base-spacing-unit-tiny;
+  height: 48px;
   padding-left: $base-spacing-unit-small;
   padding-right: $base-spacing-unit-small;
   cursor: pointer;
 }
 
+// Pseudo state styling (including Mozilla focus overide)
+
+input:focus,
+button:focus {
+  position: relative;
+  z-index: 10;
+  outline: 3px solid $caution;
+  outline-offset: -3px;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 3px solid $caution;
+  outline-offset: -3px;
+}
+
+// Form block holders
+
 .form-group {
-  margin-bottom: $base-spacing-unit-small;
+  float: left;
+  width: 100%;
+  &:after {
+    @include clearfix;
+  }
+}
+
+.form-group--inline {
+  @extend .form-group;
+  margin-bottom: $base-spacing-unit-tiny;
   input[type="text"] {
-    display:inline-block;
-    width: 60%;
+    width: 65%;
+    margin-right: -$base-spacing-unit;
     padding-left: ($base-spacing-unit-small - 1);
-    margin-right: -5px;
   }
 }
 
 // Physical Print Styles
+
 @media print {
   button,
-  input[type="reset"],
-  input[type="submit"],
-  legend {
+  input[type="submit"] {
     display: none;
   }
 }

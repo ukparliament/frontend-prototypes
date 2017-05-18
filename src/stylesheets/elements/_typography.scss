@@ -39,11 +39,8 @@ header {
   }
 }
 
-label, optgroup, select, textarea, figcaption {
-  @include fontsize(14);
-  @include media($desktop) {
-    @include fontsize(16);
-  }
+button, input, label, optgroup, select, textarea, figcaption {
+  font-family: $base-font-stack;
 }
 
 button, input {
@@ -52,5 +49,12 @@ button, input {
   @include media($desktop) {
     @include fontsize(18);
     line-height: 24px;
+  }
+}
+
+label, optgroup, select, textarea, figcaption {
+  @include fontsize(14);
+  @include media($desktop) {
+    @include fontsize(16);
   }
 }
