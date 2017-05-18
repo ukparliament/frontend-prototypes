@@ -7,6 +7,7 @@ AWS_ACCOUNT?=unknown
 SRC_FOLDER=src
 PUBLIC_FOLDER=_public
 JAVASCRIPTS_LOC=src/javascripts
+JSON_LOC=src/json
 STYLESHEETS_LOC=src/stylesheets
 IMAGES_LOC=src/images
 REPORTS_FOLDER=reports
@@ -19,6 +20,8 @@ POSTCSS=./node_modules/.bin/postcss
 PUG=./node_modules/.bin/pug
 SVGO=./node_modules/.bin/svgo
 UGLIFY_JS=./node_modules/.bin/uglifyjs
+LEAFLET=./node_modules/leaflet/dist/leaflet.js
+JSON=./node_modules/pretty-mini-json/pretty-mini-json.js
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -50,7 +53,12 @@ css:
 # Minifies javascript files
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+	@$(UGLIFY_JS) $(LEAFLET) $(JAVASCRIPTS_LOC)/*.js $(JAVASCRIPTS_LOC)/**/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+
+# Minifies json file
+json:
+	@mkdir -p $(PUBLIC_FOLDER)/json
+	@$(JSON) $(JSON_LOC)/map.json -o $(PUBLIC_FOLDER)/json/map.json
 
 # Minifies images
 images:
@@ -84,7 +92,7 @@ test:
 	@node scripts/w3c.js
 
 # Builds application
-build: lint css js images icons templates
+build: lint css js json images icons templates
 
 # Deploys to S3 without a version
 deploy:

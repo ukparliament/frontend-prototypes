@@ -1,0 +1,15 @@
+extends ../../layouts/layout.pug
+block content
+	.section--primary(id="content")
+		.container
+			.section--primary__container
+				.section--primary__block
+					h1 :constituency/map
+					p Shows a graphical representation of the constituency map / geographical area.
+	section
+		.container
+			h2 :constituencyname
+			.map#mapbox
+				p Content is unavailable.
+			script.
+				var map_data = '/json/map.json';
