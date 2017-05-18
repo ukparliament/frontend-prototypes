@@ -15,3 +15,8 @@ mixin link(href, name)
 mixin image(src, alt)
   //- Attributes can be width, height, srcset, longdesc
   img(src=src alt=alt)&attributes(attributes)
+
+//- Inputs
+mixin input(label, id, maxlength, regex)
+  label(for=id)= label
+  input(id=id, name=id, type='text' maxlength=maxlength pattern=regex)
