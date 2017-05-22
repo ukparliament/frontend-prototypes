@@ -17,6 +17,6 @@ mixin image(src, alt)
   img(src=src alt=alt)&attributes(attributes)
 
 //- Inputs
-mixin input(label, id, maxlength, regex)
+mixin input(label, id, type, maxlength, regex, title)
   label(for=id)= label
-  input(id=id, name=id, type='text' maxlength=maxlength pattern=regex)
+  input(id=id, name=id, type=type maxlength=maxlength pattern=regex title=title)

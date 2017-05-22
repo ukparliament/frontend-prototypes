@@ -7,9 +7,7 @@ block content
           h1 Search
           form(action='search')
             .form-group
-              label(for='search_box') Enter a keyword
-              |
-              input#search_box(name='searchinput', type='text')
+              +input('Enter a keyword', 'search_box', 'search', 1000, '^(?!.*<script|<Script).*$', 'Inserting <script> as a search term is not permitted')
               |
               button(type='submit', value='Search' class='btn--secondary') Search
 
@@ -21,7 +19,7 @@ block content
 
           form(action='postcode')
             .form-group
-              +input('Search by postcode, for example; SW1A 0AA', 'postcode_main', 8, '[0-9a-zA-Z ]{5,}')
+              +input('Search by postcode, for example; SW1A 0AA', 'postcode_main', 'text', 8, '[0-9a-zA-Z ]{5,}', '- Special characters (!@£$%) are not permitted')
               |
               button(type='submit', value='Search', class='btn--secondary') Find
 
@@ -31,7 +29,7 @@ block content
 
           form(action='postcode')
             .form-group
-              +input('Search by postcode, for example; SW1A 0AA', 'postcode_partial', 8, '[0-9a-zA-Z ]{5,}')
+              +input('Search by postcode, for example; SW1A 0AA', 'postcode_partial', 'text', 8, '[0-9a-zA-Z ]{5,}', '- Special characters (!@£$%) are not permitted')
               |
               button(type='submit', value='Search', class='btn--secondary') Check
 
