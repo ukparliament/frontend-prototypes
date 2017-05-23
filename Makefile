@@ -13,12 +13,13 @@ REPORTS_FOLDER=reports
 
 # Node module variables
 ESLINT=./node_modules/.bin/eslint
-NODE_SASS=./node_modules/.bin/node-sass
-POSTCSS=./node_modules/.bin/postcss
-UGLIFY_JS=./node_modules/.bin/uglifyjs
 IMAGEMIN=./node_modules/.bin/imagemin
 ONCHANGE=./node_modules/.bin/onchange
+NODE_SASS=./node_modules/.bin/node-sass
+POSTCSS=./node_modules/.bin/postcss
 PUG=./node_modules/.bin/pug
+SVGO=./node_modules/.bin/svgo
+UGLIFY_JS=./node_modules/.bin/uglifyjs
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -55,6 +56,10 @@ js:
 images:
 	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
 
+# Optimises SVGs
+icons:
+	@$(SVGO) -f src/icons -o _public/icons
+
 # Outputs pug files to html within public folder
 templates:
 	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)/templates
@@ -79,7 +84,7 @@ test:
 	@node scripts/w3c.js
 
 # Builds application
-build: lint css js images templates
+build: lint css js images icons templates
 
 # Deploys to S3 without a version
 deploy:
