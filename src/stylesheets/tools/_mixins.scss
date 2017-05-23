@@ -95,3 +95,12 @@
   margin-left: $margin-left;
   margin-right: $margin-right;
 }
+
+// Pass in duration, timing function, delay, interation count and name
+@mixin css-animation($duration, $timing-func, $delay, $interation, $name) {
+  animation-duration: $duration;
+  animation-timing-function: $timing-func;
+  animation-delay: $delay;
+  animation-iteration-count: $interation;
+  animation-name: $name;
+}

@@ -5,11 +5,14 @@ block content
       .section--primary__container
         .section--primary__block
           h1 Search
-          form(action='search')
-            .form-group
-              +input('Enter a keyword', 'search_box', 'search', 1000, '^(?!.*<script|<Script).*$', 'Inserting <script> as a search term is not permitted')
-              |
-              button(type='submit', value='Search' class='btn--secondary') Search
+          //-form(action='search')
+          .form-group
+            +input('Enter a keyword', 'search_box', 'search', 1000, '^(?!.*<script|<Script).*$', 'Inserting <script> as a search term is not permitted')
+            |
+            button#btn_loading(type='submit', value='Search', class='btn--secondary')
+              span.btn--loading__text Search
+              span.btn--loading__icon
+                include ../../icons/loading.svg
 
   .section--primary
     .container

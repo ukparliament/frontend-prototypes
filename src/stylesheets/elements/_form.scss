@@ -26,9 +26,10 @@ input {
 button,
 input[type="submit"] {
   height: 48px;
-  padding-left: $base-spacing-unit-small;
-  padding-right: $base-spacing-unit-small;
+  min-width: 90px;
+  padding: 0 $base-spacing-unit-tiny;
   cursor: pointer;
+  text-align: center;
 }
 
 // Pseudo state styling (including Mozilla focus overide)
@@ -52,11 +53,11 @@ button:-moz-focusring,
 
 .form-group {
   margin-bottom: $base-spacing-unit-tiny;
-
   input {
     width: 65%;
     display: inline-block;
     margin-right: -$base-spacing-unit;
+    vertical-align: top;
   }
 }
 
