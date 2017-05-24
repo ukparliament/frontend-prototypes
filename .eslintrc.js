@@ -7,7 +7,7 @@ module.exports = {
   "rules": {
     "indent": [
       "error",
-      2
+      "tab"
     ],
     "linebreak-style": [
       "error",
@@ -23,6 +23,7 @@ module.exports = {
     ],
     "no-unused-vars": [
       "warn"
-    ]
+    ],
+    "no-console":0
   }
 };

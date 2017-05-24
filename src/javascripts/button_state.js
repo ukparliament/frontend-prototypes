@@ -1,26 +1,32 @@
 // Adds 'loading icon' to button with id of 'btn__loading' when clicked
 
 (function () {
-  var btnLoad;
+	var btnLoad, input;
 
-  // Grab elements with id of btn__loading
-  btnLoad = document.getElementById('btn_loading');
+	// Grab elements with id of btn__loading
+	btnLoad = document.getElementById('btn_loading');
 
-  // Create event listener for 'return' keydown and send it as click event
-  btnLoad.addEventListener('keydown', function (event) {
-    if (event.keyCode === 13) {
-      event.target.click();
-    }
-  }, false);
+	// Grab elements with id of search_box
+	input = document.getElementById('input');
 
-  // Create click event listener
-  btnLoad.addEventListener('click', btnState, false);
+	// Create event listener for 'return' keydown and send it as click event
+	btnLoad.addEventListener('keydown', function (event) {
+		if (event.keyCode === 13) {
+			event.target.click();
+		}
+	}, false);
 
-  function btnState() {
-    // Add btn--loading class to button
-    this.classList.add('btn--loading');
+	// Create click event listener
+	btnLoad.addEventListener('click', btnState, false);
 
-    // Change aria-pressed to the opposite state
-    this.setAttribute('aria-pressed', true);
-  }
+	function btnState() {
+		// If HTML5 attribute validation passes
+		if (input.checkValidity() == true) {
+			// Add btn--loading class to button
+			this.classList.add('btn--loading');
+
+			// Change aria-pressed to the opposite state
+			this.setAttribute('aria-pressed', true);
+		}
+	}
 })();
