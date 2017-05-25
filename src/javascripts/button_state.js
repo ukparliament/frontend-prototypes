@@ -9,15 +9,18 @@
 	// Grab elements with id of search_box
 	input = document.getElementById('input');
 
-	// Create event listener for 'return' keydown and send it as click event
-	btnLoad.addEventListener('keydown', function (event) {
-		if (event.keyCode === 13) {
-			event.target.click();
-		}
-	}, false);
+	// Only create the event listener if the element exists within DOM
+	if (typeof (btnLoad) != 'undefined' && btnLoad != null) {
+		// Create event listener for 'return' keydown and send it as click event
+		btnLoad.addEventListener('keydown', function (event) {
+			if (event.keyCode === 13) {
+				event.target.click();
+			}
+		}, false);
 
-	// Create click event listener
-	btnLoad.addEventListener('click', btnState, false);
+		// Create click event listener
+		btnLoad.addEventListener('click', btnState, false);
+	}
 
 	function btnState() {
 		// If HTML5 attribute validation passes
