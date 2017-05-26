@@ -1,7 +1,8 @@
 // Adds 'loading icon' to button with id of 'btn__loading' when clicked
 
 (function () {
-	var btnLoad, input;
+	var btnLoad;
+	var input;
 
 	// Grab elements with id of btn__loading
 	btnLoad = document.getElementById('btn_loading');
@@ -10,7 +11,7 @@
 	input = document.getElementById('input');
 
 	// Only create the event listener if the element exists within DOM
-	if (typeof (btnLoad) != 'undefined' && btnLoad != null) {
+	if (btnLoad) {
 		// Create event listener for 'return' keydown and send it as click event
 		btnLoad.addEventListener('keydown', function (event) {
 			if (event.keyCode === 13) {
@@ -24,7 +25,7 @@
 
 	function btnState() {
 		// If HTML5 attribute validation passes
-		if (input.checkValidity() == true) {
+		if (input.checkValidity() === true) {
 			// Add btn--loading class to button
 			this.classList.add('btn--loading');
 
