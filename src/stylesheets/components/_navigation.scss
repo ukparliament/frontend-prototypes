@@ -10,10 +10,10 @@
 		margin-left: (- $base-spacing-unit);
 	}
 	li {
-		padding: 0 $base-spacing-unit;
+		padding: 0 ($base-spacing-unit - 3);
 	}
 	a {
-		padding: $base-spacing-unit-tiny 0;
+		padding: $base-spacing-unit-tiny 3px;
 		@include links(
 			$black, 		// a:link colour
 			none,				// a:link decoration
@@ -22,6 +22,9 @@
 			$black, 		// a:active color
 			none	 			// a:active decoration
 		);
+		&:focus {
+			outline: none;
+		}
 		&:hover {
 			text-decoration: none;
 
@@ -70,7 +73,7 @@
 			margin-left: (- $base-spacing-unit-small);
 		}
 		li {
-			padding: 0 $base-spacing-unit-small;
+			padding: 0 ($base-spacing-unit-small - 3);
 		}
 	}
   .navigation--number {
