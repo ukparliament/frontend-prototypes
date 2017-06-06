@@ -4,7 +4,7 @@ table {
   width: 100%;
   margin-top: 0;
   margin-bottom: $base-spacing-unit-small;
-  background: $white;
+  background: $grey-4;
   border-collapse: collapse;
   border-spacing: 0;
   th, td {
@@ -12,26 +12,23 @@ table {
   }
   thead {
     th {
-      background: $white;
+      background: $grey-1;
+      color: $white;
       &:nth-child(even) {
-        border-left: 1px solid $grey-4;
-        border-right: 1px solid $grey-4;
+        border-left: 1px solid $grey-5;
+        border-right: 1px solid $grey-5;
       }
     }
   }
   thead th, tfoot td {
-    border: solid 3px $grey-4;
     text-align: left;
   }
-  tbody tr {
-    border-bottom: 1px solid $grey-4;
-    &:last-of-type {
-      border-bottom: 0;
-    }
-    td:nth-child(even) {
-      border-left: 1px solid $grey-4;
-      border-right: 1px solid $grey-4;
-    }
+  tbody tr:nth-child(even) {
+  	background: $grey-3;
+  }
+  tbody tr td:nth-child(even) {
+    border-left: 1px solid $grey-5;
+    border-right: 1px solid $grey-5;
   }
   caption {
     margin-top: 0;
