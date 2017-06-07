@@ -2,6 +2,7 @@
 h1, h2, h3, h4, h5, h6 {
   margin-top: $base-spacing-unit-medium;
   margin-bottom: $base-spacing-unit;
+  font-weight: 500;
   padding: 0;
   color: $navy;
   @include media($desktop) {
@@ -18,6 +19,20 @@ h1 {
   line-height: 1.059; // 36px;
   margin-top: 0;
   margin-bottom: $base-spacing-unit-tiny;
+
+  a {
+  	vertical-align: top;
+  	@include fontsize(20);
+	  line-height: 1.2; // 24px;
+	}
+
+  span {
+  	display: block;
+  	&:nth-of-type(2) {
+  		@include fontsize(16);
+  		line-height: 1.125; // 18px;
+  	}
+  }
 }
 
 h2 {
@@ -55,6 +70,20 @@ h6 {
     line-height: 1.091; // 48px
     margin-top: 0;
     margin-bottom: $base-spacing-unit-small;
+
+    a {
+    	vertical-align: top;
+	  	@include fontsize(22);
+    	line-height: 1.091; // 24px
+	  }
+
+	  span {
+	  	display: block;
+	  	&:nth-of-type(2) {
+	  		@include fontsize(18);
+    		line-height: 1.334; // 24px;
+	  	}
+	  }
   }
   h2 {
     @include fontsize(32);

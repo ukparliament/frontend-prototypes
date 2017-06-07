@@ -60,7 +60,7 @@
 // Number Navigation Controls Settings
 
 .navigation-control--left {
-	@include navigation-control(left, - $base-spacing-unit, $base-spacing-unit-tiny);
+	@include navigation-control(left, - $base-spacing-unit-tiny, $base-spacing-unit-tiny);
 }
 .navigation-control--right {
 	float: none;
@@ -81,10 +81,11 @@
 
 		ol {
 			margin: 0;
+			display: inline-block;
 		}
   }
 	.navigation-control--right {
-		@include navigation-control(right, $base-spacing-unit-small, - $base-spacing-unit);
+		@include navigation-control(right, $base-spacing-unit-small, - $base-spacing-unit-tiny);
 	}
 }
 
@@ -93,5 +94,39 @@
 @media print {
   nav {
     display: none;
+  }
+}
+
+// Navigation letter styling
+.navigation--letter {
+	@extend .list--inline;
+  @include clearfix;
+
+  ol {
+    margin: 0;
+  }
+  li {
+    min-width: 42px;
+    margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
+    background-color: none;
+    color: $grey-1;
+    a:link {
+      padding: $base-spacing-unit-tiny 0;
+      @include media($desktop) {
+        padding: ($base-spacing-unit + 3px) 0;
+      }
+      background-color: $white;
+      color: $blue;
+      text-decoration: none;
+    }
+    a:hover {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+  li.active a {
+    background-color: $primary;
+    color: $white;
+    font-weight: 500;
   }
 }

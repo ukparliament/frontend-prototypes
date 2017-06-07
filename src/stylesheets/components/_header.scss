@@ -7,6 +7,9 @@ header {
   border-bottom-style: solid;
   border-bottom-color: $grey-3;
   background-color: $white;
+  a {
+  	display: inline-block;
+  }
 	.container {
 		line-height: 0;
 	}

@@ -50,18 +50,19 @@ dl, dt, dd {
 
 .list--inline {
   @extend .list;
+  @include clearfix;
 
   ol, ul {
     margin: 0 (-$base-spacing-unit-tiny + 6);
   }
   li {
     margin: 0;
-    display: inline-block;
+    float: left;
   }
   a, span {
     display: block;
     position: relative;
-    padding: ($base-spacing-unit-tiny / 2);
+    padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
   }
 }
 .list--box {
