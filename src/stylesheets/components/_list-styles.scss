@@ -73,6 +73,38 @@ dl, dt, dd {
     padding: $base-spacing-unit-small;
     margin-bottom: $base-spacing-unit;
   }
+
+  li.image__item {
+  	min-height: 108px; // Minimum height to accomodate 3 sets of text at 16px font size w/ margins
+  	@include media($desktop) {
+  		min-height:129px; // Minimum height to accomodate 3 sets of text at 18px font size w/ margins
+  	}
+
+  	img {
+      height: 84px; // Image Height = minimum height of li - padding
+      display: inline-block;
+      border-radius: 50%;
+      margin: 0 $base-spacing-unit-small 0 0;
+      float: left;
+      @include media($desktop) {
+  			height: 93px; // Image Height = minimum height of li - padding
+  		}
+    }
+    .list--details {
+    	display: inline-block;
+    	width: calc(100% - 102px); // List details width = 100% - (image width + image margin-right)
+    	margin-top: 0;
+    	@include media($desktop) {
+  			width: calc(100% - 111px); // List details width = 100% - (image width + image margin-right)
+  		}
+    	h2 {
+    		margin-top: 0;
+    	}
+    	:last-child {
+    		margin-bottom: 0;
+    	}
+    }
+  }
 }
 .list--pipe {
   @extend .list;
