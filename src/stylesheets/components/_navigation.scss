@@ -25,18 +25,45 @@
 		&:focus {
 			outline: none;
 		}
-		&:hover {
-			text-decoration: none;
+	}
+}
 
-			&:after {
-				content: "";
-				left: 0;
-				width: 100%;
-				bottom: $base-spacing-unit-tiny - 1;
-				position: absolute;
-				border-bottom: 2px solid $black;
-			}
+// Navigation letter styling
+
+.navigation--letter {
+	@extend .list--inline;
+	@include clearfix;
+
+	ol {
+		margin: 0;
+	}
+	li {
+		min-width: 42px;
+		margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
+		background-color: none;
+		color: $grey-1;
+
+		span {
+			padding: $base-spacing-unit-tiny 0;
 		}
+		a:link {
+			padding: $base-spacing-unit-tiny 0;
+			@include media($desktop) {
+				padding: ($base-spacing-unit + 3px) 0;
+			}
+			background-color: $white;
+			color: $blue;
+			text-decoration: none;
+		}
+		a:hover {
+			background-color: $blue;
+			color: $white;
+		}
+	}
+	li.active {
+		background-color: $primary;
+		color: $white;
+		font-weight: 500;
 	}
 }
 
@@ -76,6 +103,11 @@
 			padding: 0 ($base-spacing-unit-small - 3);
 		}
 	}
+	.navigation--letter {
+		li span {
+			padding: ($base-spacing-unit + 3) 0;
+		}
+	}
   .navigation--number {
 		text-align: center;
 
@@ -94,39 +126,5 @@
 @media print {
   nav {
     display: none;
-  }
-}
-
-// Navigation letter styling
-.navigation--letter {
-	@extend .list--inline;
-  @include clearfix;
-
-  ol {
-    margin: 0;
-  }
-  li {
-    min-width: 42px;
-    margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
-    background-color: none;
-    color: $grey-1;
-    a:link {
-      padding: $base-spacing-unit-tiny 0;
-      @include media($desktop) {
-        padding: ($base-spacing-unit + 3px) 0;
-      }
-      background-color: $white;
-      color: $blue;
-      text-decoration: none;
-    }
-    a:hover {
-      background-color: $blue;
-      color: $white;
-    }
-  }
-  li.active a {
-    background-color: $primary;
-    color: $white;
-    font-weight: 500;
   }
 }
