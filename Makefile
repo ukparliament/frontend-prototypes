@@ -69,7 +69,7 @@ lint:
 	@$(ESLINT) $(JAVASCRIPTS_LOC)
 
 # Launches a local server
-serve: clean build
+serve: clean install build
 	@node server.js
 
 # Watches project files for changes
