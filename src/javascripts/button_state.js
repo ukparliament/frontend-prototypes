@@ -27,7 +27,7 @@
 		// If HTML5 attribute validation passes
 		if (input.checkValidity() === true) {
 			// Add btn--loading class to button
-			this.classList.add('btn--loading');
+			//this.classList.add('btn--loading');
 
 			// Change aria-pressed to the opposite state
 			this.setAttribute('aria-pressed', true);
