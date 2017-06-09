@@ -12,6 +12,7 @@ IMAGES_LOC=src/images
 REPORTS_FOLDER=reports
 
 # Node module variables
+BACKSTOP_JS=./node_modules/.bin/backstop
 ESLINT=./node_modules/.bin/eslint
 IMAGEMIN=./node_modules/.bin/imagemin
 ONCHANGE=./node_modules/.bin/onchange
@@ -75,6 +76,11 @@ serve: clean build
 # Watches project files for changes
 watch:
 	@node scripts/watch.js $(STYLESHEETS_LOC)=css $(JAVASCRIPTS_LOC)=js $(IMAGES_LOC)=images $(SRC_FOLDER)/layouts=templates $(SRC_FOLDER)/elements=templates $(SRC_FOLDER)/components=templates $(SRC_FOLDER)/templates=templates
+
+# Runs visual regression testing
+backstop:
+	@$(BACKSTOP_JS) reference
+	@$(BACKSTOP_JS) test
 
 # Runs accessibility testing
 test:
