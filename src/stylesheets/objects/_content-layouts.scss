@@ -58,6 +58,13 @@
 		padding-top: $base-spacing-unit-small;
 		padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
 	}
+	&__bottom {
+		padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
+	  border-bottom: 1px solid $grey-3;
+	  @include media($desktop) {
+		  padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height
+		}
+	}
 }
 
 // Column Layout Options
