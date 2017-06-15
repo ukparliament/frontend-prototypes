@@ -81,9 +81,11 @@
 	p {
 		position: absolute;
 		right: $base-spacing-unit-small;
-		top: calc(50% - 28px);
+		top: calc(50% - 25px); // 50% - (half the height of the column height - 1 (compensate for font height))
 		text-align: right;
-
+		@include media($desktop) {
+			top: calc(50% - 32px); // 50% - (half the height of the column height - 2 (compensate for font height))
+		}
 		span {
 			display:block;
 		}
