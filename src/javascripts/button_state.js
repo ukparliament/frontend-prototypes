@@ -2,9 +2,9 @@
 
 (function () {
 	var btnLoad,
-			input,
-			form,
-			userAgent;
+		input,
+		form,
+		userAgent;
 
 	// Grab element with id of btn__loading
 	btnLoad = document.getElementById('btn_loading');
@@ -23,7 +23,7 @@
 		// bfcache fix
 		window.addEventListener('pageshow', function (event) {
 			if (event.persisted && btnLoad.classList.contains('btn--loading')) {
-				btnLoad.classList.remove('btn--loading')
+				btnLoad.classList.remove('btn--loading');
 			}
 		});
 		// Event listener for form submit
