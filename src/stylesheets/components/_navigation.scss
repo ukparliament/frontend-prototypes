@@ -26,8 +26,12 @@
 		}
 	}
 	.container {
-		max-width: 732px;
+		max-width: 732px; // Reduced to accomodate current grid
 		padding: 0;
+		margin: 0 $base-spacing-unit-small;
+		@include media($desktop) {
+			margin: 0 auto;
+		}
 		border-bottom-width: 1px;
   	border-bottom-style: solid;
   	border-bottom-color: $grey-3;
