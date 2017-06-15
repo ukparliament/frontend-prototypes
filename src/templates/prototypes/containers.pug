@@ -1,0 +1,16 @@
+extends ../../layouts/layout.pug
+block content
+	.section--primary
+		.container
+			h1 Containers
+	section
+		.container
+			.inner-container--focus
+				h2 Find your MP
+				.form-group
+					+input('Enter a full postcode', 'input', 'postcode_main', 'text', 8, '[0-9a-zA-Z ]{5,}', '- Special characters (!@£$%) are not permitted')
+					|
+					button#btn_loading(type='submit', value='Search', class='btn--secondary')
+						span.btn--loading__text Search
+						span.btn--loading__icon
+							object(data='../../icons/loading.svg', type='image/svg+xml')

@@ -53,8 +53,8 @@ button, input {
 }
 
 label, optgroup, select, textarea, figcaption {
-  @include fontsize(14);
+  @include fontsize(16);
   @include media($desktop) {
-    @include fontsize(16);
+    @include fontsize(18);
   }
 }
