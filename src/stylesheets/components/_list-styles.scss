@@ -65,6 +65,7 @@ dl, dt, dd {
     padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
   }
 }
+
 .list--box {
   @extend .list;
 
@@ -82,6 +83,7 @@ dl, dt, dd {
 
   	img {
       height: 84px; // Image Height = minimum height of li - padding
+      width: auto;
       display: inline-block;
       border-radius: 50%;
       margin: 0 $base-spacing-unit-small 0 0;
@@ -105,6 +107,24 @@ dl, dt, dd {
     	}
     }
   }
+}
+.list--inline__box {
+	@extend .list--box;
+	@include clearfix;
+
+	display: inline-flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	li {
+		display: inline-block;
+		float: left;
+		margin-right: $base-spacing-unit;
+		width: auto;
+		flex-grow: 1;
+		> h2, h3, p {
+			display: inline;
+		}
+	}
 }
 .list--pipe {
   @extend .list;
