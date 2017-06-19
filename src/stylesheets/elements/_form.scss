@@ -18,6 +18,10 @@ input {
   border: solid 1px $grey-3;
   padding: ($base-spacing-unit-tiny - 1);
 
+  &[name="postcode"] {
+  	text-transform: uppercase;
+  }
+
   @include media($desktop) {
     width: 70%;
   }
