@@ -38,6 +38,9 @@
 	:first-child {
 		margin-top: 0;
 	}
+	:only-child {
+		margin-bottom: 2px; // Negate font imbalance and excessive margins on single item focus containers
+	}
 }
 .section--primary__container {
 	@include clearfix;
