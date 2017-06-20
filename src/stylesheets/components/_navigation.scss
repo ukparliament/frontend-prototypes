@@ -14,11 +14,11 @@
 	a {
 		padding: $base-spacing-unit-tiny 3px;
 		@include links(
-			$black, 		// a:link colour
+			$grey-1, 		// a:link colour
 			none,				// a:link decoration
-			$black, 		// a:visited color
-			$black, 		// a:hover color
-			$black, 		// a:active color
+			$grey-1, 		// a:visited color
+			$grey-1, 		// a:hover color
+			$grey-1, 		// a:active color
 			none	 			// a:active decoration
 		);
 		&:focus {
