@@ -3,11 +3,38 @@ block content
 	.section--primary(id="content")
 		.container
 			.block--border__bottom
-				.section--primary__container
-					+image('/images/diane-abbott.jpg', 'Dianne Abbott')
-					.section--primary__block
-						h1 Diane Abbott
-						p #[+link('#', 'Labour')] MP for #[+link('#', 'Hackney North and Stoke Newington')]
+				+image('../../images/kenneth_clark_1464x584.jpg', 'Dianne Abbott')
+				h1 Diane Abbott
+				p #[+link('#', 'Labour')] MP for #[+link('#', 'Hackney North and Stoke Newington')]
+
+	section.section--minor
+		.container
+			.block.highlight
+				.dropdown__toggle
+					h2 Check if this is your MP
+				.dropdown__content
+					.form-group
+						+input('Enter your full postcode, for example SW1A 0AA.', 'input', 'postcode_main', 'text', 8, '[0-9a-zA-Z ]{5,}', '- Special characters (!@£$%) are not permitted')
+						|
+						button#btn_loading(type='submit', value='Search', class='btn--secondary')
+							span.btn--loading__text Find
+							span.btn--loading__icon
+								object(data='../../icons/loading.svg', type='image/svg+xml')
+					p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
+
+	section
+		.container
+			.block
+				h2 Contact
+				dl.list--definition
+					dt Email:
+					dd
+						+link('mailto:nigel.adams.mp@parliament.uk', 'nigel.adams.mp@parliament.uk')
+					dt Phone:
+					dd
+						+link('tel:02072197141', '020 7219 7141')
+					dt Address:
+					dd House of Commons, London, SW1A 0AA
 
 	section
 		.container

@@ -3,6 +3,11 @@
 .visually-hidden {
   visibility: hidden;
 }
+
+.hidden {
+	display: none;
+}
+
 .sr-only {
 	@include screenreader;
 }

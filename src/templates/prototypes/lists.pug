@@ -2,27 +2,25 @@ extends ../../layouts/layout.pug
 block content
 	.section--primary
 		.container
-			.section--primary__container
-				.section--primary__block
-					h1 Lists
+			h1 Lists
 
-			.section--primary__container
-				.section--primary__block
-					h2 Inline box list
-					ol.list--inline__box
-						each object in [{name: 'Conservative', description: 'All current Conservative MPs', count: '345'},{name: 'Labour', description: 'All current Labour MPs', count: '9'},{name: 'Vanguard Unionist Progressive Party', description: 'All current Vanguard Unionist Progressive Party MPs', count: '786'},{name: 'Labour', description: 'All current Labour MPs', count: '9'},{name: 'Conservative', description: 'All current Conservative MPs', count: '345'},{name: 'Vanguard Unionist Progressive Party', description: 'All current Vanguard Unionist Progressive Party MPs', count: '786'}]
-							li
-								h2 #[+link('#', object.name)]
-								p= "- " + object.count
+	section
+		.container
+			h2 Inline box list
+			ol.list--inline__box
+				each object in [{name: 'Conservative', description: 'All current Conservative MPs', count: '345'},{name: 'Labour', description: 'All current Labour MPs', count: '9'},{name: 'Vanguard Unionist Progressive Party', description: 'All current Vanguard Unionist Progressive Party MPs', count: '786'},{name: 'Labour', description: 'All current Labour MPs', count: '9'},{name: 'Conservative', description: 'All current Conservative MPs', count: '345'},{name: 'Vanguard Unionist Progressive Party', description: 'All current Vanguard Unionist Progressive Party MPs', count: '786'}]
+					li
+						h2 #[+link('#', object.name)]
+						p= "- " + object.count
 
-					h2 Box list
-					ol.list--box
-						each object in [{name: 'Nigel Adams', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Adam Afriyie', constituency: 'MP for Windsor', party: 'Conservative'}]
-							li.image__item
-								img(src="/images/romesh_rectangle.png")
-								.list--details
-									h2 #[+link('#', object.name)]
-									p= object.constituency
-									p= object.party
+			h2 Box list
+			ol.list--box
+				each object in [{name: 'Nigel Adams', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Adam Afriyie', constituency: 'MP for Windsor', party: 'Conservative'}]
+					li
+						img(src="../../images/Romesh_Rectangle.png")
+						.list--details
+							h2 #[+link('#', object.name)]
+							p= object.constituency
+							p= object.party
 
 

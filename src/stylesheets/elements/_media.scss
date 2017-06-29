@@ -25,22 +25,21 @@ video {
 
 .section--primary {
   img {
-    width: 295px;
-    border-radius: 4px;
+  	display: block;
+  	width: 100%;
     margin-bottom: $base-spacing-unit-small;
+  }
+
+  img + h1 {
+  	margin-bottom: $base-spacing-unit-tiny / 2;
+  }
+  img ~ p:last-child {
+  	margin-bottom: 0;
   }
 }
 
 @include media($desktop) {
   .section--primary {
-    img {
-      float: right;
-      width: 295px;
-      margin-bottom: 0;
-    }
-    img + .section--primary__block {
-      float: left;
-      width: 41.6666666667%;
-    }
+
   }
 }

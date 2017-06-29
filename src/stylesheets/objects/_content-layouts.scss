@@ -7,6 +7,11 @@
 }
 .section--minor {
 	padding: $base-spacing-unit-tiny 0;
+	.container {
+		> :last-child {
+			margin: 0;
+		}
+	}
 }
 .section--major {
 	padding: $base-spacing-unit-extra-large 0;
@@ -20,7 +25,7 @@
 		padding: $base-spacing-unit-extra-large 0;
 	}
 	.section--minor {
-		padding: $base-spacing-unit-tiny 0 $base-spacing-unit-small;
+		padding: $base-spacing-unit-small 0;
 	}
 }
 
@@ -30,23 +35,26 @@
 	padding: 0 $base-spacing-unit-small;
 	@include outer-container;
 }
-.inner-container--focus {
-	padding: $base-spacing-unit-small;
-	@include outer-container;
-	background: $white;
 
-	:first-child {
-		margin-top: 0;
-	}
-	:only-child {
-		margin-bottom: 2px; // Negate font imbalance and excessive margins on single item focus containers
-	}
-}
 .section--primary__container {
 	@include clearfix;
 }
 
 // Block Options
+
+.block {
+	padding: $base-spacing-unit-small;
+	background-color: white;
+	@include outer-container;
+	margin-bottom: $base-spacing-unit-small;
+
+	> :first-child {
+		margin-top: 0;
+	}
+  :last-child {
+		margin-bottom: 0;
+	}
+}
 
 .block--border {
 	padding-top: ($base-spacing-unit-small - 1); // -1px to compensate for border height
@@ -64,6 +72,7 @@
 	&__bottom {
 		padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
 	  border-bottom: 1px solid $grey-3;
+
 	  @include media($desktop) {
 		  padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height
 		}

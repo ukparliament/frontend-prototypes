@@ -70,43 +70,36 @@ dl, dt, dd {
   @extend .list;
 
   li {
-    background: $white;
-    padding: $base-spacing-unit-small;
+  	@extend .block;
     margin-bottom: $base-spacing-unit;
+    display: inline-flex;
+    width: 100%;
   }
 
-  li.image__item {
-  	min-height: 108px; // Minimum height to accomodate 3 sets of text at 16px font size w/ margins
-  	@include media($desktop) {
-  		min-height:129px; // Minimum height to accomodate 3 sets of text at 18px font size w/ margins
+  img {
+    height: 84px; // Image Height = minimum height of li - padding
+    width: auto;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 $base-spacing-unit-small 0 0;
+    vertical-align: top;
+    @include media($desktop) {
+			height: 93px; // Image Height = minimum height of li - padding
+		}
+  }
+
+
+  .list--details {
+  	display: inline-block;
+  	margin-top: 0;
+  	h2, h3, h4 {
+  		margin-top: 0;
   	}
-
-  	img {
-      height: 84px; // Image Height = minimum height of li - padding
-      width: auto;
-      display: inline-block;
-      border-radius: 50%;
-      margin: 0 $base-spacing-unit-small 0 0;
-      float: left;
-      @include media($desktop) {
-  			height: 93px; // Image Height = minimum height of li - padding
-  		}
-    }
-    .list--details {
-    	display: inline-block;
-    	width: calc(100% - 102px); // List details width = 100% - (image width + image margin-right)
-    	margin-top: 0;
-    	@include media($desktop) {
-  			width: calc(100% - 111px); // List details width = 100% - (image width + image margin-right)
-  		}
-    	h2 {
-    		margin-top: 0;
-    	}
-    	:last-child {
-    		margin-bottom: 0;
-    	}
-    }
+  	:last-child {
+  		margin-bottom: 0;
+  	}
   }
+
 }
 .list--inline__box {
 	@extend .list--box;
@@ -116,6 +109,7 @@ dl, dt, dd {
 	flex-wrap: wrap;
 	flex-direction: row;
 	li {
+		min-height: auto;
 		display: inline-block;
 		float: left;
 		margin-right: $base-spacing-unit;
@@ -181,6 +175,10 @@ dl, dt, dd {
   &:last-of-type {
     margin-bottom: 0;
   }
+}
+
+[class*="block"] .list--definition {
+	margin-bottom: 0;
 }
 
 // Footer list
