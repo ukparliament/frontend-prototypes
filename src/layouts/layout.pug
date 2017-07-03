@@ -1,19 +1,14 @@
 doctype html
 html(lang="en")
-  head
-    title Parliamentary Digital Service
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    link(rel="stylesheet", href="../../stylesheets/main.css")
-    link(rel="icon", type="image/x-icon", href="../../images/favicon.ico")
+  include ../elements/head.pug
   body.no-js
     include ../elements/mixins.pug
     include ../elements/skip-content.pug
-    include ../components/header.pug
     include ../components/status.pug
+    include ../components/header.pug
     include ../components/navigation-main.pug
     main
       block content
     include ../components/footer.pug
-    script(src="../../javascripts/main.js")
+    script(src="/javascripts/main.js")
     block script

@@ -40,7 +40,7 @@ dl, dt, dd {
     }
     &.active {
       color: $navy;
-      font-weight: bold;
+      font-weight: 500;
       text-decoration: none;
     }
   }
@@ -50,28 +50,75 @@ dl, dt, dd {
 
 .list--inline {
   @extend .list;
+  @include clearfix;
 
   ol, ul {
     margin: 0 (-$base-spacing-unit-tiny + 6);
   }
   li {
     margin: 0;
-    display: inline-block;
+    float: left;
   }
   a, span {
     display: block;
     position: relative;
-    padding: ($base-spacing-unit-tiny / 2);
+    padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
   }
 }
+
 .list--box {
   @extend .list;
 
   li {
-    background: $white;
-    padding: $base-spacing-unit-small;
+  	@extend .block;
     margin-bottom: $base-spacing-unit;
+    display: inline-flex;
+    width: 100%;
   }
+
+  img {
+    height: 84px; // Image Height = minimum height of li - padding
+    width: auto;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 $base-spacing-unit-small 0 0;
+    vertical-align: top;
+    @include media($desktop) {
+			height: 93px; // Image Height = minimum height of li - padding
+		}
+  }
+
+
+  .list--details {
+  	display: inline-block;
+  	margin-top: 0;
+  	h2, h3, h4 {
+  		margin-top: 0;
+  	}
+  	:last-child {
+  		margin-bottom: 0;
+  	}
+  }
+
+}
+.list--inline__box {
+	@extend .list--box;
+	@include clearfix;
+
+	display: inline-flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	li {
+		min-height: auto;
+		display: inline-block;
+		float: left;
+		margin-right: $base-spacing-unit;
+		width: auto;
+		flex-grow: 1;
+		> h2, h3, p {
+			display: inline;
+		}
+	}
 }
 .list--pipe {
   @extend .list;
@@ -128,6 +175,10 @@ dl, dt, dd {
   &:last-of-type {
     margin-bottom: 0;
   }
+}
+
+[class*="block"] .list--definition {
+	margin-bottom: 0;
 }
 
 // Footer list

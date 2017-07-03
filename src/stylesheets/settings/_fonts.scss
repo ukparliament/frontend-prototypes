@@ -1,1 +1,37 @@
-$base-font-stack: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+@font-face {
+	font-family: 'National';
+	src: url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-Book.eot');
+	src: url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-Book.eot?#iefix') format('embedded-opentype'),
+	     url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-Book.woff2') format('woff2'),
+	     url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-Book.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'National';
+  src: url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-BookItalic.eot');
+  src: url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-BookItalic.eot?#iefix') format('embedded-opentype'),
+       url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-BookItalic.woff2') format('woff2'),
+       url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-BookItalic.woff') format('woff');
+	font-style: italic;
+}
+
+@font-face {
+  font-family: 'National';
+  src: url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-Semibold.eot');
+  src: url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-Semibold.eot?#iefix') format('embedded-opentype'),
+       url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-Semibold.woff2') format('woff2'),
+       url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-Semibold.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'National';
+  src: url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-SemiboldItalic.eot');
+  src: url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+       url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-SemiboldItalic.woff2') format('woff2'),
+       url('<% STATIC_ASSET_LOCATION_URL %>/NationalWeb-SemiboldItalic.woff') format('woff');
+  font-weight: 500;
+	font-style: italic;
+}
+
+$base-font-stack: 'National', Arial, 'Helvetica Neue', Helvetica, sans-serif;

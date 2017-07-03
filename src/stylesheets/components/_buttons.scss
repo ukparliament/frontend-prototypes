@@ -1,22 +1,60 @@
+// Global button properties
+
 [class*="btn"] {
   border: none;
-  @include border-radius($base-spacing-unit, $base-spacing-unit, $base-spacing-unit, $base-spacing-unit);
+  @include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
 }
 
-.form-group [class*="btn"] {
-  @include border-radius(0, $base-spacing-unit, $base-spacing-unit, 0);
-}
-
-.btn--primary {
-  @extend .highlight--default;
-  &:hover {
-    background-color: darken($navy, 10%);
-  }
-}
+// Styled buttons based upon 'components/highlights.scss'
 
 .btn--secondary {
   @extend .highlight--secondary;
   &:hover {
-    background-color: darken($secondary, 10%);
+    background-color: (darken($secondary, 10%));
+  }
+}
+
+// Button with animated loading icon and text
+
+.btn--loading__icon {
+  display: none;
+}
+
+.btn--loading__text {
+  display: inline-block;
+}
+
+.btn--loading {
+  cursor: not-allowed;
+
+  @-webkit-keyframes spinner {
+    from {
+      -webkit-transform: rotate(0);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spinner {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .btn--loading__icon {
+    // Pass in duration, timing function, delay, interation count and name
+    @include css-animation(.8s, linear, 0s, infinite, spinner);
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    vertical-align: top;
+  }
+
+  .btn--loading__text {
+    display: none;
   }
 }

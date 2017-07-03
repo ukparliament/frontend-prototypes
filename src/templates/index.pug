@@ -1,11 +1,7 @@
 doctype html
 html(lang="en")
-  head
-    title Parliamentary Digital Service
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    link(rel="stylesheet", href="_public/stylesheets/main.css")
-    link(rel="icon", type="image/x-icon", href="_public/images/favicon.ico")
+  - var index = true
+  include ../elements/head.pug
   body.no-js
     include ../elements/mixins.pug
     include ../elements/skip-content.pug
@@ -19,22 +15,26 @@ html(lang="en")
         .container
           h2 Templates
           ul
-            li #[+link('_public/templates/prototypes/conservative-current.html', 'Conservative current')]
-            li #[+link('_public/templates/prototypes/contact.html', 'Contact')]
-            li #[+link('_public/templates/prototypes/front-page.html', 'Front Page')]
-            li #[+link('_public/templates/prototypes/house-commons-members-current.html', 'House of Commons Members')]
-            li #[+link('_public/templates/prototypes/house-lords-members-current.html', 'House of Lords Members Current')]
-            li #[+link('_public/templates/prototypes/party-current.html', 'Party Current')]
-            li #[+link('_public/templates/prototypes/people-id.html', 'People ID')]
-            li #[+link('_public/templates/prototypes/people-constituency.html', 'People Constituency')]
-            li #[+link('_public/templates/prototypes/constituencies.html', 'Constituencies')]
+            li #[+link('/templates/prototypes/conservative-current.html', 'Conservative current')]
+            li #[+link('/templates/prototypes/contact.html', 'Contact')]
+            li #[+link('/templates/prototypes/front-page.html', 'Front Page')]
+            li #[+link('/templates/prototypes/house-commons-members-current.html', 'House of Commons Members')]
+            li #[+link('/templates/prototypes/house-lords-members-current.html', 'House of Lords Members Current')]
+            li #[+link('/templates/prototypes/party-current.html', 'Party Current')]
+            li #[+link('/templates/prototypes/people-id.html', 'People ID')]
+            li #[+link('/templates/prototypes/people-constituency.html', 'People Constituency')]
+            li #[+link('/templates/prototypes/constituencies.html', 'Constituencies')]
+            li #[+link('/templates/prototypes/constituency-map.html', 'Constituency map')]
 
       section
         .container
           h2 Elements
           ul
-            li #[+link('_public/templates/prototypes/navigation.html', 'Navigations')]
-            li #[+link('_public/templates/prototypes/forms.html', 'Forms')]
+            li #[+link('/templates/prototypes/navigation.html', 'Navigations')]
+            li #[+link('/templates/prototypes/forms.html', 'Forms')]
+            li #[+link('/templates/prototypes/containers.html', 'Containers')]
+            li #[+link('/templates/prototypes/lists.html', 'Lists')]
+
 
       section
         .container

@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  include ../elements/head.pug
+  body.no-js
+    include ../elements/mixins.pug
+    include ../elements/skip-content.pug
+    include ../components/header.pug
+    main
+      block content
+    include ../components/footer.pug
+    script(src="/javascripts/main.js")
+    block script

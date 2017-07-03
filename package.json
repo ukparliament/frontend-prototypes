@@ -1,6 +1,6 @@
 {
   "name": "parliamentuk-pugin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A static build system for UK Parliament prototypes.",
   "author": "UK Parliament",
   "license": "MIT",
@@ -19,25 +19,26 @@
     "start": "make serve"
   },
   "main": "server.js",
-  "dependencies": {
-  },
   "devDependencies": {
-    "chokidar": "^1.6.1",
-    "eslint": "^3.14.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
-    "minimist": "^1.2.0",
-    "pa11y": "^4.4.0",
-    "readdir": "0.0.13",
-    "valimate": "^2.3.0",
     "autoprefixer": "^6.7.0",
     "bourbon-neat": "^1.8.0",
+    "chokidar": "^1.6.1",
+    "eslint": "^4.1.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^3.0.1",
     "express": "^4.14.0",
     "imagemin-cli": "^3.0.0",
+    "leaflet": "^1.0.3",
+    "minimist": "^1.2.0",
     "node-sass": "^4.3.0",
-    "postcss-cli": "^2.6.0",
+    "pa11y": "^4.4.0",
+    "postcss-cli": "^4.1.0",
+    "pretty-mini-json": "^1.1.4",
     "pug-cli": "^1.0.0-alpha6",
-    "uglify-js": "^2.7.5"
+    "svgo": "^0.7.2",
+		"readdir": "0.0.13",
+    "uglify-js": "^3.0.20",
+    "valimate": "^2.3.0"
   }
 }

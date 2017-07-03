@@ -8,6 +8,7 @@
 
 // Vendor files
 @import '../../node_modules/bourbon-neat/app/assets/stylesheets/neat';
+@import '../../node_modules/leaflet/dist/leaflet';
 
 // Import generic styles
 @import 'generic/normalize';
@@ -21,6 +22,7 @@
 @import 'elements/body';
 @import 'elements/form';
 @import 'elements/headings';
+@import 'elements/icons';
 @import 'elements/links';
 @import 'elements/logos';
 @import 'elements/media';
@@ -30,12 +32,13 @@
 
 // Import site-wide components
 @import 'components/buttons';
-@import 'components/content-slider';
+@import 'components/dropdown';
 @import 'components/footer';
 @import 'components/header';
 @import 'components/highlight';
 @import 'components/line-break';
 @import 'components/list-styles';
+@import 'components/map';
 @import 'components/navigation';
 //@import '../../parliament-fonts/stylesheets/override';
 

@@ -4,36 +4,76 @@
 
 .navigation--main {
 	@include navigation(0, 0);
-	background-color: $grey-4;
 
 	ul {
 		margin-left: (- $base-spacing-unit);
 	}
 	li {
-		padding: 0 $base-spacing-unit;
+		padding: 0 ($base-spacing-unit - 3);
 	}
 	a {
-		padding: $base-spacing-unit-tiny 0;
+		padding: $base-spacing-unit-tiny 3px;
 		@include links(
-			$black, 		// a:link colour
+			$grey-1, 		// a:link colour
 			none,				// a:link decoration
-			$black, 		// a:visited color
-			$black, 		// a:hover color
-			$black, 		// a:active color
+			$grey-1, 		// a:visited color
+			$grey-1, 		// a:hover color
+			$grey-1, 		// a:active color
 			none	 			// a:active decoration
 		);
-		&:hover {
-			text-decoration: none;
-
-			&:after {
-				content: "";
-				left: 0;
-				width: 100%;
-				bottom: $base-spacing-unit-tiny - 1;
-				position: absolute;
-				border-bottom: 2px solid $black;
-			}
+		&:focus {
+			outline: none;
 		}
+	}
+	.container {
+		max-width: 732px; // Reduced to accomodate current grid
+		padding: 0;
+		margin: 0 $base-spacing-unit-small;
+		@include media($desktop) {
+			margin: 0 auto;
+		}
+		border-bottom-width: 1px;
+  	border-bottom-style: solid;
+  	border-bottom-color: $grey-3;
+	}
+}
+
+// Navigation letter styling
+
+.navigation--letter {
+	@extend .list--inline;
+	@include clearfix;
+
+	ol {
+		margin: 0;
+	}
+	li {
+		min-width: 42px;
+		margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
+		background-color: none;
+		color: $grey-1;
+
+		span {
+			padding: $base-spacing-unit-tiny 0;
+		}
+		a:link {
+			padding: $base-spacing-unit-tiny 0;
+			@include media($desktop) {
+				padding: ($base-spacing-unit + 3px) 0;
+			}
+			background-color: $white;
+			color: $blue;
+			text-decoration: none;
+		}
+		a:hover {
+			background-color: $blue;
+			color: $white;
+		}
+	}
+	li.active {
+		background-color: $primary;
+		color: $white;
+		font-weight: 500;
 	}
 }
 
@@ -57,7 +97,7 @@
 // Number Navigation Controls Settings
 
 .navigation-control--left {
-	@include navigation-control(left, - $base-spacing-unit, $base-spacing-unit-tiny);
+	@include navigation-control(left, - $base-spacing-unit-tiny, $base-spacing-unit-tiny);
 }
 .navigation-control--right {
 	float: none;
@@ -70,7 +110,12 @@
 			margin-left: (- $base-spacing-unit-small);
 		}
 		li {
-			padding: 0 $base-spacing-unit-small;
+			padding: 0 ($base-spacing-unit-small - 3);
+		}
+	}
+	.navigation--letter {
+		li span {
+			padding: ($base-spacing-unit + 3) 0;
 		}
 	}
   .navigation--number {
@@ -78,10 +123,11 @@
 
 		ol {
 			margin: 0;
+			display: inline-block;
 		}
   }
 	.navigation-control--right {
-		@include navigation-control(right, $base-spacing-unit-small, - $base-spacing-unit);
+		@include navigation-control(right, $base-spacing-unit-small, - $base-spacing-unit-tiny);
 	}
 }
 

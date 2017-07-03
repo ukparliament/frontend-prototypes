@@ -13,10 +13,10 @@ body {
   color: $grey-1;
   font-family: $base-font-stack;
   // fontsize mixin creates 'font-size' in both REM & Pixels
-  @include fontsize(14);
-  line-height: 1.286; // 18px
+  @include fontsize(16);
+  line-height: 1.5; // 18px
   @include media($desktop) {
-    @include fontsize(16);
+    @include fontsize(18);
     line-height: 1.5; // 24px
   }
   // font-smoothing - anti aliasing
@@ -28,6 +28,7 @@ body {
   // Experimental text decoration declaration (webkit only)
   // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
   -webkit-text-decoration-skip: ink;
+	text-decoration-skip: ink;
 }
 
 html, body {

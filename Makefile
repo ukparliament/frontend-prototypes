@@ -7,18 +7,21 @@ AWS_ACCOUNT?=unknown
 SRC_FOLDER=src
 PUBLIC_FOLDER=_public
 JAVASCRIPTS_LOC=src/javascripts
+JSON_LOC=src/json
 STYLESHEETS_LOC=src/stylesheets
 IMAGES_LOC=src/images
 REPORTS_FOLDER=reports
 
 # Node module variables
 ESLINT=./node_modules/.bin/eslint
+IMAGEMIN=./node_modules/.bin/imagemin
 NODE_SASS=./node_modules/.bin/node-sass
 POSTCSS=./node_modules/.bin/postcss
-UGLIFY_JS=./node_modules/.bin/uglifyjs
-IMAGEMIN=./node_modules/.bin/imagemin
-ONCHANGE=./node_modules/.bin/onchange
 PUG=./node_modules/.bin/pug
+SVGO=./node_modules/.bin/svgo
+UGLIFY_JS=./node_modules/.bin/uglifyjs
+LEAFLET=./node_modules/leaflet/dist/leaflet.js
+JSON=./node_modules/pretty-mini-json/pretty-mini-json.js
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -44,16 +47,26 @@ clean:
 css:
 	@mkdir -p $(PUBLIC_FOLDER)/stylesheets
 	@$(NODE_SASS) --output-style compressed -o $(PUBLIC_FOLDER)/stylesheets $(STYLESHEETS_LOC)
-	@$(POSTCSS) -u autoprefixer -r $(PUBLIC_FOLDER)/stylesheets/*
+	@$(POSTCSS) -u autoprefixer -r $(PUBLIC_FOLDER)/stylesheets/* --no-map
+	@node scripts/css-env-setter.js --file $(PUBLIC_FOLDER)/stylesheets/*
 
 # Minifies javascript files
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+	@$(UGLIFY_JS) $(LEAFLET) $(JAVASCRIPTS_LOC)/*.js $(JAVASCRIPTS_LOC)/**/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+
+# Minifies json file
+json:
+	@mkdir -p $(PUBLIC_FOLDER)/json
+	@$(JSON) $(JSON_LOC)/map.json -o $(PUBLIC_FOLDER)/json/map.json
 
 # Minifies images
 images:
 	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
+
+# Optimises SVGs
+icons:
+	@$(SVGO) -f src/icons -o _public/icons
 
 # Outputs pug files to html within public folder
 templates:
@@ -79,7 +92,7 @@ test:
 	@node scripts/w3c.js
 
 # Builds application
-build: lint css js images templates
+build: lint css js json images icons templates
 
 # Deploys to S3 without a version
 deploy:

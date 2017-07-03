@@ -5,7 +5,7 @@ footer {
 	display: inline-block;
 	box-sizing: border-box;
   background-color: $navy;
-	padding-bottom: $base-spacing-unit-small;
+	padding-bottom: 60px;
 
 	a {
 		@include links(

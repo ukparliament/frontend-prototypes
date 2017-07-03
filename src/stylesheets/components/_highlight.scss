@@ -33,7 +33,9 @@
 }
 
 // Highlight colours - Pass in colours for (background, border, typography, hover, line-break)
-
+.highlight {
+  @include highlight-color($grey-4, $grey-4, $grey-1, $blue-soft, $white);
+}
 .highlight--default {
   @include highlight-color($navy, $grey-3, $white, $primary-soft, $white);
 }
@@ -78,11 +80,19 @@
 }
 
 @include media($desktop) {
-  .section--primary[class*=" highlight--"] {
+  .section--primary[class*="highlight--"] {
     padding: ($base-spacing-unit-medium * 2) 0;
-
     .container {
       padding-right: ($base-spacing-unit-extra-large * 6);
     }
   }
+}
+
+// Allow for less padding against header when section is the same color
+.section--primary.highlight--default {
+	padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny * 2);
+
+	@include media($desktop) {
+	  padding: $base-spacing-unit-medium 0 ($base-spacing-unit-medium * 2);
+	}
 }

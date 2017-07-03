@@ -2,6 +2,7 @@
 h1, h2, h3, h4, h5, h6 {
   margin-top: $base-spacing-unit-medium;
   margin-bottom: $base-spacing-unit;
+  font-weight: 500;
   padding: 0;
   color: $navy;
   @include media($desktop) {
@@ -14,15 +15,34 @@ h1, h2, h3, h4, h5, h6 {
 // Brand Heading Settings - Mobile (pixels)
 
 h1 {
-  @include fontsize(32);
-  line-height: 1.125; // 36px;
+  @include fontsize(34);
+  line-height: 1.059; // 36px;
   margin-top: 0;
   margin-bottom: $base-spacing-unit-tiny;
+
+  a {
+  	vertical-align: top;
+  	@include fontsize(20);
+	  line-height: 1.2; // 24px;
+	}
+
+  span {
+  	display: block;
+  	&:last-child {
+  		@include fontsize(16);
+  		font-weight: 400;
+  		line-height: 1.125; // 18px;
+
+  		@include media($desktop) {
+	      @include fontsize(18);
+	    }
+  	}
+  }
 }
 
 h2 {
-  @include fontsize(28);
-  line-height: 1.286; // 36px;
+  @include fontsize(27);
+  line-height: 1.111; // 30px;
   margin-top: $base-spacing-unit-extra-large;
   margin-bottom: $base-spacing-unit-tiny;
 }
@@ -33,28 +53,42 @@ h3 {
 }
 
 h4 {
-  @include fontsize(21);
-  line-height: 1.143; // 24px;
+  @include fontsize(20);
+  line-height: 1.2; // 24px;
 }
 
 h5 {
-  @include fontsize(18);
-  line-height: 1.334; // 24px;
+  @include fontsize(16);
+  line-height: 1.125; // 18px;
 }
 
 h6 {
   @include fontsize(16);
-  line-height: 1.5; // 24px;
+  line-height: 1.125; // 18px;
 }
 
 // Brand Heading Settings - Desktop (pixels)
 
 @include media($desktop) {
   h1 {
-    @include fontsize(36);
-    line-height: 1.167; // 42px
+    @include fontsize(44);
+    line-height: 1.091; // 48px
     margin-top: 0;
     margin-bottom: $base-spacing-unit-small;
+
+    a {
+    	vertical-align: top;
+	  	@include fontsize(22);
+    	line-height: 1.091; // 24px
+	  }
+
+	  span {
+	  	display: block;
+	  	&:nth-of-type(2) {
+	  		@include fontsize(18);
+    		line-height: 1.334; // 24px;
+	  	}
+	  }
   }
   h2 {
     @include fontsize(32);
@@ -68,7 +102,7 @@ h6 {
   }
   h4 {
     @include fontsize(22);
-    line-height: 1.364; // 30px
+    line-height: 1.091; // 24px
   }
   h5 {
     @include fontsize(20);
@@ -105,11 +139,18 @@ footer {
   }
 }
 
+.dropdown__toggle {
+	h2, h3 {
+		@include fontsize(18);
+    line-height: 1.334; // 24px;
+	}
+}
+
 .list {
   h2, h3, h4, h5, h6 {
     font-size: inherit;
     line-height: inherit;
-    font-weight: bold;
+    font-weight: 500;
     margin-bottom: $base-spacing-unit;
   }
 }

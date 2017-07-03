@@ -62,6 +62,7 @@
   background-color: $color;
 }
 
+// Pass in link colour, link decoration, visited colour, hover colour, active colour, active decoration
 @mixin links($link-color, $link-decoration, $visited-color, $hover-color, $active-color, $active-decoration) {
   &:link {
     color: $link-color;
@@ -80,6 +81,7 @@
   }
 }
 
+// Pass in navigation margins top and bottom
 @mixin navigation($margin-top, $margin-bottom) {
   @extend .list--inline;
   margin-top: $margin-top;
@@ -87,8 +89,18 @@
 
 }
 
+// Pass in navigation controls float, margin left and margin right
 @mixin navigation-control($float, $margin-left, $margin-right) {
   float: $float;
   margin-left: $margin-left;
   margin-right: $margin-right;
+}
+
+// Pass in duration, timing function, delay, interation count and name
+@mixin css-animation($duration, $timing-func, $delay, $interation, $name) {
+  animation-duration: $duration;
+  animation-timing-function: $timing-func;
+  animation-delay: $delay;
+  animation-iteration-count: $interation;
+  animation-name: $name;
 }

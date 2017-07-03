@@ -1,21 +1,23 @@
 extends ../../layouts/layout.pug
 block content
-  .section--primary
-    .container
-      .section--primary__container
-        .section--primary__block
-          //- Page Title
-          h1 Current MPs in the House of Commons
-          p A to Z - select a letter
-          //- Letter Navigation
-          include ../../components/navigation-letter.pug
+	.section--primary
+		.container
+			.section--primary__container
+				.section--primary__block
+					//- Page Title
+					h1 Current MPs in the House of Commons
+					p A to Z - select a letter
+					//- Letter Navigation
+					include ../../components/navigation-letter.pug
 
-  section#content
-    .container
-      //- Result List
-      ol.list--box
-        each object in [{name: 'Abbott, Diane', constituency: 'MP for Hackney North and Stoke Newington', party: 'Labour'},{name: 'Abrahams, Debbie', constituency: 'MP for Oldham East and Saddleworth', party: 'Labour'},{name: 'Adams, Nigel', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Ahmed-Sheikh, Tasmina', constituency: 'MP for Ochil and South Perthshire', party: 'Scottish National Party'},{name: 'Aldous, Peter', constituency: 'MP for Waveney', party: 'Conservative'}]
-          li
-            h2 #[+link(object.name === 'Abbott, Diane' ? 'people-id.html' : '#', object.name)]
-            p= object.constituency
-            p= object.party
+	section#content
+		.container
+			//- Result List
+			ol.list--box
+				each object in [{name: 'Abbott, Diane', constituency: 'MP for Hackney North and Stoke Newington', party: 'Labour'},{name: 'Abrahams, Debbie', constituency: 'MP for Oldham East and Saddleworth', party: 'Labour'},{name: 'Adams, Nigel', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Ahmed-Sheikh, Tasmina', constituency: 'MP for Ochil and South Perthshire', party: 'Scottish National Party'},{name: 'Aldous, Peter', constituency: 'MP for Waveney', party: 'Conservative'}]
+					li.image__item
+						img(src="/images/placeholder_members_image.png")
+						.list--details
+							h2 #[+link(object.name === 'Abbott, Diane' ? 'people-id.html' : '#', object.name)]
+							p= object.constituency
+							p= object.party

@@ -1,0 +1,26 @@
+.dropdown__toggle {
+	position: relative;
+	> :first-child, > :last-child {
+		margin: 0;
+	}
+	:after {
+		content:"";
+		position: absolute;
+	  border-top: 6px solid $grey-1;
+	  border-left: 4px solid transparent;
+	  border-right: 4px solid transparent;
+	  margin-left: 8px;
+	  top: calc(50% - 3px); // Vertical centering (50% of the parent div height - (arrow size / 2))
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.dropdown__content {
+	padding-top: $base-spacing-unit-small;
+
+  &.active {
+  	display: block;
+  }
+}

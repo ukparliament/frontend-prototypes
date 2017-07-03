@@ -9,20 +9,19 @@ form {
 label {
   display: block;
   padding-bottom: $base-spacing-unit-tiny;
-  .form-hint {
-    display: block;
-    padding-top: $base-spacing-unit;
-    padding-bottom: 0;
-    color: $grey-2;
-  }
 }
 
-input[type="text"] {
-  height: 48px;
+input {
   width: 100%;
-  padding-left: ($base-spacing-unit-tiny - 1);
-  padding-right: ($base-spacing-unit-tiny - 1);
+  height: 48px;
+  display: block;
   border: solid 1px $grey-3;
+  padding: ($base-spacing-unit-tiny - 1);
+
+  &[name="postcode"] {
+  	text-transform: uppercase;
+  }
+
   @include media($desktop) {
     width: 70%;
   }
@@ -31,9 +30,10 @@ input[type="text"] {
 button,
 input[type="submit"] {
   height: 48px;
-  padding-left: $base-spacing-unit-small;
-  padding-right: $base-spacing-unit-small;
+  min-width: 90px;
+  padding: 0 $base-spacing-unit-tiny;
   cursor: pointer;
+  text-align: center;
 }
 
 // Pseudo state styling (including Mozilla focus overide)
@@ -56,20 +56,12 @@ button:-moz-focusring,
 // Form block holders
 
 .form-group {
-  float: left;
-  width: 100%;
-  &:after {
-    @include clearfix;
-  }
-}
-
-.form-group--inline {
-  @extend .form-group;
   margin-bottom: $base-spacing-unit-tiny;
-  input[type="text"] {
+  input {
     width: 65%;
+    display: inline-block;
     margin-right: -$base-spacing-unit;
-    padding-left: ($base-spacing-unit-small - 1);
+    vertical-align: top;
   }
 }
 
