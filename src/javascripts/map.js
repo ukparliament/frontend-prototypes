@@ -2,12 +2,12 @@
 (function () {
 
 	var map_container = document.getElementById('mapbox'),
-		map_data = window.location + '.json',
+		map_data = map_container.getAttribute('data-json-location'),
 		map,
 		geojson,
 		breakpoint = '767';
 
-	if (map_container) {
+	if (map_container && map_data) {
 		ukp_getJsonFile(map_data, function (data) {
 
 			// Add class if we have valid data
