@@ -49,7 +49,7 @@
 				// Resume form submission after 'x' ms
 				setTimeout(function() {
 					form.submit();
-				}, 100);
+				}, 1000);
 			}
 		}
 	}
