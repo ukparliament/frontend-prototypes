@@ -1,14 +1,13 @@
-
 (function () {
 
 	var map_container = document.getElementById('mapbox'),
-		map_data = map_container.getAttribute('data-json-location'),
 		map,
 		geojson,
 		breakpoint = '767';
 
-	if (map_container && map_data) {
-		ukp_getJsonFile(map_data, function (data) {
+	if (map_container && map_container.hasAttribute('data-json-location')) {
+
+		ukp_getJsonFile(map_container.getAttribute('data-json-location'), function (data) {
 
 			// Add class if we have valid data
 			map_container.classList.add('map');
@@ -37,6 +36,7 @@
 			});
 
 		});
+
 	}
 
 	function ukp_mapBreakPointOptions() {
