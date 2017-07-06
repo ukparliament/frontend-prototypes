@@ -8,7 +8,7 @@
 	display: inline-block;
   border: none;
   border-radius: 4px;
-  margin-right: $base-spacing-unit-tiny / 2;
+  margin: ($base-spacing-unit-tiny / 2) ($base-spacing-unit-tiny / 2) 0 0;
 
   &[type="submit"] {
   	height: 48px;
