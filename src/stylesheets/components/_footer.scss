@@ -12,9 +12,7 @@ footer {
 			$grey-5, 		// a:link colour
 			underline,	// a:link decoration
 			$grey-5, 		// a:visited color
-			$grey-3, 		// a:hover color
-			$black, 		// a:active color
-			none	 			// a:active decoration
+			$grey-3 		// a:hover color
 		);
 		&:focus {
 			color: $navy;

@@ -17,9 +17,7 @@
 				$blue, 			// a:link colour
 				none, 			// a:link decoration
 				$blue, 			// a:visited color
-				inherited, 	// a:hover color
-				$blue, 			// a:active color
-				none 				// a:active decoration
+				inherited 	// a:hover color
 			);
 
 			&:hover {

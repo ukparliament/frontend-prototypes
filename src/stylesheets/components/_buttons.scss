@@ -1,13 +1,59 @@
 // Global button properties
 
 [class*="btn"] {
+  min-width: 90px;
+  padding: ($base-spacing-unit-tiny - 2) $base-spacing-unit-tiny;
+  cursor: pointer;
+  text-align: center;
+	display: inline-block;
   border: none;
-  @include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
+  border-radius: 4px;
+  margin-right: $base-spacing-unit-tiny / 2;
+
+  &[type="submit"] {
+  	height: 48px;
+  	padding: 0 $base-spacing-unit-tiny;
+  }
+
+  .form-group & {
+    @include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
+  }
+
 }
 
 // Styled buttons based upon 'components/highlights.scss'
 
+.btn--primary {
+	@extend [class*="btn"];
+  background-color: $blue;
+  color: white;
+  @include links(
+			$white, 			// a:link colour
+			none,				// a:link decoration
+			$white, 		// a:visited color
+			$white // a:hover color
+	);
+  &:hover {
+    background-color: (darken($blue, 10%));
+  }
+}
+
 .btn--secondary {
+	@extend [class*="btn"];
+  background-color: $blue-soft;
+  color: white;
+  @include links(
+			$white, 			// a:link colour
+			none,				// a:link decoration
+			$white, 		// a:visited color
+			$white // a:hover color
+	);
+  &:hover {
+    background-color: (darken($blue-soft, 10%));
+  }
+}
+
+.btn--alternative {
   @extend .highlight--secondary;
   &:hover {
     background-color: (darken($secondary, 10%));

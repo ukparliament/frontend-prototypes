@@ -10,12 +10,10 @@
 		display: block;
 		padding: $base-spacing-unit-small;
 		@include links(
-			$blue, 			// a:link colour
+			$grey-1, 			// a:link colour
 			none,				// a:link decoration
 			$purple, 		// a:visited color
-			$blue-soft, // a:hover color
-			$navy, 			// a:active color
-			none 				// a:active decoration
+			$grey-1 // a:hover color
 		);
 		&:focus {
 			text-decoration: underline;

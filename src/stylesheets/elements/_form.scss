@@ -27,15 +27,6 @@ input {
   }
 }
 
-button,
-input[type="submit"] {
-  height: 48px;
-  min-width: 90px;
-  padding: 0 $base-spacing-unit-tiny;
-  cursor: pointer;
-  text-align: center;
-}
-
 // Pseudo state styling (including Mozilla focus overide)
 
 input:focus,

@@ -115,11 +115,21 @@ dl, dt, dd {
 	}
 }
 .list--pipe {
-  @extend .list;
+  @extend .list--box;
+
+
+  img {
+  	border-radius: 0;
+  	width: 100%;
+  	height: 100%;
+  	max-width: 130px;
+  }
 
   li {
     border-bottom: solid 1px $grey-3;
+    background: transparent;
     padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
+    margin-bottom: 0;
   }
   li:first-of-type {
     border-top: solid 1px $grey-3;

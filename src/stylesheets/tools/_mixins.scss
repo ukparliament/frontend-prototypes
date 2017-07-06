@@ -23,9 +23,7 @@
       $color, 			// a:link colour
       inherit,  		// a:link decoration
       $color, 			// a:visited color
-      $hover-color,	// a:hover color
-      $navy,	 			// a:active color
-      none	 				// a:active decoration
+      $hover-color	// a:hover color
     );
     &:focus {
       color: $navy;
@@ -63,7 +61,7 @@
 }
 
 // Pass in link colour, link decoration, visited colour, hover colour, active colour, active decoration
-@mixin links($link-color, $link-decoration, $visited-color, $hover-color, $active-color, $active-decoration) {
+@mixin links($link-color, $link-decoration, $visited-color, $hover-color) {
   &:link {
     color: $link-color;
     text-decoration: $link-decoration;
@@ -75,9 +73,11 @@
     color: $hover-color;
     text-decoration: underline;
   }
-  &:active {
-    color: $active-color;
-    text-decoration: $active-decoration;
+  &:active, &:focus {
+    color: $navy;
+		text-decoration: none;
+		background-color: $secondary;
+		outline: 3px solid $secondary;
   }
 }
 

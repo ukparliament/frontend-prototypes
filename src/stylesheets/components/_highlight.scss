@@ -31,6 +31,9 @@
 }
 .highlight--default {
   @include highlight-color($navy, $grey-3, $white, $primary-soft, $white);
+  a:active {
+  	color: #7592C8;
+  }
 }
 .highlight--primary {
   @include highlight-color($primary, $primary-soft, $white, $primary-soft, $primary-soft);

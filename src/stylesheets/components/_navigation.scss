@@ -17,9 +17,7 @@
 			$grey-1, 		// a:link colour
 			none,				// a:link decoration
 			$grey-1, 		// a:visited color
-			$grey-1, 		// a:hover color
-			$grey-1, 		// a:active color
-			none	 			// a:active decoration
+			$grey-1 		// a:hover color
 		);
 		&:focus {
 			outline: none;

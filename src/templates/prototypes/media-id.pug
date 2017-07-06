@@ -1,0 +1,31 @@
+extends ../../layouts/layout.pug
+block content
+	.section--primary
+		.container
+			.block--border__bottom
+				h1 Official portrait of Mr Kenneth Clarke
+				img(src="/images/kenneth_full.jpg")
+				p This photo, and all related crops, are released under an #[+link('#', 'Attribution 3.0 Unported (CC BY 3.0)')] license.
+				p This means that you can use, share and adapt it, as long as you give proper attribution, provide a link to the license, and indicate if changes were made to the image. See the #[+link('#', 'full license')] for more details.
+				+link('#','Download (3797 x 5315 jpeg)')(class="btn--primary")
+				+link('#','Download original (3797 x 5315 tiff)')(class="btn--secondary")
+
+	section
+		.container
+			h2 Other crops
+			ol.list--pipe
+				li
+					img(src="/images/kenneth_wide_portrait.jpg")
+					.list--details
+						h3 3 x 2 Wide portrait
+						+link('#','Download (3000 x 2000 jpeg')(class="btn--primary")
+				li
+					img(src="/images/kenneth_portrait.jpg")
+					.list--details
+						h3 3 x 4 Portrait
+						+link('#','Download (1500 x 2000 jpeg)')(class="btn--primary")
+				li
+					img(src="/images/kenneth_avatar.jpg")
+					.list--details
+						h3 1 x 1 Avatar
+						+link('#','Download (1500 x 1500 jpeg)')(class="btn--primary")
