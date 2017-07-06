@@ -10,6 +10,9 @@
 	if (map_container) {
 		ukp_getJsonFile(map_data, function (data) {
 
+			// Add class if we have valid data
+			map_container.classList.add('map');
+
 			// Create the map
 			map = L.map('mapbox').setView([55, -3], 6);
 
