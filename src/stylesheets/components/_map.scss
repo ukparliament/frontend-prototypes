@@ -7,6 +7,9 @@
 	margin-bottom: $base-spacing-unit-small;
 	width: 100%;
 
+	.leaflet-control-attribution {
+		display: none;
+	}
 	.leaflet-bar {
 		box-shadow: 0 1px 5px rgba(55,49,81,0.4);
 
