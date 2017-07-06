@@ -45,5 +45,6 @@ block content
 			ol.list--pipe
 				each object in [{constituency: 'Hackney North and Stoke Newington', sitting_duration: '7 May 2015 - 3 May 2017'},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '7 May 2015 - 3 May 2017'},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '7 May 2015 - 3 May 2017'},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '7 May 2015 - 3 May 2017'},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '7 May 2015 - 3 May 2017'},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '7 May 2015 - 3 May 2017'},{constituency: 'Hackney North and Stoke Newington', sitting_duration: '7 May 2015 - 3 May 2017'}]
 					li
-						p MP for #[+link('#', object.constituency)]
-						p= object.sitting_duration
+						.list-details
+							p MP for #[+link('#', object.constituency)]
+							p= object.sitting_duration

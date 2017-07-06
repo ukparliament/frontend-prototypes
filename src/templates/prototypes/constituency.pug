@@ -42,7 +42,8 @@ block content
 			ol.list--pipe
 				each object in [{member: 'Jeremy Corbyn', sitting_duration: '7 May 2015 to 3 May 2017'},{member: 'Jeremy Corbyn', sitting_duration: '6 May 2010 to 30 Mar 2015'}]
 					li
-						h3 #[+link('#', object.member)]
-						p= object.sitting_duration
+						.list--details
+							h3 #[+link('#', object.member)]
+							p= object.sitting_duration
 
 
