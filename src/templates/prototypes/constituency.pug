@@ -3,14 +3,10 @@ block content
 	.section--primary
 		.container
 			.block--border__bottom
-
-				#mapbox(data-json-location='http://localhost:5000/templates/prototypes/map.html.json')
-					noscript
-						p Map of constituency is unavailable.
-
+				include ../../components/mapbox
 				h1 Islington North
 
-	section.section--minor
+	section
 		.container
 			.dropdown
 				.dropdown__toggle

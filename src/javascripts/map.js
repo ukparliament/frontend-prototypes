@@ -15,6 +15,9 @@
 			// Create the map
 			map = L.map('mapbox').setView([55, -3], 6);
 
+			// Disable mouse wheel zoom
+			map.scrollWheelZoom.disable();
+
 			// Setup the map tile layer
 			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 				maxZoom: 18,
