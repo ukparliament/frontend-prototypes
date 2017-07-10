@@ -29,12 +29,7 @@ block content
 	section#content
 		.container
 			ol.list--box
-				li.image__item
-					img(src="/images/placeholder_members_image.png")
-					.list--details
-						h2 #[+link('#', 'Jeremy Corbyn')]
-						p MP for Islington North
-						p Labour
+				+list--box('Jeremy Corbyn', 'MP for Islington North', 'Labour', '/images/placeholder_members_image.png')
 
 	section
 		.container

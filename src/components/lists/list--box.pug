@@ -1,0 +1,8 @@
+ol.list--box
+	each object in [{name: 'Nigel Adams', constituency: 'MP for Selby & Ainsty', party: 'Conservative'},{name: 'Adam Afriyie', constituency: 'MP for Windsor', party: 'Conservative'}]
+		li
+			img(src="/images/Romesh_Rectangle.png")
+			.list--details
+				h2 #[+link('#', object.name)]
+				p= object.constituency
+				p= object.party

@@ -1,23 +1,11 @@
 extends ../../layouts/layout.pug
 block content
-  .section--primary(id="content")
+  .section--primary#content
     .container
-      .section--primary__container
-        .section--primary__block
-          h1 Ms Diane Abbott - Current and former constituencies
+      h1 Ms Diane Abbott - Current and former constituencies
 
   section
     .container
       ol.list--box
-        li
-          .list--details
-            h2 #[+link('#', 'Hackney North and Stoke Newington')]
-              span.sr-only constituency from 7 May 2015 to present
-            p
-              span(aria-hidden='true') 7 May 2015 to present
-        li
-          .list--details
-            h2 #[+link('#', 'Hackney North and Stoke Newington')]
-              span.sr-only constituency from 6 May 2010 to 30 Mar 2015
-            p
-              span(aria-hidden='true') 6 May 2010 to 30 Mar 2015
+        +list--box__accessible('Hackney North and Stoke Newington', '7 May 2015 to present')
+        +list--box__accessible('Hackney North and Stoke Newington', '6 May 2010 to 30 Mar 2015')

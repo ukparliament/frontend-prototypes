@@ -20,12 +20,6 @@ block content
     .container
       //- Option Tags
       ol.list--box
-        each object in [{name: 'Conservative', description: 'All current Conservative MPs', count: '345'},{name: 'Labour', description: 'All current Labour MPs', count: '9'},{name: 'Vanguard Unionist Progressive Party', description: 'All current Vanguard Unionist Progressive Party MPs', count: '786'}]
-          li
-            .column--75
-              h2 #[+link('#', object.name)]
-              p= object.description
-            .column--25
-              p
-                =object.count
-                span MPs
+        +list--box__parties('Conservative', '345')
+        +list--box__parties('Labour', '9')
+        +list--box__parties('Vanguard Unionist Progressive Party', '786')

@@ -1,0 +1,45 @@
+extends ../../layouts/layout.pug
+block content
+	.section--primary#content
+		.container
+			h1 Lists
+
+	section
+		.container
+			h2 Inline box list
+			include ../../components/lists/list--inline__box
+
+	section
+		.container
+			h2.block--border__bottom Box list
+			h3 Default
+			ol.list--box
+				// Name, Constituency, Party, Image
+				+list--box('Nigel Adams', 'Selby & Ainsty', 'Labour')
+				+list--box('Nigel Adams', 'Selby & Ainsty', 'Labour', '/images/placeholder_members_image.png')
+				-var lords_list = true
+				+list--box('Lord Aberdare', 'House of Lords', 'Crossbench', '/images/placeholder_members_image.png')
+
+			h3 Parties
+			ol.list--box
+				// Party, Count
+				+list--box__parties('Labour', '365')
+
+			h3 Accessible
+			ol.list--box
+				// Constituency, Date
+				+list--box__accessible('', '2017 to present')
+				+list--box__accessible('Selby & Ainsty', '6 May 2010 to 30 Mar 2015')
+
+			h3 Generic
+			ol.list--box
+				-var list_box_h3 = true
+				// Heading, Content
+				+list--box__generic('Parties and groups', 'Find MPs and Lords by their party or group.')
+					// Extendable
+						p Further content can be added
+
+	section
+		.container
+			h2 Pipe list
+			include ../../components/lists/list--pipe
