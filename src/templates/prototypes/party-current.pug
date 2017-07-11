@@ -2,19 +2,17 @@ extends ../../layouts/layout.pug
 block content
   .section--primary
     .container
-      .section--primary__container
-        .section--primary__block
-          //- Page Title
-          h1 Parties and groups
-          ul.list--tab
-            li.active Commons
-            li
-              +link('#', "Lords")
+      //- Page Title
+      h1 Parties and groups
+      ul.list--tab
+        li.active Commons
+        li
+          +link('#', "Lords")
 
-          ul.list--tab
-            li
-              +link('#', "Commons")
-            li.active Lords
+      ul.list--tab
+        li
+          +link('#', "Commons")
+        li.active Lords
 
   section#content
     .container

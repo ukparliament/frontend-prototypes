@@ -2,20 +2,15 @@ extends ../../layouts/layout.pug
 block content
   .section--primary
     .container
-      .section--primary__container
-        .section--primary__block
-          //- Page Title
-          h1
-            span Conservative MPs and Lords
-            +link('#', '- :startdate - :enddate parliament')
-            span.lead A to Z
+      //- Page Title
+      h1
+        span Conservative MPs and Lords
+        +link('#', '- :startdate - :enddate parliament')
+        span.lead A to Z
 
-
-      .section--primary__container
-        .section--primary__block
-          p A to Z - select a letter
-          //- Letter Navigation
-          include ../../components/navigation-letter.pug
+      p A to Z - select a letter
+      //- Letter Navigation
+      include ../../components/navigation-letter.pug
 
   section#content
     .container

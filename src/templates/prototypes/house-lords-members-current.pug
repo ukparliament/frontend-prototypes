@@ -2,16 +2,11 @@ extends ../../layouts/layout.pug
 block content
 	.section--primary
 		.container
-			.section--primary__container
-				.section--primary__block
-					//- Page Title
-					h1 Lords
-
-			.section--primary__container
-				.section--primary__block
-					p A to Z - select a letter
-					//- Letter Navigation
-					include ../../components/navigation-letter.pug
+			//- Page Title
+			h1 Lords
+			p A to Z - select a letter
+			//- Letter Navigation
+			include ../../components/navigation-letter.pug
 
 	section#content
 		.container
