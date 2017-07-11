@@ -85,8 +85,9 @@
 }
 
 // Allow for less padding against header when section is the same color
-.section--primary.highlight--default {
+[class*="section--primary highlight--"] {
 	padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny * 2);
+	margin-bottom: 0px;
 
 	@include media($desktop) {
 	  padding: $base-spacing-unit-medium 0 ($base-spacing-unit-medium * 2);
