@@ -7,7 +7,14 @@ block content
 	section
 		.container
 			h2 Inline box list
-			include ../../components/lists/list--inline__box
+			ol.list--inline__box
+				// Name, Count
+				+list--box__inline('Conservative', '345')
+				+list--box__inline('Labour', '9')
+				+list--box__inline('Vanguard Unionist Progressive Party ', '786')
+				+list--box__inline('Labour', '9')
+				+list--box__inline('Conservative', '345')
+				+list--box__inline('Vanguard Unionist Progressive Party ', '786')
 
 	section
 		.container

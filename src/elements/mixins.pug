@@ -70,3 +70,9 @@ mixin list--box__generic(heading, content)
         h2 #[+link('#', heading)]
       p= content
       block
+
+//- List Box Inline
+mixin list--box__inline(name, count)
+  li
+    h2 #[+link('#', name)]
+    p= '- ' + count + ' MPs'
