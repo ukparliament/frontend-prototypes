@@ -4,15 +4,7 @@ block content
     .container
       //- Page Title
       h1 Parties and groups
-      ul.list--tab
-        li.active Commons
-        li
-          +link('#', "Lords")
-
-      ul.list--tab
-        li
-          +link('#', "Commons")
-        li.active Lords
+      include ../../components/navigation-tab
 
   section#content
     .container

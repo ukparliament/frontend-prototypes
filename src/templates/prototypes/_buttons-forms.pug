@@ -1,17 +1,19 @@
 extends ../../layouts/layout.pug
 block content
-  #content.section--primary
+  .section--primary#content
     .container
-      h1 Search
+      h1 Forms and buttons
+      h2 Search
       form(action='search')
         .form-group
           +input('Enter a keyword', 'input1', 'search_box', 'search', 1000, '^(?!.*<script|<Script).*$', 'Inserting <script> as a search term is not permitted')
           |
           button(type='submit', value='Search', class='btn--secondary') Search
 
-  .section--primary
+
+  section.section--minor
     .container
-      h1 Find your MP and constituency
+      h2 Find your MP and constituency
 
       //-form(action='postcode')
       .form-group
@@ -24,6 +26,8 @@ block content
 
       p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
 
+  section.section--minor
+    .container
       h2 Check if this is your constituency
 
       form(action='postcode')
