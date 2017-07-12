@@ -3,7 +3,8 @@ const
 	fs =   require('fs'),
 	argv = require('minimist')(process.argv.slice(2)),
 	s3BucketURL = 'https://s3-eu-west-1.amazonaws.com/web1live.static-assets',
-	STATIC_ASSET_LOCATION_URL = (typeof process.env.STATIC_ASSET_LOCATION_URL === 'undefined') ? s3BucketURL : process.env.STATIC_ASSET_LOCATION_URL;
+	AWS_ACCOUNT = process.env.AWS_ACCOUNT
+	STATIC_ASSET_LOCATION_URL = ((typeof process.env.STATIC_ASSET_LOCATION_URL === 'undefined') ? s3BucketURL : process.env.STATIC_ASSET_LOCATION_URL).replace("$(AWS_ACCOUNT)", AWS_ACCOUNT);
 
 fs.readFile(argv.file, 'utf8', function (err,data) {
 	if (err) {
