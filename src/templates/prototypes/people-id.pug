@@ -3,9 +3,12 @@ block content
 	.section--primary#content
 		.container
 			.block--border__bottom
-				+image('../../images/kenneth_clark_1464x584.jpg', 'Dianne Abbott')
-				h1 Kenneth Clarke
-				p #[+link('#', 'Labour')] MP for #[+link('#', 'Rushcliffe')]
+				figure
+					+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3?crop=CU_5:2&width=1414&quality=80', 'Margot James')
+					span Image loading
+						object(class="loading" data='../../icons/loading.svg', type='image/svg+xml')
+				h1 Margot James
+				p #[+link('#', 'Conservative')] MP for #[+link('#', 'Stourbridge')]
 
 	section
 		.container
@@ -30,10 +33,10 @@ block content
 				dl.list--definition
 					dt Email:
 					dd
-						+link('mailto:clarkek@parliament.uk', 'clarkek@parliament.uk')
+						+link('mailto:margot.james.mp@parliament.uk', 'margot.james.mp@parliament.uk')
 					dt Phone:
 					dd
-						+link('tel:0207 219 5189', '0207 219 5189')
+						+link('tel:020 7219 7226', '020 7219 7226')
 					dt Address:
 					dd House of Commons, London, SW1A 0AA
 
@@ -43,7 +46,7 @@ block content
 			h2 Roles
 			h3 MP
 			ol.list--pipe
-				each object in [{constituency: 'Rushcliff', sitting_duration: '7 May 2015 - 3 May 2017'},{constituency: 'Rushcliff', sitting_duration: '7 May 2015 - 3 May 2017'},{constituency: 'Rushcliff', sitting_duration: '7 May 2015 - 3 May 2017'},{constituency: 'Rushcliff', sitting_duration: '7 May 2015 - 3 May 2017'}]
+				each object in [{constituency: 'Stourbridge', sitting_duration: '78 Jun 2017 to present'},{constituency: 'Stourbridge', sitting_duration: '7 May 2015 to 3 May 2017'},{constituency: 'Stourbridge', sitting_duration: '6 May 2010 to 30 Mar 2015'}]
 					li
 						.list-details
 							p MP for #[+link('#', object.constituency)]

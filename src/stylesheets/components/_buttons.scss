@@ -96,10 +96,10 @@
   .btn--loading__icon {
     // Pass in duration, timing function, delay, interation count and name
     @include css-animation(.8s, linear, 0s, infinite, spinner);
-		display: inline-block;
 		padding: 0;
 		height: 24px;
 		margin-top: 5px;
+		display: inline-block;
   }
 
   .btn--loading__text {

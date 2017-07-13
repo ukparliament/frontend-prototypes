@@ -20,7 +20,8 @@ mixin input(label, id, name, type, maxlength, regex, title)
 mixin list--box(name, constituency, party, image)
   li
     if image
-      img(src=image)
+      figure
+        img(src=image)
       .list--details
         h2 #[+link('#', name)]
         if lords_list

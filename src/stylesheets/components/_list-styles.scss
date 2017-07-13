@@ -75,13 +75,13 @@ dl, dt, dd {
   }
 
   img {
-    height: 84px; // Image Height = minimum height of li - padding
     width: auto;
-    display: inline-block;
+    height: 84px; // Image Height = minimum height of li - padding
     border-radius: 50%;
-    margin: 0 $base-spacing-unit-small 0 0;
     vertical-align: top;
-    @include media($desktop) {
+    margin: 0 $base-spacing-unit-small 0 0;
+
+		@include media($desktop) {
 			height: 93px; // Image Height = minimum height of li - padding
 		}
   }

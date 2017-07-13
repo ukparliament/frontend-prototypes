@@ -7,6 +7,58 @@ video {
   width: 100%;
 }
 
+figure {
+  position: relative;
+  margin: 0 0 $base-spacing-unit-small 0;
+
+  span {
+    left: 0;
+    top: 50%;
+    right: 0;
+    z-index: 0;
+    opacity: 0.5;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    margin-top: -$base-spacing-unit-tiny;
+  }
+}
+
+figcaption {
+  margin-top: 0;
+  margin-bottom: $base-spacing-unit-small;
+  color: $grey-2;
+}
+
+img {
+  z-index: 1;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.loading {
+  position: absolute;
+  margin: 2px ($base-spacing-unit-tiny / 2);
+  @-webkit-keyframes spinner {
+    from {
+      -webkit-transform: rotate(0);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spinner {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @include css-animation(.8s, linear, 0s, infinite, spinner);
+}
+
 .video-wrap {
   height: 0;
   padding-bottom: 56.25%;
@@ -24,12 +76,6 @@ video {
 // Section Specific Styles
 
 .section--primary {
-  img {
-  	display: block;
-  	width: 100%;
-    margin-bottom: $base-spacing-unit-small;
-  }
-
   img + h1 {
   	margin-bottom: $base-spacing-unit-tiny / 2;
   }
