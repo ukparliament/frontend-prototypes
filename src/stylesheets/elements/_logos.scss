@@ -2,8 +2,16 @@
 
 header {
   .logo {
-    text-decoration: none;
+    width: auto;
+    height: 48px;
     color: $navy;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  @include media($desktop) {
+    .logo {
+      height: 54px;
+    }
   }
 }
 

@@ -10,18 +10,6 @@ header {
 	.container {
 		line-height: 0;
 	}
-	.logo{
-		height: 48px;
-		width: auto;
-	}
-}
-
-@include media($desktop) {
-	header {
-	  .logo {
-		  height: 54px;
-	  }
-	}
 }
 
 // Physical Print Styles
