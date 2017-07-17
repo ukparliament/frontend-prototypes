@@ -1,28 +1,20 @@
-// Parliament UK Core Colours
-$black: #000000;
-$white: #FFFFFF;
-$red: #A10700;
-$green: #006E46;
-$blue: #2B57AB;
-$blue-soft: #7592C8;
-$navy: #373151;
-$purple: #7C1389;
+@import 'colours__core';
+@import 'colours__definition';
+@import 'colours__rich';
+@import 'colours__status';
+@import 'colours__vibrant';
 
-// Parliament UK Grey Colours
-$grey-1: #4D4D4D;
-$grey-2: #666666;
-$grey-3: #CBC9CD;
-$grey-4: #EBE9E8;
-$grey-5: #F8F7F7;
+// Legacy colours still required
+$black: 					#000000;
+$navy: 						#373151;
+$blue: 						#2B57AB;
+$blue-soft: 			#7592C8;
 
-// Parliament UK Status Colours
-$primary: #5F2DB4;
-$primary-soft: #E7DFF4;
-$secondary: #96DCBE;
-$secondary-soft: #DFF4EB;
-$caution: #FBCF20;
-$caution-soft: #FEF3C7;
-$warning: #DE2E32;
-$warning-soft: #F7CBCC;
-$success: #00B95D;
-$success-soft: #BFEDD6;
+$primary: 				#5F2DB4;
+$primary-soft: 		#E7DFF4;
+$secondary: 			#96DCBE;
+$secondary-soft: 	#DFF4EB;
+
+$caution-soft: 		#FEF3C7;
+$warning-soft: 		#F7CBCC;
+$success-soft: 		#BFEDD6;
