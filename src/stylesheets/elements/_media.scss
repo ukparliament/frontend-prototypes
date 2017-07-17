@@ -23,23 +23,64 @@ figure {
     margin-top: -$base-spacing-unit-tiny;
   }
 }
-.section--primary figure {
-  min-height: 200px;
-  background-color: $grey-4;
+.section--primary {
+  figure {
+    min-height: 100px;
+    background-color: $grey-4;
+  }
+  @include media($desktop) {
+    figure {
+      min-height: 292px;
+    }
+  }
 }
+.list--box li {
+  figure {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background-color: $grey-4;
+    margin: 0 $base-spacing-unit-small 0 0;
 
-figcaption {
-  margin-top: 0;
-  margin-bottom: $base-spacing-unit-small;
-  color: $grey-2;
+    @include media($desktop) {
+      width: 93px;
+      height: 93px; // Image Height = minimum height of li - padding
+    }
+  }
+  img {
+    width: auto;
+    height: 84px; // Image Height = minimum height of li - padding
+    border-radius: 50%;
+
+    @include media($desktop) {
+      height: 93px; // Image Height = minimum height of li - padding
+    }
+  }
 }
-
+.list--pipe li {
+  figure {
+    width: auto;
+    height: auto;
+  }
+  img {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 130px;
+  }
+}
 img {
   z-index: 1;
   width: 100%;
   display: block;
   position: relative;
   margin-bottom: $base-spacing-unit-small;
+}
+
+figcaption {
+  margin-top: 0;
+  margin-bottom: $base-spacing-unit-small;
+  color: $grey-2;
 }
 
 .loading {
