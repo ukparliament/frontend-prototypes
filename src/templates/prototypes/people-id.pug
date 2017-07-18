@@ -2,13 +2,12 @@ extends ../../layouts/layout.pug
 block content
 	.section--primary#content
 		.container
-			.block--border__bottom
-				figure
-					+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=1464&quality=100', 'Margot James')
-					span Image loading
-						object(class="loading" data='../../icons/loading.svg', type='image/svg+xml')
-				h1 Margot James
-				p #[+link('#', 'Conservative')] MP for #[+link('#', 'Stourbridge')]
+			h1 Margot James
+			p #[+link('#', 'Conservative')] MP for #[+link('#', 'Stourbridge')]
+
+			figure
+				+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=1464&quality=100', 'Margot James')
+				figcaption The official MP portraits are #[+link('media-id.html','available to download')]
 
 	section
 		.container
@@ -30,6 +29,7 @@ block content
 		.container
 			.block
 				h2 Contact
+				p Please include your postcode when contacting your MP.
 				dl.list--definition
 					dt Email:
 					dd
@@ -39,6 +39,9 @@ block content
 						+link('tel:020 7219 7226', '020 7219 7226')
 					dt Address:
 					dd House of Commons, London, SW1A 0AA
+					//dt Website:
+						dd #[+link('#', 'http://www.jeremycorbyn.org.uk')]
+				p You may be able to discuss issues with your MP in person or online. Contact them for details.
 
 	section
 		.container

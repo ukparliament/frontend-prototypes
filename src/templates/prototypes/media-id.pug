@@ -6,32 +6,31 @@ block content
 				h1 Official portrait of Margot James
 				figure
 					+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?width=1464', 'Margot James')
-					span Image loading
-						object(class="loading" data='../../icons/loading.svg', type='image/svg+xml')
+					figcaption Official portrait of #[+link('people-id.html','Margot James')]
 				p This photo, and all related crops, are released under an #[+link('#', 'Attribution 3.0 Unported (CC BY 3.0)')] license.
-				p This means that you can use, share and adapt it, as long as you give proper attribution, provide a link to the license, and indicate if changes were made to the image. See the #[+link('#', 'full license')] for more details.
+				p You can use, share and adapt the photographs if you give proper credit, provide a link to the license, and indicate if changes were made to the image. See the #[+link('#', 'full license')] for more details.
 				+link('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?download=true','Download (3797 x 5315 jpeg)')(class="btn--primary", download)
-				+link('https://apidataparliament.azure-api.net/photo/0qLRSwb3.tiff?download=true','Download original (3797 x 5315 tiff)')(class="btn--secondary", download)
+				//+link('https://apidataparliament.azure-api.net/photo/0qLRSwb3.tiff?download=true','Download original (3797 x 5315 tiff)')(class="btn--secondary", download)
 
 	section
 		.container
-			h2 Other crops
+			h2 Cropped portraits
 			ol.list--pipe
 				li
 					figure
-						+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=130&quality=100', 'Margot James')
+						+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=260&quality=100', 'Margot James')
 					.list--details
-						h3 3 x 2 Wide portrait
+						h3 3 x 2 Portrait
 						+link('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&quality=100?download=true','Download (3000 x 2000 jpeg')(class="btn--primary", download)
 				li
 					figure
-						+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:4&width=130&quality=100', 'Margot James')
+						+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:4&width=260&quality=100', 'Margot James')
 					.list--details
 						h3 3 x 4 Portrait
 						+link('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:4&quality=100?download=true','Download (1500 x 2000 jpeg)')(class="btn--primary", download)
 				li
 					figure
-						+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=130&quality=100', 'Margot James')
+						+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=260&quality=100', 'Margot James')
 					.list--details
-						h3 1 x 1 Avatar
+						h3 Thumbnail
 						+link('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&quality=100?download=true','Download (1500 x 1500 jpeg)')(class="btn--primary", download)

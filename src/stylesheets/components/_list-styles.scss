@@ -93,12 +93,12 @@ dl, dt, dd {
 	flex-wrap: wrap;
 	flex-direction: row;
 	li {
-		min-height: auto;
-		display: inline-block;
-		float: left;
-		margin-right: $base-spacing-unit;
 		width: auto;
 		flex-grow: 1;
+		min-height: auto;
+		display: inline-block;
+		margin-right: $base-spacing-unit;
+
 		> h2, h3, p {
 			display: inline;
 		}
@@ -118,15 +118,11 @@ dl, dt, dd {
   }
 }
 .list--definition {
+	margin: 0 0 $base-spacing-unit-small;
+
   & dt {
     float: left;
     padding-right: $base-spacing-unit-tiny;
-  }
-  &:first-of-type {
-    margin-top: $base-spacing-unit-small;
-  }
-  &:last-of-type {
-    margin-bottom: $base-spacing-unit-small;
   }
 }
 .list--tab {
@@ -149,7 +145,7 @@ dl, dt, dd {
 // List Combination Settings
 
 [class*="list"] .list--definition {
-  margin-bottom: $base-spacing-unit-tiny;
+  margin-bottom: $base-spacing-unit-small;
 
   & * {
     margin-bottom: 0;
@@ -157,13 +153,6 @@ dl, dt, dd {
   &:first-of-type {
     margin-top: $base-spacing-unit-small;
   }
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
-[class*="block"] .list--definition {
-	margin-bottom: 0;
 }
 
 // Footer list
