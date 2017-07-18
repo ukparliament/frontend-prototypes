@@ -145,13 +145,10 @@ dl, dt, dd {
 // List Combination Settings
 
 [class*="list"] .list--definition {
-  margin-bottom: $base-spacing-unit-small;
+  margin: $base-spacing-unit-small 0;
 
   & * {
     margin-bottom: 0;
-  }
-  &:first-of-type {
-    margin-top: $base-spacing-unit-small;
   }
 }
 
