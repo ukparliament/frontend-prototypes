@@ -1,56 +1,38 @@
 extends ../../layouts/layout.pug
 block content
-	.section--primary#content
-		.container
-			h1 Margot James
-			p #[+link('#', 'Conservative')] MP for #[+link('#', 'Stourbridge')]
+	-var thingPage = true
 
-			figure
-				+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=1464&quality=100', 'Margot James')
-				figcaption The official MP portraits are #[+link('media-id.html','available to download')]
+	+section--primary
+		h1 Margot James
+		p #[+link('#', 'Conservative')] MP for #[+link('#', 'Stourbridge')]
 
-	section
-		.container
-			.dropdown
-				.dropdown__toggle
-					h2 #[+link('#', 'Check if this is your MP')]
-				.dropdown__content
-					form(action='postcode')
-						.form-group
-							+input('Enter your full postcode, for example SW1A 0AA.', 'input', 'postcode_main', 'text', 8, '[0-9a-zA-Z ]{5,}', '')
-							|
-							button#btn_loading(type='submit', value='Search', class='btn--secondary')
-								span.btn--loading__text Find
-								span.btn--loading__icon
-									object(data='../../icons/loading.svg', type='image/svg+xml')
-					p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
+		figure
+			+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=1464&quality=100', 'Margot James')
+			figcaption The official MP portraits are #[+link('media-id.html','available to download')]
 
-	section
-		.container
-			.block
-				h2 Contact
-				p Please include your postcode when contacting your MP.
-				dl.list--definition
-					dt Email:
-					dd
-						+link('mailto:margot.james.mp@parliament.uk', 'margot.james.mp@parliament.uk')
-					dt Phone:
-					dd
-						+link('tel:020 7219 7226', '020 7219 7226')
-					dt Address:
-					dd House of Commons, London, SW1A 0AA
-					//dt Website:
-						dd #[+link('#', 'http://www.jeremycorbyn.org.uk')]
-				p You may be able to discuss issues with your MP in person or online. Contact them for details.
+	+section--secondary
+		.block
+			h2 Contact
+			p Please include your postcode when contacting your MP.
+			dl.list--definition
+				dt Email:
+				dd
+					+link('mailto:margot.james.mp@parliament.uk', 'margot.james.mp@parliament.uk')
+				dt Phone:
+				dd tel:020 7219 7226
+				dt Address:
+				dd House of Commons, London, SW1A 0AA
+				//dt Website:
+					dd #[+link('#', 'http://www.jeremycorbyn.org.uk')]
+			p You may be able to discuss issues with your MP in person or online. Contact them for details.
 
-	section
-		.container
-			//- Membership History
-			h2 Roles
-			h3 MP
-			ol.list--pipe
-				each object in [{constituency: 'Stourbridge', sitting_duration: '78 Jun 2017 to present'},{constituency: 'Stourbridge', sitting_duration: '7 May 2015 to 3 May 2017'},{constituency: 'Stourbridge', sitting_duration: '6 May 2010 to 30 Mar 2015'}]
-					li
-						.list-details
-							p MP for #[+link('#', object.constituency)]
-							p= object.sitting_duration
+	+section--other
+		//- Membership History
+		h2 Roles
+		h3 MP
+		ol.list--pipe
+			each object in [{constituency: 'Stourbridge', sitting_duration: '78 Jun 2017 to present'},{constituency: 'Stourbridge', sitting_duration: '7 May 2015 to 3 May 2017'},{constituency: 'Stourbridge', sitting_duration: '6 May 2010 to 30 Mar 2015'}]
+				li
+					.list-details
+						p MP for #[+link('#', object.constituency)]
+						p= object.sitting_duration

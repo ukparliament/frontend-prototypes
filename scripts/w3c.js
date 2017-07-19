@@ -8,7 +8,7 @@ function getFiles(){
 	const arr = [];
 	const files = readDir.readSync('./_public', ['**.html']);
 	for (var i = 0; i < files.length; i++) {
-    arr.push('http://localhost:5000/_public/' + files[i]);
+    arr.push('http://localhost:5000/' + files[i]);
   }
 	return arr;
 }

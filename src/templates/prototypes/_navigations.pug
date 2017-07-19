@@ -1,19 +1,18 @@
 extends ../../layouts/layout.pug
 block content
-	.section--primary#content
-		.container
-			//- Page Title
-			h1 Navigation options
-			h2 A to Z (navigation-letter)
-			//- Letter Navigation
-			include ../../components/navigation-letter
+	-var thingPage = true
 
-	section
-		.container
-			h2 Pagination (navigation-number)
-			include ../../components/navigation-number
+	+section--primary
+		//- Page Title
+		h1 Navigation options
+		h2 A to Z (navigation-letter)
+		//- Letter Navigation
+		include ../../components/navigation-letter
 
-	section
-		.container
-			h2 Tabs (navigation-tab)
-			include ../../components/navigation-tab
+	+section--secondary
+		h2 Pagination (navigation-number)
+		include ../../components/navigation-number
+
+	+section--other
+		h2 Tabs (navigation-tab)
+		include ../../components/navigation-tab

@@ -1,40 +1,20 @@
 extends ../../layouts/layout.pug
 block content
-	.section--primary
-		.container
-			.block--border__bottom
-				include ../../components/mapbox
-				h1 Islington North
+	-var thingPage = true
 
-	section
-		.container
-			.dropdown
-				.dropdown__toggle
-					h2 #[+link('#', 'Check if this is your constituency')]
-				.dropdown__content
-					form(action='postcode')
-						.form-group
-							+input('Enter your full postcode, for example SW1A 0AA.', 'input', 'postcode_main', 'text', 8, '[0-9a-zA-Z ]{5,}', '')
-							|
-							button#btn_loading(type='submit', value='Search', class='btn--secondary')
-								span.btn--loading__text Find
-								span.btn--loading__icon
-									object(data='../../icons/loading.svg', type='image/svg+xml')
-					p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
+	+section--primary
+		h1 Islington North
+		include ../../components/mapbox
 
-	section#content
-		.container
-			ol.list--box
-				+list--box('Jeremy Corbyn', 'MP for Islington North', 'Labour', '/images/placeholder_members_image.png')
+	+section--other
+		ol.list--box
+			+list--box('Jeremy Corbyn', 'MP for Islington North', 'Labour', '/images/placeholder_members_image.png')
 
-	section
-		.container
-			h2 Former MPs
-			ol.list--pipe
-				each object in [{member: 'Jeremy Corbyn', sitting_duration: '7 May 2015 to 3 May 2017'},{member: 'Jeremy Corbyn', sitting_duration: '6 May 2010 to 30 Mar 2015'}]
-					li
-						.list--details
-							h3 #[+link('#', object.member)]
-							p= object.sitting_duration
-
-
+	+section--other
+		h2 Former MPs
+		ol.list--pipe
+			each object in [{member: 'Jeremy Corbyn', sitting_duration: '7 May 2015 to 3 May 2017'},{member: 'Jeremy Corbyn', sitting_duration: '6 May 2010 to 30 Mar 2015'}]
+				li
+					.list--details
+						h3 #[+link('#', object.member)]
+						p= object.sitting_duration

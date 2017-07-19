@@ -1,28 +1,27 @@
 extends ../../layouts/layout-front-page.pug
 block content
+	-var thingPage = true
 
-	.section--primary.highlight--default#content
-		.container
-			h1 Welcome to the UK Parliament test website
-			p We're building a #[+link('#', 'new website for Parliament')]. These pages are being tested and improved - they may be inaccurate or misleading.
-			p Test pages are separate from the current #[+link('#', 'parliament.uk')] website.
+	+section--primary('highlight--default')
+		h1 Welcome to the UK Parliament test website
+		p We're building a #[+link('#', 'new website for Parliament')]. These pages are being tested and improved - they may be inaccurate or misleading.
+		p Test pages are separate from the current #[+link('#', 'parliament.uk')] website.
 
-	section
-		.container
-			h2 Give feedback
-			p We want your feedback to #[+link('#', 'help us improve these pages')] further.
+	+section--secondary
+		h2 Give feedback
+		p We want your feedback to #[+link('#', 'help us improve these pages')] further.
 
-			h2 What's on our test website
-			h3 Member information
-			ol.list--box
-				-var list_box_h3 = true
-				+list--box__generic('MPs', 'All current members of the House of Commons')
-				+list--box__generic('Lords', 'All current members of the House of Lords')
-				+list--box__generic('Constituencies', 'Find MPs by the area they represent')
-				+list--box__generic('Parties and groups', 'Find MPs and Lords by their party or group')
+		h2 What's on our test website
+		h3 Member information
+		ol.list--box
+			-var list_box_h3 = true
+			+list--box__generic('MPs', 'All current members of the House of Commons')
+			+list--box__generic('Lords', 'All current members of the House of Lords')
+			+list--box__generic('Constituencies', 'Find MPs by the area they represent')
+			+list--box__generic('Parties and groups', 'Find MPs and Lords by their party or group')
 
-			.highlight--box.highlight--primary__soft
-				p Read the latest Members service #[+link('#', 'blog post')].
+		.highlight--box.highlight--primary__soft
+			p Read the latest Members service #[+link('#', 'blog post')].
 
-			h2 Follow our progress
-			p Follow all #[+link('#', 'new website developments on our blog')].
+		h2 Follow our progress
+		p Follow all #[+link('#', 'new website developments on our blog')].

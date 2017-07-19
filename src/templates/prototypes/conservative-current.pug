@@ -1,19 +1,18 @@
 extends ../../layouts/layout.pug
 block content
-  .section--primary
-    .container
-      //- Page Title
-      h1
-        span Conservative MPs and Lords
-        +link('#', '- :startdate - :enddate parliament')
-        span.lead A to Z
+  -var thingPage
 
-      p A to Z - select a letter
-      //- Letter Navigation
-      include ../../components/navigation-letter.pug
+  +section--primary
+    //- Page Title
+    h1
+      span Conservative MPs and Lords
+      +link('#', '- :startdate - :enddate parliament')
+      span.lead A to Z
 
-  section#content
-    .container
-      ol.list--box
-        +list--box('Margot James', 'Stourbridge', 'Conservative', 'https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=100')
-        +list--box('Margot James', 'Stourbridge', 'Conservative', 'https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=100')
+    p A to Z - select a letter
+    include ../../components/navigation-letter.pug
+
+  +section--secondary
+    ol.list--box
+      +list--box('Margot James', 'Stourbridge', 'Conservative', 'https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=100')
+      +list--box('Margot James', 'Stourbridge', 'Conservative', 'https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=100')

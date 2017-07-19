@@ -21,7 +21,7 @@ mixin list--box(name, constituency, party, image)
   li
     if image
       figure
-        img(src=image)
+        +image(image, name)
       .list--details
         h2 #[+link('#', name)]
         if lords_list
@@ -77,3 +77,43 @@ mixin list--box__inline(name, count)
   li
     h2 #[+link('#', name)]
     p= '- ' + count + ' MPs'
+
+//- Section Management
+mixin section--primary(highlight)
+  if thingPage
+    .section--primary(class=highlight)#content
+      .container
+        block
+  else
+    .section--primary(class=highlight)
+      .container
+        block
+
+mixin section--secondary()
+  if thingPage
+    section
+      .container
+        block
+  else
+    section#content
+      .container
+        block
+
+mixin section--other()
+  section
+    .container
+      block
+
+//- Dropdown Toggle
+mixin dropdownToggle(title)
+  .dropdown
+    .dropdown__toggle
+      h2 #[+link('#', title)]
+    .dropdown__content
+      block
+
+mixin button(value, style)
+  button#btn_loading(type='submit', value=value, class=style)
+    span.btn--loading__text Find
+    span.btn--loading__icon
+      object(data='../../icons/loading.svg', type='image/svg+xml' aria-hidden='true' aria-labelledby='loading')

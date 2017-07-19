@@ -13,6 +13,7 @@
 .sr-only--focusable {
   &:focus, &:active {
     margin: 0;
+    z-index: 2;
     clip: auto;
     width: auto;
     height: auto;
