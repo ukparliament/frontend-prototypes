@@ -3,36 +3,35 @@ block content
   -var thingPage = true
 
   +section--primary
-    h1 Forms and buttons
-    h2 Search
-    form(action='search')
-      .form-group
-        +input('Enter a keyword', 'input1', 'search_box', 'search', 1000, '^(?!.*<script|<Script).*$', 'Inserting <script> as a search term is not permitted')
-        |
-        button(type='submit', value='Search', class='btn--secondary') Search
-
+    h1 Buttons and form groups
 
   +section--secondary
-    h2 Find your MP and constituency
+    h2 Buttons
+    .block
+      h3 Submit buttons
+      +button('Check', 'btn--primary')
+      +button('Check', 'btn--secondary')
+      +button('Check', 'btn--alternative')
+      +button('Disabled', 'btn')
 
-    //-form(action='postcode')
-    .form-group
-      +input('Enter your full postcode, for example SW1A 0AA.', 'input', 'postcode_main', 'text', 8, '[0-9a-zA-Z ]{5,}', '- Special characters (!@£$%) are not permitted')
-      |
-      button#btn_loading(type='submit', value='Search', class='btn--secondary')
-        span.btn--loading__text Find
-        span.btn--loading__icon
-          object(data='../../icons/loading.svg', type='image/svg+xml' aria-hidden='true' aria-labelledby='loading')
+      h3 Download buttons
+      +buttonLink('#', 'Download (1500 x 2000 jpeg', 'btn--primary')
+      +buttonLink('#', 'Download (1500 x 2000 jpeg', 'btn--secondary')
+      +buttonLink('#', 'Download (1500 x 2000 jpeg', 'btn--alternative')
+      +buttonLink('#', 'Download (1500 x 2000 jpeg', 'btn')
 
-    p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
+    h2 Form groups
+    .block
+      h3 Search
+      form(action='search')
+        .form-group
+          +input('Enter a keyword', 'input1', 'search_box', 'search', 1000, '^(?!.*<script|<Script).*$', 'Inserting <script> as a search term is not permitted')
+          +button('Search', 'btn--secondary')
 
-  +section--other
-    h2 Check if this is your constituency
-
-    form(action='postcode')
+      h3 Find your MP and constituency
+      //-form(action='postcode')
       .form-group
-        +input('Enter your full postcode, for example SW1A 0AA.', 'input2', 'postcode_partial', 'text', 8, '[0-9a-zA-Z ]{5,}', '- Special characters (!@£$%) are not permitted')
-        |
-        button(type='submit', value='Search', class='btn--secondary') Check
+        +input('Enter your full postcode, for example SW1A 0AA.', 'input', 'postcode_main', 'text', 8, '[0-9a-zA-Z ]{5,}', '- Special characters (!@£$%) are not permitted')
+        +button('Find', 'btn--secondary')
 
     p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].

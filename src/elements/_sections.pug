@@ -1,0 +1,25 @@
+//- Section Management
+mixin section--primary(highlight)
+	if thingPage
+		.section--primary(class=highlight)#content
+			.container
+				block
+	else
+		.section--primary(class=highlight)
+			.container
+				block
+
+mixin section--secondary()
+	if thingPage
+		section
+			.container
+				block
+	else
+		section#content
+			.container
+				block
+
+mixin section--other()
+	section
+		.container
+			block

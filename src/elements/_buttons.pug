@@ -1,0 +1,5 @@
+mixin button(value, style)
+	button(type='submit', value=value, class=style)=value
+
+mixin buttonLink(link, value, style)
+	+link(link, value)(class=style, download)

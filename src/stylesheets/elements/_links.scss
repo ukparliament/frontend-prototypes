@@ -1,10 +1,8 @@
-// Variables inherited from 'settings/_colours.scss'
-
 a {
 	@include links(
-		$blue, 			// a:link colour
-		underline,	// a:link decoration
-		$purple, 		// a:visited color
-		$blue-soft // a:hover color
+		$blue, 				// a:link colour
+		underline,		// a:link decoration
+		$purple, 			// a:visited color
+		$blue-soft 		// a:hover color
 	);
 }

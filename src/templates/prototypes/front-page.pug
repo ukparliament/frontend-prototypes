@@ -11,10 +11,9 @@ block content
 		h2 Give feedback
 		p We want your feedback to #[+link('#', 'help us improve these pages')] further.
 
-		h2 What's on our test website
-		h3 Member information
+		h2 Member information
 		ol.list--box
-			-var list_box_h3 = true
+			-var list_box_h2 = true
 			+list--box__generic('MPs', 'All current members of the House of Commons')
 			+list--box__generic('Lords', 'All current members of the House of Lords')
 			+list--box__generic('Constituencies', 'Find MPs by the area they represent')

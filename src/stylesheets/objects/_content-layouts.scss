@@ -53,6 +53,7 @@
 }
 
 .block--border {
+	@include first-child__last-child;
 	padding-top: ($base-spacing-unit-small - 1); // -1px to compensate for border height
 	padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
 	border-bottom: 1px solid $grey-3;
@@ -66,6 +67,7 @@
 		padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
 	}
 	&__bottom {
+		@include first-child__last-child;
 		padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
 	  border-bottom: 1px solid $grey-3;
 
