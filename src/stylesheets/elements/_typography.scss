@@ -52,7 +52,7 @@ button, input, label, optgroup, select, textarea, figcaption {
 	font-family: $base-font-stack;
 }
 
-button, input {
+.btn, button, input {
 	@include fontsize(16);
 	line-height: 26px;
 	@include media($desktop) {

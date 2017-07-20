@@ -6,19 +6,29 @@ block content
     h1 Buttons and form groups
 
   +section--secondary
-    h2 Buttons
+    h2 Submit buttons
     .block
-      h3 Submit buttons
+      h3 Single
       +button('Check', 'btn--primary')
-      +button('Check', 'btn--secondary')
-      +button('Check', 'btn--alternative')
-      +button('Disabled', 'btn')
 
-      h3 Download buttons
-      +buttonLink('#', 'Download (1500 x 2000 jpeg', 'btn--primary')
-      +buttonLink('#', 'Download (1500 x 2000 jpeg', 'btn--secondary')
-      +buttonLink('#', 'Download (1500 x 2000 jpeg', 'btn--alternative')
-      +buttonLink('#', 'Download (1500 x 2000 jpeg', 'btn')
+      h3 Group
+      .btn--group
+        +button('Check', 'btn--primary')
+        +button('Check', 'btn--secondary')
+        +button('Check', 'btn--alternative')
+        +button('Disabled', 'btn')
+
+    h2 Download buttons
+    .block
+      h3 Single
+      +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary')
+
+      h3 Group
+      .btn--group
+        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary')
+        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary')
+        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--alternative')
+        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn')
 
     h2 Form groups
     .block

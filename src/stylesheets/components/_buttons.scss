@@ -1,37 +1,38 @@
 // Button base rules
-.btn {
-	color: $navy;
+.btn, a.btn {
   border: none;
+	color: $grey-3;
   cursor: pointer;
-  min-width: 90px;
+  min-width: 70px;
   border-radius: 4px;
   text-align: center;
 	display: inline-block;
 	background-color: $grey-4;
-  padding: ($base-spacing-unit-tiny - 2) $base-spacing-unit-tiny;
+	padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
   margin: 0 ($base-spacing-unit-tiny / 2) ($base-spacing-unit-tiny / 2) 0;
 	@include links(
-		$navy, 			// a:link colour
+		$grey-3,		// a:link colour
 		none,				// a:link decoration
 		$white, 		// a:visited color
-		$navy 			// a:hover color
+		$grey-3 		// a:hover color
 	);
-  &[type="submit"] {
-  	height: 48px;
-		margin-top: 0;
-  	padding: 0 $base-spacing-unit-tiny;
-  }
   .form-group & {
+		padding: $base-spacing-unit-tiny $base-spacing-unit-small;
     @include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
+
+		&:focus, &:active {
+			@include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
+		}
   }
 	&:focus, &:active {
+		opacity: 0.8;
 		outline: none;
 		border-radius: 4px;
 	}
 }
 
 // Button options
-.btn--primary {
+.btn--primary, a.btn--primary {
 	@extend .btn;
   @include links(
 		$white, 		// a:link colour
@@ -39,18 +40,15 @@
 		$white, 		// a:visited color
 		$white 			// a:hover color
 	);
-  color: white;
+  color: $white;
   background-color: $blue;
 
   &:hover {
     background-color: (darken($blue, 10%));
   }
-	&:focus, &:active {
-		outline: none;
-	}
 }
 
-.btn--secondary {
+.btn--secondary, a.btn--secondary {
 	@extend .btn;
   @include links(
 		$white, 		// a:link colour
@@ -64,26 +62,21 @@
   &:hover {
     background-color: (darken($blue-soft, 10%));
   }
-	&:focus, &:active {
-		outline: none;
-	}
 }
 
-.btn--alternative {
+.btn--alternative, a.btn--alternative {
   @extend .btn;
 	@include links(
 		$navy, 			// a:link colour
 		none,				// a:link decoration
 		$white, 		// a:visited color
-		$white 			// a:hover color
+		$navy 			// a:hover color
 	);
+	color: $navy;
 	background-color: $secondary;
 
 	&:hover {
 		background-color: (darken($secondary, 10%));
-	}
-	&:focus, &:active {
-		outline: none;
 	}
 }
 
@@ -131,4 +124,10 @@
   .btn--loading__text {
     display: none;
   }
+}
+.btn--group {
+	@include clearfix;
+	.btn {
+		float: left;
+	}
 }

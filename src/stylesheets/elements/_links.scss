@@ -5,4 +5,10 @@ a {
 		$purple, 			// a:visited color
 		$blue-soft 		// a:hover color
 	);
+	&:active, &:focus {
+		color: $navy;
+		text-decoration: none;
+		background-color: $secondary;
+		outline: 3px solid $secondary;
+	}
 }
