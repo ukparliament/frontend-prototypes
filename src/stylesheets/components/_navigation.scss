@@ -22,6 +22,9 @@
 		&:focus {
 			outline: none;
 		}
+		&:hover, &:active {
+			text-decoration: underline;
+		}
 	}
 	.container {
 		max-width: 732px; // Reduced to accomodate current grid
