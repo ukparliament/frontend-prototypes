@@ -1,5 +1,11 @@
 mixin button(value, style)
 	button(type='submit', value=value, class=style)=value
 
+mixin buttonSubmit(value, style)
+	button(type='submit', value=value, class=style)
+		span.btn--loading__text=value
+		span.btn--loading__icon
+			include ../icons/loading.svg
+
 mixin buttonLink(link, value, style)
 	+link(link, value)(class=style, download)

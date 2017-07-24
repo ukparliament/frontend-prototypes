@@ -1,5 +1,29 @@
+@-webkit-keyframes spinner {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 svg {
+  @include css-animation(
+    .8s,					// duration
+    linear,				// timing function
+    0s,						// delay
+    infinite,			// iteration count
+    spinner				// name
+  );
   path {
-    fill: $navy;
+    fill: $white;
+    height: 24px;
   }
 }
