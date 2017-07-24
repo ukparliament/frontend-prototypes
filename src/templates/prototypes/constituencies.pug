@@ -1,16 +1,18 @@
 extends ../../layouts/layout.pug
 block content
-	-var thingPage
+  -var thingPage
 
-	+section--primary
-		//- Page Title
-		h1 Current and former constituencies
+  .section--primary
+    .container
+      //- Page Title
+      h1 Current and former constituencies
 
-		p A to Z - Showing results for A
-		//- Letter Navigation
-		include ../../components/navigation-letter.pug
+      p A to Z - Showing results for A
+      //- Letter Navigation
+      include ../../components/navigation-letter.pug
 
-	+section--secondary
-			//- Result List
-			ol.list--box
-				+list--box('Nigel Adams', 'Selby & Ainsty', 'Labour')
+  section#content
+    .container
+      //- Result List
+      ol.list--box
+        +list--box('Nigel Adams', 'Selby & Ainsty', 'Labour')

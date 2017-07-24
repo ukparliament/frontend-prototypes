@@ -2,12 +2,14 @@ extends ../../layouts/layout.pug
 block content
   -var thingPage
 
-  +section--primary
-    h1 Parties and groups
+  .section--primary
+    .container
+      h1 Parties and groups
 
-  +section--secondary
-    include ../../components/navigation-tab
-    ol.list--box
-      +list--box__parties('Conservative', '345')
-      +list--box__parties('Labour', '9')
-      +list--box__parties('Vanguard Unionist Progressive Party', '786')
+  section#content
+    .container
+      include ../../components/navigation-tab
+      ol.list--box
+        +list--box__parties('Conservative', '345')
+        +list--box__parties('Labour', '9')
+        +list--box__parties('Vanguard Unionist Progressive Party', '786')

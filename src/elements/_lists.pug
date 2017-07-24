@@ -59,3 +59,16 @@ mixin list--box__inline(name, count)
 	li
 		h2 #[+link('#', name)]
 		p= '- ' + count + ' MPs'
+
+//- List Box Pipe
+mixin list--box__pipe(constituency, date, name)
+	li
+		.list--details
+			if member
+				p= 'MP for ' + constituency
+				p= date
+			else if name
+				h2 #[+link('#', name)]
+				p= date
+			else
+				p= date

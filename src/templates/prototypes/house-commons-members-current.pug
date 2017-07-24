@@ -1,17 +1,19 @@
 extends ../../layouts/layout.pug
 block content
-	-var thingPage
+  -var thingPage
 
-	+section--primary
-		//- Page Title
-		h1 Current MPs in the House of Commons
-		p A to Z - select a letter
-		//- Letter Navigation
-		include ../../components/navigation-letter.pug
+  .section--primary
+    .container
+      //- Page Title
+      h1 Current MPs in the House of Commons
+      p A to Z - select a letter
+      //- Letter Navigation
+      include ../../components/navigation-letter.pug
 
-	+section--secondary
-		//- Result List
-		ol.list--box
-			+list--box('Margot James', 'Stourbridge', 'Conservative', 'https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80')
-			+list--box('Diane Abbott', 'Hackney North and Stoke Newington', 'Labour', 'https://apidataparliament.azure-api.net/photo/S3bGSTqn.jpg?crop=CU_1:1&height=186&quality=80')
-			+list--box('Debbie Abrahams', 'Oldham East and Saddleworth', 'Labour', '/images/placeholder_members_image.png')
+  section#content
+    .container
+      //- Result List
+      ol.list--box
+        +list--box('Margot James', 'Stourbridge', 'Conservative', 'https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80')
+        +list--box('Diane Abbott', 'Hackney North and Stoke Newington', 'Labour', 'https://apidataparliament.azure-api.net/photo/S3bGSTqn.jpg?crop=CU_1:1&height=186&quality=80')
+        +list--box('Debbie Abrahams', 'Oldham East and Saddleworth', 'Labour', '/images/placeholder_members_image.png')

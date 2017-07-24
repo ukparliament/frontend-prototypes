@@ -2,10 +2,12 @@ extends ../../layouts/layout.pug
 block content
   -var thingPage = true
 
-  +section--primary
-    h1 Ms Diane Abbott - Current and former constituencies
+  .section--primary#content
+    .container
+      h1 Ms Diane Abbott - Current and former constituencies
 
-  +section--secondary
-    ol.list--box
-      +list--box__accessible('Hackney North and Stoke Newington', '7 May 2015 to present')
-      +list--box__accessible('Hackney North and Stoke Newington', '6 May 2010 to 30 Mar 2015')
+  section
+    .container
+      ol.list--box
+        +list--box__accessible('Hackney North and Stoke Newington', '7 May 2015 to present')
+        +list--box__accessible('Hackney North and Stoke Newington', '6 May 2010 to 30 Mar 2015')

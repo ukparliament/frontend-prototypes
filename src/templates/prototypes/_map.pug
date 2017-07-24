@@ -1,8 +1,9 @@
 extends ../../layouts/layout.pug
 block content
-	-var thingPage = true
+  -var thingPage = true
 
-	+section--primary
-		.block--border__bottom
-			include ../../components/mapbox
-			h1 Islington North
+  .section--primary#content
+    .container
+      .block--border__bottom
+        h1 Islington North
+        include ../../components/mapbox
