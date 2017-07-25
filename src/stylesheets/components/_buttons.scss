@@ -102,8 +102,12 @@
 .btn--loading__icon {
 	left: 0;
 	right: 0;
+	top: 16%;
 	opacity: 0;
 	position: absolute;
+}
+.form-group .btn--loading__icon {
+	top: 24%;
 }
 .btn--loading__text {
 	z-index: 1;
