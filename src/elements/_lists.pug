@@ -3,7 +3,7 @@ mixin list--box(name, constituency, party, image)
 	li
 		if image
 			figure
-				+link('#', "")
+				+link('#', "")(tabIndex=-1)
 					+image(image, name)
 			.list--details
 				h2 #[+link('#', name)]

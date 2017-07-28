@@ -20,7 +20,7 @@ figure {
 
     a {
     	position: relative;
-    	&:focus, &:active, &:hover {
+    	&:active, &:hover {
     		background: transparent;
     		outline: none;
     		&:after {
