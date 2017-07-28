@@ -134,11 +134,11 @@ dl, dt, dd {
     margin-right: $base-spacing-unit-medium;
   }
   li.active {
-    padding: 8px 0;
+    padding: ($base-spacing-unit + 2) 0;
     border-bottom: 4px solid $primary;
   }
   a {
-    padding: 8px 0;
+    padding: ($base-spacing-unit + 2) 0;
   }
 }
 
