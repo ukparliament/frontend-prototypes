@@ -1,6 +1,6 @@
 extends ../../layouts/layout.pug
 block content
-  -var thingPage = true
+	-var thingPage = true
 
 	.section--primary#content
 		.container
@@ -8,10 +8,9 @@ block content
 				h1 Official portrait of Margot James
 				figure
 					picture(style="display: block; margin-bottom: 50px")
-						source(media="(min-width: 1008px)" srcset="https://placehold.it/1464")
-						source(media="(min-width: 768px)" srcset="https://placehold.it/768")
-						img(src="https://placehold.it/400" alt="picture")
-					+image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?width=340&quality=80', 'Margot James')(srcset="https://placehold.it/1464 1464w, https://placehold.it/768 768w, https://placehold.it/400 400w")(sizes='100vw')
+						source(media="(min-width: 480px)" srcset="https://placehold.it/1464")
+						source(srcset="https://placehold.it/888")
+						img(src="https://placehold.it/1464" alt="picture")
 					figcaption Official portrait of #[+link('people-id.html','Margot James')]
 				p This photo, and all related crops, are released under an #[+link('#', 'Attribution 3.0 Unported (CC BY 3.0)')] license.
 				p You can use, share and adapt the photographs if you give proper credit, provide a link to the license, and indicate if changes were made to the image. See the #[+link('#', 'full license')] for more details.
