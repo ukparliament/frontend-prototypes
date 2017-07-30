@@ -10,27 +10,17 @@ block content
     .container
       h2 Submit buttons
       .block
-        h3 Single
-        +buttonSubmit('Check', 'btn--primary')
-
-        h3 Group
-        .btn--group
-          +buttonSubmit('Check', 'btn--primary')
-          +buttonSubmit('Check', 'btn--secondary')
-          +buttonSubmit('Check', 'btn--alternative')
-          +button('Disabled', 'btn')
+        +buttonSubmit('Primary', 'btn--primary')
+        +buttonSubmit('Secondary', 'btn--secondary')
+        +buttonSubmit('Deep Purple', 'btn--deep-purple')
+        +buttonSubmit('White', 'btn--white')
+        +buttonDisabled('Disabled')
 
       h2 Download buttons
       .block
-        h3 Single
         +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary')
-
-        h3 Group
-        .btn--group
-          +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary')
-          +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary')
-          +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--alternative')
-          +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn')
+        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary')
+        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--disabled')
 
       h2 Form groups
       .block
@@ -44,6 +34,6 @@ block content
         form(action='postcode')
           .form-group
             +input('Enter your full postcode, for example SW1A 0AA.', 'input', 'postcode_main', 'text', 8, '[0-9a-zA-Z ]{5,}', '')
-            +buttonSubmit('Find', 'btn--secondary')
+            +buttonSubmit('Find', 'btn--primary')
 
       p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].

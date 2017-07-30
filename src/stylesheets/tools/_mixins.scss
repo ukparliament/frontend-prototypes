@@ -106,3 +106,20 @@
     margin-bottom: 0;
   }
 }
+
+@mixin button($color, $background, $background-hover) {
+	@extend .btn;
+	@include links(
+		$color, 			// a:link colour
+		none, 				// a:link decoration
+		$white, 			// a:visited color
+		$white 				// a:hover color
+	);
+	color: $color;
+	background-color: $background;
+
+	&:hover, &:focus {
+		color: $color;
+		background-color: $background-hover;
+	}
+}

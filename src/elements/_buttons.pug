@@ -7,5 +7,8 @@ mixin buttonSubmit(value, style)
 		span.btn--loading__icon
 			include ../icons/loading.svg
 
+mixin buttonDisabled(value)
+	button(type='submit', value=value, class='btn--disabled' disabled)=value
+
 mixin buttonLink(link, value, style)
 	+link(link, value)(class=style, download)
