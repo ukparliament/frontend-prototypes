@@ -11,21 +11,6 @@
 	li {
 		padding: 0 ($base-spacing-unit - 3);
 	}
-	a {
-		padding: $base-spacing-unit-tiny 3px;
-		@include links(
-			$grey-1, 		// a:link colour
-			none,				// a:link decoration
-			$grey-1, 		// a:visited color
-			$grey-1 		// a:hover color
-		);
-		&:focus {
-			outline: none;
-		}
-		&:hover, &:active {
-			text-decoration: underline;
-		}
-	}
 	.container {
 		max-width: 732px; // Reduced to accomodate current grid
 		padding: 0;
@@ -57,19 +42,6 @@
 		span {
 			padding: $base-spacing-unit-tiny 0;
 		}
-		a:link {
-			padding: $base-spacing-unit-tiny 0;
-			@include media($desktop) {
-				padding: ($base-spacing-unit + 3px) 0;
-			}
-			background-color: $white;
-			color: $blue;
-			text-decoration: none;
-		}
-		a:hover {
-			background-color: $blue;
-			color: $white;
-		}
 	}
 	li.active {
 		background-color: $primary;
@@ -89,7 +61,6 @@
 		text-transform: capitalize;
 		padding: 0;
 	}
-	a,
 	span {
 		min-width: 24px;
 	}

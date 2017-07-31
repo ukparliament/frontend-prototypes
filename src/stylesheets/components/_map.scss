@@ -9,24 +9,5 @@
 
 	.leaflet-bar {
 		box-shadow: 0 1px 5px rgba(55,49,81,0.4);
-
-		a {
-			background-color: $grey-5;
-			@include fontsize(18);
-			@include links(
-				$blue, 			// a:link colour
-				none, 			// a:link decoration
-				$blue, 			// a:visited color
-				inherited 	// a:hover color
-			);
-
-			&:hover {
-				text-decoration: none;
-			}
-
-			&:first-child {
-				border-bottom: 1px solid #cbc9cd;
-			}
-		}
 	}
 }

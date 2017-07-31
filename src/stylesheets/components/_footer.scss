@@ -6,19 +6,6 @@ footer {
 	box-sizing: border-box;
   background-color: $navy;
 	padding-bottom: 60px;
-
-	a {
-		@include links(
-			$grey-5, 		// a:link colour
-			underline,	// a:link decoration
-			$grey-5, 		// a:visited color
-			$grey-3 		// a:hover color
-		);
-		&:focus {
-			color: $navy;
-			text-decoration: none;
-		}
-	}
 }
 
 // Physical Print Styles
