@@ -28,3 +28,9 @@
     height: 24px;
   }
 }
+.btn--loading.btn--white svg,
+.btn--loading.btn--white object {
+  path {
+    fill: $deep-purple;
+  }
+}
