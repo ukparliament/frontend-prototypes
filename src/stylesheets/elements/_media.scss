@@ -10,8 +10,11 @@ video {
 figure {
   margin: 0 0 $base-spacing-unit-small 0;
 }
+picture {
+	display: block;
+}
 .list--box li {
-  figure {
+  figure, picture {
     width: 84px;
     height: 84px;
     border-radius: 50%;
@@ -58,12 +61,11 @@ figure {
   }
 }
 .list--pipe li {
-  figure {
+  figure, picture {
     width: 130px;
     height: auto;
     border-radius: 0;
     background-color: $grey-4;
-
   }
   img {
     width: 100%;

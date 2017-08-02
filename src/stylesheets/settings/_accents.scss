@@ -42,3 +42,21 @@
 .accent__white {
 	@include accent($white);
 }
+.accent__caution {
+	@include accent($caution);
+}
+.accent__caution__light {
+	@include accent($caution--light);
+}
+.accent__success {
+	@include accent($success);
+}
+.accent__success__light {
+	@include accent($success--light);
+}
+.accent__warning {
+	@include accent($warning);
+}
+.accent__warning__light {
+	@include accent($warning--light);
+}

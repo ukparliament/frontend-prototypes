@@ -4,7 +4,8 @@ mixin list--box(name, constituency, party, image)
 		if image
 			figure
 				+link('#', "")(tabIndex=-1)
-					+image(image, name)
+					picture
+						+image(image, name)
 			.list--details
 				h2 #[+link('#', name)]
 				if lords_list

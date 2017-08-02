@@ -14,14 +14,14 @@
   border-bottom-left-radius: ($bot-left + 0px);
 }
 
-/*--- Theme [background colour, typography, hover colour] ---*/
+/*--- Theme [background colour, typography, link colour, hover colour] ---*/
 
-@mixin theme($background, $color, $hover-color) {
+@mixin theme($background, $color, $link-color, $hover-color) {
 	color: $color;
 	background-color: $background !important;
 	a {
 		@include links(
-			$color, 			// a:link colour
+			$link-color, 			// a:link colour
 			underline,	 	// a:link decoration
 			$color, 			// a:visited color
 			$hover-color	// a:hover color
