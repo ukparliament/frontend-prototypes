@@ -8,8 +8,8 @@ $gutter: 16px;
 $grid-columns: 8;
 
 // Breakpoints
-$desktop: new-breakpoint(min-width 768px 8);
-$mobile: new-breakpoint(max-width 767px 4);
+$desktop: new-breakpoint(min-width 768px);
+$medium: new-breakpoint(min-width 481px);
 
 // Visualise Grid
 $visual-grid: false;
