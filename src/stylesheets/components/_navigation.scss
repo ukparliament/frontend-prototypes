@@ -6,6 +6,8 @@
 	@include navigation(0, 0);
 
 	ul {
+		@include clearfix;
+
 		margin-left: (- $base-spacing-unit);
 	}
 	li {

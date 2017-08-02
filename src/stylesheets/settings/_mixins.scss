@@ -140,3 +140,28 @@
 		background-color: $background-hover;
 	}
 }
+
+/*--- Media Queries [size] ---*/
+
+@mixin media($size) {
+	@if $size == $desktop {
+		@media (min-width: $desktop) {
+			@content;
+		}
+	}
+	@else if $size == $tablet {
+		@media (min-width: $tablet) {
+			@content;
+		}
+	}
+}
+
+/*--- Clearfix for containing floats ---*/
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}

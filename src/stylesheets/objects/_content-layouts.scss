@@ -35,7 +35,8 @@
 
 .container {
 	padding: 0 $base-spacing-unit-small;
-	@include outer-container;
+	margin: 0 auto;
+	max-width: $max-width;
 }
 
 .section--primary__container {
@@ -47,7 +48,6 @@
 .block {
 	padding: $base-spacing-unit-small;
 	background-color: white;
-	@include outer-container;
 	margin-bottom: $base-spacing-unit-small;
 	@include first-child__last-child;
 }

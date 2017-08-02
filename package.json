@@ -21,7 +21,6 @@
   "main": "server.js",
   "devDependencies": {
     "autoprefixer": "^7.1.0",
-    "bourbon-neat": "^1.8.0",
     "chokidar": "^1.6.1",
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.1",

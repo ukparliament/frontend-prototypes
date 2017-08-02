@@ -2,14 +2,5 @@
 $max-width: 768px;
 $min-width: 320px;
 
-// Base Grid Settings
-$column: 80px;
-$gutter: 16px;
-$grid-columns: 8;
-
 // Breakpoints
-$desktop: new-breakpoint(min-width 768px 8);
-$mobile: new-breakpoint(max-width 767px 4);
-
-// Visualise Grid
-$visual-grid: false;
+$desktop: 481px;
