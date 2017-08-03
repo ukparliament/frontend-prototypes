@@ -1,44 +1,43 @@
 extends ../../layouts/layout.pug
 block content
-	-var thingPage = true
+  -var thingPage = true
 
-	.section--primary#content
-		.container
-			h1 Margot James
-			p #[+link('#', 'Conservative')] MP for #[+link('#', 'Stourbridge')]
+  .section--primary#content
+    .container
+      h1 Margot James
+      p #[+link('#', 'Conservative')] MP for #[+link('#', 'Stourbridge')]
 
-			figure
-				picture
-					source(srcset="https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=732&quality=80, https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=1464&quality=80 2x" media="(min-width: 480px)")
-					source(srcset="https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=444&quality=80, https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=888&quality=80 2x")
-					img(src="https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?width=732&quality=80" alt="Margot James")
-					figcaption The official MP portraits are #[+link('media-id.html','available to download')]
+      figure
+        picture
+          source(srcset="https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=732&quality=80, https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=1464&quality=80 2x" media="(min-width: 480px)")
+          source(srcset="https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=444&quality=80, https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=888&quality=80 2x")
+          img(src="https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?width=732&quality=80" alt="Margot James")
+          figcaption The official MP portraits are #[+link('media-id.html','available to download')]
 
-	section
-		.container
-			.block
-				h2 Contact
-				p Please include your postcode when contacting your MP.
-				dl.list--definition
-					dt Email:
-					dd
-						+link('mailto:margot.james.mp@parliament.uk', 'margot.james.mp@parliament.uk')
-					dt Phone:
-					dd tel:020 7219 7226
-					dt Address:
-					dd House of Commons, London, SW1A 0AA
-					//dt Website:
-						dd #[+link('#', 'http://www.jeremycorbyn.org.uk')]
-				p You may be able to discuss issues with your MP in person or online. Contact them for details.
+  section
+    .container
+      .block
+        h2 Contact
+        p Please include your postcode when contacting your MP.
+        dl.list--definition
+          dt Email:
+          dd
+            +link('mailto:margot.james.mp@parliament.uk', 'margot.james.mp@parliament.uk')
+          dt Phone:
+          dd tel:020 7219 7226
+          dt Address:
+          dd House of Commons, London, SW1A 0AA
+          //dt Website:
+            dd #[+link('#', 'http://www.jeremycorbyn.org.uk')]
+        p You may be able to discuss issues with your MP in person or online. Contact them for details.
 
-	section
-		.container
-			//- Membership History
-			h2 Roles
-			h3 MP
-			ol.list--pipe
-				each object in [{constituency: 'Stourbridge', sitting_duration: '78 Jun 2017 to present'},{constituency: 'Stourbridge', sitting_duration: '7 May 2015 to 3 May 2017'},{constituency: 'Stourbridge', sitting_duration: '6 May 2010 to 30 Mar 2015'}]
-					li
-						.list-details
-							p MP for #[+link('#', object.constituency)]
-							p= object.sitting_duration
+  section
+    .container
+      //- Membership History
+      h2 Roles
+      h3 MP
+      ol.list--pipe
+        -var member = true
+        +list--pipe('Stourbridge', '7 Jun 2017 to present')
+        +list--pipe('Stourbridge', '7 May 2015 to 3 May 2017')
+        +list--pipe('Stourbridge', '6 May 2010 to 30 Mar 2015')

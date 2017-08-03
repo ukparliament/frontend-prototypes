@@ -1,76 +1,88 @@
 //- List Box
-mixin list--box(name, constituency, party, image)
-	li
-		if image
-			figure
-				+link('#', "")(tabIndex=-1)
-					picture
-						+image(image, name)
-			.list--details
-				h2 #[+link('#', name)]
-				if lords_list
-					p= 'Member of the ' + constituency
-				else
-					p= 'MP for ' + constituency
-				p= party
+mixin list--block(name, constituency, party, image)
+  li
+    if image
+      figure
+        +link('#', '')(tabIndex=-1)
+          picture
+            +image(image, name)
+      .list--details
+        h2 #[+link('#', name)]
+        if lords_list
+          p= 'Member of the ' + constituency
+        else
+          p= 'MP for ' + constituency
+        p= party
 
-		else
-			.list--details
-				h2 #[+link('#', constituency)]
-				p= name
+    else
+      .list--details
+        h2 #[+link('#', constituency)]
+        p= name
 
 //- List Box Parties
-mixin list--box__parties(party, count)
-	li
-		.column--75
-			.list--details
-				h2 #[+link('#', party)]
-				p= 'All current ' + party + ' MPs'
-		.column--25
-			.list--details
-				p= count
-					span MPs
+mixin list--block__parties(party, count)
+  li
+    .column--75
+      .list--details
+        h2 #[+link('#', party)]
+        p= 'All current ' + party + ' MPs'
+    .column--25
+      .list--details
+        p= count
+          span MPs
 
 //- List Box Accessible
-mixin list--box__accessible(constituency, date)
-	li
-		.list--details
-			if constituency
-				h2 #[+link('#', constituency)]
-					span.sr-only= 'constituency from ' + date
-				p
-					span(aria-hidden='true')= date
-			else
-				h2 #[+link('#', date)]
+mixin list--block__accessible(constituency, date)
+  li
+    .list--details
+      if constituency
+        h2 #[+link('#', constituency)]
+          span.sr-only= 'constituency from ' + date
+        p
+          span(aria-hidden='true')= date
+      else
+        h2 #[+link('#', date)]
 
 //- List Box Generic
-mixin list--box__generic(heading, content)
-	li
-		.list--details
-			if list_box_h4
-				h4 #[+link('#', heading)]
-			else if list_box_h3
-				h3 #[+link('#', heading)]
-			else
-				h2 #[+link('#', heading)]
-			p= content
-			block
+mixin list--block__generic(heading, content)
+  li
+    .list--details
+      if list_box_h4
+        h4 #[+link('#', heading)]
+      else if list_box_h3
+        h3 #[+link('#', heading)]
+      else
+        h2 #[+link('#', heading)]
+      p= content
+      block
 
 //- List Box Inline
-mixin list--box__inline(name, count)
-	li
-		h2 #[+link('#', name)]
-		p= '- ' + count + ' MPs'
+mixin list--block__inline(name, count)
+  li
+    h2 #[+link('#', name)]
+    p= '- ' + count + ' MPs'
 
-//- List Box Pipe
-mixin list--box__pipe(constituency, date, name)
-	li
-		.list--details
-			if member
-				p= 'MP for ' + constituency
-				p= date
-			else if name
-				h2 #[+link('#', name)]
-				p= date
-			else
-				p= date
+//- List Pipe
+mixin list--pipe(constituency, date, name)
+  li
+    .list--details
+      if member
+        p= 'MP for '
+          +link('#', constituency)
+        p= date
+      else if name
+        h2 #[+link('#', name)]
+        p= date
+      else
+        p= date
+
+//- List Pipe Media
+mixin list--pipe__media(imgURL, imgAlt, heading, btnURL, btnText)
+  li
+    figure
+      +link('#', '')(tabIndex=-1)
+        picture
+          +image(imgURL, imgAlt)
+    .list--details
+      h3= heading
+      +link(btnURL, btnText)(class='btn--primary' download)

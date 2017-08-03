@@ -64,7 +64,7 @@ dl, dt, dd {
   }
 }
 
-.list--box {
+.list--block {
   @extend .list;
 
   li {
@@ -86,7 +86,7 @@ dl, dt, dd {
 
 }
 .list--inline__box {
-	@extend .list--box;
+	@extend .list--block;
 	@include clearfix;
 
 	display: inline-flex;

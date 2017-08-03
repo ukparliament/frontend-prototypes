@@ -10,15 +10,13 @@ block content
 
   section
     .container
-      ol.list--box
-        +list--box('Jeremy Corbyn', 'MP for Islington North', 'Labour', '/images/placeholder_members_image.png')
+      ol.list--block
+        +list--block('Jeremy Corbyn', 'MP for Islington North', 'Labour', '/images/placeholder_members_image.png')
 
   section
     .container
       h2 Former MPs
       ol.list--pipe
-        each object in [{member: 'Jeremy Corbyn', sitting_duration: '7 May 2015 to 3 May 2017'},{member: 'Jeremy Corbyn', sitting_duration: '6 May 2010 to 30 Mar 2015'}]
-          li
-            .list--details
-              h3 #[+link('#', object.member)]
-              p= object.sitting_duration
+        -var name = true
+        +list--pipe('', '7 May 2015 to 3 May 2017', 'Jeremy Corbyn')
+        +list--pipe('', '6 May 2010 to 30 Mar 2015', 'Jeremy Corbyn')

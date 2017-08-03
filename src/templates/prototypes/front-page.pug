@@ -14,12 +14,12 @@ block content
       p We want your feedback to #[+link('#', 'help us improve these pages')] further.
 
       h2 Member information
-      ol.list--box
+      ol.list--block
         -var list_box_h2 = true
-        +list--box__generic('MPs', 'All current members of the House of Commons')
-        +list--box__generic('Lords', 'All current members of the House of Lords')
-        +list--box__generic('Constituencies', 'Find MPs by the area they represent')
-        +list--box__generic('Parties and groups', 'Find MPs and Lords by their party or group')
+        +list--block__generic('MPs', 'All current members of the House of Commons')
+        +list--block__generic('Lords', 'All current members of the House of Lords')
+        +list--block__generic('Constituencies', 'Find MPs by the area they represent')
+        +list--block__generic('Parties and groups', 'Find MPs and Lords by their party or group')
 
       .highlight
         p Read the latest Members service #[+link('#', 'blog post')].

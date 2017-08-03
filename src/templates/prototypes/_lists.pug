@@ -11,50 +11,57 @@ block content
       h2 Inline box list
       ol.list--inline__box
         // Name, Count
-        +list--box__inline('Conservative', '345')
-        +list--box__inline('Labour', '9')
-        +list--box__inline('Vanguard Unionist Progressive Party ', '786')
-        +list--box__inline('Labour', '9')
-        +list--box__inline('Conservative', '345')
-        +list--box__inline('Vanguard Unionist Progressive Party ', '786')
+        +list--block__inline('Conservative', '345')
+        +list--block__inline('Labour', '9')
+        +list--block__inline('Vanguard Unionist Progressive Party ', '786')
+        +list--block__inline('Labour', '9')
+        +list--block__inline('Conservative', '345')
+        +list--block__inline('Vanguard Unionist Progressive Party ', '786')
 
   section
     .container
       h2 Box list
       h3 Default
-      ol.list--box
+      ol.list--block
         // Name, Constituency, Party, Image
-        +list--box('Nigel Adams', 'Selby & Ainsty', 'Labour')
-        +list--box('Nigel Adams', 'Selby & Ainsty', 'Labour', 'https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
+        +list--block('Nigel Adams', 'Selby & Ainsty', 'Labour')
+        +list--block('Nigel Adams', 'Selby & Ainsty', 'Labour', 'https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=186&quality=80', 'Margot James')
         -var lords_list = true
-        +list--box('Lord Aberdare', 'House of Lords', 'Crossbench', '/images/placeholder_members_image.png')
+        +list--block('Lord Aberdare', 'House of Lords', 'Crossbench', '/images/placeholder_members_image.png')
 
       h3 Parties
-      ol.list--box
+      ol.list--block
         // Party, Count
-        +list--box__parties('Labour', '365')
+        +list--block__parties('Labour', '365')
 
       h3 Accessible
-      ol.list--box
+      ol.list--block
         // Constituency, Date
-        +list--box__accessible('', '2017 to present')
-        +list--box__accessible('Selby & Ainsty', '6 May 2010 to 30 Mar 2015')
+        +list--block__accessible('', '2017 to present')
+        +list--block__accessible('Selby & Ainsty', '6 May 2010 to 30 Mar 2015')
 
       h3 Generic
-      ol.list--box
+      ol.list--block
         -var list_box_h3 = true
         // Heading, Content
-        +list--box__generic('Parties and groups', 'Find MPs and Lords by their party or group.')
+        +list--block__generic('Parties and groups', 'Find MPs and Lords by their party or group.')
           // Extendable
             p Further content can be added
 
   section
     .container
       h2 Pipe list
+      h3 Default
       ol.list--pipe
-        // Name, Constituency, Date
-        +list--box__pipe('Selby & Ainsty', '8 Jun 2017 to present')
-        +list--box__pipe('Windsor', '8 Jun 2017 to present', 'Adam Afriyie')
+        // Constituency, Date, Name
+        +list--pipe('Selby & Ainsty', '8 Jun 2017 to present')
+        +list--pipe('Windsor', '8 Jun 2017 to present', 'Adam Afriyie')
         -var member = true
-        +list--box__pipe('Windsor', '8 Jun 2017 to present')
+        +list--pipe('Windsor', '8 Jun 2017 to present')
 
+      h3 Media
+      ol.list--pipe
+        // Image URL, Image Alt, Heading, Button URL, Button Text
+        +list--pipe__media('https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=260&quality=80', 'Margot James', '3:2 portrait', 'https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&quality=80&download=true', 'Download jpeg (3000 x 2000)')
+        +list--pipe__media('https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:4&width=260&quality=80', 'Margot James', '3:4 portrait', 'https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:4&quality=80&download=true', 'Download jpeg (1500 x 2000)')
+        +list--pipe__media('https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=260&quality=80', 'Margot James', '1:1 portrait', 'https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&quality=80&download=true', 'Download jpeg (1500 x 1500)')
