@@ -124,3 +124,14 @@ footer a  {
 .navigation--number a {
 	min-width: 24px;
 }
+
+/*--- Themes Alternative Focus ---*/
+
+.theme__mint,
+.theme__warning--light,
+.theme__success--light {
+	a:focus {
+		background: $grey-5;
+		outline: 3px solid $grey-5;
+	}
+}

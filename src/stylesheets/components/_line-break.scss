@@ -1,14 +1,14 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
 .line-break--sm {
-  @include line-break($base-spacing-unit-tiny / 3, $base-spacing-unit-large * 2, $navy);
+  @include line-break($base-spacing-unit-tiny / 3, $base-spacing-unit-large * 2);
 }
 .line-break--lg {
-  @include line-break($base-spacing-unit-tiny / 3, (60 + 0px), $navy);
+  @include line-break($base-spacing-unit-tiny / 3, (60 + 0px));
 }
 
 @include media($desktop) {
 	.line-break--lg {
-		@include line-break($base-spacing-unit-tiny / 3, (100 + 0px), $navy);
+		@include line-break($base-spacing-unit-tiny / 3, (100 + 0px));
 	}
 }

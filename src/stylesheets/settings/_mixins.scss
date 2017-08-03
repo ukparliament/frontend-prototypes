@@ -16,12 +16,14 @@
 
 /*--- Theme [background colour, typography, link colour, hover colour] ---*/
 
-@mixin theme($background, $color, $link-color, $hover-color) {
+@mixin theme($background, $color, $link-color, $hover-color, $accent) {
 	color: $color;
+	border-color: $color;
 	background-color: $background !important;
+
 	a {
 		@include links(
-			$link-color, 			// a:link colour
+			$link-color, 	// a:link colour
 			underline,	 	// a:link decoration
 			$color, 			// a:visited color
 			$hover-color	// a:hover color
@@ -33,6 +35,10 @@
 	}
 	h1 {
 		color: $color;
+
+		&:after {
+			background-color: $accent;
+		}
 	}
 }
 
@@ -41,10 +47,10 @@
 @mixin accent($color) {
 	h1 {
 		&:after {
-			background-color: $color !important;
+			background-color: $color;
 		}
 	}
-	border-color: $color !important;
+	border-color: $color;
 }
 
 /*--- Screen Reader ---*/
@@ -62,12 +68,11 @@
 
 /*--- Line Break [height, width, colour] ---*/
 
-@mixin line-break($height, $width, $color) {
+@mixin line-break($height, $width) {
   height: $height;
   width: $width;
   margin-top: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
   margin-bottom: ($base-spacing-unit-medium - 2); // -2px to compensate for divider height
-  background-color: $color;
 }
 
 /*--- Link [link colour, link decoration, visited colour, hover colour] ---*/

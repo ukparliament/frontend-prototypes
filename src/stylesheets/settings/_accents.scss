@@ -1,62 +1,64 @@
 /*--- Accent includes [line-break color] ---*/
 
-.accent__deep-purple {
-	@include accent($deep-purple);
-}
-.accent__deep-purple--light {
-	@include accent($deep-purple);
-}
-.accent__grey-1 {
-	@include accent($grey-1);
-}
-.accent__grey-2 {
-	@include accent($grey-2);
-}
-.accent__grey-3 {
-	@include accent($grey-3);
-}
-.accent__grey-4 {
-	@include accent($grey-4);
-}
-.accent__grey-5 {
-	@include accent($grey-5);
-}
-.accent__mint {
-	@include accent($mint);
-}
-.accent__mint--light {
-	@include accent($mint--light);
-}
-.accent__mint--dark {
-	@include accent($mint--dark);
-}
-.accent__purple {
-	@include accent($purple);
-}
-.accent__purple__dark {
-	@include accent($purple--dark);
-}
-.accent__purple__light {
-	@include accent($purple--light);
-}
-.accent__white {
-	@include accent($white);
-}
-.accent__caution {
-	@include accent($caution);
-}
-.accent__caution__light {
-	@include accent($caution--light);
-}
-.accent__success {
-	@include accent($success);
-}
-.accent__success__light {
-	@include accent($success--light);
-}
-.accent__warning {
-	@include accent($warning);
-}
-.accent__warning__light {
-	@include accent($warning--light);
+[class*="theme"] {
+	&.accent__deep-purple {
+		@include accent($deep-purple);
+	}
+	&.accent__deep-purple--light {
+		@include accent($deep-purple);
+	}
+	&.accent__grey-1 {
+		@include accent($grey-1);
+	}
+	&.accent__grey-2 {
+		@include accent($grey-2);
+	}
+	&.accent__grey-3 {
+		@include accent($grey-3);
+	}
+	&.accent__grey-4 {
+		@include accent($grey-4);
+	}
+	&.accent__grey-5 {
+		@include accent($grey-5);
+	}
+	&.accent__mint {
+		@include accent($mint);
+	}
+	&.accent__mint--light {
+		@include accent($mint--light);
+	}
+	&.accent__mint--dark {
+		@include accent($mint--dark);
+	}
+	&.accent__purple {
+		@include accent($purple);
+	}
+	&.accent__purple__dark {
+		@include accent($purple--dark);
+	}
+	&.accent__purple__light {
+		@include accent($purple--light);
+	}
+	&.accent__white {
+		@include accent($white);
+	}
+	&.accent__caution {
+		@include accent($caution);
+	}
+	&.accent__caution__light {
+		@include accent($caution--light);
+	}
+	&.accent__success {
+		@include accent($success);
+	}
+	&.accent__success__light {
+		@include accent($success--light);
+	}
+	&.accent__warning {
+		@include accent($warning);
+	}
+	&.accent__warning__light {
+		@include accent($warning--light);
+	}
 }

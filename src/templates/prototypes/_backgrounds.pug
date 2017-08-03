@@ -1,0 +1,91 @@
+extends ../../layouts/layout.pug
+block content
+
+	.section--primary#content
+		.container
+			h1 Themes
+
+	section
+		.container
+			.block--border__top
+				h2 Background colours
+				h3 grey-4
+				.block.theme__grey-4
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--primary')
+
+				h3 grey-5 (base background)
+				.block.theme__grey-5
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--primary')
+
+				h3 deep-purple
+				.block.theme__deep-purple
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--white')
+
+				h3 white
+				.block.theme__white
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--primary')
+
+				h3 mint
+				.block.theme__mint
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--deep-purple')
+
+				h3 mint--light
+				.block.theme__mint--light
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--deep-purple')
+
+				h3 purple
+				.block.theme__purple
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--white')
+
+				h3 purple--light
+				.block.theme__purple--light
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--deep-purple')
+
+	section
+		.container
+			.block--border__top
+				h2 Status Colours
+				h3 caution--light
+				.block.theme__caution--light
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--deep-purple')
+
+				h3 success--light
+				.block.theme__success--light
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--deep-purple')
+
+				h3 warning--light
+				.block.theme__warning--light
+					h1 Heading
+					p Body text
+					p #[+link('#', "link")]
+					+buttonSubmit('Button', 'btn--deep-purple')
