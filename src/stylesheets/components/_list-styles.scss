@@ -105,17 +105,29 @@ dl, dt, dd {
 	}
 }
 .list--pipe {
-  @extend .list--box;
+	@extend .list;
   li {
     border-bottom: solid 1px $grey-3;
     background: transparent;
     padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
     margin-bottom: 0;
+		display: inline-flex;
+		width: 100%;
   }
   li:first-of-type {
     border-top: solid 1px $grey-3;
     padding-top: ($base-spacing-unit-tiny - 1);
   }
+	.list--details {
+		display: inline-block;
+		margin-top: 0;
+		h2, h3, h4 {
+			margin-top: 0;
+		}
+		:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 .list--definition {
 	margin: 0 0 $base-spacing-unit-small;
