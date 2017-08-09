@@ -26,6 +26,9 @@ After setting up, run `make serve`. Browse to http://localhost:3000 to view Pugi
 * [W3C](docs/W3C.md)
 * [WCAG](docs/WCAG.md)
 
+## Maps
+Our maps use the [leafletjs library][leafletjs] that is published under the [2-clause BSD License][license-2c-BSD].
+
 ## Contributing
 If you wish to submit a bug fix or feature, you can create a pull request and it will be merged pending a code review.
 
@@ -40,6 +43,8 @@ If you wish to submit a bug fix or feature, you can create a pull request and it
 
 [nodejs]:          		  http://nodejs.org
 [pug-cli]:         		  https://github.com/pugjs/pug-cli
+[leafletjs]:         		http://leafletjs.com/
+[license-2c-BSD]:       https://opensource.org/licenses/BSD-2-Clause
 
 [parliament.uk-pugin]:  https://github.com/ukparliament/parliament.uk-pugin
 [pds]:             		  https://www.parliament.uk/mps-lords-and-offices/offices/bicameral/parliamentary-digital-service/

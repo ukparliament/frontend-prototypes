@@ -13,10 +13,13 @@
 			map_container.classList.add('map');
 
 			// Create the map
-			map = L.map('mapbox').setView([55, -3], 6);
+			map = L.map('mapbox').setView([55, -3], 5);
 
 			// Disable mouse wheel zoom
 			map.scrollWheelZoom.disable();
+
+			// Disable 'Leaflet' attribution
+			map.attributionControl.setPrefix(false);
 
 			// Setup the map tile layer
 			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
