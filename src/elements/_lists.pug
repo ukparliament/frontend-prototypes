@@ -59,8 +59,9 @@ mixin list--block__generic(heading, content)
 //- List Box Inline
 mixin list--block__inline(name, count)
   li
-    h2 #[+link('#', name)]
-    p= '- ' + count + ' MPs'
+    .list--details
+      h2 #[+link('#', name)]
+      p= '- ' + count + ' MPs'
 
 //- List Pipe
 mixin list--pipe(constituency, date, name)

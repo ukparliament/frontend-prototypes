@@ -5,7 +5,8 @@ mixin buttonSubmit(value, style)
 	button(type='submit', value=value, class=style)
 		span.btn--loading__text=value
 		span.btn--loading__icon
-			include ../icons/loading.svg
+			figure
+				include ../icons/loading.svg
 
 mixin buttonDisabled(value)
 	button(type='submit', value=value, class='btn--disabled' disabled)=value

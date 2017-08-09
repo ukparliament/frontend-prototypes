@@ -85,21 +85,21 @@ dl, dt, dd {
   }
 
 }
-.list--inline__box {
+.list--block__inline {
 	@extend .list--block;
 	@include clearfix;
 
-	display: inline-flex;
 	flex-wrap: wrap;
 	flex-direction: row;
+	display: inline-flex;
+
 	li {
 		width: auto;
 		flex-grow: 1;
-		min-height: auto;
 		display: inline-block;
 		margin-right: $base-spacing-unit;
 
-		> h2, h3, p {
+		.list--details * {
 			display: inline;
 		}
 	}

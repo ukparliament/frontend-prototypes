@@ -14,8 +14,7 @@
     transform: rotate(360deg);
   }
 }
-.btn--loading svg,
-.btn--loading object {
+.btn--loading svg {
   @include css-animation(
     .8s,					// duration
     linear,				// timing function
