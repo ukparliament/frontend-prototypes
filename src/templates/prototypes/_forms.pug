@@ -1,0 +1,85 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+
+  .section--primary#content
+    .container
+      h1 Form elements
+
+  section
+    .container
+      h2 HTML &lt;form&gt; Tag
+      //- action, method
+      //- mixin accepts attributes and block content
+      +form('javascript:console.log("form action")', 'post')
+
+
+      h2 HTML &lt;input&gt; Tag
+
+      h3 Text box
+      //- type, label, name, id
+      //- mixin accepts attributes
+      +input('text', 'Full name', 'name', 'txtName')
+
+      h3 Checkbox
+      h4 Which part of the day do you prefer?
+      +input('checkbox', 'Day', 'time-of-day', 'chkDay')
+      +input('checkbox', 'Night', 'time-of-day', 'chkNight')
+
+      h3 Radio
+      +input('radio', 'Email', 'contact-method', 'rdEmail')
+      +input('radio', 'Phone', 'contact-method', 'rdPhone')
+      +input('radio', 'Text message', 'contact-method', 'rdTxtMsg')
+
+      h3 File upload
+      +input('file', 'Upload a file', 'file-upload', 'fileUpload')
+
+
+      h2 HTML &lt;textarea&gt; Tag
+      //- label, id
+      //- mixin accepts attributes
+      +textarea('Leave a comment', 'txtComment')
+
+
+      h2 HTML &lt;button&gt; Tag
+      //- value, style, type
+      //- mixin accepts attributes
+      +button('Submit', 'btn--primary')
+      +button('Reset', 'btn--primary', 'reset')
+      +button('Disabled', 'btn--disabled')(disabled)
+
+
+      h2 HTML &lt;select&gt; Tag
+      //- label, name, id)
+      //- mixin accepts block content
+      +select('Select a house', 'ddlHouse', 'house')
+        +option('House of Commons', 'HoC')
+        +option('House of Lords', 'HoL')
+
+
+      h2 HTML &lt;option&gt; Tag
+      //- value, valueAttrib
+      //- mixin accepts attributes
+      +select('Option where values use different string', 'optionID', 'optionName')
+        +option('House of Commons', 'HoC')
+
+      +select('Option where values use the same string', 'optionID1', 'optionName1')
+        +option('House of Commons')
+
+
+      h2 HTML &lt;optgroup&gt; Tag
+      //- label
+      //- mixin accepts block content
+      +select('Select a house', 'ddlHouse1', 'house1')
+        +optgroup('House')
+          +option('House of Commons', 'HoC')
+          +option('House of Lords', 'HoL')
+
+
+      h2 HTML &lt;fieldset&gt; Tag
+      //- legend
+      //- mixin accepts block content
+      +fieldset('How do you wish to be contacted?')
+        +input('radio', 'Email', 'contact-method1', 'rdEmail1')
+        +input('radio', 'Phone', 'contact-method1', 'rdPhone1')
+        +input('radio', 'Text message', 'contact-method1', 'rdTxtMsg1')

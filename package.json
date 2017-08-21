@@ -28,7 +28,7 @@
     "eslint-plugin-node": "^5.1.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
-    "express": "^4.14.0",
+    "express": "^4.15.4",
     "imagemin-cli": "^3.0.0",
     "leaflet": "^1.1.0",
     "minimist": "^1.2.0",

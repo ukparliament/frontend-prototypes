@@ -11,29 +11,54 @@ label {
   padding-bottom: $base-spacing-unit-tiny;
 }
 
-input {
-  width: 100%;
+fieldset {
+  border: none;
+  margin: 0 0 $base-spacing-unit-tiny 0;
+  padding: 0;
+  legend {
+    margin-bottom: $base-spacing-unit-tiny;
+  }
+}
+
+input,
+textarea {
+  border: 1px solid $grey-3;
   display: block;
-  border: solid 1px $grey-3;
   padding: ($base-spacing-unit-tiny - 1);
-
-  &[name="postcode"] {
-    text-transform: uppercase;
-  }
-
-  &[type="search"] {
-    appearance: none;
-  }
-
+  width: 100%;
   @include media($desktop) {
     width: 70%;
   }
 }
 
+input {
+  &[name="postcode"] {
+    text-transform: uppercase;
+  }
+  &[type="file"] {
+    border: none;
+    padding: 0;
+  }
+  &[type="checkbox"],
+  &[type="radio"] {
+    width: auto;
+  }
+  &[type="checkbox"] + label,
+  &[type="radio"] + label {
+    display: inline-block;
+    width: 80%;
+  }
+}
+
+textarea {
+  min-height: 96px;
+}
+
 // Pseudo state styling (including Mozilla focus overide)
 
 input:focus,
-button:focus {
+button:focus,
+textarea:focus, {
   position: relative;
   z-index: 10;
   outline: 3px solid $caution;
@@ -49,15 +74,22 @@ button:-moz-focusring,
 
 // Form block holders
 
-form, .form-group {
+form, .input-group {
   margin-bottom: $base-spacing-unit-tiny;
   input {
     width: 65%;
     display: inline-block;
     margin-right: -$base-spacing-unit;
     vertical-align: top;
+
+    &[type="checkbox"],
+    &[type="radio"] {
+      width: auto;
+      margin: ($base-spacing-unit + 1);
+    }
   }
-  input, button {
+  input[type="text"],
+  button {
     min-height: 48px;
   }
 }

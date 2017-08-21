@@ -13,7 +13,7 @@
   padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
   margin: 0 ($base-spacing-unit-tiny / 2) ($base-spacing-unit-tiny / 2) 0;
 
-  .form-group & {
+  .input-group & {
     padding: $base-spacing-unit-tiny $base-spacing-unit-small;
     @include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
 
@@ -22,7 +22,7 @@
     }
   }
   @include media($desktop) {
-    .form-group & {
+    .input-group & {
       padding: $base-spacing-unit-tiny $base-spacing-unit-extra-large;
     }
   }
@@ -32,19 +32,23 @@
 }
 
 /*--- Button Options [colour, background, background-hover] ---*/
-
+[class*=" theme--"] a.btn--primary,
 .btn--primary {
   @include button($white, $button--primary, $button--primary__hover);
 }
+[class*=" theme--"] a.btn--secondary,
 .btn--secondary {
   @include button($deep-purple, $button--secondary, $button--secondary__hover);
 }
+[class*=" theme--"] a.btn--deep-purple,
 .btn--deep-purple {
   @include button($white, $button--deep-purple, $button--deep-purple__hover);
 }
+[class*=" theme--"] a.btn--white,
 .btn--white {
   @include button($deep-purple, $button--white, $button--white__hover);
 }
+[class*=" theme--"] a.btn--disabled,
 .btn--disabled {
   @include button($grey-3, $grey-4, $grey-4);
 }
@@ -69,7 +73,7 @@
   opacity: 0;
   position: absolute;
 }
-.form-group .btn--loading__icon {
+.input-group .btn--loading__icon {
   top: 24%;
 }
 .btn--loading__text {

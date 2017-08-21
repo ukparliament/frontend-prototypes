@@ -10,14 +10,17 @@ block content
     .container
       h2 Submit buttons
       .block
-        +buttonSubmit('Primary', 'btn--primary')
-        +buttonSubmit('Secondary', 'btn--secondary')
-        +buttonSubmit('Deep Purple', 'btn--deep-purple')
-        +buttonSubmit('White', 'btn--white')
-        +buttonDisabled('Disabled')
+        //- value, style, type
+        //- mixin accepts attributes
+        +buttonLink('#', 'Primary', 'btn--primary')
+        +buttonLink('#', 'Secondary', 'btn--secondary')
+        +buttonLink('#', 'Deep Purple', 'btn--deep-purple')
+        +buttonLink('#', 'White', 'btn--white')
+        +button('Disabled', 'btn--disabled')(disabled)
 
       h2 Download buttons
       .block
+        //- link, value, style
         +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary')
         +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary')
         +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--disabled')
@@ -25,15 +28,15 @@ block content
       h2 Form groups
       .block
         h3 Search
-        form(action='javascript:console.log("search submitted")')
-          .form-group
-            +input('Enter a keyword', '', 'search_box', 'search', 1000, '^(?!.*<script|<Script).*$', '')
-            +buttonSubmit('Search', 'btn--primary')
+        +form('javascript:console.log("search submitted")', 'post')
+          .input-group
+            +input('search', 'Enter a keyword', 'q', 'search_box')(maxlength='1000', pattern='^(?!.*<script|<Script).*$', data-type='input')
+            +button('Search', 'btn--primary')
 
         h3 Find your MP and constituency
-        form(action='javascript:console.log("postcode submitted")')
-          .form-group
-            +input('Enter your full postcode, for example SW1A 0AA.', '', 'postcode_main', 'text', 8, '[0-9a-zA-Z ]{5,}', '')
-            +buttonSubmit('Find', 'btn--primary')
+        +form('javascript:console.log("postcode submitted")', 'post')
+          .input-group
+            +input('text', 'Enter your full postcode, for example SW1A 0AA.', 'postcode_main', 'postcodeSearch')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-type='input')
+            +button('Find', 'btn--primary')
 
       p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].

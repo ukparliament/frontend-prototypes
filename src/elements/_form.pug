@@ -1,0 +1,49 @@
+//- HTML Form Elements
+
+
+//- <form>
+mixin form(action, method)
+  form(action=action, method=method)&attributes(attributes)
+    block
+
+
+//- <input>
+mixin input(type, label, name, id)
+  if type === 'checkbox' || type === 'radio'
+    .input-group
+      input(type=type, id=id, name=name)&attributes(attributes)
+      label(for=id)= label
+  else
+    label(for=id)= label
+    input(type=type, id=id, name=name)&attributes(attributes)
+
+
+//- <textarea>
+mixin textarea(label, id)
+  label(for=id)= label
+  textarea(id=id)&attributes(attributes)
+
+
+//- <select>
+mixin select(label, id, name)
+  label(for=id)=label
+  select(name=name, id=id)
+    block
+
+
+//- <option>
+mixin option(value, valueAttrib)
+  option(value=valueAttrib||value)&attributes(attributes)= value
+
+
+//- <optgroup>
+mixin optgroup(label)
+  optgroup(label=label)
+    block
+
+
+//- <fieldset>
+mixin fieldset(legend)
+  fieldset
+    legend=legend
+    block
