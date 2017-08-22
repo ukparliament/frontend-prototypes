@@ -42,6 +42,19 @@ dl, dt, dd {
       text-decoration: none;
     }
   }
+  .list--details {
+    display: inline-block;
+    margin-top: 0;
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+  .list--details__inline {
+    @extend .list--details;
+    * {
+      display: inline;
+    }
+  }
 }
 
 // List Options
@@ -73,18 +86,8 @@ dl, dt, dd {
     display: inline-flex;
     width: 100%;
   }
-  .list--details {
-    display: inline-block;
-    margin-top: 0;
-    h2, h3, h4 {
-      margin-top: 0;
-    }
-    :last-child {
-      margin-bottom: 0;
-    }
-  }
-
 }
+
 .list--block__inline {
   @extend .list--block;
   @include clearfix;
@@ -98,12 +101,20 @@ dl, dt, dd {
     flex-grow: 1;
     display: inline-block;
     margin-right: $base-spacing-unit;
+  }
+}
 
-    .list--details * {
-      display: inline;
+.list--block__inline-50 {
+  @extend .list--block__inline;
+
+  li {
+    @media(min-width: $desktop){
+      flex-grow: 0;
+      width: calc(50% - #{$base-spacing-unit});
     }
   }
 }
+
 .list--pipe {
   @extend .list;
   li {
@@ -117,16 +128,6 @@ dl, dt, dd {
   li:first-of-type {
     border-top: solid 1px $grey-3;
     padding-top: ($base-spacing-unit-tiny - 1);
-  }
-  .list--details {
-    display: inline-block;
-    margin-top: 0;
-    h2, h3, h4 {
-      margin-top: 0;
-    }
-    :last-child {
-      margin-bottom: 0;
-    }
   }
 }
 .list--definition {

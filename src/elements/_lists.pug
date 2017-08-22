@@ -57,11 +57,17 @@ mixin list--block__generic(heading, content)
       block
 
 //- List Box Inline
-mixin list--block__inline(name, count)
-  li
-    .list--details
-      h2 #[+link('#', name)]
-      p= '- ' + count + ' MPs'
+mixin list--block__inline(name, count, inline_text)
+  if inline_text
+    li
+      .list--details__inline
+        h2 #[+link('#', name)]
+        p= '- ' + count + ' MPs'
+  else
+    li
+      .list--details
+        h2 #[+link('#', name)]
+        p= count + ' MPs'
 
 //- List Pipe
 mixin list--pipe(constituency, date, name)

@@ -8,15 +8,27 @@ block content
 
   section
     .container
-      h2 Inline box list
-      ol.list--block__inline
+      h2 Inline box list (50% width)
+      ol.list--block__inline-50
         // Name, Count
         +list--block__inline('Conservative', '345')
         +list--block__inline('Labour', '9')
-        +list--block__inline('Vanguard Unionist Progressive Party ', '786')
+        +list--block__inline('Conservative', '345')
         +list--block__inline('Labour', '9')
         +list--block__inline('Conservative', '345')
-        +list--block__inline('Vanguard Unionist Progressive Party ', '786')
+        +list--block__inline('Labour', '9')
+
+  section
+    .container
+      h2 Inline box list (50% width &amp; Inline Text)
+      ol.list--block__inline-50
+        // Name, Count
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
 
   section
     .container
