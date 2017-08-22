@@ -41,6 +41,10 @@
     background-color: none;
     color: $grey-1;
 
+    &:first-child {
+      min-width: 87px; // 2 button width including the margin to the left of first
+    }
+
     span {
       padding: $base-spacing-unit-tiny 0;
     }
