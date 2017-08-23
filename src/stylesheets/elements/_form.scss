@@ -21,6 +21,10 @@ input {
     text-transform: uppercase;
   }
 
+  &[type="search"] {
+    appearance: none;
+  }
+
   @include media($desktop) {
     width: 70%;
   }
