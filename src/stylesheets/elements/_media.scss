@@ -35,7 +35,7 @@ picture {
           opacity: 0.2;
           position: absolute;
           border-radius: 50%;
-          background-color: $navy;
+          background-color: $deep-purple;
 
           @include media($desktop) {
             width: 93px;

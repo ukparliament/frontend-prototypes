@@ -4,7 +4,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: $base-spacing-unit;
   font-weight: 500;
   padding: 0;
-  color: $navy;
+  color: $deep-purple;
   @include media($desktop) {
     margin-top: $base-spacing-unit-large;
   }

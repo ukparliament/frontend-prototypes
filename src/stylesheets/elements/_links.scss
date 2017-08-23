@@ -1,15 +1,15 @@
 a {
   @include links(
-    $blue, 				// a:link colour
+    $link, 				// a:link colour
     underline,		// a:link decoration
     $purple, 			// a:visited color
-    $blue-soft 		// a:hover color
+    $link-hover 		// a:hover color
   );
   &:active, &:focus {
-    color: $navy;
+    color: $deep-purple;
     text-decoration: none;
-    background-color: $secondary;
-    outline: 3px solid $secondary;
+    background-color: $mint;
+    outline: 3px solid $mint;
   }
 }
 
@@ -23,7 +23,7 @@ footer a  {
     $grey-3 		// a:hover color
   );
   &:focus {
-    color: $navy;
+    color: $deep-purple;
     text-decoration: none;
   }
 }
@@ -71,9 +71,9 @@ footer a  {
   background-color: $grey-5;
   @include fontsize(18);
   @include links(
-    $blue, 			// a:link colour
+    $link, 			// a:link colour
     none, 			// a:link decoration
-    $blue, 			// a:visited color
+    $link, 			// a:visited color
     inherited 	// a:hover color
   );
 
@@ -113,11 +113,11 @@ footer a  {
       padding: ($base-spacing-unit + 3px) 0;
     }
     background-color: $white;
-    color: $blue;
+    color: $link;
     text-decoration: none;
   }
   &:hover {
-    background-color: $blue;
+    background-color: $link;
     color: $white;
   }
 }
