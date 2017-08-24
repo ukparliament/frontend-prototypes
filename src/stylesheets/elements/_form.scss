@@ -26,7 +26,7 @@ textarea {
   display: block;
   padding: ($base-spacing-unit-tiny - 1);
   width: 100%;
-  @include media($desktop) {
+  @include media($tablet) {
     width: 70%;
   }
 }
@@ -41,12 +41,14 @@ input {
   }
   &[type="checkbox"],
   &[type="radio"] {
+    flex: 0 0 auto;
+    margin: ($base-spacing-unit + 1) ($base-spacing-unit + 1) ($base-spacing-unit + 1) 0;
     width: auto;
   }
+
   &[type="checkbox"] + label,
   &[type="radio"] + label {
-    display: inline-block;
-    width: 80%;
+    margin-right: ($base-spacing-unit-tiny - 1);
   }
 }
 
@@ -74,24 +76,25 @@ button:-moz-focusring,
 
 // Form block holders
 
-form, .input-group {
-  margin-bottom: $base-spacing-unit-tiny;
-  input {
-    width: 65%;
-    display: inline-block;
-    margin-right: -$base-spacing-unit;
-    vertical-align: top;
-
-    &[type="checkbox"],
-    &[type="radio"] {
-      width: auto;
-      margin: ($base-spacing-unit + 1);
-    }
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  label:first-child {
+    flex: 0 0 100%;
   }
   input[type="text"],
   button {
     min-height: 48px;
   }
+  input[type="search"],
+  input[type="text"] {
+    flex: 0 0 65%;
+    margin-right: -$base-spacing-unit;
+  }
+}
+
+.input-group__inline {
+  display: inline-flex;
 }
 
 // Physical Print Styles

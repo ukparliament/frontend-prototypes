@@ -10,9 +10,14 @@ mixin form(action, method)
 //- <input>
 mixin input(type, label, name, id)
   if type === 'checkbox' || type === 'radio'
-    .input-group
-      input(type=type, id=id, name=name)&attributes(attributes)
-      label(for=id)= label
+    if type__inline
+      .input-group__inline
+        input(type=type, id=id, name=name)&attributes(attributes)
+        label(for=id)= label
+    else
+      .input-group
+        input(type=type, id=id, name=name)&attributes(attributes)
+        label(for=id)= label
   else
     label(for=id)= label
     input(type=type, id=id, name=name)&attributes(attributes)
