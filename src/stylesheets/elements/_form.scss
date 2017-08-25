@@ -32,6 +32,9 @@ textarea {
 }
 
 input {
+  &[type="search"] {
+    appearance: none;
+  }
   &[name="postcode"] {
     text-transform: uppercase;
   }
