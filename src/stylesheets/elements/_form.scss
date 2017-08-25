@@ -85,6 +85,7 @@ button:-moz-focusring,
   label:first-child {
     flex: 0 0 100%;
   }
+  input[type="search"],
   input[type="text"],
   button {
     min-height: 48px;

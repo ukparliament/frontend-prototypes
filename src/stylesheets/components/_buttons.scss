@@ -15,6 +15,7 @@
 
   .input-group & {
     padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+    margin-bottom: 0;
     @include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
 
     &:focus, &:active {
