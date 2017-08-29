@@ -1,0 +1,35 @@
+.timeline  {
+  padding: 0 0 $base-spacing-unit-tiny $base-spacing-unit-small;
+  position: relative;
+
+  &:not(:last-child) {
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: $grey-1;
+      width: 1px;
+      height: 100%;
+      left: -1px;
+      top: 10px;
+    }
+  }
+  > :first-child {
+    margin-top: 0;
+    position: relative;
+    &:not(:only-child) {
+      margin-bottom: $base-spacing-unit-tiny;
+    }
+    &:before {
+      display: inline-block;
+      vertical-align: top;
+      position: absolute;
+      border-radius: 50%;
+      left: -24px;
+      top: calc(50% - 6px);
+      content: '';
+      background-color: $grey-1;
+      width: 11px;
+      height: 11px;
+    }
+  }
+}

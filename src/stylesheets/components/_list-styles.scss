@@ -108,6 +108,7 @@ dl, dt, dd {
   @extend .list--block__inline;
 
   li {
+    width: 100%;
     @media(min-width: $desktop){
       flex-grow: 0;
       width: calc(50% - #{$base-spacing-unit});
