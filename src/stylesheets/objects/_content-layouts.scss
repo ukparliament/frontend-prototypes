@@ -39,6 +39,12 @@
   max-width: $max-width;
 }
 
+.container--offset {
+  @extend .container;
+  @include media($desktop) {
+    padding-right: 216px;
+  }
+}
 .section--primary__container {
   @include clearfix;
 }

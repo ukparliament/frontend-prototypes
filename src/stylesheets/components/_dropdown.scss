@@ -34,9 +34,6 @@
   .dropdown {
     background-color: transparent;
     .dropdown__toggle {
-      a {
-        padding: 0;
-      }
       &.open {
         margin-bottom: $base_spacing_unit_tiny;
       }
@@ -44,9 +41,6 @@
     * {
       padding-left: 0;
     }
-  }
-  .dropdown__toggle a{
-    padding-left: 0;
   }
   .dropdown__content {
     border-bottom: 1px solid $grey-3;
