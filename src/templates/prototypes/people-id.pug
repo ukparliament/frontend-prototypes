@@ -18,6 +18,16 @@ block content
     .container
       .block
         h2 Contact
+        +dropdownToggle("When to contact an MP")
+          p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
+          ul.list--bullet
+            li Hospitals and the NHS
+            li Problems with benefits, pensions and national insurance
+            li Immigration
+            li School closures and funding
+            li Transport facilities
+          p #[+link('#', 'Who else can help with my issue?')]
+
         p Please include your postcode when contacting your MP.
         dl.list--definition
           dt Email:
@@ -35,11 +45,32 @@ block content
 
   section
     .container
-      //- Membership History
       h2 Roles
-      h3 MP
-      ol.list--pipe
-        -var member = true
-        +list--pipe('Stourbridge', '7 Jun 2017 to present')
-        +list--pipe('Stourbridge', '7 May 2015 to 3 May 2017')
-        +list--pipe('Stourbridge', '6 May 2010 to 30 Mar 2015')
+      ul.list--pipe
+        li
+          .list--details
+            h3.content--xs House of Commons Role
+            h4.lead MP for Hackney North and Stoke Newington
+            p Jun 1986 to present
+        li
+          .list--details
+            h3.content--xs Committee Role
+            h4.lead Member of the Merits of Statutory Instruments Committee
+            p May 2011 to present
+      +dropdownToggle("Show history")
+        h3 Elected Roles
+        ul.list--block
+          +list--block('MP for Islington North', 'Elected Role', '6 May 2010 to present')
+          +list--block('MP for Islington North (1997 to 2010)', 'Elected Role', '1 May 1997 to 6 May 2010')
+          +list--block('MP for Islington North (1993 to 1997)', 'Elected Role', '9 June 1983 to 1 May 1997')
+        h3 Parliamentary Roles
+        ul.list--block
+          +list--block('Leader of the Opposition', 'Parliamentary Role', 'Sept 2015 to present')
+        h3 Committee Roles
+        ul.list--block
+          +list--block('Justice Committee', 'Select Committee Role', '6 May 2010 to present')
+          +list--block('London Regional Select Committee', 'Select Committee Role', 'Dec 2009 to May 2010')
+          +list--block('Social Security', 'Select Committee Role', 'Apr 1992 to Mar 1997')
+
+
+

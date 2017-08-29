@@ -36,13 +36,16 @@ footer a  {
   @include links(
     $grey-1, 			// a:link colour
     none,				// a:link decoration
-    $purple, 		// a:visited color
+    $grey-1, 		// a:visited color
     $grey-1 // a:hover color
   );
   &:focus {
     text-decoration: underline;
     background-color: transparent;
     outline: none;
+  }
+  &:hover {
+    text-decoration: underline;
   }
   &:after {
     content: "";
@@ -61,7 +64,7 @@ footer a  {
     border-bottom: 6px solid $grey-1;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    top: calc(50% - 5px); // Vertical centering (50% of the parent div height - (arrow size / 2))
+    top: calc(50% - 3px); // Vertical centering (50% of the parent div height - (arrow size / 2))
   }
 }
 

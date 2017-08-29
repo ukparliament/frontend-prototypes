@@ -23,6 +23,12 @@ p {
   }
 }
 
+.content--xs {
+  color: $grey-2;
+  font-weight: 400;
+  @include fontsize(14);
+}
+
 // Component Typography Settings (pixels)
 
 header {

@@ -9,11 +9,14 @@
 }
 
 .dropdown__content {
+  font-weight: 400;
+  border: solid $grey-3;
+  border-width: 1px 0 0;
   opacity: 1;
   height: auto;
   overflow: hidden;
   transition: all 0.1s linear;
-  padding: 0 $base-spacing-unit-small $base-spacing-unit-small;
+  padding: $base-spacing-unit-small;
   @include first-child__last-child;
 
   &.active {
@@ -23,4 +26,29 @@
 
 .dropdown__content.visually-hidden {
   padding: 0 $base-spacing-unit-small;
+}
+
+/*--- Component Rules ---*/
+
+.block {
+  .dropdown {
+    background-color: transparent;
+    .dropdown__toggle {
+      a {
+        padding: 0;
+      }
+      &.open {
+        margin-bottom: $base_spacing_unit_tiny;
+      }
+    }
+    * {
+      padding-left: 0;
+    }
+  }
+  .dropdown__toggle a{
+    padding-left: 0;
+  }
+  .dropdown__content {
+    border-bottom: 1px solid $grey-3;
+  }
 }
