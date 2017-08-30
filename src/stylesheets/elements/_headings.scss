@@ -44,6 +44,9 @@ h1 {
       }
     }
   }
+  span+span {
+    margin-top: $base-spacing-unit-small;
+  }
 }
 
 h2 {
@@ -187,6 +190,19 @@ h2.slider-link {
 .list--details, .list--details__inline {
   h2, h3, h4 {
     margin-top: 0;
+  }
+}
+
+// Timeline Headings
+
+.timeline {
+  h2, h3, h4, h5 {
+    @include fontsize(16);
+    line-height: 1.125; // 18px;
+    @include media($desktop) {
+      @include fontsize(20);
+      line-height: 1.2; // 24px
+    }
   }
 }
 
