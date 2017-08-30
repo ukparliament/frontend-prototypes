@@ -27,7 +27,41 @@ pipelines:
                     arguments:
                       - deploy_to_release
 
+  pugin-continuously:
+    group: pugin
+    label_template: "${COUNT}"
+    environment_variables:
+      S3_BUCKET: s3://$(AWS_ACCOUNT).pugin-website
+      STATIC_ASSET_LOCATION_URL: https://s3-eu-west-1.amazonaws.com/$(AWS_ACCOUNT).static-assets
+    materials:
+      pugin-git:
+        git: https://github.com/ukparliament/parliament.uk-pugin.git
+        branch: master
+        auto_update: true
+    stages:
+      - build:
+          jobs:
+            build:
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: make
+                    arguments:
+                      - install
+                - exec:
+                    run_if: passed
+                    command: make
+                    arguments:
+                      - build
+                - exec:
+                    run_if: passed
+                    command: make
+                    arguments:
+                      - deploy
+
+
 environments:
   Web.LIVE:
     pipelines:
       - pugin
+      - pugin-continuously
