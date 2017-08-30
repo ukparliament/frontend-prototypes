@@ -27,8 +27,8 @@ PRETTY_MINI_JSON=./node_modules/pretty-mini-json/pretty-mini-json.js
 GITHUB_API=https://api.github.com
 ORG=ukparliament
 REPO=parliament.uk-pugin
-LATEST_REL=$(GITHUB_API)/repos/$(ORG)/$(REPO)/releases/latest
-REL_TAG=$(shell curl -s $(LATEST_REL) | jq -r '.tag_name')
+LATEST_REL=$(GITHUB_API)/repos/$(ORG)/$(REPO)/releases
+REL_TAG=$(shell curl -s $(LATEST_REL) | jq -r '.[0].tag_name')
 
 # Installs npm packages
 install:
