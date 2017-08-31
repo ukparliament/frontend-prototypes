@@ -2,7 +2,7 @@ a {
   @include links(
     $link, 				// a:link colour
     underline,		// a:link decoration
-    $purple, 			// a:visited color
+    $link-visited, 			// a:visited color
     $link-hover 		// a:hover color
   );
   &:active, &:focus {
