@@ -28,7 +28,7 @@ pipelines:
                       - deploy_to_release
 
   pugin-continuously:
-    group: pugin
+    group: Main
     label_template: "${COUNT}"
     environment_variables:
       S3_BUCKET: s3://$(AWS_ACCOUNT).pugin-website
