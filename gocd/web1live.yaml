@@ -1,6 +1,6 @@
 pipelines:
   pugin:
-    group: Main
+    group: Dependencies
     label_template: "${COUNT}"
     environment_variables:
       S3_BUCKET: s3://$(AWS_ACCOUNT).pugin-website
@@ -33,7 +33,7 @@ pipelines:
                       - deploy_to_release
 
   pugin-continuously:
-    group: Main
+    group: Dependencies
     label_template: "${COUNT}"
     environment_variables:
       S3_BUCKET: s3://$(AWS_ACCOUNT).pugin-website
