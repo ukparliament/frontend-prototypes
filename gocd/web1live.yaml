@@ -25,6 +25,11 @@ pipelines:
                     run_if: passed
                     command: make
                     arguments:
+                      - build
+                - exec:
+                    run_if: passed
+                    command: make
+                    arguments:
                       - deploy_to_release
 
   pugin-continuously:
