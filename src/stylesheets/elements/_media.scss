@@ -20,9 +20,9 @@ picture {
     border-radius: 50%;
     background-color: $grey-5;
     margin: 0 $base-spacing-unit-small 0 0;
+    position: relative;
 
     a {
-      position: relative;
       &:active, &:hover {
         background: transparent;
         outline: none;
@@ -54,6 +54,7 @@ picture {
     width: auto;
     height: 84px;
     border-radius: 50%;
+    position: absolute;
 
     @include media($desktop) {
       height: 93px;
