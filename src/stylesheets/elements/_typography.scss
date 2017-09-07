@@ -23,6 +23,10 @@ p {
   }
 }
 
+h1 + .lead {
+  margin-top: -$base-spacing-unit-tiny;
+}
+
 .content--xs {
   color: $grey-2;
   font-weight: 400;
