@@ -18,10 +18,6 @@
   transition: all 0.1s linear;
   padding: $base-spacing-unit-small;
   @include first-child__last-child;
-
-  &.active {
-    display: block;
-  }
 }
 
 .dropdown__content.visually-hidden {
@@ -33,16 +29,20 @@
 .block {
   .dropdown {
     background-color: transparent;
-    .dropdown__toggle {
-      &.open {
-        margin-bottom: $base_spacing_unit_tiny;
-      }
-    }
-    * {
-      padding-left: 0;
+  }
+  .dropdown__toggle {
+    &.open {
+      margin-bottom: $base_spacing_unit_tiny;
     }
   }
   .dropdown__content {
+    padding-left: 0;
     border-bottom: 1px solid $grey-3;
+  }
+  .dropdown:last-child {
+    .dropdown__content {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
 }

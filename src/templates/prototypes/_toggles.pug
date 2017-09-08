@@ -1,0 +1,46 @@
+extends ../../layouts/layout.pug
+block content
+
+  .section--primary#content
+    .container
+      h1 Dropdown Toggles
+
+  section
+    .container
+      h2 Independent
+      +dropdownToggle("When to contact an MP")
+        p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
+        ul.list--bullet
+          li Hospitals and the NHS
+          li Problems with benefits, pensions and national insurance
+          li Immigration
+          li School closures and funding
+          li Transport facilities
+        p #[+link('#', 'Who else can help with my issue?')]
+
+      h2 Within a block
+      .block
+        +dropdownToggle("When to contact an MP")
+          p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
+          ul.list--bullet
+            li Hospitals and the NHS
+            li Problems with benefits, pensions and national insurance
+            li Immigration
+            li School closures and funding
+            li Transport facilities
+          p #[+link('#', 'Who else can help with my issue?')]
+
+        p Please include your postcode when contacting your MP.
+        dl.list--definition
+          dt Email:
+          dd
+            +link('mailto:margot.james.mp@parliament.uk', 'margot.james.mp@parliament.uk')
+          dt Phone:
+          dd #[+link('tel:020 7219 7226', '020 7219 7226')]
+          dt Address:
+          dd House of Commons, London, SW1A 0AA
+          dt Website:
+          dd #[+link('#', 'www.margotjames.org.uk')]
+          dt Website:
+          dd #[+link('#', 'www.conservatives.com')]
+        p You may be able to discuss issues with your MP in person or online. Contact them for details.
