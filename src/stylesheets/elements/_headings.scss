@@ -197,6 +197,7 @@ h2.slider-link {
 
 .timeline {
   h2, h3, h4, h5 {
+    color: $grey-1;
     @include fontsize(16);
     line-height: 1.125; // 18px;
     @include media($desktop) {
