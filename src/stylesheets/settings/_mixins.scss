@@ -14,7 +14,7 @@
   border-bottom-left-radius: ($bot-left + 0px);
 }
 
-/*--- Theme [background colour, typography, link colour, hover colour] ---*/
+/*--- Theme [background colour, typography, link colour, accent colour] ---*/
 
 @mixin theme($background, $color, $link-color, $hover-color, $accent) {
   color: $color;
@@ -33,7 +33,7 @@
       text-decoration: none;
     }
   }
-  h1 {
+  h1, h2, h3, h4, h5 {
     color: $color;
 
     &:after {

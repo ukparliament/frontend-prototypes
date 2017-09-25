@@ -14,10 +14,10 @@ body {
   font-family: $base-font-stack;
   // fontsize mixin creates 'font-size' in both REM & Pixels
   @include fontsize(16);
-  line-height: 1.5; // 18px
-  @include media($desktop) {
+  line-height: 1.5; // 24px
+
+  @include media($tablet) {
     @include fontsize(18);
-    line-height: 1.5; // 24px
   }
   // font-smoothing - anti aliasing
   -webkit-font-smoothing: antialiased;

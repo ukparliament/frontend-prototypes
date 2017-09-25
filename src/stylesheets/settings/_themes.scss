@@ -1,11 +1,14 @@
-/*--- Theme Backgrounds [background-colour, typography, link-colour, colour-hover] ---*/
+/*--- Theme Backgrounds [background-colour, typography, link-colour, accent-colour] ---*/
 
 .block,
 .hero,
 .status--banner,
 .status--highlight {
   &.theme--deep-purple {
-    @include theme($deep-purple, $grey-5, $grey-5, $grey-3, $grey-5);
+    @include theme($deep-purple, $grey-5, $grey-5, $grey-3, $deep-purple--light);
+  }
+  &.theme--deep-purple--light {
+    @include theme($deep-purple--light, $grey-5, $grey-5, $grey-3, $deep-purple);
   }
   &.theme--grey-3 {
     @include theme($grey-3, $grey-1, $link, $link-hover, $grey-1);
@@ -14,7 +17,7 @@
     @include theme($grey-4, $grey-1, $link, $link-hover, $grey-1);
   }
   &.theme--grey-5 {
-    @include theme($grey-5, $grey-1, $link, $link-hover, $grey-5);
+    @include theme($grey-5, $grey-1, $link, $link-hover, $grey-1);
   }
   &.theme--mint {
     @include theme($mint, $grey-1, $deep-purple, $grey-2, $mint--light);

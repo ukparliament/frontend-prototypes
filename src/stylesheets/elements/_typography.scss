@@ -5,13 +5,7 @@
 p {
   margin-top: 0;
   margin-bottom: $base-spacing-unit-small;
-  line-height: 1.5; // 24px
-  @include fontsize(16);
-  @include media($tablet) {
-    @include fontsize(18);
-  }
 }
-
 
 .lead {
   @include fontsize(21);
@@ -42,23 +36,21 @@ header {
 }
 
 .column--25 {
-  p {
-    @include fontsize(27);
-    line-height: 1.111; // 30px;
-    font-weight: 500;
-    @include media($desktop) {
-      @include fontsize(32);
-      line-height: 1.125; // 36px
-    }
-    span {
-      @include fontsize(16);
-      line-height: 1.125; // 18px;
-      font-weight: 400;
+  @include fontsize(27);
+  line-height: 1.111; // 30px;
+  font-weight: 500;
+  @include media($desktop) {
+    @include fontsize(32);
+    line-height: 1.125; // 36px
+  }
+  span {
+    @include fontsize(16);
+    line-height: 1.125; // 18px;
+    font-weight: 400;
 
-      @include media($tablet) {
-        @include fontsize(18);
-        line-height: 1.5 // 24px
-      }
+    @include media($tablet) {
+      @include fontsize(18);
+      line-height: 1.5 // 24px
     }
   }
 }

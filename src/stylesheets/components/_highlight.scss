@@ -1,14 +1,14 @@
 /*--- Hero Component ---*/
 
 .hero {
-  @include first-child__last-child;
-  @extend .theme--deep-purple;
-
-  padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny * 2);
   margin-bottom: 0px;
+  @extend .theme--deep-purple;
+  @include first-child__last-child;
+  padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny * 2);
 
   @include media($desktop) {
     padding: $base-spacing-unit-medium 0 ($base-spacing-unit-medium * 2) 0;
+
     .container {
       padding-right: ($base-spacing-unit-extra-large * 6);
     }
@@ -18,16 +18,25 @@
 /*--- Status Components ---*/
 
 .status--banner {
-  background-color: $grey-4;
+  @include fontsize(14);
+  line-height: 1.125; // 18px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
   @include first-child__last-child;
-  padding: $base-spacing-unit-tiny 0;
+  @extend .theme--deep-purple--light;
+  padding: ($base-spacing-unit-small / 2)  0 ($base-spacing-unit + 1) 0;
+
+  @include media($tablet) {
+    @include fontsize(16);
+    line-height: 1.5; // 24px
+  }
 }
 
 .status--highlight {
   border-left-style: solid;
   @extend .theme--purple--light;
   @include first-child__last-child;
-  border-left-width: $base-spacing-unit;
   padding: $base-spacing-unit-small;
+  border-left-width: $base-spacing-unit;
   margin-bottom: $base-spacing-unit-small;
 }
