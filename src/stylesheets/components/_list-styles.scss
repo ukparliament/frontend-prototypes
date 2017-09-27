@@ -80,7 +80,7 @@ dl, dt, dd {
 .list--block {
   @extend .list;
 
-  li {
+  > li {
     @extend .block;
     margin-bottom: $base-spacing-unit;
     display: inline-flex;
