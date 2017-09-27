@@ -32,6 +32,10 @@
   }
 }
 
+.has-js .cookie {
+  display: none;
+}
+
 .status--highlight {
   border-left-style: solid;
   @extend .theme--purple--light;
