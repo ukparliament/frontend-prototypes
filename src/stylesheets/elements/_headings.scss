@@ -208,18 +208,6 @@ h2.slider-link {
     }
     &:last-child {
       margin-bottom: 0;
-
-      &:after {
-        z-index: 0;
-        left: -30px;
-        width: 25px;
-        content: '';
-        height: 20px;
-        bottom: -10px;
-        position: absolute;
-        vertical-align: top;
-        background-color: $grey-5;
-      }
     }
     &:before {
       z-index: 1;
