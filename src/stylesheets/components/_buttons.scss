@@ -52,6 +52,7 @@
 [class*=" theme--"] a.btn--disabled,
 .btn--disabled {
   @include button($grey-3, $grey-4, $grey-4);
+  pointer-events: none;
 }
 
 /*--- Button Loader ---*/
