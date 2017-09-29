@@ -4,66 +4,64 @@
 .hero,
 .status--banner,
 .status--highlight {
-  &[class*="theme"] {
-    &.accent--deep-purple {
-      @include accent($deep-purple);
-    }
-    &.accent--deep-purple--light {
-      @include accent($deep-purple);
-    }
-    &.accent--grey-1 {
-      @include accent($grey-1);
-    }
-    &.accent--grey-2 {
-      @include accent($grey-2);
-    }
-    &.accent--grey-3 {
-      @include accent($grey-3);
-    }
-    &.accent--grey-4 {
-      @include accent($grey-4);
-    }
-    &.accent--grey-5 {
-      @include accent($grey-5);
-    }
-    &.accent--mint {
-      @include accent($mint);
-    }
-    &.accent--mint--light {
-      @include accent($mint--light);
-    }
-    &.accent--mint--dark {
-      @include accent($mint--dark);
-    }
-    &.accent--purple {
-      @include accent($purple);
-    }
-    &.accent--purple__dark {
-      @include accent($purple--dark);
-    }
-    &.accent--purple__light {
-      @include accent($purple--light);
-    }
-    &.accent--white {
-      @include accent($white);
-    }
-    &.accent--caution {
-      @include accent($caution);
-    }
-    &.accent--caution__light {
-      @include accent($caution--light);
-    }
-    &.accent--success {
-      @include accent($success);
-    }
-    &.accent--success__light {
-      @include accent($success--light);
-    }
-    &.accent--warning {
-      @include accent($warning);
-    }
-    &.accent--warning__light {
-      @include accent($warning--light);
-    }
+  &.accent--deep-purple {
+    @include accent($deep-purple);
+  }
+  &.accent--deep-purple--light {
+    @include accent($deep-purple);
+  }
+  &.accent--grey-1 {
+    @include accent($grey-1);
+  }
+  &.accent--grey-2 {
+    @include accent($grey-2);
+  }
+  &.accent--grey-3 {
+    @include accent($grey-3);
+  }
+  &.accent--grey-4 {
+    @include accent($grey-4);
+  }
+  &.accent--grey-5 {
+    @include accent($grey-5);
+  }
+  &.accent--mint {
+    @include accent($mint);
+  }
+  &.accent--mint--light {
+    @include accent($mint--light);
+  }
+  &.accent--mint--dark {
+    @include accent($mint--dark);
+  }
+  &.accent--purple {
+    @include accent($purple);
+  }
+  &.accent--purple__dark {
+    @include accent($purple--dark);
+  }
+  &.accent--purple__light {
+    @include accent($purple--light);
+  }
+  &.accent--white {
+    @include accent($white);
+  }
+  &.accent--caution {
+    @include accent($caution);
+  }
+  &.accent--caution__light {
+    @include accent($caution--light);
+  }
+  &.accent--success {
+    @include accent($success);
+  }
+  &.accent--success__light {
+    @include accent($success--light);
+  }
+  &.accent--warning {
+    @include accent($warning);
+  }
+  &.accent--warning__light {
+    @include accent($warning--light);
   }
 }

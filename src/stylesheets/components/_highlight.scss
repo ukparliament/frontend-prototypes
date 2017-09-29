@@ -4,6 +4,7 @@
   margin-bottom: 0px;
   @extend .theme--deep-purple;
   @include first-child__last-child;
+  @include accent($grey-5);
   padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny * 2);
 
   @include media($desktop) {
