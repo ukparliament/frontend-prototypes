@@ -1,6 +1,6 @@
 nav(class='navigation--letter', aria-label='Paged navigation')
   ol
-    each val, index in ['ALL', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    each val, index in ['all', 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
       li(data-letter=val, class= (index === 0 ? "active" : undefined))
         if index === 0
           span(data-atoz-see='true')= val
