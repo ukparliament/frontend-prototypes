@@ -1,13 +1,31 @@
-(function () {
+// Setting the Map
 
-  var map_container = document.getElementById('mapbox'),
+UK_Parliament.map = function() {
+
+  // Local variables
+  var
+    map_container = document.getElementById('mapbox'),
     map,
     geojson,
-    breakpoint = '767';
+    breakpoint = '767',
+    mapBreakPointOptions = function () {
+      /**
+       * Map options based on browser width
+       * Toggle map dragging
+       * Always fit location within the map boundary
+       */
+      if (window.innerWidth <= breakpoint) {
+        map.dragging.disable();
+        map.fitBounds(geojson.getBounds());
+      } else {
+        map.dragging.enable();
+        map.fitBounds(geojson.getBounds());
+      }
+    };
 
   if (map_container && map_container.hasAttribute('data-json-location')) {
 
-    ukp_getJsonFile(map_container.getAttribute('data-json-location'), function (data) {
+    this.httpRequest(map_container.getAttribute('data-json-location'), function (data) {
 
       // Add class if we have valid data
       map_container.classList.add('map');
@@ -34,30 +52,15 @@
         fillOpacity: 0.1
       }).addTo(map);
 
-      ukp_mapBreakPointOptions();
+      mapBreakPointOptions();
 
       // Event listener for device rotation and resize changes
       ['orientationchange', 'resize'].forEach(function (event) {
-        window.addEventListener(event, ukp_mapBreakPointOptions, false);
+        window.addEventListener(event, mapBreakPointOptions, false);
       });
 
     });
-
   }
+};
 
-  function ukp_mapBreakPointOptions() {
-    /**
-     * Map options based on browser width
-     * Toggle map dragging
-     * Always fit location within the map boundary
-     */
-    if (window.innerWidth <= breakpoint) {
-      map.dragging.disable();
-      map.fitBounds(geojson.getBounds());
-    } else {
-      map.dragging.enable();
-      map.fitBounds(geojson.getBounds());
-    }
-  }
-
-})();
+UK_Parliament.map();

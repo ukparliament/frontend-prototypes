@@ -1,3 +1,15 @@
+.has-js .dropdown {
+  &:not(.open) {
+    .dropdown__toggle {
+      margin-bottom: 0;
+    }
+    .dropdown__content {
+      @extend .visually-hidden;
+      padding: 0;
+    }
+  }
+}
+
 .dropdown {
   background-color: $grey-4;
   margin-bottom: $base-spacing-unit-small;
@@ -20,18 +32,12 @@
   @include first-child__last-child;
 }
 
-.dropdown__content.visually-hidden {
-  padding: 0 $base-spacing-unit-small;
-}
-
 /*--- Component Rules ---*/
 
 .block {
   .dropdown {
     background-color: transparent;
-  }
-  .dropdown__toggle {
-    &.open {
+    .dropdown__toggle {
       margin-bottom: $base_spacing_unit_tiny;
     }
   }

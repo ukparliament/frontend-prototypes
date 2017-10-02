@@ -58,7 +58,7 @@ footer a  {
   }
 }
 
-.dropdown__toggle.open a {
+.open .dropdown__toggle a {
   &:after {
     border-top: none;
     border-bottom: 6px solid $grey-1;

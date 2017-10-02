@@ -31,7 +31,7 @@ block content
         +form('javascript:console.log("search submitted")', 'post')
           .input-group
             +input('search', 'Enter a keyword', 'q', 'search_box')(maxlength='1000', pattern='^(?!.*<script|<Script).*$')
-            +button('Search', 'btn--primary', 'search', 'reset')
+            +button('Search', 'btn--primary', 'search')
 
         h3 Find your MP and constituency
         +form('javascript:console.log("postcode submitted")', 'post')

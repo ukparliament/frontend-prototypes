@@ -52,7 +52,7 @@ css:
 # Minifies javascript files
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(LEAFLET) $(JAVASCRIPTS_LOC)/*.js $(JAVASCRIPTS_LOC)/**/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+	@$(UGLIFY_JS) $(LEAFLET) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
 
 # Minifies json file
 json:
