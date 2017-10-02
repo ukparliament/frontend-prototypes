@@ -8,19 +8,19 @@ block content
         h1 Official portrait of Margot James
         figure
           picture
-            source(srcset="https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?width=732&quality=80, https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?width=1464&quality=80 2x" media="(min-width: 480px)")
-            source(srcset="https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?width=444&quality=80, https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?width=888&quality=80 2x")
-            +image('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg?width=732&quality=80', 'Margot James')
+            source(srcset="https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?width=732&quality=80, https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?width=1464&quality=80 2x" media="(min-width: 480px)")
+            source(srcset="https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?width=444&quality=80, https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?width=888&quality=80 2x")
+            +image('https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?width=732&quality=80', 'Margot James')
           figcaption Official portrait of #[+link('people-id.html','Margot James')]
         p This photo, and all related crops, are released under an #[+link('#', 'Attribution 3.0 Unported (CC BY 3.0)')] license.
         p You can use, share and adapt the photographs if you give proper credit, provide a link to the license, and indicate if changes were made to the image. See the #[+link('#', 'full license')] for more details.
-        +link('https://apidataparliament.azure-api.net/photo/0qLRSwb3.jpeg&download=true','Download (3797 x 5315 jpeg)')(class="btn--primary", download)
-        //+link('https://apidataparliament.azure-api.net/photo/0qLRSwb3.tiff?download=true','Download original (3797 x 5315 tiff)')(class="btn--secondary", download)
+        +link('https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg&download=true','Download (3797 x 5315 jpeg)')(class="btn--primary", download)
+        //+link('https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.tiff?download=true','Download original (3797 x 5315 tiff)')(class="btn--secondary", download)
 
   section
     .container
       h2 Cropped portraits
       ol.list--pipe
-        +list--pipe__media('https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=260&quality=80', 'Margot James', '3:2 portrait', 'https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&quality=80&download=true', 'Download jpeg (3000 x 2000)')
-        +list--pipe__media('https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:4&width=260&quality=80', 'Margot James', '3:4 portrait', 'https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:4&quality=80&download=true', 'Download jpeg (1500 x 2000)')
-        +list--pipe__media('https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=260&quality=80', 'Margot James', '1:1 portrait', 'https://api20170418155059.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_1:1&quality=80&download=true', 'Download jpeg (1500 x 1500)')
+        +list--pipe__media('https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=260&quality=80', 'Margot James', '3:2 portrait', 'https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?crop=MCU_3:2&quality=80&download=true', 'Download jpeg (3000 x 2000)')
+        +list--pipe__media('https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?crop=MCU_3:4&width=260&quality=80', 'Margot James', '3:4 portrait', 'https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?crop=MCU_3:4&quality=80&download=true', 'Download jpeg (1500 x 2000)')
+        +list--pipe__media('https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?crop=CU_1:1&width=260&quality=80', 'Margot James', '1:1 portrait', 'https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?crop=CU_1:1&quality=80&download=true', 'Download jpeg (1500 x 1500)')
