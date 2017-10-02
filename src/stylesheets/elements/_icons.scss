@@ -33,3 +33,15 @@
     fill: $deep-purple;
   }
 }
+
+.icon--inline {
+  width: 16px;
+  height: 16px;
+  @include media($tablet) {
+    width: 20px;
+    height: 20px;
+  }
+  padding-top: 2px;
+  float: left;
+  margin-right: ($base-spacing-unit + 2);
+}
