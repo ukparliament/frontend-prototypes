@@ -13,7 +13,7 @@ UK_Parliament.cookieBanner = function (cname, cvalue, exdays) {
     cookieContent = document.getElementById('cookie'),
     cookieName = this.getCookie(cname);
 
-  if (!cookieName) {
+  if (!cookieName && cookieContent) {
     cookieContent.style.display = 'block';
     this.setCookie(cname, cvalue, exdays);
   }
