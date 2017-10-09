@@ -157,17 +157,13 @@ dl, dt, dd {
 }
 .list--bullet {
   @extend .list;
+  list-style: disc;
+  padding-left: $base-spacing-unit-large;
   li {
     font-weight: 400;
     @include fontsize(16);
     @include media($tablet) {
       @include fontsize(18);
-    }
-    &:before {
-      content: '\2022';
-      line-height: 1;
-      @include fontsize(24);
-      margin: 0 $base-spacing-unit-tiny 0 $base-spacing-unit-small;
     }
   }
 }
