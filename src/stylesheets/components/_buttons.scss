@@ -49,6 +49,10 @@
 .btn--white {
   @include button($deep-purple, $button--white, $button--white__hover);
 }
+[class*=" theme--"] a.btn--grey,
+.btn--grey {
+  @include button($grey-1, $grey-3, $grey-4);
+}
 [class*=" theme--"] a.btn--disabled,
 .btn--disabled {
   @include button($grey-3, $grey-4, $grey-4);
