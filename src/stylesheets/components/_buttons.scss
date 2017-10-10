@@ -10,11 +10,12 @@
   color: $deep-purple;
   display: inline-block;
   background-color: $grey-5;
-  padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
-  margin: 0 ($base-spacing-unit-tiny / 2) ($base-spacing-unit-tiny / 2) 0;
+  padding: $base-spacing-unit $base-spacing-unit-tiny;
+  margin: 0 $base-spacing-unit $base-spacing-unit-tiny 0;
 
   .input-group & {
     padding: $base-spacing-unit-tiny $base-spacing-unit-small;
+    margin-top: 0;
     margin-bottom: 0;
     @include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
 
