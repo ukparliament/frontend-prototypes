@@ -33,6 +33,9 @@ textarea {
 }
 
 input {
+  &[type="text"] {
+    margin-bottom: $base-spacing-unit-small;
+  }
   &[type="search"] {
     appearance: none;
   }
@@ -94,6 +97,7 @@ button:-moz-focusring,
   input[type="search"],
   input[type="text"] {
     flex: 0 0 65%;
+    margin-bottom: 0;
     margin-right: -$base-spacing-unit;
   }
 }
