@@ -168,6 +168,28 @@ dl, dt, dd {
   }
 }
 
+// Numbered / Roman Numeral / Alphabetical Lists
+
+.list--number, .list--roman, .list--alpha {
+  @extend .list;
+  list-style-position: inside;
+  li {
+    margin-left: $base-spacing-unit-tiny;
+  }
+}
+
+.list--number {
+  list-style-type: decimal;
+}
+
+.list--roman {
+  list-style-type: lower-roman;
+}
+
+.list--alpha {
+  list-style-type: lower-alpha;
+}
+
 // List Combination Settings
 
 [class*="list"] .list--definition {
