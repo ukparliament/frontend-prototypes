@@ -22,9 +22,11 @@ fieldset {
 }
 
 input,
-textarea {
+textarea,
+select {
   border: 1px solid $grey-3;
   display: block;
+  margin-bottom: $base-spacing-unit-small;
   padding: ($base-spacing-unit-tiny - 1);
   width: 100%;
   @include media($tablet) {
@@ -33,9 +35,6 @@ textarea {
 }
 
 input {
-  &[type="text"] {
-    margin-bottom: $base-spacing-unit-small;
-  }
   &[type="search"] {
     appearance: none;
   }
