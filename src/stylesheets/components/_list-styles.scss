@@ -172,9 +172,8 @@ dl, dt, dd {
 
 .list--number, .list--roman, .list--alpha {
   @extend .list;
-  list-style-position: inside;
   li {
-    margin-left: $base-spacing-unit-tiny;
+    margin-left: $base-spacing-unit-extra-large;
   }
 }
 
