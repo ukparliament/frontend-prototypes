@@ -1,5 +1,6 @@
 .status--banner
   .container
     p
-      +image('/icons/caution-circle-white.svg', ' ')(class='icon--inline')
+      +image('/icons/caution-circle-white.svg', ' ')(class='icon--inline', aria-hidden='true', aria-label='caution')
+      span.sr-only= 'caution '
       | This is a test website, so may be inaccurate. #[+link('feedback.html', 'Give feedback')] to help improve it.
