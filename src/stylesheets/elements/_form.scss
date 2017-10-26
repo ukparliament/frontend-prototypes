@@ -34,6 +34,18 @@ select {
   }
 }
 
+.input__sm {
+  @include media($tablet) {
+    width: 20%;
+  }
+}
+
+.input__md {
+  @include media($tablet) {
+    width: 40%;
+  }
+}
+
 input {
   &[type="search"] {
     appearance: none;
@@ -45,16 +57,93 @@ input {
     border: none;
     padding: 0;
   }
-  &[type="checkbox"],
-  &[type="radio"] {
-    flex: 0 0 auto;
-    margin: ($base-spacing-unit + 1) ($base-spacing-unit + 1) ($base-spacing-unit + 1) 0;
-    width: auto;
+  &[type="radio"]:checked,
+  &[type="radio"]:not(:checked),
+  &[type="checkbox"]:checked,
+  &[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
   }
-
-  &[type="checkbox"] + label,
-  &[type="radio"] + label {
-    margin-right: ($base-spacing-unit-tiny - 1);
+  &[type="radio"]:checked + label,
+  &[type="radio"]:not(:checked) + label,
+  &[type="checkbox"]:checked + label,
+  &[type="checkbox"]:not(:checked) + label {
+    position: relative;
+    padding-bottom: $base-spacing-unit-small;
+    padding-left: ($base-spacing-unit-medium * 2);
+    line-height: 2;
+    color: $grey-1;
+    cursor: pointer;
+  }
+  &[type="radio"]:checked + label:before,
+  &[type="radio"]:not(:checked) + label:before,
+  &[type="checkbox"]:checked + label:before,
+  &[type="checkbox"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    @include media($tablet) {
+      width: 38px;
+      height: 38px;
+    }
+    border: 2px solid $grey-1;
+    background: transparent;
+  }
+  &[type="radio"]:checked + label:before,
+  &[type="radio"]:not(:checked) + label:before {
+    border-radius: 100%;
+  }
+  &[type="radio"]:checked + label:after,
+  &[type="radio"]:not(:checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+    @include media($tablet) {
+      top: 8px;
+      left: 8px;
+      width: 22px;
+      height: 22px;
+    }
+    border-radius: 100%;
+    background: $grey-1;
+  }
+  &[type="checkbox"]:checked + label:after,
+  &[type="checkbox"]:not(:checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 7px;
+    @include media($tablet) {
+      top: 11px;
+      left: 10px;
+    }
+    width: 18px;
+    height: 11px;
+    border-style: solid;
+    border-width: 0 0 4px 4px;
+    border-color: $grey-1;
+    border-top-color: transparent;
+    background: transparent;
+    transform: rotate(-45deg);
+  }
+  &[type="radio"]:not(:checked) + label:after,
+  &[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+  &[type="radio"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &[type="radio"]:focus + label::before,
+  &[type="checkbox"]:focus + label::before {
+    box-shadow: 0 0 0 3px $caution;
   }
 }
 
@@ -103,12 +192,17 @@ button:-moz-focusring,
   input[type="text"] {
     flex: 0 0 65%;
     margin-bottom: 0;
-    margin-right: -$base-spacing-unit;
+    margin-right: -1px;
   }
 }
 
 .input-group__inline {
   display: inline-flex;
+  align-items: baseline;
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    padding-right: $base-spacing-unit-large;
+  }
 }
 
 // Physical Print Styles
