@@ -8,7 +8,7 @@ UK_Parliament.map = function() {
     map,
     geojson,
     breakpoint = '767',
-    mapBreakPointOptions = function () {
+    mapBreakPointOptions = function() {
       /**
        * Map options based on browser width
        * Toggle map dragging
@@ -31,18 +31,27 @@ UK_Parliament.map = function() {
       map_container.classList.add('map');
 
       // Create the map
-      map = L.map('mapbox').setView([55, -3], 5);
+      map = L.map('mapbox', {
+        center: [55, -3], // Centre map around the UK
 
-      // Disable mouse wheel zoom
-      map.scrollWheelZoom.disable();
+        zoom: 5, // Default zoom
+        maxZoom: 18, // Max zoom level
+        scrollWheelZoom: false, // Disable mouse wheel zoom
+        zoomControl: false, // Disable zoom control
 
-      // Disable 'Leaflet' attribution
-      map.attributionControl.setPrefix(false);
+        attributionControl: false // Disable 'Leaflet' attribution
+      });
+
+      // Control
+      // http://leafletjs.com/reference-1.2.0.html#control
+      L.control.zoom({
+        position: 'bottomright'
+      }).addTo(map);
 
       // Setup the map tile layer
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         maxZoom: 18,
-        id: 'mapbox.light',
+        id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoiaHVudHAiLCJhIjoiY2l6cXY3NjZpMDAxZzJybzF0aDBvdHRlZCJ9.k1zL5uDY7eUvuSiw3Rdrkw'
       }).addTo(map);
 
