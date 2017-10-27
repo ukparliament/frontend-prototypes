@@ -9,5 +9,52 @@
 
   .leaflet-bar {
     box-shadow: 0 1px 5px rgba(55,49,81,0.4);
+
+    a {
+      background-color: $white;
+      @include links(
+        $deep-purple, 				// a:link colour
+        none,		// a:link decoration
+        $deep-purple, 			// a:visited color
+        $deep-purple 		// a:hover color
+      );
+    }
+  }
+
+
+  .fullscreen-icon {
+    background-image: url(../images/fullscreen_open.svg);
+  }
+  &.map--icon .fullscreen-icon {
+    background-image: url(../images/fullscreen_close.svg);
+  }
+  /* one selector per rule as explained here : http://www.sitepoint.com/html5-full-screen-api/ */
+  &.leaflet-container:-webkit-full-screen {
+    height: 100% !important;
+    width: 100% !important;
+    z-index: 99999;
+  }
+  &.leaflet-container:-ms-fullscreen {
+    height: 100% !important;
+    width: 100% !important;
+    z-index: 99999;
+  }
+  &.leaflet-container:full-screen {
+    height: 100% !important;
+    width: 100% !important;
+    z-index: 99999;
+  }
+  &.leaflet-container:fullscreen {
+    height: 100% !important;
+    width: 100% !important;
+    z-index: 99999;
+  }
+  &.leaflet-pseudo-fullscreen {
+    height: 100% !important;
+    left: 0px !important;
+    position: fixed !important;
+    top: 0px !important;
+    width: 100% !important;
+    z-index: 99999;
   }
 }

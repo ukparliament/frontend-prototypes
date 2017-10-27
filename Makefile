@@ -21,6 +21,7 @@ PUG=./node_modules/.bin/pug
 SVGO=./node_modules/.bin/svgo
 UGLIFY_JS=./node_modules/.bin/uglifyjs
 LEAFLET=./node_modules/leaflet/dist/leaflet.js
+LEAFLET_FULLSCREEN=./node_modules/leaflet.fullscreen/Control.FullScreen.js
 PRETTY_MINI_JSON=./node_modules/pretty-mini-json/pretty-mini-json.js
 
 # Github variables
@@ -52,7 +53,7 @@ css:
 # Minifies javascript files
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(LEAFLET) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+	@$(UGLIFY_JS) $(LEAFLET) $(LEAFLET_FULLSCREEN) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
 
 # Minifies json file
 json:
