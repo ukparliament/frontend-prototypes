@@ -33,12 +33,11 @@ UK_Parliament.map = function() {
       // Create the map
       map = L.map('mapbox', {
         center: [55, -3], // Centre map around the UK
-
         zoom: 5, // Default zoom
         maxZoom: 18, // Max zoom level
         scrollWheelZoom: false, // Disable mouse wheel zoom
         zoomControl: false, // Disable zoom control
-
+        detectRetina: true,
         attributionControl: false // Disable 'Leaflet' attribution
       });
 
@@ -49,7 +48,7 @@ UK_Parliament.map = function() {
       }).addTo(map);
 
       // Setup the map tile layer
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}', {
         maxZoom: 18,
         id: 'mapbox.streets',
         accessToken: 'pk.eyJ1IjoiaHVudHAiLCJhIjoiY2l6cXY3NjZpMDAxZzJybzF0aDBvdHRlZCJ9.k1zL5uDY7eUvuSiw3Rdrkw'
