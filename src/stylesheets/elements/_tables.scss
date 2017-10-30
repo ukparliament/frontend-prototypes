@@ -7,8 +7,19 @@ table {
   background: $grey-4;
   border-collapse: collapse;
   border-spacing: 0;
+  table-layout: fixed;
+  @include media($desktop) {
+    table-layout: initial;
+  }
   th, td {
     padding: $base-spacing-unit-tiny;
+    @include fontsize(14);
+    @include media($tablet) {
+      @include fontsize(16);
+    }
+  }
+  td {
+    word-wrap: break-word;
   }
   thead {
     th {
