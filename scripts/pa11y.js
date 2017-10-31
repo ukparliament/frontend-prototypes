@@ -5,18 +5,19 @@
 
 
 // Require node modules
-const async         = require('async'),
-      fs            = require('fs'),
-      pa11y         = require('pa11y'),
-      htmlReporter  = require('../node_modules/pa11y/reporter/html'),
-      config        = require('../config/pa11y.config.js');
+const
+  async         = require('async'),
+  fs            = require('fs'),
+  pa11y         = require('pa11y'),
+  htmlReporter  = require('../node_modules/pa11y/reporter/html'),
+  config        = require('../config/pa11y.config.js');
 
 
 // Create a Pa11y test runner
 const test = pa11y({
   standard: config.standard, // set test standards
   ignore: config.ignore, // ignore WCAG msg
-	log: config.log // log what's happening to the console
+  log: config.log // log what's happening to the console
 });
 
 
@@ -33,14 +34,14 @@ const queue = async.queue(function(url, done) {
   	can then run the pa11y test function on them and call
   	`done` when we're finished to free up the queue
   */
-	test.run(url, function(error, results) {
-		if (error) {
-			return console.error(error.message);
-		}
+  test.run(url, function(error, results) {
+    if (error) {
+      return console.error(error.message);
+    }
 
-		writeReportToHTML(htmlReporter.process(results, url), 'accessibility');
-		done();
-	});
+    writeReportToHTML(htmlReporter.process(results, url), 'accessibility');
+    done();
+  });
 
 }, concurrency);
 
@@ -49,7 +50,7 @@ const queue = async.queue(function(url, done) {
   drains (it runs out of URLs to process)
 */
 queue.drain = function() {
-	console.log('All done!');
+  console.log('All done!');
 };
 
 /*
@@ -59,10 +60,10 @@ queue.push(config.urls);
 
 
 function writeReportToHTML(htmlText, fileName){
-	fs.appendFile('reports/' + fileName + '_report.html', htmlText, function(err) {
-		if(err) {
-			return console.log(err);
-		}
-		console.log('Results added to reports/' + fileName + '_report.html');
-	});
+  fs.appendFile('reports/' + fileName + '_report.html', htmlText, function(err) {
+    if(err) {
+      return console.log(err);
+    }
+    console.log('Results added to reports/' + fileName + '_report.html');
+  });
 }
