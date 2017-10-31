@@ -16,6 +16,8 @@ app.get(/([^\/]+)$/g, function(req, res) {
   res.sendFile(path.join(__dirname, req.path));
 });
 
-app.listen(port, function() {
+let server = app.listen(port, function() {
   console.log('Server started on port: ' + port);
 });
+
+module.exports = server;
