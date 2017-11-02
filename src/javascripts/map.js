@@ -16,21 +16,12 @@ UK_Parliament.map = function() {
        * Map options based on browser width or fullscreen
        * Toggle map dragging
        * Always fit location within the map boundary
-       * Toggle scrollWheelZoom
        */
 
       map.fitBounds(geojson.getBounds());
 
-      if (window.innerWidth >= breakpoint || map._isFullscreen) {
+      if (window.innerWidth >= breakpoint) {
         map.dragging.enable();
-
-        if (map._isFullscreen) {
-          map_container.classList.add('map--icon');
-          map.scrollWheelZoom.enable();
-        } else {
-          map_container.classList.remove('map--icon');
-          map.scrollWheelZoom.disable();
-        }
       } else {
         map.dragging.disable();
       }
@@ -82,10 +73,24 @@ UK_Parliament.map = function() {
         fillOpacity: 0.1
       }).addTo(map);
 
+      // events are fired when entering or exiting fullscreen.
+      map.on('enterFullscreen', function () {
+        map.fitBounds(geojson.getBounds());
+        map_container.classList.add('map--icon');
+        map.dragging.enable();
+        map.scrollWheelZoom.enable();
+      });
+      map.on('exitFullscreen', function () {
+        map.fitBounds(geojson.getBounds());
+        map_container.classList.remove('map--icon');
+        map.dragging.disable();
+        map.scrollWheelZoom.disable();
+      });
+
       mapBreakPointOptions();
 
       // Event listener for device rotation and resize changes
-      ['orientationchange', 'pageshow', 'resize'].forEach(function (event) {
+      ['pageshow', 'orientationchange', 'resize'].forEach(function (event) {
         window.addEventListener(event, mapBreakPointOptions, false);
       });
 
