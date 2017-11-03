@@ -20,7 +20,7 @@ UK_Parliament.map = function() {
 
       map.fitBounds(geojson.getBounds());
 
-      if (window.innerWidth >= breakpoint) {
+      if (window.innerWidth >= breakpoint || map._isFullscreen) {
         map.dragging.enable();
       } else {
         map.dragging.disable();
