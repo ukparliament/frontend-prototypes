@@ -41,7 +41,7 @@ UK_Parliament.map = function() {
 
         zoom: 5, // Default zoom
         maxZoom: 18, // Max zoom level
-
+        scrollWheelZoom: false,
         zoomControl: false, // Disable zoom control
 
         detectRetina: true,
