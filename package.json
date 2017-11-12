@@ -1,7 +1,7 @@
 {
   "name": "parliamentuk-pugin",
-  "version": "1.2.0",
-  "description": "A static build system for UK Parliament prototypes.",
+  "version": "1.6.4",
+  "description": "UK Parliament brand",
   "author": "UK Parliament",
   "license": "MIT",
   "engines": {

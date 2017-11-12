@@ -13,16 +13,17 @@ IMAGES_LOC=src/images
 REPORTS_FOLDER=reports
 
 # Node module variables
-ESLINT=./node_modules/.bin/eslint
-IMAGEMIN=./node_modules/.bin/imagemin
-NODE_SASS=./node_modules/.bin/node-sass
-POSTCSS=./node_modules/.bin/postcss
-PUG=./node_modules/.bin/pug
-SVGO=./node_modules/.bin/svgo
-UGLIFY_JS=./node_modules/.bin/uglifyjs
-LEAFLET=./node_modules/leaflet/dist/leaflet.js
-LEAFLET_FULLSCREEN=./node_modules/leaflet.fullscreen/Control.FullScreen.js
-PRETTY_MINI_JSON=./node_modules/pretty-mini-json/pretty-mini-json.js
+NODE_MODULES=./node_modules
+ESLINT=$(NODE_MODULES)/.bin/eslint
+IMAGEMIN=$(NODE_MODULES)/.bin/imagemin
+NODE_SASS=$(NODE_MODULES)/.bin/node-sass
+POSTCSS=$(NODE_MODULES)/.bin/postcss
+PUG=$(NODE_MODULES)/.bin/pug
+SVGO=$(NODE_MODULES)/.bin/svgo
+UGLIFY_JS=$(NODE_MODULES)/.bin/uglifyjs
+LEAFLET=$(NODE_MODULES)/leaflet/dist/leaflet.js
+LEAFLET_FULLSCREEN=$(NODE_MODULES)/leaflet.fullscreen/Control.FullScreen.js
+PRETTY_MINI_JSON=$(NODE_MODULES)/pretty-mini-json/pretty-mini-json.js
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -43,6 +44,10 @@ install_to_release:
 # Deletes the public folder
 clean:
 	@rm -rf $(PUBLIC_FOLDER)
+
+# Deletes the public and node modules folder
+clean_hard: clean
+	@rm -rf $(NODE_MODULES)
 
 # Compiles sass to css
 css:
