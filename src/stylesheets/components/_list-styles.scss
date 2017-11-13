@@ -43,8 +43,10 @@ dl, dt, dd {
     }
   }
   .list--details {
-    display: inline-block;
     margin-top: 0;
+    display: inline-block;
+    word-break: break-word;
+
     :last-child {
       margin-bottom: 0;
     }
