@@ -16,6 +16,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  &.heading--light {
+    font-weight: 300;
+  }
+}
+
 // fontsize mixin creates 'font-size' in both REM & Pixels
 
 // Brand Heading Settings - Mobile (pixels)
@@ -221,6 +227,9 @@ h2.slider-link {
       top: calc(50% - 6px);
       background-color: $grey-1;
     }
+  }
+  h2 + h2, h3 + h3, h4 + h4, h5 + h5 {
+    margin-top: $base-spacing-unit-large;
   }
 }
 
