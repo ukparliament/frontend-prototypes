@@ -12,12 +12,20 @@ block content
       .block
         //- value, style, type
         //- mixin accepts attributes
+        h3 Core
         +buttonLink('#', 'Primary', 'btn--primary', 'download')
         +buttonLink('#', 'Secondary', 'btn--secondary', 'download')
         +buttonLink('#', 'Deep Purple', 'btn--deep-purple', 'download')
+
+        h3 Alternative
         +buttonLink('#', 'White', 'btn--white', 'download', 'download')
         +buttonLink('#', 'Grey', 'btn--grey', 'download')
         +button('Disabled', 'btn--disabled', 'disabled')(disabled)
+
+        h3 Inverse
+        +buttonLink('#', 'Primary', 'btn--primary--inverse', '')
+        +buttonLink('#', 'Secondary', 'btn--secondary--inverse', '')
+        +buttonLink('#', 'Deep Purple', 'btn--deep-purple--inverse', '')
 
       h2 Download buttons
       .block

@@ -139,6 +139,7 @@
   );
   color: $color;
   background-color: $background;
+  border: 2px solid $background;
 
   &:hover, &:focus {
     color: $color;
