@@ -1,6 +1,7 @@
-.timeline  {
-  padding: 0 0 0 $base-spacing-unit-small;
+.track  {
   position: relative;
+  @include first-child__last-child;
+  padding: 0 0 0 $base-spacing-unit-small;
   margin-bottom: $base-spacing-unit-tiny;
 
   &:before {

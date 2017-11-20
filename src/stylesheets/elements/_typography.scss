@@ -1,7 +1,4 @@
-// fontsize mixin creates 'font-size' & 'line-height' in rem with px fallback
-
-// Base Typography Settings (pixels)
-
+/*--- Base Typography Settings ---*/
 p {
   margin-top: 0;
   margin-bottom: $base-spacing-unit-small;
@@ -21,14 +18,20 @@ h1 + .lead {
   margin-top: -$base-spacing-unit-tiny;
 }
 
+/*--- Typography  Options ---*/
+.typography--light {
+  font-weight: 300;
+}
+.typography--heavy {
+  font-weight: 500;
+}
 .content--xs {
   color: $grey-2;
   font-weight: 400;
   @include fontsize(14);
 }
 
-// Component Typography Settings (pixels)
-
+/*--- Component Typography Settings ---*/
 header {
   @include fontsize(36);
   line-height: 1.167; // 42px
