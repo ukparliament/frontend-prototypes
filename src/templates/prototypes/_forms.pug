@@ -22,6 +22,11 @@ block content
       +input('text', 'Full name', 'name', 'txtName')
       +input('text', 'Email Address', 'email', 'txtEmail')
 
+      //- form input with error message
+      label(for='form-with-error') Telephone
+      p.message--error Please enter a valid telephone number 
+      input(id='form-with-error' name='Telephone' type='text')
+
       h3 Checkbox
       h4 Which part of the day do you prefer?
       +input('checkbox', 'Day', 'time-of-day', 'chkDay')
@@ -31,11 +36,21 @@ block content
       +input('radio', 'Email', 'contact-method', 'rdEmail')
       +input('radio', 'Phone', 'contact-method', 'rdPhone')
       +input('radio', 'Text message', 'contact-method', 'rdTxtMsg')
-      h4 Radio (__inline)
-      -var type__inline = true
-      +input('radio', 'Email', 'contact-method-1', 'rdEmailinline')
-      +input('radio', 'Phone', 'contact-method-1', 'rdPhoneinline')
-      +input('radio', 'Text message', 'contact-method-1', 'rdTxtMsginline')
+
+      h3 Radio (__inline)
+
+      +input('radio', 'Email', 'radio-group-inline', 'rdEmailInline')
+      +input('radio', 'Phone', 'radio-group-inline', 'rdPhoneInline')
+      +input('radio', 'Text message', 'radio-group-inline', 'rdTxtMsgInline')
+
+      h3 Radio (__verbose)
+
+      +input('radio', 'Email', 'radio-group-verbose', 'rdEmailVerbose')
+      p This option confirms communication by email
+      +input('radio', 'Phone', 'radio-group-verbose', 'rdPhoneVerbose')
+      p This option confirms communication by telephone
+      +input('radio', 'Text message', 'radio-group-verbose', 'rdTxtMsgVerbose')
+      p This option confirms communication by text message
 
       h3 File upload
       +input('file', 'Upload a file', 'file-upload', 'fileUpload')

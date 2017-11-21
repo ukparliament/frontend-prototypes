@@ -12,6 +12,9 @@ p {
     @include fontsize(24);
     line-height: 1.250; // 30px;
   }
+  .hero & {
+    margin-top: $base-spacing-unit-extra-large;
+  }
 }
 
 h1 + .lead {

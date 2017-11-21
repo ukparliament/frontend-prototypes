@@ -147,6 +147,14 @@ input {
   }
 }
 
+select {
+  height: 48px;
+  background-color: $white;
+  border: 0;
+  outline: solid 1px $grey-3;
+  outline-offset: -1px;
+}
+
 textarea {
   min-height: 96px;
 }
@@ -161,6 +169,7 @@ button {
 
 input:focus,
 button:focus,
+select:focus,
 textarea:focus {
   position: relative;
   z-index: 10;
@@ -175,11 +184,23 @@ button:-moz-focusring,
   outline-offset: -3px;
 }
 
+// Form error messaging
+
+.message--error {
+  color: $warning--dark;
+  + input {
+  border: solid 2px $warning--dark;
+  }
+}
+
 // Form block holders
 
-.input-group {
+.input-group, .input-group__verbose {
   display: flex;
   flex-wrap: wrap;
+}
+
+.input-group {
   label:first-child {
     flex: 0 0 100%;
   }
@@ -193,6 +214,16 @@ button:-moz-focusring,
     flex: 0 0 65%;
     margin-bottom: 0;
     margin-right: -1px;
+  }
+}
+
+.input-group__verbose {
+  label {
+    font-weight: 500;
+  }
+  + * {
+    margin-top: -$base-spacing-unit-small;
+    margin-left: ($base-spacing-unit-extra-large + $base-spacing-unit-tiny);
   }
 }
 
