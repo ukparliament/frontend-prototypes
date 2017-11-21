@@ -50,10 +50,15 @@ clean_hard: clean
 	@rm -rf $(NODE_MODULES)
 
 # Compiles sass to css
-css:
+css: css_core
 	@mkdir -p $(PUBLIC_FOLDER)/stylesheets
 	@$(NODE_SASS) --output-style compressed -o $(PUBLIC_FOLDER)/stylesheets $(STYLESHEETS_LOC)
 	@$(POSTCSS) -u autoprefixer -r $(PUBLIC_FOLDER)/stylesheets/* --no-map
+
+css_core:
+	@mkdir -p $(PUBLIC_FOLDER)/stylesheets
+	@$(NODE_SASS) --output-style compressed -o $(PUBLIC_FOLDER)/stylesheets $(STYLESHEETS_LOC)/elements/_body.scss
+	@mv $(PUBLIC_FOLDER)/stylesheets/_body.css $(PUBLIC_FOLDER)/stylesheets/pugin-base.css
 
 # Minifies javascript files
 js:

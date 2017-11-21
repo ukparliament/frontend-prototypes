@@ -1,23 +1,22 @@
-// Import settings
+/*--- Import Settings ---*/
 @import 'settings/colours';
-@import 'settings/fonts';
 @import 'settings/spacing';
 @import 'settings/mixins';
 @import 'settings/themes';
 @import 'settings/accents';
 
-// Vendor files
+/*--- Vendor Files ---*/
 @import '../../node_modules/leaflet/dist/leaflet';
 
-// Import generic styles
+/*--- Import Generic ---*/
 @import 'generic/normalize';
 @import 'generic/box-sizing';
 
-// Import objects
+/*--- Import Objects ---*/
 @import 'objects/grid-settings';
 @import 'objects/content-layouts';
 
-// Import bare-bones elements
+/*--- Import Elements ---*/
 @import 'elements/body';
 @import 'elements/form';
 @import 'elements/headings';
@@ -29,7 +28,7 @@
 @import 'elements/tables';
 @import 'elements/typography';
 
-// Import site-wide components
+/*--- Import Components ---*/
 @import 'components/buttons';
 @import 'components/dropdown';
 @import 'components/footer';
@@ -42,5 +41,5 @@
 @import 'components/tracks';
 //@import '../../parliament-fonts/stylesheets/override';
 
-// Import Trumps
+/*--- Import Trumps ---*/
 @import 'trumps/helpers';

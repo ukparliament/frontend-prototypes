@@ -1,9 +1,7 @@
-// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
-
 main {
   padding-bottom: $base-spacing-unit-extra-large;
   box-sizing: border-box;
-  min-height: 100%;
+  min-height: 600px;
 }
 
 blockquote {
