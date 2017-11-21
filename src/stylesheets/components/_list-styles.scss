@@ -5,6 +5,7 @@
 ul, ol {
   padding: 0;
   margin: 0 0 $base-spacing-unit-small $base-spacing-unit-small;
+  list-style: none;
 
   li {
     padding: 0;
@@ -19,7 +20,6 @@ dl, dt, dd {
 // List Base Settings
 
 .list {
-  list-style: none;
   margin: 0 0 $base-spacing-unit-small;
 
   li:last-child {
@@ -28,7 +28,6 @@ dl, dt, dd {
 
   ol, ul {
     margin: 0;
-    list-style: none;
   }
   li {
     position: relative;
