@@ -8,8 +8,8 @@ h1, h2, h3, h4, h5, h6 {
   @include media($desktop) {
     margin-top: $base-spacing-unit-large;
   }
-  &.content--xs {
-    @extend .content--xs;
+  &.typography--xs {
+    @extend .typography--xs;
   }
   &.lead {
     @extend .lead;

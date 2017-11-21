@@ -25,7 +25,7 @@ h1 + .lead {
 .typography--heavy {
   font-weight: 500;
 }
-.content--xs {
+.typography--xs {
   color: $grey-2;
   font-weight: 400;
   @include fontsize(14);
