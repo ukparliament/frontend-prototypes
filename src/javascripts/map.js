@@ -67,6 +67,31 @@ UK_Parliament.map = function() {
         accessToken: 'pk.eyJ1IjoiaHVudHAiLCJhIjoiY2l6cXY3NjZpMDAxZzJybzF0aDBvdHRlZCJ9.k1zL5uDY7eUvuSiw3Rdrkw'
       }).addTo(map);
 
+
+
+
+      // Addong title to map for screen readers
+      L.Control.MapTitle = L.Control.extend({
+        onAdd: function(map) {
+          var map_title = document.querySelector('data-map-title'),
+              map_title_container = L.DomUtil.create('h3');
+
+          map_title_container.className = 'sr-only';
+          map_title_container.innerHTML = map_title;
+          map_title_container.setAttribute('aria-labelledby', map_title);
+
+          return map_title_container;
+        }
+      });
+
+      L.control.mapTitle = function(opts) {
+        return new L.Control.Watermark(opts);
+      }
+
+      L.control.mapTitle({ position: 'topLeft' }).addTo(map);
+
+
+
       // Create the GeoJSON layer
       geojson = L.geoJson(data, {
         color: '#5F2DB4',
