@@ -188,17 +188,19 @@ footer {
     margin-top: $base-spacing-unit-large;
   }
 }
-.track--alternative > {
+.track--alternative {
   @extend .track;
-  h2, h3, h4, h5, h6 {
-    &:last-of-type {
-      position: initial;
-
-      &:before {
-        bottom: 0;
-        left: -6px;
-      }
-    }
+  &:before {
+    height: calc(100% - 10px) !important;
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    background-color: $grey-1;
+    width: 7px;
+    height: 1px;
+    left: -4px;
+    bottom: 0;
   }
 }
 
