@@ -36,15 +36,15 @@
 /*--- Default Button Options [colour, background, background-hover] ---*/
 [class*=" theme--"] a.btn--primary,
 .btn--primary {
-  @include button($white, $button--primary, $button--primary__hover);
+  @include button($white, $button--primary, $button--primary__hover, $button--primary__hover);
 }
 [class*=" theme--"] a.btn--secondary,
 .btn--secondary {
-  @include button($deep-purple, $button--secondary, $button--secondary__hover);
+  @include button($deep-purple, $button--secondary, $button--secondary__hover, $button--secondary__hover);
 }
 [class*=" theme--"] a.btn--deep-purple,
 .btn--deep-purple {
-  @include button($white, $button--deep-purple, $button--deep-purple__hover);
+  @include button($white, $button--deep-purple, $button--deep-purple__hover, $button--deep-purple__hover);
 }
 [class*=" theme--"] a.btn--white,
 .btn--white {
@@ -53,7 +53,7 @@
 }
 [class*=" theme--"] a.btn--grey,
 .btn--grey {
-  @include button($grey-1, $grey-3, $grey-4);
+  @include button($grey-1, $grey-3, $grey-4, $grey-4);
 }
 [class*=" theme--"] a.btn--disabled,
 .btn--disabled {

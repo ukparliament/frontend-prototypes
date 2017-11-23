@@ -129,7 +129,7 @@
 
 /*--- Button [colour, background, background-hover] ---*/
 
-@mixin button($color, $background, $background-hover) {
+@mixin button($color, $background, $background-hover, $border-hover:null) {
   @extend .btn;
   @include links(
     $color, 			// a:link colour
@@ -144,6 +144,10 @@
   &:hover, &:focus {
     color: $color;
     background-color: $background-hover;
+
+    @if ($border-hover) {
+      border-color: $border-hover;
+    }
   }
 }
 
