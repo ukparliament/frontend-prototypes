@@ -2,7 +2,7 @@ extends ../../layouts/layout.pug
 block content
   -var thingPage = true
 
-  .section--primary#content
+  .section--primary(tabindex=0)#content
     .container
       h1 Tables
 
@@ -105,4 +105,3 @@ block content
             td __cfduid
             td This allows Cloudflare to identify trusted web traffic from our site.
             td After 1 year.
-

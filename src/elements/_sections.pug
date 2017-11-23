@@ -1,7 +1,7 @@
 //- Section Management
 mixin section--primary(highlight)
   if thingPage
-    .section--primary(class=highlight)#content
+    .section--primary(class=highlight, tabindex=0)#content
       .container
         if vars
           block vars
@@ -24,7 +24,7 @@ mixin section--secondary()
         else
           block
   else
-    section#content
+    section(tabindex=0)#content
       .container
         if vars
           block vars
