@@ -145,6 +145,9 @@
     color: $color;
     background-color: $background-hover;
   }
+  path, polygon {
+    fill: $color;
+  }
 }
 
 /*--- Media Queries [size] ---*/

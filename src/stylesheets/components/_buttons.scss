@@ -33,6 +33,17 @@
   }
 }
 
+.btn--icon {
+  padding-left: 32px;
+  svg {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    height: 18px;
+    width: auto;
+  }
+}
+
 /*--- Default Button Options [colour, background, background-hover] ---*/
 [class*=" theme--"] a.btn--primary,
 .btn--primary {

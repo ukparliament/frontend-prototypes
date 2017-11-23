@@ -26,7 +26,13 @@ block content
         +buttonLink('#', 'Primary', 'btn--primary--inverse', '')
         +buttonLink('#', 'Secondary', 'btn--secondary--inverse', '')
         +buttonLink('#', 'Deep Purple', 'btn--deep-purple--inverse', '')
-
+        
+        h3 icons
+        +buttonLink('#', 'Download Word document', 'btn--primary btn--icon', '')
+          include ../../icons/download.svg
+        +buttonLink('#', 'Download PDF document', 'btn--deep-purple btn--icon', '')
+          include ../../icons/download.svg
+        
       h2 Download buttons
       .block
         //- link, value, style
