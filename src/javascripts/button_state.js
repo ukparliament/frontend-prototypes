@@ -15,7 +15,7 @@ UK_Parliament.buttonLoader = function() {
         for (var i = 0; i < buttons.length; i++) {
           // if button type=submit
           if (buttons[i].type.toLowerCase() === 'submit') {
-            this.classList.add('btn--loading');
+            buttons[i].classList.add('btn--loading');
           }
         }
       }

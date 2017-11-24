@@ -2,12 +2,10 @@
 mixin button(value, style, datatype, type)
   if type === 'reset'
     button(type=type, class=style, value=value, data-type=datatype)&attributes(attributes)
-  else
-    button(type='submit', class=style, value=value, data-type=datatype)&attributes(attributes)
-      span.btn--loading__text=value
-      span.btn--loading__icon
-        figure
-          include ../icons/loading.svg
+  else if type === 'submit'
+    button(type=type, class=style, value=value, data-type=datatype)&attributes(attributes)
+      = value
+      include ../icons/loading.svg
 
 
 mixin buttonLink(link, value, style, datatype)
