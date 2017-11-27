@@ -134,7 +134,7 @@
   @include links(
     $color, 			// a:link colour
     none, 				// a:link decoration
-    $white, 			// a:visited color
+    $color, 			// a:visited color
     $white 				// a:hover color
   );
   color: $color;
