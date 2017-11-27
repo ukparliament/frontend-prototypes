@@ -8,37 +8,37 @@ block content
 
   section
     .container
-      h2 Submit buttons
+      h2 Buttons
       .block
         //- value, style, type
         //- mixin accepts attributes
         h3 Core
-        +buttonLink('#', 'Primary', 'btn--primary', 'download')
-        +buttonLink('#', 'Secondary', 'btn--secondary', 'download')
-        +buttonLink('#', 'Deep Purple', 'btn--deep-purple', 'download')
+        +buttonLink('#', 'Primary', 'btn--primary')
+        +buttonLink('#', 'Secondary', 'btn--secondary')
+        +buttonLink('#', 'Deep Purple', 'btn--deep-purple')
 
         h3 Alternative
-        +buttonLink('#', 'White', 'btn--white', 'download', 'download')
-        +buttonLink('#', 'Grey', 'btn--grey', 'download')
-        +button('Disabled', 'btn--disabled', 'disabled')(disabled)
+        +buttonLink('#', 'White', 'btn--white')
+        +buttonLink('#', 'Grey', 'btn--grey')
+        +buttonLink('#', 'Disabled', 'btn--disabled')(tabIndex=-1)
 
         h3 Inverse
-        +buttonLink('#', 'Primary', 'btn--primary--inverse', '')
-        +buttonLink('#', 'Secondary', 'btn--secondary--inverse', '')
-        +buttonLink('#', 'Deep Purple', 'btn--deep-purple--inverse', '')
+        +buttonLink('#', 'Primary', 'btn--primary--inverse')
+        +buttonLink('#', 'Secondary', 'btn--secondary--inverse')
+        +buttonLink('#', 'Deep Purple', 'btn--deep-purple--inverse')
 
-        h3 icons
-        +buttonLink('#', 'Download Word document', 'btn--primary btn--icon', '')
+        h3 Icons
+        +buttonLink('#', 'Download Word document', 'btn--primary btn--icon', 'download')(download)
           include ../../icons/download.svg
-        +buttonLink('#', 'Download PDF document', 'btn--deep-purple btn--icon', '')
+        +buttonLink('#', 'Download PDF document', 'btn--deep-purple btn--icon', 'download')(download)
           include ../../icons/download.svg
 
       h2 Download buttons
       .block
         //- link, value, style
-        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary', 'download')
-        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary', 'download')
-        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--disabled', 'disabled')
+        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary', 'download')(download)
+        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary', 'download')(download)
+        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--disabled')(download, tabIndex=-1)
 
       h2 Form groups
       .block
@@ -46,12 +46,12 @@ block content
         +form('javascript:console.log("search submitted")', 'post')
           .input-group
             +input('search', 'Enter a keyword', 'q', 'search_box')(maxlength='1000', pattern='^(?!.*<script|<Script).*$')
-            +button('Search', 'btn--primary', 'search', 'submit')
+            +button('Search', 'btn--primary', 'submit', 'search')
 
         h3 Find your MP and constituency
         +form('javascript:console.log("postcode submitted")', 'post')
           .input-group
             +input('text', 'Enter your full postcode, for example SW1A 0AA.', 'postcode_main', 'postcodeSearch')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}')
-            +button('Find', 'btn--primary', 'postcode', 'submit')
+            +button('Find', 'btn--primary', 'submit', 'postcode')
 
       p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].

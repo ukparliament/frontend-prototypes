@@ -106,8 +106,9 @@
   svg {
     display: block;
     position: absolute;
-    top: 24%;
+    top: 50%;
     left: 50%;
+    margin-top: -12px;
     margin-left: -12px;
   }
   &:hover, &:focus {

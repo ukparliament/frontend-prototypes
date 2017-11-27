@@ -159,12 +159,6 @@ textarea {
   min-height: 96px;
 }
 
-button {
-  &[type="submit"] {
-    margin-top: $base-spacing-unit-tiny;
-  }
-}
-
 // Pseudo state styling (including Mozilla focus overide)
 
 input:focus,

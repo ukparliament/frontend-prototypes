@@ -3,7 +3,8 @@
 .hero {
   margin-bottom: 0px;
   @extend .theme--deep-purple;
-  @include first-child__last-child;
+  @include headings-margin-top(0);
+  @include last-child;
   @include accent($grey-5);
   padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny * 2);
 
@@ -23,7 +24,8 @@
   line-height: 1.125; // 18px;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  @include first-child__last-child;
+  @include headings-margin-top(0);
+  @include last-child;
   @extend .theme--deep-purple--light;
   padding: ($base-spacing-unit-small / 2)  0 ($base-spacing-unit + 1) 0;
 
@@ -40,7 +42,8 @@
 .status--highlight {
   border-left-style: solid;
   @extend .theme--purple--light;
-  @include first-child__last-child;
+  @include headings-margin-top(0);
+  @include last-child;
   padding: $base-spacing-unit-small;
   border-left-width: $base-spacing-unit;
   margin-bottom: $base-spacing-unit-small;

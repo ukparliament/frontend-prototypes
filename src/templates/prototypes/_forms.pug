@@ -24,7 +24,7 @@ block content
 
       //- form input with error message
       label(for='form-with-error') Telephone
-      p.message--error Please enter a valid telephone number 
+      p.message--error Please enter a valid telephone number
       input(id='form-with-error' name='Telephone' type='text')
 
       h3 Checkbox
@@ -65,7 +65,7 @@ block content
       h2 HTML &lt;button&gt; Tag
       //- value, style, type
       //- mixin accepts attributes
-      +button('Submit', 'btn--primary')
+      +button('Submit', 'btn--primary', 'submit', '')
       +button('Reset', 'btn--primary', 'reset')
       +button('Disabled', 'btn--disabled')(disabled)
 

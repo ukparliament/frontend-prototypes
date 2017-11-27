@@ -55,11 +55,13 @@
   padding: $base-spacing-unit-small;
   background-color: white;
   margin-bottom: $base-spacing-unit-small;
-  @include first-child__last-child;
+  @include headings-margin-top(0);
+  @include last-child;
 }
 
 .block--border {
-  @include first-child__last-child;
+  @include headings-margin-top(0);
+  @include last-child;
   padding-top: ($base-spacing-unit-small - 1); // -1px to compensate for border height
   padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
   margin-bottom: $base-spacing-unit-extra-large;
@@ -89,7 +91,8 @@
 .column--75,
 .column--25 {
   display: inline-block;
-  @include first-child__last-child;
+  @include headings-margin-top(0);
+  @include last-child;
 }
 
 .column--75 {

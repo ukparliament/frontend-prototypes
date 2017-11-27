@@ -18,7 +18,8 @@
 
 .dropdown__toggle {
   position: relative;
-  @include first-child__last-child;
+  @include headings-margin-top(0);
+  @include last-child;
 }
 
 .dropdown__content {
@@ -30,7 +31,8 @@
   overflow: hidden;
   transition: all 0.1s linear;
   padding: $base-spacing-unit-small;
-  @include first-child__last-child;
+  @include headings-margin-top(0);
+  @include last-child;
 }
 
 /*--- Component Rules ---*/

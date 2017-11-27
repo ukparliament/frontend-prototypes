@@ -22,16 +22,13 @@ dl, dt, dd {
 .list {
   margin: 0 0 $base-spacing-unit-small;
 
-  li:last-child {
-    margin-bottom: 0;
-  }
-
   ol, ul {
     margin: 0;
   }
   li {
     position: relative;
-    @include first-child__last-child;
+    @include headings-margin-top(0);
+    @include last-child;
     * {
       margin-bottom: $base-spacing-unit;
     }
