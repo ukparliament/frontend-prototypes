@@ -27,7 +27,6 @@
 /*--- Navigation Letter ---*/
 
 .navigation--letter {
-  @extend .list--inline;
   @include clearfix;
 
   ol {

@@ -19,7 +19,8 @@ dl, dt, dd {
 
 // List Base Settings
 
-.list {
+@mixin list {
+  @include heading-list;
   margin: 0 0 $base-spacing-unit-small;
 
   ol, ul {
@@ -38,27 +39,25 @@ dl, dt, dd {
       text-decoration: none;
     }
   }
-  .list--details {
-    margin-top: 0;
-    display: inline-block;
-    word-break: break-word;
+}
 
-    :last-child {
-      margin-bottom: 0;
-    }
+@mixin list--details {
+  margin-top: 0;
+  display: inline-block;
+  word-break: break-word;
+
+  :last-child {
+   margin-bottom: 0;
   }
-  .list--details__inline {
-    @extend .list--details;
-    * {
-      display: inline;
-    }
-  }
+}
+.list--details {
+  @include list--details
 }
 
 // List Options
 
-.list--inline {
-  @extend .list;
+@mixin list--inline {
+  @include list;
   @include clearfix;
 
   ol, ul {
@@ -74,20 +73,36 @@ dl, dt, dd {
     padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
   }
 }
+.list--inline {
+  @include list--inline;
+}
 
-.list--block {
-  @extend .list;
+@mixin list--details__inline {
+  @include list--details;
+  * {
+    display: inline;
+  }
+}
+.list--details__inline {
+  @include list--details__inline;
+}
+
+@mixin list--block {
+  @include list;
 
   > li {
-    @extend .block;
+    @include block;
     margin-bottom: $base-spacing-unit;
     display: inline-flex;
     width: 100%;
   }
 }
+.list--block {
+  @include list--block;
+}
 
-.list--block__inline {
-  @extend .list--block;
+@mixin list--block__inline {
+  @include list--block;
   @include clearfix;
 
   flex-wrap: wrap;
@@ -101,9 +116,12 @@ dl, dt, dd {
     margin-right: $base-spacing-unit;
   }
 }
+.list--block__inline {
+  @include list--block__inline;
+}
 
-.list--block__inline-50 {
-  @extend .list--block__inline;
+@mixin list--block__inline-50 {
+  @include list--block__inline;
 
   li {
     width: 100%;
@@ -113,9 +131,12 @@ dl, dt, dd {
     }
   }
 }
+.list--block__inline-50 {
+  @include list--block__inline-50;
+}
 
 .list--pipe {
-  @extend .list;
+  @include list;
   > li {
     border-bottom: solid 1px $grey-3;
     background: transparent;
@@ -129,6 +150,7 @@ dl, dt, dd {
     padding-top: ($base-spacing-unit-tiny - 1);
   }
 }
+
 .list--definition {
   margin: 0 0 $base-spacing-unit-small;
 
@@ -137,8 +159,9 @@ dl, dt, dd {
     padding-right: $base-spacing-unit-tiny;
   }
 }
+
 .list--tab {
-  @extend .list--inline;
+  @include list--inline;
   border-bottom: 2px solid $grey-4;
   margin-bottom: $base-spacing-unit-small;
 
@@ -153,10 +176,12 @@ dl, dt, dd {
     padding: ($base-spacing-unit + 2) 0;
   }
 }
+
 .list--bullet {
-  @extend .list;
+  @include list;
   list-style: disc;
   padding-left: $base-spacing-unit-large;
+
   li {
     font-weight: 400;
     @include fontsize(16);
@@ -169,7 +194,7 @@ dl, dt, dd {
 // Numbered / Roman Numeral / Alphabetical Lists
 
 .list--number, .list--roman, .list--alpha {
-  @extend .list;
+  @include list;
   li {
     margin-left: $base-spacing-unit-extra-large;
   }

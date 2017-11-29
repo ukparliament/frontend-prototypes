@@ -51,12 +51,15 @@
 
 // Block Options
 
-.block {
+@mixin block {
   padding: $base-spacing-unit-small;
   background-color: white;
   margin-bottom: $base-spacing-unit-small;
   @include headings-margin-top(0);
   @include last-child;
+}
+.block {
+  @include block;
 }
 
 .block--border {

@@ -136,7 +136,7 @@
 /*--- Button [colour, background, background-hover] ---*/
 
 @mixin button($color, $background, $background-hover, $border-hover:null) {
-  @extend .btn;
+  @include btn;
   @include links(
     $color, 			// a:link colour
     none, 				// a:link decoration

@@ -1,6 +1,6 @@
 /*--- Button Base ---*/
 
-.btn {
+@mixin btn {
   border: none;
   cursor: pointer;
   min-width: 70px;
@@ -36,17 +36,6 @@
 [type='submit'] {
   svg {
     display: none;
-  }
-}
-
-.btn--icon {
-  padding-left: 32px;
-  svg {
-    position: absolute;
-    top: 7px;
-    left: 10px;
-    height: 18px;
-    width: auto;
   }
 }
 
@@ -113,5 +102,18 @@
   }
   &:hover, &:focus {
     color: transparent;
+  }
+}
+
+/*--- Button Icon ---*/
+
+.btn--icon {
+  padding-left: 32px;
+  svg {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    height: 18px;
+    width: auto;
   }
 }
