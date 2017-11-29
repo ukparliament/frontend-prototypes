@@ -5,6 +5,10 @@
 .section--primary {
   padding-top: $base-spacing-unit-extra-large;
   margin-bottom: $base-spacing-unit-tiny;
+
+  &:focus {
+    outline: none;
+  }
 }
 .section--minor {
   padding: $base-spacing-unit-tiny 0;
