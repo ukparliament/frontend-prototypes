@@ -17,10 +17,13 @@ picture {
   figure, picture {
     width: 84px;
     height: 84px;
+    position: relative;
     border-radius: 50%;
     background-color: $grey-5;
-    margin: 0 $base-spacing-unit-small 0 0;
-    position: relative;
+    margin-bottom: $base-spacing-unit;
+    @media(min-width: $smartphone) {
+      margin: 0 $base-spacing-unit-small 0 0;
+    }
 
     a {
       &:active, &:hover {
@@ -67,7 +70,10 @@ picture {
     height: auto;
     border-radius: 0;
     background-color: $grey-4;
-    margin: 0 $base-spacing-unit-small 0 0;
+    margin-bottom: $base-spacing-unit;
+    @media(min-width: $smartphone) {
+      margin: 0 $base-spacing-unit-small 0 0;
+    }
   }
   img {
     width: 100%;

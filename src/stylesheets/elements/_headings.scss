@@ -40,7 +40,7 @@ h1 {
       }
     }
   }
-  span+span {
+  span + span {
     margin-top: $base-spacing-unit-small;
   }
 }
@@ -124,6 +124,12 @@ footer {
 }
 
 /*--- Component Settings ---*/
+.hero {
+  h1 span + span {
+    margin-top: $base-spacing-unit;
+  }
+}
+
 .block,
 .hero {
   h1 {

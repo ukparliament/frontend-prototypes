@@ -92,9 +92,11 @@ dl, dt, dd {
 
   > li {
     @include block;
-    margin-bottom: $base-spacing-unit;
-    display: inline-flex;
     width: 100%;
+    margin-bottom: $base-spacing-unit;
+    @media(min-width: $smartphone) {
+      display: inline-flex;
+    }
   }
 }
 .list--block {
@@ -138,12 +140,14 @@ dl, dt, dd {
 .list--pipe {
   @include list;
   > li {
-    border-bottom: solid 1px $grey-3;
-    background: transparent;
-    padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
-    margin-bottom: 0;
-    display: inline-flex;
     width: 100%;
+    margin-bottom: 0;
+    background: transparent;
+    border-bottom: solid 1px $grey-3;
+    padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
+    @media(min-width: $smartphone) {
+      display: inline-flex;
+    }
   }
   > li:first-of-type {
     border-top: solid 1px $grey-3;
