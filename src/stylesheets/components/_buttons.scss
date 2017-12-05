@@ -85,21 +85,29 @@
   border-color: $button--deep-purple;
 }
 
+/*--- Button Icon Mixin ---*/
+
+@mixin btn--svg {
+  svg {
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    display: block;
+    margin-top: -12px;
+    margin-left: -12px;
+    position: absolute;
+  }
+}
+
 /*--- Button Loader ---*/
 
 .btn--loading {
   height: auto;
   color: transparent;
   cursor: not-allowed;
+  @include btn--svg;
 
-  svg {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -12px;
-    margin-left: -12px;
-  }
   &:hover, &:focus {
     color: transparent;
   }
@@ -109,11 +117,8 @@
 
 .btn--icon {
   padding-left: 32px;
+  @include btn--svg;
   svg {
-    position: absolute;
-    top: 7px;
-    left: 10px;
-    height: 18px;
-    width: auto;
+    left: 17px;
   }
 }

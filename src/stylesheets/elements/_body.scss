@@ -3,11 +3,15 @@
 @import '../settings/spacing';
 @import '../settings/mixins';
 @import '../objects/grid-settings';
+@import '../elements/semantic-elements';
 
 body {
   padding: 0;
   color: $grey-1;
   direction: ltr;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   line-height: 1.5; // 24px
   background-color: $grey-5;
   font-family: $base-font-stack;

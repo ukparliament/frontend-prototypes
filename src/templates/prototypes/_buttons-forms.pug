@@ -10,8 +10,7 @@ block content
     .container
       h2 Buttons
       .block
-        //- value, style, type
-        //- mixin accepts attributes
+        //- buttonLink [link, value, style, datatype=optional]
         h3 Core
         +buttonLink('#', 'Primary', 'btn--primary')
         +buttonLink('#', 'Secondary', 'btn--secondary')
@@ -35,7 +34,7 @@ block content
 
       h2 Download buttons
       .block
-        //- link, value, style
+        //- buttonLink [link, value, style, datatype=optional]
         +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary', 'download')(download)
         +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary', 'download')(download)
         +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--disabled')(download, tabIndex=-1)
@@ -46,12 +45,14 @@ block content
         +form('javascript:console.log("search submitted")', 'post')
           .input-group
             +input('search', 'Enter a keyword', 'q', 'search_box')(maxlength='1000', pattern='^(?!.*<script|<Script).*$')
+            //- button [value, style, type, datatype]
             +button('Search', 'btn--primary', 'submit', 'search')
 
         h3 Find your MP and constituency
         +form('javascript:console.log("postcode submitted")', 'post')
           .input-group
             +input('text', 'Enter your full postcode, for example SW1A 0AA.', 'postcode_main', 'postcodeSearch')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}')
+            //- button [value, style, type, datatype]
             +button('Find', 'btn--primary', 'submit', 'postcode')
 
       p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
