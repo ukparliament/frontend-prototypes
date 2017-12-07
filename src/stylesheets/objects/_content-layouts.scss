@@ -66,6 +66,10 @@
   @include block;
 }
 
+[class*="block"][class*="accent"] {
+  border-top: solid $base-spacing-unit $mint;
+}
+
 .block--border {
   @include headings-margin-top(0);
   @include last-child;
