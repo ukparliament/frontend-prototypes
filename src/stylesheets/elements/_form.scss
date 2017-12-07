@@ -61,8 +61,9 @@ input {
   &[type="radio"]:not(:checked),
   &[type="checkbox"]:checked,
   &[type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
+    width: 2px;
+    height: 2px;
+    opacity: 0;
   }
   &[type="radio"]:checked + label,
   &[type="radio"]:not(:checked) + label,
@@ -90,7 +91,7 @@ input {
       height: 38px;
     }
     border: 2px solid $grey-1;
-    background: transparent;
+    background: $white;
   }
   &[type="radio"]:checked + label:before,
   &[type="radio"]:not(:checked) + label:before {
@@ -143,7 +144,7 @@ input {
   }
   &[type="radio"]:focus + label::before,
   &[type="checkbox"]:focus + label::before {
-    box-shadow: 0 0 0 3px $caution;
+    box-shadow: 0 0 0 3px $grey-2;
   }
 }
 
@@ -167,14 +168,20 @@ select:focus,
 textarea:focus {
   position: relative;
   z-index: 10;
-  outline: 3px solid $caution;
   outline-offset: -3px;
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid $grey-2;
+}
+
+button:focus,
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-  outline: 3px solid $caution;
+  outline: 3px solid $mint;
   outline-offset: -3px;
 }
 
