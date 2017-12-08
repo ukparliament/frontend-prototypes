@@ -24,6 +24,7 @@ UGLIFY_JS=$(NODE_MODULES)/.bin/uglifyjs
 LEAFLET=$(NODE_MODULES)/leaflet/dist/leaflet.js
 LEAFLET_FULLSCREEN=$(NODE_MODULES)/leaflet.fullscreen/Control.FullScreen.js
 PRETTY_MINI_JSON=$(NODE_MODULES)/pretty-mini-json/pretty-mini-json.js
+MOCHA=$(NODE_MODULES)/.bin/mocha
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -95,8 +96,12 @@ serve: clean build
 watch:
 	@node scripts/watch.js $(STYLESHEETS_LOC)=css $(JAVASCRIPTS_LOC)=js $(IMAGES_LOC)=images $(SRC_FOLDER)/layouts=templates $(SRC_FOLDER)/elements=templates $(SRC_FOLDER)/components=templates $(SRC_FOLDER)/templates=templates
 
-# Runs accessibility testing
+# Testing
 test:
+	@$(MOCHA) --recursive
+
+# Runs accessibility testing
+wcag:
 	@mkdir -p $(REPORTS_FOLDER)
 	@rm -rf $(REPORTS_FOLDER)/*
 	@node scripts/pa11y.js
