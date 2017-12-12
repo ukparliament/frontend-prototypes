@@ -4,12 +4,10 @@
 
 ul, ol {
   padding: 0;
-  margin: 0 0 $base-spacing-unit-small $base-spacing-unit-small;
-  list-style: none;
+  margin: 0 0 $base-spacing-unit-small $base-spacing-unit-extra-large;
 
   li {
     padding: 0;
-    margin: 0;
   }
 }
 dl, dt, dd {
@@ -22,9 +20,13 @@ dl, dt, dd {
 @mixin list {
   @include heading-list;
   margin: 0 0 $base-spacing-unit-small;
+  list-style: none;
 
-  ol, ul {
-    margin: 0;
+  ol {
+    list-style: decimal;
+  }
+  ul {
+    list-style: disc;
   }
   li {
     position: relative;

@@ -103,8 +103,11 @@
 
 @mixin navigation($margin-top, $margin-bottom) {
   @extend .list--inline;
-  margin-top: $margin-top;
   margin-bottom: $margin-bottom;
+
+  ol, ul {
+    list-style: none;
+  }
 }
 
 /*--- Navigation Control [float, margin left and margin right] ---*/
