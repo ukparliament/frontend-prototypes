@@ -80,3 +80,14 @@ label, optgroup, select, textarea {
     @include fontsize(18);
   }
 }
+
+/*--- Settings for url ---*/
+
+.label + .url {
+  padding: ($base-spacing-unit - 4) $base-spacing-unit;
+}
+.url {
+  padding: ($base-spacing-unit - 4) $base-spacing-unit ($base-spacing-unit - 4) 0;
+  width: 80%;
+}
+
