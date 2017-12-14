@@ -48,3 +48,10 @@
   border-left-width: $base-spacing-unit;
   margin-bottom: $base-spacing-unit-small;
 }
+
+/*--- Label Components ---*/
+
+.label {
+  margin-right: $base-spacing-unit;
+  padding: ($base-spacing-unit - 4) $base-spacing-unit;
+}
