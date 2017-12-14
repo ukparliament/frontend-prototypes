@@ -8,7 +8,7 @@ mixin form(action, method)
 
 
 //- <input>
-mixin input(type, label, name, id)
+mixin input(type, label, name, id, datatype)
   if type === 'checkbox' || type === 'radio'
 
     - var group_type = name
@@ -25,6 +25,11 @@ mixin input(type, label, name, id)
       .input-group
         input(type=type, id=id, name=name)&attributes(attributes)
         label(for=id)= label
+
+  else if type === 'file'
+    input(type=type, id=id, name=name, data-file-upload=datatype)
+    label(for=id)&attributes(attributes)= label
+
   else
     label(for=id)= label
     input(type=type, id=id, name=name)&attributes(attributes)

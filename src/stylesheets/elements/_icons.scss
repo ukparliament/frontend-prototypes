@@ -67,14 +67,14 @@
 // File icon (status)
 
 .svg--file__success svg,
-input[type='file'] .success svg {
+[data-file-upload="success"] svg {
   #success {
     display: block;
   }
 }
 
 .svg--file__failure svg,
-input[type='file'] .failure svg {
+[data-file-upload="failure"] svg {
   #failure {
     display: block;
   }

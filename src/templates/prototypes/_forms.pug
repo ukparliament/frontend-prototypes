@@ -12,11 +12,11 @@ block content
       //- action, method
       //- mixin accepts attributes and block content
       +form('javascript:console.log("form action")', 'post')
+        +button('Submit', 'btn--primary', 'submit')
 
 
-      h2 HTML &lt;input&gt; Tag
+      h2 HTML &lt;input&gt; Text
 
-      h3 Text box
       //- type, label, name, id
       //- mixin accepts attributes
       +input('text', 'Full name', 'name', 'txtName')
@@ -27,33 +27,53 @@ block content
       p.message--error Please enter a valid telephone number
       input(id='form-with-error' name='Telephone' type='text')
 
-      h3 Checkbox
-      h4 Which part of the day do you prefer?
-      +input('checkbox', 'Day', 'time-of-day', 'chkDay')
-      +input('checkbox', 'Night', 'time-of-day', 'chkNight')
 
-      h3 Radio
-      +input('radio', 'Email', 'contact-method', 'rdEmail')
-      +input('radio', 'Phone', 'contact-method', 'rdPhone')
-      +input('radio', 'Text message', 'contact-method', 'rdTxtMsg')
+      h2 HTML &lt;input&gt; Checkbox
 
-      h3 Radio (__inline)
+      +fieldset('Which part of the day do you prefer?')
+        +input('checkbox', 'Day', 'time-of-day', 'chkDay')
+        +input('checkbox', 'Night', 'time-of-day', 'chkNight')
 
-      +input('radio', 'Email', 'radio-group-inline', 'rdEmailInline')
-      +input('radio', 'Phone', 'radio-group-inline', 'rdPhoneInline')
-      +input('radio', 'Text message', 'radio-group-inline', 'rdTxtMsgInline')
 
-      h3 Radio (__verbose)
+      h2 HTML &lt;input&gt; Radio
 
-      +input('radio', 'Email', 'radio-group-verbose', 'rdEmailVerbose')
-      p This option confirms communication by email
-      +input('radio', 'Phone', 'radio-group-verbose', 'rdPhoneVerbose')
-      p This option confirms communication by telephone
-      +input('radio', 'Text message', 'radio-group-verbose', 'rdTxtMsgVerbose')
-      p This option confirms communication by text message
+      +fieldset('How do you wish to be contacted?')
+        +input('radio', 'Email', 'contact-method', 'rdEmail')
+        +input('radio', 'Phone', 'contact-method', 'rdPhone')
+        +input('radio', 'Text message', 'contact-method', 'rdTxtMsg')
 
-      h3 File upload
-      +input('file', 'Upload a file', 'file-upload', 'fileUpload')
+
+      h2 HTML &lt;input&gt; Radio (__inline)
+
+      +fieldset('How do you wish to be contacted?')
+        +input('radio', 'Email', 'radio-group-inline', 'rdEmailInline')
+        +input('radio', 'Phone', 'radio-group-inline', 'rdPhoneInline')
+        +input('radio', 'Text message', 'radio-group-inline', 'rdTxtMsgInline')
+
+
+      h2 HTML &lt;input&gt; Radio (__verbose)
+
+      +fieldset('How do you wish to be contacted?')
+        +input('radio', 'Email', 'radio-group-verbose', 'rdEmailVerbose')
+        p This option confirms communication by email
+        +input('radio', 'Phone', 'radio-group-verbose', 'rdPhoneVerbose')
+        p This option confirms communication by telephone
+        +input('radio', 'Text message', 'radio-group-verbose', 'rdTxtMsgVerbose')
+        p This option confirms communication by text message
+
+
+      h2 HTML &lt;input&gt; File
+
+      ol.list--pipe__deep
+        li
+          figure.svg--icon(data-file-upload='icon')
+              include ../../icons/file.svg
+          .list--details
+            h3 Attach your petition template
+
+            +input('file', 'Choose file', 'file-uploader', 'fileUpload', 'button')(class='btn--primary')
+
+            p(data-file-upload='status') No file(s) selected
 
 
       h2 HTML &lt;textarea&gt; Tag

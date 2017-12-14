@@ -26,7 +26,7 @@ textarea,
 select {
   border: 1px solid $grey-3;
   display: block;
-  margin-bottom: $base-spacing-unit-small;
+  margin-bottom: $base-spacing-unit-medium;
   padding: ($base-spacing-unit-tiny - 1);
   width: 100%;
   @include media($tablet) {
@@ -52,10 +52,6 @@ input {
   }
   &[name="postcode"] {
     text-transform: uppercase;
-  }
-  &[type="file"] {
-    border: none;
-    padding: 0;
   }
   &[type="radio"]:checked,
   &[type="radio"]:not(:checked),
@@ -160,13 +156,44 @@ textarea {
   min-height: 96px;
 }
 
-// Pseudo state styling (including Mozilla focus overide)
+// File upload specific
+
+input[type="file"] {
+  border: none;
+  padding: $base-spacing-unit 0;
+  background-color: transparent;
+  + label {
+    display: none;
+  }
+}
+[data-file-upload="status"] {
+  display: none;
+}
+
+.has-js {
+  input[type="file"] {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  opacity: 0;
+  z-index: -1;
+  + label {
+    display: inline-block;
+    }
+  }
+[data-file-upload="status"] {
+    display: block;
+  }
+}
+
+// Pseudo state styling (including Mozilla focus overides)
 
 input:focus,
 button:focus,
 select:focus,
 textarea:focus {
-  position: relative;
   z-index: 10;
   outline-offset: -3px;
 }
@@ -175,6 +202,11 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: 3px solid $grey-2;
+}
+
+input[type="file"]:focus + label,
+input[type="file"].js-has-focus + label {
+  box-shadow: 0 0 0 3px $mint;
 }
 
 button:focus,
@@ -189,6 +221,7 @@ button:-moz-focusring,
 
 .message--error {
   color: $warning--dark;
+  margin-bottom: $base-spacing-unit;
   + input {
   border: solid 2px $warning--dark;
   }
@@ -224,7 +257,7 @@ button:-moz-focusring,
   }
   + * {
     margin-top: -$base-spacing-unit-small;
-    margin-left: ($base-spacing-unit-extra-large + $base-spacing-unit-tiny);
+    margin-left: (($base-spacing-unit-extra-large + $base-spacing-unit-tiny) + 3);
   }
 }
 
