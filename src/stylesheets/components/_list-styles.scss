@@ -22,10 +22,10 @@ dl, dt, dd {
   margin: 0 0 $base-spacing-unit-small;
   list-style: none;
 
-  ol {
+  > ol {
     list-style: decimal;
   }
-  ul {
+  > ul {
     list-style: disc;
   }
   li {
