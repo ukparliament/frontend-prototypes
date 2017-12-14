@@ -1,3 +1,19 @@
+// Inline icon layout
+
+.icon--inline {
+  width: 16px;
+  height: 16px;
+  @include media($tablet) {
+    width: 20px;
+    height: 20px;
+  }
+  padding-top: 2px;
+  float: left;
+  margin-right: ($base-spacing-unit + 2);
+}
+
+// Loading icon (animated)
+
 @-webkit-keyframes spinner {
   from {
     -webkit-transform: rotate(0);
@@ -34,14 +50,32 @@
   }
 }
 
-.icon--inline {
-  width: 16px;
-  height: 16px;
-  @include media($tablet) {
-    width: 20px;
-    height: 20px;
+// File icon (types)
+
+.svg--file__word > svg {
+  #word {
+    display: block;
   }
-  padding-top: 2px;
-  float: left;
-  margin-right: ($base-spacing-unit + 2);
+}
+
+.svg--file__pdf svg {
+  #pdf {
+    display: block;
+  }
+}
+
+// File icon (status)
+
+.svg--file__success svg,
+input[type='file'] .success svg {
+  #success {
+    display: block;
+  }
+}
+
+.svg--file__failure svg,
+input[type='file'] .failure svg {
+  #failure {
+    display: block;
+  }
 }

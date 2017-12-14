@@ -13,7 +13,8 @@ figure {
 picture {
   display: block;
 }
-.list--block li {
+//.list--block li {
+[class*="list--block"] li {
   figure, picture {
     width: 84px;
     height: 84px;
@@ -64,7 +65,8 @@ picture {
     }
   }
 }
-.list--pipe li {
+//.list--pipe li {
+[class*="list--pipe"] li {
   figure, picture {
     width: 130px;
     height: auto;
@@ -88,6 +90,18 @@ img {
   position: relative;
 }
 
+// SVG specific for all lists
+
+[class*="list--"] li {
+  .svg--icon {
+    width: auto;
+    background-color: transparent;
+  }
+  svg {
+    display: block;
+  }
+}
+
 figcaption {
   margin-top: 0;
   color: $grey-2;
@@ -97,6 +111,7 @@ figcaption {
   padding: $base-spacing-unit-tiny 0;
   margin-bottom: $base-spacing-unit-tiny;
 }
+
 .loading {
   position: absolute;
   margin: 2px ($base-spacing-unit-tiny / 2);

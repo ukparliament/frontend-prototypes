@@ -62,8 +62,19 @@
   @include headings-margin-top(0);
   @include last-child;
 }
+
 .block {
   @include block;
+}
+
+@mixin block__deep {
+  @include block;
+  padding-top: $base-spacing-unit-extra-large;
+  padding-bottom: $base-spacing-unit-extra-large;
+}
+
+.block__deep {
+  @include block__deep;
 }
 
 [class*="block"][class*="accent"] {

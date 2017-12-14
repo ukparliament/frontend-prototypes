@@ -101,8 +101,14 @@ dl, dt, dd {
     }
   }
 }
+
 .list--block {
   @include list--block;
+}
+
+.list--block__deep {
+  @include list--block;
+  @include block__deep;
 }
 
 @mixin list--block__inline {
@@ -139,7 +145,7 @@ dl, dt, dd {
   @include list--block__inline-50;
 }
 
-.list--pipe {
+@mixin list--pipe {
   @include list;
   > li {
     width: 100%;
@@ -154,6 +160,21 @@ dl, dt, dd {
   > li:first-of-type {
     border-top: solid 1px $grey-3;
     padding-top: ($base-spacing-unit-tiny - 1);
+  }
+}
+
+.list--pipe {
+  @include list--pipe;
+}
+
+.list--pipe__deep {
+  @include list--pipe;
+  > li {
+    padding-top: $base-spacing-unit-extra-large;
+    padding-bottom: ($base-spacing-unit-extra-large - 1);
+  }
+  > li:first-of-type {
+    padding-top: ($base-spacing-unit-extra-large - 1);
   }
 }
 
