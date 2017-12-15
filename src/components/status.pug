@@ -1,6 +1,7 @@
 .status--banner
   .container
-    p
-      +image('/icons/caution-circle-white.svg', ' ')(class='icon--inline', aria-hidden='true', aria-label='caution')
-      span.sr-only= 'caution '
-      | This is a test website, so may be inaccurate. #[+link('feedback.html', 'Give feedback')] to help improve it.
+    .hint.theme--vibrant--yellow BETA
+    //span(aria-label='caution', aria-hidden='true')
+      include ../icons/caution-circle-white.svg
+    p This is a test website, so may be inaccurate. #[+link('feedback.html', 'Give feedback to help improve it')].
+    +buttonLink('#', 'Give Feedback', 'btn--small btn--transparent')

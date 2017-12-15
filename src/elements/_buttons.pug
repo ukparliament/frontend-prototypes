@@ -1,9 +1,8 @@
 //- <button>
 mixin button(value, style, type, datatype)
   button(type=type, class=style, value=value, data-tracking=datatype)&attributes(attributes)= value
-    if type === 'submit'
-      include ../icons/loading.svg
 
 mixin buttonLink(link, value, style, datatype)
-  +link(link, value)(class=style, data-tracking=datatype)&attributes(attributes)
+  +link(link)(class=style, data-tracking=datatype)&attributes(attributes)
     block
+    =value

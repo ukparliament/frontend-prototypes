@@ -41,6 +41,9 @@
   &.theme--caution {
     @include theme($caution--light, $grey-1, $deep-purple, $grey-2, $caution);
   }
+  &.theme--caution--light {
+    @include theme($caution, $grey-1, $deep-purple, $grey-2, $caution--light);
+  }
   &.theme--success {
     @include theme($success--light, $grey-1, $deep-purple, $grey-2, $success);
   }

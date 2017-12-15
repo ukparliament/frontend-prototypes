@@ -52,6 +52,12 @@
 .section--primary__container {
   @include clearfix;
 }
+header .container {
+  padding-right: 0;
+  @include media($tablet) {
+    padding: 0 $base-spacing-unit-small;
+  }
+}
 
 // Block Options
 

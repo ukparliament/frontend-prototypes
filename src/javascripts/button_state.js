@@ -26,4 +26,4 @@ UK_Parliament.buttonLoader = function() {
   }
 };
 
-UK_Parliament.buttonLoader();
+//UK_Parliament.buttonLoader();

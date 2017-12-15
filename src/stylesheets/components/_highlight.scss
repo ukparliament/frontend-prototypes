@@ -21,17 +21,28 @@
 
 .status--banner {
   @include fontsize(14);
-  line-height: 1.125; // 18px;
   border-bottom-width: 2px;
   border-bottom-style: solid;
   @include headings-margin-top(0);
   @include last-child;
   @extend .theme--deep-purple--light;
-  padding: ($base-spacing-unit-small / 2)  0 ($base-spacing-unit + 1) 0;
+  padding: ($base-spacing-unit + 1) 0;
 
-  @include media($tablet) {
-    @include fontsize(16);
-    line-height: 1.5; // 24px
+  .container {
+    display: flex;
+  }
+  p {
+    line-height: 1.125; // 18px;
+    margin-right: $base-spacing-unit-tiny;
+
+    @include media($tablet) {
+      @include fontsize(16);
+      line-height: 1.5; // 24px
+    }
+  }
+  * {
+    margin-bottom: 0;
+    align-self: center;
   }
 }
 
@@ -54,4 +65,8 @@
 .hint {
   margin-right: $base-spacing-unit;
   padding: ($base-spacing-unit - 4) $base-spacing-unit;
+}
+
+.status--banner .hint {
+  margin-right: $base-spacing-unit-tiny;
 }

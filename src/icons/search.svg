@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" focusable="false" data-icon="search">
+    <title>Search icon</title>
+    <g fill="#fff"><path d="M7.5 15C3.4 15 0 11.6 0 7.5 0 3.4 3.4 0 7.5 0 11.6 0 15 3.4 15 7.5 15 11.6 11.6 15 7.5 15ZM7.5 13C10.5 13 13 10.5 13 7.5 13 4.5 10.5 2 7.5 2 4.5 2 2 4.5 2 7.5 2 10.5 4.5 13 7.5 13Z"/><polygon transform="translate(15.778175 15.778175)rotate(-45)translate(-15.778175 -15.778175)" points="14.8 10.8 16.8 10.8 16.8 20.8 14.8 20.8"/></g>
+</svg>

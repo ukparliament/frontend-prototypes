@@ -156,3 +156,77 @@ footer a  {
 [class*="hint"][class*="theme--"] a:link {
   text-decoration: none;
 }
+
+/*--- Search Global ---*/
+
+@include media($desktop) {
+  .search__global__toggle {
+    display: none;
+  }
+}
+
+@media (max-width: $desktop - 1) {
+  .search__global__toggle {
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 48px;
+    position: absolute;
+    transition: background-color 0.15s;
+    background-color: $deep-purple;
+    padding: $base-spacing-unit $base-spacing-unit-small;
+
+    svg {
+      top: 15px;
+      position: absolute;
+    }
+    &:hover, &:focus, &:active {
+      outline: none;
+      background-color: $deep-purple;
+
+      [data-icon="search"] g {
+        fill: darken($white, 20%);
+      }
+      [data-icon="close"] g {
+        stroke: darken($white, 20%);
+      }
+    }
+  }
+
+  .search__global {
+    &:not(.open) {
+      .search__global__toggle {
+        transition-delay: 0.2s;
+        opacity: 1;
+      }
+      [data-icon="search"] {
+        z-index: 1;
+        transition: opacity 0.15s;
+        transition-delay: 0.2s;
+      }
+      [data-icon="close"] {
+        opacity: 0;
+        z-index: 0;
+        transition: opacity 0.15s;
+      }
+    }
+    &.open {
+      .search__global__toggle {
+        background-color: transparent;
+      }
+      button [data-icon="search"] {
+        opacity: 1;
+      }
+      [data-icon="close"] {
+        z-index: 1;
+        opacity: 1;
+        transition: opacity 0.15s;
+        transition-delay: 0.1s;
+      }
+      [data-icon="search"] {
+        opacity: 0;
+        z-index: 0;
+      }
+    }
+  }
+}

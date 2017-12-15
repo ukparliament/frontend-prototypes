@@ -1,9 +1,7 @@
 /*--- Button Base ---*/
 
 @mixin btn {
-  border: none;
   cursor: pointer;
-  min-width: 70px;
   position: relative;
   border-radius: 4px;
   text-align: center;
@@ -13,19 +11,23 @@
   padding: ($base-spacing-unit - 2) ($base-spacing-unit-tiny - 2);
   margin: 0 $base-spacing-unit $base-spacing-unit-tiny 0;
 
-  .input-group & {
-    padding: $base-spacing-unit-tiny $base-spacing-unit-small;
-    margin-top: 0;
-    margin-bottom: 0;
-    @include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
-
-    &:focus, &:active {
-      @include border-radius(0, ($base-spacing-unit - 2), ($base-spacing-unit - 2), 0);
-    }
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-left: -4px;
+    vertical-align: middle;
   }
-  @include media($desktop) {
-    .input-group & {
-      padding: $base-spacing-unit-tiny $base-spacing-unit-extra-large;
+  .status--banner & {
+    margin-right: 0;
+  }
+  .input-group & {
+    margin: 0;
+    border-left: none;
+    border-width: 1px;
+    border-radius: 0;
+
+    svg {
+      margin: 0;
     }
   }
   &:focus, &:active {
@@ -33,92 +35,80 @@
   }
 }
 
-[type='submit'] {
-  svg {
-    display: none;
-  }
-}
-
 /*--- Default Button Options [colour, background, background-hover] ---*/
 
-[class*=" theme--"] a.btn--primary,
+[class*="theme--"] a.btn--primary,
 .btn--primary {
   @include button($white, $button--primary, $button--primary__hover, $button--primary__hover);
 }
-[class*=" theme--"] a.btn--secondary,
+[class*="theme--"] a.btn--secondary,
 .btn--secondary {
   @include button($deep-purple, $button--secondary, $button--secondary__hover, $button--secondary__hover);
 }
-[class*=" theme--"] a.btn--deep-purple,
+[class*="theme--"] a.btn--deep-purple,
 .btn--deep-purple {
   @include button($white, $button--deep-purple, $button--deep-purple__hover, $button--deep-purple__hover);
 }
-[class*=" theme--"] a.btn--white,
+[class*="theme--"] a.btn--white,
 .btn--white {
   @include button($deep-purple, $button--white, $button--white__hover);
-  border-color: $button--white__hover;
+  border-color: $grey-3;
 }
-[class*=" theme--"] a.btn--grey,
+[class*="theme--"] a.btn--mint,
+.btn--mint {
+  @include button($deep-purple, $mint, $mint--dark, $mint--dark);
+}
+[class*="theme--"] a.btn--grey,
 .btn--grey {
   @include button($grey-1, $grey-3, $grey-4, $grey-4);
 }
-[class*=" theme--"] a.btn--disabled,
+[class*="theme--"] a.btn--disabled,
 .btn--disabled {
   @include button($grey-2, $grey-4, $grey-4);
   pointer-events: none;
 }
 
 /*--- Inverse Button Options [colour, background, background-hover] ---*/
-[class*=" theme--"] a.btn--primary--inverse,
+[class*="theme--"] a.btn--primary--inverse,
 .btn--primary--inverse {
   @include button($button--primary, $white, lighten($button--primary, 50%));
   border-color: $button--primary;
 }
-[class*=" theme--"] a.btn--secondary--inverse,
+[class*="theme--"] a.btn--secondary--inverse,
 .btn--secondary--inverse {
   @include button($deep-purple--light, $white, lighten($button--secondary, 10%));
   border-color: $button--secondary;
 }
-[class*=" theme--"] a.btn--deep-purple--inverse,
+[class*="theme--"] a.btn--deep-purple--inverse,
 .btn--deep-purple--inverse {
   @include button($button--deep-purple, $white, lighten($button--deep-purple__hover, 40%));
   border-color: $button--deep-purple;
 }
 
-/*--- Button Icon Mixin ---*/
-
-@mixin btn--svg {
-  svg {
-    top: 50%;
-    left: 50%;
-    width: 22px;
-    height: 22px;
-    display: block;
-    margin-top: -12px;
-    margin-left: -12px;
-    position: absolute;
+/*--- Transparent Button Options ---*/
+a.btn--transparent {
+  @include button-transparent($white);
+  &:hover, &:focus, &:active {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+a.btn--transparent--inverse {
+  @include button-transparent($deep-purple);
+  &:hover, &:focus, &:active {
+    background-color: rgba(95, 95, 95, 0.25);
   }
 }
 
-/*--- Button Loader ---*/
-
-.btn--loading {
-  height: auto;
-  color: transparent;
-  cursor: not-allowed;
-  @include btn--svg;
-
-  &:hover, &:focus {
-    color: transparent;
-  }
+/*--- Size Button Options ---*/
+[class*="status--"] a.btn--small,
+[class*="theme--"] a.btn--small,
+.btn--small {
+  padding: 1px ($base-spacing-unit + 1) 0;
 }
 
-/*--- Button Icon ---*/
-
-.btn--icon {
-  padding-left: 32px;
-  @include btn--svg;
-  svg {
-    left: 17px;
-  }
+/*--- Custom Component Button ---*/
+.status--banner a[class*="btn--"] {
+  min-width: 100px;
+  margin-left: auto;
+  text-decoration: none;
 }

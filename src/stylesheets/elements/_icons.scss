@@ -1,3 +1,29 @@
+/*--- UK Parliament Icon ---*/
+
+@media (max-width: $desktop - 1) {
+  .uk_parliament {
+    z-index: 1;
+    overflow: auto;
+    position: relative;
+    display: inline-block;
+  }
+  svg [data-icon="uk-parliament"] {
+    transition: fill 0.15s;
+    transition-delay: 0s;
+  }
+  &.portcullis {
+    //z-index: 1;
+    width: 50px;
+    //overflow: auto;
+    //position: relative;
+
+    svg [data-icon="uk-parliament"] {
+      fill: transparent;
+      transition-delay: 0.05s;
+    }
+  }
+}
+
 // Inline icon layout
 
 .icon--inline {

@@ -4,6 +4,7 @@
 
 form {
   width: 100%;
+  @include last-child;
   margin-bottom: $base-spacing-unit-tiny;
 }
 
@@ -24,11 +25,11 @@ fieldset {
 input,
 textarea,
 select {
-  border: 1px solid $grey-3;
+  width: 100%;
   display: block;
+  border: 1px solid $grey-3;
   margin-bottom: $base-spacing-unit-medium;
   padding: ($base-spacing-unit-tiny - 1);
-  width: 100%;
   @include media($tablet) {
     width: 70%;
   }
@@ -235,6 +236,8 @@ button:-moz-focusring,
 }
 
 .input-group {
+  margin-bottom: $base-spacing-unit-small;
+
   label:first-child {
     flex: 0 0 100%;
   }
@@ -245,7 +248,7 @@ button:-moz-focusring,
   }
   input[type="search"],
   input[type="text"] {
-    flex: 0 0 65%;
+    flex: 1;
     margin-bottom: 0;
     margin-right: -1px;
   }
@@ -267,6 +270,98 @@ button:-moz-focusring,
   input[type="checkbox"] + label,
   input[type="radio"] + label {
     padding-right: $base-spacing-unit-large;
+  }
+}
+
+/*--- Component Styles ---*/
+
+.search__global {
+  @media (max-width: $desktop - 1) {
+    right: 0;
+    top: 20px;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 82px;
+    position: absolute;
+
+    .input-group {
+      margin-right: 8px;
+      flex-direction: row;
+      transition: margin 0.15s;
+      justify-content: flex-end;
+
+      input {
+        flex: 0;
+        min-width: 0;
+        transition-duration: 0.15s;
+        transition-property: width, padding, flex;
+      }
+    }
+    &.open {
+      .input-group {
+        margin-right: 60px;
+        transition-delay: 0.05s;
+
+        input {
+          flex: 1;
+          transition-delay: 0.05s;
+        }
+      }
+    }
+    &:not(.open) {
+      input,
+      button {
+        &:focus,
+        &:active {
+          display: none;
+        }
+      }
+      .input-group input {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  form {
+    margin-bottom: 0;
+    position: relative;
+  }
+  .input-group {
+    height: 48px;
+    margin-bottom: 0;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    @include media($desktop) {
+      width: 300px;
+    }
+    input {
+      &:focus {
+        outline-color: $grey-3;
+        border-right-width: 4px;
+      }
+      &:focus + button {
+        border: none;
+        padding-right: 14px;
+        background-color: $mint;
+      }
+      &:invalid + button {
+        cursor: unset;
+      }
+      &:required {
+        box-shadow:none;
+      }
+    }
+  }
+  button {
+    padding: 4px 13px 4px 15px;
+
+    &:hover,
+    &:focus {
+      border: none;
+      padding-right: 14px;
+      background-color: $mint;
+    }
   }
 }
 
