@@ -33,7 +33,7 @@ block content
                 a(data-azure='appInsights', data-search-result=(index + 1), href=object.url)= object.title
               ul.list--inline
                 if object.hint != ''
-                  li.label.theme--grey-4= object.hint
+                  li.hint.theme--grey-4= object.hint
                 li.url(data-testable='')= object.formatted_url
               p= object.description
 

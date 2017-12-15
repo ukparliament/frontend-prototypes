@@ -83,7 +83,7 @@ label, optgroup, select, textarea {
 
 /*--- Settings for url ---*/
 
-.label + .url {
+.hint + .url {
   padding: ($base-spacing-unit - 4) $base-spacing-unit;
 }
 .url {
