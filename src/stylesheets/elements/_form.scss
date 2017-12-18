@@ -172,18 +172,18 @@ input[type="file"] {
 
 .has-js {
   input[type="file"] {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  opacity: 0;
-  z-index: -1;
-  + label {
-    display: inline-block;
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    opacity: 0;
+    z-index: -1;
+    + label {
+      display: inline-block;
     }
   }
-[data-file-upload="status"] {
+  [data-file-upload="status"] {
     display: block;
   }
 }
