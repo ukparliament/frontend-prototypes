@@ -2,6 +2,7 @@
 
 .block,
 .hero,
+.hint,
 .status--banner,
 .status--highlight {
   &.accent--deep-purple {
@@ -63,5 +64,14 @@
   }
   &.accent--warning__light {
     @include accent($warning--light);
+  }
+  &.accent--vibrant--yellow {
+    @include accent($vibrant__yellow);
+  }
+  &.accent--vibrant--yellow__light {
+    @include accent($vibrant__yellow--light);
+  }
+  &.accent--vibrant--yellow__dark {
+    @include accent($vibrant__yellow--dark);
   }
 }

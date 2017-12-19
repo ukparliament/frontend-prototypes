@@ -47,4 +47,7 @@
   &.theme--warning {
     @include theme($warning--light, $grey-1, $deep-purple, $grey-2, $warning);
   }
+  &.theme--vibrant--yellow {
+    @include theme($vibrant__yellow, $grey-1, $deep-purple, $grey-2, $vibrant__yellow--dark);
+  }
 }
