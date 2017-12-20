@@ -52,6 +52,8 @@
 /*--- Label Components ---*/
 
 .hint {
-  margin-right: $base-spacing-unit;
   padding: ($base-spacing-unit - 4) $base-spacing-unit;
+  & + .hint {
+    margin-right: $base-spacing-unit;
+  }
 }
