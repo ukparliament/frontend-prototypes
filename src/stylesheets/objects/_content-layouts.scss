@@ -78,7 +78,8 @@
 }
 
 [class*="block"][class*="accent"] {
-  border-top: solid $base-spacing-unit $mint;
+  border-top-style: solid;
+  border-top-width: $base-spacing-unit;
 }
 
 .block--border {
