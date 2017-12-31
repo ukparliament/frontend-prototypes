@@ -8,14 +8,10 @@
     display: inline-block;
   }
   svg [data-icon="uk-parliament"] {
-    transition: fill 0.15s;
-    transition-delay: 0s;
+    transition: fill 0.15s linear 0.12s;
   }
   &.portcullis {
-    //z-index: 1;
     width: 50px;
-    //overflow: auto;
-    //position: relative;
 
     svg [data-icon="uk-parliament"] {
       fill: transparent;

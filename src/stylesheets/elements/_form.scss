@@ -48,7 +48,9 @@ select {
 }
 
 input {
+  &[type="text"],
   &[type="search"] {
+    border-radius: 0;
     appearance: none;
   }
   &[name="postcode"] {
@@ -287,14 +289,12 @@ button:-moz-focusring,
     .input-group {
       margin-right: 8px;
       flex-direction: row;
-      transition: margin 0.15s;
+      transition: margin 0.15s linear 0.03s;
       justify-content: flex-end;
 
       input {
         flex: 0;
         min-width: 0;
-        transition-duration: 0.15s;
-        transition-property: width, padding, flex;
       }
     }
     &.open {
@@ -304,7 +304,9 @@ button:-moz-focusring,
 
         input {
           flex: 1;
-          transition-delay: 0.05s;
+          transition-property: width, padding, flex;
+          transition-duration: 0.12s;
+          transition-delay: 0.12s;
         }
       }
     }
@@ -319,6 +321,7 @@ button:-moz-focusring,
       .input-group input {
         padding-left: 0;
         padding-right: 0;
+        transition: flex 0.1s linear 0s;
       }
     }
   }
@@ -327,7 +330,6 @@ button:-moz-focusring,
     position: relative;
   }
   .input-group {
-    height: 48px;
     margin-bottom: 0;
     overflow: hidden;
     position: relative;
@@ -338,7 +340,6 @@ button:-moz-focusring,
     input {
       &:focus {
         outline-color: $grey-3;
-        border-right-width: 4px;
       }
       &:focus + button {
         border: none;

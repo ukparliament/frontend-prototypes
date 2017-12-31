@@ -159,55 +159,17 @@ footer a  {
 
 /*--- Search Global ---*/
 
-@include media($desktop) {
-  .search__global__toggle {
-    display: none;
-  }
-}
-
 @media (max-width: $desktop - 1) {
-  .search__global__toggle {
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 48px;
-    position: absolute;
-    transition: background-color 0.15s;
-    background-color: $deep-purple;
-    padding: $base-spacing-unit $base-spacing-unit-small;
-
-    svg {
-      top: 15px;
-      position: absolute;
-    }
-    &:hover, &:focus, &:active {
-      outline: none;
-      background-color: $deep-purple;
-
-      [data-icon="search"] g {
-        fill: darken($white, 20%);
-      }
-      [data-icon="close"] g {
-        stroke: darken($white, 20%);
-      }
-    }
-  }
-
   .search__global {
     &:not(.open) {
       .search__global__toggle {
-        transition-delay: 0.2s;
-        opacity: 1;
+        transition: background-color 0.15s linear 0.15s;
       }
       [data-icon="search"] {
-        z-index: 1;
-        transition: opacity 0.15s;
-        transition-delay: 0.2s;
+        transition: opacity 0.15s linear 0.15s;
       }
       [data-icon="close"] {
         opacity: 0;
-        z-index: 0;
-        transition: opacity 0.15s;
       }
     }
     &.open {
@@ -218,15 +180,42 @@ footer a  {
         opacity: 1;
       }
       [data-icon="close"] {
-        z-index: 1;
-        opacity: 1;
-        transition: opacity 0.15s;
-        transition-delay: 0.1s;
+        transition: opacity 0.15s linear 0.15s;
       }
       [data-icon="search"] {
         opacity: 0;
-        z-index: 0;
       }
     }
+  }
+  .search__global__toggle {
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    background-color: $deep-purple;
+    transition: background-color 0.15s linear 0s;
+    padding: $base-spacing-unit $base-spacing-unit-small;
+
+    svg {
+      top: 15px;
+      position: absolute;
+    }
+    &:hover, &:focus, &:active {
+      outline: none;
+      background-color: $deep-purple;
+
+      svg[data-icon="search"] g {
+        fill: darken($white, 20%);
+      }
+      svg[data-icon="close"] g {
+        stroke: darken($white, 20%);
+      }
+    }
+  }
+}
+@include media($desktop) {
+  .search__global__toggle {
+    display: none;
   }
 }
