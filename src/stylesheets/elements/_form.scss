@@ -322,6 +322,7 @@ button:-moz-focusring,
         padding-left: 0;
         padding-right: 0;
         transition: flex 0.1s linear 0s;
+        transition: padding 0.1s linear 0.01s;
       }
     }
   }

@@ -3,7 +3,6 @@
 @media (max-width: $desktop - 1) {
   .uk_parliament {
     z-index: 1;
-    overflow: auto;
     position: relative;
     display: inline-block;
   }
@@ -12,6 +11,7 @@
   }
   &.portcullis {
     width: 50px;
+    overflow: hidden;
 
     svg [data-icon="uk-parliament"] {
       fill: transparent;
