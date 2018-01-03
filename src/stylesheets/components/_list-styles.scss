@@ -32,7 +32,7 @@ dl, dt, dd {
     position: relative;
     @include headings-margin-top(0);
     @include last-child;
-    * {
+    *:not(ul, ol, [class*="list"]) {
       margin-bottom: $base-spacing-unit;
     }
     &.active {
@@ -98,6 +98,15 @@ dl, dt, dd {
     margin-bottom: $base-spacing-unit;
     @media(min-width: $smartphone) {
       display: inline-flex;
+      .list--details {
+        flex-basis: 100%;
+      }
+    }
+    /* IE11 Fix */
+    @media(-ms-high-contrast: none) {
+      *::-ms-backdrop, figure + .list--details {
+        padding-left: $base-spacing-unit-small;
+      }
     }
   }
 }
@@ -155,6 +164,15 @@ dl, dt, dd {
     padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
     @media(min-width: $smartphone) {
       display: inline-flex;
+      .list--details {
+        flex-basis: 100%;
+      }
+    }
+    /* IE11 Fix */
+    @media(-ms-high-contrast: none) {
+      *::-ms-backdrop, figure + .list--details {
+        padding-left: $base-spacing-unit-large;
+      }
     }
   }
   > li:first-of-type {
@@ -237,16 +255,6 @@ dl, dt, dd {
 
 .list--alpha {
   list-style-type: lower-alpha;
-}
-
-// List Combination Settings
-
-[class*="list"] .list--definition {
-  margin: $base-spacing-unit-small 0;
-
-  & * {
-    margin-bottom: 0;
-  }
 }
 
 // List style for <ul> tags without any classes, nested
