@@ -4,7 +4,7 @@
 
 ul, ol {
   padding: 0;
-  margin: 0 0 $base-spacing-unit-small $base-spacing-unit-extra-large;
+  margin: 0 0 $base-spacing-unit-small $base-spacing-unit-large;
 
   li {
     padding: 0;
@@ -241,7 +241,7 @@ dl, dt, dd {
 .list--number, .list--roman, .list--alpha {
   @include list;
   li {
-    margin-left: $base-spacing-unit-extra-large;
+    margin-left: $base-spacing-unit-large;
   }
 }
 
@@ -257,6 +257,24 @@ dl, dt, dd {
   list-style-type: lower-alpha;
 }
 
+// List style for <ul> tags without any classes, nested
+// inside elements with class `.list--{{modifier}}` or
+// <ol> tags.
+
+[class*=list--], ol {
+  ul, ul[class=""] {
+    list-style-type: disc;
+    > li {
+      margin-left: 0;
+    }
+    ul, ul[class=""] {
+      list-style-type: circle;
+      ul, ul[class=""] {
+        list-style-type: square;
+      }
+    }
+  }
+}
 
 // Footer list
 
