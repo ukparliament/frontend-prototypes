@@ -206,10 +206,10 @@ footer a  {
       background-color: $deep-purple;
 
       svg[data-icon="search"] g {
-        fill: darken($white, 20%);
+        fill: $grey-3;
       }
       svg[data-icon="close"] g {
-        stroke: darken($white, 20%);
+        stroke: $grey-3;
       }
     }
   }
