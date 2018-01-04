@@ -78,16 +78,22 @@ label, optgroup, select, textarea {
   @include fontsize(16);
   @include media($tablet) {
     @include fontsize(18);
+    line-height: 1.5;
   }
 }
 
-/*--- Settings for url ---*/
+/*--- Settings for url & hint ---*/
 
-.hint + .url {
-  padding: ($base-spacing-unit - 4) $base-spacing-unit;
-}
+.hint,
 .url {
-  padding: ($base-spacing-unit - 4) $base-spacing-unit ($base-spacing-unit - 4) 0;
+  @include fontsize(16);
+}
+
+.url {
+  padding-right: $base-spacing-unit;
   width: 80%;
 }
-
+.hint + .url {
+  padding-left: $base-spacing-unit;
+  margin-left: $base-spacing-unit;
+}

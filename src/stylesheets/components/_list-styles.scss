@@ -254,14 +254,14 @@ dl, dt, dd {
 // <ol> tags.
 
 [class*=list--], ol {
-  ul, ul[class=""] {
+  ul:not([class*=list--]) {
     list-style-type: disc;
     > li {
       margin-left: 0;
     }
-    ul, ul[class=""] {
+    ul:not([class*=list--]) {
       list-style-type: circle;
-      ul, ul[class=""] {
+      ul:not([class*=list--]) {
         list-style-type: square;
       }
     }
