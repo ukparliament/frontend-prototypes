@@ -32,7 +32,7 @@ dl, dt, dd {
     position: relative;
     @include headings-margin-top(0);
     @include last-child;
-    *:not(ul, ol, [class*="list"]) {
+    * {
       margin-bottom: $base-spacing-unit;
     }
     &.active {
