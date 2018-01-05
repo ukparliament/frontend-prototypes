@@ -63,6 +63,7 @@ input {
     width: 2px;
     height: 2px;
     opacity: 0;
+    margin: 0;
   }
   &[type="radio"]:checked + label,
   &[type="radio"]:not(:checked) + label,
@@ -240,7 +241,7 @@ button:-moz-focusring,
 .input-group {
   margin-bottom: $base-spacing-unit-small;
 
-  label:first-child {
+  label {
     flex: 0 0 100%;
   }
   input[type="search"],
@@ -346,7 +347,7 @@ button:-moz-focusring,
         border: none;
         padding-right: 14px;
         background-color: $mint;
-        
+
         &:hover {
           background-color: darken($mint, 10%);
         }
