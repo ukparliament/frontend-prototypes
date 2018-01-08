@@ -255,6 +255,11 @@ button:-moz-focusring,
     margin-bottom: 0;
     margin-right: -1px;
   }
+  @media (min-width: $tablet) {
+    input[name="postcode"] {
+      flex: 0 0 50%;
+    }
+  }
 }
 
 .input-group__verbose {

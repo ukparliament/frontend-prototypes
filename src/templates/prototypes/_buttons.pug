@@ -61,7 +61,7 @@ block content
         h3 Find your MP and constituency
         +form('javascript:console.log("postcode submitted")', 'post')
           .input-group
-            +input('text', 'Enter your full postcode, for example SW1A 0AA.', 'postcode_main', 'postcodeSearch')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}')
+            +input('text', 'Enter your full postcode, for example SW1A 0AA.', 'postcode', 'postcodeSearch')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}')
             //- button [value, style, type, datatype]
             button(type='submit', class='btn--white', data-tracking='search')
               include ../../icons/search.svg
