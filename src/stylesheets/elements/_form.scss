@@ -260,6 +260,9 @@ button:-moz-focusring,
       flex: 0 0 50%;
     }
   }
+  button {
+    padding: 4px ($base-spacing-unit-medium - 2);
+  }
 }
 
 .input-group__verbose {
