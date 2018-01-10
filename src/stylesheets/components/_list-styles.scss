@@ -46,6 +46,7 @@ dl, dt, dd {
 @mixin list--details {
   margin-top: 0;
   display: inline-block;
+  width: 100%;
   word-break: break-word;
 
   :last-child {
@@ -98,9 +99,6 @@ dl, dt, dd {
     margin-bottom: $base-spacing-unit;
     @media(min-width: $smartphone) {
       display: inline-flex;
-      .list--details {
-        flex-basis: 100%;
-      }
     }
     /* IE11 Fix */
     @media(-ms-high-contrast: none) {
