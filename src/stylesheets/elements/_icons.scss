@@ -72,16 +72,24 @@
   }
 }
 
+// File icon
+
+svg [data-icon="file"] {
+  [data-icon="success"], [data-icon="failure"], [data-icon="word"], [data-icon="pdf"] {
+    display: none;
+  }
+}
+
 // File icon (types)
 
-.svg--file__word > svg {
-  #word {
+.svg--file__word svg {
+  [data-icon="word"] {
     display: block;
   }
 }
 
 .svg--file__pdf svg {
-  #pdf {
+  [data-icon="pdf"] {
     display: block;
   }
 }
@@ -90,14 +98,14 @@
 
 .svg--file__success svg,
 [data-file-upload="success"] svg {
-  #success {
+  [data-icon="success"] {
     display: block;
   }
 }
 
 .svg--file__failure svg,
 [data-file-upload="failure"] svg {
-  #failure {
+  [data-icon="failure"] {
     display: block;
   }
 }
