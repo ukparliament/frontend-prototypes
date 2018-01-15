@@ -6,12 +6,12 @@ UK_Parliament.azureTracking = function () {
 
   // Local variables
   var
-    links = document.querySelectorAll('a[data-azure="appInsights"]'),
+    links = document.querySelectorAll('a[data-tracking="appInsights"]'),
 
     trackInsights = function () {
-      // old search
+      // Create a dynamic event inside of AppInsights
       if (this && this.hasAttribute('data-type')) {
-        appInsights.trackEvent('backToOldSearch');
+        appInsights.trackEvent(this.getAttribute('data-type'));
       }
 
       // search results
