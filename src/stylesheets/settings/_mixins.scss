@@ -197,3 +197,21 @@
     display: block;
   }
 }
+
+/*--- Flexbox grid ---*/
+
+@mixin flex($flex-basis:null, $gutter-width:null) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  > [class*='block'] {
+    @if $flex-basis {
+      flex-basis: if(
+        $gutter-width,
+        calc(#{$flex-basis} - (#{$gutter-width} / 2)),
+        $flex-basis
+      );
+    }
+  }
+}

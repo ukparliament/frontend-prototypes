@@ -1,0 +1,69 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+
+  .section--primary(tabindex=0)#content
+    .container
+      .block--border__bottom.block--offset
+        h1 Article elements
+        p A demo of how html content will display in the article tag
+
+  section
+    article
+      .container--offset
+        h1 Heading 1
+        h2 Heading 2
+        h3 Heading 3
+
+        h2 Links
+        p #[+link('#', 'A link')]
+        p This is #[+link('#', 'another link')]
+
+        h2 Emphasis
+        p
+          strong This text is bold
+        p
+          em This text is italic
+        p
+          del This text has a strikethrough
+
+        h2 Blockquotes
+        blockquote
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+        h2 Lists
+
+        h3 Ordered
+        ol
+          li List item 1
+          li List item 2
+          li List item 3
+
+        h3 Unordered
+        ul
+          li List item
+          li List item
+          li List item
+
+        h3 Unordered in ordered
+        ol
+          li List item 1
+          li List item 2
+            ul
+              li List item
+              li List item
+              li List item
+          li List item 3
+
+        h3 Ordered in unordered
+        ul
+          li List item
+          li List item
+            ol
+              li List item 1
+              li List item 2
+              li List item 3
+          li List item
+
+        h2 Images
+        img(src="https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?width=732&quality=80" alt="Margot James")

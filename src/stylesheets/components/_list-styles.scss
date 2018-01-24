@@ -90,6 +90,7 @@ dl, dt, dd {
 }
 
 @mixin list--block {
+  width: 100%;
   @include list;
 
   > li {

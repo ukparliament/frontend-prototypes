@@ -73,6 +73,18 @@ header .container {
   @include block;
 }
 
+.block--transparent {
+  background-color: transparent;
+  padding-right: $base-spacing-unit-medium;
+  margin-bottom: $base-spacing-unit-small;
+}
+
+.block--offset {
+  @include media($tablet) {
+    padding-right: ($base-spacing-unit-extra-large * 6);
+  }
+}
+
 @mixin block__deep {
   @include block;
   padding-top: $base-spacing-unit-extra-large;
@@ -112,6 +124,14 @@ header .container {
     @include media($desktop) {
       padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height
     }
+  }
+}
+
+// Styles for flexbox grid
+
+.flex--2 {
+  @include media($tablet) {
+    @include flex(50%);
   }
 }
 
