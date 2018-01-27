@@ -4,7 +4,6 @@
   @include media($desktop) {
     height: 292px;
   }
-  margin-bottom: $base-spacing-unit-small;
   width: 100%;
 
   .leaflet-bar {
@@ -14,9 +13,9 @@
       background-color: $white;
       @include links(
         $deep-purple, 				// a:link colour
-        none,		// a:link decoration
-        $deep-purple, 			// a:visited color
-        $deep-purple 		// a:hover color
+        none,		              // a:link decoration
+        $deep-purple, 			  // a:visited color
+        $deep-purple 		      // a:hover color
       );
     }
   }

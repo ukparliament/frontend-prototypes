@@ -8,8 +8,8 @@
   color: $deep-purple;
   display: inline-block;
   background-color: $grey-5;
+  margin-right: $base-spacing-unit;
   padding: ($base-spacing-unit - 2) ($base-spacing-unit-tiny - 2);
-  margin: 0 $base-spacing-unit $base-spacing-unit-tiny 0;
 
   svg {
     width: 20px;
@@ -108,6 +108,7 @@ a.btn--transparent--inverse {
 
 /*--- Custom Component Button ---*/
 .status--banner a[class*="btn--"] {
+  @include micro;
   min-width: 100px;
   margin-left: auto;
   text-decoration: none;

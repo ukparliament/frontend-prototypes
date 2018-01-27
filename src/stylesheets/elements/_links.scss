@@ -18,6 +18,9 @@ a {
 figure a {
   display: block;
 }
+figcaption a {
+  display: inline-block;
+}
 
 /*--- Footer ---*/
 
@@ -82,7 +85,6 @@ footer a  {
 
 .map .leaflet-bar a {
   background-color: $grey-5;
-  @include fontsize(18);
   @include links(
     $link, 			        // a:link colour
     none, 			        // a:link decoration

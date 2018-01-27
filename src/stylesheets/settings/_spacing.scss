@@ -1,4 +1,4 @@
-// Create base vertcial spacing value and scale up accordingly.
+/*--- Vertical Spacing Base Settings ---*/
 
 $base-spacing-unit: 6px;
 $base-spacing-unit-tiny: round($base-spacing-unit * 2); // 12px
@@ -6,3 +6,64 @@ $base-spacing-unit-small: round($base-spacing-unit * 3); // 18px
 $base-spacing-unit-medium: round($base-spacing-unit * 4); // 24px
 $base-spacing-unit-large: round($base-spacing-unit * 5); // 30px
 $base-spacing-unit-extra-large: round($base-spacing-unit * 6); // 36px
+
+
+/*
+	==============================
+	--- Component Spacing ---
+	==============================
+*/
+
+/*--- Margin Bottom - Unit ---*/
+
+.message--error {
+	margin: 0 0 $base-spacing-unit 0;
+}
+
+/*--- Margin Bottom - Tiny ---*/
+
+button,
+fieldset,
+figcaption,
+form,
+legend,
+label,
+.track,
+[class*="btn"],
+.navigation--letter,
+.navigation--number {
+	margin: 0 0 $base-spacing-unit-tiny 0;
+}
+
+/*--- Margin Bottom - Small ---*/
+
+article,
+caption,
+figure,
+table,
+ul, ol, dl,
+.map,
+.block,
+.block--deep,
+.block--transparent,
+.dropdown,
+.list--tab,
+.input-group,
+.status--highlight {
+	margin: 0 0 $base-spacing-unit-small 0;
+}
+
+/*--- Margin Bottom - Medium ---*/
+
+input,
+textarea,
+select {
+	margin: 0 0 $base-spacing-unit-medium 0;
+}
+
+/*--- Margin Bottom - Extra Large ---*/
+
+.block--border,
+.block--border__bottom {
+	margin: 0 0 $base-spacing-unit-extra-large 0;
+}

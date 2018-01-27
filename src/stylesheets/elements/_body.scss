@@ -5,6 +5,10 @@
 @import '../objects/grid-settings';
 @import '../elements/semantic-elements';
 
+html {
+  font-size: 16px;
+}
+
 body {
   padding: 0;
   color: $grey-1;
@@ -12,13 +16,8 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  line-height: 1.5; // 24px
   background-color: $grey-5;
   font-family: $base-font-stack;
-  @include fontsize(16);
-  @include media($tablet) {
-    @include fontsize(18);
-  }
   // font-smoothing - anti aliasing
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,7 +1,28 @@
-/*--- Base Typography Settings ---*/
+/*--- Typography Settings ---*/
+
+body {
+  @include fontsize(16);
+  line-height: 1.5; // 24px
+
+  @include media($tablet) {
+    @include fontsize(18);
+  }
+}
+
 p {
   margin-top: 0;
   margin-bottom: $base-spacing-unit-small;
+}
+
+small, .milli {
+  @include milli;
+  color: $grey-2;
+  font-weight: 400;
+}
+
+.micro {
+  color: $grey-2;
+  @include micro;
 }
 
 .lead {
@@ -28,13 +49,10 @@ h1 + .lead {
 .typography--heavy {
   font-weight: 500;
 }
-.typography--xs {
-  color: $grey-2;
-  font-weight: 400;
-  @include fontsize(14);
-}
+
 
 /*--- Component Typography Settings ---*/
+
 header {
   @include fontsize(36);
   line-height: 1.167; // 42px
@@ -89,11 +107,3 @@ label, optgroup, select, textarea {
   @include fontsize(16);
 }
 
-.url {
-  padding-right: $base-spacing-unit;
-  width: 80%;
-}
-.hint + .url {
-  padding-left: $base-spacing-unit;
-  margin-left: $base-spacing-unit;
-}
