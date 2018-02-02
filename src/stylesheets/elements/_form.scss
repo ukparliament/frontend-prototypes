@@ -5,21 +5,15 @@
 form {
   width: 100%;
   @include last-child;
-  margin-bottom: $base-spacing-unit-tiny;
 }
 
 label {
   display: block;
-  padding-bottom: $base-spacing-unit-tiny;
 }
 
 fieldset {
   border: none;
-  margin: 0 0 $base-spacing-unit-tiny 0;
   padding: 0;
-  legend {
-    margin-bottom: $base-spacing-unit-tiny;
-  }
 }
 
 input,
@@ -28,7 +22,6 @@ select {
   width: 100%;
   display: block;
   border: 1px solid $grey-3;
-  margin-bottom: $base-spacing-unit-medium;
   padding: ($base-spacing-unit-tiny - 1);
   @include media($tablet) {
     width: 70%;
@@ -70,7 +63,6 @@ input {
   &[type="checkbox"]:checked + label,
   &[type="checkbox"]:not(:checked) + label {
     position: relative;
-    padding-bottom: $base-spacing-unit-small;
     padding-left: ($base-spacing-unit-medium * 2);
     line-height: 2;
     color: $grey-1;
@@ -225,7 +217,6 @@ button:-moz-focusring,
 
 .message--error {
   color: $warning--dark;
-  margin-bottom: $base-spacing-unit;
   + input {
   border: solid 2px $warning--dark;
   }
@@ -239,8 +230,6 @@ button:-moz-focusring,
 }
 
 .input-group {
-  margin-bottom: $base-spacing-unit-small;
-
   label {
     flex: 0 0 100%;
   }

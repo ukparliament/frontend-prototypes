@@ -9,9 +9,18 @@
 .section--primary {
   padding-top: $base-spacing-unit-extra-large;
   margin-bottom: $base-spacing-unit-tiny;
+
+  @include media($desktop) {
+    padding-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
+    margin-bottom: $base-spacing-unit-small;
+  }
 }
 .section--minor {
   padding: $base-spacing-unit-tiny 0;
+
+  @include media($desktop) {
+    padding: $base-spacing-unit-small 0;
+  }
   .container {
     > :last-child {
       margin: 0;
@@ -20,18 +29,9 @@
 }
 .section--major {
   padding: $base-spacing-unit-extra-large 0;
-}
 
-@include media($desktop) {
-  .section--primary {
-    padding-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
-    margin-bottom: $base-spacing-unit-small;
-  }
-  .section--major {
+  @include media($desktop) {
     padding: $base-spacing-unit-extra-large 0;
-  }
-  .section--minor {
-    padding: $base-spacing-unit-small 0;
   }
 }
 
@@ -58,13 +58,23 @@ header .container {
     padding: 0 $base-spacing-unit-small;
   }
 }
+.navigation--main .container {
+  max-width: 732px; // Reduced to accomodate current grid
+  padding: 0;
+  margin: 0 $base-spacing-unit-small;
+  @include media($desktop) {
+    margin: 0 auto;
+  }
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: $grey-3;
+}
 
 // Block Options
 
 @mixin block {
   padding: $base-spacing-unit-small;
   background-color: white;
-  margin-bottom: $base-spacing-unit-small;
   @include headings-margin-top(0);
   @include last-child;
 }
@@ -76,7 +86,6 @@ header .container {
 .block--transparent {
   background-color: transparent;
   padding-right: $base-spacing-unit-medium;
-  margin-bottom: $base-spacing-unit-small;
 }
 
 .block--offset {
@@ -105,7 +114,6 @@ header .container {
   @include last-child;
   padding-top: ($base-spacing-unit-small - 1); // -1px to compensate for border height
   padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
-  margin-bottom: $base-spacing-unit-extra-large;
   border-bottom: 1px solid $grey-3;
   border-top: 1px solid $grey-3;
   p {
@@ -119,7 +127,6 @@ header .container {
   &__bottom {
     padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
     border-bottom: 1px solid $grey-3;
-    margin-bottom: $base-spacing-unit-extra-large;
 
     @include media($desktop) {
       padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height

@@ -99,17 +99,6 @@
   }
 }
 
-/*--- Navigation [margin-top, margin-bottom] ---*/
-
-@mixin navigation($margin-top, $margin-bottom) {
-  @extend .list--inline;
-  margin-bottom: $margin-bottom;
-
-  ol, ul {
-    list-style: none;
-  }
-}
-
 /*--- Navigation Control [float, margin left and margin right] ---*/
 
 @mixin navigation-control($float, $margin-left, $margin-right) {
@@ -214,4 +203,74 @@
       );
     }
   }
+}
+
+/*--- Heading Typography Mixins ---*/
+
+@mixin alpha {
+  @include fontsize(34);
+  margin-top: 0;
+  line-height: 1.059; // 36px;
+
+  @include media($desktop) {
+    @include fontsize(44);
+    line-height: 1.091; // 48px
+  }
+}
+@mixin beta {
+  @include fontsize(27);
+  line-height: 1.111; // 30px;
+
+  @include media($desktop) {
+    @include fontsize(32);
+    line-height: 1.125; // 36px
+  }
+}
+@mixin gamma {
+  @include fontsize(24);
+  line-height: 1.250; // 30px;
+
+  @include media($desktop) {
+    @include fontsize(26);
+    line-height: 1.154; // 30px
+  }
+}
+@mixin delta {
+  @include fontsize(20);
+  line-height: 1.2; // 24px;
+
+  @include media($desktop) {
+    @include fontsize(22);
+    line-height: 1.091; // 24px
+  }
+}
+@mixin epsilon {
+  @include fontsize(16);
+  line-height: 1.125; // 18px;
+
+  @include media($desktop) {
+    @include fontsize(20);
+    line-height: 1.2; // 24px
+  }
+}
+@mixin zeta {
+  @include fontsize(16);
+  line-height: 1.125; // 18px;
+
+  @include media($desktop) {
+    @include fontsize(18);
+    line-height: 1.334; // 24px;
+  }
+}
+
+/*--- Smaller Typography Mixins ---*/
+@mixin milli {
+  @include fontsize(14);
+  @include media($tablet) {
+    @include fontsize(16);
+  }
+}
+@mixin micro {
+  @include fontsize(14);
+  font-weight: 400;
 }

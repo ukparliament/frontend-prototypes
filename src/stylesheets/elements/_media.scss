@@ -7,9 +7,6 @@ video {
   width: 100%;
 }
 
-figure {
-  margin: 0 0 $base-spacing-unit-small 0;
-}
 picture {
   display: block;
 }
@@ -103,13 +100,12 @@ img {
 }
 
 figcaption {
+  @include micro;
   margin-top: 0;
   color: $grey-2;
-  @include fontsize(14);
   background-color: $grey-5;
   border-bottom: solid 1px $grey-3;
   padding: $base-spacing-unit-tiny 0;
-  margin-bottom: $base-spacing-unit-tiny;
 }
 
 .loading {

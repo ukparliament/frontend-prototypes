@@ -1,0 +1,8 @@
+.url {
+	padding-right: $base-spacing-unit;
+	width: 80%;
+}
+.hint + .url {
+	padding-left: $base-spacing-unit;
+	margin-left: $base-spacing-unit;
+}

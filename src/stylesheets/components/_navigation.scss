@@ -1,26 +1,15 @@
 /*--- Navigation Main ---*/
 
 .navigation--main {
-  @include navigation(0, 0);
+  @extend .list--inline;
 
-  ul {
+  ol, ul {
     @include clearfix;
-
+    list-style: none;
     margin-left: (- $base-spacing-unit);
   }
   li {
     padding: 0 ($base-spacing-unit - 3);
-  }
-  .container {
-    max-width: 732px; // Reduced to accomodate current grid
-    padding: 0;
-    margin: 0 $base-spacing-unit-small;
-    @include media($desktop) {
-      margin: 0 auto;
-    }
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: $grey-3;
   }
 }
 
@@ -37,22 +26,20 @@
     margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
     background-color: none;
     color: $grey-1;
-
-    &:first-child {
-      min-width: 87px; // 2 button width including the margin to the left of first
-    }
-
-    span {
-      padding: ($base-spacing-unit-tiny - 3px) 0;
-      @include media($desktop) {
-        padding: ($base-spacing-unit + 2px) 0;
-      }
-    }
+  }
+  li:first-child {
+    min-width: 87px; // 2 button width including the margin to the left of first
   }
   li.active {
     background-color: $purple;
     color: $white;
     font-weight: 500;
+  }
+  li span {
+    padding: ($base-spacing-unit-tiny - 3px) 0;
+    @include media($desktop) {
+      padding: ($base-spacing-unit + 2px) 0;
+    }
   }
 }
 
@@ -60,12 +47,15 @@
 
 .navigation--letter,
 .navigation--number {
-  @include navigation(0, $base-spacing-unit-tiny);
+  @extend .list--inline;
 
+  ol, ul {
+    list-style: none;
+  }
   li {
+    padding: 0;
     text-align: center;
     text-transform: capitalize;
-    padding: 0;
   }
   span {
     min-width: 24px;

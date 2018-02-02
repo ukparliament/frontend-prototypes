@@ -3,7 +3,6 @@
 table {
   width: 100%;
   margin-top: 0;
-  margin-bottom: $base-spacing-unit-small;
   background: $grey-4;
   border-collapse: collapse;
   border-spacing: 0;
@@ -13,10 +12,7 @@ table {
   }
   th, td {
     padding: $base-spacing-unit-tiny;
-    @include fontsize(14);
-    @include media($tablet) {
-      @include fontsize(16);
-    }
+    @include milli;
   }
   td {
     word-wrap: break-word;
@@ -43,7 +39,6 @@ table {
   }
   caption {
     margin-top: 0;
-    margin-bottom: $base-spacing-unit-small;
     text-align: left;
   }
 }

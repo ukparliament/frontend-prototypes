@@ -3,7 +3,6 @@
   @include headings-margin-top(0);
   @include last-child;
   padding: 0 0 0 $base-spacing-unit-small;
-  margin-bottom: $base-spacing-unit-tiny;
 
   &:before {
     position: absolute;
