@@ -55,14 +55,6 @@
 
 /*--- Label Components ---*/
 
-.hint {
-  padding: 0 $base-spacing-unit;
-
-  & + .hint {
-    margin-left: $base-spacing-unit;
-  }
-}
-
 .status--banner .hint {
   margin-right: $base-spacing-unit-tiny;
 }
