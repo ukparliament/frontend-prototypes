@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" focusable="false" data-icon="close">
-    <title>Cross</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" data-icon="close" aria-hidden="true">
+    <title>Close</title>
     <g stroke="#fff">
         <g><line x1="0" y1="0" x2="18" y2="18" stroke-width="2"></line></g>
         <g><line x1="0" y1="18" x2="18" y2="0" stroke-width="2"></line></g>

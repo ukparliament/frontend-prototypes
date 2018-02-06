@@ -4,7 +4,7 @@
 
 ul, ol {
   padding: 0;
-  margin: 0 0 $base-spacing-unit-small $base-spacing-unit-large;
+  margin-left: $base-spacing-unit-large;
 
   li {
     padding: 0;
@@ -18,8 +18,8 @@ dl, dt, dd {
 // List Base Settings
 
 @mixin list {
-  @include heading-list;
-  margin: 0 0 $base-spacing-unit-small;
+  @include list-headings;
+  margin-left: 0;
   list-style: none;
 
   > ol {
@@ -66,7 +66,6 @@ dl, dt, dd {
     margin: 0 (-$base-spacing-unit-tiny + 6);
   }
   li {
-    margin: 0;
     float: left;
   }
   a, span {
@@ -209,7 +208,6 @@ dl, dt, dd {
 .list--tab {
   @include list--inline;
   border-bottom: 2px solid $grey-4;
-  margin-bottom: $base-spacing-unit-small;
 
   li {
     margin-right: $base-spacing-unit-medium;
@@ -220,20 +218,6 @@ dl, dt, dd {
   }
   a {
     padding: ($base-spacing-unit + 2) 0;
-  }
-}
-
-.list--bullet {
-  @include list;
-  list-style: disc;
-  padding-left: $base-spacing-unit-large;
-
-  li {
-    font-weight: 400;
-    @include fontsize(16);
-    @include media($tablet) {
-      @include fontsize(18);
-    }
   }
 }
 

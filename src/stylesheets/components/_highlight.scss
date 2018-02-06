@@ -1,7 +1,6 @@
 /*--- Hero Component ---*/
 
 .hero {
-  margin-bottom: 0px;
   @extend .theme--deep-purple;
   @include headings-margin-top(0);
   @include last-child;
@@ -20,7 +19,7 @@
 /*--- Status Components ---*/
 
 .status--banner {
-  @include fontsize(14);
+  @include milli;
   border-bottom-width: 2px;
   border-bottom-style: solid;
   @include headings-margin-top(0);
@@ -34,11 +33,6 @@
   p {
     line-height: 1.125; // 18px;
     margin-right: $base-spacing-unit-tiny;
-
-    @include media($tablet) {
-      @include fontsize(16);
-      line-height: 1.5; // 24px
-    }
   }
   * {
     margin-bottom: 0;
@@ -57,18 +51,9 @@
   @include last-child;
   padding: $base-spacing-unit-small;
   border-left-width: $base-spacing-unit;
-  margin-bottom: $base-spacing-unit-small;
 }
 
 /*--- Label Components ---*/
-
-.hint {
-  padding: 0 $base-spacing-unit;
-
-  & + .hint {
-    margin-left: $base-spacing-unit;
-  }
-}
 
 .status--banner .hint {
   margin-right: $base-spacing-unit-tiny;

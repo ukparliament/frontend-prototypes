@@ -1,3 +1,13 @@
+/*--- Heading Mixins ---*/
+@mixin list-headings {
+  h2, h3, h4, h5, h6 {
+    &:not(.milli, .micro) {
+      font-size: inherit;
+      //line-height: inherit;
+    }
+  }
+}
+
 /*--- Base Heading Settings ---*/
 h1, h2, h3, h4, h5, h6 {
   padding: 0;
@@ -8,127 +18,88 @@ h1, h2, h3, h4, h5, h6 {
   @include media($desktop) {
     margin-top: $base-spacing-unit-large;
   }
-  &.typography--xs {
-    @extend .typography--xs;
-  }
   &.lead {
     @extend .lead;
   }
 }
 
-/*--- Heading Settings [mobile] ---*/
-h1 {
-  @include fontsize(34);
-  margin-top: 0;
-  line-height: 1.059; // 36px;
+/*--- Heading Settings ---*/
+h1, .alpha {
+  @include alpha;
   margin-bottom: $base-spacing-unit-tiny;
 
-  a {
-    vertical-align: top;
-    @include fontsize(20);
-    line-height: 1.2; // 24px;
-  }
-  span {
-    display: block;
-    &:last-child {
-      @include fontsize(16);
-      font-weight: 400;
-      line-height: 1.125; // 18px;
-
-      @include media($desktop) {
-        @include fontsize(18);
-      }
-    }
-  }
-  span + span {
-    margin-top: $base-spacing-unit-small;
-  }
-}
-h2 {
-  @include fontsize(27);
-  line-height: 1.111; // 30px;
-  margin-top: $base-spacing-unit-extra-large;
-  margin-bottom: $base-spacing-unit-tiny;
-}
-h3 {
-  @include fontsize(24);
-  line-height: 1.250; // 30px;
-}
-h4 {
-  @include fontsize(20);
-  line-height: 1.2; // 24px;
-}
-h5 {
-  @include fontsize(16);
-  line-height: 1.125; // 18px;
-}
-h6 {
-  @include fontsize(16);
-  line-height: 1.125; // 18px;
-}
-
-/*--- Heading Settings [desktop] ---*/
-
-@include media($desktop) {
-  h1 {
-    @include fontsize(44);
-    line-height: 1.091; // 48px
+  @include media($desktop) {
     margin-top: 0;
     margin-bottom: $base-spacing-unit-small;
+  }
+}
+h2, .beta {
+  @include beta;
+  margin-top: $base-spacing-unit-extra-large;
+  margin-bottom: $base-spacing-unit-tiny;
 
-    a {
-      vertical-align: top;
-      @include fontsize(22);
-      line-height: 1.091; // 24px
-    }
-    span {
+  @include media($desktop) {
+    margin-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
+    margin-bottom: $base-spacing-unit-small;
+  }
+}
+h3, .gamma {
+  @include gamma;
+}
+h4, .delta {
+  @include delta;
+}
+h5, .epsilon {
+  @include epsilon;
+}
+h6, .zeta {
+  @include zeta;
+}
+
+/*--- Heading Nested Elements ---*/
+h1 a {
+  vertical-align: top;
+  @include fontsize(20);
+  line-height: 1.2; // 24px;
+
+  @include media($desktop) {
+    vertical-align: top;
+    @include fontsize(22);
+    line-height: 1.091; // 24px
+  }
+}
+h1 span {
+  display: block;
+  &:last-child {
+    @include fontsize(16);
+    font-weight: 400;
+    line-height: 1.125; // 18px;
+
+    @include media($desktop) {
+      @include fontsize(18);
       display: block;
+
       &:nth-of-type(2) {
         @include fontsize(18);
         line-height: 1.334; // 24px;
       }
     }
   }
-  h2 {
-    @include fontsize(32);
-    line-height: 1.125; // 36px
-    margin-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
-    margin-bottom: $base-spacing-unit-small;
-  }
-  h3 {
-    @include fontsize(26);
-    line-height: 1.154; // 30px
-  }
-  h4 {
-    @include fontsize(22);
-    line-height: 1.091; // 24px
-  }
-  h5 {
-    @include fontsize(20);
-    line-height: 1.2; // 24px
-  }
-  h6 {
-    @include fontsize(18);
-    line-height: 1.334; // 24px;
-  }
 }
+h1 span + span {
+  margin-top: $base-spacing-unit-small;
 
-/*--- Header/Footer Settings ---*/
-footer {
-  h2 {
-    @include fontsize(16);
-    @include media($desktop) {
-      @include fontsize(18);
-    }
-  }
-}
-
-/*--- Component Settings ---*/
-.hero {
-  h1 span + span {
+  .hero & {
     margin-top: $base-spacing-unit;
   }
 }
+
+/*--- Footer Settings ---*/
+footer h2 {
+  @extend .zeta;
+}
+
+/*--- Component Settings ---*/
 
 .block,
 .hero {
@@ -149,15 +120,6 @@ footer {
   h2, h3 {
     @include fontsize(18);
     line-height: 1.334; // 24px;
-  }
-}
-
-@mixin heading-list {
-  h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: 500;
-    margin-bottom: $base-spacing-unit;
   }
 }
 

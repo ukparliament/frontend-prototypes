@@ -2,13 +2,13 @@
  * Azure Application Insights Tracking
  */
 
-UK_Parliament.azureTracking = function () {
+UK_Parliament.azureTracking = function() {
 
   // Local variables
   var
     links = document.querySelectorAll('a[data-tracking="appInsights"]'),
 
-    trackInsights = function () {
+    trackInsights = function() {
       // Create a dynamic event inside of AppInsights
       if (this && this.hasAttribute('data-type')) {
         appInsights.trackEvent(this.getAttribute('data-type'));
@@ -16,8 +16,16 @@ UK_Parliament.azureTracking = function () {
 
       // search results
       if (this && this.hasAttribute('data-search-result')) {
-        var resultPosition = this.getAttribute('data-search-result');
-        appInsights.trackEvent('resultLinkClicked', { url: this.href }, { position: resultPosition });
+        var
+          resultPosition = this.getAttribute('data-search-result'),
+          resultHint = this.getAttribute('data-search-hint'),
+          resultHintCount = this.getAttribute('data-search-hint-count');
+
+        if (this.hasAttribute('data-search-hint-count')) {
+          appInsights.trackEvent('resultLinkClicked', { url: this.href }, { position: resultPosition }, { hint: resultHint }, { hintCount: resultHintCount });
+        } else {
+          appInsights.trackEvent('resultLinkClicked', { url: this.href }, { position: resultPosition });
+        }
       }
     };
 
