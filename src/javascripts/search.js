@@ -4,6 +4,7 @@ UK_Parliament.search = function () {
     logo = header.querySelector('.uk_parliament'),
     searchComponent = header.querySelector('.search__global'),
     input = header.querySelector('input'),
+    inputGroup = header.querySelector('.input-group'),
     button = header.querySelector('button'),
     searchToggle = header.querySelector('.search__global__toggle'),
     desktop = 768;
@@ -21,15 +22,18 @@ UK_Parliament.search = function () {
     } else {
       removeAttr();
       searchToggle.setAttribute('tabIndex', '-1');
+      searchToggle.setAttribute('aria-hidden', 'true');
     }
   }
 
   function removeAttr() {
+    inputGroup.removeAttribute('aria-hidden');
     input.removeAttribute('tabIndex');
     button.removeAttribute('tabIndex');
   }
 
   function setAttr() {
+    inputGroup.setAttribute('aria-hidden', 'true');
     input.setAttribute('tabIndex', '-1');
     button.setAttribute('tabIndex', '-1');
   }
