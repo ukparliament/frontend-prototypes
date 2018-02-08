@@ -189,19 +189,29 @@
 
 /*--- Flexbox grid ---*/
 
-@mixin flex($flex-basis:null, $gutter-width:null) {
+@mixin flex($elem1-width, $elem2-width:null, $gutter-width:null) {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 
-  > [class*='block'] {
-    @if $flex-basis {
-      flex-basis: if(
-        $gutter-width,
-        calc(#{$flex-basis} - (#{$gutter-width} / 2)),
-        $flex-basis
-      );
-    }
+  > :nth-child(1) {
+    flex-basis: if(
+      $gutter-width,
+      calc(#{$elem1-width} - (#{$gutter-width} / 2)),
+      $elem1-width
+    );
+  }
+
+  > :nth-child(2) {
+    flex-basis: if(
+      $gutter-width,
+      calc(#{$elem2-width or $elem1-width} - (#{$gutter-width} / 2)),
+      $elem2-width or $elem1-width
+    );
+  }
+
+  > :not(:nth-child(1), :nth-child(2)) {
+    flex-basis: 100%;
   }
 }
 

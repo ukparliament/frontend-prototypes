@@ -44,4 +44,8 @@ article {
       }
     }
   }
+
+  @media (min-width: $tablet) {
+    padding-top: $base-spacing-unit-medium;
+  }
 }

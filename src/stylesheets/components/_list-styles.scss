@@ -42,6 +42,9 @@ dl, dt, dd {
     }
   }
 }
+.list {
+  @include list;
+}
 
 @mixin list--details {
   margin-top: 0;
@@ -185,6 +188,11 @@ dl, dt, dd {
   @include list--pipe;
 }
 
+aside .list--pipe li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 .list--pipe__deep {
   @include list--pipe;
   > li {
@@ -246,15 +254,15 @@ dl, dt, dd {
 // inside elements with class `.list--{{modifier}}` or
 // <ol> tags.
 
-[class*=list--], ol {
-  ul:not([class*=list--]) {
+[class*=list], ol {
+  ul:not([class*=list]) {
     list-style-type: disc;
     > li {
       margin-left: 0;
     }
-    ul:not([class*=list--]) {
+    ul:not([class*=list]) {
       list-style-type: circle;
-      ul:not([class*=list--]) {
+      ul:not([class*=list]) {
         list-style-type: square;
       }
     }

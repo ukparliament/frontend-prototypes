@@ -1,0 +1,7 @@
+aside {
+  padding-top: $base-spacing-unit-small;
+
+  .block {
+    @extend .theme--grey-4;
+  }
+}

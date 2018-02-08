@@ -134,11 +134,23 @@ header .container {
   }
 }
 
-// Styles for flexbox grid
+// Flexbox column layout options
 
 .flex--2 {
   @include media($tablet) {
     @include flex(50%);
+  }
+}
+
+.flex--2__1-2 {
+  @include media($tablet) {
+    @include flex(33.333%, 66.666%, 36px);
+  }
+}
+
+.flex--2__2-1 {
+  @include media($tablet) {
+    @include flex(66.666%, 33.333%, 36px);
   }
 }
 

@@ -171,3 +171,21 @@ footer h2 {
     bottom: 0;
   }
 }
+
+/*--- Article Settings ---*/
+
+article {
+  @media (min-width: $tablet) {
+    h2, h3, h4, h5, h6 {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+/*--- Sidebar Settings ---*/
+
+aside h2 {
+  @include delta;
+}
