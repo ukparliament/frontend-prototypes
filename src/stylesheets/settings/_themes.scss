@@ -18,7 +18,7 @@
     @include theme($grey-4, $grey-1, $link, $link-hover, $grey-1);
   }
   &.theme--grey-5 {
-    @include theme($grey-5, $grey-1, $link, $link-hover, $grey-1);
+    @include theme($grey-5, $deep-purple, $link, $link-hover, $deep-purple);
   }
   &.theme--mint {
     @include theme($mint, $grey-1, $deep-purple, $grey-2, $mint--light);
