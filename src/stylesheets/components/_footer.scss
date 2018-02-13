@@ -1,15 +1,17 @@
-footer {
-  width: 100%;
-  display: inline-block;
-  box-sizing: border-box;
-  background-color: $deep-purple;
-  padding-bottom: 60px;
-}
-
-/*--- Print Styles ---*/
-
-@media print {
+body > {
   footer {
-    display: none;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: $deep-purple;
+    padding-bottom: 60px;
+  }
+
+  /*--- Print Styles ---*/
+
+  @media print {
+    footer {
+      display: none;
+    }
   }
 }

@@ -1,26 +1,28 @@
 // Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
 
-header {
-  position: relative;
-  @include last-child;
-  padding-top: ($base-spacing-unit-small - 3); // -3px to compensate for border height
-  padding-bottom: ($base-spacing-unit-small - 1); // -1px to compensate for border height
-  background-color: $deep-purple;
+body > {
+  header {
+    position: relative;
+    @include last-child;
+    padding-top: ($base-spacing-unit-small - 3); // -3px to compensate for border height
+    padding-bottom: ($base-spacing-unit-small - 1); // -1px to compensate for border height
+    background-color: $deep-purple;
 
-  .container {
-    line-height: 0;
-    @include media($desktop) {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
+    .container {
+      line-height: 0;
+      @include media($desktop) {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
     }
   }
-}
 
-// Physical Print Styles
+  // Physical Print Styles
 
-@media print {
-  header {
-    display: none;
+  @media print {
+    header {
+      display: none;
+    }
   }
 }
