@@ -4,7 +4,6 @@
 
 UK_Parliament.azureTracking = function() {
 
-  // Local variables
   var
     links = document.querySelectorAll('a[data-tracking="appInsights"]'),
 
@@ -22,9 +21,17 @@ UK_Parliament.azureTracking = function() {
           resultHintCount = this.getAttribute('data-search-hint-count');
 
         if (this.hasAttribute('data-search-hint-count')) {
-          appInsights.trackEvent('resultLinkClicked', { url: this.href }, { position: resultPosition }, { hint: resultHint }, { hintCount: resultHintCount });
+          appInsights.trackEvent('resultLinkClicked',
+            // String properties:
+            { url: this.href, hint: resultHint },
+            // Numeric metrics:
+            { position: resultPosition, hintCount: resultHintCount });
         } else {
-          appInsights.trackEvent('resultLinkClicked', { url: this.href }, { position: resultPosition });
+          appInsights.trackEvent('resultLinkClicked',
+            // String properties:
+            { url: this.href },
+            // Numeric metrics:
+            { position: resultPosition });
         }
       }
     };
