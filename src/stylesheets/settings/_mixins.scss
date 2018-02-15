@@ -125,6 +125,24 @@
   }
 }
 
+/*--- Button Base ---*/
+
+@mixin btn {
+  cursor: pointer;
+  position: relative;
+  border-radius: 4px;
+  text-align: center;
+  color: $deep-purple;
+  display: inline-block;
+  background-color: $grey-5;
+  margin-right: $base-spacing-unit;
+  padding: ($base-spacing-unit - 2) ($base-spacing-unit-tiny - 2);
+
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
 /*--- Button [colour, background, background-hover] ---*/
 
 @mixin button($color, $background, $background-hover, $border-hover:null) {
@@ -274,6 +292,7 @@
 }
 
 /*--- Smaller Typography Mixins ---*/
+
 @mixin milli {
   @include fontsize(14);
   @include media($tablet) {
@@ -283,4 +302,19 @@
 @mixin micro {
   @include fontsize(14);
   font-weight: 400;
+}
+
+/*--- Block Mixins ---*/
+
+@mixin block {
+  padding: $base-spacing-unit-small;
+  background-color: white;
+  @include headings-margin-top(0);
+  @include last-child;
+}
+
+@mixin block__deep {
+  @include block;
+  padding-top: $base-spacing-unit-extra-large;
+  padding-bottom: $base-spacing-unit-extra-large;
 }

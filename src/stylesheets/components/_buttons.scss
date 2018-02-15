@@ -1,39 +1,3 @@
-/*--- Button Base ---*/
-
-@mixin btn {
-  cursor: pointer;
-  position: relative;
-  border-radius: 4px;
-  text-align: center;
-  color: $deep-purple;
-  display: inline-block;
-  background-color: $grey-5;
-  margin-right: $base-spacing-unit;
-  padding: ($base-spacing-unit - 2) ($base-spacing-unit-tiny - 2);
-
-  svg {
-    width: 20px;
-    height: 20px;
-    margin-left: -4px;
-  }
-  .status--banner & {
-    margin-right: 0;
-  }
-  .input-group & {
-    margin: 0;
-    border-left: none;
-    border-width: 1px;
-    border-radius: 0 4px 4px 0;
-
-    svg {
-      margin: 0;
-    }
-  }
-  &:focus, &:active {
-    outline: none;
-  }
-}
-
 /*--- Default Button Options [colour, background, background-hover] ---*/
 
 [class*="theme--"] a.btn--primary,
@@ -68,6 +32,7 @@
 }
 
 /*--- Inverse Button Options [colour, background, background-hover] ---*/
+
 [class*="theme--"] a.btn--primary--inverse,
 .btn--primary--inverse {
   @include button($button--primary, $white, lighten($button--primary, 50%));
@@ -85,6 +50,7 @@
 }
 
 /*--- Transparent Button Options ---*/
+
 a.btn--transparent {
   @include button-transparent($white);
   &:hover, &:focus, &:active {
@@ -99,16 +65,26 @@ a.btn--transparent--inverse {
 }
 
 /*--- Size Button Options ---*/
+
 [class*="status--"] a.btn--small,
 [class*="theme--"] a.btn--small,
 .btn--small {
   padding: 1px ($base-spacing-unit + 1) 0;
 }
 
-/*--- Custom Component Button ---*/
-.status--banner a[class*="btn--"] {
+/*--- Button Component Rules ---*/
+
+.status--banner [class*="btn--"] {
   @include micro;
   min-width: 100px;
+  margin-right: 0;
   margin-left: auto;
   text-decoration: none;
+}
+
+.input-group [class*="btn--"] {
+  margin: 0;
+  border-left: none;
+  border-width: 1px;
+  border-radius: 0 4px 4px 0;
 }

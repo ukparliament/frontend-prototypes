@@ -114,3 +114,9 @@ svg [data-icon="file"] {
     display: block;
   }
 }
+
+[class*="btn"] svg {
+  width: 20px;
+  height: 20px;
+  margin-left: -4px;
+}

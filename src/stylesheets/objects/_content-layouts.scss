@@ -1,10 +1,10 @@
-// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+/*--- Generic Rules ---*/
 
 #content:focus {
   outline: none;
 }
 
-// Section Options
+/*--- Section Options ---*/
 
 .section--primary {
   padding-top: $base-spacing-unit-extra-large;
@@ -15,6 +15,7 @@
     margin-bottom: $base-spacing-unit-small;
   }
 }
+
 .section--minor {
   padding: $base-spacing-unit-tiny 0;
 
@@ -27,6 +28,7 @@
     }
   }
 }
+
 .section--major {
   padding: $base-spacing-unit-extra-large 0;
 
@@ -35,7 +37,7 @@
   }
 }
 
-// Container Options
+/*--- Container Options ---*/
 
 .container {
   padding: 0 $base-spacing-unit-small;
@@ -49,17 +51,18 @@
     padding-right: 216px;
   }
 }
-.section--primary__container {
-  @include clearfix;
-}
+
+/*--- Container Component Rules ---*/
+
 header .container {
   padding-right: 0;
   @include media($tablet) {
     padding: 0 $base-spacing-unit-small;
   }
 }
+
 .navigation--main .container {
-  max-width: 732px; // Reduced to accomodate current grid
+  max-width: 732px; // Reduced to accommodate current grid
   padding: 0;
   margin: 0 $base-spacing-unit-small;
   @include media($desktop) {
@@ -70,22 +73,14 @@ header .container {
   border-bottom-color: $grey-3;
 }
 
-// Block Options
-
-@mixin block {
-  padding: $base-spacing-unit-small;
-  background-color: white;
-  @include headings-margin-top(0);
-  @include last-child;
-}
+/*--- Block Options ---*/
 
 .block {
   @include block;
 }
 
-.block--transparent {
-  background-color: transparent;
-  padding-right: $base-spacing-unit-medium;
+.block--deep {
+  @include block--deep;
 }
 
 .block--offset {
@@ -94,19 +89,9 @@ header .container {
   }
 }
 
-@mixin block__deep {
-  @include block;
-  padding-top: $base-spacing-unit-extra-large;
-  padding-bottom: $base-spacing-unit-extra-large;
-}
-
-.block__deep {
-  @include block__deep;
-}
-
-[class*="block"][class*="accent"] {
-  border-top-style: solid;
-  border-top-width: $base-spacing-unit;
+.block--transparent {
+  background-color: transparent;
+  padding-right: $base-spacing-unit-medium;
 }
 
 .block--border {
@@ -116,25 +101,35 @@ header .container {
   padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
   border-bottom: 1px solid $grey-3;
   border-top: 1px solid $grey-3;
+
   p {
     margin-bottom: $base-spacing-unit;
   }
-  & + .block--border {
-    border-top: none;
-    padding-top: $base-spacing-unit-small;
-    padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
-  }
-  &__bottom {
-    padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
-    border-bottom: 1px solid $grey-3;
+}
 
-    @include media($desktop) {
-      padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height
-    }
+.block--border__bottom {
+  padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
+  border-bottom: 1px solid $grey-3;
+
+  @include media($desktop) {
+    padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height
   }
 }
 
-// Flexbox column layout options
+/*--- Block Conditions ---*/
+
+[class*="block"][class*="accent"] {
+  border-top-style: solid;
+  border-top-width: $base-spacing-unit;
+}
+
+.block--border + .block--border {
+  border-top: none;
+  padding-top: $base-spacing-unit-small;
+  padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
+}
+
+/*--- Flex 2 Layout Options ---*/
 
 .flex--2 {
   @include media($tablet) {
@@ -154,7 +149,7 @@ header .container {
   }
 }
 
-// Column Layout Options
+/*--- Col Layout Options [Re] ---*/
 
 .column--75,
 .column--25 {
