@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "timeouts": 1000
+  },
+  "urls": [
+    "http://localhost:5000/templates/prototypes/conservative-current.html",
+    "http://localhost:5000/templates/prototypes/front-page.html",
+    "http://localhost:5000/templates/prototypes/house-commons-members-current.html",
+    "http://localhost:5000/templates/prototypes/house-lords-members-current.html",
+    "http://localhost:5000/templates/prototypes/party-current.html",
+    "http://localhost:5000/templates/prototypes/people-id.html",
+    "http://localhost:5000/templates/prototypes/people-constituency.html",
+    "http://localhost:5000/templates/prototypes/constituencies.html",
+    "http://localhost:5000/templates/prototypes/constituency.html",
+    "http://localhost:5000/templates/prototypes/_map.html",
+    "http://localhost:5000/templates/prototypes/media-id.html",
+    "http://localhost:5000/templates/prototypes/article.html",
+    "http://localhost:5000/templates/prototypes/_backgrounds.html",
+    "http://localhost:5000/templates/prototypes/_buttons.html",
+    "http://localhost:5000/templates/prototypes/_forms.html",
+    "http://localhost:5000/templates/prototypes/_headings.html",
+    "http://localhost:5000/templates/prototypes/_lists.html",
+    "http://localhost:5000/templates/prototypes/_navigations.html",
+    "http://localhost:5000/templates/prototypes/_tables.html",
+    "http://localhost:5000/templates/prototypes/_tracks.html",
+    "http://localhost:5000/templates/prototypes/_toggles.html",
+    "http://localhost:5000/templates/prototypes/_article.html",
+    "http://localhost:5000/templates/prototypes/_search-results.html"
+  ]
+}

@@ -1,0 +1,8 @@
+install:
+  - make install
+
+before_script:
+  - make serve_test & sleep 10
+
+script:
+  - make test

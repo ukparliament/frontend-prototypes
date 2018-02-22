@@ -35,12 +35,16 @@ block content
         +buttonLink('#', 'White', 'btn--white')
 
         h3 Transparent
-        +buttonLink('#', 'Transparent', 'btn--transparent')
-        +buttonLink('#', 'Transparent Inverse', 'btn--transparent--inverse')
+        .block.theme--deep-purple
+          +buttonLink('#', 'Transparent', 'btn--transparent')
+        .block.theme--grey-4
+          +buttonLink('#', 'Transparent Inverse', 'btn--transparent--inverse')
 
         h3 Alternative
-        +buttonLink('#', 'Grey', 'btn--grey')
-        +buttonLink('#', 'Disabled', 'btn--disabled')(tabIndex=-1)
+        .block.theme--grey-5
+          +buttonLink('#', 'Grey', 'btn--grey')
+        .block.theme--deep-purple
+          +buttonLink('#', 'Disabled', 'btn--disabled')(tabIndex=-1)
 
       h2 Download buttons
       .block

@@ -23,7 +23,9 @@ SVGO=$(NODE_MODULES)/.bin/svgo
 UGLIFY_JS=$(NODE_MODULES)/.bin/uglifyjs
 LEAFLET=$(NODE_MODULES)/leaflet/dist/leaflet.js
 LEAFLET_FULLSCREEN=$(NODE_MODULES)/leaflet.fullscreen/Control.FullScreen.js
+PA11Y=$(NODE_MODULES)/.bin/pa11y-ci
 PRETTY_MINI_JSON=$(NODE_MODULES)/pretty-mini-json/pretty-mini-json.js
+VALIMATE=$(NODE_MODULES)/.bin/valimate
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -96,11 +98,13 @@ watch:
 	@node scripts/watch.js $(STYLESHEETS_LOC)=css $(JAVASCRIPTS_LOC)=js $(IMAGES_LOC)=images $(SRC_FOLDER)/layouts=templates $(SRC_FOLDER)/elements=templates $(SRC_FOLDER)/components=templates $(SRC_FOLDER)/templates=templates
 
 # Runs accessibility testing
-test:
-	@mkdir -p $(REPORTS_FOLDER)
-	@rm -rf $(REPORTS_FOLDER)/*
-	@node scripts/pa11y.js
-	@node scripts/w3c.js
+test_pa11y:
+	@$(PA11Y) --config valimate.json
+
+test_valimate:
+	@$(VALIMATE)
+
+test: test_pa11y test_valimate
 
 # Builds application
 build: lint css js images icons templates json

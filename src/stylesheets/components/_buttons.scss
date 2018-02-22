@@ -27,7 +27,7 @@
 }
 [class*="theme--"] a.btn--disabled,
 .btn--disabled {
-  @include button($grey-2, $grey-4, $grey-4);
+  @include button($grey-1, $grey-4, $grey-4);
   pointer-events: none;
 }
 
