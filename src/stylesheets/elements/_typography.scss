@@ -50,15 +50,6 @@ h1 + .lead {
   font-weight: 500;
 }
 
-
-/*--- Component Typography Settings ---*/
-
-header {
-  @include fontsize(36);
-  line-height: 1.167; // 42px
-  font-weight: 500;
-}
-
 .column--25 {
   @include fontsize(27);
   line-height: 1.111; // 30px;
@@ -106,4 +97,3 @@ label, optgroup, select, textarea {
 .url {
   @include fontsize(16);
 }
-
