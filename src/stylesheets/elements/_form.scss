@@ -278,7 +278,7 @@ button:-moz-focusring,
 .search__global {
   @media (max-width: $desktop - 1) {
     right: 0;
-    top: 20px;
+    bottom: 0;
     width: 100%;
     overflow: hidden;
     padding-left: 82px;
