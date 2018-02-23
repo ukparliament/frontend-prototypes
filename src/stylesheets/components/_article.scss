@@ -1,4 +1,6 @@
 article {
+  margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-small;
+
   li {
     list-style: none;
     &::before {
@@ -45,7 +47,7 @@ article {
     }
   }
 
-  @media (min-width: $tablet) {
-    padding-top: $base-spacing-unit-medium;
+  @media (min-width: $desktop) {
+    margin-top: ($base-spacing-unit-large * 2);
   }
 }

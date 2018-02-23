@@ -40,6 +40,7 @@
 /*--- Container Options ---*/
 
 .container {
+  position: relative;
   padding: 0 $base-spacing-unit-small;
   margin: 0 auto;
   max-width: $max-width;
@@ -71,6 +72,15 @@ header .container {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: $grey-3;
+}
+
+/*--- Elements with attribute role='main' ---*/
+article [role='main'] {
+  @media (min-width: $desktop) {
+    width: 66.666%;
+    padding-top: $base-spacing-unit-large;
+    padding-right: ($base-spacing-unit-large * 2);
+  }
 }
 
 /*--- Block Options ---*/

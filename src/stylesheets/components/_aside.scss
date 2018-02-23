@@ -4,4 +4,11 @@ aside {
   .block {
     @extend .theme--grey-4;
   }
+
+  @include media($desktop) {
+    position: absolute;
+    top: ($base-spacing-unit * 13) + 2;
+    right: $base-spacing-unit-small;
+    width: 33.333%;
+  }
 }

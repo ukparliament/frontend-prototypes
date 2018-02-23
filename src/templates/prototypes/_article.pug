@@ -1,16 +1,14 @@
-extends ../../layouts/layout.pug
+extends ../../layouts/layout-front-page.pug
 block content
   -var thingPage = true
 
-  .section--primary(tabindex=0)#content
-    .container
-      .block--border__bottom.block--offset
+  .container
+    article(tabindex=0)#content
+      header
         h1 Article elements
         p A demo of how html content will display in the article tag
 
-  section
-    article
-      .container--offset
+      div(role='main')
         h1 Heading 1
         h2 Heading 2
         h3 Heading 3
