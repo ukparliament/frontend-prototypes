@@ -69,7 +69,7 @@ UK_Parliament.map = function() {
 
       // Adding title to map for screen readers
       L.Control.MapTitle = L.Control.extend({
-        onAdd: function(map) {
+        onAdd: function() {
           var
             map_title = map_container.getAttribute('data-map-title'),
             map_title_container = L.DomUtil.create('h3');

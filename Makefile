@@ -93,21 +93,26 @@ lint:
 serve: clean build
 	@node server.js
 
+serve_test: clean build_test
+	@node server.js
+
 # Watches project files for changes
 watch:
 	@node scripts/watch.js $(STYLESHEETS_LOC)=css $(JAVASCRIPTS_LOC)=js $(IMAGES_LOC)=images $(SRC_FOLDER)/layouts=templates $(SRC_FOLDER)/elements=templates $(SRC_FOLDER)/components=templates $(SRC_FOLDER)/templates=templates
 
 # Runs accessibility testing
 test_pa11y:
-	@$(PA11Y) --config valimate.json
+	@$(PA11Y) --config test/paths.json
 
 test_valimate:
-	@$(VALIMATE)
+	@$(VALIMATE) test/paths.json
 
 test: test_pa11y test_valimate
 
 # Builds application
 build: lint css js images icons templates json
+
+build_test: lint css js templates
 
 # Deploys to S3 without a version
 deploy:

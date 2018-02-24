@@ -30,5 +30,10 @@ module.exports = {
     "no-console": [
       "warn"
     ]
+  },
+  "globals": {
+    "UK_Parliament": true,
+    "appInsights": true,
+    "L": true
   }
 };

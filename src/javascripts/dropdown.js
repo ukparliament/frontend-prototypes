@@ -11,7 +11,6 @@ UK_Parliament.dropdownToggle = function() {
 
       // Get parent of dropdown
       dropdown_parent = this.parentElement;
-      dropdown_content = dropdown_parent.querySelector('.dropdown__content');
 
       // Check dropdown content
       if (dropdown_parent.classList.contains('open')) {
