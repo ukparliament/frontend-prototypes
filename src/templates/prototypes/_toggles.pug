@@ -3,11 +3,11 @@ block content
 
   .section--primary(tabindex=0)#content
     .container
-      h1 Dropdown Toggles
+      h1 Dropdown Toggles &amp; Switches
 
   section
     .container
-      h2 Independent
+      h2 Toggle (independent)
       +dropdownToggle("When to contact an MP")
         p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
         ul
@@ -18,7 +18,7 @@ block content
           li Transport facilities
         p #[+link('#', 'Who else can help with my issue?')]
 
-      h2 Within a block
+      h2 Toggle (within a block)
       .block
         +dropdownToggle("When to contact an MP")
           p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
@@ -44,3 +44,29 @@ block content
           dt Website:
           dd #[+link('#', 'www.conservatives.com')]
         p You may be able to discuss issues with your MP in person or online. Contact them for details.
+
+      h2 Radio Switch (content initally shown)
+      
+      +form('javascript:console.log("form submitted")', 'post')
+        .block--border__bottom(data-dropdown='holder')
+          +fieldset('Have you completed your questionnaire?')
+            +input('radio', 'Yes', 'radio-group-inline', 'question-check-yes')(data-dropdown='switch')
+            +input('radio', 'No', 'radio-group-inline', 'question-check-no')(checked)
+
+          div(data-dropdown-content='show') 
+            .status--highlight.theme--caution
+              p Complete your questionnaire before you continue
+
+        +button('Submit', 'btn--primary', 'submit')
+
+      h2 Checkbox Switch (content initally hidden)
+
+      +form('javascript:console.log("form submitted")', 'post')
+        .block--border__bottom(data-dropdown='holder')
+          +input('checkbox', 'I agree to the terms and conditions', 'terms-check', 'termsCheck')(data-dropdown='switch')
+
+          div(data-dropdown-content='hide') 
+            .status--highlight.theme--success
+              p Thank you for agreeing to our terms and conditions
+
+        +button('Submit', 'btn--primary', 'submit')
