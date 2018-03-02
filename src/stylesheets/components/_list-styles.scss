@@ -234,6 +234,13 @@ aside .list--pipe li:last-child {
   }
 }
 
+.list--number, .list--roman, .list--alpha {
+  @include list;
+  li {
+    margin-left: $base-spacing-unit-large;
+  }
+}
+
 .list--number {
   list-style-type: decimal;
 }
@@ -244,13 +251,6 @@ aside .list--pipe li:last-child {
 
 .list--alpha {
   list-style-type: lower-alpha;
-}
-
-.list--number, .list--roman, .list--alpha {
-  @include list;
-  li {
-    margin-left: $base-spacing-unit-large;
-  }
 }
 
 /*--- Default Nested Lists [ul/ol] ---*/
