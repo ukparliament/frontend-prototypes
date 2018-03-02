@@ -3,8 +3,8 @@
 .block,
 .hero,
 .hint,
-.status--banner,
-.status--highlight {
+.status--highlight,
+[class*="status--banner"] {
   &.theme--deep-purple {
     @include theme($deep-purple, $grey-5, $grey-5, $grey-3, $deep-purple--light);
   }

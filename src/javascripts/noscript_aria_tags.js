@@ -1,19 +1,17 @@
-// Add aria attritube to <noscript> tags
+// Add aria attribute to <noscript> tags
 
 UK_Parliament.nsAria = function () {
-  if (document.querySelector('body.has-js')) {
-    if (document.getElementsByTagName('noscript')) {
+  var
+    hasJS = document.querySelector('body.has-js'),
+    noScript = document.getElementsByTagName('noscript');
 
-      // Grab all <noscript> tags
-      var nsTags = (document.getElementsByTagName('noscript'));
-
-      // Loop through collected tags and add aria attribute
-      for (var i = 0; i < nsTags.length; i++) {
-        nsTags[i].setAttribute('aria-hidden', 'true');
-      }
-
+  if (hasJS && noScript) {
+    // Loop through collected tags and add aria attribute
+    for (var i = 0; i < noScript.length; i++) {
+      noScript[i].setAttribute('aria-hidden', 'true');
     }
   }
+
 };
 
 UK_Parliament.nsAria();

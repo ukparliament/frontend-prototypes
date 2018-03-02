@@ -76,9 +76,6 @@ a.btn--transparent--inverse {
 
 .status--banner [class*="btn--"] {
   @include micro;
-  min-width: 100px;
-  margin-right: 0;
-  margin-left: auto;
   text-decoration: none;
 }
 

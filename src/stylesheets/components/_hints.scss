@@ -1,9 +1,29 @@
+/*--- Hints ---*/
+
+.hint {
+  box-shadow: inset 0px 0px 0px 1px $grey-3;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.hint[class*="theme--"] {
+  box-shadow: none;
+}
+
+/*--- Component Hints ---*/
+
+.status--banner__beta .hint {
+  align-self: flex-start;
+  margin-right: $base-spacing-unit-tiny;
+}
+
+/*--- URLs ---*/
+
 .hint,
 .url {
   margin-right: $base-spacing-unit;
   padding: 0 $base-spacing-unit;
 }
-
 .url {
   padding-left: 0;
 }

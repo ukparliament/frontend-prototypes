@@ -1,6 +1,4 @@
-// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
-
-//  List Core Settings
+/*--- List Core Settings ---*/
 
 ul, ol {
   padding: 0;
@@ -15,7 +13,7 @@ dl, dt, dd {
   padding: 0;
 }
 
-// List Base Settings
+/*--- List Base Settings ---*/
 
 @mixin list {
   @include list-headings;
@@ -59,7 +57,12 @@ dl, dt, dd {
   @include list--details
 }
 
-// List Options
+/*--- List Options ---*/
+
+.list--flex {
+  @include list;
+  display: flex;
+}
 
 @mixin list--inline {
   @include list;
@@ -231,15 +234,6 @@ aside .list--pipe li:last-child {
   }
 }
 
-// Numbered / Roman Numeral / Alphabetical Lists
-
-.list--number, .list--roman, .list--alpha {
-  @include list;
-  li {
-    margin-left: $base-spacing-unit-large;
-  }
-}
-
 .list--number {
   list-style-type: decimal;
 }
@@ -251,6 +245,15 @@ aside .list--pipe li:last-child {
 .list--alpha {
   list-style-type: lower-alpha;
 }
+
+.list--number, .list--roman, .list--alpha {
+  @include list;
+  li {
+    margin-left: $base-spacing-unit-large;
+  }
+}
+
+/*--- Default Nested Lists [ul/ol] ---*/
 
 // List style for <ul> tags without any classes, nested
 // inside elements with class `.list--{{modifier}}` or
@@ -271,10 +274,30 @@ aside .list--pipe li:last-child {
   }
 }
 
-// Footer list
+/*--- List Footer ---*/
 
 footer .list {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/*--- Component Lists ---*/
+
+.status--banner__beta ul {
+  flex: 1;
+  flex-wrap: wrap;
+
+  li {
+    @media (max-width: $desktop - 1) {
+      margin-bottom: $base-spacing-unit;
+    }
+  }
+  li:first-of-type {
+    flex: 1 90%;
+
+    @include media($desktop) {
+      flex: 1 auto
+    }
+  }
 }

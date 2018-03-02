@@ -62,6 +62,11 @@ header .container {
   }
 }
 
+.status--banner__beta .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .navigation--main .container {
   max-width: 732px; // Reduced to accommodate current grid
   padding: 0;

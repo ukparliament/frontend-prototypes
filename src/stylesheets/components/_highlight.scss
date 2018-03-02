@@ -18,7 +18,7 @@
 
 /*--- Status Components ---*/
 
-.status--banner {
+@mixin status--banner {
   @include milli;
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -27,20 +27,21 @@
   @extend .theme--deep-purple--light;
   padding: ($base-spacing-unit + 1) 0;
 
-  .container {
-    display: flex;
-  }
-  p {
+  p, li {
     line-height: 1.125; // 18px;
-    margin-right: $base-spacing-unit-tiny;
-  }
-  * {
-    margin-bottom: 0;
-    align-self: center;
+
+    @include media($desktop) {
+      line-height: 1.5;
+    }
   }
 }
 
-.has-js .cookie {
+.status--banner,
+.status--banner__beta {
+  @include status--banner;
+}
+
+.has-js .status--banner.cookie {
   display: none;
 }
 
@@ -51,10 +52,4 @@
   @include last-child;
   padding: $base-spacing-unit-small;
   border-left-width: $base-spacing-unit;
-}
-
-/*--- Label Components ---*/
-
-.status--banner .hint {
-  margin-right: $base-spacing-unit-tiny;
 }
