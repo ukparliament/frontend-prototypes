@@ -162,31 +162,29 @@ footer a  {
 /*--- Search Global ---*/
 
 @media (max-width: $desktop - 1) {
-  .search__global {
-    &:not(.open) {
-      .search__global__toggle {
-        transition: background-color 0.15s linear 0.15s;
-      }
-      [data-icon="search"] {
-        transition: opacity 0.15s linear 0.15s;
-      }
-      [data-icon="close"] {
-        opacity: 0;
-      }
+  .search__global:not(.open) {
+    .search__global__toggle {
+      transition: background-color 0.15s linear 0.15s;
     }
-    &.open {
-      .search__global__toggle {
-        background-color: transparent;
-      }
-      button [data-icon="search"] {
-        opacity: 1;
-      }
-      [data-icon="close"] {
-        transition: opacity 0.15s linear 0.15s;
-      }
-      [data-icon="search"] {
-        opacity: 0;
-      }
+    [data-icon="search"] {
+      transition: opacity 0.15s linear 0.15s;
+    }
+    [data-icon="close"] {
+      opacity: 0;
+    }
+  }
+  .search__global.open {
+    .search__global__toggle {
+      background-color: transparent;
+    }
+    button [data-icon="search"] {
+      opacity: 1;
+    }
+    [data-icon="close"] {
+      transition: opacity 0.15s linear 0.15s;
+    }
+    [data-icon="search"] {
+      opacity: 0;
     }
   }
   .search__global__toggle {
@@ -213,6 +211,9 @@ footer a  {
         stroke: $grey-3;
       }
     }
+  }
+  body:not(.has-js) .search__global__toggle {
+    display: none;
   }
 }
 @include media($desktop) {

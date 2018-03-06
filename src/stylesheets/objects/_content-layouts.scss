@@ -55,13 +55,6 @@
 
 /*--- Container Component Rules ---*/
 
-header .container {
-  padding-right: 0;
-  @include media($tablet) {
-    padding: 0 $base-spacing-unit-small;
-  }
-}
-
 .status--banner__beta .container {
   display: flex;
   flex-wrap: wrap;

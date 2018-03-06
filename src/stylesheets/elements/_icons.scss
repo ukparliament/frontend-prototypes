@@ -14,7 +14,8 @@ svg {
   svg [data-icon="uk-parliament"] {
     transition: fill 0.15s linear 0.12s;
   }
-  &.portcullis {
+  body:not(.has-js) .uk_parliament,
+  .portcullis {
     width: 50px;
     overflow: hidden;
 

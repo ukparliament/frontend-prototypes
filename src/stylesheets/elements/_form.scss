@@ -366,6 +366,26 @@ button:-moz-focusring,
     }
   }
 }
+body:not(.has-js) .search__global {
+  @media (max-width: $desktop - 1) {
+    .input-group {
+      margin-right: $base-spacing-unit-small;
+
+      input {
+        flex: 1;
+        padding-left: $base-spacing-unit-tiny;
+        padding-right: $base-spacing-unit-tiny;
+      }
+      input,
+      button {
+        &:focus,
+        &:active {
+          display: block;
+        }
+      }
+    }
+  }
+}
 
 // Physical Print Styles
 
