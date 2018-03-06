@@ -41,8 +41,11 @@
   @include status--banner;
 }
 
-.has-js .status--banner.cookie {
+.status--banner.cookie {
   display: none;
+  &.show {
+    display: block;
+  }
 }
 
 .status--highlight {
