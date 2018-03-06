@@ -26,9 +26,3 @@ body > {
     }
   }
 }
-
-article header {
-  @media (min-width: $desktop) {
-    padding-right: calc(33.333% + #{($base-spacing-unit-large * 2)});
-  }
-}

@@ -1,14 +1,11 @@
 aside {
-  padding-top: $base-spacing-unit-small;
+  margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-small;
+
+  @include media($desktop) {
+    margin-top: ($base-spacing-unit-large * 2);
+  }
 
   .block {
     @extend .theme--grey-4;
-  }
-
-  @include media($desktop) {
-    position: absolute;
-    top: ($base-spacing-unit * 13) + 2;
-    right: $base-spacing-unit-small;
-    width: 33.333%;
   }
 }

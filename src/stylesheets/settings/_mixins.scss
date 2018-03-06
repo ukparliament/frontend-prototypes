@@ -213,7 +213,7 @@
   justify-content: space-between;
 
   > :nth-child(1) {
-    flex-basis: if(
+    width: if(
       $gutter-width,
       calc(#{$elem1-width} - (#{$gutter-width} / 2)),
       $elem1-width
@@ -221,7 +221,7 @@
   }
 
   > :nth-child(2) {
-    flex-basis: if(
+    width: if(
       $gutter-width,
       calc(#{$elem2-width or $elem1-width} - (#{$gutter-width} / 2)),
       $elem2-width or $elem1-width
@@ -229,7 +229,7 @@
   }
 
   > :not(:nth-child(1), :nth-child(2)) {
-    flex-basis: 100%;
+    width: 100%;
   }
 }
 

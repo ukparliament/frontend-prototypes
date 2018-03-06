@@ -81,10 +81,8 @@ header .container {
 
 /*--- Elements with attribute role='main' ---*/
 article [role='main'] {
-  @media (min-width: $desktop) {
-    width: 66.666%;
+  @media (min-width: $tablet) {
     padding-top: $base-spacing-unit-large;
-    padding-right: ($base-spacing-unit-large * 2);
   }
 }
 
@@ -153,13 +151,13 @@ article [role='main'] {
 }
 
 .flex--2__1-2 {
-  @include media($tablet) {
+  @include media($desktop) {
     @include flex(33.333%, 66.666%, 36px);
   }
 }
 
 .flex--2__2-1 {
-  @include media($tablet) {
+  @include media($desktop) {
     @include flex(66.666%, 33.333%, 36px);
   }
 }
