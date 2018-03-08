@@ -21,3 +21,18 @@
     padding: $base-spacing-unit-tiny;
   }
 }
+
+/*--- Skip to content ---*/
+
+.skip-to-content {
+  @extend .sr-only;
+  @extend .sr-only--focusable;
+
+  z-index: 2;
+  text-indent: -9999px;
+  clip: auto;
+
+  &:focus, &:active {
+    text-indent: 0;
+  }
+}

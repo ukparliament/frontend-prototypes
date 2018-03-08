@@ -66,13 +66,13 @@
 
 @mixin screenreader {
   width: 1px;
-  padding: 0;
   height: 1px;
   margin: -1px;
   border: none;
   overflow: hidden;
   position: absolute;
   clip: rect(0 0 0 0);
+  padding: $base-spacing-unit-tiny;
 }
 
 /*--- Line Break [height, width, colour] ---*/

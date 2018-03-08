@@ -2,7 +2,6 @@
   "defaults": {
     "timeouts": 1000
   },
-  "failHard": false,
   "urls": [
     "http://localhost:5000/templates/prototypes/conservative-current.html",
     "http://localhost:5000/templates/prototypes/front-page.html",
