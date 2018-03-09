@@ -8,7 +8,7 @@ UK_Parliament.map = function() {
 
     map,
     geojson,
-    breakpoint = '767',
+    breakpoint = parseInt('767'),
     control_position = 'bottomright',
 
     mapBreakPointOptions = function() {
