@@ -8,9 +8,15 @@ a {
   &:active, &:focus {
     color: $deep-purple;
     text-decoration: none;
-    background-color: $mint;
-    outline: 3px solid $mint;
   }
+  &:active {
+    background-color: transparent;
+    outline: none;
+  }
+  &:focus {
+   background-color: $mint;
+   outline: 3px solid $mint;
+ }
 }
 
 /*--- Figure ---*/

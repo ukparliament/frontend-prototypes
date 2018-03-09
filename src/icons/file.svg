@@ -1,9 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="108" viewBox="0 0 100 108" aria-hidden="true">
     <title>File icon set</title>
     <g data-icon="file">
-        <g data-icon="page" fill="#cbc9cd" fill-rule="nonzero">
-            <path data-icon="page-main" d="M0.0112761248,0 L55.9803815,0 L86,31.0757723 L86,108 L0,108 L0.0112761248,0 Z M2.01108433,2.00736845 L2.00021277,106.007368 L84.0002128,106.007368 L84.0002128,31.8971133 L55.246835,2.20661616 L2.01108433,2.00736845 Z"></path>
-            <polygon data-icon="page-fold" points="83.0826977 29.9827586 85.0851064 31.9827586 53.9787234 31.9827586 53.9787234 0.913793103 55.9787234 2.91138733 55.9787234 29.9827586"></polygon>
+        <g data-icon="page" fill="none" fill-rule="evenodd">
+          <polygon data-icon="page-main" fill="#ffffff" points="0 0 52.8574219 0 86 31.7871094 86 106 0 106"></polygon>
+          <g data-icon="page-attributes" fill="#cbc9cd" fill-rule="nonzero">
+              <path data-icon="page-border" d="M2.01108433,2.00736845 L2.00021277,106.007368 L84.0002128,106.007368 L84.0002128,31.8971133 L55.246835,2.20661616 L2.01108433,2.00736845 Z M0.0112761248,0 L55.9803815,0 L86,31.0757723 L86,108 L0,108 L0.0112761248,0 Z"></path>
+              <polygon data-icon="page-fold" points="83.0826977 29.9827586 85.0851064 31.9827586 53.9787234 31.9827586 53.9787234 0.913793103 55.9787234 2.91138733 55.9787234 29.9827586"></polygon>
+          </g>
         </g>
         <g data-icon="success" transform="translate(70.000000, 66.000000)">
             <circle data-icon="success-background" fill="#00b95d" fill-rule="nonzero" cx="15" cy="15" r="15"></circle>

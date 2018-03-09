@@ -64,6 +64,16 @@ a.btn--transparent--inverse {
   }
 }
 
+/*--- Themes Alternative Button Focus ---*/
+
+.theme--mint,
+.theme--warning,
+.theme--success {
+  a[class*="btn--"]:focus {
+    box-shadow: 0 0 0 3px $grey-5;
+  }
+}
+
 /*--- Size Button Options ---*/
 
 [class*="status--"] a.btn--small,
