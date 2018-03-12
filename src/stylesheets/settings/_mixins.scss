@@ -138,8 +138,14 @@
   margin-right: $base-spacing-unit;
   padding: ($base-spacing-unit - 2) ($base-spacing-unit-tiny - 2);
 
-  &:focus, &:active {
+  &:active, &:focus {
     outline: none;
+  }
+  &:active {
+    box-shadow: none;
+  }
+  &:focus {
+    box-shadow: 0 0 0 3px $mint;
   }
 }
 
@@ -159,11 +165,16 @@
 
   &:hover, &:focus {
     color: $color;
+  }
+  &:hover {
     background-color: $background-hover;
 
     @if ($border-hover) {
       border-color: $border-hover;
     }
+  }
+  &:focus {
+    background-color: $background;
   }
   path, polygon {
     fill: $color;
