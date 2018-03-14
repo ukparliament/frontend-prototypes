@@ -32,6 +32,23 @@ block content
 
   section
     .container
+      h2 Fully clickable tiles list
+      ol.list--block__inline-50
+        li.faux
+          .list--details
+            .faux__content
+              h2 #[+link('#', 'Title 1')]
+              p This is a descriptor, where any #[+link('#', 'link')] inside it will still be clickable even with the overlaying link.
+            a.faux__link(href='#', aria-hidden='true', tabindex='-1')
+        li.faux
+          .list--details
+            .faux__content
+              h2 #[+link('#', 'Title 2')]
+              p This is a descriptor, where any #[+link('#', 'link')] inside it will still be clickable even with the overlaying link.
+            a.faux__link(href='#', aria-hidden='true', tabindex='-1')
+
+  section
+    .container
       h2 Box list
       h3 Default
       ol.list--block
