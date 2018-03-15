@@ -61,7 +61,6 @@ describe('map.js', function() {
             return val === 'leaflet-container';
           });
           expect(value).to.include('leaflet-container');
-          // expect(attribute).to.include('leaflet-container');
         });
       done();
     });
