@@ -28,6 +28,7 @@
   opacity: 1;
   height: auto;
   overflow: hidden;
+  visibility: visible;
   transition: all 0.1s linear;
   padding: $base-spacing-unit-small;
   @include headings-margin-top(0);

@@ -34,6 +34,12 @@ module.exports = {
   "globals": {
     "UK_Parliament": true,
     "appInsights": true,
-    "L": true
+    "L": true,
+    "require": true,
+    "describe": true,
+    "beforeEach": true,
+    "it": true,
+    "process": true,
+    "global": true
   }
 };
