@@ -11,6 +11,7 @@ JSON_LOC=src/json
 STYLESHEETS_LOC=src/stylesheets
 IMAGES_LOC=src/images
 REPORTS_FOLDER=reports
+SERVER=http://localhost:5000
 
 # Node module variables
 NODE_MODULES=./node_modules
@@ -26,6 +27,7 @@ LEAFLET_FULLSCREEN=$(NODE_MODULES)/leaflet.fullscreen/Control.FullScreen.js
 PA11Y=$(NODE_MODULES)/.bin/pa11y-ci
 PRETTY_MINI_JSON=$(NODE_MODULES)/pretty-mini-json/pretty-mini-json.js
 VALIMATE=$(NODE_MODULES)/.bin/valimate
+MOCHA=$(NODE_MODULES)/.bin/mocha
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -108,6 +110,7 @@ test_valimate:
 	@$(VALIMATE) test/paths.json
 
 test: test_pa11y test_valimate
+	@env SERVER=$(SERVER) $(MOCHA) --recursive --no-timeouts
 
 # Builds application
 build: lint css js images icons templates json
