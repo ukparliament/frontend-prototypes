@@ -216,7 +216,7 @@
 @mixin flex($elem1-width, $elem2-width:null, $gutter-width:null) {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
   > :nth-child(1) {
     width: if(
@@ -261,7 +261,6 @@
 
 @mixin alpha {
   @include fontsize(34);
-  margin-top: 0;
   line-height: 1.059; // 36px;
 
   @include media($desktop) {
@@ -270,26 +269,26 @@
   }
 }
 @mixin beta {
-  @include fontsize(27);
-  line-height: 1.111; // 30px;
+  @include fontsize(28);
+  line-height: 1.071; // 30px
 
   @include media($desktop) {
-    @include fontsize(32);
-    line-height: 1.125; // 36px
+    @include fontsize(33);
+    line-height: 1.091; // 36px
   }
 }
 @mixin gamma {
   @include fontsize(24);
-  line-height: 1.250; // 30px;
+  line-height: 1.125; // 27px;
 
   @include media($desktop) {
-    @include fontsize(26);
-    line-height: 1.154; // 30px
+    @include fontsize(27);
+    line-height: 1.111; // 30px
   }
 }
 @mixin delta {
   @include fontsize(20);
-  line-height: 1.2; // 24px;
+  line-height: 1.050; // 21px;
 
   @include media($desktop) {
     @include fontsize(22);
@@ -297,8 +296,8 @@
   }
 }
 @mixin epsilon {
-  @include fontsize(16);
-  line-height: 1.125; // 18px;
+  @include fontsize(18);
+  line-height: 1.167; // 21px;
 
   @include media($desktop) {
     @include fontsize(20);
@@ -306,12 +305,12 @@
   }
 }
 @mixin zeta {
-  @include fontsize(16);
-  line-height: 1.125; // 18px;
+  @include fontsize(18);
+  line-height: 1.167; // 21px;
 
   @include media($desktop) {
-    @include fontsize(18);
-    line-height: 1.334; // 24px;
+    @include fontsize(20);
+    line-height: 1.2; // 24px
   }
 }
 

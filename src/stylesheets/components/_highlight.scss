@@ -28,7 +28,8 @@
   padding: ($base-spacing-unit + 1) 0;
 
   p, li {
-    line-height: 1.125; // 18px;
+    @include milli;
+    line-height: 1.125;
 
     @include media($desktop) {
       line-height: 1.5;

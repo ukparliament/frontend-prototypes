@@ -2,8 +2,7 @@
 @mixin list-headings {
   h2, h3, h4, h5, h6 {
     &:not(.milli, .micro) {
-      font-size: inherit;
-      //line-height: inherit;
+      @include zeta;
     }
   }
 }
@@ -15,8 +14,12 @@ h1, h2, h3, h4, h5, h6 {
   color: $deep-purple;
   margin-bottom: $base-spacing-unit;
   margin-top: $base-spacing-unit-medium;
+  max-width: 502px;
   @include media($desktop) {
     margin-top: $base-spacing-unit-large;
+  }
+  @include media($desktop-large) {
+    max-width: 628px;
   }
   &.lead {
     @extend .lead;
@@ -27,44 +30,72 @@ h1, h2, h3, h4, h5, h6 {
 h1, .alpha {
   @include alpha;
   margin-bottom: $base-spacing-unit-tiny;
+  margin-top: $base-spacing-unit-extra-large;
 
   @include media($desktop) {
-    margin-top: 0;
     margin-bottom: $base-spacing-unit-small;
+    margin-top: round($base-spacing-unit * 7);
   }
 }
 h2, .beta {
   @include beta;
-  margin-top: $base-spacing-unit-extra-large;
   margin-bottom: $base-spacing-unit-tiny;
+  margin-top: $base-spacing-unit-extra-large;
 
   @include media($desktop) {
-    margin-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
     margin-bottom: $base-spacing-unit-small;
+    margin-top: round($base-spacing-unit * 7);
   }
 }
 h3, .gamma {
   @include gamma;
+  margin-bottom: $base-spacing-unit;
+  margin-top: $base-spacing-unit-medium;
+
+  @include media($desktop) {
+    margin-bottom: $base-spacing-unit;
+    margin-top: $base-spacing-unit-large;
+  }
 }
 h4, .delta {
   @include delta;
+  margin-bottom: $base-spacing-unit;
+  margin-top: $base-spacing-unit-medium;
+
+  @include media($desktop) {
+    margin-bottom: $base-spacing-unit;
+    margin-top: $base-spacing-unit-large;
+  }
 }
 h5, .epsilon {
   @include epsilon;
+  margin-bottom: $base-spacing-unit;
+  margin-top: $base-spacing-unit-medium;
+
+  @include media($desktop) {
+    margin-bottom: $base-spacing-unit;
+    margin-top: $base-spacing-unit-large;
+  }
 }
 h6, .zeta {
   @include zeta;
+  margin-bottom: $base-spacing-unit;
+  margin-top: $base-spacing-unit-medium;
+
+  @include media($desktop) {
+    margin-bottom: $base-spacing-unit;
+    margin-top: $base-spacing-unit-large;
+  }
 }
 
 /*--- Heading Nested Elements ---*/
 h1 a {
   vertical-align: top;
-  @include fontsize(20);
+  @include delta;
   line-height: 1.2; // 24px;
 
   @include media($desktop) {
     vertical-align: top;
-    @include fontsize(22);
     line-height: 1.091; // 24px
   }
 }
@@ -106,6 +137,14 @@ footer h2 {
   h1 {
     position: relative;
     margin-bottom: $base-spacing-unit-large;
+
+    @include media($tablet) {
+      max-width: 400px;
+    }
+
+    @include media($desktop) {
+      max-width: 502px;
+    }
   }
   h1:after {
     @extend .line-break--lg;
@@ -118,7 +157,7 @@ footer h2 {
 
 .dropdown__toggle {
   h2, h3 {
-    @include fontsize(18);
+    @include zeta;
     line-height: 1.334; // 24px;
   }
 }
@@ -134,10 +173,7 @@ footer h2 {
     color: $grey-1;
     position: relative;
     line-height: 1.250; // 30px;
-    @include fontsize(16);
-    @include media($tablet) {
-      @include fontsize(20);
-    }
+    @include zeta;
     &:before {
       z-index: 1;
       left: -24px;
@@ -172,15 +208,20 @@ footer h2 {
   }
 }
 
-/*--- Article Settings ---*/
+.section--primary .container,
+.hero .container,
+article header,
+[role='main'] {
+  @include headings-margin-top(0);
+  h1:first-of-type {
+    margin-top: 0;
+  }
+}
 
-article {
-  @include media($tablet) {
-    h2, h3, h4, h5, h6 {
-      &:first-child {
-        margin-top: 0;
-      }
-    }
+.block {
+  @include headings-margin-top(0);
+  h1:first-of-type {
+    margin-top: 0;
   }
 }
 

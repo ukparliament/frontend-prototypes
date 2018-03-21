@@ -117,10 +117,7 @@ body > footer a  {
     $grey-1 		        // a:hover color
   );
   &:link {
-    padding: $base-spacing-unit-tiny;
-    @include media($desktop) {
-      padding: $base-spacing-unit-tiny $base-spacing-unit-small;
-    }
+    padding: $base-spacing-unit-tiny 3px;
   }
   &:focus {
     outline: none;

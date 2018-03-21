@@ -12,12 +12,22 @@
 /*--- Navigation Main ---*/
 
 .navigation--main ul {
+  border-bottom: 1px solid $grey-3;
   margin: 0;
-  @include media($desktop) {
-    margin: 0 (-$base-spacing-unit-small);
-  }
+
   li {
     margin: 0;
+    padding: 0 3px;
+    @include media($desktop) {
+      padding: 0 ($base-spacing-unit-tiny + 3px);
+    }
+
+    &:nth-child(1) {
+      margin-left: -8px;
+      @include media($desktop) {
+        margin-left: -$base-spacing-unit-small;
+      }
+    }
   }
 }
 

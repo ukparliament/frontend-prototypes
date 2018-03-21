@@ -6,6 +6,7 @@ ul, ol {
 
   li {
     padding: 0;
+    @include zeta;
   }
 }
 dl, dt, dd {

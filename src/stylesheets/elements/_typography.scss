@@ -10,8 +10,19 @@ body {
 }
 
 p {
-  margin-top: 0;
+  @include zeta;
+  line-height: 1.33; // 24px
   margin-bottom: $base-spacing-unit-small;
+  margin-top: 0;
+  max-width: 502px;
+
+  @include media($desktop) {
+    line-height: 1.5; // 30px
+  }
+
+  @include media($desktop-large) {
+    max-width: 628px;
+  }
 }
 
 small, .milli {
@@ -27,11 +38,12 @@ small, .milli {
 
 .lead {
   @include fontsize(21);
-  line-height: 1.333; // 24px;
-  margin-bottom: $base-spacing-unit-extra-large;
-  @include media($tablet) {
+  line-height: 1.286; // 27px;
+  margin-bottom: $base-spacing-unit-small;
+  @include media($desktop) {
     @include fontsize(24);
-    line-height: 1.250; // 30px;
+    line-height: 1.5; // 30px
+    margin-bottom: $base-spacing-unit-medium;
   }
   .hero & {
     margin-top: $base-spacing-unit-extra-large;
@@ -55,27 +67,22 @@ button, input, label, optgroup, select, textarea, figcaption {
 }
 
 .btn, button, input {
-  @include fontsize(16);
+  @include epsilon;
   line-height: 26px;
   @include media($tablet) {
-    @include fontsize(18);
     line-height: 24px;
   }
 }
 
 label, optgroup, select, textarea {
-  @include fontsize(16);
-  @include media($tablet) {
-    @include fontsize(18);
-    line-height: 1.5;
-  }
+  @include zeta;
 }
 
 /*--- Settings for url & hint ---*/
 
 .hint,
 .url {
-  @include fontsize(16);
+  @include milli;
 }
 
 /*--- Settings for count ---*/
@@ -84,4 +91,25 @@ label, optgroup, select, textarea {
   display: block;
   @include beta;
   @include typography--heavy;
+}
+
+
+/*--- List ---*/
+
+dl,
+dt,
+dd {
+  @include zeta;
+}
+
+/*--- Navigation Main ---*/
+
+.navigation--main li {
+  @include fontsize(16);
+  @include media($tablet) {
+    @include fontsize(18);
+  }
+  @include media($desktop) {
+    @include fontsize(20);
+  }
 }
