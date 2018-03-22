@@ -30,7 +30,7 @@ figcaption a {
 
 /*--- Footer ---*/
 
-footer a  {
+body > footer a  {
   @include links(
     $grey-5, 		        // a:link colour
     underline,	        // a:link decoration
