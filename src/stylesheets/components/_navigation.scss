@@ -24,7 +24,7 @@
   li {
     min-width: 42px;
     margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
-    background-color: none;
+    background-color: transparent;
     color: $grey-1;
   }
   li:first-child {

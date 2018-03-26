@@ -95,7 +95,7 @@ body > footer a  {
     $link, 			        // a:link colour
     none, 			        // a:link decoration
     $link, 			        // a:visited color
-    inherited 	        // a:hover color
+    inherit 	        // a:hover color
   );
 
   &:hover {
