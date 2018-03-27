@@ -1,4 +1,4 @@
-.PHONY: install install_to_release clean serve build build_prod test
+.PHONY: install install_to_release clean serve build build_prod test gzip
 
 # When run in gocd it will be injected by environment variable
 AWS_ACCOUNT?=unknown
@@ -114,13 +114,16 @@ build: lint css js images icons templates json
 
 build_test: lint css js templates
 
+gzip:
+	find $(PUBLIC_FOLDER)/**/*.{css,js} -type f -exec gzip -9 {} \; -exec mv {}.gz {} \;
+
 # Deploys to S3 without a version
-deploy:
+deploy: gzip
 	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/images --recursive
 	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/javascripts --recursive
 	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/stylesheets --recursive
 	aws s3 sync --acl=public-read --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website
 
 # Deploys to S3 using the latest release
-deploy_to_release:
+deploy_to_release: gzip
 	aws s3 sync --acl=public-read --delete --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website/$(REL_TAG)
