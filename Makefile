@@ -123,7 +123,9 @@ deploy: gzip
 	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/javascripts --recursive
 	aws s3 rm s3://$(AWS_ACCOUNT).pugin-website/stylesheets --recursive
 	aws s3 sync --acl=public-read --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website
+	aws s3 cp s3://$(AWS_ACCOUNT).pugin-website s3://$(AWS_ACCOUNT).pugin-website --include "javascripts/*.js" --include "stylesheets/*.css" --content-encoding gzip --acl=public-read
 
 # Deploys to S3 using the latest release
 deploy_to_release: gzip
 	aws s3 sync --acl=public-read --delete --exclude "prototypes/*" ./_public/ s3://$(AWS_ACCOUNT).pugin-website/$(REL_TAG)
+	aws s3 cp s3://$(AWS_ACCOUNT).pugin-website s3://$(AWS_ACCOUNT).pugin-website --include "javascripts/*.js" --include "stylesheets/*.css" --content-encoding gzip
