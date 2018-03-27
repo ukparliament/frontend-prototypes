@@ -189,3 +189,11 @@ article {
 aside h2 {
   @include delta;
 }
+
+article + aside > h2 {
+  color: $white;
+  background-color: $deep-purple--light;
+  padding: $base-spacing-unit-small;
+  margin-top: 0;
+  margin-bottom: 0;
+}

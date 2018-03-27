@@ -15,3 +15,9 @@ body > {
     }
   }
 }
+
+/*--- Article Settings ---*/
+
+article footer {
+  margin-top: round($base-spacing-unit * 9);
+}
