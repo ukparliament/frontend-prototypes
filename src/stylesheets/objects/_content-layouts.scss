@@ -81,7 +81,7 @@ header .container {
 
 /*--- Elements with attribute role='main' ---*/
 article [role='main'] {
-  @media (min-width: $tablet) {
+  @include media($tablet) {
     padding-top: $base-spacing-unit-large;
   }
 }
