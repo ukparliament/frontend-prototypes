@@ -2,9 +2,10 @@ aside {
   margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-small;
 
   @include media($desktop) {
+    width: 225px;
+    margin-left: 45px;
     margin-top: ($base-spacing-unit-large * 2);
   }
-
   .block {
     @extend .theme--grey-4;
   }
