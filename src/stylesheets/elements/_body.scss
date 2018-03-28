@@ -6,7 +6,7 @@
 @import '../elements/semantic-elements';
 
 html {
-  font-size: 16px;
+  font-size: $base-font-size;
 }
 
 body {

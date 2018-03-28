@@ -9,9 +9,11 @@
 
 /*--- Font Size [size] Pass Pixel value to get REM/Pixel fallback ---*/
 
-@mixin fontsize($size){
-  font-size:   $size + 0px;
-  font-size:   ($size / 16) + 0rem;
+@mixin fontsize($size) {
+  /* If you divide a united value ($base-font-size) by 1px, it becomes unitless.
+     Since you cannot merge two units (px and rem, in this case), you have to make one unitless.
+  */
+  font-size: ($size / ($base-font-size / 1px)) + 0rem;
 }
 
 /*--- Border Radius [top left, top right, bottom right, bottom left] ---*/
