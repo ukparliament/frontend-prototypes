@@ -314,7 +314,7 @@
 
 @mixin block {
   padding: $base-spacing-unit-small;
-  background-color: white;
+  background-color: $white;
   @include headings-margin-top(0);
   @include last-child;
 }
