@@ -20,4 +20,10 @@ body > {
 
 article footer {
   margin-top: round($base-spacing-unit * 9);
+
+  /*--- Print Styles ---*/
+
+  @media print {
+    display: none;
+  }
 }

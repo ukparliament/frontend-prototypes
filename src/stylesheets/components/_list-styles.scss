@@ -295,7 +295,7 @@ footer .list {
 article [role='main'] {
   li {
     list-style: none;
-    &::before {
+    &:before {
       content: '';
       display: inline-block;
       position: relative;
@@ -308,7 +308,7 @@ article [role='main'] {
   ul {
     > li {
       margin: $base-spacing-unit-tiny 0;
-      &::before {
+      &:before {
         top: -2px;
         left: -$base-spacing-unit-tiny;
         width: 8px;
@@ -323,7 +323,7 @@ article [role='main'] {
     > li {
       counter-increment: item;
       margin: $base-spacing-unit-medium 0;
-      &::before {
+      &:before {
         content: counter(item);
         left:        -($base-spacing-unit-medium + 2);
         width:        ($base-spacing-unit-large - 2);
@@ -336,6 +336,22 @@ article [role='main'] {
         margin-top: $base-spacing-unit-medium;
         margin-bottom: $base-spacing-unit-medium;
       }
+    }
+  }
+
+  /*--- Print styles ---*/
+
+  @media print {
+    ul > li, ol > li {
+      &:before {
+        content: none;
+      }
+    }
+    ul > li {
+      list-style-type: disc;
+    }
+    ol > li {
+      list-style-type: decimal;
     }
   }
 }
