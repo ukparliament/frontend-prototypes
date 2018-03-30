@@ -54,12 +54,12 @@ clean_hard: clean
 css:
 	@mkdir -p $(PUBLIC_FOLDER)/stylesheets
 	@$(NODE_SASS) --output-style compressed -o $(PUBLIC_FOLDER)/stylesheets $(STYLESHEETS_LOC)
-	@$(POSTCSS) -r $(PUBLIC_FOLDER)/stylesheets/* --no-map
+	@$(POSTCSS) -r $(PUBLIC_FOLDER)/stylesheets/*.css --no-map
 
 # Minifies javascript files
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(LEAFLET) $(LEAFLET_FULLSCREEN) $(JAVASCRIPTS_LOC)/*.js -m -c -o $(PUBLIC_FOLDER)/javascripts/main.js
+	@$(UGLIFY_JS) $(LEAFLET) $(LEAFLET_FULLSCREEN) $(JAVASCRIPTS_LOC)/*.js -m -c -o $(PUBLIC_FOLDER)/javascripts/main.js --source-map url=$(PUBLIC_FOLDER)/javascripts/main.js.map
 
 # Minifies json file
 json:
