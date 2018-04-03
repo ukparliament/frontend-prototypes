@@ -9,4 +9,10 @@ aside {
   .block {
     @extend .theme--grey-4;
   }
+
+  /*--- Print styles ---*/
+
+  @media print {
+    display: none;
+  }
 }

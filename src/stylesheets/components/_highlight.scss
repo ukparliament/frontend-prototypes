@@ -39,12 +39,26 @@
 .status--banner,
 .status--banner__beta {
   @include status--banner;
+
+  /*--- Print styles ---*/
+
+  @media print {
+    display: none;
+  }
 }
 
 .status--banner.cookie {
   display: none;
   &.show {
     display: block;
+  }
+
+  /*--- Print styles ---*/
+
+  @media print {
+    &.show {
+      display: none;
+    }
   }
 }
 
