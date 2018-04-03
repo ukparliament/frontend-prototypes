@@ -84,6 +84,10 @@ dl, dt, dd {
   @include list--inline;
 }
 
+article footer .list--inline {
+  margin-top: round($base-spacing-unit * 9);
+}
+
 @mixin list--details__inline {
   @include list--details;
   * {
@@ -102,7 +106,7 @@ dl, dt, dd {
     @include block;
     width: 100%;
     margin-bottom: $base-spacing-unit;
-    @media(min-width: $smartphone) {
+    @include media($smartphone) {
       display: inline-flex;
       .list--details {
         flex-basis: 100%;
@@ -152,7 +156,7 @@ dl, dt, dd {
 
   li {
     width: 100%;
-    @media(min-width: $desktop){
+    @include media($desktop) {
       flex-grow: 0;
       width: calc(50% - #{$base-spacing-unit});
     }
@@ -170,7 +174,7 @@ dl, dt, dd {
     background: transparent;
     border-bottom: solid 1px $grey-3;
     padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
-    @media(min-width: $smartphone) {
+    @include media($smartphone) {
       display: inline-flex;
       .list--details {
         flex-basis: 100%;
@@ -191,6 +195,11 @@ dl, dt, dd {
 
 .list--pipe {
   @include list--pipe;
+}
+
+article + aside .list--pipe li:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
 aside .list--pipe li:last-child {
@@ -280,6 +289,55 @@ footer .list {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/*--- Lists inside article's [role="main"] ---*/
+article [role='main'] {
+  li {
+    list-style: none;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: relative;
+      color: $white;
+      font-weight: 500;
+      text-align: center;
+      background-color: $deep-purple;
+    }
+  }
+  ul {
+    > li {
+      margin: $base-spacing-unit-tiny 0;
+      &::before {
+        top: -2px;
+        left: -$base-spacing-unit-tiny;
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        margin-left: -8px;
+      }
+    }
+  }
+  ol {
+    margin-left: ($base-spacing-unit-extra-large + $base-spacing-unit-small);
+    > li {
+      counter-increment: item;
+      margin: $base-spacing-unit-medium 0;
+      &::before {
+        content: counter(item);
+        left:        -($base-spacing-unit-medium + 2);
+        width:        ($base-spacing-unit-large - 2);
+        height:       ($base-spacing-unit-large - 2);
+        line-height:  ($base-spacing-unit-large - 2);
+        margin-left: -($base-spacing-unit-large - 2);
+      }
+
+      > ul {
+        margin-top: $base-spacing-unit-medium;
+        margin-bottom: $base-spacing-unit-medium;
+      }
+    }
+  }
 }
 
 /*--- Component Lists ---*/

@@ -1,53 +1,15 @@
+.article--wrapper {
+  @include media($desktop) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 article {
   margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-small;
 
-  @media (min-width: $desktop) {
+  @include media($desktop) {
+    flex: 1;
     margin-top: ($base-spacing-unit-large * 2);
-  }
-
-  li {
-    list-style: none;
-    &::before {
-      content: '';
-      display: inline-block;
-      position: relative;
-      color: $white;
-      font-weight: 500;
-      text-align: center;
-      background-color: $deep-purple;
-    }
-  }
-  ul {
-    > li {
-      margin: $base-spacing-unit-tiny 0;
-      &::before {
-        top: -2px;
-        left: -$base-spacing-unit-tiny;
-        width: 8px;
-        height: 8px;
-        border-radius: 4px;
-        margin-left: -8px;
-      }
-    }
-  }
-  ol {
-    margin-left: ($base-spacing-unit-extra-large + $base-spacing-unit-small);
-    > li {
-      counter-increment: item;
-      margin: $base-spacing-unit-medium 0;
-      &::before {
-        content: counter(item);
-        left:        -($base-spacing-unit-medium + 2);
-        width:        ($base-spacing-unit-large - 2);
-        height:       ($base-spacing-unit-large - 2);
-        line-height:  ($base-spacing-unit-large - 2);
-        margin-left: -($base-spacing-unit-large - 2);
-      }
-
-      > ul {
-        margin-top: $base-spacing-unit-medium;
-        margin-bottom: $base-spacing-unit-medium;
-      }
-    }
   }
 }

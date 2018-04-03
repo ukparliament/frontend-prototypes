@@ -2,59 +2,76 @@ extends ../../layouts/layout-front-page.pug
 block content
   -var thingPage = true
 
-  .container.flex--2__2-1
-    article(tabindex=0)#content
-      header
-        h1 How to submit an oral question on paper
-        p These steps are for submitting on oral question on paper.
-        p You can also submit an oral question online.
-        p You or your staff can complete these steps, but your handwritten signature is needed for step 3
+  .container
+    .article--wrapper
+      article(tabindex=0)#content
+        header
+          p #[+link('#', 'MPs Guide to Procedure')]
+          h1 How to submit an oral question on paper
+          p These steps are for submitting on oral question on paper.
+          p You can also submit an oral question online.
+          p You or your staff can complete these steps, but your handwritten signature is needed for step 3
 
-      div(role='main')
-        h2 Steps
-        ol
-          li Use the Question Time rota (PDF, 45 KB) to find out which departments are due to answer questions. The deadline for tabling oral questions is 12.30pm three sitting days before the Question Time takes place (or five sitting days for Northern Ireland, Scotland and Wales questions). A sitting day is a day when the House is meeting.
-          li Fill in a question form (download a question form (Word doc, 39 KB) from the intranet or get one from the Table Office or Procedural Hub).
-            ul
-              li Tick the box to specify that it is an oral question. Fill in your name, constituency and the relevant department.
-              li Write the text of your question in the blank space on the form. Check it conforms to the rules for questions. To submit a topical question, write 'T' in the blank space. You can table one substantive and one topical question (check the rota to see whether there are topical questions for that department) for each departmental Question Time. A substantive question means you submit the text of the question in advance. A topical question means there is no need to submit the text in advance.
-              li If you are asking a substantive question and have an interest to declare, tick the box and email tableoffice@parliament.uk to say what the interest is.
-          li Take your question form to the Table Office or Procedural Hub in person, or ask another MP to take it for you. Or sign the question form and post it or ask your staff to take it to the Table Office or Procedural Hub (faxed, stamped or photocopied signatures cannot be accepted).
-          li The Table Office will check your question and contact you if they have a problem. Once the Table Office has approved your question, it has been tabled.
+        //------ Example nav -------//
+          nav
+            .block
+              ul.list--inline
+                each val in ['Heading one', 'Heading two', 'Heading three', 'Heading four', 'Heading five', 'Heading six', 'Heading seven', 'Heading eight', 'Heading nine', 'Heading ten']
+                  li
+                    +link('#')= val
+        //--------------------------//
 
-    aside
-      .block
+        div(role='main')
+          h2 Steps
+          ol
+            li Use the Question Time rota (PDF, 45 KB) to find out which departments are due to answer questions. The deadline for tabling oral questions is 12.30pm three sitting days before the Question Time takes place (or five sitting days for Northern Ireland, Scotland and Wales questions). A sitting day is a day when the House is meeting.
+            li Fill in a question form (download a question form (Word doc, 39 KB) from the intranet or get one from the Table Office or Procedural Hub).
+              ul
+                li Tick the box to specify that it is an oral question. Fill in your name, constituency and the relevant department.
+                li Write the text of your question in the blank space on the form. Check it conforms to the rules for questions. To submit a topical question, write 'T' in the blank space. You can table one substantive and one topical question (check the rota to see whether there are topical questions for that department) for each departmental Question Time. A substantive question means you submit the text of the question in advance. A topical question means there is no need to submit the text in advance.
+                li If you are asking a substantive question and have an interest to declare, tick the box and email tableoffice@parliament.uk to say what the interest is.
+            li Take your question form to the Table Office or Procedural Hub in person, or ask another MP to take it for you. Or sign the question form and post it or ask your staff to take it to the Table Office or Procedural Hub (faxed, stamped or photocopied signatures cannot be accepted).
+            li The Table Office will check your question and contact you if they have a problem. Once the Table Office has approved your question, it has been tabled.
+
+        footer
+          h2.beta Contact an expert
+
+          h3.zeta For enquiries about this thing
+          p Table office
+          dl.list--definition
+            dt Email:
+            dd #[+link('tableoffice@parliament.uk', 'tableoffice@parliament.uk')]
+            dt Extension(s):
+            dd 3305
+
+          h2 Up to:
+          p #[+link('#', 'MPs Guide to Procedure')]
+
+      aside
         h2 Related Articles
-        ul.list--pipe
-          li
-            .list--details
-              +link('#', 'MPs guide to business questions')
-          li
-            .list--details
-              +link('#', 'MPs guide to deadlines for questions')
-          li
-            .list--details
-              +link('#', 'An overview of oral questions for MPs')
-          li
-            .list--details
-              +link('#', 'MPs guide to Prime Ministers questions')
-          li
-            .list--details
-              +link('#', 'MPs guide to problems with questions')
-          li
-            .list--details
-              +link('#', 'MPs guide to rules for questions')
-          li
-            .list--details
-              +link('#', 'MPs guide to urgent questions')
-          li
-            .list--details
-              +link('#', 'MPs guide to written questions')
-
-      .block
-        h2 Save and share
-        dl.list--definition
-          dt
-            include ../../icons/print.svg
-          dd
-            +link('#', 'Print')
+        .block
+          ul.list--pipe
+            li
+              .list--details
+                +link('#', 'MPs guide to business questions')
+            li
+              .list--details
+                +link('#', 'MPs guide to deadlines for questions')
+            li
+              .list--details
+                +link('#', 'An overview of oral questions for MPs')
+            li
+              .list--details
+                +link('#', 'MPs guide to Prime Ministers questions')
+            li
+              .list--details
+                +link('#', 'MPs guide to problems with questions')
+            li
+              .list--details
+                +link('#', 'MPs guide to rules for questions')
+            li
+              .list--details
+                +link('#', 'MPs guide to urgent questions')
+            li
+              .list--details
+                +link('#', 'MPs guide to written questions')

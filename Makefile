@@ -10,7 +10,6 @@ JAVASCRIPTS_LOC=src/javascripts
 JSON_LOC=src/json
 STYLESHEETS_LOC=src/stylesheets
 IMAGES_LOC=src/images
-REPORTS_FOLDER=reports
 
 # Node module variables
 NODE_MODULES=./node_modules
@@ -52,20 +51,15 @@ clean_hard: clean
 	@rm -rf $(NODE_MODULES)
 
 # Compiles sass to css
-css: css_core
+css:
 	@mkdir -p $(PUBLIC_FOLDER)/stylesheets
 	@$(NODE_SASS) --output-style compressed -o $(PUBLIC_FOLDER)/stylesheets $(STYLESHEETS_LOC)
-	@$(POSTCSS) -u autoprefixer -r $(PUBLIC_FOLDER)/stylesheets/* --no-map
-
-css_core:
-	@mkdir -p $(PUBLIC_FOLDER)/stylesheets
-	@$(NODE_SASS) --output-style compressed -o $(PUBLIC_FOLDER)/stylesheets $(STYLESHEETS_LOC)/elements/_body.scss
-	@mv $(PUBLIC_FOLDER)/stylesheets/_body.css $(PUBLIC_FOLDER)/stylesheets/pugin-base.css
+	@$(POSTCSS) -r $(PUBLIC_FOLDER)/stylesheets/* --no-map
 
 # Minifies javascript files
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
-	@$(UGLIFY_JS) $(LEAFLET) $(LEAFLET_FULLSCREEN) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
+	@$(UGLIFY_JS) $(LEAFLET) $(LEAFLET_FULLSCREEN) $(JAVASCRIPTS_LOC)/*.js -m -c -o $(PUBLIC_FOLDER)/javascripts/main.js
 
 # Minifies json file
 json:
