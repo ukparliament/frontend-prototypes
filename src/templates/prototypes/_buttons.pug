@@ -58,15 +58,17 @@ block content
         h3 Search
         +form('javascript:console.log("search submitted")', 'post')
           .input-group
-            +input('search', 'Enter a keyword', 'q', 'search_box')(maxlength='1000', pattern='^(?!.*<script|<Script).*$', required)
+            //- name, id, label, label class + additional attributes
+            +input--search('q', 'globalSearch', 'Enter a keyword')(maxlength='1000', pattern='^(?!.*<script|<Script).*$', required)
             button(type='submit', class='btn--white', data-tracking='search')
               include ../../icons/search.svg
 
         h3 Find your MP and constituency
         +form('javascript:console.log("postcode submitted")', 'post')
           .input-group
-            +input('text', 'Enter your full postcode, for example SW1A 0AA.', 'postcode', 'postcodeSearch')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}')
-            //- button [value, style, type, datatype]
+            //- name, id, label, label class + additional attributes
+            +input--text('postcode', 'postcodeSearch', 'Enter your full postcode, for example SW1A 0AA.')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}')
+            //- value, class, type, datatype
             +button('Find', 'btn--primary', 'submit', 'search')
 
       p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].

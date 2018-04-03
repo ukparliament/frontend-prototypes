@@ -50,8 +50,9 @@ block content
       +form('javascript:console.log("form submitted")', 'post')
         .block--border__bottom(data-dropdown='holder')
           +fieldset('Have you completed your questionnaire?')
-            +input('radio', 'Yes', 'radio-group-inline', 'question-check-yes')(data-dropdown='switch')
-            +input('radio', 'No', 'radio-group-inline', 'question-check-no')(checked)
+            //- type, name, id, label, label_class + additional attributes
+            +radio--checkbox__inline('radio', 'question-check', 'quesChkYes', 'Yes')(data-dropdown='switch')
+            +radio--checkbox__inline('radio', 'question-check', 'quesChkNo', 'No')(checked)
 
           div(data-dropdown-content='show') 
             .status--highlight.theme--caution
@@ -63,7 +64,8 @@ block content
 
       +form('javascript:console.log("form submitted")', 'post')
         .block--border__bottom(data-dropdown='holder')
-          +input('checkbox', 'I agree to the terms and conditions', 'terms-check', 'termsCheck')(data-dropdown='switch')
+          //- type, name, id, label, label_class + additional attributes
+          +radio--checkbox('checkbox', 'terms-check', 'termsChk', 'I agree to the terms and conditions')(data-dropdown='switch')
 
           div(data-dropdown-content='hide') 
             .status--highlight.theme--success

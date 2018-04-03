@@ -4,7 +4,9 @@
 
 form {
   width: 100%;
-  @include last-child;
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
 label {
@@ -45,14 +47,17 @@ input {
     border-radius: 0;
     appearance: none;
   }
-  &[name="postcode"] {
-    text-transform: uppercase;
-  }
   &[type="text"] {
     border: 2px solid $grey-3;
   }
   &[type="search"] {
     border: 1px solid $grey-3;
+  }
+  &[name="postcode"] {
+    text-transform: uppercase;
+  }
+  &[type="submit"] {
+    width: auto;
   }
   &[type="radio"]:checked,
   &[type="radio"]:not(:checked),
@@ -69,9 +74,9 @@ input {
   &[type="checkbox"]:not(:checked) + label {
     position: relative;
     padding-left: ($base-spacing-unit-medium * 2);
-    line-height: 2;
     color: $grey-1;
     cursor: pointer;
+    margin-top: 4px;
   }
   &[type="radio"]:checked + label:before,
   &[type="radio"]:not(:checked) + label:before,
@@ -80,7 +85,7 @@ input {
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
+    top: -4px;
     width: 32px;
     height: 32px;
     @include media($tablet) {
@@ -98,12 +103,12 @@ input {
   &[type="radio"]:not(:checked) + label:after {
     content: '';
     position: absolute;
-    top: 6px;
+    top: 2px;
     left: 6px;
     width: 20px;
     height: 20px;
     @include media($tablet) {
-      top: 8px;
+      top: 4px;
       left: 8px;
       width: 22px;
       height: 22px;
@@ -115,10 +120,10 @@ input {
   &[type="checkbox"]:not(:checked) + label:after {
     content: '';
     position: absolute;
-    top: 9px;
+    top: 5px;
     left: 7px;
     @include media($tablet) {
-      top: 11px;
+      top: 7px;
       left: 10px;
     }
     width: 18px;
@@ -238,7 +243,9 @@ input[type="file"].js-has-focus + label {
 
 // Form block holders
 
-.input-group, .input-group__verbose {
+.input-group,
+.input-group__inline,
+.input-group__verbose {
   display: flex;
   flex-wrap: wrap;
 }
@@ -263,7 +270,8 @@ input[type="file"].js-has-focus + label {
       flex: 0 0 50%;
     }
   }
-  button {
+  button,
+  input[type="submit"] {
     padding: 4px ($base-spacing-unit-medium - 2);
   }
 }
@@ -271,19 +279,23 @@ input[type="file"].js-has-focus + label {
 .input-group__verbose {
   label {
     font-weight: 500;
+    margin-bottom: $base-spacing-unit;
   }
   + * {
-    margin-top: -$base-spacing-unit-small;
     margin-left: (($base-spacing-unit-extra-large + $base-spacing-unit-tiny) + 3);
   }
 }
 
 .input-group__inline {
-  display: inline-flex;
-  align-items: baseline;
-  input[type="checkbox"] + label,
-  input[type="radio"] + label {
-    padding-right: $base-spacing-unit-large;
+  @include media($desktop) {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    margin-bottom: 0;
+    input[type="checkbox"] + label,
+    input[type="radio"] + label {
+      padding-right: $base-spacing-unit-large;
+    }
   }
 }
 

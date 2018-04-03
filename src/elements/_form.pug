@@ -1,65 +1,66 @@
 //- HTML Form Elements
 
-
 //- <form>
 mixin form(action, method)
   form(action=action, method=method)&attributes(attributes)
     block
 
+//- <input type='text'>
+mixin input--text(name, id, label, label_class)
+  label(for=id, class=label_class)= label
+  input(type='text', name=name, id=id)&attributes(attributes)
 
-//- <input>
-mixin input(type, label, name, id, datatype, datasize)
-  if type === 'checkbox' || type === 'radio'
+//- <input type='search'>
+mixin input--search(name, id, label, label_class)
+  label(for=id, class=label_class)= label
+  input(type='search', name=name, id=id)&attributes(attributes)
 
-    - var group_type = name
+//- <input type='file'>
+mixin input--file(name, id, label, label_class)
+  input(type='file', name=name, id=id, data-file-upload='button')&attributes(attributes)
+  label(for=id, class=label_class)= label
 
-    if group_type === 'radio-group-inline'
-      .input-group__inline
-        input(type=type, id=id, name=name)&attributes(attributes)
-        label(for=id)= label
-    else if group_type === 'radio-group-verbose'
-      .input-group__verbose
-        input(type=type, id=id, name=name)&attributes(attributes)
-        label(for=id)= label
-    else
-      .input-group
-        input(type=type, id=id, name=name)&attributes(attributes)
-        label(for=id)= label
+//- <input type='radio / checkbox'> block layout
+mixin radio--checkbox(type, name, id, label, label_class)
+  .input-group
+    input(type=type, name=name, id=id)&attributes(attributes)
+    label(for=id, class=label_class)= label
 
-  else if type === 'file'
-    input(type=type, id=id, name=name, data-file-upload=datatype, data-file-size=datasize)
-    label(for=id)&attributes(attributes)= label
+//- <input type='radio / checkbox'> inline layout
+mixin radio--checkbox__inline(type, name, id, label, label_class)
+  .input-group__inline
+    input(type=type, name=name, id=id)&attributes(attributes)
+    label(for=id, class=label_class)= label
 
-  else
-    label(for=id)= label
-    input(type=type, id=id, name=name)&attributes(attributes)
+//- <input type='radio / checkbox'> block layout with description text
+mixin radio--checkbox__verbose(type, name, id, description, label, label_class)
+  .input-group__verbose
+    input(type=type, name=name, id=id)&attributes(attributes)
+    label(for=id, class=label_class)= label
+  p= description
 
-//- <textarea>
-mixin textarea(label, id)
-  label(for=id)= label
-  textarea(id=id)&attributes(attributes)
-
+//- <fieldset>
+mixin fieldset(legend, legend_class)
+  fieldset
+    legend(class=legend_class)=legend
+    block
 
 //- <select>
-mixin select(label, id, name)
+mixin select(name, id, label)
   label(for=id)=label
   select(name=name, id=id)
     block
 
-
 //- <option>
-mixin option(value, valueAttrib)
-  option(value=valueAttrib||value)&attributes(attributes)= value
-
+mixin option(value, content)
+  option(value=content||value)&attributes(attributes)= value
 
 //- <optgroup>
 mixin optgroup(label)
   optgroup(label=label)
     block
 
-
-//- <fieldset>
-mixin fieldset(legend)
-  fieldset
-    legend=legend
-    block
+//- <textarea>
+mixin textarea(id, label)
+  label(for=id)= label
+  textarea(id=id)&attributes(attributes)
