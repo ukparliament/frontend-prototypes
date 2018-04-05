@@ -197,9 +197,19 @@ article footer .list--inline {
   @include list--pipe;
 }
 
-article + aside .list--pipe li:first-child {
-  border-top: 0;
-  padding-top: 0;
+article + aside .list--pipe {
+  li:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  li.active {
+    width: auto;
+    font-weight: 400;
+    background-color: $grey-3;
+    padding-right: $base-spacing-unit-small;
+    padding-left: $base-spacing-unit-small;
+    margin: -1px (-$base-spacing-unit-small) 0;
+  }
 }
 
 aside .list--pipe li:last-child {
