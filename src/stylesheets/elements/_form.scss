@@ -43,11 +43,13 @@ select {
 
 input {
   &[type="text"],
-  &[type="search"] {
+  &[type="search"],
+  &[type="email"] {
     border-radius: 0;
     appearance: none;
   }
-  &[type="text"] {
+  &[type="text"],
+  &[type="email"] {
     border: 2px solid $grey-3;
   }
   &[type="search"] {

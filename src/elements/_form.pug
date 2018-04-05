@@ -7,42 +7,42 @@ mixin form(action, method)
 
 //- <input type='text'>
 mixin input--text(name, id, label, label_class)
-  label(for=id, class=label_class)= label
+  label(for=id, class=(label_class ? label_class : null))= label
   input(type='text', name=name, id=id)&attributes(attributes)
 
-//- <input type='search'>
-mixin input--search(name, id, label, label_class)
-  label(for=id, class=label_class)= label
-  input(type='search', name=name, id=id)&attributes(attributes)
+//- <input type='search || email || tel || number'>
+mixin input--validate(type, name, id, pattern, maxlength, label, label_class)
+  label(for=id, class=(label_class ? label_class : null))= label
+  input(type=type, name=name, id=id, pattern=(pattern ? pattern : null), maxlength=(maxlength ? maxlength : null), required)&attributes(attributes)
 
 //- <input type='file'>
 mixin input--file(name, id, label, label_class)
-  input(type='file', name=name, id=id, data-file-upload='button')&attributes(attributes)
+  input(type='file', name=name, id=id, data-file-upload='button', data-file-size='2097152')&attributes(attributes)
   label(for=id, class=label_class)= label
 
 //- <input type='radio / checkbox'> block layout
 mixin radio--checkbox(type, name, id, label, label_class)
   .input-group
     input(type=type, name=name, id=id)&attributes(attributes)
-    label(for=id, class=label_class)= label
+    label(for=id, class=(label_class ? label_class : null))= label
 
 //- <input type='radio / checkbox'> inline layout
 mixin radio--checkbox__inline(type, name, id, label, label_class)
   .input-group__inline
     input(type=type, name=name, id=id)&attributes(attributes)
-    label(for=id, class=label_class)= label
+    label(for=id, class=(label_class ? label_class : null))= label
 
 //- <input type='radio / checkbox'> block layout with description text
 mixin radio--checkbox__verbose(type, name, id, description, label, label_class)
   .input-group__verbose
     input(type=type, name=name, id=id)&attributes(attributes)
-    label(for=id, class=label_class)= label
+    label(for=id, class=(label_class ? label_class : null))= label
   p= description
 
 //- <fieldset>
 mixin fieldset(legend, legend_class)
   fieldset
-    legend(class=legend_class)=legend
+    legend(class=(legend_class ? legend_class : null))=legend
     block
 
 //- <select>

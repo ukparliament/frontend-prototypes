@@ -58,16 +58,16 @@ block content
         h3 Search
         +form('javascript:console.log("search submitted")', 'post')
           .input-group
-            //- name, id, label, label class + additional attributes
-            +input--search('q', 'globalSearch', 'Enter a keyword')(maxlength='1000', pattern='^(?!.*<script|<Script).*$', required)
+            //- type, name, id, regex pattern, max length, label, label class + additional attributes
+            +input--validate('search', 'q', 'globalSearch', '^(?!.*<script|<Script).*$', '1000', 'Enter a keyword')
             button(type='submit', class='btn--white', data-tracking='search')
               include ../../icons/search.svg
 
         h3 Find your MP and constituency
         +form('javascript:console.log("postcode submitted")', 'post')
           .input-group
-            //- name, id, label, label class + additional attributes
-            +input--text('postcode', 'postcodeSearch', 'Enter your full postcode, for example SW1A 0AA.')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}')
+            //- type, name, id, regex pattern, max length, label, label class + additional attributes
+            +input--validate('text', 'postcode', 'postcodeSearch', '[0-9a-zA-Z ]{5,}', '8', 'Enter your full postcode, for example SW1A 0AA.')
             //- value, class, type, datatype
             +button('Find', 'btn--primary', 'submit', 'search')
 

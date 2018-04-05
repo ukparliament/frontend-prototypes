@@ -18,7 +18,11 @@ block content
 
       //- name, id, label, label class + additional attributes
       +input--text('name', 'txtName', 'Full name')(required)
-      +input--text('email', 'txtEmail', 'Email Address', 'message--error')(required)
+
+      h2 HTML &lt;input&gt; Search / Email / Tel (requires validation)
+
+      //- type, name, id, regex pattern, max length, label, label class + additional attributes
+      +input--validate('email', 'email', 'txtEmail', '.+\\\@.+\\\..+', null, 'Email Address', null)(required)
 
       //- form input with error message
       label(for='form-with-error') Telephone
