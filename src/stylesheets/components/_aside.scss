@@ -8,6 +8,7 @@ aside {
   }
   .block {
     @extend .theme--grey-4;
+    padding: 0;
   }
 
   /*--- Print styles ---*/
