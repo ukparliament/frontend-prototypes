@@ -17,6 +17,15 @@
   margin-right: $base-spacing-unit-tiny;
 }
 
+/*--- List ---*/
+
+[class*="list"] {
+  .hint,
+  .url {
+    margin-right: $base-spacing-unit;
+  }
+}
+
 /*--- URLs ---*/
 
 .hint,

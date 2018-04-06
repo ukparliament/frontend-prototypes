@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+  <title>Share icon</title>
+  <g fill="#373150">
+    <circle cx="3.5" cy="10" r="3.5"/>
+    <circle cx="16.5" cy="3.5" r="3.5"/>
+    <circle cx="16.5" cy="16.5" r="3.5"/>
+    <rect x="4.432" y="5.453" width="12" height="2" transform="translate(-1.753 5.039) rotate(-25.122)"/>
+    <rect x="9.398" y="7.62" width="2" height="12" transform="translate(-6.395 17.027) rotate(-64.11)"/>
+  </g>
+</svg>

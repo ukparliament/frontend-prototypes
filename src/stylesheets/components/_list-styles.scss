@@ -73,19 +73,12 @@ dl, dt, dd {
   }
   li {
     float: left;
+    margin-right: $base-spacing-unit-small;
   }
-  a, span {
-    display: block;
-    position: relative;
-    padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
-  }
-}
-.list--inline {
-  @include list--inline;
 }
 
-article footer .list--inline {
-  margin-top: round($base-spacing-unit * 9);
+.list--inline {
+  @include list--inline;
 }
 
 @mixin list--details__inline {
@@ -197,25 +190,18 @@ article footer .list--inline {
   @include list--pipe;
 }
 
-article + aside .list--pipe li {
-  width: auto;
-  margin: 0 $base-spacing-unit-small;
-  &.active {
-    width: auto;
-    font-weight: 400;
-    background-color: $grey-3;
-    padding-right: $base-spacing-unit-small;
-    padding-left: $base-spacing-unit-small;
-    margin: -1px 0 0;
-  }
-}
-
 aside .list--pipe li {
+  margin: 0 $base-spacing-unit-small;
   &:first-child {
     border-top: 0;
   }
   &:last-child {
     border-bottom: 0;
+  }
+  &.active {
+    padding-right: $base-spacing-unit-small;
+    padding-left: $base-spacing-unit-small;
+    margin: -1px 0 0;
   }
 }
 
@@ -249,6 +235,11 @@ aside .list--pipe li {
   li.active {
     padding: ($base-spacing-unit + 2) 0;
     border-bottom: 4px solid $purple;
+  }
+  a, span {
+    display: block;
+    position: relative;
+    padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
   }
   a {
     padding: ($base-spacing-unit + 2) 0;
@@ -365,6 +356,15 @@ article [role='main'] {
     ol > li {
       list-style-type: decimal;
     }
+  }
+}
+
+aside [class*="list"] li {
+  display: block;
+  width: auto;
+  &.active {
+    font-weight: 400;
+    background-color: $grey-3;
   }
 }
 

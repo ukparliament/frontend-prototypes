@@ -54,11 +54,49 @@ var UK_Parliament = (function () {
         }
       };
       request.send();
+    },
+
+    /**
+     * Get ancestor of an element based on matching attributes by traversing up the DOM
+     * @param {object} element The element to traverse from
+     * @param {object} attributes HTML attributes with values to check against
+     * @param {function} callback Allows user to modify the matching parent element
+     *
+     * @return Returns parent element that contains all specified `attributes`
+     */
+    traverseUp = function (element, attributes, callback) {
+
+      var
+        parent = element.parentElement,
+        attrs = Object.keys(attributes);
+
+      if (parent) {
+
+        for (var i = 0; i < attrs.length; i++) {
+          if (
+            parent.hasAttribute(attrs[i]) &&
+            parent.getAttribute(attrs[i]) === attributes[attrs[i]]
+          ) {
+            if ((i + 1) === attrs.length) {
+              return callback ? callback(parent) : parent;
+            } else {
+              continue;
+            }
+          } else {
+            return this.traverseUp(parent, attributes, callback);
+          }
+        }
+
+      }
+
+      throw 'Sorry, there is no such ancestor with the identifiers you referenced: ' + JSON.stringify(attributes);
+
     };
 
   return {
     setCookie: setCookie,
     getCookie: getCookie,
-    httpRequest: httpRequest
+    httpRequest: httpRequest,
+    traverseUp: traverseUp
   };
 })();

@@ -120,3 +120,13 @@ svg [data-icon="file"] {
   height: 20px;
   margin-left: -4px;
 }
+
+/*--- List styles ---*/
+
+/* Adding space between the right of an SVG and the
+left of its sibling. SVG left spacing not required
+because our design pattern is to have SVGs on the
+left hand side. */
+[class*="list"] svg + * {
+  margin-left: $base-spacing-unit;
+}

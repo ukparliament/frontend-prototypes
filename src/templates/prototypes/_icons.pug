@@ -1,0 +1,45 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+
+  .section--primary(tabindex=0)#content
+    .container
+      h1 Icons
+
+  section
+    .container
+      h2 Small
+      table
+        tr
+          th Caution circle
+          th Close
+          th Download
+        tr
+          td
+            include ../../icons/caution-circle-white.svg
+          td
+            include ../../icons/close.svg
+          td
+            include ../../icons/download.svg
+        tr
+          th Print
+          th Search
+          th Share
+        tr
+          td
+            include ../../icons/print.svg
+          td
+            include ../../icons/search.svg
+          td
+            include ../../icons/share.svg
+
+      h2 Large
+      table
+        tr
+          th File
+          th UK Parliament
+        tr
+          td
+            include ../../icons/file.svg
+          td
+            include ../../icons/uk-parliament.svg

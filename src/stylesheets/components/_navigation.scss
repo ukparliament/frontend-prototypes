@@ -1,8 +1,21 @@
+/*--- Navigation Main, Letter & Number ---*/
+.navigation--main,
+.navigation--letter,
+.navigation--number {
+  @include list--inline;
+  li {
+    margin-right: 0;
+  }
+  a, span {
+    display: block;
+    position: relative;
+    padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
+  }
+}
+
 /*--- Navigation Main ---*/
 
 .navigation--main {
-  @extend .list--inline;
-
   ol, ul {
     @include clearfix;
     list-style: none;
@@ -10,6 +23,23 @@
   }
   li {
     padding: 0 ($base-spacing-unit - 3);
+  }
+}
+
+/*--- Navigation Letter & Number ---*/
+
+.navigation--letter,
+.navigation--number {
+  ol, ul {
+    list-style: none;
+  }
+  li {
+    padding: 0;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  span {
+    min-width: 24px;
   }
 }
 
@@ -40,25 +70,6 @@
     @include media($desktop) {
       padding: ($base-spacing-unit + 2px) 0;
     }
-  }
-}
-
-/*--- Navigation Letter & Number ---*/
-
-.navigation--letter,
-.navigation--number {
-  @extend .list--inline;
-
-  ol, ul {
-    list-style: none;
-  }
-  li {
-    padding: 0;
-    text-align: center;
-    text-transform: capitalize;
-  }
-  span {
-    min-width: 24px;
   }
 }
 

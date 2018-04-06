@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 38 50" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
   <title>Download icon</title>
-  <polygon points="37 44 1 44 1 50 37 50"></polygon>
-  <path d="M16,0 L16,29.7 L4.4,18.8 L0.3,23.2 L17,38.8 C17.6,39.3 18.3,39.6 19,39.6 C19.7,39.6 20.5,39.3 21,38.8 L37.6,23.3 L33.5,18.9 L22,29.7 L22,0 L16,0 Z"></path>
+  <g fill="#373150">
+    <path d="M1,18L19,18L19,20L1,20Z"/>
+    <path d="M8.973,0V12.743L5.349,9,4,10.448l5.3,5.289A1.045,1.045,0,0,0,9.96,16a0.978,0.978,0,0,0,.658-0.263L16,10.448,14.651,9l-3.7,3.743V0H8.973Z"/>
+  </g>
 </svg>
