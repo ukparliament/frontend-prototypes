@@ -44,30 +44,10 @@ h1 + .lead {
 
 /*--- Typography  Options ---*/
 .typography--light {
-  font-weight: 300;
+  @include typography--light;
 }
 .typography--heavy {
-  font-weight: 500;
-}
-
-.column--25 {
-  @include fontsize(27);
-  line-height: 1.111; // 30px;
-  font-weight: 500;
-  @include media($desktop) {
-    @include fontsize(32);
-    line-height: 1.125; // 36px
-  }
-  span {
-    @include fontsize(16);
-    line-height: 1.125; // 18px;
-    font-weight: 400;
-
-    @include media($tablet) {
-      @include fontsize(18);
-      line-height: 1.5 // 24px
-    }
-  }
+  @include typography--heavy;
 }
 
 button, input, label, optgroup, select, textarea, figcaption {
@@ -96,4 +76,12 @@ label, optgroup, select, textarea {
 .hint,
 .url {
   @include fontsize(16);
+}
+
+/*--- Settings for count ---*/
+
+.count {
+  display: block;
+  @include beta;
+  @include typography--heavy;
 }

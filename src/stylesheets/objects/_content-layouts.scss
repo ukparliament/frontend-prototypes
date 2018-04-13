@@ -161,31 +161,3 @@ article [role='main'] {
     @include flex(66.666%, 33.333%, 36px);
   }
 }
-
-/*--- Col Layout Options [Re] ---*/
-
-.column--75,
-.column--25 {
-  display: inline-block;
-  @include headings-margin-top(0);
-  @include last-child;
-}
-
-.column--75 {
-  width: 75%;
-}
-
-.column--25 {
-  p {
-    position: absolute;
-    right: $base-spacing-unit-small;
-    top: calc(50% - 25px); // 50% - (half the height of the column height - 1 (compensate for font height))
-    text-align: right;
-    @include media($desktop) {
-      top: calc(50% - 32px); // 50% - (half the height of the column height - 2 (compensate for font height))
-    }
-    span {
-      display:block;
-    }
-  }
-}

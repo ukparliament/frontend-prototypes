@@ -310,6 +310,16 @@
   font-weight: 400;
 }
 
+/*--- Weighted Typography Mixins ---*/
+
+@mixin typography--light {
+  font-weight: 300;
+}
+
+@mixin typography--heavy {
+  font-weight: 500;
+}
+
 /*--- Block Mixins ---*/
 
 @mixin block {

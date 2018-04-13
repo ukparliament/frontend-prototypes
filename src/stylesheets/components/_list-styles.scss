@@ -159,6 +159,17 @@ dl, dt, dd {
   @include list--block__inline-50;
 }
 
+.list--block__2-1 {
+  @include list--block;
+
+  > li > .list--details:nth-child(2) {
+    flex-basis: 25%;
+    align-self: center;
+    text-align: right;
+    margin-left: $base-spacing-unit-extra-large;
+  }
+}
+
 @mixin list--pipe {
   @include list;
   > li {

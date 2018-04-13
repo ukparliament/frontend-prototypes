@@ -22,14 +22,12 @@ mixin list--block(name, constituency, party, image)
 //- List Box Parties
 mixin list--block__parties(party, count)
   li
-    .column--75
-      .list--details
-        h2 #[+link('#', party)]
-        p= 'All current ' + party + ' MPs'
-    .column--25
-      .list--details
-        p= count
-          span MPs
+    .list--details
+      h2 #[+link('#', party)]
+      p= 'All current ' + party + ' MPs'
+    .list--details
+      span.count= count
+      | MPs
 
 //- List Box Accessible
 mixin list--block__accessible(constituency, date)
