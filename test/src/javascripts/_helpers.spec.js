@@ -5,57 +5,79 @@ var
   chai = require('chai'),
   { expect } = chai,
 
-  jsdom = require('jsdom'),
-  { JSDOM } = jsdom,
-  { document } = (new JSDOM()).window,
+  test = require('selenium-webdriver/testing'),
+  webdriver = require('selenium-webdriver'),
+  { Builder, until } = webdriver,
+  chrome = require('chromedriver'),
 
-  code = fs.readFileSync(process.cwd() + '/src/javascripts/_helpers.js'),
+  driver;
 
-  cookie;
 
-describe('_helper.js', function () {
+describe('_helper.js', function() {
 
-  beforeEach(function (done) {
+  test.before(function (done) {
     /**
-     * Mock the DOM
+     * Using Chrome in headless mode
+     * instead of a native headless browser so that we can
+     * visually debug issues when required
      */
-    global.document = document;
-    global.window = document.defaultView;
-    global.XMLHttpRequest = window.XMLHttpRequest;
-
-    vm.runInThisContext(code); // VM (Executing JavaScript)
-
+    driver = new Builder()
+      .withCapabilities({
+        'browserName': 'chrome',
+        chromeOptions: {
+          args: ['--headless']
+        }
+      })
+      .build();
+    driver.get(process.env.SERVER + '/templates/prototypes/front-page.html');
     done();
   });
 
-  describe('function', function () {
-
-    it('setCookie() should exist', function (done) {
-      expect(UK_Parliament.setCookie).to.equal(UK_Parliament.setCookie);
-      done();
-    });
-
-    it('getCookie() should exist', function (done) {
-      expect(UK_Parliament.getCookie).to.equal(UK_Parliament.getCookie);
-      done();
-    });
-
-    it('httpRequest() should exist', function (done) {
-      expect(UK_Parliament.httpRequest).to.equal(UK_Parliament.httpRequest);
-      done();
-    });
-
+  test.after(function (done) {
+    driver.quit(); // quit the browser
+    done();
   });
 
-  describe('setCookie() and getCookie()', function () {
 
-    it('can set and get cookie', function (done) {
-      UK_Parliament.setCookie('testCookieName', 'testCookieValue', 1);
-      cookie = UK_Parliament.getCookie('testCookieName');
-      expect(cookie).to.equal('testCookieValue');
+  describe('function', function() {
+    test.it('setCookie() should exist', function(done) {
+      driver
+        .executeScript('return UK_Parliament.setCookie;')
+        .then(function(res) {
+          expect(res).to.be.an('object');
+        });
       done();
     });
 
+    test.it('getCookie() should exist', function(done) {
+      driver
+        .executeScript('return UK_Parliament.getCookie;')
+        .then(function(res) {
+          expect(res).to.be.an('object');
+        });
+      done();
+    });
+
+    test.it('httpRequest() should exist', function(done) {
+      driver
+        .executeScript('return UK_Parliament.httpRequest;')
+        .then(function(res) {
+          expect(res).to.be.an('object');
+        });
+      done();
+    });
+  });
+
+
+  describe('setCookie() and getCookie()', function() {
+    test.it('can set and get cookie', function(done) {
+      driver.executeScript('return UK_Parliament.setCookie("testCookieName", "testCookieValue", 1);');
+      driver.manage().getCookie('testCookieName')
+        .then(function(cookie) {
+          expect(cookie.value).to.equal('testCookieValue');
+        });
+      done();
+    });
   });
 
 });

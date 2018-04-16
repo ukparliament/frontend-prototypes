@@ -5,58 +5,73 @@ var
   chai = require('chai'),
   { expect } = chai,
 
-  jsdom = require('jsdom'),
-  { JSDOM } = jsdom,
-  { document } = (new JSDOM('<div id="cookie"></div>')).window, // Write element to DOM
+  test = require('selenium-webdriver/testing'),
+  webdriver = require('selenium-webdriver'),
+  { Builder, until } = webdriver,
+  chrome = require('chromedriver'),
 
-  helper = fs.readFileSync(process.cwd() + '/src/javascripts/_helpers.js'),
-  code = fs.readFileSync(process.cwd() + '/src/javascripts/cookie_disclaimer.js');
+  driver;
 
-describe('cookie_disclaimer.js', function () {
 
-  beforeEach(function (done) {
+describe('cookie_disclaimer.js', function() {
+
+  test.before(function(done) {
     /**
-     * Mock the DOM
+     * Using Chrome in headless mode
+     * instead of a native headless browser so that we can
+     * visually debug issues when required
      */
-    global.document = document;
-
-    /**
-     * Execute our code
-     * and it's dependencies
-     */
-    vm.runInThisContext(helper);
-    vm.runInThisContext(code);
-
+    driver = new Builder()
+      .withCapabilities({
+        'browserName': 'chrome',
+        chromeOptions: {
+          args: ['--headless']
+        }
+      })
+      .build();
+    driver.get(process.env.SERVER + '/templates/prototypes/front-page.html');
     done();
   });
 
-  describe('function', function () {
-
-    it('cookieBanner() should exist', function (done) {
-      expect(UK_Parliament.cookieBanner).to.equal(UK_Parliament.cookieBanner);
-      done();
-    });
-
+  test.after(function(done) {
+    driver.quit(); // quit the browser
+    done();
   });
 
-  describe('cookieBanner()', function () {
 
-    it('has set a class to display the cookie banner', function (done) {
-      var element = document.getElementById('cookie');
-      var attribute = element.getAttribute('class');
-      var cls = attribute.split(' ').filter(function (val) {
-        return val === 'show';
-      });
-      expect(cls).to.include('show');
+  describe('function', function() {
+    test.it('cookieBanner() should exist', function(done) {
+      driver
+        .executeScript('return UK_Parliament.cookieBanner;')
+        .then(function(res) {
+          expect(res).to.be.an('object');
+        });
+      done();
+    });
+  });
+
+
+  describe('cookieBanner()', function() {
+    test.it('has set a class to display the cookie banner', function(done) {
+      driver
+        .wait(until.elementLocated({ css: '#cookie' }))
+        .getAttribute('class')
+        .then(function(attribute) {
+          var value = attribute.split(' ').filter(function(val) {
+            return val === 'show';
+          });
+          expect(value).to.include('show');
+        });
       done();
     });
 
-    it('has set a cookie', function (done) {
-      let cookie = UK_Parliament.getCookie('UK_Parliament__seen_cookie_message');
-      expect(cookie).to.equal('yes');
+    test.it('has set a cookie', function(done) {
+      driver.manage().getCookie('UK_Parliament__seen_cookie_message')
+        .then(function(cookie) {
+          expect(cookie.value).to.equal('yes');
+        });
       done();
     });
-
   });
 
 });

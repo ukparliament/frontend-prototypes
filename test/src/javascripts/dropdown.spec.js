@@ -10,125 +10,95 @@ var
   { Builder, until } = webdriver,
   chrome = require('chromedriver'),
 
-  jsdom = require('jsdom'),
-  { JSDOM } = jsdom,
-  { document } = (new JSDOM()).window,
+  value, driver;
 
-  helper = fs.readFileSync(process.cwd() + '/src/javascripts/_helpers.js'),
-  code = fs.readFileSync(process.cwd() + '/src/javascripts/dropdown.js'),
 
-  cls, driver;
+describe('dropdown.js', function() {
 
-describe('dropdown.js', function () {
-
-  describe('function', function () {
-
-    beforeEach(function (done) {
-      /**
-       * Mock the DOM
-       */
-      global.document = document;
-
-      /**
-       * Execute our code
-       * and it's dependencies
-       */
-      vm.runInThisContext(helper);
-      vm.runInThisContext(code);
-
-      done();
-    });
-
-    it('dropdownToggle() should exist', function (done) {
-      expect(UK_Parliament.dropdownToggle).to.equal(UK_Parliament.dropdownToggle);
-      done();
-    });
-
+  test.beforeEach(function(done) {
+    /**
+     * Using Chrome in headless mode
+     * instead of a native headless browser so that we can
+     * visually debug issues when required
+     */
+    driver = new Builder()
+      .withCapabilities({
+        'browserName': 'chrome',
+        chromeOptions: {
+          args: ['--headless']
+        }
+      })
+      .build();
+    driver.get(process.env.SERVER + '/templates/prototypes/_toggles.html');
+    done();
   });
-  /*
-  describe('dropdownToggle()', function () {
 
-    this.timeout(30000);
+  test.afterEach(function(done) {
+    driver.quit(); // quit the browser
+    done();
+  });
 
-    test.beforeEach(function (done) {
-      /**
-       * Using Chrome in headless mode
-       * instead of a native headless browser so that we can
-       * visually debug issues when required
-       *
-      driver = new Builder()
-        .withCapabilities({
-          'browserName': 'chrome',
-          chromeOptions: {
-            args: ['--headless']
-          }
-        })
-        .build();
 
-      driver.get(process.env.SERVER + '/templates/prototypes/_toggles.html');
-
+  describe('function', function() {
+    test.it('dropdownToggle() should exist', function(done) {
+      driver
+        .executeScript('return UK_Parliament.dropdownToggle;')
+        .then(function(res) {
+          expect(res).to.be.an('object');
+        });
       done();
     });
+  });
 
-    test.afterEach(function (done) {
-      driver.quit(); // quit the browser
-      done();
-    });
 
-    test.it('.dropdown has class .open', function (done) {
+  describe('dropdownToggle()', function() {
+    test.it('.dropdown has class .open', function(done) {
       driver.wait(until.elementLocated({ css: '.dropdown__toggle > h2 > a' })).click();
-
       driver
         .wait(until.elementLocated({ css: '.dropdown' }))
         .getAttribute('class')
-        .then(function (value) {
-          cls = value.split(' ').filter(function (val) {
+        .then(function(attribute) {
+          value = attribute.split(' ').filter(function(val) {
             return val === 'open';
           });
-          expect(cls).to.include('open');
+          expect(value).to.include('open');
         });
-
       done();
     });
 
-    test.it('.dropdown should not contain class .open', function (done) {
+    test.it('.dropdown should not contain class .open', function(done) {
       driver
         .wait(until.elementLocated({ css: '.dropdown' }))
         .getAttribute('class')
-        .then(function (value) {
-          cls = value.split(' ').filter(function (val) {
+        .then(function(attribute) {
+          value = attribute.split(' ').filter(function(val) {
             return val !== 'open';
           });
-          expect(cls).to.not.include('open');
+          expect(value).to.not.include('open');
         });
-
       done();
     });
 
-    test.it('dropdown__content should be displayed', function (done) {
+    test.it('dropdown__content should be displayed', function(done) {
       driver.wait(until.elementLocated({ css: '.dropdown__toggle > h2 > a' })).click();
-
       driver
         .wait(until.elementLocated({ css: '.open > .dropdown__content' }))
         .getCssValue('visibility')
-        .then(function (value) {
-          expect(value).to.equal('visible');
+        .then(function(attribute) {
+          expect(attribute).to.equal('visible');
         });
-
       done();
     });
 
-    test.it('dropdown__content should not be displayed', function (done) {
+    test.it('dropdown__content should not be displayed', function(done) {
       driver
         .wait(until.elementLocated({ css: '.dropdown > .dropdown__content' }))
         .getCssValue('visibility')
-        .then(function (value) {
-          expect(value).to.equal('hidden');
+        .then(function(attribute) {
+          expect(attribute).to.equal('hidden');
         });
-
       done();
     });
-
   });
-  */
+
 });

@@ -5,38 +5,49 @@ var
   chai = require('chai'),
   { expect } = chai,
 
-  jsdom = require('jsdom'),
-  { JSDOM } = jsdom,
-  { document } = (new JSDOM()).window,
+  test = require('selenium-webdriver/testing'),
+  webdriver = require('selenium-webdriver'),
+  { Builder } = webdriver,
+  chrome = require('chromedriver'),
 
-  helper = fs.readFileSync(process.cwd() + '/src/javascripts/_helpers.js'),
-  code = fs.readFileSync(process.cwd() + '/src/javascripts/azure_tracking.js');
+  driver;
 
-describe('azure_tracking.js', function () {
 
-  describe('function', function () {
+describe('azure_tracking.js', function() {
 
-    beforeEach(function (done) {
-      /**
-       * Mock the DOM
-       */
-      global.document = document;
+  test.before(function(done) {
+    /**
+     * Using Chrome in headless mode
+     * instead of a native headless browser so that we can
+     * visually debug issues when required
+     */
+    driver = new Builder()
+      .withCapabilities({
+        'browserName': 'chrome',
+        chromeOptions: {
+          args: ['--headless']
+        }
+      })
+      .build();
+    driver.get(process.env.SERVER + '/templates/prototypes/front-page.html');
+    done();
+  });
 
-      /**
-       * Execute our code
-       * and it's dependencies
-       */
-      vm.runInThisContext(helper);
-      vm.runInThisContext(code);
+  test.after(function(done) {
+    driver.quit(); // quit the browser
+    done();
+  });
 
+
+  describe('function', function() {
+    test.it('azureTracking() should exist', function(done) {
+      driver
+        .executeScript('return UK_Parliament.azureTracking;')
+        .then(function(res) {
+          expect(res).to.be.an('object');
+        });
       done();
     });
-
-    it('azureTracking() should exist', function (done) {
-      expect(UK_Parliament.azureTracking).to.equal(UK_Parliament.azureTracking);
-      done();
-    });
-
   });
 
 });

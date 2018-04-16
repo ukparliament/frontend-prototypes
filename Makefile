@@ -104,7 +104,7 @@ test_valimate:
 	@$(VALIMATE) test/paths.json
 
 test: test_pa11y test_valimate
-	@env SERVER=$(SERVER) $(MOCHA) --recursive
+	@env SERVER=$(SERVER) $(MOCHA) --recursive --timeout 30000
 
 # Builds application
 build: lint css js images icons templates json

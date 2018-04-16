@@ -7,86 +7,64 @@ var
 
   test = require('selenium-webdriver/testing'),
   webdriver = require('selenium-webdriver'),
-  { Builder } = webdriver,
+  { Builder, until } = webdriver,
   chrome = require('chromedriver'),
-
-  jsdom = require('jsdom'),
-  { JSDOM } = jsdom,
-  { document } = (new JSDOM()).window,
-
-  helper = fs.readFileSync(process.cwd() + '/src/javascripts/_helpers.js'),
-  code = fs.readFileSync(process.cwd() + '/src/javascripts/map.js'),
 
   driver;
 
-describe('map.js', function () {
 
-  describe('function', function () {
+describe('map.js', function() {
 
-    beforeEach(function (done) {
-      /**
-       * Mock the DOM
-       */
-      global.document = document;
-      global.window = document.defaultView;
-
-      /**
-       * Execute our code
-       * and it's dependencies
-       */
-      vm.runInThisContext(helper);
-      vm.runInThisContext(code);
-
-      done();
-    });
-
-    it('map() should exist', function (done) {
-      expect(UK_Parliament.map).to.equal(UK_Parliament.map);
-      done();
-    });
-
+  test.before(function(done) {
+    /**
+     * Using Chrome in headless mode
+     * instead of a native headless browser so that we can
+     * visually debug issues when required
+     */
+    driver = new Builder()
+      .withCapabilities({
+        'browserName': 'chrome',
+        chromeOptions: {
+          args: ['--headless']
+        }
+      })
+      .build();
+    driver.get(process.env.SERVER + '/templates/prototypes/constituency.html');
+    done();
   });
-  /*
-  describe('map()', function () {
 
-    this.timeout(30000);
+  test.after(function(done) {
+    driver.quit(); // quit the browser
+    done();
+  });
 
-    test.beforeEach(function (done) {
-      /**
-       * Using Chrome in headless mode
-       * instead of a native headless browser so that we can
-       * visually debug issues when required
-       *
-      driver = new Builder()
-        .withCapabilities({
-          'browserName': 'chrome',
-          chromeOptions: {
-            args: ['--headless']
-          }
-        })
-        .build();
 
-      done();
-    });
-
-    test.afterEach(function (done) {
-      driver.quit(); // quit the browser
-      done();
-    });
-
-    test.it('should add the leaflet class of .leaflet-container', function (done) {
-      this.slow(10000);
-      driver.get(process.env.SERVER + '/templates/prototypes/constituency.html');
-
+  describe('function', function() {
+    test.it('map() should exist', function(done) {
       driver
-        .findElements({ className: 'leaflet-container' })
-        .then(function (res) {
-          expect(!!res.length).to.be.true;
+        .executeScript('return UK_Parliament.map;')
+        .then(function(res) {
+          expect(res).to.be.an('object');
         });
-
       done();
     });
-
   });
-  */
+
+
+  describe('map()', function() {
+    test.it('should add the leaflet class of .leaflet-container', function(done) {
+      driver
+        .wait(until.elementLocated({ css: '#mapbox' }))
+        .getAttribute('class')
+        .then(function(attribute) {
+          var value = attribute.split(' ').filter(function(val) {
+            return val === 'leaflet-container';
+          });
+          expect(value).to.include('leaflet-container');
+          // expect(attribute).to.include('leaflet-container');
+        });
+      done();
+    });
+  });
+
 });
