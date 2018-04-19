@@ -15,104 +15,17 @@ dl, dt, dd {
 
 /*--- List Base Settings ---*/
 
-@mixin list {
-  @include list-headings;
-  margin-left: 0;
-  list-style: none;
-
-  > ol {
-    list-style: decimal;
-  }
-  > ul {
-    list-style: disc;
-  }
-  li {
-    position: relative;
-    @include headings-margin-top(0);
-    @include last-child;
-    * {
-      margin-bottom: $base-spacing-unit;
-    }
-    &.active {
-      color: $deep-purple;
-      font-weight: 500;
-      text-decoration: none;
-    }
-  }
-}
 .list {
   @include list;
 }
 
-@mixin list--details {
-  margin-top: 0;
-  display: inline-block;
-  word-break: break-word;
-
-  :last-child {
-   margin-bottom: 0;
-  }
-}
-.list--details {
-  @include list--details
-}
-
-/*--- List Options ---*/
-
-.list--flex {
-  @include list;
-  display: flex;
-}
-
-@mixin list--inline {
-  @include list;
-  @include clearfix;
-
-  ol, ul {
-    margin: 0 (-$base-spacing-unit-tiny + 6);
-  }
-  li {
-    float: left;
-    margin-right: $base-spacing-unit-small;
-  }
-}
-
-.list--inline {
-  @include list--inline;
-}
-
-@mixin list--details__inline {
-  @include list--details;
-  * {
-    display: inline;
-  }
-}
-.list--details__inline {
-  @include list--details__inline;
-}
-
-@mixin list--block {
-  width: 100%;
-  @include list;
-
+.list--deep {
   > li {
-    @include block;
-    width: 100%;
-    margin-bottom: $base-spacing-unit;
-    @include media($smartphone) {
-      display: inline-flex;
-      .list--details {
-        flex-basis: 100%;
-      }
-    }
-    /* IE11 Fix */
-    @media(-ms-high-contrast: none) {
-      *::-ms-backdrop, figure + .list--details {
-        padding-left: $base-spacing-unit-small;
-      }
-    }
+    @include block--deep;
   }
 }
+
+/*--- List Block Options ---*/
 
 .list--block {
   @include list--block;
@@ -125,107 +38,36 @@ dl, dt, dd {
   }
 }
 
-@mixin list--block__inline {
-  @include list--block;
-  @include clearfix;
-
-  flex-wrap: wrap;
-  flex-direction: row;
-  display: inline-flex;
-
-  li {
-    width: auto;
-    flex-grow: 1;
-    display: inline-block;
-    margin-right: $base-spacing-unit;
-  }
-}
-.list--block__inline {
-  @include list--block__inline;
-}
-
-@mixin list--block__inline-50 {
-  @include list--block__inline;
-
-  li {
-    width: 100%;
-    @include media($desktop) {
-      flex-grow: 0;
-      width: calc(50% - #{$base-spacing-unit});
-    }
-  }
-}
-.list--block__inline-50 {
-  @include list--block__inline-50;
-}
-
-.list--block__2-1 {
-  @include list--block;
-
-  > li > .list--details:nth-child(2) {
-    flex-basis: 25%;
-    align-self: center;
-    text-align: right;
-    margin-left: $base-spacing-unit-extra-large;
-  }
-}
-
-@mixin list--pipe {
-  @include list;
-  > li {
-    width: 100%;
-    margin-bottom: 0;
-    background: transparent;
-    border-bottom: solid 1px $grey-3;
-    padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
-    @include media($smartphone) {
-      display: inline-flex;
-      .list--details {
-        flex-basis: 100%;
-      }
-    }
-    /* IE11 Fix */
-    @media(-ms-high-contrast: none) {
-      *::-ms-backdrop, figure + .list--details {
-        padding-left: $base-spacing-unit-large;
-      }
-    }
-  }
-  > li:first-of-type {
-    border-top: solid 1px $grey-3;
-    padding-top: ($base-spacing-unit-tiny - 1);
-  }
-}
+/*--- List Pipe Options ---*/
 
 .list--pipe {
   @include list--pipe;
 }
 
-aside .list--pipe li {
-  margin: 0 $base-spacing-unit-small;
-  &:first-child {
-    border-top: 0;
-  }
-  &:last-child {
-    border-bottom: 0;
-  }
-  &.active {
-    padding-right: $base-spacing-unit-small;
-    padding-left: $base-spacing-unit-small;
-    margin: -1px 0 0;
+.list--pipe__deep {
+  @include list--pipe;
+  li {
+    @include block--deep;
   }
 }
 
-.list--pipe__deep {
-  @include list--pipe;
-  > li {
-    padding-top: $base-spacing-unit-extra-large;
-    padding-bottom: ($base-spacing-unit-extra-large - 1);
-  }
-  > li:first-of-type {
-    padding-top: ($base-spacing-unit-extra-large - 1);
-  }
+/*--- List Inline Options ---*/
+
+.list--inline {
+  @include list--inline;
 }
+
+/*--- List Column Options ---*/
+
+.list--2 {
+  @include col--2;
+}
+
+.list--3 {
+  @include col--3;
+}
+
+/*--- List Definition ---*/
 
 .list--definition {
   margin: 0 0 $base-spacing-unit-small;
@@ -235,6 +77,8 @@ aside .list--pipe li {
     padding-right: $base-spacing-unit-tiny;
   }
 }
+
+/*--- List Tab ---*/
 
 .list--tab {
   @include list--inline;
@@ -257,6 +101,8 @@ aside .list--pipe li {
   }
 }
 
+/*--- List Alpha/Numerical Options ---*/
+
 .list--number, .list--roman, .list--alpha {
   @include list;
   li {
@@ -276,13 +122,32 @@ aside .list--pipe li {
   list-style-type: lower-alpha;
 }
 
+/*--- List Details Options ---*/
+
+.list--details {
+  @include list--details
+}
+
+.list--details__inline {
+  @include list--details__inline;
+}
+
+.list--details + .list--details {
+  @include media($smartphone) {
+    flex-basis: 25%;
+    text-align: right;
+    align-self: center;
+    margin-left: $base-spacing-unit;
+  }
+}
+
 /*--- Default Nested Lists [ul/ol] ---*/
 
 // List style for <ul> tags without any classes, nested
 // inside elements with class `.list--{{modifier}}` or
 // <ol> tags.
 
-[class*=list], ol {
+[class*="list"], ol {
   ul:not([class*=list]) {
     list-style-type: disc;
     > li {
@@ -297,15 +162,23 @@ aside .list--pipe li {
   }
 }
 
-/*--- List Footer ---*/
+/*--- Component Lists ---*/
 
-footer .list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+aside .list--pipe li {
+  margin: 0 $base-spacing-unit-small;
+  &:first-child {
+    border-top: 0;
+  }
+  &:last-child {
+    border-bottom: 0;
+  }
+  &.active {
+    padding-right: $base-spacing-unit-small;
+    padding-left: $base-spacing-unit-small;
+    margin: -1px 0 0;
+  }
 }
 
-/*--- Lists inside article's [role="main"] ---*/
 article [role='main'] {
   li {
     list-style: none;
@@ -379,7 +252,11 @@ aside [class*="list"] li {
   }
 }
 
-/*--- Component Lists ---*/
+footer .list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 .status--banner__beta ul {
   flex: 1;

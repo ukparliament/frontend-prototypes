@@ -2,7 +2,9 @@
 .navigation--main,
 .navigation--letter,
 .navigation--number {
-  @include list--inline;
+  ol, ul {
+    @include list--inline;
+  }
   li {
     margin-right: 0;
   }
@@ -17,8 +19,6 @@
 
 .navigation--main {
   ol, ul {
-    @include clearfix;
-    list-style: none;
     margin-left: (- $base-spacing-unit);
   }
   li {
@@ -30,9 +30,6 @@
 
 .navigation--letter,
 .navigation--number {
-  ol, ul {
-    list-style: none;
-  }
   li {
     padding: 0;
     text-align: center;
@@ -46,8 +43,6 @@
 /*--- Navigation Letter ---*/
 
 .navigation--letter {
-  @include clearfix;
-
   ol {
     margin: 0;
   }
@@ -62,7 +57,7 @@
   }
   li.active {
     background-color: $purple;
-    color: $white;
+    color: $white !important;
     font-weight: 500;
   }
   li span {
@@ -94,11 +89,6 @@
   }
   .navigation--number {
     text-align: center;
-
-    ol {
-      margin: 0;
-      display: inline-block;
-    }
   }
   .navigation-control--right {
     @include navigation-control(right, $base-spacing-unit-small, - $base-spacing-unit-tiny);

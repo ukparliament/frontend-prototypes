@@ -36,7 +36,7 @@
 
 /*--- Component Rules ---*/
 
-.block {
+[class*="block"] {
   .dropdown {
     background-color: transparent;
     .dropdown__toggle {

@@ -83,7 +83,7 @@ body > footer a  {
   }
 }
 
-.block .dropdown .dropdown__toggle a {
+[class*="block"] .dropdown .dropdown__toggle a {
   padding: 0;
 }
 

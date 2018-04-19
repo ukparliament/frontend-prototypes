@@ -93,6 +93,7 @@ article [role='main'] {
 }
 
 .block--deep {
+  @include block;
   @include block--deep;
 }
 

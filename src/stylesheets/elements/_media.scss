@@ -18,7 +18,7 @@ picture {
     position: relative;
     border-radius: 50%;
     background-color: $grey-5;
-    margin-bottom: $base-spacing-unit;
+    margin-bottom: $base-spacing-unit-tiny;
     @include media($smartphone) {
       margin: 0 $base-spacing-unit-small 0 0;
     }
