@@ -197,3 +197,21 @@ article + aside > h2 {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+/*--- Card styles ---*/
+
+.card,
+[class*="card--"] {
+  h2, h3, h4, h5, h6 {
+    @extend .zeta;
+    flex-basis: 100%;
+    color: $grey-1;
+    margin: 0 0 $base-spacing-unit;
+
+    @include media($smartphone) {
+      ~ * {
+        margin-top: $base-spacing-unit;
+      }
+    }
+  }
+}

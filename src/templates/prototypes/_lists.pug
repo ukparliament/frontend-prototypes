@@ -106,13 +106,14 @@ block content
       h3 Documents
       ol.list--pipe__deep
         li
-          figure.svg--icon.svg--file__word
-            include ../../icons/file.svg
-          .list--details
-            h3 Document template
-            +buttonLink('#', 'Download document template', 'btn--primary', 'download')
-              include ../../icons/download.svg
-            p If you need a different format, email #[+link('#', 'example@parliament.uk')].
+          .card--large
+            figure.svg--icon.svg--file__word
+              include ../../icons/file.svg
+            .card__details
+              h3 Document template
+              +buttonLink('#', 'Download document template', 'btn--primary', 'download')
+                include ../../icons/download.svg
+              p If you need a different format, email #[+link('#', 'example@parliament.uk')].
 
   section
     .container

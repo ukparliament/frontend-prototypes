@@ -2,17 +2,18 @@
 mixin list--block(name, constituency, party, image)
   li
     if image
-      figure
-        +link('#', '')(tabIndex=-1)
-          picture
-            +image(image, name)
-      .list--details
-        h2 #[+link('#', name)]
-        if lords_list
-          p= 'Member of the ' + constituency
-        else
-          p= 'MP for ' + constituency
-        p= party
+      .card
+        figure.avatar--round
+          +link('#', '')(aria-hidden="true", tabIndex="-1")
+            picture
+              +image(image, name)
+        .card__details
+          h2 #[+link('#', name)]
+          if lords_list
+            p= 'Member of the ' + constituency
+          else
+            p= 'MP for ' + constituency
+          p= party
 
     else
       .list--details
@@ -84,9 +85,10 @@ mixin list--pipe(constituency, date, name)
 //- List Pipe Media
 mixin list--pipe__media(imgURL, imgAlt, heading, btnURL, btnText)
   li
-    figure
-      picture
-        +image(imgURL, imgAlt)
-    .list--details
-      h3= heading
-      +link(btnURL, btnText)(class='btn--primary' download)
+    .card--large
+      figure
+        picture
+          +image(imgURL, imgAlt)
+      .card__details
+        h3= heading
+        +link(btnURL, btnText)(class='btn--primary' download)

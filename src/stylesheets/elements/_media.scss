@@ -10,76 +10,7 @@ video {
 picture {
   display: block;
 }
-//.list--block li {
-[class*="list--block"] li {
-  figure, picture {
-    width: 84px;
-    height: 84px;
-    position: relative;
-    border-radius: 50%;
-    background-color: $grey-5;
-    margin-bottom: $base-spacing-unit-tiny;
-    @include media($smartphone) {
-      margin: 0 $base-spacing-unit-small 0 0;
-    }
 
-    a {
-      &:active, &:hover {
-        background: transparent;
-        outline: none;
-        &:after {
-          bottom: 0;
-          z-index: 1;
-          content: "";
-          width: 84px;
-          height: 84px;
-          opacity: 0.2;
-          position: absolute;
-          border-radius: 50%;
-          background-color: $deep-purple;
-
-          @include media($desktop) {
-            width: 93px;
-            height: 93px;
-          }
-        }
-      }
-    }
-
-    @include media($desktop) {
-      width: 93px;
-      height: 93px;
-    }
-  }
-  img {
-    width: auto;
-    height: 84px;
-    border-radius: 50%;
-    position: absolute;
-
-    @include media($desktop) {
-      height: 93px;
-    }
-  }
-}
-//.list--pipe li {
-[class*="list--pipe"] li {
-  figure, picture {
-    width: 130px;
-    height: auto;
-    border-radius: 0;
-    background-color: $grey-4;
-    margin-bottom: $base-spacing-unit;
-    @include media($smartphone) {
-      margin: 0 $base-spacing-unit-small 0 0;
-    }
-  }
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-  }
-}
 img {
   z-index: 1;
   width: 100%;
@@ -89,13 +20,10 @@ img {
 
 // SVG specific for all lists
 
-[class*="list--"] li {
-  .svg--icon {
-    width: auto;
-    background-color: transparent;
-    svg {
-      display: block;
-    }
+[class*="list--"] li .svg--icon {
+  background-color: transparent;
+  svg {
+    display: block;
   }
 }
 
@@ -155,8 +83,16 @@ figcaption {
   }
 }
 
-@include media($desktop) {
-  .section--primary {
+/*--- Card styles ---*/
 
-  }
+.card figure {
+  @include avatar;
+}
+
+.card--small figure {
+  @include avatar("small");
+}
+
+.card--large figure {
+  @include avatar("large");
 }

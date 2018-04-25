@@ -68,15 +68,16 @@ block content
 
       ol.list--pipe__deep
         li
-          figure.svg--icon(data-file-upload='icon')
-              include ../../icons/file.svg
-          .list--details
-            h3 Attach your petition template
+          .card
+            figure.svg--icon(data-file-upload='icon')
+                include ../../icons/file.svg
+            .card__details
+              h3 Attach your petition template
 
-            //- name, id, label, label class + additional attributes
-            +input--file('file-uploader', 'fileUpload', 'Choose file', 'btn--primary')(required)
+              //- name, id, label, label class + additional attributes
+              +input--file('file-uploader', 'fileUpload', 'Choose file', 'btn--primary')(required)
 
-            p(data-file-upload='status') No file(s) selected
+              p(data-file-upload='status') No file(s) selected
 
       h2 HTML &lt;input&gt; Submit
 

@@ -130,3 +130,10 @@ left hand side. */
 [class*="list"] svg + * {
   margin-left: $base-spacing-unit;
 }
+
+/*--- Card styles ---*/
+
+[class*="card"] figure svg {
+  width: 100%;
+  height: 100%;
+}

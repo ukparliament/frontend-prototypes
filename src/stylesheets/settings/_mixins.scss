@@ -453,3 +453,66 @@
     display: inline;
   }
 }
+
+/*--- Card Mixins ---*/
+
+@mixin card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  align-items: flex-start;
+}
+
+/*--- Avatar Mixins ---*/
+
+@mixin avatar($size: nul) {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  margin-right: if(
+    $size == "small",
+    $base-spacing-unit-tiny,
+    $base-spacing-unit-small
+  );
+
+  @include media($smartphone) {
+    margin-bottom: 0;
+  }
+
+  @if ($size == "small") {
+    max-width: 54px;
+    @include media($tablet) {
+      max-width: 60px;
+    }
+  }
+
+  @else if ($size == "large") {
+    max-width: 130px;
+  }
+
+  @else {
+    max-width: 84px;
+    @include media($desktop) {
+      max-width: 93px;
+    }
+  }
+
+  a:focus {
+    background-color: transparent;
+    outline: none;
+  }
+
+  a:hover {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}

@@ -37,3 +37,10 @@
     text-indent: 0;
   }
 }
+
+/*--- Round ---*/
+
+.avatar--round {
+  border-radius: 50%;
+  overflow: hidden;
+}
