@@ -68,15 +68,13 @@ header .container {
 }
 
 .navigation--main .container {
-  max-width: 732px; // Reduced to accommodate current grid
-  padding: 0;
-  margin: 0 $base-spacing-unit-small;
+  padding: 0 $base-spacing-unit;
+  border-bottom: solid 1px $grey-3;
+
   @include media($desktop) {
-    margin: 0 auto;
+    padding: 0;
+    max-width: 732px; // Reduced to accommodate current grid
   }
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: $grey-3;
 }
 
 /*--- Elements with attribute role='main' ---*/

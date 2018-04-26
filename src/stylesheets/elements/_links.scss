@@ -107,7 +107,7 @@ body > footer a  {
   }
 }
 
-/*--- Navigation ---*/
+/*--- Navigation Main ---*/
 
 .navigation--main a {
   @include links(
@@ -117,7 +117,10 @@ body > footer a  {
     $grey-1 		        // a:hover color
   );
   &:link {
-    padding: $base-spacing-unit-tiny 3px;
+    padding: $base-spacing-unit-tiny;
+    @include media($desktop) {
+      padding: $base-spacing-unit-tiny $base-spacing-unit-medium;
+    }
   }
   &:focus {
     outline: none;
@@ -126,6 +129,8 @@ body > footer a  {
     text-decoration: underline;
   }
 }
+
+/*--- Navigation Letter ---*/
 
 .navigation--letter li a {
   &:link {
@@ -143,9 +148,36 @@ body > footer a  {
   }
 }
 
-.navigation--letter a,
-.navigation--number a {
-  min-width: 24px;
+/*--- Navigation Number ---*/
+
+.navigation--number li a {
+  &:link {
+    padding: 6px 12px;
+  }
+}
+
+/*--- Navigation Letter/Main/Number ---*/
+
+.navigation--letter li a,
+.navigation--main li a,
+.navigation--number li a {
+  display: block;
+}
+
+/*--- Navigation Number Controls ---*/
+
+.navigation-control--right,
+.navigation-control--left {
+  display: inline-block;
+  padding: $base-spacing-unit 0;
+}
+.navigation-control--right {
+  @include media($desktop) {
+    @include navigation-control(right, $base-spacing-unit-small, 0);
+  }
+}
+.navigation-control--left {
+  @include navigation-control(left, 0, $base-spacing-unit-tiny);
 }
 
 /*--- Themes Alternative Focus ---*/
