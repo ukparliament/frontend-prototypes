@@ -60,10 +60,16 @@ dl, dt, dd {
 /*--- List Column Options ---*/
 
 .list--2 {
+  @include media($desktop) {
+    @include list--inline;
+  }
   @include col--2;
 }
 
 .list--3 {
+  @include media($desktop) {
+    @include list--inline;
+  }
   @include col--3;
 }
 
@@ -85,6 +91,7 @@ dl, dt, dd {
   border-bottom: 2px solid $grey-4;
 
   li {
+    margin-bottom: 0;
     margin-right: $base-spacing-unit-medium;
   }
   li.active {

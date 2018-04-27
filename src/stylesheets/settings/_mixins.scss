@@ -244,7 +244,7 @@
 @mixin col--2 {
   @include media($desktop) {
     > li {
-      width: 49.50%;
+      width: 49.10%;
     }
   }
 }
@@ -252,7 +252,7 @@
 @mixin col--3 {
   @include media($desktop) {
     > li {
-      width: 32.90%;
+      width: 32.50%;
     }
   }
 }
@@ -359,13 +359,14 @@
   list-style: none;
   @include list-headings;
 
-  > ol {
+  ol {
     list-style: decimal;
   }
-  > ul {
+  ul {
     list-style: disc;
   }
   > li {
+    display: block;
     position: relative;
     @include last-child;
     @include headings-margin-top(0);

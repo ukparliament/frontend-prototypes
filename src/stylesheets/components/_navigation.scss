@@ -1,59 +1,37 @@
 /*--- Navigation Main, Letter & Number ---*/
-.navigation--main,
-.navigation--letter,
-.navigation--number {
-  ol, ul {
-    @include list--inline;
-  }
-  li {
-    margin-right: 0;
-  }
-  a, span {
+.navigation--main ul,
+.navigation--letter ol,
+.navigation--number ol {
+  @include list--inline;
+
+  span {
     display: block;
-    position: relative;
-    padding: ($base-spacing-unit-tiny / 2) $base-spacing-unit-tiny;
   }
 }
 
 /*--- Navigation Main ---*/
 
-.navigation--main {
-  ol, ul {
-    margin-left: (- $base-spacing-unit);
+.navigation--main ul {
+  margin: 0;
+  @include media($desktop) {
+    margin: 0 (-$base-spacing-unit-medium);
   }
   li {
-    padding: 0 ($base-spacing-unit - 3);
-  }
-}
-
-/*--- Navigation Letter & Number ---*/
-
-.navigation--letter,
-.navigation--number {
-  li {
-    padding: 0;
-    text-align: center;
-    text-transform: capitalize;
-  }
-  span {
-    min-width: 24px;
+    margin: 0;
   }
 }
 
 /*--- Navigation Letter ---*/
 
-.navigation--letter {
-  ol {
-    margin: 0;
-  }
+.navigation--letter ol {
   li {
-    min-width: 42px;
-    margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
-    background-color: transparent;
     color: $grey-1;
+    min-width: 42px;
+    background-color: transparent;
+    margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
   }
   li:first-child {
-    min-width: 87px; // 2 button width including the margin to the left of first
+    min-width: 87px; // 2x button width including the margin to the left of first
   }
   li.active {
     background-color: $purple;
@@ -68,33 +46,32 @@
   }
 }
 
-/*--- Navigation Number Controls ---*/
+/*--- Navigation Number ---*/
 
-.navigation-control--left {
-  @include navigation-control(left, - $base-spacing-unit-tiny, $base-spacing-unit-tiny);
-}
-.navigation-control--right {
-  float: none;
-  display: inline-block !important;
-}
+.navigation--number ol {
+  margin: 0 (-$base-spacing-unit-tiny);
 
-@include media($desktop) {
-  .navigation--main {
-    ul {
-      margin-left: (- $base-spacing-unit-small);
-    }
-    li {
-      padding: 0 ($base-spacing-unit-small - 3);
-    }
+  @include media($desktop) {
+    margin: 0;
+    justify-content: center;
   }
-  .navigation--number {
+  li {
+    margin: 0;
+  }
+  li span {
+    padding: 6px 12px;
+  }
+}
+
+/*--- Navigation Letter & Number ---*/
+
+.navigation--letter,
+.navigation--number {
+  li {
     text-align: center;
-  }
-  .navigation-control--right {
-    @include navigation-control(right, $base-spacing-unit-small, - $base-spacing-unit-tiny);
+    text-transform: capitalize;
   }
 }
-
 
 /*--- Print ---*/
 
