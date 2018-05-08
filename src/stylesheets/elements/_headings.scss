@@ -246,6 +246,7 @@ article + aside > h2 {
   h2, h3, h4, h5, h6 {
     @extend .zeta;
     flex-basis: 100%;
+    max-width: none;
     color: $grey-1;
     margin: 0 0 $base-spacing-unit;
 
