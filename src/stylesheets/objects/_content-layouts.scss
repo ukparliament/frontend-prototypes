@@ -155,7 +155,6 @@ article [role='main'] {
 
 .flex--2__2-1 {
   @include media($desktop) {
-    // @include flex(66.666%, 33.333%, 36px);
-    @include flex(58.333%, 33.333%, 60px);
+    @include flex(66.666%, 33.333%, 36px);
   }
 }

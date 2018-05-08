@@ -22,6 +22,8 @@
   "devDependencies": {
     "autoprefixer": "^8.0.0",
     "chokidar": "^2.0.2",
+    "css-mqpacker": "^6.0.2",
+    "cssnano": "^3.10.0",
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.6.0",
