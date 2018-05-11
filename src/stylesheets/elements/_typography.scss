@@ -80,8 +80,11 @@ label, optgroup, select, textarea {
 
 /*--- Settings for url & hint ---*/
 
-.hint,
-.url {
+.hint {
+  @include milli;
+}
+
+[class*="list"] .url {
   @include milli;
 }
 
