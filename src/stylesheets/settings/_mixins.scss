@@ -304,15 +304,6 @@
     line-height: 1.2; // 24px
   }
 }
-@mixin zeta {
-  @include fontsize(18);
-  line-height: 1.167; // 21px;
-
-  @include media($desktop) {
-    @include fontsize(20);
-    line-height: 1.2; // 24px
-  }
-}
 
 /*--- Smaller Typography Mixins ---*/
 

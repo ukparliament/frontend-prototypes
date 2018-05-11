@@ -3,7 +3,7 @@ node_js:
   - "8"
 
 install:
-  - make install
+  - npm install
 
 before_script:
   - make serve_test & sleep 10

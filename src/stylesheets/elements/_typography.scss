@@ -1,25 +1,12 @@
 /*--- Typography Settings ---*/
 
-body {
-  @include fontsize(16);
-  line-height: 1.5; // 24px
-
-  @include media($tablet) {
-    @include fontsize(18);
-  }
+body, .btn, button {
+  @include epsilon;
 }
 
 p {
-  @include zeta;
-  line-height: 1.33; // 24px
-  margin-bottom: $base-spacing-unit-small;
-  margin-top: 0;
+  margin: 0 0 $base-spacing-unit-small 0;
   max-width: 502px;
-
-  @include media($desktop) {
-    line-height: 1.5; // 30px
-  }
-
   @include media($desktop-large) {
     max-width: 628px;
   }
@@ -62,22 +49,6 @@ h1 + .lead {
   @include typography--heavy;
 }
 
-button, input, label, optgroup, select, textarea, figcaption {
-  font-family: $base-font-stack;
-}
-
-.btn, button, input {
-  @include epsilon;
-  line-height: 26px;
-  @include media($tablet) {
-    line-height: 24px;
-  }
-}
-
-label, optgroup, select, textarea {
-  @include zeta;
-}
-
 /*--- Settings for url & hint ---*/
 
 .hint {
@@ -102,7 +73,7 @@ label, optgroup, select, textarea {
 dl,
 dt,
 dd {
-  @include zeta;
+  @include epsilon;
 }
 
 /*--- Navigation Main ---*/

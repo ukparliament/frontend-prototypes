@@ -2,7 +2,7 @@
 @mixin list-headings {
   h2, h3, h4, h5, h6 {
     &:not(.milli, .micro) {
-      @include zeta;
+      @include epsilon;
     }
   }
 }
@@ -67,18 +67,8 @@ h4, .delta {
     margin-top: $base-spacing-unit-large;
   }
 }
-h5, .epsilon {
+h5, h6, .epsilon {
   @include epsilon;
-  margin-bottom: $base-spacing-unit;
-  margin-top: $base-spacing-unit-medium;
-
-  @include media($desktop) {
-    margin-bottom: $base-spacing-unit;
-    margin-top: $base-spacing-unit-large;
-  }
-}
-h6, .zeta {
-  @include zeta;
   margin-bottom: $base-spacing-unit;
   margin-top: $base-spacing-unit-medium;
 
@@ -127,7 +117,7 @@ h1 span + span {
 
 /*--- Footer Settings ---*/
 footer h2 {
-  @extend .zeta;
+  @extend .epsilon;
 }
 
 /*--- Component Settings ---*/
@@ -157,7 +147,7 @@ footer h2 {
 
 .dropdown__toggle {
   h2, h3 {
-    @include zeta;
+    @include epsilon;
     line-height: 1.334; // 24px;
   }
 }
@@ -173,7 +163,7 @@ footer h2 {
     color: $grey-1;
     position: relative;
     line-height: 1.250; // 30px;
-    @include zeta;
+    @include epsilon;
     &:before {
       z-index: 1;
       left: -24px;
@@ -244,7 +234,7 @@ article + aside > h2 {
 .card,
 [class*="card--"] {
   h2, h3, h4, h5, h6 {
-    @extend .zeta;
+    @extend .epsilon;
     flex-basis: 100%;
     max-width: none;
     color: $grey-1;
