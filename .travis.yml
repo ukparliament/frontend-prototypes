@@ -6,7 +6,7 @@ install:
   - npm install
 
 before_script:
-  - make serve_test & sleep 10
+  - make serve_test & sleep 20
 
 script:
   - make test

@@ -69,10 +69,12 @@ h4, .delta {
 }
 h5, h6, .epsilon {
   @include epsilon;
+  line-height: 1.167; // 21px
   margin-bottom: $base-spacing-unit;
   margin-top: $base-spacing-unit-medium;
 
   @include media($desktop) {
+    line-height: 1.2; // 24px
     margin-bottom: $base-spacing-unit;
     margin-top: $base-spacing-unit-large;
   }
@@ -82,7 +84,7 @@ h5, h6, .epsilon {
 h1 a {
   vertical-align: top;
   @include delta;
-  line-height: 1.2; // 24px;
+  line-height: 1.2; // 24px
 
   @include media($desktop) {
     vertical-align: top;
@@ -94,7 +96,7 @@ h1 span {
   &:last-child {
     @include fontsize(16);
     font-weight: 400;
-    line-height: 1.125; // 18px;
+    line-height: 1.125; // 18px
 
     @include media($desktop) {
       @include fontsize(18);
@@ -102,7 +104,7 @@ h1 span {
 
       &:nth-of-type(2) {
         @include fontsize(18);
-        line-height: 1.334; // 24px;
+        line-height: 1.334; // 24px
       }
     }
   }
@@ -148,7 +150,6 @@ footer h2 {
 .dropdown__toggle {
   h2, h3 {
     @include epsilon;
-    line-height: 1.334; // 24px;
   }
 }
 
@@ -162,7 +163,7 @@ footer h2 {
   h2, h3, h4, h5, h6 {
     color: $grey-1;
     position: relative;
-    line-height: 1.250; // 30px;
+    line-height: 1.667; // 30px
     @include epsilon;
     &:before {
       z-index: 1;

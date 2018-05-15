@@ -25,7 +25,7 @@ small, .milli {
 
 .lead {
   @include fontsize(21);
-  line-height: 1.286; // 27px;
+  line-height: 1.286; // 27px
   margin-bottom: $base-spacing-unit-small;
   @include media($desktop) {
     @include fontsize(24);
@@ -65,15 +65,6 @@ h1 + .lead {
   display: block;
   @include beta;
   @include typography--heavy;
-}
-
-
-/*--- List ---*/
-
-dl,
-dt,
-dd {
-  @include epsilon;
 }
 
 /*--- Navigation Main ---*/
