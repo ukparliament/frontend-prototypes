@@ -14,12 +14,8 @@ h1, h2, h3, h4, h5, h6 {
   color: $deep-purple;
   margin-bottom: $base-spacing-unit;
   margin-top: $base-spacing-unit-medium;
-  max-width: 502px;
   @include media($desktop) {
     margin-top: $base-spacing-unit-large;
-  }
-  @include media($desktop-large) {
-    max-width: 628px;
   }
   &.lead {
     @extend .lead;
@@ -129,14 +125,6 @@ footer h2 {
   h1 {
     position: relative;
     margin-bottom: $base-spacing-unit-large;
-
-    @include media($tablet) {
-      max-width: 400px;
-    }
-
-    @include media($desktop) {
-      max-width: 502px;
-    }
   }
   h1:after {
     @extend .line-break--lg;
@@ -144,6 +132,15 @@ footer h2 {
     content: '';
     position: absolute;
     bottom: - $base-spacing-unit-extra-large;
+  }
+}
+
+.hero h1 {
+  @include media($tablet) {
+    max-width: 400px;
+  }
+  @include media($desktop) {
+    max-width: 502px;
   }
 }
 
@@ -206,6 +203,7 @@ article header,
   @include headings-margin-top(0);
   h1:first-of-type {
     margin-top: 0;
+    @include line-length;
   }
 }
 

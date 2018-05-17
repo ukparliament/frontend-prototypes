@@ -507,3 +507,13 @@
     }
   }
 }
+
+
+/*--- Line length ---*/
+
+@mixin line-length {
+  max-width: 502px;
+  @include media($desktop-large) {
+    max-width: 628px;
+  }
+}

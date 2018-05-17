@@ -11,7 +11,7 @@
   }
   @include last-child();
   @include media($smartphone) {
-    flex: 1 1 100px;
+    flex: 1 1 0;
     > * {
       flex-basis: 100%;
       margin-bottom: $base-spacing-unit;

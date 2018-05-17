@@ -6,10 +6,7 @@ body, .btn, button {
 
 p {
   margin: 0 0 $base-spacing-unit-small 0;
-  max-width: 502px;
-  @include media($desktop-large) {
-    max-width: 628px;
-  }
+  @include line-length;
 }
 
 small, .milli {
