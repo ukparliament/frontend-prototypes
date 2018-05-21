@@ -4,7 +4,7 @@
 .navigation--number ol {
   @include list--inline;
 
-  span {
+  li > span {
     display: block;
   }
 }
@@ -34,42 +34,62 @@
 /*--- Navigation Letter ---*/
 
 .navigation--letter ol {
-  li {
-    color: $grey-1;
-    min-width: 42px;
-    background-color: transparent;
-    margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
-  }
   li:first-child {
     min-width: 87px; // 2x button width including the margin to the left of first
   }
   li.active {
+    color: $white;
     background-color: $purple;
-    color: $white !important;
-    font-weight: 500;
-  }
-  li span {
-    padding: ($base-spacing-unit-tiny - 3px) 0;
-    @include media($desktop) {
-      padding: ($base-spacing-unit + 2px) 0;
-    }
   }
 }
 
 /*--- Navigation Number ---*/
 
-.navigation--number ol {
-  margin: 0 (-$base-spacing-unit-tiny);
-
-  @include media($desktop) {
-    margin: 0;
-    justify-content: center;
+.navigation--number {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  ol {
+    margin: 0 $base-spacing-unit-tiny;
+    @include media($tablet) {
+      margin: 0;
+    }
+    > li {
+      display: none;
+      @include media($desktop) {
+        display: block;
+      }
+      @include media($tablet) {
+        font-size: 0;
+      }
+      &.active {
+        display: block;
+        @include media($tablet) {
+          color: $white;
+          background-color: $purple;
+        }
+      }
+    }
   }
-  li {
-    margin: 0;
-  }
-  li span {
-    padding: 6px 12px;
+  // For all active items in tablet view
+  ol > li.active + li,
+  ol > li.active + li + li,
+  &[data-active-tile="1"] ol > li:nth-child(4),
+  &[data-active-tile="2"] ol > li:nth-child(1),
+  &[data-active-tile="3"] ol > li:nth-child(2),
+  &[data-active-tile="4"] ol > li:nth-child(3),
+  &[data-active-tile="5"] ol > li:nth-child(4),
+  &[data-active-tile="6"] ol > li:nth-child(5),
+  &[data-active-tile="7"] ol > li:nth-child(6),
+  &[data-active-tile="8"] ol > li:nth-child(7),
+  &[data-active-tile="9"] ol > li:nth-child(7),
+  &[data-active-tile="9"] ol > li:nth-child(8),
+  &[data-active-tile="10"] ol > li:nth-child(7),
+  &[data-active-tile="10"] ol > li:nth-child(8),
+  &[data-active-tile="10"] ol > li:nth-child(9) {
+    @include media($tablet, $desktop) {
+      display: block;
+    }
   }
 }
 
@@ -77,9 +97,17 @@
 
 .navigation--letter,
 .navigation--number {
-  li {
+  ol li {
+    min-width: 42px;
     text-align: center;
     text-transform: capitalize;
+    margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
+    > span {
+      padding: ($base-spacing-unit + 3px) 0;
+      @include media($desktop) {
+        padding: $base-spacing-unit 0;
+      }
+    }
   }
 }
 

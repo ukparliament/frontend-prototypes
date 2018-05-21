@@ -64,6 +64,19 @@ h1 + .lead {
   @include typography--heavy;
 }
 
+.navigation--number .count {
+  display: inline-block;
+  @include epsilon;
+  @include media($tablet) {
+    display: block;
+    @include typography--light;
+  }
+  & + span {
+    display: block;
+    font-size: 0;
+  }
+}
+
 /*--- Navigation Main ---*/
 
 .navigation--main li {

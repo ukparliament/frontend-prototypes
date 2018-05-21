@@ -101,14 +101,6 @@
   }
 }
 
-/*--- Navigation Control [float, margin left and margin right] ---*/
-
-@mixin navigation-control($float, $margin-left, $margin-right) {
-  float: $float;
-  margin-left: $margin-left;
-  margin-right: $margin-right;
-}
-
 /*--- CSS Animation [duration, timing function, delay, interation count, name] ---*/
 
 @mixin css-animation($duration, $timing-func, $delay, $iteration, $name) {
@@ -195,9 +187,15 @@
 
 /*--- Media Queries [size] ---*/
 
-@mixin media($size) {
-  @media (min-width: $size) {
-    @content;
+@mixin media($min, $max:null) {
+  @if ($max) {
+    @media (max-width: $max) and (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $min) {
+      @content;
+    }
   }
 }
 
@@ -364,7 +362,6 @@
 
     &.active {
       color: $deep-purple;
-      font-weight: 500;
       text-decoration: none;
     }
   }

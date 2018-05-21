@@ -94,6 +94,7 @@ dl, dt, dd {
     margin-right: $base-spacing-unit-medium;
   }
   li.active {
+    @include typography--heavy;
     padding: ($base-spacing-unit + 2) 0;
     border-bottom: 4px solid $purple;
   }
@@ -253,7 +254,6 @@ aside [class*="list"] li {
   display: block;
   width: auto;
   &.active {
-    font-weight: 400;
     background-color: $grey-3;
   }
 }

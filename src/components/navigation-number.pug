@@ -1,11 +1,19 @@
-nav(class='navigation--number', aria-label='Pagination')
-  each object in [{val: 'Previous', class: 'navigation-control--left'}, {val: 'Next', class: 'navigation-control--right'}]
-    a(data-number-see='true', href='#', class=object.class)= object.val
+nav(class='navigation--number', data-active-tile='6', aria-label='Pagination')
+
+  a(data-number-see='true', href='#', class='navigation-control')= 'Previous'
 
   ol
     each val, index in ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-      li(data-number=val, class= (index === 0 ? "active" : undefined))
-        if index === 0
-          span(data-number-see='true')= val
+      li(data-number=val, class= (index === 5 ? 'active' : undefined))
+        if index === 5
+          span(data-number-see='true')
+            span= 'Page '
+            span.count=  val
+            span= ' off 10'
         else
-          a(data-number-see='true', href='#')= val
+          a(data-number-see='true', href='#')
+            span= 'Page '
+            span.count=  val
+            span= ' off 10'
+
+  a(data-number-see='true', href='#', class='navigation-control')= 'Next'

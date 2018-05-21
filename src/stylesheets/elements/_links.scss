@@ -127,29 +127,24 @@ body > footer a  {
   }
 }
 
-/*--- Navigation Letter ---*/
+/*--- Navigation Letter & Number ---*/
 
-.navigation--letter li a {
-  &:link {
-    padding: ($base-spacing-unit-tiny - 3px) 0;
-    @include media($desktop) {
-      padding: ($base-spacing-unit + 2px) 0;
+.navigation--letter,
+.navigation--number {
+  li a {
+    &:link {
+      padding: ($base-spacing-unit + 3px) 0;
+      @include media($desktop) {
+        padding: $base-spacing-unit 0;
+      }
+      background-color: $white;
+      color: $link;
+      text-decoration: none;
     }
-    background-color: $white;
-    color: $link;
-    text-decoration: none;
-  }
-  &:hover {
-    background-color: $link;
-    color: $white;
-  }
-}
-
-/*--- Navigation Number ---*/
-
-.navigation--number li a {
-  &:link {
-    padding: 6px 12px;
+    &:hover {
+      color: $white;
+      background-color: $link;
+    }
   }
 }
 
@@ -163,18 +158,22 @@ body > footer a  {
 
 /*--- Navigation Number Controls ---*/
 
-.navigation-control--right,
-.navigation-control--left {
-  display: inline-block;
-  padding: $base-spacing-unit 0;
-}
-.navigation-control--right {
-  @include media($desktop) {
-    @include navigation-control(right, $base-spacing-unit-small, 0);
+.navigation-control {
+  &:link {
+    min-width: ($base-spacing-unit * 14);
+    text-align: center;
+    text-decoration: none;
+    background-color: $white;
+    padding: ($base-spacing-unit + 3px) $base-spacing-unit-small;
+    @include media($desktop) {
+      padding: $base-spacing-unit $base-spacing-unit-small;
+    }
+    margin-right: ($base-spacing-unit / 2);
   }
-}
-.navigation-control--left {
-  @include navigation-control(left, 0, $base-spacing-unit-tiny);
+  &:hover {
+    color: $white;
+    background-color: $link;
+  }
 }
 
 /*--- Themes Alternative Focus ---*/
