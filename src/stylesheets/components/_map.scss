@@ -1,7 +1,7 @@
 .map {
   display: block;
   height: 222px;
-  @include media($desktop) {
+  @include media($medium) {
     height: 292px;
   }
   width: 100%;

@@ -1,19 +1,8 @@
-.article--wrapper {
-  @include media($desktop) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
 article {
   margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-small;
-  @include media($desktop) {
+  @include media($medium) {
     flex: 1;
     margin-top: ($base-spacing-unit-large * 2);
-  }
-
-  > * {
-    @include line-length;
   }
 
   @media print {

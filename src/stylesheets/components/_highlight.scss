@@ -7,13 +7,21 @@
   @include accent($grey-5);
   padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny * 2);
 
-  @include media($desktop) {
+  @include media($medium) {
     padding: $base-spacing-unit-medium 0 ($base-spacing-unit-medium * 2) 0;
-
-    .container {
+  }
+  .container {
+    @include media($medium) {
       padding-right: ($base-spacing-unit-extra-large * 6);
     }
+    @include media($large) {
+      padding-right: ($large - ($container-max-width-large + $base-container-unit-large));
+    }
+    @include media($extra-large) {
+      padding-right: ($extra-large - ($hero-container-max-width-large + $base-container-unit-large));
+    }
   }
+
 }
 
 /*--- Status Components ---*/
@@ -31,7 +39,7 @@
     @include milli;
     line-height: 1.125;
 
-    @include media($desktop) {
+    @include media($medium) {
       line-height: 1.5;
     }
   }

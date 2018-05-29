@@ -10,7 +10,7 @@
   padding-top: $base-spacing-unit-extra-large;
   margin-bottom: $base-spacing-unit-tiny;
 
-  @include media($desktop) {
+  @include media($medium) {
     padding-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
     margin-bottom: $base-spacing-unit-small;
   }
@@ -19,7 +19,7 @@
 .section--minor {
   padding: $base-spacing-unit-tiny 0;
 
-  @include media($desktop) {
+  @include media($medium) {
     padding: $base-spacing-unit-small 0;
   }
   .container {
@@ -32,37 +32,41 @@
 .section--major {
   padding: $base-spacing-unit-extra-large 0;
 
-  @include media($desktop) {
+  @include media($medium) {
     padding: $base-spacing-unit-extra-large 0;
   }
 }
 
 /*--- Container Options ---*/
 
+main .container {
+  @include section-offset;
+}
+
+.article--wrapper .container,
+.section--wide .container,
 .container {
   position: relative;
-  padding: 0 $base-spacing-unit-small;
+  padding: 0 $base-container-unit-small;
   margin: 0 auto;
   width: 100%;
 
-  @include media($desktop) {
-    width: $desktop;
+  @include media($medium) {
+    width: $medium;
   }
-
-  @include media($desktop-medium) {
-    padding: 0 round($base-spacing-unit * 10);
-    width: $desktop-medium;
+  @include media($large) {
+    padding: 0 $base-container-unit-large;
+    width: $large;
   }
-
-  @include media($desktop-large) {
-    width: $desktop-large;
+  @include media($extra-large) {
+    width: $extra-large;
   }
 }
 
-.container--offset {
-  @extend .container;
-  @include media($desktop) {
-    padding-right: 216px;
+.article--wrapper .container {
+  @include media($medium) {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -75,7 +79,7 @@
 
 /*--- Elements with attribute role='main' ---*/
 article [role='main'] {
-  @include media($tablet) {
+  @include media($small) {
     padding-top: $base-spacing-unit-large;
   }
 }
@@ -92,7 +96,7 @@ article [role='main'] {
 }
 
 .block--offset {
-  @include media($tablet) {
+  @include media($small) {
     padding-right: ($base-spacing-unit-extra-large * 6);
   }
 }
@@ -119,7 +123,7 @@ article [role='main'] {
   padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
   border-bottom: 1px solid $grey-3;
 
-  @include media($desktop) {
+  @include media($medium) {
     padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height
   }
 
@@ -142,19 +146,19 @@ article [role='main'] {
 /*--- Flex 2 Layout Options ---*/
 
 .flex--2 {
-  @include media($tablet) {
+  @include media($small) {
     @include flex(50%);
   }
 }
 
 .flex--2__1-2 {
-  @include media($desktop) {
+  @include media($medium) {
     @include flex(33.333%, 66.666%, 36px);
   }
 }
 
 .flex--2__2-1 {
-  @include media($desktop) {
+  @include media($medium) {
     @include flex(66.666%, 33.333%, 36px);
   }
 }

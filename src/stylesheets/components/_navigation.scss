@@ -18,13 +18,13 @@
   li {
     margin: 0;
     padding: 0 3px;
-    @include media($desktop) {
+    @include media($medium) {
       padding: 0 ($base-spacing-unit-tiny + 3px);
     }
 
     &:nth-child(1) {
       margin-left: -8px;
-      @include media($desktop) {
+      @include media($medium) {
         margin-left: -$base-spacing-unit-small;
       }
     }
@@ -51,27 +51,33 @@
   justify-content: center;
   ol {
     margin: 0 $base-spacing-unit-tiny;
-    @include media($tablet) {
+    @include media($small) {
       margin: 0;
     }
     > li {
       display: none;
-      @include media($desktop) {
+      @include media($medium) {
         display: block;
       }
-      @include media($tablet) {
+      @include media($small) {
         font-size: 0;
+      }
+      &:nth-child(9),
+      &:nth-child(10) {
+        @include media($large) {
+          display: none;
+        }
       }
       &.active {
         display: block;
-        @include media($tablet) {
+        @include media($small) {
           color: $white;
           background-color: $purple;
         }
       }
     }
   }
-  // For all active items in tablet view
+  // For all active items in `small` view
   ol > li.active + li,
   ol > li.active + li + li,
   &[data-active-tile="1"] ol > li:nth-child(4),
@@ -87,7 +93,20 @@
   &[data-active-tile="10"] ol > li:nth-child(7),
   &[data-active-tile="10"] ol > li:nth-child(8),
   &[data-active-tile="10"] ol > li:nth-child(9) {
-    @include media($tablet, $desktop) {
+    @include media($small, $medium) {
+      display: block;
+    }
+  }
+  // For all active items in `medium` view
+  &[data-active-tile="9"] ol > li:nth-child(1),
+  &[data-active-tile="9"] ol > li:nth-child(2),
+  &[data-active-tile="10"] ol > li:nth-child(1) {
+    @include media($large) {
+      display: none;
+    }
+  }
+  &[data-active-tile="9"] ol > li:nth-child(10) {
+    @include media($large) {
       display: block;
     }
   }
@@ -104,7 +123,7 @@
     margin: 0 ($base-spacing-unit / 2) ($base-spacing-unit / 2) 0;
     > span {
       padding: ($base-spacing-unit + 3px) 0;
-      @include media($desktop) {
+      @include media($medium) {
         padding: $base-spacing-unit 0;
       }
     }

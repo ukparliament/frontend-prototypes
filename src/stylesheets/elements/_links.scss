@@ -134,7 +134,7 @@ body > footer a  {
   li a {
     &:link {
       padding: ($base-spacing-unit + 3px) 0;
-      @include media($desktop) {
+      @include media($medium) {
         padding: $base-spacing-unit 0;
       }
       background-color: $white;
@@ -165,7 +165,7 @@ body > footer a  {
     text-decoration: none;
     background-color: $white;
     padding: ($base-spacing-unit + 3px) $base-spacing-unit-small;
-    @include media($desktop) {
+    @include media($medium) {
       padding: $base-spacing-unit $base-spacing-unit-small;
     }
     margin-right: ($base-spacing-unit / 2);
@@ -195,7 +195,7 @@ body > footer a  {
 
 /*--- Search Global ---*/
 
-@media (max-width: $desktop - 1) {
+@media (max-width: $medium - 1) {
   .search__global {
     &:not(.open) {
       .search__global__toggle {
@@ -249,7 +249,7 @@ body > footer a  {
     }
   }
 }
-@include media($desktop) {
+@include media($medium) {
   .search__global__toggle {
     display: none;
   }

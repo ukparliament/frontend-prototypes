@@ -59,14 +59,14 @@ dl, dt, dd {
 /*--- List Column Options ---*/
 
 .list--2 {
-  @include media($desktop) {
+  @include media($medium) {
     @include list--inline;
   }
   @include col--2;
 }
 
 .list--3 {
-  @include media($desktop) {
+  @include media($medium) {
     @include list--inline;
   }
   @include col--3;
@@ -140,7 +140,7 @@ dl, dt, dd {
 }
 
 .list--details + .list--details {
-  @include media($smartphone) {
+  @include media($extra-small) {
     flex-basis: 25%;
     text-align: right;
     align-self: center;
@@ -270,14 +270,14 @@ footer .list {
 
   li {
     margin: 0;
-    @media (max-width: $desktop - 1) {
+    @media (max-width: $medium - 1) {
       margin-bottom: $base-spacing-unit;
     }
   }
   li:first-of-type {
     flex: 1 90%;
 
-    @include media($desktop) {
+    @include media($medium) {
       flex: 1 auto
     }
   }

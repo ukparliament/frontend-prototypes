@@ -7,7 +7,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   table-layout: fixed;
-  @include media($desktop) {
+  @include media($medium) {
     table-layout: initial;
   }
   th, td {

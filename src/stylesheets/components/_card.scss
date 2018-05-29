@@ -1,6 +1,6 @@
 .card,
 [class*="card--"] {
-  @include media($smartphone) {
+  @include media($extra-small) {
     @include card;
   }
 }
@@ -10,7 +10,7 @@
     margin-bottom: $base-spacing-unit;
   }
   @include last-child();
-  @include media($smartphone) {
+  @include media($extra-small) {
     flex: 1 1 0;
     > * {
       flex-basis: 100%;

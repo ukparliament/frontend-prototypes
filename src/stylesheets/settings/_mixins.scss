@@ -240,7 +240,7 @@
 /*--- Column Mixins ---*/
 
 @mixin col--2 {
-  @include media($desktop) {
+  @include media($medium) {
     > li {
       width: 49.10%;
     }
@@ -248,7 +248,7 @@
 }
 
 @mixin col--3 {
-  @include media($desktop) {
+  @include media($medium) {
     > li {
       width: 32.50%;
     }
@@ -261,7 +261,7 @@
   @include fontsize(34);
   line-height: 1.059; // 36px
 
-  @include media($desktop) {
+  @include media($medium) {
     @include fontsize(44);
     line-height: 1.091; // 48px
   }
@@ -270,7 +270,7 @@
   @include fontsize(28);
   line-height: 1.071; // 30px
 
-  @include media($desktop) {
+  @include media($medium) {
     @include fontsize(33);
     line-height: 1.091; // 36px
   }
@@ -279,7 +279,7 @@
   @include fontsize(24);
   line-height: 1.125; // 27px
 
-  @include media($desktop) {
+  @include media($medium) {
     @include fontsize(27);
     line-height: 1.111; // 30px
   }
@@ -288,7 +288,7 @@
   @include fontsize(20);
   line-height: 1.050; // 21px
 
-  @include media($desktop) {
+  @include media($medium) {
     @include fontsize(22);
     line-height: 1.091; // 24px
   }
@@ -297,7 +297,7 @@
   @include fontsize(18);
   line-height: 1.334; // 24px
 
-  @include media($desktop) {
+  @include media($medium) {
     @include fontsize(20);
     line-height: 1.5; // 30px
   }
@@ -307,7 +307,7 @@
 
 @mixin milli {
   @include fontsize(14);
-  @include media($tablet) {
+  @include media($small) {
     @include fontsize(16);
   }
 }
@@ -384,7 +384,7 @@
   > li {
     width: 100%;
     @include block;
-    @include media($smartphone) {
+    @include media($extra-small) {
       display: inline-flex;
     }
     /* IE11 Fix */
@@ -405,7 +405,7 @@
     background: transparent;
     border-bottom: solid 1px $grey-3;
     padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
-    @include media($smartphone) {
+    @include media($extra-small) {
       display: inline-flex;
     }
     /* IE11 Fix */
@@ -423,7 +423,7 @@
 @mixin list--details {
   margin-top: 0;
   word-break: break-word;
-  @include media($smartphone) {
+  @include media($extra-small) {
     flex-basis: 100%;
     display: inline-block;
   }
@@ -463,13 +463,13 @@
     $base-spacing-unit-small
   );
 
-  @include media($smartphone) {
+  @include media($extra-small) {
     margin-bottom: 0;
   }
 
   @if ($size == "small") {
     max-width: 54px;
-    @include media($tablet) {
+    @include media($small) {
       max-width: 60px;
     }
   }
@@ -480,7 +480,7 @@
 
   @else {
     max-width: 84px;
-    @include media($desktop) {
+    @include media($medium) {
       max-width: 93px;
     }
   }
@@ -505,12 +505,13 @@
   }
 }
 
+/*--- Section Offset ---*/
 
-/*--- Line length ---*/
-
-@mixin line-length {
-  max-width: 502px;
-  @include media($desktop-large) {
-    max-width: 628px;
+@mixin section-offset {
+  @include media($large) {
+    padding-right: ($large - ($container-max-width-large + $base-container-unit-large));
+  }
+  @include media($extra-large) {
+    padding-right: ($extra-large - ($container-max-width-extra-large + $base-container-unit-large));
   }
 }

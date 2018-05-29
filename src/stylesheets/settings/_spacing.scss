@@ -7,6 +7,12 @@ $base-spacing-unit-medium: round($base-spacing-unit * 4); // 24px
 $base-spacing-unit-large: round($base-spacing-unit * 5); // 30px
 $base-spacing-unit-extra-large: round($base-spacing-unit * 6); // 36px
 
+$base-container-unit-small: round($base-spacing-unit * 3); // 18px
+$base-container-unit-large: round($base-spacing-unit * 10); // 60px
+
+$aside-unit-large: 106px;
+$aside-unit-extra-large: 124px;
+
 
 /*
 	==============================

@@ -2,27 +2,19 @@ extends ../../layouts/layout-front-page.pug
 block content
   -var thingPage = true
 
-  .section--primary.hero(tabindex=0)#content
+  .hero(tabindex=0)#content
     .container
-      h1 Welcome to UK Parliament's beta website
+      h1 UK Parliament beta website
+      p We're building a new website for Parliament. Pages with a beta label are being tested and improved. They may not work for everyone.
+      p Follow #[+link('#', 'beta progress on our blog')].
 
-      p We're building a #[+link('#', 'new website for Parliament')]. Pages with a beta label are being tested and improved. They may not work for everyone.
-      p Beta pages are separate from the current parliament.uk website
-
-  section
+  section.section--major.section--wide
     .container
-      h2 What’s on beta.parliament.uk
-
-      h3 Member information
-      ol.list--block
+      h2.sr-only What’s on beta.parliament.uk
+      ol.list--block.list--3
         -var list_box_h2 = true
-        +list--block__generic('MPs', 'All current members of the House of Commons')
-        +list--block__generic('Lords', 'All current members of the House of Lords')
-        +list--block__generic('Constituencies', 'Find MPs by the area they represent')
-        +list--block__generic('Parties and groups', 'Find MPs and Lords by their party or group')
-
-      .status--highlight
-        p Read the latest Members service #[+link('#', 'blog post')].
-
-      h2 Follow our progress
-      p Follow all #[+link('#', 'new website developments on our blog')].
+        +list--block__generic('MPs', 'All current members of the House of Commons.')
+        +list--block__generic('Lords', 'All current members of the House of Lords.')
+        +list--block__generic('Constituencies', 'Find MPs by the area they represent.')
+        +list--block__generic('Parties and groups', 'Find MPs and Lords by their party or group.')
+        +list--block__generic('MPs Guide to Procedure', 'Guidance on House of Commons procedure for MPs and their staff.')

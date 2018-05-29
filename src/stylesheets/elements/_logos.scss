@@ -8,7 +8,7 @@ header {
     margin-bottom: 0;
     text-decoration: none;
   }
-  @include media($desktop) {
+  @include media($medium) {
     .logo {
       height: 54px;
     }

@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   color: $deep-purple;
   margin-bottom: $base-spacing-unit;
   margin-top: $base-spacing-unit-medium;
-  @include media($desktop) {
+  @include media($medium) {
     margin-top: $base-spacing-unit-large;
   }
   &.lead {
@@ -28,7 +28,7 @@ h1, .alpha {
   margin-bottom: $base-spacing-unit-tiny;
   margin-top: $base-spacing-unit-extra-large;
 
-  @include media($desktop) {
+  @include media($medium) {
     margin-bottom: $base-spacing-unit-small;
     margin-top: round($base-spacing-unit * 7);
   }
@@ -38,7 +38,7 @@ h2, .beta {
   margin-bottom: $base-spacing-unit-tiny;
   margin-top: $base-spacing-unit-extra-large;
 
-  @include media($desktop) {
+  @include media($medium) {
     margin-bottom: $base-spacing-unit-small;
     margin-top: round($base-spacing-unit * 7);
   }
@@ -48,7 +48,7 @@ h3, .gamma {
   margin-bottom: $base-spacing-unit;
   margin-top: $base-spacing-unit-medium;
 
-  @include media($desktop) {
+  @include media($medium) {
     margin-bottom: $base-spacing-unit;
     margin-top: $base-spacing-unit-large;
   }
@@ -58,7 +58,7 @@ h4, .delta {
   margin-bottom: $base-spacing-unit;
   margin-top: $base-spacing-unit-medium;
 
-  @include media($desktop) {
+  @include media($medium) {
     margin-bottom: $base-spacing-unit;
     margin-top: $base-spacing-unit-large;
   }
@@ -69,7 +69,7 @@ h5, h6, .epsilon {
   margin-bottom: $base-spacing-unit;
   margin-top: $base-spacing-unit-medium;
 
-  @include media($desktop) {
+  @include media($medium) {
     line-height: 1.2; // 24px
     margin-bottom: $base-spacing-unit;
     margin-top: $base-spacing-unit-large;
@@ -82,7 +82,7 @@ h1 a {
   @include delta;
   line-height: 1.2; // 24px
 
-  @include media($desktop) {
+  @include media($medium) {
     vertical-align: top;
     line-height: 1.091; // 24px
   }
@@ -94,7 +94,7 @@ h1 span {
     font-weight: 400;
     line-height: 1.125; // 18px
 
-    @include media($desktop) {
+    @include media($medium) {
       @include fontsize(18);
       display: block;
 
@@ -132,15 +132,6 @@ footer h2 {
     content: '';
     position: absolute;
     bottom: - $base-spacing-unit-extra-large;
-  }
-}
-
-.hero h1 {
-  @include media($tablet) {
-    max-width: 400px;
-  }
-  @include media($desktop) {
-    max-width: 502px;
   }
 }
 
@@ -203,7 +194,6 @@ article header,
   @include headings-margin-top(0);
   h1:first-of-type {
     margin-top: 0;
-    @include line-length;
   }
 }
 
@@ -235,11 +225,10 @@ article + aside > h2 {
   h2, h3, h4, h5, h6 {
     @extend .epsilon;
     flex-basis: 100%;
-    max-width: none;
     color: $grey-1;
     margin: 0 0 $base-spacing-unit;
 
-    @include media($smartphone) {
+    @include media($extra-small) {
       ~ * {
         margin-top: $base-spacing-unit;
       }

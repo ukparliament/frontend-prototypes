@@ -10,7 +10,7 @@ body > {
 
     .container {
       line-height: 0;
-      @include media($desktop) {
+      @include media($medium) {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;

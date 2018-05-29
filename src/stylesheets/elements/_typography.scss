@@ -6,7 +6,6 @@ body, .btn, button {
 
 p {
   margin: 0 0 $base-spacing-unit-small 0;
-  @include line-length;
 }
 
 small, .milli {
@@ -24,7 +23,7 @@ small, .milli {
   @include fontsize(21);
   line-height: 1.286; // 27px
   margin-bottom: $base-spacing-unit-small;
-  @include media($desktop) {
+  @include media($medium) {
     @include fontsize(24);
     line-height: 1.5; // 30px
     margin-bottom: $base-spacing-unit-medium;
@@ -67,7 +66,7 @@ h1 + .lead {
 .navigation--number .count {
   display: inline-block;
   @include epsilon;
-  @include media($tablet) {
+  @include media($small) {
     display: block;
     @include typography--light;
   }
@@ -81,10 +80,10 @@ h1 + .lead {
 
 .navigation--main li {
   @include fontsize(16);
-  @include media($tablet) {
+  @include media($small) {
     @include fontsize(18);
   }
-  @include media($desktop) {
+  @include media($medium) {
     @include fontsize(20);
   }
 }

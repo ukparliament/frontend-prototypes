@@ -5,7 +5,7 @@ svg {
 
 /*--- UK Parliament Icon ---*/
 
-@media (max-width: $desktop - 1) {
+@media (max-width: $medium - 1) {
   .uk_parliament {
     z-index: 1;
     position: relative;
@@ -30,7 +30,7 @@ svg {
 .icon--inline {
   width: 16px;
   height: 16px;
-  @include media($tablet) {
+  @include media($small) {
     width: 20px;
     height: 20px;
   }

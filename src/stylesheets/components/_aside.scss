@@ -1,11 +1,19 @@
 aside {
   margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-small;
+  width: 100%;
 
-  @include media($desktop) {
-    width: 225px;
-    margin-left: 45px;
+  @include media($medium) {
     margin-top: ($base-spacing-unit-large * 2);
   }
+  @include media($large) {
+    margin-left: $aside-unit-large;
+    width: $aside-large;
+  }
+  @include media($extra-large) {
+    margin-left: $aside-unit-extra-large;
+    width: $aside-extra-large;
+  }
+
   .block {
     @extend .theme--grey-4;
     padding: 0;
