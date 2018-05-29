@@ -326,6 +326,14 @@
   font-weight: 500;
 }
 
+/*--- Heading Mixins ---*/
+
+@mixin list-headings {
+  h2, h3, h4, h5, h6 {
+    @include epsilon;
+  }
+}
+
 /*--- Block Mixins ---*/
 
 @mixin block {
@@ -345,7 +353,6 @@
 @mixin list {
   margin-left: 0;
   list-style: none;
-  @include list-headings;
 
   ol {
     list-style: decimal;
@@ -369,6 +376,7 @@
 
 @mixin list--inline {
   @include list;
+  @include list-headings;
   display: flex;
   flex-wrap: wrap;
 
@@ -380,6 +388,7 @@
 
 @mixin list--block {
   @include list;
+  @include list-headings;
 
   > li {
     width: 100%;
@@ -398,6 +407,7 @@
 
 @mixin list--pipe {
   @include list;
+  @include list-headings;
 
   > li {
     width: 100%;

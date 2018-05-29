@@ -117,6 +117,72 @@ block content
 
   section
     .container
+      h2 Events list
+
+      h3 Pipe style
+      ol.list--events
+        li
+          h4
+            time(datetime='2018-01-01') 01 Jan 2018
+          ol.list--pipe
+            li
+              .card
+                .card__details
+                  span.milli Home Office
+                  h5 #[+link('#', 'Immigrants: Commonwealth')]
+            li
+              .card
+                .card__details
+                  span.milli Department for Business, Energy and Industrial Strategy
+                  h5 #[+link('#', 'Housing: Heating')]
+        li
+          h4
+            time(datetime='2018-01-02') 02 Jan 2018
+          ol.list--pipe
+            li
+              .card
+                .card__details
+                  span.milli Home Office
+                  h5 #[+link('#', 'Asylum: Finance')]
+            li
+              .card
+                .card__details
+                  span.milli Home Office
+                  h5 #[+link('#', 'Immigration: Caribbean')]
+
+      h3 Block style
+      ol.list--events
+        li
+          h4
+            time(datetime='2018-01-01') 01 Jan 2018
+          ol.list--block
+            li
+              .card
+                .card__details
+                  span.milli Home Office
+                  h5 #[+link('#', 'Immigrants: Commonwealth')]
+            li
+              .card
+                .card__details
+                  span.milli Department for Business, Energy and Industrial Strategy
+                  h5 #[+link('#', 'Housing: Heating')]
+        li
+          h4
+            time(datetime='2018-01-02') 02 Jan 2018
+          ol.list--block
+            li
+              .card
+                .card__details
+                  span.milli Home Office
+                  h5 #[+link('#', 'Asylum: Finance')]
+            li
+              .card
+                .card__details
+                  span.milli Home Office
+                  h5 #[+link('#', 'Immigration: Caribbean')]
+
+  section
+    .container
       h2 Basic Lists
       h3 Bulleted lists
       ul

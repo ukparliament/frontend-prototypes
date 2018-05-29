@@ -16,6 +16,7 @@ dl, dt, dd {
 
 .list {
   @include list;
+  @include list-headings;
 }
 
 .list--deep {
@@ -83,6 +84,42 @@ dl, dt, dd {
   }
 }
 
+/*--- List Events ---*/
+
+.list--events {
+  @include list;
+}
+
+.list--events > li {
+  margin-bottom: 0;
+
+  @include media($medium) {
+    @include flex(33.333%, 66.666%);
+    align-items: flex-start;
+    border-top: 1px solid $grey-3;
+  }
+
+  &:last-child {
+    @include media($medium) {
+      border-bottom: 1px solid $grey-3;
+    }
+  }
+
+  > ol,
+  > ul {
+    @include media($medium) {
+      padding-left: $base-spacing-unit-large;
+    }
+  }
+
+  > .list--pipe {
+    @include media($medium) {
+      margin-top: -1px;
+      margin-bottom: -1px;
+    }
+  }
+}
+
 /*--- List Tab ---*/
 
 .list--tab {
@@ -112,6 +149,7 @@ dl, dt, dd {
 
 .list--number, .list--roman, .list--alpha {
   @include list;
+  @include list-headings;
   li {
     margin-left: $base-spacing-unit-large;
   }
