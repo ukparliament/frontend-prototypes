@@ -1,4 +1,5 @@
 article {
+  position: relative;
   margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-small;
   @include media($medium) {
     flex: 1;

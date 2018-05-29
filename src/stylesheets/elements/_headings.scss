@@ -68,39 +68,25 @@ h5, h6, .epsilon {
 }
 
 /*--- Heading Nested Elements ---*/
-h1 a {
-  vertical-align: top;
-  @include delta;
-  line-height: 1.2; // 24px
 
-  @include media($medium) {
-    vertical-align: top;
-    line-height: 1.091; // 24px
+h1 {
+  @include last-child;
+
+  span {
+    display: block;
   }
-}
-h1 span {
-  display: block;
-  &:last-child {
-    @include fontsize(16);
-    font-weight: 400;
-    line-height: 1.125; // 18px
-
-    @include media($medium) {
-      @include fontsize(18);
-      display: block;
-
-      &:nth-of-type(2) {
-        @include fontsize(18);
-        line-height: 1.334; // 24px
-      }
-    }
+  span.context {
+    @include gamma;
+    @include typography--light;
+    margin: $base-spacing-unit-tiny 0;
   }
-}
-h1 span + span {
-  margin-top: $base-spacing-unit-small;
-
-  .hero & {
-    margin-top: $base-spacing-unit;
+  > small {
+    top: 0;
+    @include delta;
+    position: absolute;
+  }
+  > small + span {
+    padding-top: $base-spacing-unit-large;
   }
 }
 

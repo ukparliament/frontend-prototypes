@@ -4,8 +4,9 @@ block content
 
   .section--primary(tabindex=0)#content
     .container
-      h1 Margot James
-      p.lead #[+link('#', 'Conservative')] MP for #[+link('#', 'Stourbridge')]
+      h1
+        span Margot James
+        span.context #[+link('#', 'Conservative')] MP for #[+link('#', 'Stourbridge')]
 
       figure
         a(href='media-id.html')
@@ -55,6 +56,7 @@ block content
               small Committee Role
               h4 Member of the Merits of Statutory Instruments Committee
               p May 2011 to present
+
       +dropdownToggle("Show history")
         ul.track
           li

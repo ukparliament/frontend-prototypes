@@ -3,30 +3,78 @@ block content
 
   .section--primary(tabindex=0)#content
     .container
+      h1 Headings and models
 
   section
     .container
+
+      small All headings
+      .block.theme--deep-purple
+        h1
+          span Heading one
+        h2 Heading two
+        h3 Heading three
+        h4 Heading four
+        h5 Heading five
+
+      h2 H1 models
+
+      small Simple heading
       .block
-        h1 Heading 1
-        h2 Heading 2
-        h3 Heading 3
-        h4 Heading 4
-        h5 Heading 5
-        h6 Heading 6
+        h1
+          span UK Parliament beta website
+
+      small Heading &amp; context
+      .block
+        h1
+          span Current MPs
+          span.context A to Z - showing results for A
+
+      small Heading &amp; context with a link
+      .block
+        h1
+          span Nigel Adams
+          span.context #[+link('#', 'Conservative')] MP for #[+link('#', 'Selby and Ainsty')]
+
+      small Heading &amp; context (If the parent and root collection is the same, the parent will not be displayed)
+      .block
+        h1
+          span Early Day Motions
+          span.context In: #[+link('#', 'MPs Guide to Procedure')]
+
+      small Subheading, heading &amp; context
+      .block
+        h1
+          small #[+link('#', 'MPs Guide to Procedure')]
+          span Delegated legislation and statutory instruments
+          span.context In: #[+link('#', 'Bills and Delegated Legislation')]
+
+      small Subheading, heading &amp; context
+      .block
+        h1
+          small #[+link('#', '2015 to 2017 Parliament')]
+          span Conservative - MPs and Lords
+          span.context A to Z - showing results for A
 
   section
     .container
       h2 Timeline Headings
-      .track
-        h2 Heading 2
-        h2 Heading preceding a heading
-        ul.list--block
-          li
-            .card
-              .card__details
-                h5 MP for #[+link('#', 'Hackney North and Stoke Newington')]
-                p Parliamentary role
-                p 8 Jun 2017 to present
-        h2 Heading preceding content
-        p Paragraph preceding a heading
-        h2 Heading ending timeline
+      ul.track
+        li
+          h2 Heading 2
+        li
+          h2 Heading preceding a heading
+          ul.list--block
+            li
+              .card
+                .card__details
+                  h3 MP for #[+link('#', 'Hackney North and Stoke Newington')]
+                  p Parliamentary role
+                  p 8 Jun 2017 to present
+        li
+          h2 Heading preceding content
+          ul
+            li List item
+            li List item
+        li
+          h2 Heading ending timeline
