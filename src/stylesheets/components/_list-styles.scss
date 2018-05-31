@@ -167,25 +167,6 @@ dl, dt, dd {
   list-style-type: lower-alpha;
 }
 
-/*--- List Details Options ---*/
-
-.list--details {
-  @include list--details
-}
-
-.list--details__inline {
-  @include list--details__inline;
-}
-
-.list--details + .list--details {
-  @include media($extra-small) {
-    flex-basis: 25%;
-    text-align: right;
-    align-self: center;
-    margin-left: $base-spacing-unit;
-  }
-}
-
 /*--- Default Nested Lists [ul/ol] ---*/
 
 // List style for <ul> tags without any classes, nested

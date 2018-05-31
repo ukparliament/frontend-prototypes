@@ -1,8 +1,8 @@
 //- List Box
 mixin list--block(name, constituency, party, image)
   li
-    if image
-      .card
+    .card
+      if image
         figure.avatar--round
           +link('#', '')(aria-hidden="true", tabIndex="-1")
             picture
@@ -15,72 +15,78 @@ mixin list--block(name, constituency, party, image)
             p= 'MP for ' + constituency
           p= party
 
-    else
-      .list--details
-        h2 #[+link('#', constituency)]
-        p= name
+      else
+        .card__details
+          h2 #[+link('#', constituency)]
+          p= name
 
 //- List Box Parties
 mixin list--block__parties(party, count)
   li
-    .list--details
-      h2 #[+link('#', party)]
-      p= 'All current ' + party + ' MPs'
-    .list--details
-      span.count= count
-      | MPs
+    .card
+      .card__details
+        h2 #[+link('#', party)]
+        p= 'All current ' + party + ' MPs'
+      .card__details
+        span.count= count
+        | MPs
 
 //- List Box Accessible
 mixin list--block__accessible(constituency, date)
   li
-    .list--details
-      if constituency
-        h2 #[+link('#', constituency)]
-          span.sr-only= 'constituency from ' + date
-        p
-          span(aria-hidden='true')= date
-      else
-        h2 #[+link('#', date)]
+    .card
+      .card__details
+        if constituency
+          h2 #[+link('#', constituency)]
+            span.sr-only= 'constituency from ' + date
+          p
+            span(aria-hidden='true')= date
+        else
+          h2 #[+link('#', date)]
 
 //- List Box Generic
 mixin list--block__generic(heading, content)
   li
-    .list--details
-      if list_box_h4
-        h4 #[+link('#', heading)]
-      else if list_box_h3
-        h3 #[+link('#', heading)]
-      else
-        h2 #[+link('#', heading)]
-      p= content
-      block
+    .card
+      .card__details
+        if list_box_h4
+          h4 #[+link('#', heading)]
+        else if list_box_h3
+          h3 #[+link('#', heading)]
+        else
+          h2 #[+link('#', heading)]
+        p= content
+        block
 
-//- List Box Inline
+//- List Block Inline
 mixin list--block__inline(name, count, inline_text)
   if inline_text
     li
-      .list--details__inline
-        h2 #[+link('#', name)]
-        p= '- ' + count + ' MPs'
+      .card--inline
+        .card__details
+          h2 #[+link('#', name)]
+          p= '- ' + count + ' MPs'
   else
     li
-      .list--details
-        h2 #[+link('#', name)]
-        p= count + ' MPs'
+      .card
+        .card__details
+          h2 #[+link('#', name)]
+          p= count + ' MPs'
 
 //- List Pipe
 mixin list--pipe(constituency, date, name)
   li
-    .list--details
-      if member
-        p= 'MP for '
-          +link('#', constituency)
-        p= date
-      else if name
-        h2 #[+link('#', name)]
-        p= date
-      else
-        p= date
+    .card
+      .card__details
+        if member
+          p= 'MP for '
+            +link('#', constituency)
+          p= date
+        else if name
+          h2 #[+link('#', name)]
+          p= date
+        else
+          p= date
 
 //- List Pipe Media
 mixin list--pipe__media(imgURL, imgAlt, heading, btnURL, btnText)
