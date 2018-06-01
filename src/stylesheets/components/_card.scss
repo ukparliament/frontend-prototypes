@@ -1,3 +1,5 @@
+/*--- Card ---*/
+
 .card,
 [class*="card--"] {
   @include media($extra-small) {
@@ -5,16 +7,30 @@
   }
 }
 
+/*--- Card inline ---*/
+
+.card--inline .card__details * {
+  display: inline;
+}
+
+/*--- Card details ---*/
+
 .card__details {
-  > * {
-    margin-bottom: $base-spacing-unit;
-  }
-  @include last-child();
+  @include first-child;
+  @include last-child;
   @include media($extra-small) {
     flex: 1 1 0;
-    > * {
-      flex-basis: 100%;
-      margin-bottom: $base-spacing-unit;
-    }
+  }
+  > * {
+    margin-top: $base-spacing-unit;
+    margin-bottom: $base-spacing-unit;
+  }
+}
+
+.card__details + .card__details {
+  @include media($extra-small) {
+    max-width: 25%;
+    align-self: center;
+    text-align: right;
   }
 }

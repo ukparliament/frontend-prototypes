@@ -132,12 +132,6 @@ footer h2 {
   }
 }
 
-.list--details, .list--details__inline {
-  h2, h3, h4, h5, h6 {
-    margin-top: 0;
-  }
-}
-
 /*--- List Events ---*/
 
 .list--events > li > {
@@ -235,15 +229,8 @@ article + aside > h2 {
 .card,
 [class*="card--"] {
   h2, h3, h4, h5, h6 {
-    @extend .epsilon;
+    @include epsilon;
     flex-basis: 100%;
     color: $grey-1;
-    margin: 0 0 $base-spacing-unit;
-
-    @include media($extra-small) {
-      ~ * {
-        margin-top: $base-spacing-unit;
-      }
-    }
   }
 }

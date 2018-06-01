@@ -113,7 +113,13 @@
 
 /*--- Remove top/bottom margins ---*/
 
-@mixin last-child() {
+@mixin first-child {
+  :first-child {
+    margin-top: 0;
+  }
+}
+
+@mixin last-child {
   :last-child {
     margin-bottom: 0;
   }
@@ -393,15 +399,6 @@
   > li {
     width: 100%;
     @include block;
-    @include media($extra-small) {
-      display: inline-flex;
-    }
-    /* IE11 Fix */
-    @media(-ms-high-contrast: none) {
-      *::-ms-backdrop, figure + .list--details {
-        padding-left: $base-spacing-unit-small;
-      }
-    }
   }
 }
 
@@ -415,40 +412,9 @@
     background: transparent;
     border-bottom: solid 1px $grey-3;
     padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
-    @include media($extra-small) {
-      display: inline-flex;
-    }
-    /* IE11 Fix */
-    @media(-ms-high-contrast: none) {
-      *::-ms-backdrop, figure + .list--details {
-        padding-left: $base-spacing-unit-large;
-      }
-    }
   }
   > li:first-of-type {
     border-top: solid 1px $grey-3;
-  }
-}
-
-@mixin list--details {
-  margin-top: 0;
-  word-break: break-word;
-  @include media($extra-small) {
-    flex-basis: 100%;
-    display: inline-block;
-  }
-  * {
-    margin-bottom: $base-spacing-unit;
-  }
-  :last-child {
-    margin-bottom: 0;
-  }
-}
-
-@mixin list--details__inline {
-  @include list--details;
-  * {
-    display: inline;
   }
 }
 
@@ -459,6 +425,7 @@
   flex-wrap: wrap;
   flex-basis: 100%;
   align-items: flex-start;
+  @include headings-margin-top(0);
 }
 
 /*--- Avatar Mixins ---*/
