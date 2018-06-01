@@ -242,7 +242,7 @@
 @mixin col--2 {
   @include media($medium) {
     > li {
-      width: 49.10%;
+      width: 48%;
     }
   }
 }
@@ -250,7 +250,7 @@
 @mixin col--3 {
   @include media($medium) {
     > li {
-      width: 32.50%;
+      width: 32%;
     }
   }
 }
