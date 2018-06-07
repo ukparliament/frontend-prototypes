@@ -25,6 +25,7 @@ LEAFLET_FULLSCREEN=$(NODE_MODULES)/leaflet.fullscreen/Control.FullScreen.js
 PA11Y=$(NODE_MODULES)/.bin/pa11y-ci
 PRETTY_MINI_JSON=$(NODE_MODULES)/pretty-mini-json/pretty-mini-json.js
 VALIMATE=$(NODE_MODULES)/.bin/valimate
+MOCHA=$(NODE_MODULES)/.bin/mocha
 
 # Github variables
 GITHUB_API=https://api.github.com
@@ -100,6 +101,9 @@ test_pa11y:
 
 test_valimate:
 	@$(VALIMATE) test/paths.json
+
+test_mocha:
+	@$(MOCHA) --recursive
 
 test: test_pa11y test_valimate
 

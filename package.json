@@ -21,7 +21,9 @@
   "main": "server.js",
   "devDependencies": {
     "autoprefixer": "^8.0.0",
+    "chai": "^4.1.2",
     "chokidar": "^2.0.2",
+    "chromedriver": "^2.35.0",
     "cssnano": "^3.10.0",
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.1",
@@ -34,6 +36,7 @@
     "leaflet": "^1.1.0",
     "leaflet.fullscreen": "^1.4.3",
     "minimist": "^1.2.0",
+    "mocha": "^5.0.2",
     "node-sass": "^4.3.0",
     "normalize.css": "^8.0.0",
     "pa11y-ci": "^1.3.1",
@@ -41,6 +44,7 @@
     "pretty-mini-json": "^1.1.4",
     "pug-cli": "^1.0.0-alpha6",
     "readdir": "0.0.13",
+    "selenium-webdriver": "^3.6.0",
     "svgo": "^0.7.2",
     "uglify-js": "^3.0.20",
     "valimate": "^2.3.0"
