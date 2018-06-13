@@ -1,17 +1,33 @@
 .track  {
   position: relative;
-  @include headings-margin-top(0);
+  list-style: none;
   @include last-child;
   padding: 0 0 0 $base-spacing-unit-small;
-
+  margin-left: 8px;
   &:before {
     position: absolute;
     content: '';
     background-color: $grey-1;
     width: 1px;
-    height: calc(100% - 21px);
+    bottom: 11px;
     left: -1px;
     top: 10px;
+  }
+}
+
+.track--alternative {
+  @extend .track;
+  &:before {
+    bottom: 0;
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    background-color: $grey-1;
+    width: 7px;
+    height: 1px;
+    left: -4px;
+    bottom: 0;
   }
 }
 

@@ -30,7 +30,6 @@
   overflow: hidden;
   transition: all 0.1s linear;
   padding: $base-spacing-unit-small;
-  @include headings-margin-top(0);
   @include last-child;
 }
 

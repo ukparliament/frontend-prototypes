@@ -153,45 +153,41 @@ footer h2 {
   }
 }
 
+/*--- Track Timelines ---*/
+
 .track > {
-  h2, h3, h4, h5, h6 {
-    color: $grey-1;
-    position: relative;
-    line-height: 1.667; // 30px
-    @include epsilon;
-    &:before {
-      z-index: 1;
-      left: -24px;
-      width: 11px;
-      content: '';
-      height: 11px;
-      margin-top: 6px;
-      border-radius: 50%;
-      position: absolute;
-      vertical-align: top;
-      bottom: calc(50% - 5px);
-      background-color: $grey-1;
+  li > {
+    h2, h3, h4, h5, h6 {
+      position: relative;
+      color: $grey-1;
+      line-height: 1.667; // 30px
+      @include epsilon;
+      &:before {
+        z-index: 1;
+        left: -24px;
+        width: 11px;
+        content: '';
+        height: 11px;
+        margin-top: 6px;
+        border-radius: 50%;
+        position: absolute;
+        vertical-align: top;
+        top: 4px;
+        background-color: $grey-1;
+      }
+    }
+    h2 + h2, h3 + h3, h4 + h4, h5 + h5 {
+      margin-top: $base-spacing-unit-large;
     }
   }
-  h2 + h2, h3 + h3, h4 + h4, h5 + h5 {
-    margin-top: $base-spacing-unit-large;
+  li:first-child > {
+    h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
   }
 }
-.track--alternative {
-  @extend .track;
-  &:before {
-    height: calc(100% - 10px) !important;
-  }
-  &:after {
-    position: absolute;
-    content: '';
-    background-color: $grey-1;
-    width: 7px;
-    height: 1px;
-    left: -4px;
-    bottom: 0;
-  }
-}
+
+/*--- Articles & Blocks ---*/
 
 .section--primary .container,
 .hero .container,
