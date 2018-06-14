@@ -89,10 +89,8 @@
 /*--- Link [link colour, link decoration, visited colour, hover colour] ---*/
 
 @mixin links($link-color, $link-decoration, $visited-color, $hover-color) {
-  &:link {
-    color: $link-color;
-    text-decoration: $link-decoration;
-  }
+  color: $link-color;
+  text-decoration: $link-decoration;
   &:visited {
     color: $visited-color;
   }
@@ -125,70 +123,56 @@
   }
 }
 
-/*--- Button Base ---*/
+/*--- Button ---*/
 
-@mixin btn {
+@mixin button($color, $background-color, $background-hover, $border-color:transparent) {
+
   cursor: pointer;
-  position: relative;
-  border-radius: 4px;
-  text-align: center;
-  color: $deep-purple;
   display: inline-block;
-  background-color: $grey-5;
-  margin-right: $base-spacing-unit;
+  @include links($color, none, $color, $color);
+  background-color: $background-color;
+  border: 2px solid $border-color;
+  border-radius: ($base-spacing-unit - 2);
   padding: ($base-spacing-unit - 2) ($base-spacing-unit-tiny - 2);
+  margin-right: $base-spacing-unit;
 
-  &:active, &:focus {
-    outline: none;
-  }
-  &:active {
-    box-shadow: none;
-  }
-  &:focus {
-    box-shadow: 0 0 0 3px $mint;
-  }
-}
-
-/*--- Button [colour, background, background-hover] ---*/
-
-@mixin button($color, $background, $background-hover, $border-hover:null) {
-  @include btn;
-  @include links(
-    $color, 			// a:link colour
-    none, 				// a:link decoration
-    $color, 			// a:visited color
-    $white 				// a:hover color
-  );
-  color: $color;
-  background-color: $background;
-  border: 2px solid $background;
-
-  &:hover, &:focus {
-    color: $color;
-  }
   &:hover {
     background-color: $background-hover;
+  }
 
-    @if ($border-hover) {
-      border-color: $border-hover;
+  &:focus {
+    color: $color;
+
+    // This is for ghost buttons
+    @if ($background-color == transparent) {
+      background-color: $background-hover;
+    }
+    // This is for inverse buttons
+    @else if ($background-color == $white) {
+      background-color: $background-color;
+    }
+    // This is for non-ghost and non-inverse buttons
+    @else {
+      background-color: $background-color;
+      border-color: $background-hover;
+    }
+
+    box-shadow: 0 0 0 ($base-spacing-unit / 2) $mint;
+    outline: none;
+  }
+
+  &.btn--toggle {
+    padding-right: $base-spacing-unit-large;
+    &::after {
+      right: ($base-spacing-unit-tiny - 2);
+      border-top-color: $color;
     }
   }
-  &:focus {
-    background-color: $background;
-  }
+
   path, polygon {
     fill: $color;
   }
-}
 
-@mixin button-transparent($color) {
-  @include btn;
-  &:link {
-    color: $color !important;
-    text-decoration: none !important;
-  }
-  border: 1px solid;
-  background-color: transparent;
 }
 
 /*--- Media Queries [size] ---*/

@@ -35,24 +35,30 @@ block content
         +buttonLink('#', 'Deep Purple', 'btn--deep-purple--inverse')
         +buttonLink('#', 'White', 'btn--white')
 
-        h3 Transparent
+        h3 Ghost
         .block.theme--deep-purple
-          +buttonLink('#', 'Transparent', 'btn--transparent')
-        .block.theme--grey-4
-          +buttonLink('#', 'Transparent Inverse', 'btn--transparent--inverse')
+          +buttonLink('#', 'Ghost', 'btn--ghost')
+        .block.theme--grey-5
+          +buttonLink('#', 'Ghost inverse', 'btn--ghost--inverse')
+
+        h3 Toggle
+        +buttonLink('#', 'Primary', 'btn--primary btn--toggle')
+        +buttonLink('#', 'Secondary', 'btn--secondary btn--toggle')
+        +buttonLink('#', 'Deep purple', 'btn--deep-purple btn--toggle')
+        +buttonLink('#', 'Ghost', 'btn--ghost--inverse btn--toggle')
+        +buttonLink('#', 'Toggle', 'btn--toggle')
 
         h3 Alternative
-        .block.theme--grey-5
-          +buttonLink('#', 'Grey', 'btn--grey')
-        .block.theme--deep-purple
-          +buttonLink('#', 'Disabled', 'btn--disabled')(tabIndex=-1)
+        +buttonLink('#', 'Grey', 'btn--grey')
+        +buttonLink('#', 'Disabled', 'btn--disabled')(tabIndex=-1)
+        +buttonLink('#', 'Mint', 'btn--mint')
 
       h2 Download buttons
       .block
         //- buttonLink [link, value, style, datatype=optional]
         +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary', 'download')(download)
         +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary', 'download')(download)
-        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--disabled')(download, tabIndex=-1)
+        +buttonLink('#', 'Disabled download (1500 x 2000 jpeg)', 'btn--disabled')(download, tabIndex=-1)
 
       h2 Form groups
       .block
