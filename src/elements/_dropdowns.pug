@@ -1,7 +1,7 @@
 //- Dropdown Toggle
 mixin dropdownToggle(title)
-  .dropdown
+  .dropdown(data-toggle='item')
     .dropdown__toggle
-      h2 #[+link('#', title)]
+      h2 #[+link('#', title)(data-toggle='parent-item')]
     .dropdown__content
       block

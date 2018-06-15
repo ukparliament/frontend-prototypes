@@ -7,15 +7,31 @@ UK_Parliament.toggle = function() {
     toggles = document.querySelectorAll('[' + toggle_attr + ']');
 
   // End program if there are no toggle buttons.
-  if (toggles.length < 1) return false;
+  if (toggles.length < 1) {
+    return false;
+  }
 
-  // Add click events to toggle buttons
+  // Add click or change events to toggle buttons.
   for (var i = 0; i < toggles.length; i++) {
 
-    // Only add click events to elements with the attribute
-    // `data-toggle` that don't have the value 'item'.
-    if (toggles[i].getAttribute(toggle_attr) !== 'item') {
-      toggles[i].onclick = doToggle;
+    // Only add click/change events to elements with the attribute `data-toggle`
+    // that don't have the value 'item'.
+    if (
+      toggles[i].getAttribute(toggle_attr) !== 'item' &&
+      toggles[i].getAttribute(toggle_attr) !== 'content'
+    ) {
+
+      if (toggles[i].tagName.toUpperCase() === 'INPUT') {
+        switch(toggles[i].getAttribute('type')) {
+        case 'checkbox':
+        case 'radio':
+          toggles[i].onchange = doToggle;
+          break;
+        }
+      } else {
+        toggles[i].onclick = doToggle;
+      }
+
     }
 
   }
@@ -28,8 +44,8 @@ UK_Parliament.toggle = function() {
       target = undefined,
       toggle_value = toggle.getAttribute(toggle_attr);
 
-    // Set target element to coresponding DOM-Object
-    // based on the clicked toggle button's value.
+    // Set target element to coresponding DOM-Object based on the clicked toggle
+    // button's value.
     switch(toggle_value) {
 
     case 'next-item':
@@ -46,47 +62,58 @@ UK_Parliament.toggle = function() {
 
     }
 
+    // Throw error if toggle button can't find the toggle target.
     if (
       !target ||
       !target.hasAttribute(toggle_attr) ||
       target.getAttribute(toggle_attr) !== 'item'
     ) {
       throw 'The toggle button you clicked on with the attribute ' +
-      '`data-toggle="' + toggle_value + '"` can\'t find a toggle ' +
-      'element \'' + toggle_value + '\' to it. The element to ' +
-      'toggle should have the attribute `data-toggle="item"`.';
+      '`' + toggle_attr +'="' + toggle_value + '"` can\'t find a ' +
+      'toggle element \'' + toggle_value + '\' to it. The element ' +
+      'to toggle should have the attribute `' + toggle_attr +
+      '="item"`.';
     }
 
-    // Add/remove active state on toggle button and
-    // target element.
-    toggleActiveState(target);
-
-    // Add/remove active state on toggle buttons that
-    // are bound to toggle the same target element.
-    toggleActiveState(target.previousElementSibling, 'next-item');
-    toggleActiveState(target.nextElementSibling, 'previous-item');
-    toggleActiveState(target.querySelector('[' + toggle_attr + ']'), 'parent-item');
+    toggleRelated([
+      target,
+      target.previousElementSibling,
+      target.nextElementSibling,
+      target.querySelectorAll('[' + toggle_attr + ']')
+    ]);
 
   }
 
-  function toggleActiveState(element, toggle_value) {
-
-    toggle_value = toggle_value || 'item';
-
-    if (
-      element &&
-      element.hasAttribute(toggle_attr) &&
-      element.getAttribute(toggle_attr) === toggle_value
-    ) {
-
-      if (element.classList.contains(active_state)) {
-        element.classList.remove(active_state);
+  function toggleRelated(elements) {
+    for (var j = 0; j < elements.length; j++) {
+      if (elements[j] !== null && elements[j].length) {
+        for (var k = 0; k < elements[j].length; k++) {
+          toggleActive(elements[j][k]);
+        }
+      } else if (elements[j] === null) {
+        continue;
       } else {
-        element.classList.add(active_state);
+        toggleActive(elements[j]);
       }
-
     }
+  }
 
+  function toggleActive(element) {
+    if (element.hasAttribute(toggle_attr)) {
+      if (
+        element.getAttribute(toggle_attr) === 'item' ||
+        element.getAttribute(toggle_attr) === 'next-item' ||
+        element.getAttribute(toggle_attr) === 'previous-item' ||
+        element.getAttribute(toggle_attr) === 'parent-item' ||
+        element.getAttribute(toggle_attr) === 'content'
+      ) {
+        if (element.classList.contains(active_state)) {
+          element.classList.remove(active_state);
+        } else {
+          element.classList.add(active_state);
+        }
+      }
+    }
   }
 
 };

@@ -46,15 +46,15 @@ block content
         p You may be able to discuss issues with your MP in person or online. Contact them for details.
 
       h2 Radio Switch (content initally shown)
-      
+
       +form('javascript:console.log("form submitted")', 'post')
-        .block--border__bottom(data-dropdown='holder')
+        .block--border__bottom(class='open', data-toggle='item')
           +fieldset('Have you completed your questionnaire?')
             //- type, name, id, label, label_class + additional attributes
-            +radio--checkbox__inline('radio', 'question-check', 'quesChkYes', 'Yes')(data-dropdown='switch')
-            +radio--checkbox__inline('radio', 'question-check', 'quesChkNo', 'No')(checked)
+            +radio--checkbox__inline('radio', 'question-check', 'quesChkYes', 'Yes')(data-toggle='parent-item')
+            +radio--checkbox__inline('radio', 'question-check', 'quesChkNo', 'No')(class='open', data-toggle='parent-item', checked)
 
-          div(data-dropdown-content='show') 
+          div(class='open', data-toggle='content')
             .status--highlight.theme--caution
               p Complete your questionnaire before you continue
 
@@ -63,11 +63,12 @@ block content
       h2 Checkbox Switch (content initally hidden)
 
       +form('javascript:console.log("form submitted")', 'post')
-        .block--border__bottom(data-dropdown='holder')
-          //- type, name, id, label, label_class + additional attributes
-          +radio--checkbox('checkbox', 'terms-check', 'termsChk', 'I agree to the terms and conditions')(data-dropdown='switch')
 
-          div(data-dropdown-content='hide') 
+        .block--border__bottom(data-toggle='item')
+          //- type, name, id, label, label_class + additional attributes
+          +radio--checkbox('checkbox', 'terms-check', 'termsChk', 'I agree to the terms and conditions')(data-toggle='parent-item')
+
+          div(data-toggle='content')
             .status--highlight.theme--success
               p Thank you for agreeing to our terms and conditions
 
