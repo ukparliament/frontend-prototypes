@@ -75,44 +75,19 @@ UK_Parliament.toggle = function() {
       '="item"`.';
     }
 
-    toggleRelated([
-      target,
-      target.previousElementSibling,
-      target.nextElementSibling,
-      target.querySelectorAll('[' + toggle_attr + ']')
-    ]);
+    toggleActive(target);
+    toggleActive(target.querySelector('[' + toggle_attr + '="content"]'));
 
-  }
-
-  function toggleRelated(elements) {
-    for (var j = 0; j < elements.length; j++) {
-      if (elements[j] !== null && elements[j].length) {
-        for (var k = 0; k < elements[j].length; k++) {
-          toggleActive(elements[j][k]);
-        }
-      } else if (elements[j] === null) {
-        continue;
-      } else {
-        toggleActive(elements[j]);
-      }
-    }
   }
 
   function toggleActive(element) {
-    if (element.hasAttribute(toggle_attr)) {
-      if (
-        element.getAttribute(toggle_attr) === 'item' ||
-        element.getAttribute(toggle_attr) === 'next-item' ||
-        element.getAttribute(toggle_attr) === 'previous-item' ||
-        element.getAttribute(toggle_attr) === 'parent-item' ||
-        element.getAttribute(toggle_attr) === 'content'
-      ) {
-        if (element.classList.contains(active_state)) {
-          element.classList.remove(active_state);
-        } else {
-          element.classList.add(active_state);
-        }
-      }
+    if (
+      element !== null &&
+      element.classList.contains(active_state)
+    ) {
+      element.classList.remove(active_state);
+    } else {
+      element.classList.add(active_state);
     }
   }
 
