@@ -91,12 +91,28 @@ var UK_Parliament = (function () {
 
       throw 'Sorry, there is no such ancestor with the identifiers you referenced: ' + JSON.stringify(attributes);
 
+    },
+
+    /**
+     * Toggle class to switch styles
+     * @param {object} element Element to toggle class on
+     * @param {string} class_name Class to toggle
+     */
+    toggleClass = function(element, class_name) {
+
+      if (element) {
+        element.classList.contains(class_name) ?
+          element.classList.remove(class_name) :
+          element.classList.add(class_name);
+      }
+
     };
 
   return {
     setCookie: setCookie,
     getCookie: getCookie,
     httpRequest: httpRequest,
-    traverseUp: traverseUp
+    traverseUp: traverseUp,
+    toggleClass: toggleClass
   };
 })();

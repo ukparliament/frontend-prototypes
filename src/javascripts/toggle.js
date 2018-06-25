@@ -2,93 +2,44 @@
 UK_Parliament.toggle = function() {
 
   var
-    active_state = 'open',
-    toggle_attr = 'data-toggle',
-    toggles = document.querySelectorAll('[' + toggle_attr + ']');
+    attribute = 'data-toggle',
+    buttons = document.querySelectorAll('[' + attribute + '="parent-item"]');
 
   // End program if there are no toggle buttons.
-  if (toggles.length < 1) {
+  if (buttons.length < 1) {
     return false;
   }
 
-  // Add click or change events to toggle buttons.
-  for (var i = 0; i < toggles.length; i++) {
+  // Add click/change events to toggle buttons.
+  for (var i = 0; i < buttons.length; i++) {
 
-    // Only add click/change events to elements with the attribute `data-toggle`
-    // that don't have the value 'item'.
-    if (
-      toggles[i].getAttribute(toggle_attr) !== 'item' &&
-      toggles[i].getAttribute(toggle_attr) !== 'content'
-    ) {
-
-      if (toggles[i].tagName.toUpperCase() === 'INPUT') {
-        switch(toggles[i].getAttribute('type')) {
-        case 'checkbox':
-        case 'radio':
-          toggles[i].onchange = doToggle;
-          break;
-        }
-      } else {
-        toggles[i].onclick = doToggle;
+    if (buttons[i].tagName.toUpperCase() === 'INPUT') {
+      switch(buttons[i].getAttribute('type')) {
+      case 'checkbox':
+      case 'radio':
+        buttons[i].onchange = doToggle;
+        break;
       }
-
+    } else {
+      buttons[i].onclick = doToggle;
     }
 
   }
 
+  // Do toggle
   function doToggle(e) {
     e.preventDefault();
 
     var
-      toggle = e.target,
-      target = undefined,
-      toggle_value = toggle.getAttribute(toggle_attr);
+      active_state = 'open',
+      target = UK_Parliament.traverseUp(e.target, { 'data-toggle': 'item' });
 
-    // Set target element to coresponding DOM-Object based on the clicked toggle
-    // button's value.
-    switch(toggle_value) {
+    // Toggle class 'open' to element with the attribute `data-toggle` that
+    // contains a value of 'item' or 'content'.
+    UK_Parliament.toggleClass(target, active_state);
+    UK_Parliament.toggleClass(
+      target.querySelector('[' + attribute + '="content"]'), active_state);
 
-    case 'next-item':
-      target = toggle.nextElementSibling;
-      break;
-
-    case 'previous-item':
-      target = toggle.previousElementSibling;
-      break;
-
-    case 'parent-item':
-      target = UK_Parliament.traverseUp(toggle, { 'data-toggle': 'item' });
-      break;
-
-    }
-
-    // Throw error if toggle button can't find the toggle target.
-    if (
-      !target ||
-      !target.hasAttribute(toggle_attr) ||
-      target.getAttribute(toggle_attr) !== 'item'
-    ) {
-      throw 'The toggle button you clicked on with the attribute ' +
-      '`' + toggle_attr +'="' + toggle_value + '"` can\'t find a ' +
-      'toggle element \'' + toggle_value + '\' to it. The element ' +
-      'to toggle should have the attribute `' + toggle_attr +
-      '="item"`.';
-    }
-
-    toggleActive(target);
-    toggleActive(target.querySelector('[' + toggle_attr + '="content"]'));
-
-  }
-
-  function toggleActive(element) {
-    if (
-      element !== null &&
-      element.classList.contains(active_state)
-    ) {
-      element.classList.remove(active_state);
-    } else {
-      element.classList.add(active_state);
-    }
   }
 
 };
