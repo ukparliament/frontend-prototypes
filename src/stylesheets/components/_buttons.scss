@@ -55,6 +55,18 @@
 .btn--ghost--inverse {
   @include button($grey-1, transparent, rgba($grey-1, 0.12), $grey-1);
 }
+[class*="theme--"] a.btn--ghost--primary,
+.btn--ghost--primary {
+  @include button($button--primary, transparent, rgba($button--primary, 0.12), $button--primary);
+}
+[class*="theme--"] a.btn--ghost--secondary,
+.btn--ghost--secondary {
+  @include button($button--secondary, transparent, rgba($button--secondary, 0.12), $button--secondary);
+}
+[class*="theme--"] a.btn--ghost--deep-purple,
+.btn--ghost--deep-purple {
+  @include button($button--deep-purple, transparent, rgba($button--deep-purple, 0.12), $button--deep-purple);
+}
 
 /*--- Toggle button ---*/
 
