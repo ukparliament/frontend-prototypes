@@ -110,3 +110,30 @@
   border-width: 1px;
   border-radius: 0 4px 4px 0;
 }
+
+/*--- Active styles ---*/
+
+.open > .btn--ghost--inverse {
+  @include button($white, $grey-1, $grey-2);
+}
+
+/*--- Toggle styles ---*/
+
+.toggle--menu {
+  > [class*="btn--"] {
+    margin-bottom: 0;
+  }
+  .btn--close {
+    float: right;
+    @include links($grey-1, none, $grey-2, $grey-1);
+    @include milli;
+    margin-bottom: 0;
+  }
+}
+
+body:not(.has-js) .toggle--menu {
+  > [class*="btn--"],
+  .btn--close {
+    display: none;
+  }
+}

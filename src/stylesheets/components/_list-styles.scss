@@ -301,3 +301,23 @@ footer .list {
     }
   }
 }
+
+/*--- Toggle styles---*/
+
+.toggle--menu {
+  ol, ul {
+    @include list;
+    @include milli;
+    margin-right: -($base-spacing-unit-small);
+    margin-left: -($base-spacing-unit-small);
+    @include media($small) {
+      column-count: 2;
+      column-gap: 0;
+    }
+  }
+  li {
+    // Stops LIs from leaking into the next column
+    break-inside: avoid-column;
+    margin-bottom: 0;
+  }
+}

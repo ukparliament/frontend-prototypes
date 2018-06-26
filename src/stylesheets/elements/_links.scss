@@ -254,3 +254,20 @@ body > footer a  {
     display: none;
   }
 }
+
+/*--- Toggle styles ---*/
+
+.toggle--menu li a {
+  display: block;
+  text-decoration: none;
+  padding: $base-spacing-unit $base-spacing-unit-small;
+  outline: none;
+  &:hover {
+    color: $white;
+    background-color: $link;
+  }
+  &:active {
+    color: $deep-purple;
+    background-color: $mint;
+  }
+}

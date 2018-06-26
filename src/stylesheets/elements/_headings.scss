@@ -194,12 +194,9 @@ article header,
 
 /*--- Sidebar Settings ---*/
 
-aside h2 {
-  @include delta;
-}
-
 article + aside > h2 {
   color: $white;
+  @include delta;
   background-color: $deep-purple--light;
   padding: $base-spacing-unit-small;
   margin-top: 0;
@@ -215,4 +212,10 @@ article + aside > h2 {
     flex-basis: 100%;
     color: $grey-1;
   }
+}
+
+/*--- Toggle styles ---*/
+
+.has-js .toggle--menu h2 {
+  display: none;
 }
