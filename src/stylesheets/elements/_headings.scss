@@ -16,11 +16,11 @@ h1, h2, h3, h4, h5, h6 {
 /*--- Heading Settings ---*/
 h1, .alpha {
   @include alpha;
-  margin-bottom: $base-spacing-unit-tiny;
+  margin-bottom: $base-spacing-unit-large;
   margin-top: $base-spacing-unit-extra-large;
 
   @include media($medium) {
-    margin-bottom: $base-spacing-unit-small;
+    margin-bottom: $base-spacing-unit-extra-large;
     margin-top: round($base-spacing-unit * 7);
   }
 }
@@ -86,7 +86,7 @@ h1 {
     position: absolute;
   }
   > small + span {
-    padding-top: $base-spacing-unit-large;
+    padding-top: $base-spacing-unit-extra-large;
   }
 }
 
