@@ -1,0 +1,69 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+
+  .section--primary(tabindex=0)#content
+    .container
+      h1
+        span Audio Visual
+
+  section
+    .container
+      h2 Video
+      .video--wrapper#videotarget(data-media-id='videotarget', data-media-source='https://uniukp-vh.akamaihd.net/i/ukp/vod/e3134e93-19c3-42cd-ba8f-bfb672e11bf0/1_x2fpmsya/e3134e93-19c3-42cd-ba8f-bfb672e11bf0_01_,25,80,120,0.mp4.csmil/master.m3u8?start=1126', data-media-thumbnail='https://videoplayback.parliamentlive.tv/Content/img/planning.jpg', data-media-start='10', data-media-end='20')
+
+block script
+  script(src='https://cdnapisec.kaltura.com/p/2406281/sp/240628100/embedIframeJs/uiconf_id/42689141/partner_id/2406281')
+  script.
+    UK_Parliament.avPlayer = function () {
+
+      var videos = document.querySelectorAll('.video--wrapper');
+
+      // End program if there are no video wrapper.
+      if (videos.length < 1) {
+        return false;
+      }
+
+      for (var i = 0; i < videos.length; i++) {
+        var video = videos[i];
+
+        if (video.hasAttribute('data-media-id') && video.hasAttribute('data-media-source')) {
+          var
+            target_id = video.getAttribute('data-media-id'),
+            media_src = video.getAttribute('data-media-source'),
+            media_start = video.getAttribute('data-media-start'),
+            media_thumbnail = video.getAttribute('data-media-thumbnail'),
+            media_end = video.getAttribute('data-media-end');
+
+          kWidget.embed({
+            'targetId': target_id,
+            'wid': '_2406281',
+            'uiconf_id' : '42784291',
+
+            'flashvars': {
+              //- 'KalturaSupport.LeadWithHTML5': true,
+              //- 'leadWithHTML5': true,
+              'titleLabel': {
+                'plugn': true
+              },
+              'mediaProxy': {
+                'entry': {
+                  'id': '1',
+                  'thumbnailUrl': media_thumbnail
+                },
+                'sources': [
+                  {
+                    'src': media_src,
+                    'type': 'application/vnd.apple.mpegurl' // mimetype dependent on source
+                  }
+                ],
+                'mediaPlayFrom': media_start,
+                'mediaPlayTo': media_end
+              }
+            }
+          });
+        }
+      }
+
+    };
+    UK_Parliament.avPlayer();

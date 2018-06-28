@@ -27,6 +27,7 @@
     "http://localhost:5000/templates/prototypes/_tracks.html",
     "http://localhost:5000/templates/prototypes/_toggles.html",
     "http://localhost:5000/templates/prototypes/_article.html",
-    "http://localhost:5000/templates/prototypes/_icons.html"
+    "http://localhost:5000/templates/prototypes/_icons.html",
+    "http://localhost:5000/templates/prototypes/_audio-visual.html"
   ]
 }
