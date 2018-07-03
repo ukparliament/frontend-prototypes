@@ -1,73 +1,61 @@
-// Setting the Map
+/**
+ * Draw Map
+ */
 
 UK_Parliament.map = function() {
 
-  // Local variables
-  var
-    map_container = document.getElementById('mapbox'),
+  var map_container = document.getElementById('mapbox');
 
+  if (!map_container) return false;
+
+  var
+    hasData = map_container.hasAttribute('data-json-location'),
+    access_token = 'pk.eyJ1IjoiaHVudHAiLCJhIjoiY2l6cXY3NjZpMDAxZzJybzF0aDBvdHRlZCJ9.k1zL5uDY7eUvuSiw3Rdrkw',
     map,
+    map_type = 'mapbox.streets',
     geojson,
-    breakpoint = '767',
+    default_zoom = 5,
+    max_zoom = 18,
+    breakpoint = 767,
+    fill_color = '#5F2DB4',
     control_position = 'bottomright',
 
-    mapBreakPointOptions = function() {
+    drawMap = function() {
+      if (map_container && hasData) {
+        UK_Parliament.httpRequest(map_container.getAttribute('data-json-location'), function (data) {
+
+          map_container.classList.add('map'); // add class that applies relevant style
+
+          // create a map
+          map = L.map('mapbox', {
+            center: [55, -3], // centre map around the UK
+            zoom: default_zoom,
+            maxZoom: max_zoom,
+            scrollWheelZoom: false,
+            zoomControl: false,
+            detectRetina: true,
+            fullscreenControl: true,
+            fullscreenControlOptions: {
+              position: control_position
+            },
+            attributionControl: false // disable 'Leaflet' attribution
+          });
+
+          mapData(data);
+          mapTile();
+          mapControl();
+          mapToggleFullscreen();
+
+        });
+      }
+    },
+
+    mapControl = function() {
       /**
-       * Map options based on browser width or fullscreen
-       * Toggle map dragging
-       * Always fit location within the map boundary
+       * http://leafletjs.com/reference-1.2.0.html#control
        */
 
-      map.fitBounds(geojson.getBounds());
-
-      if (window.innerWidth >= breakpoint || map._isFullscreen) {
-        map.dragging.enable();
-      } else {
-        map.dragging.disable();
-      }
-
-    };
-
-  if (map_container && map_container.hasAttribute('data-json-location')) {
-
-    this.httpRequest(map_container.getAttribute('data-json-location'), function (data) {
-
-      // Add class if we have valid data
-      map_container.classList.add('map');
-
-      // Create the map
-      map = L.map('mapbox', {
-        center: [55, -3], // Centre map around the UK
-
-        zoom: 5, // Default zoom
-        maxZoom: 18, // Max zoom level
-        scrollWheelZoom: false,
-        zoomControl: false, // Disable zoom control
-
-        detectRetina: true,
-
-        fullscreenControl: true,
-        fullscreenControlOptions: {
-          position: control_position
-        },
-
-        attributionControl: false // Disable 'Leaflet' attribution
-      });
-
-      // Control
-      // http://leafletjs.com/reference-1.2.0.html#control
-      L.control.zoom({
-        position: control_position
-      }).addTo(map);
-
-      // Setup the map tile layer
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}', {
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoiaHVudHAiLCJhIjoiY2l6cXY3NjZpMDAxZzJybzF0aDBvdHRlZCJ9.k1zL5uDY7eUvuSiw3Rdrkw'
-      }).addTo(map);
-
-      // Adding title to map for screen readers
+      // Add title to map for screen readers
       L.Control.MapTitle = L.Control.extend({
         onAdd: function() {
           var
@@ -88,35 +76,53 @@ UK_Parliament.map = function() {
 
       L.control.mapTitle({ position: 'topleft' }).addTo(map);
 
-      // Create the GeoJSON layer
+      L.control.zoom({
+        position: control_position
+      }).addTo(map);
+    },
+
+    mapData = function(data) {
       geojson = L.geoJson(data, {
-        color: '#5F2DB4',
+        color: fill_color,
         fillOpacity: 0.1
       }).addTo(map);
+    },
 
-      // events are fired when entering or exiting fullscreen.
-      map.on('enterFullscreen', function () {
+    mapOrientation = function() {
+      map.fitBounds(geojson.getBounds());
+      (window.innerWidth >= breakpoint || map._isFullscreen) ? map.dragging.enable() : map.dragging.disable();
+    },
+
+    mapTile = function() {
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}', {
+        maxZoom: max_zoom,
+        id: map_type,
+        accessToken: access_token
+      }).addTo(map);
+    },
+
+    mapToggleFullscreen = function() {
+      map.on('enterFullscreen', function() {
         map.fitBounds(geojson.getBounds());
         map_container.classList.add('map--icon');
         map.dragging.enable();
         map.scrollWheelZoom.enable();
       });
-      map.on('exitFullscreen', function () {
+
+      map.on('exitFullscreen', function() {
         map.fitBounds(geojson.getBounds());
         map_container.classList.remove('map--icon');
         map.dragging.disable();
         map.scrollWheelZoom.disable();
       });
+    };
 
-      mapBreakPointOptions();
+  drawMap();
 
-      // Event listener for device rotation and resize changes
-      ['pageshow', 'orientationchange', 'resize'].forEach(function (event) {
-        window.addEventListener(event, mapBreakPointOptions, false);
-      });
+  // Event listener for device rotation and resize changes
+  ['pageshow', 'orientationchange', 'resize'].forEach(function(event) {
+    window.addEventListener(event, mapOrientation);
+  });
 
-    });
-  }
 };
-
 UK_Parliament.map();
