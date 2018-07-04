@@ -1,0 +1,62 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+
+
+  .section--primary(tabindex=0)#content
+    .container
+      h1
+        span Hints
+
+
+  section
+    .container
+      h2 Default state
+      span.hint default
+
+
+      h2 Multiple
+      span.hint one
+      span.hint two
+      span.hint three
+
+
+      h2 Used with a theme
+      p If multiple hints, place within a list item.
+      ul
+        li
+          span.hint.theme--white theme--white
+          span.hint.theme--caution theme--caution
+          span.hint.theme--success theme--success
+
+
+      h2 Within Status Banner
+      .status--banner__beta
+        .container
+          span.hint beta
+          ul.list--inline
+            li These pages are being tested. #[+link('feedback.html', 'Give feedback')] to help improve them.
+            li Go to #[+link('http://www.parliament.uk', 'current website')]
+
+
+      h2 Within Search results
+      ol.list--block
+        each object, index in [{url: 'https://beta.parliament.uk', title: 'Page title', hint: 'Beta', hintCount:'1', formatted_url: 'https://beta.parliament.uk', description: 'Page description'}, {url: 'https://beta.parliament.uk', title: 'Page two title', hint: 'pdf', hintCount:'1', formatted_url: 'https://beta.parliament.uk', description: 'Page two description'}]
+          li
+            .card
+              .card__details
+                h2
+                  if object.hintCount !== ''
+                    a(data-tracking='appInsights', data-search-result=(index + 1), data-search-hint=object.hint, data-search-hint-count=object.hintCount, href=object.url)= object.title
+                  else
+                    a(data-tracking='appInsights', data-search-result=(index + 1), href=object.url)= object.title
+                ul.list--inline
+                  if object.hint
+                    li
+                      if object.hint == 'pdf'
+                        span.hint.theme--grey-4= object.hint
+                      else
+                        span.hint= object.hint
+                  li
+                    span.url(data-testable='')= object.formatted_url
+                p= object.description

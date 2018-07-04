@@ -127,7 +127,7 @@ article [role='main'] {
     padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height
   }
 
-  @include last-child();
+  @include last-child;
 }
 
 /*--- Block Conditions ---*/

@@ -31,7 +31,6 @@
   border-bottom-width: 2px;
   border-bottom-style: solid;
   @include headings-margin-top(0);
-  @include last-child;
   @extend .theme--deep-purple--light;
   padding: ($base-spacing-unit + 1) 0;
 
@@ -48,6 +47,10 @@
 .status--banner,
 .status--banner__beta {
   @include status--banner;
+
+  .container {
+    @include last-child;
+  }
 
   /*--- Print styles ---*/
 

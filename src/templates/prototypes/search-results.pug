@@ -34,11 +34,14 @@ block content
                   else
                     a(data-tracking='appInsights', data-search-result=(index + 1), href=object.url)= object.title
                 ul.list--inline
-                  if object.hint == 'pdf'
-                    li.hint.theme--grey-4= object.hint
-                  if object.hint == 'Beta'
-                    li.hint= object.hint
-                  li.url(data-testable='')= object.formatted_url
+                  if object.hint
+                    li
+                      if object.hint == 'pdf'
+                        span.hint.theme--grey-4= object.hint
+                      else
+                        span.hint= object.hint
+                  li
+                    span.url(data-testable='')= object.formatted_url
                 p= object.description
 
 
