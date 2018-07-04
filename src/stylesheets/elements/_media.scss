@@ -7,15 +7,20 @@ video {
   width: 100%;
 }
 
-picture {
-  display: block;
-}
+/* --- Pictures --*/
 
-img {
-  z-index: 1;
-  width: 100%;
+picture {
+  background-color: $grey-4;
+  color: transparent;
   display: block;
-  position: relative;
+  width: 100%;
+  min-height: 60px;
+
+  img {
+    display:block;
+    font-size: 0;
+    width: 100%;
+  }
 }
 
 // SVG specific for all lists
@@ -89,16 +94,35 @@ figcaption {
   }
 }
 
-/*--- Card styles ---*/
+/*---
+  Card styles
+
+  note: min-heights are specific to pre-loaded heights
+---*/
 
 .card figure {
   @include avatar;
+  min-height: 61px;
+
+  &.avatar--round picture {
+    min-height: 93px;
+  }
 }
 
 .card--small figure {
   @include avatar("small");
+  min-height: 39.9px;
+
+  &.avatar--round picture {
+    min-height: 60px;
+  }
 }
 
 .card--large figure {
   @include avatar("large");
+  min-height: 86.5px;
+
+  &.avatar--round picture {
+    min-height: 130px;
+  }
 }
