@@ -1,44 +1,32 @@
-// Variables inherited from 'settings/_spacing.scss' and 'settings/_colours.scss'
+/*--- Tables ---*/
 
 table {
   width: 100%;
-  margin-top: 0;
-  background: $grey-4;
+  background: $grey-5;
   border-collapse: collapse;
   border-spacing: 0;
-  table-layout: fixed;
-  @include media($medium) {
-    table-layout: initial;
-  }
   th, td {
-    padding: $base-spacing-unit-tiny;
     @include milli;
-  }
-  td {
-    word-wrap: break-word;
-  }
-  thead {
-    th {
-      background: $grey-1;
-      color: $white;
-      &:nth-child(even) {
-        border-left: 1px solid $grey-5;
-        border-right: 1px solid $grey-5;
-      }
+    text-align: left;
+    border-right: 1px solid $grey-3;
+    padding: $base-spacing-unit-tiny;
+    &:last-child {
+      border-right: none;
     }
   }
-  thead th, tfoot td {
-    text-align: left;
-  }
-  tbody tr:nth-child(even) {
-    background: $grey-3;
-  }
-  tbody tr td:nth-child(even) {
-    border-left: 1px solid $grey-5;
-    border-right: 1px solid $grey-5;
+  // This ensures that the top row is always the lighter colour.
+  thead + tbody tr:nth-child(odd),
+  tbody:first-child tr:nth-child(even) {
+    background: $grey-4;
   }
   caption {
     margin-top: 0;
     text-align: left;
   }
+}
+
+/*--- Table wrapper ---*/
+
+.table--wrapper {
+  overflow-x: auto;
 }
