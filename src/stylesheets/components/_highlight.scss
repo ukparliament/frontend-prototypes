@@ -3,7 +3,6 @@
 .hero {
   @extend .theme--deep-purple;
   @include headings-margin-top(0);
-  @include last-child;
   @include accent($grey-5);
   padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny * 2);
 
@@ -11,6 +10,7 @@
     padding: $base-spacing-unit-medium 0 ($base-spacing-unit-medium * 2) 0;
   }
   .container {
+    @include last-child;
     @include media($medium) {
       padding-right: ($base-spacing-unit-extra-large * 6);
     }
