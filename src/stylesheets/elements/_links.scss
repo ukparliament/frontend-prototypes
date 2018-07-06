@@ -19,15 +19,6 @@ a {
  }
 }
 
-/*--- Figure ---*/
-
-figure a {
-  display: block;
-}
-figcaption a {
-  display: inline-block;
-}
-
 /*--- Footer ---*/
 
 body > footer a  {
@@ -270,4 +261,10 @@ body > footer a  {
     color: $deep-purple;
     background-color: $mint;
   }
+}
+
+/*--- Figure ---*/
+
+figure a:hover {
+  opacity: 0.5;
 }

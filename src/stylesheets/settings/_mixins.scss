@@ -448,56 +448,47 @@
   @include headings-margin-top(0);
 }
 
-/*--- Avatar Mixins ---*/
+/*--- Figure Mixins ---*/
 
-@mixin avatar($size: nul) {
-  display: inline-block;
-  width: 100%;
-  vertical-align: top;
-  margin-right: if(
-    $size == "small",
-    $base-spacing-unit-tiny,
-    $base-spacing-unit-small
-  );
-
-  @include media($extra-small) {
+@mixin figure($size: null) {
+  figure {
     margin-bottom: 0;
-  }
+    margin-right: if(
+      $size == "small",
+      $base-spacing-unit-tiny,
+      $base-spacing-unit-small
+    );
 
-  @if ($size == "small") {
-    max-width: 54px;
-    @include media($small) {
-      max-width: 60px;
+    @if ($size == "small") {
+      max-width: $image-size-small;
     }
-  }
 
-  @else if ($size == "large") {
-    max-width: 130px;
-  }
-
-  @else {
-    max-width: 84px;
-    @include media($medium) {
-      max-width: 93px;
+    @else if ($size == "large") {
+      max-width: $image-size-large;
     }
-  }
 
-  a:focus {
-    background-color: transparent;
-    outline: none;
-  }
+    @else {
+      max-width: $image-size-medium;
+    }
 
-  a:hover {
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 1;
-      background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+}
+
+/*--- Picture Mixins ---*/
+
+@mixin avatar--round($size: null) {
+  .avatar--round picture {
+    @if ($size == "small") {
+      min-height: $image-size-small;
+    }
+
+    @else if ($size == "large") {
+      min-height: $image-size-large;
+    }
+
+    @else {
+      min-height: $image-size-medium;
     }
   }
 }

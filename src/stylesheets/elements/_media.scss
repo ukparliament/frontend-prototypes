@@ -8,18 +8,20 @@ video {
 }
 
 picture {
+  background-color: $grey-4;
   display: block;
+  min-height: 30px;
+  width: 100%;
 }
 
 img {
-  z-index: 1;
-  width: 100%;
+  color: $grey-4;
   display: block;
-  position: relative;
+  font-size: 0; // to remove the alt text underline
+  width: 100%;
 }
 
 // SVG specific for all lists
-
 [class*="list--"] li .svg--icon {
   background-color: transparent;
   svg {
@@ -58,7 +60,6 @@ figcaption {
   @include css-animation(.8s, linear, 0s, infinite, spinner);
 }
 
-.video-wrap, // ToDo: To be deleted once markup has been updated to .video--wrapper
 .video--wrapper {
   margin-bottom: $base-spacing-unit-large;
   position: relative;
@@ -79,26 +80,28 @@ figcaption {
 }
 
 // Section Specific Styles
-
 .section--primary {
-  img + h1 {
+  img+h1 {
     margin-bottom: $base-spacing-unit-tiny / 2;
   }
-  img ~ p:last-child {
+  img~p:last-child {
     margin-bottom: 0;
   }
 }
 
 /*--- Card styles ---*/
 
-.card figure {
-  @include avatar;
+.card {
+  @include figure;
+  @include avatar--round;
 }
 
-.card--small figure {
-  @include avatar("small");
+.card--small {
+  @include figure("small");
+  @include avatar--round("small");
 }
 
-.card--large figure {
-  @include avatar("large");
+.card--large {
+  @include figure("large");
+  @include avatar--round("large");
 }
