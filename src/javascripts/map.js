@@ -23,12 +23,9 @@ UK_Parliament.map = function() {
     drawMap = function() {
       if (map_container && hasData) {
         UK_Parliament.httpRequest(map_container.getAttribute('data-json-location'), function (data) {
-
-          map_container.classList.add('map'); // add class that applies relevant style
-
-          // create a map
+          map_container.classList.add('map');
           map = L.map('mapbox', {
-            center: [55, -3], // centre map around the UK
+            center: [55, -3],  // centre map around the UK
             zoom: default_zoom,
             maxZoom: max_zoom,
             scrollWheelZoom: false,
@@ -38,23 +35,49 @@ UK_Parliament.map = function() {
             fullscreenControlOptions: {
               position: control_position
             },
-            attributionControl: false // disable 'Leaflet' attribution
+            attributionControl: false
           });
 
-          mapData(data);
           mapTile();
+
           mapControl();
+
+          mapData(data);
+
+          mapOrientation();
+
           mapToggleFullscreen();
+
+
+          ['pageshow', 'orientationchange', 'resize'].forEach(function (event) {
+            window.addEventListener(event, mapOrientation);
+          });
 
         });
       }
     },
 
-    mapControl = function() {
-      /**
-       * http://leafletjs.com/reference-1.2.0.html#control
-       */
+    mapOrientation = function() {
+      map.fitBounds(geojson.getBounds());
+      (window.innerWidth >= breakpoint || map._isFullscreen) ? map.dragging.enable() : map.dragging.disable();
+    },
 
+    mapData = function(data) {
+      geojson = L.geoJson(data, {
+        color: fill_color,
+        fillOpacity: 0.1
+      }).addTo(map);
+    },
+
+    mapTile = function() {
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}', {
+        maxZoom: max_zoom,
+        id: map_type,
+        accessToken: access_token
+      }).addTo(map);
+    },
+
+    mapControl = function() {
       // Add title to map for screen readers
       L.Control.MapTitle = L.Control.extend({
         onAdd: function() {
@@ -76,29 +99,7 @@ UK_Parliament.map = function() {
 
       L.control.mapTitle({ position: 'topleft' }).addTo(map);
 
-      L.control.zoom({
-        position: control_position
-      }).addTo(map);
-    },
-
-    mapData = function(data) {
-      geojson = L.geoJson(data, {
-        color: fill_color,
-        fillOpacity: 0.1
-      }).addTo(map);
-    },
-
-    mapOrientation = function() {
-      map.fitBounds(geojson.getBounds());
-      (window.innerWidth >= breakpoint || map._isFullscreen) ? map.dragging.enable() : map.dragging.disable();
-    },
-
-    mapTile = function() {
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}@2x.png?access_token={accessToken}', {
-        maxZoom: max_zoom,
-        id: map_type,
-        accessToken: access_token
-      }).addTo(map);
+      L.control.zoom({ position: control_position }).addTo(map);
     },
 
     mapToggleFullscreen = function() {
@@ -108,7 +109,6 @@ UK_Parliament.map = function() {
         map.dragging.enable();
         map.scrollWheelZoom.enable();
       });
-
       map.on('exitFullscreen', function() {
         map.fitBounds(geojson.getBounds());
         map_container.classList.remove('map--icon');
@@ -118,11 +118,5 @@ UK_Parliament.map = function() {
     };
 
   drawMap();
-
-  // Event listener for device rotation and resize changes
-  ['pageshow', 'orientationchange', 'resize'].forEach(function(event) {
-    window.addEventListener(event, mapOrientation);
-  });
-
 };
 UK_Parliament.map();
