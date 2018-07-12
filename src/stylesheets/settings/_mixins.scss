@@ -230,6 +230,12 @@
 
 /*--- Column Mixins ---*/
 
+@mixin grid($columns:1fr, $grid-gap:null) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-gap: $grid-gap;
+}
+
 @mixin col--2 {
   @include media($medium) {
     > li {
@@ -239,9 +245,12 @@
 }
 
 @mixin col--3 {
-  @include media($medium) {
-    > li {
-      width: 32%;
+  > li {
+    @include media($medium) {
+      width: 48%;
+    }
+    @include media($large) {
+      width: 29%;
     }
   }
 }
