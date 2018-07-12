@@ -200,6 +200,70 @@
   }
 }
 
+/*--- List Mixins ---*/
+
+@mixin list {
+  margin-left: 0;
+  list-style: none;
+
+  ol {
+    list-style: decimal;
+  }
+  ul {
+    list-style: disc;
+  }
+  > li {
+    display: block;
+    position: relative;
+    @include last-child;
+    @include headings-margin-top(0);
+    margin-bottom: $base-spacing-unit;
+
+    &.active {
+      color: $deep-purple;
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin list--inline {
+  @include list;
+  @include list-headings;
+  display: flex;
+  flex-wrap: wrap;
+
+  > li {
+    width: auto;
+    margin-right: $base-spacing-unit;
+  }
+}
+
+@mixin list--block {
+  @include list;
+  @include list-headings;
+
+  > li {
+    width: 100%;
+    @include block;
+  }
+}
+
+@mixin list--pipe {
+  @include list;
+  @include list-headings;
+
+  > li {
+    width: 100%;
+    margin-bottom: 0;
+    background: transparent;
+    border-bottom: solid 1px $grey-3;
+    padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
+  }
+  > li:first-of-type {
+    border-top: solid 1px $grey-3;
+  }
+}
+
 /*--- Flexbox grid ---*/
 
 @mixin flex($elem1-width, $elem2-width:null, $gutter-width:null) {
@@ -230,19 +294,54 @@
 
 /*--- Column Mixins ---*/
 
+@mixin col ($col: 1, $sum: 1, $grid-gap: false) {
+
+  @if ($grid-gap != false) {
+    margin-left: -($grid-gap / 2);
+    margin-right: -($grid-gap / 2);
+  }
+
+  > li {
+    margin: if(
+      $grid-gap,
+      0 ($grid-gap / 2) $grid-gap ($grid-gap / 2),
+      0 0 $base-spacing-unit 0
+    );
+
+    @if ($grid-gap != false) {
+      width: calc( ((#{$col} / #{$sum}) *100% ) - #{$grid-gap} );
+    }
+  }
+}
+
+@mixin last-row($child) {
+  // targets the last row
+  // ref: https://keithclark.co.uk/articles/targeting-first-and-last-rows-in-css-grid-layouts/
+  li:nth-child(#{$child}n+1):nth-last-child(-n+#{$child}),
+  li:nth-child(#{$child}n+1):nth-last-child(-n+#{$child}) ~ li {
+    margin-bottom: 0;
+  }
+}
+
 @mixin col--2 {
   @include media($medium) {
-    > li {
-      width: 48%;
-    }
+    @include list--inline;
+    @include col(1, 2, $base-spacing-unit-medium);
+  }
+
+  @include media($large) {
+    @include col(1, 2, $base-spacing-unit-large);
   }
 }
 
 @mixin col--3 {
   @include media($medium) {
-    > li {
-      width: 32%;
-    }
+    @include list--inline;
+    @include col(1, 2, $base-spacing-unit-medium);
+  }
+
+  @include media($large) {
+    @include col(1, 3, $base-spacing-unit-large);
   }
 }
 
@@ -337,70 +436,6 @@
 @mixin block--deep {
   padding-top: $base-spacing-unit-extra-large;
   padding-bottom: $base-spacing-unit-extra-large;
-}
-
-/*--- List Mixins ---*/
-
-@mixin list {
-  margin-left: 0;
-  list-style: none;
-
-  ol {
-    list-style: decimal;
-  }
-  ul {
-    list-style: disc;
-  }
-  > li {
-    display: block;
-    position: relative;
-    @include last-child;
-    @include headings-margin-top(0);
-    margin-bottom: $base-spacing-unit;
-
-    &.active {
-      color: $deep-purple;
-      text-decoration: none;
-    }
-  }
-}
-
-@mixin list--inline {
-  @include list;
-  @include list-headings;
-  display: flex;
-  flex-wrap: wrap;
-
-  > li {
-    width: auto;
-    margin-right: $base-spacing-unit;
-  }
-}
-
-@mixin list--block {
-  @include list;
-  @include list-headings;
-
-  > li {
-    width: 100%;
-    @include block;
-  }
-}
-
-@mixin list--pipe {
-  @include list;
-  @include list-headings;
-
-  > li {
-    width: 100%;
-    margin-bottom: 0;
-    background: transparent;
-    border-bottom: solid 1px $grey-3;
-    padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
-  }
-  > li:first-of-type {
-    border-top: solid 1px $grey-3;
-  }
 }
 
 /*--- Card Mixins ---*/

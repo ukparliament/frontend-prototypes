@@ -60,17 +60,33 @@ dl, dt, dd {
 /*--- List Column Options ---*/
 
 .list--2 {
-  @include media($medium) {
-    @include list--inline;
-  }
   @include col--2;
+  @include media($medium) {
+    @include last-row(2);
+  }
 }
 
-.list--3 {
-  @include media($medium) {
-    @include list--inline;
+section:not([class]) .list--3 {
+  // Default two column list within narrow container
+  @include col--2;
+
+  // Targets the last row within lists
+  @media (min-width: $medium) and (max-width: $extra-large - 1) {
+    @include last-row(2);
   }
+  @media (min-width: $extra-large) {
+    @include last-row(2);
+  }
+}
+
+.section--wide .list--3 {
   @include col--3;
+  @media (min-width: $medium) and (max-width: $large - 1) {
+    @include last-row(2);
+  }
+  @media (min-width: $large) {
+    @include last-row(3);
+  }
 }
 
 /*--- List Definition ---*/

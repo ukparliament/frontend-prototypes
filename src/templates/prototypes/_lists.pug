@@ -31,7 +31,7 @@ block content
         +list--block__inline('Conservative', '345')
         +list--block__inline('Labour', '9')
 
-  section
+  section.section--wide
     .container
       h2 Inline box list (3 column layout &amp; Inline Text)
       ol.list--block.list--3
@@ -41,7 +41,19 @@ block content
         +list--block__inline('Conservative', '345', true)
         +list--block__inline('Labour', '9', true)
         +list--block__inline('Conservative', '345', true)
+        //- +list--block__inline('Labour', '9', true)
+
+  section
+    .container
+      h2 Inline box list (3 column layout, becomes 2 columns if within the default section)
+      ol.list--block.list--3
+        // Name, Count
+        +list--block__inline('Conservative', '345', true)
         +list--block__inline('Labour', '9', true)
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+        +list--block__inline('Conservative', '345', true)
+        //- +list--block__inline('Labour', '9', true)
 
   section
     .container
