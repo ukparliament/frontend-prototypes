@@ -33,8 +33,33 @@ block content
 
   section
     .container
-      h2 Inline box list (3 column layout &amp; Inline Text)
+      //- h2 Inline box list (3 column layout &amp; Inline Text)
+      h2 Col 3 (flex)
       ol.list--block.list--3
+        // Name, Count
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+
+  section
+    .container
+      h2 Col 2 (css grid)
+      ol.list--block.grid--2
+        // Name, Count
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+        +list--block__inline('Conservative', '345', true)
+        +list--block__inline('Labour', '9', true)
+
+  section
+    .container
+      h2 Col 3 (css grid)
+      ol.list--block.grid--3
         // Name, Count
         +list--block__inline('Conservative', '345', true)
         +list--block__inline('Labour', '9', true)
