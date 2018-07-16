@@ -42,7 +42,7 @@ describe('toggles', function() {
     driver.executeScript('return UK_Parliament.toggleClass(document.querySelector(\'[data-toggle="item"]\'), \'open\');');
 
     driver
-      .wait(until.elementLocated({ css: 'div[data-toggle="item"]' }))
+      .wait(until.elementLocated({ css: '[data-toggle="item"]' }))
       .getAttribute('class')
       .then(function(string) {
         var temp = string.split(' ').filter(function(val) {
@@ -60,7 +60,7 @@ describe('toggles', function() {
     driver.executeScript('return UK_Parliament.toggleClass(document.querySelector(\'[data-toggle="item"]\'), \'open\');');
 
     driver
-      .wait(until.elementLocated({ css: 'div[data-toggle="item"]' }))
+      .wait(until.elementLocated({ css: '[data-toggle="item"]' }))
       .getAttribute('class')
       .then(function(string) {
         var temp = string.split(' ').filter(function(val) {
