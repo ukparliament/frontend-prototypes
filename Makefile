@@ -10,6 +10,7 @@ JAVASCRIPTS_LOC=src/javascripts
 JSON_LOC=src/json
 STYLESHEETS_LOC=src/stylesheets
 IMAGES_LOC=src/images
+ICONS_LOC=src/icons
 
 # Node module variables
 NODE_MODULES=./node_modules
@@ -74,7 +75,8 @@ images:
 
 # Optimises SVGs
 icons:
-	@$(SVGO) -f src/icons -o _public/icons
+	@mkdir -p $(PUBLIC_FOLDER)/icons
+	@$(SVGO) -f $(ICONS_LOC) -o $(PUBLIC_FOLDER)/icons
 
 # Outputs pug files to html within public folder
 templates:
