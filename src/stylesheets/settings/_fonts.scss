@@ -1,35 +1,27 @@
 @font-face {
   font-family: 'National';
-  src: url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LFS-Book.eot');
-  src: url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LFS-Book.eot?#iefix') format('embedded-opentype'),
-       url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LFS-Book.woff2') format('woff2'),
-       url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LFS-Book.woff') format('woff');
+  src: url('https://static.parliament.uk/assets/National-LFS-Book.woff2') format('woff2'),
+       url('https://static.parliament.uk/assets/National-LFS-Book.woff') format('woff');
 }
 
 @font-face {
   font-family: 'National';
-  src: url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LF-BookItalic.eot');
-  src: url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LF-BookItalic.eot?#iefix') format('embedded-opentype'),
-       url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LF-BookItalic.woff2') format('woff2'),
-       url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LF-BookItalic.woff') format('woff');
+  src: url('https://static.parliament.uk/assets/National-LF-BookItalic.woff2') format('woff2'),
+       url('https://static.parliament.uk/assets/National-LF-BookItalic.woff') format('woff');
   font-style: italic;
 }
 
 @font-face {
   font-family: 'National';
-  src: url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LFS-Semibold.eot');
-  src: url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LFS-Semibold.eot?#iefix') format('embedded-opentype'),
-       url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LFS-Semibold.woff2') format('woff2'),
-       url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LFS-Semibold.woff') format('woff');
+  src: url('https://static.parliament.uk/assets/National-LFS-Semibold.woff2') format('woff2'),
+       url('https://static.parliament.uk/assets/National-LFS-Semibold.woff') format('woff');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'National';
-  src: url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LF-SemiboldItalic.eot');
-  src: url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LF-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
-       url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LF-SemiboldItalic.woff2') format('woff2'),
-       url('https://s3-eu-west-1.amazonaws.com/web1live.static-assets/National-LF-SemiboldItalic.woff') format('woff');
+  src: url('https://static.parliament.uk/assets/National-LF-SemiboldItalic.woff2') format('woff2'),
+       url('https://static.parliament.uk/assets/National-LF-SemiboldItalic.woff') format('woff');
   font-weight: 500;
   font-style: italic;
 }
