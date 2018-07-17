@@ -11,11 +11,21 @@ block content
 
   section.section--major.section--wide
     .container
-      h2.sr-only What’s on beta.parliament.uk
+      h2 MPs and Lords
       ol.list--block.list--3
         -var list_box_h2 = true
-        +list--block__generic('MPs', 'All current members of the House of Commons.')
-        +list--block__generic('Lords', 'All current members of the House of Lords.')
+        +list--block__generic('MPs', 'Find all members of the House of Commons.')
+        +list--block__generic('Lords', 'View all members of the House of Lords')
         +list--block__generic('Constituencies', 'Find MPs by the area they represent.')
         +list--block__generic('Parties and groups', 'Find MPs and Lords by their party or group.')
+
+      h2 Activity in Parliament
+      ol.list--block.list--3
+        -var list_box_h2 = true
+        +list--block__generic('Written questions and answers', 'View all written questions from MPs and Lords, and government answers.')
+        +list--block__generic('Statutory instruments', 'Find all statutory instruments and follow their progress.')
+
+      h2 Guides
+      ol.list--block.list--3
+        -var list_box_h2 = true
         +list--block__generic('MPs Guide to Procedure', 'Guidance on House of Commons procedure for MPs and their staff.')

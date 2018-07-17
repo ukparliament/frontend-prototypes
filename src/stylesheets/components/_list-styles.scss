@@ -71,6 +71,52 @@ dl, dt, dd {
     @include list--inline;
   }
   @include col--3;
+
+  > li {
+    margin-bottom: $base-spacing-unit-small;
+
+    @include media($medium) {
+      margin-bottom: $base-spacing-unit-medium;
+      margin-right: $base-spacing-unit-medium;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+
+    @include media($large) {
+      margin-bottom: $base-spacing-unit-large;
+      margin-right: $base-spacing-unit-large;
+
+      &:nth-child(2n) {
+        margin-right: $base-spacing-unit-large;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.grid--2 {
+  @include grid;
+
+  @include media($medium) {
+    @include grid($columns:1fr 1fr, $grid-gap:$base-spacing-unit-medium);
+  }
+}
+
+.grid--3 {
+  @include grid;
+
+  @include media($medium) {
+    @include grid($columns:1fr 1fr, $grid-gap:$base-spacing-unit-medium);
+  }
+
+  @include media($large) {
+    @include grid($columns:1fr 1fr 1fr);
+  }
 }
 
 /*--- List Definition ---*/
