@@ -20,7 +20,7 @@
   },
   "main": "server.js",
   "devDependencies": {
-    "autoprefixer": "^8.6.5",
+    "autoprefixer": "^9.0.0",
     "chai": "^4.1.2",
     "chokidar": "^2.0.4",
     "chromedriver": "^2.40.0",
@@ -28,7 +28,7 @@
     "eslint": "^5.1.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-node": "^7.0.0",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "express": "^4.16.3",
@@ -45,7 +45,7 @@
     "pug-cli": "^1.0.0-alpha6",
     "selenium-webdriver": "^3.6.0",
     "svgo": "^1.0.5",
-    "uglify-js": "^3.4.4",
+    "uglify-js": "^3.4.5",
     "valimate": "^2.3.0"
   }
 }
