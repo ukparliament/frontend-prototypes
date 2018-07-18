@@ -88,11 +88,13 @@ article [role='main'] {
 
 .block {
   @include block;
+  margin: 0 0 $base-spacing-unit-small 0;
 }
 
 .block--deep {
   @include block;
   @include block--deep;
+  margin: 0 0 $base-spacing-unit-small 0;
 }
 
 .block--offset {
@@ -104,6 +106,7 @@ article [role='main'] {
 .block--transparent {
   background-color: transparent;
   padding-right: $base-spacing-unit-medium;
+  margin: 0 0 $base-spacing-unit-small 0;
 }
 
 .block--border {
@@ -113,6 +116,7 @@ article [role='main'] {
   padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
   border-bottom: 1px solid $grey-3;
   border-top: 1px solid $grey-3;
+  margin: 0 0 $base-spacing-unit-extra-large 0;
 
   p {
     margin-bottom: $base-spacing-unit;
@@ -122,6 +126,7 @@ article [role='main'] {
 .block--border__bottom {
   padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
   border-bottom: 1px solid $grey-3;
+  margin: 0 0 $base-spacing-unit-extra-large 0;
 
   @include media($medium) {
     padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height

@@ -2,7 +2,7 @@
 
 ul, ol {
   padding: 0;
-  margin-left: $base-spacing-unit-large;
+  margin: 0 0 $base-spacing-unit-small $base-spacing-unit-large;
   li {
     padding: 0;
   }
@@ -88,6 +88,7 @@ dl, dt, dd {
 
 .list--events {
   @include list;
+  margin: 0 0 $base-spacing-unit-small 0;
 }
 
 .list--events > li {
@@ -125,6 +126,7 @@ dl, dt, dd {
 .list--tab {
   @include list--inline;
   border-bottom: 2px solid $grey-4;
+  margin: 0 0 $base-spacing-unit-small 0;
 
   li {
     margin-bottom: 0;
