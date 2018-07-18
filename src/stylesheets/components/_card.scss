@@ -34,3 +34,13 @@
     text-align: right;
   }
 }
+
+/*--- Card Extended ---*/
+
+.card-extended {
+  @include block--border__bottom;
+
+  .card__details {
+    @include typography--heavy;
+  }
+}

@@ -74,6 +74,7 @@ select {
 /*--- Margin Bottom - Extra Large ---*/
 
 .block--border,
-.block--border__bottom {
+.block--border__bottom,
+.card-extended {
 	margin: 0 0 $base-spacing-unit-extra-large 0;
 }

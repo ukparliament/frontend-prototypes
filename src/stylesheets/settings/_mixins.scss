@@ -339,6 +339,17 @@
   padding-bottom: $base-spacing-unit-extra-large;
 }
 
+@mixin block--border__bottom {
+  padding-bottom: $base-spacing-unit-medium;
+  border-bottom: 1px solid $grey-3;
+
+  @include media($medium) {
+    padding-bottom: $base-spacing-unit-large;
+  }
+
+  @include last-child;
+}
+
 /*--- List Mixins ---*/
 
 @mixin list {
