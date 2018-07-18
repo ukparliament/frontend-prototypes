@@ -1,0 +1,52 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+
+  section
+    .container
+      h2 Card
+
+      ul.list--pipe__deep
+        li
+          .card--large
+            figure.avatar--round
+              +link('#', '')(aria-hidden="true", tabIndex="-1")
+                picture
+                  +image('https://static.parliament.uk/pugin/1.10.1/images/placeholder_members_image.png', 'Title')
+            .card__details
+              h2 Large card title
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+
+        li
+          .card
+            figure.avatar--round
+              +link('#', '')(aria-hidden="true", tabIndex="-1")
+                picture
+                  +image('https://static.parliament.uk/pugin/1.10.1/images/placeholder_members_image.png', 'Title')
+            .card__details
+              h2 Normal card title
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+        li
+          .card--small
+            figure.avatar--round
+              +link('#', '')(aria-hidden="true", tabIndex="-1")
+                picture
+                  +image('https://static.parliament.uk/pugin/1.10.1/images/placeholder_members_image.png', 'Title')
+            .card__details
+              h2 Small card title
+              p Lorem ipsum dolor sit amet.
+
+      h2 Card Extedned
+      .card-extended
+        .card--small
+          figure.avatar--round
+            +link('#', '')(aria-hidden="true", tabIndex="-1")
+              picture
+                +image('https://static.parliament.uk/pugin/1.10.1/images/placeholder_members_image.png', 'Title')
+          .card__details
+            h2 #[+link('#', 'Card title')]
+            p Lorem ipsum dolor sit amet.
+        .card-extended__details
+          p Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

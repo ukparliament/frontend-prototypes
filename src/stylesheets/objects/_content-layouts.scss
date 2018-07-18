@@ -119,15 +119,8 @@ article [role='main'] {
   }
 }
 
-.block--border__bottom {
-  padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
-  border-bottom: 1px solid $grey-3;
-
-  @include media($medium) {
-    padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height
-  }
-
-  @include last-child;
+.block--border__bottom, {
+  @include block--border__bottom;
 }
 
 /*--- Block Conditions ---*/
@@ -148,17 +141,5 @@ article [role='main'] {
 .flex--2 {
   @include media($small) {
     @include flex(50%);
-  }
-}
-
-.flex--2__1-2 {
-  @include media($medium) {
-    @include flex(33.333%, 66.666%, 36px);
-  }
-}
-
-.flex--2__2-1 {
-  @include media($medium) {
-    @include flex(66.666%, 33.333%, 36px);
   }
 }
