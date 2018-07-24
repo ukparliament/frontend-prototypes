@@ -15,76 +15,50 @@ block content
             source(srcset="https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=444&quality=80, https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=888&quality=80 2x")
             img(src="https://api-parliament-uk.azure-api.net/Staging/photo/0qLRSwb3.jpeg?width=732&quality=80" alt="Margot James")
 
-  section
-    .container
-      .block
-        h2 Contact
-        +dropdownToggle("When to contact an MP")
-          p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
-          ul
-            li Hospitals and the NHS
-            li Problems with benefits, pensions and national insurance
-            li Immigration
-            li School closures and funding
-            li Transport facilities
-          p #[+link('#', 'Who else can help with my issue?')]
-
-        p Please include your postcode when contacting your MP.
-        dl.list--definition
-          dt Email:
-          dd
-            +link('mailto:margot.james.mp@parliament.uk', 'margot.james.mp@parliament.uk')
-          dt Phone:
-          dd #[+link('tel:02072197226', '02072197226')]
-          dt Address:
-          dd House of Commons, London, SW1A 0AA
-        p You may be able to discuss issues with your MP in person or online. Contact them for details.
+      p.lead Margot James is currently Minister of State (Department for Digital, Culture, Media and Sport) (Digital Policy). She became an MP in 2010. #[+link('#', 'View all roles')]
 
   section
     .container
-      h2 Roles
-      ul.list--pipe
-        li
+      .block--border__bottom
+        .block
+          h2 Contact
+          +dropdownToggle("When to contact an MP")
+            p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
+            ul
+              li Hospitals and the NHS
+              li Problems with benefits, pensions and national insurance
+              li Immigration
+              li School closures and funding
+              li Transport facilities
+            p #[+link('#', 'Who else can help with my issue?')]
+
+          p Please include your postcode when contacting your MP.
+          dl.list--definition
+            dt Email:
+            dd
+              +link('mailto:margot.james.mp@parliament.uk', 'margot.james.mp@parliament.uk')
+            dt Phone:
+            dd #[+link('tel:02072197226', '02072197226')]
+            dt Address:
+            dd House of Commons, London, SW1A 0AA
+          p You may be able to discuss issues with your MP in person or online. Contact them for details.
+
+      .block--border__bottom
+        h2 Written questions
+        p Most recently asked
+        .block
           .card
             .card__details
-              small House of Commons Role
-              h4.lead MP for Hackney North and Stoke Newington
-              p Jun 1986 to present
-        li
-          .card
-            .card__details
-              small Committee Role
-              h4 Member of the Merits of Statutory Instruments Committee
-              p May 2011 to present
+              h3 #[+link('#', 'Children in Care: Employment')]
+              p Answered by the Department for Education
+              time(datetime='2014-01-13') 13 January 2014
+        +link('#', 'View all Margot James\' written questions').btn--primary
 
-      +dropdownToggle("Show history")
-        ul.track
-          li
-            h3 Held currently
-            ul.list--block
-              +list--block('MP for Islington North', 'Elected Role', '6 May 2010 to present')
-              +list--block('MP for Islington North (1997 to 2010)', 'Elected Role', '1 May 1997 to 6 May 2010')
-              +list--block('MP for Islington North (1993 to 1997)', 'Elected Role', '9 June 1983 to 1 May 1997')
-          li
-            h3 Held in the last 10 years
-            ul.list--block
-              +list--block('MP for Islington North', 'Elected Role', '6 May 2010 to present')
-              +list--block('MP for Islington North (1997 to 2010)', 'Elected Role', '1 May 1997 to 6 May 2010')
-              +list--block('MP for Islington North (1993 to 1997)', 'Elected Role', '9 June 1983 to 1 May 1997')
-          li
-            h3 Held in the last 20 years
-            ul.list--block
-              +list--block('MP for Islington North', 'Elected Role', '6 May 2010 to present')
-              +list--block('MP for Islington North (1997 to 2010)', 'Elected Role', '1 May 1997 to 6 May 2010')
-              +list--block('MP for Islington North (1993 to 1997)', 'Elected Role', '9 June 1983 to 1 May 1997')
-          li
-            h3 Elected 1983
-
-  section
-    .container
       .block--border__bottom
         h2 Related Links
         dl.list--definition
           dt Website:
           dd #[+link('#', 'www.margotjames.org.uk')]
+          dt Twitter:
+          dd #[+link('#', 'https://twitter.com/margot_james_mp')]
         p Margot James's official portrait is #[+link('media-id.html','available to download')].
