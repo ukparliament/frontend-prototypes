@@ -60,6 +60,7 @@ figcaption {
   @include css-animation(.8s, linear, 0s, infinite, spinner);
 }
 
+.video-wrap, // TODO: remove after release of parliament.uk-things
 .video--wrapper {
   margin-bottom: $base-spacing-unit-large;
   position: relative;
