@@ -265,6 +265,9 @@ body > footer a  {
 
 /*--- Figure ---*/
 
-figure a:hover {
-  opacity: 0.5;
+figure a {
+  display: block;
+  &:hover {
+    opacity: 0.8;
+  }
 }
