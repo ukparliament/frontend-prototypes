@@ -2,6 +2,10 @@
 
 // Core form element styling
 
+form, fieldset, legend, label {
+  margin: 0 0 $base-spacing-unit-tiny 0;
+}
+
 form {
   width: 100%;
   > :last-child {
@@ -21,9 +25,10 @@ fieldset {
 input,
 textarea,
 select {
-  width: 100%;
   display: block;
+  margin: 0 0 $base-spacing-unit-medium 0;
   padding: ($base-spacing-unit-tiny - 1);
+  width: 100%;
   @include media($small) {
     width: 70%;
   }
@@ -234,6 +239,7 @@ input[type="file"].js-has-focus + label {
 // Form error messaging
 
 .message--error {
+  margin: 0 0 $base-spacing-unit 0;
   color: $warning--dark;
   + input {
     border: solid 2px $warning--dark;
@@ -244,6 +250,9 @@ input[type="file"].js-has-focus + label {
 }
 
 // Form block holders
+.input-group, .input-group--inline {
+  margin: 0 0 $base-spacing-unit-small 0;
+}
 
 .input-group,
 .input-group__inline,

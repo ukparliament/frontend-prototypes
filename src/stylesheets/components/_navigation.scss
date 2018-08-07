@@ -116,6 +116,7 @@
 
 .navigation--letter,
 .navigation--number {
+  margin: 0 0 $base-spacing-unit-tiny 0;
   ol li {
     min-width: 42px;
     text-align: center;

@@ -2,15 +2,15 @@
 @import 'settings/colours';
 @import 'settings/spacing';
 @import 'settings/mixins';
-@import 'settings/themes';
-@import 'settings/accents';
 
 /*--- Vendor Files ---*/
-@import '../../node_modules/leaflet/dist/leaflet';
 @import '../../node_modules/normalize.css/normalize';
+@import '../../node_modules/leaflet/dist/leaflet';
 
 /*--- Import Generic ---*/
 @import 'generic/box-sizing';
+@import 'generic/themes';
+@import 'generic/accents';
 
 /*--- Import Objects ---*/
 @import 'objects/grid-settings';

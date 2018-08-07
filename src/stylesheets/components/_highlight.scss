@@ -75,6 +75,7 @@
 }
 
 .status--highlight {
+  margin: 0 0 $base-spacing-unit-small 0;
   border-left-style: solid;
   @extend .theme--purple--light;
   @include headings-margin-top(0);

@@ -1,5 +1,9 @@
 /*--- Default Button Options [colour, background, background-hover] ---*/
 
+button, [class*="btn"] {
+  margin: 0 0 $base-spacing-unit-tiny 0;
+}
+
 [class*="theme--"] a.btn--primary,
 .btn--primary {
   @include button($white, $button--primary, $button--primary__hover);

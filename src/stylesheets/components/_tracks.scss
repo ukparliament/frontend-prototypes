@@ -3,7 +3,7 @@
   list-style: none;
   @include last-child;
   padding: 0 0 0 $base-spacing-unit-small;
-  margin-left: 8px;
+  margin: 0 0 $base-spacing-unit-tiny 8px;
   &:before {
     position: absolute;
     content: '';

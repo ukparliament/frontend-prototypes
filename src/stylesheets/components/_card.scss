@@ -2,6 +2,7 @@
 
 .card,
 [class*="card--"] {
+  margin: 0 0 $base-spacing-unit-small 0;
   @include media($extra-small) {
     @include card;
   }
