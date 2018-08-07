@@ -29,4 +29,8 @@ table {
 
 .table--wrapper {
   overflow-x: auto;
+
+  @media print {
+    overflow-x: visible;
+  }
 }
