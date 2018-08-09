@@ -39,12 +39,6 @@
       @include media($small) {
         font-size: 0;
       }
-      &:nth-child(9),
-      &:nth-child(10) {
-        @include media($large) {
-          display: none;
-        }
-      }
       &.active {
         display: block;
         @include media($small) {
@@ -54,36 +48,25 @@
       }
     }
   }
-  // For all active items in `small` view
   ol > li.active + li,
-  ol > li.active + li + li,
+  &[data-active-tile="1"] ol > li:nth-child(3),
   &[data-active-tile="1"] ol > li:nth-child(4),
   &[data-active-tile="2"] ol > li:nth-child(1),
+  &[data-active-tile="2"] ol > li:nth-child(4),
+  &[data-active-tile="3"] ol > li:nth-child(1),
   &[data-active-tile="3"] ol > li:nth-child(2),
+  &[data-active-tile="4"] ol > li:nth-child(2),
   &[data-active-tile="4"] ol > li:nth-child(3),
+  &[data-active-tile="5"] ol > li:nth-child(3),
   &[data-active-tile="5"] ol > li:nth-child(4),
+  &[data-active-tile="6"] ol > li:nth-child(4),
   &[data-active-tile="6"] ol > li:nth-child(5),
+  &[data-active-tile="7"] ol > li:nth-child(5),
   &[data-active-tile="7"] ol > li:nth-child(6),
-  &[data-active-tile="8"] ol > li:nth-child(7),
-  &[data-active-tile="9"] ol > li:nth-child(7),
-  &[data-active-tile="9"] ol > li:nth-child(8),
-  &[data-active-tile="10"] ol > li:nth-child(7),
-  &[data-active-tile="10"] ol > li:nth-child(8),
-  &[data-active-tile="10"] ol > li:nth-child(9) {
-    @include media($small, $medium) {
-      display: block;
-    }
-  }
-  // For all active items in `medium` view
-  &[data-active-tile="9"] ol > li:nth-child(1),
-  &[data-active-tile="9"] ol > li:nth-child(2),
-  &[data-active-tile="10"] ol > li:nth-child(1) {
-    @include media($large) {
-      display: none;
-    }
-  }
-  &[data-active-tile="9"] ol > li:nth-child(10) {
-    @include media($large) {
+  &[data-active-tile="8"] ol > li:nth-child(5),
+  &[data-active-tile="8"] ol > li:nth-child(6),
+  &[data-active-tile="8"] ol > li:nth-child(7) {
+    @include media($small) {
       display: block;
     }
   }
