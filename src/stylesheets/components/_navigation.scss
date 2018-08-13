@@ -1,33 +1,10 @@
 /*--- Navigation Main, Letter & Number ---*/
-.navigation--main ul,
 .navigation--letter ol,
 .navigation--number ol {
   @include list--inline;
 
   li > span {
     display: block;
-  }
-}
-
-/*--- Navigation Main ---*/
-
-.navigation--main ul {
-  border-bottom: 1px solid $grey-3;
-  margin: 0;
-
-  li {
-    margin: 0;
-    padding: 0 3px;
-    @include media($medium) {
-      padding: 0 ($base-spacing-unit-tiny + 3px);
-    }
-
-    &:nth-child(1) {
-      margin-left: -8px;
-      @include media($medium) {
-        margin-left: -$base-spacing-unit-small;
-      }
-    }
   }
 }
 

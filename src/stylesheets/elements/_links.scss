@@ -98,26 +98,6 @@ body > footer a  {
   }
 }
 
-/*--- Navigation Main ---*/
-
-.navigation--main a {
-  @include links(
-    $grey-1, 		        // a:link colour
-    none,				        // a:link decoration
-    $grey-1, 		        // a:visited color
-    $grey-1 		        // a:hover color
-  );
-  &:link {
-    padding: $base-spacing-unit-tiny 3px;
-  }
-  &:focus {
-    outline: none;
-  }
-  &:hover, &:active {
-    text-decoration: underline;
-  }
-}
-
 /*--- Navigation Letter & Number ---*/
 
 .navigation--letter,
@@ -142,7 +122,6 @@ body > footer a  {
 /*--- Navigation Letter/Main/Number ---*/
 
 .navigation--letter li a,
-.navigation--main li a,
 .navigation--number li a {
   display: block;
 }

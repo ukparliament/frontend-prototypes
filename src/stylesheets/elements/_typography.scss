@@ -76,15 +76,3 @@ h1 + .lead {
     font-size: 0;
   }
 }
-
-/*--- Navigation Main ---*/
-
-.navigation--main li {
-  @include fontsize(16);
-  @include media($small) {
-    @include fontsize(18);
-  }
-  @include media($medium) {
-    @include fontsize(20);
-  }
-}
