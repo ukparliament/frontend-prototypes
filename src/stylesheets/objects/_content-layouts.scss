@@ -70,13 +70,6 @@ main .container {
   }
 }
 
-/*--- Container Component Rules ---*/
-
-.status--banner__beta .container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 /*--- Elements with attribute role='main' ---*/
 article [role='main'] {
   @include media($small) {

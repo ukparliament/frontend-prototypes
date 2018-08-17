@@ -44,8 +44,7 @@
   }
 }
 
-.status--banner,
-.status--banner__beta {
+.status--banner {
   @include status--banner;
 
   .container {
