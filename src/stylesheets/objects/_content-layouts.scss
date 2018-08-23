@@ -70,6 +70,13 @@ main .container {
   }
 }
 
+.navigation--number .container {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+}
+
+
 /*--- Elements with attribute role='main' ---*/
 article [role='main'] {
   @include media($small) {

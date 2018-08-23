@@ -23,9 +23,6 @@
 /*--- Navigation Number ---*/
 
 .navigation--number {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
   ol {
     margin: 0 $base-spacing-unit-tiny;
     @include media($small) {

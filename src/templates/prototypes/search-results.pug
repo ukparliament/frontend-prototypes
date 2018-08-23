@@ -44,23 +44,21 @@ block content
                     span.url(data-testable='')= object.formatted_url
                 p= object.description
 
-
-  section
+  nav(class='navigation--number', data-active-tile='1', aria-label='Pagination')
     .container
-      nav(class='navigation--number', data-active-tile='1', aria-label='Pagination')
 
-        ol
-          each val, index in ['1', '2', '3', '4', '5', '6', '7', '8']
-            li(data-number=val, class= (index === 0 ? 'active' : undefined))
-              if index === 0
-                span(data-number-see='true')
-                  span= 'Page '
-                  span.count=  val
-                  span= ' of 8'
-              else
-                a(data-number-see='true', href='#')
-                  span= 'Page '
-                  span.count=  val
-                  span= ' of 8'
+      ol
+        each val, index in ['1', '2', '3', '4', '5', '6', '7', '8']
+          li(data-number=val, class= (index === 0 ? 'active' : undefined))
+            if index === 0
+              span(data-number-see='true')
+                span= 'Page '
+                span.count=  val
+                span= ' of 8'
+            else
+              a(data-number-see='true', href='#')
+                span= 'Page '
+                span.count=  val
+                span= ' of 8'
 
-        a(data-number-see='true', href='#', class='navigation-control')= 'Next'
+      a(data-number-see='true', href='#', class='navigation-control')= 'Next'
