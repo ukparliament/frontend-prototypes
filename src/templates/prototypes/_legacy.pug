@@ -1,0 +1,81 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+
+  .section--primary(tabindex=0)#content
+    .container
+      //- Page Title
+      h1
+        span Legacy styles comparison
+      p You may need to inspect the markup to view changes.
+
+  section
+    .container
+      h2 .status--banner__beta
+      p The class .status--banner__beta has been removed in our new app framework
+
+      h3 Legacy implemenation
+      .status--banner__beta
+        .container
+          span.hint beta
+          ul.list--inline
+            li These pages are being tested. #[+link('feedback.html', 'Give feedback')] to help improve them.
+            li Go to #[+link('http://www.parliament.uk', 'current website')]
+
+      h3 New implemenation
+      .status--banner
+        .container
+          p
+            | These pages are being tested. #[+link('feedback.html', 'Give feedback')] to help improve them.
+            | Go to #[+link('http://www.parliament.uk', 'current website')]
+
+
+
+  section
+    .container
+      h2 .navigation--number
+
+      h3 Legacy implemenation
+      section
+        .container
+          nav(class='navigation--number', data-active-tile='1', aria-label='Pagination')
+
+            ol
+              each val, index in ['1', '2', '3', '4', '5', '6', '7', '8']
+                li(data-number=val, class= (index === 0 ? 'active' : undefined))
+                  if index === 0
+                    span(data-number-see='true')
+                      span= 'Page '
+                      span.count=  val
+                      span= ' of 8'
+                  else
+                    a(data-number-see='true', href='#')
+                      span= 'Page '
+                      span.count=  val
+                      span= ' of 8'
+
+            a(data-number-see='true', href='#', class='navigation-control')= 'Next'
+
+
+
+  nav(class='navigation--number', data-active-tile='1', aria-label='Pagination')
+    .container
+      h3 New implemenation
+      p navigation--number should sit outside of a section
+
+    .container
+      ol
+        each val, index in ['1', '2', '3', '4', '5', '6', '7', '8']
+          li(data-number=val, class= (index === 0 ? 'active' : undefined))
+            if index === 0
+              span(data-number-see='true')
+                span= 'Page '
+                span.count=  val
+                span= ' of 8'
+            else
+              a(data-number-see='true', href='#')
+                span= 'Page '
+                span.count=  val
+                span= ' of 8'
+
+      a(data-number-see='true', href='#', class='navigation-control')= 'Next'

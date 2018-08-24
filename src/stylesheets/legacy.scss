@@ -1,0 +1,65 @@
+/*--- Import Settings ---*/
+@import 'settings/colours';
+@import 'settings/fonts';
+@import 'settings/spacing';
+@import 'settings/mixins';
+@import 'settings/themes';
+@import 'objects/grid-settings';
+
+/*--- Import Components ---*/
+@import 'components/highlight';
+
+
+/*--- Status Banne Beta ---*/
+.status--banner__beta {
+  @include status--banner;
+
+  .container {
+    @include last-child;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hint {
+    align-self: flex-start;
+    margin-right: $base-spacing-unit-tiny;
+  }
+
+  ul {
+    flex: 1;
+    flex-wrap: wrap;
+    li {
+      margin: 0;
+      @media (max-width: $medium - 1) {
+        margin-bottom: $base-spacing-unit;
+      }
+    }
+    li:first-of-type {
+      flex: 1 90%;
+       @include media($medium) {
+        flex: 1 auto
+      }
+    }
+  }
+
+  /*--- Print styles ---*/
+
+  @media print {
+    display: none;
+  }
+}
+
+
+/*--- Navigation number ---*/
+
+section .navigation--number {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  .container {
+    display: none;
+    align-items: unset;
+    justify-content: unset;
+  }
+}

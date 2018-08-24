@@ -1,21 +1,19 @@
 nav(class='navigation--number', data-active-tile='5', aria-label='Pagination')
 
-  .container
+  a(data-number-see='true', href='#', class='navigation-control')= 'Previous'
 
-    a(data-number-see='true', href='#', class='navigation-control')= 'Previous'
+  ol
+    each val, index in ['1', '2', '3', '4', '5', '6', '7', '8']
+      li(data-number=val, class= (index === 4 ? 'active' : undefined))
+        if index === 4
+          span(data-number-see='true')
+            span= 'Page '
+            span.count=  val
+            span= ' of 8'
+        else
+          a(data-number-see='true', href='#')
+            span= 'Page '
+            span.count=  val
+            span= ' of 8'
 
-    ol
-      each val, index in ['1', '2', '3', '4', '5', '6', '7', '8']
-        li(data-number=val, class= (index === 4 ? 'active' : undefined))
-          if index === 4
-            span(data-number-see='true')
-              span= 'Page '
-              span.count=  val
-              span= ' of 8'
-          else
-            a(data-number-see='true', href='#')
-              span= 'Page '
-              span.count=  val
-              span= ' of 8'
-
-    a(data-number-see='true', href='#', class='navigation-control')= 'Next'
+  a(data-number-see='true', href='#', class='navigation-control')= 'Next'
