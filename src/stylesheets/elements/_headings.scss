@@ -112,9 +112,12 @@ footer h2 {
   }
 }
 
-.dropdown__toggle {
-  h2, h3 {
+/*--- Dropdown ---*/
+
+.dropdown > {
+  h2, h3, h4, h5, h6 {
     @include epsilon;
+    margin: 0;
   }
 }
 

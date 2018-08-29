@@ -76,14 +76,39 @@
   padding-right: $base-spacing-unit-small;
   &::after {
     content: '';
+    display: inline-block;
     position: absolute;
     top: 50%;
     right: 0;
+    vertical-align: middle;
     border: $base-spacing-unit solid transparent;
     border-bottom-width: 0;
     border-top-color: $grey-1;
-    margin-top: -($base-spacing-unit / 2);
+    margin: -($base-spacing-unit / 2) 0 0 $base-spacing-unit-tiny;
   }
+}
+
+.dropdown .btn--toggle {
+  display: block;
+  @include links($grey-1, none, $grey-1, $grey-1);
+  padding: $base-spacing-unit-small;
+  margin: 0;
+  &:hover, &:focus {
+    text-decoration: underline;
+    background-color: transparent;
+    outline: none;
+  }
+  &::after {
+    position: relative;
+  }
+}
+
+.dropdown.open .btn--toggle::after {
+  transform: rotate(180deg);
+}
+
+[class*="block"] .dropdown .btn--toggle {
+  padding: 0;
 }
 
 /*--- Themes Alternative Button Focus ---*/

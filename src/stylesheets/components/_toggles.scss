@@ -31,5 +31,11 @@ body:not(.has-js) .toggle--menu > .block {
 /*--- Functional ---*/
 
 [data-toggle="content"]:not(.open) {
-  display: none;
+  height: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
 }
