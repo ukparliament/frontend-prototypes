@@ -306,7 +306,7 @@ footer .list {
 
 /*--- Toggle styles---*/
 
-.toggle--menu {
+aside.dropdown .dropdown__details {
   ol, ul {
     @include list;
     @include milli;

@@ -1,12 +1,14 @@
-//- <button>
-mixin button(value, style, type, datatype)
-  button(type=type, class=style, value=value, data-tracking=datatype)&attributes(attributes)= value
+//- <button> used for toggling only
+mixin button(value, style)
+  button(type='button', class=style)&attributes(attributes)
+    block
+    = value
 
 //- <input type='submit'>
 mixin button--submit(name, id, value, button_class)
   input(type='submit', name=name, id=id, value=value, class=button_class)&attributes(attributes)
 
-mixin buttonLink(link, value, style, datatype)
-  +link(link)(class=style, data-tracking=datatype)&attributes(attributes)
+mixin button--link(link, value, style)
+  +link(link)(class=style download)&attributes(attributes)
     block
     =value

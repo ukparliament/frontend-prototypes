@@ -97,4 +97,4 @@ mixin list--pipe__media(imgURL, imgAlt, heading, btnURL, btnText)
           +image(imgURL, imgAlt)
       .card__details
         h3= heading
-        +link(btnURL, btnText)(class='btn--primary' download)
+        +button--link(btnURL, btnText, 'btn--primary')

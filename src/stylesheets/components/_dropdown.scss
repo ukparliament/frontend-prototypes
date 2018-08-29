@@ -1,55 +1,75 @@
-.has-js .dropdown {
-  &:not(.open) {
-    .dropdown__toggle {
-      margin-bottom: 0;
-    }
-    .dropdown__content {
-      @extend .visually-hidden;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
+/*--- Base Styles ---*/
+
+.dropdown {
+  position: relative;
+  margin-bottom: $base-spacing-unit-small;
+
+  .dropdown__details {
+    padding: $base-spacing-unit-small;
+    @include last-child;
+    transition: padding-top 0.1s linear, padding-bottom 0.1s linear;
   }
 }
 
-.dropdown {
+/*--- Default Dropdown [Grey bar] ---*/
+
+div.dropdown {
   background-color: $grey-4;
+
+  .dropdown__details {
+    border-top: 1px solid $grey-3;
+  }
 }
 
-.dropdown__toggle {
-  position: relative;
-  @include headings-margin-top(0);
-  @include last-child;
+/*--- Filter Dropdown [Within an aside] ---*/
+
+aside.dropdown .dropdown__details {
+  @include block;
 }
 
-.dropdown__content {
-  font-weight: 400;
-  border: solid $grey-3;
-  border-width: 1px 0 0;
-  opacity: 1;
-  height: auto;
-  overflow: hidden;
-  transition: all 0.1s linear;
-  padding: $base-spacing-unit-small;
-  @include last-child;
-}
-
-/*--- Component Rules ---*/
+/*--- Block Dropdowns [Dropdowns inside blocks] ---*/
 
 [class*="block"] {
   .dropdown {
     background-color: transparent;
-    .dropdown__toggle {
-      margin-bottom: $base_spacing_unit_tiny;
-    }
   }
-  .dropdown__content {
-    padding-left: 0;
+  .dropdown__details {
     border-bottom: 1px solid $grey-3;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: $base-spacing-unit-tiny;
   }
-  .dropdown:last-child {
-    .dropdown__content {
-      padding-bottom: 0;
-      border-bottom: none;
+}
+
+/*--- When JavaScript is enabled ---*/
+
+.has-js {
+  [data-toggle="content"]:not(.open) {
+    height: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+  aside.dropdown .dropdown__details {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: $base-spacing-unit-large;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: ($base-spacing-unit-small * 6);
+      border: $base-spacing-unit-small solid transparent;
+      border-top: 0;
+      border-bottom-color: #fff;
     }
   }
 }

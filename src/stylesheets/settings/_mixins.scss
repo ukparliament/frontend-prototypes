@@ -126,16 +126,22 @@
 
 /*--- Button ---*/
 
-@mixin button($color, $background-color, $background-hover, $border-color:transparent) {
-
-  cursor: pointer;
-  display: inline-block;
-  @include links($color, none, $color, $color);
-  background-color: $background-color;
-  border: 2px solid $border-color;
+@mixin btn {
+  border: 2px solid transparent;
   border-radius: ($base-spacing-unit - 2);
   padding: ($base-spacing-unit - 2) ($base-spacing-unit-tiny - 2);
   margin-right: $base-spacing-unit;
+  &:link {
+    display: inline-block;
+  }
+}
+
+@mixin button($color, $background-color, $background-hover, $border-color:transparent) {
+
+  @include btn;
+  @include links($color, none, $color, $color);
+  background-color: $background-color;
+  border-color: $border-color;
 
   &:hover {
     background-color: $background-hover;

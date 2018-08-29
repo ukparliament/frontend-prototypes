@@ -13,7 +13,7 @@ block content
 
       //- action, method + additional attributes and block content
       +form('javascript:console.log("form action")', 'post')
-        +button('Submit', 'btn--primary', 'submit')
+        +button--submit('submit-button', 'sbBtn-1', 'Submit', 'btn--primary')
 
       h2 HTML &lt;input&gt; Text
 
@@ -83,13 +83,13 @@ block content
       h2 HTML &lt;input&gt; Submit
 
       //- name, id, value, class + additional attributes
-      +button--submit('submit-button', 'sbBtn', 'Submit', 'btn--primary')
+      +button--submit('submit-button', 'sbBtn-2', 'Submit', 'btn--primary')
 
       h2 HTML &lt;button&gt; Tag
 
       //- value, class, type + additional attributes
-      +button('Submit', 'btn--primary', 'submit')
-      +button('Reset', 'btn--secondary', 'reset')
+      +button('Submit', 'btn--primary')
+      +button('Reset', 'btn--secondary')
       +button('Disabled', 'btn--disabled')(disabled)
 
       h2 HTML &lt;select&gt; Tag

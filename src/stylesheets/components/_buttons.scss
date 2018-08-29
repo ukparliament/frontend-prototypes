@@ -1,3 +1,81 @@
+/*--- Default buttons ---*/
+
+button {
+  cursor: pointer;
+  @include epsilon;
+}
+
+.btn {
+  @include btn;
+}
+
+/*--- Toggles ---*/
+
+.btn--toggle {
+  display: none;
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  padding-right: $base-spacing-unit-small;
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    vertical-align: middle;
+    border: $base-spacing-unit solid transparent;
+    border-bottom-width: 0;
+    border-top-color: $grey-1;
+    margin: -($base-spacing-unit / 2) 0 0 $base-spacing-unit-tiny;
+  }
+}
+
+.has-js .btn--toggle {
+  display: inline;
+}
+
+div.dropdown .btn--toggle {
+  display: inline;
+  width: 100%;
+  @include links($grey-1, none, $grey-1, $grey-1);
+  @include typography--heavy;
+  text-align: left;
+  border: 0;
+  padding: $base-spacing-unit-small;
+  margin: 0;
+  &:hover, &:focus {
+    text-decoration: underline;
+    background-color: transparent;
+    outline: none;
+  }
+  &::after {
+    position: relative;
+  }
+}
+
+.dropdown.open .btn--toggle::after {
+  transform: rotate(180deg);
+}
+
+[class*="block"] .dropdown .btn--toggle {
+  padding: 0;
+}
+
+/*--- Close buttons ---*/
+
+.btn--close {
+  display: none;
+  float: right;
+  @include links($grey-1, none, $grey-2, $grey-1);
+  @include milli;
+  margin-bottom: 0;
+}
+
+.has-js .btn--close {
+  display: inline-block;
+}
+
 /*--- Default Button Options [colour, background, background-hover] ---*/
 
 [class*="theme--"] a.btn--primary,
@@ -55,6 +133,9 @@
 .btn--ghost--inverse {
   @include button($grey-1, transparent, rgba($grey-1, 0.12), $grey-1);
 }
+.open > .btn--ghost--inverse {
+  @include button($white, $grey-1, $grey-2);
+}
 [class*="theme--"] a.btn--ghost--primary,
 .btn--ghost--primary {
   @include button($button--primary, transparent, rgba($button--primary, 0.12), $button--primary);
@@ -66,24 +147,6 @@
 [class*="theme--"] a.btn--ghost--deep-purple,
 .btn--ghost--deep-purple {
   @include button($button--deep-purple, transparent, rgba($button--deep-purple, 0.12), $button--deep-purple);
-}
-
-/*--- Toggle button ---*/
-
-[class*="theme--"] a.btn--toggle,
-.btn--toggle {
-  position: relative;
-  padding-right: $base-spacing-unit-small;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 0;
-    border: $base-spacing-unit solid transparent;
-    border-bottom-width: 0;
-    border-top-color: $grey-1;
-    margin-top: -($base-spacing-unit / 2);
-  }
 }
 
 /*--- Themes Alternative Button Focus ---*/
@@ -109,31 +172,4 @@
   border-left: none;
   border-width: 1px;
   border-radius: 0 4px 4px 0;
-}
-
-/*--- Active styles ---*/
-
-.open > .btn--ghost--inverse {
-  @include button($white, $grey-1, $grey-2);
-}
-
-/*--- Toggle styles ---*/
-
-.toggle--menu {
-  > [class*="btn--"] {
-    margin-bottom: 0;
-  }
-  .btn--close {
-    float: right;
-    @include links($grey-1, none, $grey-2, $grey-1);
-    @include milli;
-    margin-bottom: 0;
-  }
-}
-
-body:not(.has-js) .toggle--menu {
-  > [class*="btn--"],
-  .btn--close {
-    display: none;
-  }
 }

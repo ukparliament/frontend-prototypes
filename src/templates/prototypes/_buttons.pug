@@ -13,55 +13,56 @@ block content
       .block.theme--mint--light
         //- buttonLink [link, value, style, datatype=optional]
         h3 Small
-        +buttonLink('#', 'Primary', 'btn--primary btn--small')
-        +buttonLink('#', 'Secondary', 'btn--secondary btn--small')
-        +buttonLink('#', 'Deep Purple', 'btn--deep-purple btn--small')
+        +button('Primary', 'btn--primary btn--small')
+        +button('Secondary', 'btn--secondary btn--small')
+        +button('Deep Purple', 'btn--deep-purple btn--small')
 
         h3 Default
-        +buttonLink('#', 'Primary', 'btn--primary')
-        +buttonLink('#', 'Secondary', 'btn--secondary')
-        +buttonLink('#', 'Deep Purple', 'btn--deep-purple')
+        +button('Primary', 'btn--primary')
+        +button('Secondary', 'btn--secondary')
+        +button('Deep Purple', 'btn--deep-purple')
 
         h3 Icons
-        +buttonLink('#', 'Download Word document','btn--primary', 'download')(download)
+        +button--link('#', 'Download Word document','btn--primary')
           include ../../icons/download.svg
 
-        +buttonLink('#', 'Download PDF document', 'btn--deep-purple', 'download')(download)
+        +button--link('#', 'Download PDF document', 'btn--deep-purple')
           include ../../icons/download.svg
 
         h3 Inverse
-        +buttonLink('#', 'Primary', 'btn--primary--inverse')
-        +buttonLink('#', 'Secondary', 'btn--secondary--inverse')
-        +buttonLink('#', 'Deep Purple', 'btn--deep-purple--inverse')
-        +buttonLink('#', 'White', 'btn--white')
+        +button('Primary', 'btn--primary--inverse')
+        +button('Secondary', 'btn--secondary--inverse')
+        +button('Deep Purple', 'btn--deep-purple--inverse')
+        +button('White', 'btn--white')
 
         h3 Ghost
         .block.theme--deep-purple
-          +buttonLink('#', 'Ghost', 'btn--ghost')
-          +buttonLink('#', 'Ghost secondary', 'btn--ghost--secondary')
+          +button('Ghost', 'btn--ghost')
+          +button('Ghost secondary', 'btn--ghost--secondary')
 
-        +buttonLink('#', 'Ghost primary', 'btn--ghost--primary')
-        +buttonLink('#', 'Ghost deep-purple', 'btn--ghost--deep-purple')
-        +buttonLink('#', 'Ghost inverse', 'btn--ghost--inverse')
+        +button('Ghost primary', 'btn--ghost--primary')
+        +button('Ghost deep-purple', 'btn--ghost--deep-purple')
+        +button('Ghost inverse', 'btn--ghost--inverse')
 
         h3 Toggle
-        +buttonLink('#', 'Primary', 'btn--primary btn--toggle')
-        +buttonLink('#', 'Secondary', 'btn--secondary btn--toggle')
-        +buttonLink('#', 'Deep purple', 'btn--deep-purple btn--toggle')
-        +buttonLink('#', 'Ghost', 'btn--ghost--inverse btn--toggle')
-        +buttonLink('#', 'Toggle', 'btn--toggle')
+        +button('Primary', 'btn--primary btn--toggle')
+        +button('Secondary', 'btn--secondary btn--toggle')
+        +button('Deep purple', 'btn--deep-purple btn--toggle')
+        +button('Ghost', 'btn--ghost--inverse btn--toggle')
+        noscript
+          p These buttons are no showing because you have JavaScript disabled.
 
         h3 Alternative
-        +buttonLink('#', 'Grey', 'btn--grey')
-        +buttonLink('#', 'Disabled', 'btn--disabled')(tabIndex=-1)
-        +buttonLink('#', 'Mint', 'btn--mint')
+        +button('Grey', 'btn--grey')
+        +button('Disabled', 'btn--disabled')(tabIndex=-1)
+        +button('Mint', 'btn--mint')
 
       h2 Download buttons
       .block
         //- buttonLink [link, value, style, datatype=optional]
-        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--primary', 'download')(download)
-        +buttonLink('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary', 'download')(download)
-        +buttonLink('#', 'Disabled download (1500 x 2000 jpeg)', 'btn--disabled')(download, tabIndex=-1)
+        +button--link('#', 'Download (1500 x 2000 jpeg)', 'btn--primary')
+        +button--link('#', 'Download (1500 x 2000 jpeg)', 'btn--secondary')
+        +button--link('#', 'Disabled download (1500 x 2000 jpeg)', 'btn--disabled')(tabIndex=-1)
 
       h2 Form groups
       .block
@@ -70,7 +71,7 @@ block content
           .input-group
             //- type, name, id, regex pattern, max length, label, label class + additional attributes
             +input--validate('search', 'q', 'globalSearch', '^(?!.*<script|<Script).*$', '1000', 'Enter a keyword')
-            button(type='submit', class='btn--white', data-tracking='search')
+            button(type='submit', class='btn--white')(aria-label='submit search')
               include ../../icons/search.svg
 
         h3 Find your MP and constituency
@@ -79,6 +80,6 @@ block content
             //- type, name, id, regex pattern, max length, label, label class + additional attributes
             +input--validate('text', 'postcode', 'postcodeSearch', '[0-9a-zA-Z ]{5,}', '8', 'Enter your full postcode, for example SW1A 0AA.')
             //- value, class, type, datatype
-            +button('Find', 'btn--primary', 'submit', 'search')
+            button(type='submit', class='btn--primary')= 'Find'
 
       p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].

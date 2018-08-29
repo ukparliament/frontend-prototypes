@@ -9,9 +9,9 @@ block content
   section
     .container
       h2 Toggle (aside)
-      aside.toggle--menu(data-toggle='item')
-        +buttonLink('#', 'Filter by department or body')(class='btn--ghost--inverse btn--toggle', data-toggle='parent-item')
-        .block(data-toggle='content')
+      aside.dropdown(data-toggle='item')
+        +button('Filter by department or body', 'btn--ghost--inverse btn--toggle')(data-toggle='parent-item')
+        .dropdown__details(data-toggle='content')
           +link('#', 'Close')(class='btn--close', data-toggle='parent-item')
           h2 Filter by department or body
           h3 Government departments
@@ -107,7 +107,7 @@ block content
             .status--highlight.theme--caution
               p Complete your questionnaire before you continue
 
-        +button('Submit', 'btn--primary', 'submit')
+        button(type='submit', class='btn--primary')= 'Submit'
 
       h2 Checkbox Switch (content initally hidden)
 
@@ -121,4 +121,4 @@ block content
             .status--highlight.theme--success
               p Thank you for agreeing to our terms and conditions
 
-        +button('Submit', 'btn--primary', 'submit')
+        button(type='submit', class='btn--primary')= 'Submit'

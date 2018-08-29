@@ -112,12 +112,6 @@ footer h2 {
   }
 }
 
-.dropdown__toggle {
-  h2, h3 {
-    @include epsilon;
-  }
-}
-
 /*--- List Events ---*/
 
 .list--events > li > {
