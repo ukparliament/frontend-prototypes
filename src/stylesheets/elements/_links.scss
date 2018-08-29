@@ -34,50 +34,6 @@ body > footer a  {
   }
 }
 
-/*--- Dropdown ---*/
-
-.dropdown__toggle a {
-  display: block;
-  padding: $base-spacing-unit-small;
-  @include links(
-    $grey-1, 			      // a:link colour
-    none,				        // a:link decoration
-    $grey-1, 		        // a:visited color
-    $grey-1             // a:hover color
-  );
-  &:focus {
-    text-decoration: underline;
-    background-color: transparent;
-    outline: none;
-  }
-  &:hover {
-    text-decoration: underline;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    border-top: 6px solid $grey-1;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    margin-left: 8px;
-    top: calc(50% - 3px); // Vertical centering (50% of the parent div height - (arrow size / 2))
-  }
-}
-
-.open .dropdown__toggle a {
-  &:after {
-    border-top: none;
-    border-bottom: 6px solid $grey-1;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    top: calc(50% - 3px); // Vertical centering (50% of the parent div height - (arrow size / 2))
-  }
-}
-
-[class*="block"] .dropdown .dropdown__toggle a {
-  padding: 0;
-}
-
 /*--- Maps ---*/
 
 .map .leaflet-bar a {
