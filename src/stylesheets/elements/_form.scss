@@ -263,7 +263,7 @@ input[type="file"].js-has-focus + label {
   }
   input[type="search"],
   input[type="text"] {
-    flex: 1;
+    flex-grow: 1;
     margin-bottom: 0;
     margin-right: -1px;
   }
