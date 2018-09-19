@@ -76,3 +76,10 @@ h1 + .lead {
     font-size: 0;
   }
 }
+
+/*--- Settings for primary--section subheadings ---*/
+
+.section--primary small,
+article header small {
+  @include delta;
+}

@@ -69,6 +69,10 @@ h5, h6, .epsilon {
 
 /*--- Heading Nested Elements ---*/
 
+small + h1 {
+  padding-top: ($base-spacing-unit + 2);
+}
+
 h1 {
   @include last-child;
 
@@ -79,14 +83,6 @@ h1 {
     @include gamma;
     @include typography--light;
     margin: $base-spacing-unit-tiny 0;
-  }
-  > small {
-    top: 0;
-    @include delta;
-    position: absolute;
-  }
-  > small + span {
-    padding-top: $base-spacing-unit-extra-large;
   }
 }
 
