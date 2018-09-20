@@ -1,3 +1,5 @@
+/*--- Base SVG ---*/
+
 svg {
   pointer-events: none;
   vertical-align: middle;
@@ -8,76 +10,17 @@ svg {
 @media (max-width: $medium - 1) {
   .uk_parliament {
     z-index: 1;
+    margin-right: $base-spacing-unit-tiny;
     position: relative;
-    display: inline-block;
-  }
-  svg [data-icon="uk-parliament"] {
-    transition: fill 0.15s linear 0.12s;
   }
   &.portcullis {
-    width: 50px;
+    width: 48px;
+    min-width: 48px;
     overflow: hidden;
-
-    svg [data-icon="uk-parliament"] {
-      fill: transparent;
-      transition-delay: 0.05s;
-    }
   }
 }
 
-// Inline icon layout
-
-.icon--inline {
-  width: 16px;
-  height: 16px;
-  @include media($small) {
-    width: 20px;
-    height: 20px;
-  }
-  padding-top: 2px;
-  float: left;
-  margin-right: ($base-spacing-unit + 2);
-}
-
-// Loading icon (animated)
-
-@-webkit-keyframes spinner {
-  from {
-    -webkit-transform: rotate(0);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes spinner {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.btn--loading svg {
-  @include css-animation(
-    .8s,					// duration
-    linear,				// timing function
-    0s,						// delay
-    infinite,			// iteration count
-    spinner				// name
-  );
-  path {
-    fill: $white;
-    height: 24px;
-  }
-}
-.btn--loading.btn--white svg,
-.btn--loading.btn--white object {
-  path {
-    fill: $deep-purple;
-  }
-}
-
-// File icon
+/*--- File Icon ---*/
 
 svg [data-icon="file"] {
   [data-icon="success"], [data-icon="failure"], [data-icon="word"], [data-icon="pdf"] {
@@ -85,43 +28,24 @@ svg [data-icon="file"] {
   }
 }
 
-// File icon (types)
+/*--- File Icon [types] ---*/
 
-.svg--file__word svg {
-  [data-icon="word"] {
-    display: block;
-  }
-}
-
-.svg--file__pdf svg {
-  [data-icon="pdf"] {
-    display: block;
-  }
-}
-
-// File icon (status)
-
+.svg--file__word svg [data-icon="word"],
+.svg--file__pdf svg [data-icon="pdf"],
 .svg--file__success svg,
-[data-file-upload="success"] svg {
-  [data-icon="success"] {
-    display: block;
-  }
-}
-
 .svg--file__failure svg,
-[data-file-upload="failure"] svg {
-  [data-icon="failure"] {
-    display: block;
-  }
+[data-file-upload="success"] svg [data-icon="success"],
+[data-file-upload="failure"] svg [data-icon="failure"] {
+  display: block;
 }
 
-[class*="btn"] svg {
+main [class*="btn"] svg {
   width: 20px;
   height: 20px;
   margin-left: -4px;
 }
 
-/*--- List styles ---*/
+/*--- List Styles ---*/
 
 /* Adding space between the right of an SVG and the
 left of its sibling. SVG left spacing not required
@@ -131,9 +55,29 @@ left hand side. */
   margin-left: $base-spacing-unit;
 }
 
-/*--- Card styles ---*/
+/*--- Card Styles ---*/
 
 [class*="card"] figure svg {
   width: 100%;
   height: 100%;
+}
+
+/*--- Header Search ---*/
+
+header .btn--toggle svg {
+  top: 15px;
+  position: absolute;
+
+  &[data-icon="close"] {
+    opacity: 0;
+  }
+}
+
+header form.open + .btn--toggle svg {
+  &[data-icon="close"] {
+    opacity: 1;
+  }
+  &[data-icon="search"] {
+    opacity: 0;
+  }
 }

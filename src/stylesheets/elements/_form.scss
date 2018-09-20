@@ -301,97 +301,62 @@ input[type="file"].js-has-focus + label {
   }
 }
 
-/*--- Component Styles ---*/
+/*--- Header Search Styles ---*/
 
-.search__global {
-  @media (max-width: $medium - 1) {
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
-    padding-left: 82px;
-    position: absolute;
+header form {
+  width: 0;
+  margin-bottom: 0;
+}
 
+header form.open {
+  width: 100%;
+  margin-right: 39px;
+}
+
+header .input-group {
+  flex-wrap: unset;
+  overflow: hidden;
+  border-radius: 4px 0 0 4px;
+}
+
+header .input-group input {
+  &:focus {
+    outline-color: $grey-3;
+  }
+  &:focus + button {
+    border: none;
+    background-color: $mint;
+
+    &:hover {
+      background-color: darken($mint, 10%);
+    }
+  }
+  &:invalid + button {
+    cursor: unset;
+  }
+  &:required {
+    box-shadow: none;
+  }
+}
+
+header .input-group button {
+  padding: $base-spacing-unit $base-spacing-unit-tiny;
+
+  &:hover,
+  &:focus {
+    background-color: $grey-4;
+    box-shadow: none;
+  }
+}
+
+header .container {
+  @include media($medium) {
+     form {
+      width: auto;
+      margin-right: 0;
+    }
     .input-group {
-      margin-right: 8px;
-      flex-direction: row;
-      transition: margin 0.15s linear 0.03s;
-      justify-content: flex-end;
-
-      input {
-        flex: 0;
-        min-width: 0;
-      }
-    }
-    &.open {
-      .input-group {
-        margin-right: 60px;
-        transition-delay: 0.05s;
-
-        input {
-          flex: 1;
-          transition-property: width, padding, flex;
-          transition-duration: 0.12s;
-          transition-delay: 0.12s;
-        }
-      }
-    }
-    &:not(.open) {
-      input,
-      button {
-        &:focus,
-        &:active {
-          display: none;
-        }
-      }
-      .input-group input {
-        padding-left: 0;
-        padding-right: 0;
-        transition: flex 0.1s linear 0s;
-        transition: padding 0.1s linear 0.01s;
-      }
-    }
-  }
-  form {
-    margin-bottom: 0;
-    position: relative;
-  }
-  .input-group {
-    margin-bottom: 0;
-    overflow: hidden;
-    position: relative;
-    border-radius: 4px;
-    @include media($medium) {
       width: 300px;
-    }
-    input {
-      &:focus {
-        outline-color: $grey-3;
-      }
-      &:focus + button {
-        border: none;
-        padding-right: 14px;
-        background-color: $mint;
-
-        &:hover {
-          background-color: darken($mint, 10%);
-        }
-      }
-      &:invalid + button {
-        cursor: unset;
-      }
-      &:required {
-        box-shadow:none;
-      }
-    }
-  }
-  button {
-    padding: 4px 13px 4px 15px;
-
-    &:hover,
-    &:focus {
-      background-color: $grey-4;
-      box-shadow: none;
     }
   }
 }

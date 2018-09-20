@@ -119,68 +119,6 @@ body > footer a  {
   text-decoration: none;
 }
 
-/*--- Search Global ---*/
-
-@media (max-width: $medium - 1) {
-  .search__global {
-    &:not(.open) {
-      .search__global__toggle {
-        transition: background-color 0.15s linear 0.15s;
-      }
-      [data-icon="search"] {
-        transition: opacity 0.15s linear 0.15s;
-      }
-      [data-icon="close"] {
-        opacity: 0;
-      }
-    }
-    &.open {
-      .search__global__toggle {
-        background-color: transparent;
-      }
-      button [data-icon="search"] {
-        opacity: 1;
-      }
-      [data-icon="close"] {
-        transition: opacity 0.15s linear 0.15s;
-      }
-      [data-icon="search"] {
-        opacity: 0;
-      }
-    }
-  }
-  .search__global__toggle {
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 50px;
-    position: absolute;
-    background-color: $deep-purple;
-    padding: $base-spacing-unit $base-spacing-unit-small;
-
-    svg {
-      top: 15px;
-      position: absolute;
-    }
-    &:hover, &:focus, &:active {
-      outline: none;
-      background-color: $deep-purple;
-
-      svg[data-icon="search"] g {
-        fill: $grey-3;
-      }
-      svg[data-icon="close"] g {
-        stroke: $grey-3;
-      }
-    }
-  }
-}
-@include media($medium) {
-  .search__global__toggle {
-    display: none;
-  }
-}
-
 /*--- Toggle styles ---*/
 
 aside.dropdown .dropdown__details li a {

@@ -2,27 +2,28 @@ UK_Parliament.search = function () {
   var
     header = document.querySelector('header'),
     logo = header.querySelector('.uk_parliament'),
-    searchComponent = header.querySelector('.search__global'),
+    form = header.querySelector('form'),
     input = header.querySelector('input'),
     inputGroup = header.querySelector('.input-group'),
     button = header.querySelector('button'),
-    searchToggle = header.querySelector('.search__global__toggle'),
+    buttonToggle = header.querySelector('.btn--toggle'),
     desktop = 768;
 
-  if(searchComponent) {
+  if(buttonToggle) {
     checkScreenSize();
-    searchToggle.addEventListener('click', toggleSearch);
+    console.log('ran');
+    buttonToggle.addEventListener('click', toggleSearch);
     window.addEventListener('orientationchange', checkScreenSize);
   }
 
   function checkScreenSize() {
     if (window.innerWidth <= desktop) {
-      searchToggle.removeAttribute('tabIndex');
-      (searchComponent.classList.contains('open')) ? removeAttr() : setAttr();
+      buttonToggle.removeAttribute('tabIndex');
+      (form.classList.contains('open')) ? removeAttr() : setAttr();
     } else {
       removeAttr();
-      searchToggle.setAttribute('tabIndex', '-1');
-      searchToggle.setAttribute('aria-hidden', 'true');
+      buttonToggle.setAttribute('tabIndex', '-1');
+      buttonToggle.setAttribute('aria-hidden', 'true');
     }
   }
 
@@ -39,22 +40,22 @@ UK_Parliament.search = function () {
   }
 
   function toggleSearch(e) {
-    (searchComponent.classList.contains('open')) ? closeSearch(e) : openSearch(e);
+    (form.classList.contains('open')) ? closeSearch(e) : openSearch(e);
   }
 
   function closeSearch(e) {
     e.preventDefault();
     logo.classList.remove('portcullis');
-    searchComponent.classList.remove('open');
-    searchToggle.setAttribute('aria-label', 'open search');
+    form.classList.remove('open');
+    buttonToggle.setAttribute('aria-label', 'open search');
     setAttr();
   }
 
   function openSearch(e) {
     e.preventDefault();
     logo.classList.add('portcullis');
-    searchComponent.classList.add('open');
-    searchToggle.setAttribute('aria-label', 'close search');
+    form.classList.add('open');
+    buttonToggle.setAttribute('aria-label', 'close search');
     input.focus();
     removeAttr();
   }

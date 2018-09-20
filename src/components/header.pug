@@ -2,13 +2,12 @@ header
   .container
     +link('/', '')(class='uk_parliament')
       include ../icons/uk-parliament.svg
-    .search__global
-      +form('javascript:console.log("search submitted")', 'post')
-        .input-group
-          label(for='search_global', class='sr-only')='Enter a keyword'
-          input(type='search', id='search_global', name='searchglobal', maxlength='1000', pattern='^(?!.*<script|<Script).*$' aria-label="enter a search term" required)
-          button(type='submit', class='btn--white', data-tracking='search', aria-label='submit search')
-            include ../icons/search.svg
-      +link('#', '')(class='search__global__toggle' aria-label='open search')
-        include ../icons/search.svg
-        include ../icons/close.svg
+    +form('javascript:console.log("search submitted")', 'post')
+      .input-group
+        label(for='search_global', class='sr-only')='Enter a keyword'
+        input(type='search', id='search_global', name='searchglobal', maxlength='1000', pattern='^(?!.*<script|<Script).*$' aria-label="enter a search term" autocomplete="off" required)
+        button(type='submit', class='btn--white', data-tracking='search', aria-label='submit search')
+          include ../icons/search.svg
+    +link('#', '')(class='btn--toggle' aria-label='open search')
+      include ../icons/search.svg
+      include ../icons/close.svg

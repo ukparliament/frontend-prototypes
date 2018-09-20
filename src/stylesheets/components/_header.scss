@@ -9,11 +9,9 @@ body > {
 
     .container {
       line-height: 0;
-      @include media($medium) {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-      }
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
     }
   }
 
