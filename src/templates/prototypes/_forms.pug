@@ -9,6 +9,29 @@ block content
 
   section
     .container
+      h2 Form groups
+
+      h3 Search
+      +form('javascript:console.log("search submitted")', 'post')
+        .input-group
+          //- type, name, id, regex pattern, max length, label, label class + additional attributes
+          +input--validate('search', 'q', 'globalSearch', '^(?!.*<script|<Script).*$', '1000', 'Enter a keyword')
+          button(type='submit', class='btn--white')(aria-label='submit search')
+            include ../../icons/search.svg
+
+      h3 Find your MP and constituency
+      +form('javascript:console.log("postcode submitted")', 'post')
+        .input-group
+          //- type, name, id, regex pattern, max length, label, label class + additional attributes
+          +input--validate('text', 'postcode', 'postcodeSearch', '[0-9a-zA-Z ]{5,}', '8', 'Enter your full postcode, for example SW1A 0AA.')
+          //- value, class, type, datatype
+          button(type='submit', class='btn--primary')= 'Find'
+
+      p Don't know your postcode? Find it on the  #[+link('http://www.royalmail.com/find-a-postcode', 'Royal Mail postcode finder')].
+
+
+  section
+    .container
       h2 HTML &lt;form&gt; Tag
 
       //- action, method + additional attributes and block content
