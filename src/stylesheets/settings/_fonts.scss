@@ -1,11 +1,13 @@
 @font-face {
   font-family: 'National';
+  font-display: swap;
   src: url('https://static.parliament.uk/assets/National-LFS-Book.woff2') format('woff2'),
        url('https://static.parliament.uk/assets/National-LFS-Book.woff') format('woff');
 }
 
 @font-face {
   font-family: 'National';
+  font-display: swap;
   src: url('https://static.parliament.uk/assets/National-LF-BookItalic.woff2') format('woff2'),
        url('https://static.parliament.uk/assets/National-LF-BookItalic.woff') format('woff');
   font-style: italic;
@@ -13,6 +15,7 @@
 
 @font-face {
   font-family: 'National';
+  font-display: swap;
   src: url('https://static.parliament.uk/assets/National-LFS-Semibold.woff2') format('woff2'),
        url('https://static.parliament.uk/assets/National-LFS-Semibold.woff') format('woff');
   font-weight: 500;
@@ -20,6 +23,7 @@
 
 @font-face {
   font-family: 'National';
+  font-display: swap;
   src: url('https://static.parliament.uk/assets/National-LF-SemiboldItalic.woff2') format('woff2'),
        url('https://static.parliament.uk/assets/National-LF-SemiboldItalic.woff') format('woff');
   font-weight: 500;
