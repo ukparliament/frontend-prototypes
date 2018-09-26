@@ -11,7 +11,6 @@ UK_Parliament.search = function () {
 
   if(buttonToggle) {
     checkScreenSize();
-    console.log('ran');
     buttonToggle.addEventListener('click', toggleSearch);
     window.addEventListener('orientationchange', checkScreenSize);
   }
