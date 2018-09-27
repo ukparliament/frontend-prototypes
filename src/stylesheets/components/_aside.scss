@@ -25,3 +25,7 @@ article + aside {
     display: none;
   }
 }
+
+article footer aside {
+  @include border-bottom;
+}
