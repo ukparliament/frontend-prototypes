@@ -1,0 +1,50 @@
+/*--- Theme Backgrounds [background-colour, typography, link-colour, accent-colour] ---*/
+
+.theme--deep-purple {
+  @include theme--deep-purple;
+}
+.theme--deep-purple--light {
+  @include theme--deep-purple--light;
+}
+.theme--grey-3 {
+  @include theme--grey-3;
+}
+.theme--grey-4 {
+  @include theme--grey-4;
+}
+.theme--grey-5 {
+  @include theme--grey-5;
+}
+.theme--mint {
+  @include theme--mint;
+}
+.theme--mint--light {
+  @include theme--mint--light;
+}
+.theme--purple {
+  @include theme--purple;
+}
+.theme--purple--light {
+  @include theme--purple--light;
+}
+.theme--white {
+  @include theme--white;
+}
+
+/*--- Theme Status Colours ---*/
+
+.theme--caution {
+  @include theme--caution;
+}
+.theme--caution--light {
+  @include theme--caution--light;
+}
+.theme--success {
+  @include theme--success;
+}
+.theme--warning {
+  @include theme--warning;
+}
+.theme--vibrant--yellow {
+  @include theme--vibrant--yellow;
+}

@@ -1,7 +1,7 @@
 /*--- Hero Component ---*/
 
 .hero {
-  @extend .theme--deep-purple;
+  @include theme--deep-purple;
   @include headings-margin-top(0);
   @include accent($grey-5);
   padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny * 2);
@@ -31,7 +31,7 @@
   border-bottom-width: 2px;
   border-bottom-style: solid;
   @include headings-margin-top(0);
-  @extend .theme--deep-purple--light;
+  @include theme--deep-purple--light;
   padding: ($base-spacing-unit + 1) 0;
 
   p, li {
@@ -75,7 +75,7 @@
 
 .status--highlight {
   border-left-style: solid;
-  @extend .theme--purple--light;
+  @include theme--purple--light;
   @include headings-margin-top(0);
   @include last-child;
   padding: $base-spacing-unit-small;

@@ -2,7 +2,6 @@
 @import 'settings/colours';
 @import 'settings/spacing';
 @import 'settings/mixins';
-@import 'settings/themes';
 @import 'settings/accents';
 
 /*--- Vendor Files ---*/
@@ -46,3 +45,4 @@
 
 /*--- Import Trumps ---*/
 @import 'trumps/helpers';
+@import 'themes/themes';
