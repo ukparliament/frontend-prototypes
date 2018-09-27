@@ -1,0 +1,33 @@
+if article
+  dl.meta
+    dt Publisher/s
+    dd #[+link('#', 'Name of publisher')], #[+link('#', 'Name of second publisher')]
+    dt Date published
+    dd
+      time(datetime="2018-09-18") 18 September 2018
+    dt Found in
+    dd #[+link('http://localhost:5000/templates/prototypes/_collection.html', 'Collection one')], #[+link('http://localhost:5000/templates/prototypes/_collection.html', 'Collection two')]
+else
+  dl.meta
+    dt Weblink
+    dd
+      span.url #[+link('#', 'http://www.legislation.gov.uk/uksi/2018/538/made')]
+    dt Made
+    dd
+      time(datetime='2018-04-01') 1 April 2018
+    dt Laid
+    dd
+      time(datetime='2018-05-01') 1 May 2018
+    dt Coming in to force date
+    dd
+      time(datetime='2018-06-01') 1 June 2018
+    dt Coming in to force note
+    dd Note goes here
+    dt Preceding proposed negative statutory instrument
+    dd #[+link('#', 'Proposed Negative Statutory Instrument 1')]
+    dd #[+link('#', 'Proposed Negative Statutory Instrument 2')]
+    dt Laying person
+    dd Nick Lodgeli
+    dd Justin Holliday
+    dt Laying body
+    dd Home Office

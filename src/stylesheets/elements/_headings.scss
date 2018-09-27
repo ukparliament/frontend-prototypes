@@ -1,4 +1,5 @@
 /*--- Base Heading Settings ---*/
+
 h1, h2, h3, h4, h5, h6 {
   padding: 0;
   font-weight: 500;
@@ -14,6 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--- Heading Settings ---*/
+
 h1, .alpha {
   @include alpha;
   margin-bottom: $base-spacing-unit-large;
@@ -69,26 +71,37 @@ h5, h6, .epsilon {
 
 /*--- Heading Nested Elements ---*/
 
-small + h1 {
-  padding-top: ($base-spacing-unit + 2);
-}
-
 h1 {
   @include last-child;
-
-  span {
-    display: block;
-  }
-  span.context {
-    @include gamma;
-    @include typography--light;
-    margin: $base-spacing-unit-tiny 0;
-  }
 }
 
-/*--- Footer Settings ---*/
+h1 span {
+  display: block;
+}
+
+h1 .context {
+  @include summary;
+  margin-bottom: $base-spacing-unit-extra-large;
+}
+
+/*--- Headers Settings ---*/
+
+article header h1 {
+  margin-bottom: $base-spacing-unit-large;
+}
+
+/*--- Footers Settings ---*/
+
 footer h2 {
   @extend .epsilon;
+}
+
+article footer h2 {
+  @extend .beta;
+}
+
+article footer:first-of-type {
+  @include first-child;
 }
 
 /*--- Component Settings ---*/

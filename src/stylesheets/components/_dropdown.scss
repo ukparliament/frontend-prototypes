@@ -35,7 +35,7 @@ aside.dropdown .dropdown__details {
     background-color: transparent;
   }
   .dropdown__details {
-    border-bottom: 1px solid $grey-3;
+    @include border-bottom;
     padding-right: 0;
     padding-left: 0;
     margin-top: $base-spacing-unit-tiny;

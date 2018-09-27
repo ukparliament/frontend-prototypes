@@ -51,7 +51,7 @@
     @include last-child;
   }
 
-  /*--- Print styles ---*/
+  /* Print Styles */
 
   @media print {
     display: none;
@@ -64,7 +64,7 @@
     display: block;
   }
 
-  /*--- Print styles ---*/
+  /* Print Styles */
 
   @media print {
     &.show {

@@ -25,6 +25,15 @@
   border-bottom-left-radius: ($bot-left + 0px);
 }
 
+/*--- Global Default Bottom Border ---*/
+
+@mixin border-top {
+  border-top: 1px solid $grey-3;
+}
+@mixin border-bottom {
+  border-bottom: 1px solid $grey-3;
+}
+
 /*--- Theme [background colour, typography, link colour, hover color, accent colour] ---*/
 
 @mixin theme($background, $color, $link-color, $hover-color, $accent) {
@@ -208,7 +217,7 @@
 /*--- List Mixins ---*/
 
 @mixin list {
-  margin-left: 0;
+  padding-left: 0;
   list-style: none;
 
   ol {
@@ -261,7 +270,7 @@
     width: 100%;
     margin-bottom: 0;
     background: transparent;
-    border-bottom: solid 1px $grey-3;
+    @include border-bottom;
     padding: $base-spacing-unit-tiny 0 ($base-spacing-unit-tiny - 1) 0;
   }
   > li:first-of-type {
@@ -451,7 +460,13 @@
   font-weight: 500;
 }
 
-/*--- Heading Mixins ---*/
+@mixin summary {
+  @include gamma;
+  @include typography--light;
+  margin: $base-spacing-unit-tiny 0;
+}
+
+/*--- Heading Mixins [ Usage - headings within lists] ---*/
 
 @mixin list-headings {
   h2, h3, h4, h5, h6 {
@@ -588,4 +603,11 @@
 }
 @mixin theme--vibrant--yellow {
   @include theme($vibrant__yellow, $grey-1, $deep-purple, $grey-2, $vibrant__yellow--dark);
+}
+
+/*--- Hint ---*/
+
+@mixin hint {
+  box-shadow: inset 0px 0px 0px 1px $grey-3;
+  display: inline-block;
 }

@@ -1,4 +1,5 @@
 /*--- Import Settings ---*/
+
 @import 'settings/colours';
 @import 'settings/fonts';
 @import 'settings/spacing';
@@ -6,10 +7,12 @@
 @import 'objects/grid-settings';
 
 /*--- Import Components ---*/
+
 @import 'components/highlight';
 
 
-/*--- Status Banne Beta ---*/
+/*--- Status Banner Beta ---*/
+
 .status--banner__beta {
   @include status--banner;
 
@@ -41,13 +44,12 @@
     }
   }
 
-  /*--- Print styles ---*/
+  /* Print Styles */
 
   @media print {
     display: none;
   }
 }
-
 
 /*--- Navigation number ---*/
 
@@ -61,4 +63,42 @@ section .navigation--number {
     align-items: unset;
     justify-content: unset;
   }
+}
+
+/*--- Article wrapper [current article structure] ---*/
+
+.article--wrapper .container,
+.section--wide .container,
+.container {
+	position: relative;
+	padding: 0 $base-container-unit-small;
+	margin: 0 auto;
+	width: 100%;
+
+	@include media($medium) {
+		width: $medium;
+	}
+	@include media($large) {
+		padding: 0 $base-container-unit-large;
+		width: $large;
+	}
+	@include media($extra-large) {
+		width: $extra-large;
+	}
+}
+
+.article--wrapper .container {
+	@include media($medium) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.article--wrapper article {
+	flex: 1;
+	margin-top: 60px;
+}
+
+.article--wrapper header {
+	padding: 0;
 }

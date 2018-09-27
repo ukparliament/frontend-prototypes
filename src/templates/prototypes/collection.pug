@@ -1,0 +1,26 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage
+
+  .section--primary
+    .container
+      //- Page Title
+      small #[+link('#', 'Thing [Collection]')]
+      h1
+        span Collection name
+        span.context Context
+      p Summary is a brief overview of what the content is about.
+
+  section(tabindex=0)#content
+    .container
+      h2 Collection of collections
+      ol.list--block
+        +list--block__generic('Collection name', 'paragraph')
+        +list--block__generic('Collection name', 'paragraph')
+        +list--block__generic('Collection name', 'paragraph')
+
+      h2 Collection of articles
+      ol.list--block
+        +list--block__generic('Article name', 'paragraph')
+        +list--block__generic('Article name', 'paragraph')
+        +list--block__generic('Article name', 'paragraph')

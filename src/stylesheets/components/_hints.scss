@@ -1,8 +1,7 @@
 /*--- Hints ---*/
 
 .hint {
-  box-shadow: inset 0px 0px 0px 1px $grey-3;
-  display: inline-block;
+  @include hint;
 }
 
 .hint[class*="theme--"] {
@@ -20,3 +19,4 @@
   word-break: break-all;
   padding-left: 0;
 }
+

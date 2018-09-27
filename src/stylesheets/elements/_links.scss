@@ -50,7 +50,7 @@ body > footer a  {
   }
 
   &:first-child {
-    border-bottom: 1px solid $grey-3;
+    @include border-bottom;
   }
 }
 
@@ -138,9 +138,6 @@ aside.dropdown .dropdown__details li a {
 
 /*--- Figure ---*/
 
-figure a {
-  display: block;
-  &:hover {
-    opacity: 0.8;
-  }
+figure a :hover {
+  opacity: 0.8;
 }

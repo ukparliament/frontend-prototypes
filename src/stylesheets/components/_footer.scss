@@ -1,27 +1,13 @@
-body > {
-  footer {
-    width: 100%;
-    display: inline-block;
-    box-sizing: border-box;
-    background-color: $deep-purple;
-    padding-bottom: 60px;
-  }
+/*--- Global Footer ---*/
 
-  /*--- Print Styles ---*/
+body > footer {
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: $deep-purple;
+  padding-bottom: 60px;
 
-  @media print {
-    footer {
-      display: none;
-    }
-  }
-}
-
-/*--- Article Settings ---*/
-
-article footer {
-  margin-top: round($base-spacing-unit * 9);
-
-  /*--- Print Styles ---*/
+  /* Print Styles */
 
   @media print {
     display: none;

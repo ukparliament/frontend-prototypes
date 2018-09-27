@@ -4,15 +4,21 @@
   outline: none;
 }
 
+/*--- Main Content Rules ---*/
+
+main {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding-bottom: $base-spacing-unit-large;
+}
+
 /*--- Section Options ---*/
 
 .section--primary {
   padding-top: $base-spacing-unit-extra-large;
-  margin-bottom: $base-spacing-unit-tiny;
 
   @include media($medium) {
     padding-top: ($base-spacing-unit-extra-large + $base-spacing-unit);
-    margin-bottom: $base-spacing-unit-small;
   }
 }
 
@@ -43,7 +49,6 @@ main .container {
   @include section-offset;
 }
 
-.article--wrapper .container,
 .section--wide .container,
 .container {
   position: relative;
@@ -63,25 +68,17 @@ main .container {
   }
 }
 
-.article--wrapper .container {
-  @include media($medium) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
 .navigation--number .container {
   align-items: flex-start;
   display: flex;
   justify-content: center;
 }
 
+/*--- Role Main ---*/
 
-/*--- Elements with attribute role='main' ---*/
-article [role='main'] {
-  @include media($small) {
-    padding-top: $base-spacing-unit-large;
-  }
+[role*="main"] .container > :last-child {
+  padding-bottom: $base-spacing-unit-extra-large;
+  @include border-bottom;
 }
 
 /*--- Block Options ---*/
@@ -109,10 +106,10 @@ article [role='main'] {
 .block--border {
   @include headings-margin-top(0);
   @include last-child;
+  @include border-bottom;
   padding-top: ($base-spacing-unit-small - 1); // -1px to compensate for border height
   padding-bottom: ($base-spacing-unit-tiny - 1); // -1px to compensate for border height
-  border-bottom: 1px solid $grey-3;
-  border-top: 1px solid $grey-3;
+  @include border-bottom;
 
   p {
     margin-bottom: $base-spacing-unit;
@@ -121,7 +118,7 @@ article [role='main'] {
 
 .block--border__bottom {
   padding-bottom: ($base-spacing-unit-medium - 1); // -1px to compensate for border height
-  border-bottom: 1px solid $grey-3;
+  @include border-bottom;
 
   @include media($medium) {
     padding-bottom: ($base-spacing-unit-large - 1); // -1px to compensate for border height

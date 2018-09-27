@@ -33,8 +33,8 @@ figcaption {
   @include micro;
   margin-top: 0;
   color: $grey-2;
+  @include border-bottom;
   background-color: $grey-5;
-  border-bottom: solid 1px $grey-3;
   padding: $base-spacing-unit-tiny 0;
 }
 

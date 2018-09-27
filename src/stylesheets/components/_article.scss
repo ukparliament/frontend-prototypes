@@ -1,14 +1,40 @@
+/*--- Article Styles ---*/
+
 article {
   position: relative;
-  margin: $base-spacing-unit-extra-large 0 $base-spacing-unit-small;
-  @include media($large) {
-    flex: 1;
-    margin-top: ($base-spacing-unit-large * 2);
-  }
 
   @media print {
     p, blockquote, li {
       page-break-inside: avoid;
     }
+  }
+}
+
+article header .container,
+article [role*="main"] .container,
+article footer .container {
+  @include section-offset;
+}
+
+/*--- Article Header ---*/
+
+article header {
+  padding-top: $base-spacing-unit-extra-large;
+}
+
+/*--- Article Main ---*/
+
+article [role*="main"] {
+  padding: $base-spacing-unit-small 0;
+}
+
+/*--- Article Footer ---*/
+
+article footer {
+
+  /* Print Styles */
+
+  @media print {
+    display: none;
   }
 }

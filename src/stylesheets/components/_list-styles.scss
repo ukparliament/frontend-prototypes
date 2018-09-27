@@ -1,8 +1,7 @@
 /*--- List Core Settings ---*/
 
 ul, ol {
-  padding: 0;
-  margin-left: $base-spacing-unit-large;
+  padding: 0 0 0 $base-spacing-unit-large;
   li {
     padding: 0;
   }
@@ -112,7 +111,7 @@ dl {
 
   &:last-child {
     @include media($medium) {
-      border-bottom: 1px solid $grey-3;
+      @include border-bottom;
     }
   }
 
@@ -135,7 +134,7 @@ dl {
 
 .list--tab {
   @include list--inline;
-  border-bottom: 2px solid $grey-4;
+  @include border-bottom;
 
   li {
     margin-bottom: 0;
@@ -244,7 +243,7 @@ article [role='main'] {
     }
   }
   ol {
-    margin-left: ($base-spacing-unit-extra-large + $base-spacing-unit-small);
+    padding-left: ($base-spacing-unit-extra-large + $base-spacing-unit-small);
     > li {
       counter-increment: item;
       margin: $base-spacing-unit-medium 0;
@@ -264,7 +263,7 @@ article [role='main'] {
     }
   }
 
-  /*--- Print styles ---*/
+  /* Print Styles */
 
   @media print {
     ul > li, ol > li {
@@ -313,8 +312,29 @@ aside.dropdown .dropdown__details {
     }
   }
   li {
-    // Stops LIs from leaking into the next column
+    /* Stops <li> tags from leaking into the next column */
     break-inside: avoid-column;
     margin-bottom: 0;
   }
+}
+
+.utilities {
+  @include list;
+  @include typography--heavy;
+}
+
+article aside ol {
+  @include list;
+  margin-bottom: $base-spacing-unit-large;
+}
+
+article aside li:before {
+  /* Dash preceeding a collection list item */
+  content: "\002014";
+  color: $grey-2;
+  margin-right: $base-spacing-unit;
+}
+
+article aside li.active {
+  @include typography--heavy;
 }
