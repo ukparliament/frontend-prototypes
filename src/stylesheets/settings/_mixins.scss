@@ -270,6 +270,35 @@
   }
 }
 
+@mixin list--definition {
+  @include list;
+  width: 100%;
+  margin: 0 0 $base-spacing-unit-small;
+
+  dt {
+    padding-right: $base-spacing-unit-tiny;
+    @include media($extra-small) {
+      float: left;
+    }
+  }
+  dt:after {
+    content: ":"
+  }
+  ul {
+    @include list;
+    display: inline-block;
+  }
+  ul li {
+    display: block;
+  }
+  dd ul > li {
+    margin-bottom: 0;
+  }
+  dd + dd {
+    margin-top: - $base-spacing-unit;
+  }
+}
+
 /*--- Flexbox grid ---*/
 
 @mixin flex($elem1-width, $elem2-width:null, $gutter-width:null) {

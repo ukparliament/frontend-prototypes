@@ -1,0 +1,51 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+
+  .section--primary(tabindex=0)#content
+    .container
+
+      small #[+link('#', 'Statutory Instruments')]
+      h1
+        span Insurance Companies (Taxation of Re-insurance Business) Regulations 2018
+        span.context SI 2018/538
+
+      dl.meta
+        dt Weblink
+        dd
+          span.url #[+link('#', 'http://www.legislation.gov.uk/uksi/2018/538/made')]
+        dt Made
+        dd
+          time(datetime='2018-04-01') 1 April 2018
+        dt Laid
+        dd
+          time(datetime='2018-05-01') 1 May 2018
+        dt Coming in to force date
+        dd
+          time(datetime='2018-06-01') 1 June 2018
+        dt Coming in to force note
+        dd Note goes here
+        dt Proposed negative SI
+        dd #[+link('#', 'Proposed Negative Statutory Instrument 1')]
+        dd #[+link('#', 'Proposed Negative Statutory Instrument 2')]
+        dt Laying person
+        dd Nick Lodgeli
+        dd Justin Holliday
+        dt Laying body
+        dd Home Office
+
+  section
+    .container
+      h2 Work package
+      ul.list--block
+
+        li
+          .card
+            .card__details
+              h2 #[+link('#', 'zhi6ZHnQ')]
+              dl
+                dt Procedure
+                dd #[+link('#', 'Made negative')]
+                dt Status
+                dd Status details
+

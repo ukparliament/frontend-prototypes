@@ -91,13 +91,8 @@ section:not([class*="section--wide"] ) .list--3 {
 
 /*--- List Definition ---*/
 
-.list--definition {
-  margin: 0 0 $base-spacing-unit-small;
-
-  & dt {
-    float: left;
-    padding-right: $base-spacing-unit-tiny;
-  }
+dl {
+  @include list--definition;
 }
 
 /*--- List Events ---*/
