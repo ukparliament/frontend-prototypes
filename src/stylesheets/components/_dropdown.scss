@@ -8,6 +8,7 @@
     padding: $base-spacing-unit-small;
     @include last-child;
     transition: padding-top 0.1s linear, padding-bottom 0.1s linear;
+    margin-bottom: $base-spacing-unit-small;
   }
 }
 
