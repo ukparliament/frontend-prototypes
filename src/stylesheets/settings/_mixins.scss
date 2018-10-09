@@ -276,6 +276,7 @@
   margin: 0 0 $base-spacing-unit-small;
 
   dt {
+    @include typography--heavy;
     padding-right: $base-spacing-unit-tiny;
     @include media($extra-small) {
       float: left;
