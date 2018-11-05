@@ -52,14 +52,16 @@ ul, ol, dl,
 .block,
 .block--deep,
 .block--transparent,
-.card,
-[class*="card--"],
+.card--extended,
+.card--extended .card,
+.card--extended [class*="card--"],
 .dropdown,
 .list--events,
 .list--tab,
 .input-group,
 .input-group__inline,
-.status--highlight {
+.status--highlight,
+.table--wrapper {
 	margin: 0 0 $base-spacing-unit-small 0;
 }
 
@@ -74,6 +76,8 @@ select {
 /*--- Margin Bottom - Extra Large ---*/
 
 .block--border,
-.block--border__bottom {
+.block--border__bottom,
+.card,
+[class*="card--"] {
 	margin: 0 0 $base-spacing-unit-extra-large 0;
 }

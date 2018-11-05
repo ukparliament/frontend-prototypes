@@ -196,7 +196,8 @@ article + aside > h2 {
 /*--- Card styles ---*/
 
 .card,
-[class*="card--"] {
+.card--large,
+.card--small {
   h2, h3, h4, h5, h6 {
     @include epsilon;
     flex-basis: 100%;

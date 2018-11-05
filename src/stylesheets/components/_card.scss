@@ -34,3 +34,9 @@
     text-align: right;
   }
 }
+
+/*--- Card extended ---*/
+
+.card--extended {
+  @include last-child;
+}

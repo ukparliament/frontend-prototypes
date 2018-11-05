@@ -1,0 +1,149 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+
+  .section--primary(tabindex=0)#content
+    .container
+      h1
+        span Cards
+
+  section
+    .container
+
+      .card--large
+        figure.avatar--round
+          +link('#', '')(aria-hidden="true", tabIndex="-1")
+            picture
+              +image('https://s3-eu-west-1.amazonaws.com/web1live.pugin-website/images/placeholder_members_image.png', '')
+        .card__details
+          h2 #[+link('#', 'Large')]
+          p= 'Description about the card'
+
+      .card--large
+        figure.avatar
+          +link('#', '')(aria-hidden="true", tabIndex="-1")
+            picture
+              +image('https://s3-eu-west-1.amazonaws.com/web1live.pugin-website/images/placeholder_members_image.png', '')
+        .card__details
+          h2 #[+link('#', 'Large')]
+          p= 'Description about the card'
+
+      .card--large
+        figure.svg--icon.svg--file__word
+          include ../../icons/file.svg
+        .card__details
+          h2 #[+link('#', 'Large')]
+          p= 'Description about the card'
+
+      .card
+        figure.avatar--round
+          +link('#', '')(aria-hidden="true", tabIndex="-1")
+            picture
+              +image('https://s3-eu-west-1.amazonaws.com/web1live.pugin-website/images/placeholder_members_image.png', '')
+        .card__details
+          h2 #[+link('#', 'Medium')]
+          p= 'Description about the card'
+
+      .card
+        figure.avatar
+          +link('#', '')(aria-hidden="true", tabIndex="-1")
+            picture
+              +image('https://s3-eu-west-1.amazonaws.com/web1live.pugin-website/images/placeholder_members_image.png', '')
+        .card__details
+          h2 #[+link('#', 'Medium')]
+          p= 'Description about the card'
+
+      .card
+        figure.svg--icon.svg--file__word
+          include ../../icons/file.svg
+        .card__details
+          h2 #[+link('#', 'Medium')]
+          p= 'Description about the card'
+
+      .card--small
+        figure.avatar--round
+          +link('#', '')(aria-hidden="true", tabIndex="-1")
+            picture
+              +image('https://s3-eu-west-1.amazonaws.com/web1live.pugin-website/images/placeholder_members_image.png', '')
+        .card__details
+          h2 #[+link('#', 'Small')]
+          p= 'Description about the card'
+
+      .card--small
+        figure.avatar
+          +link('#', '')(aria-hidden="true", tabIndex="-1")
+            picture
+              +image('https://s3-eu-west-1.amazonaws.com/web1live.pugin-website/images/placeholder_members_image.png', '')
+        .card__details
+          h2 #[+link('#', 'Small')]
+          p= 'Description about the card'
+
+      .card--small
+        figure.svg--icon.svg--file__word
+          include ../../icons/file.svg
+        .card__details
+          h2 #[+link('#', 'Small')]
+          p= 'Description about the card'
+
+      .card
+        .card__details
+          h2 #[+link('#', 'Without avatar')]
+          p= 'Description about the card'
+
+      .card
+        figure.avatar--round
+          +link('#', '')(aria-hidden="true", tabIndex="-1")
+            picture
+              +image('https://s3-eu-west-1.amazonaws.com/web1live.pugin-website/images/placeholder_members_image.png', '')
+        .card__details
+          h2 #[+link('#', 'With count')]
+          p= 'Description about the card'
+        .card__details
+          span.count= '200'
+          = 'Text'
+
+      .card--extended
+        h2 Extended
+        .card--small
+          figure.avatar--round
+            +link('#', '')(aria-hidden="true", tabIndex="-1")
+              picture
+                +image('https://s3-eu-west-1.amazonaws.com/web1live.pugin-website/images/placeholder_members_image.png', '')
+          .card__details
+            h3 #[+link('#', 'Extended')]
+            p= 'Description about the card'
+        .table--wrapper
+          table
+            thead
+              tr
+                th Column_1
+                th Column_2
+                th Column_3
+                th Column_4
+                th Column_5
+                th Column_6
+                th Column_7
+                th Column_8
+                th Column_9
+            tbody
+              tr
+                td Column_1
+                td Column_2
+                td Column_3
+                td Column_4
+                td Column_5
+                td Column_6
+                td Column_7
+                td Column_8
+                td Column_9
+              tr
+                td Column_1
+                td Column_2
+                td Column_3
+                td Column_4
+                td Column_5
+                td Column_6
+                td Column_7
+                td Column_8
+                td Column_9
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
