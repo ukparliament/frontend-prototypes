@@ -1,4 +1,6 @@
 extends ../../layouts/layout.pug
+block meta
+  meta(name="format-detection", content="telephone=no")
 block content
   -var thingPage = true
 
@@ -24,6 +26,29 @@ block content
         p You are using our new search. We #[+link('https://pds.blog.parliament.uk/2018/01/15/switching-off-our-old-search-service/', 'switched off the old search')(data-tracking="appInsights" data-type="switchingOffOldSearchBlog")] on 19 January 2018.
 
       ol.list--block
+        li
+          .card
+            .card__details
+              h2
+                a(href='https://beta.parliament.uk/people/vc16RlH7')
+                  b Afzal Khan
+                  |  - UK Parliament
+              ul.list--inline
+                li
+                  span.hint.theme--grey-4 beta
+                li
+                  span.url
+                    | https://beta.
+                    b parliament.uk
+                    | /people/vc16RlH7
+              p
+                | Email
+                b afzal.khan
+                | .mp@
+                b parliament.uk
+                |  Phone 020 7219 3570 Address House of Commons, London, SW1A 0AA. You may be able to discuss issues with your MP in person or online.
+
+
         each object, index in [{url: 'https://www.parliament.uk/edm/2017-19/663', title: 'Early day motion 663 - ROYAL HOSPITAL ... - parliament.uk', hint: 'Beta', hintCount:'1', formatted_url: 'https://www.parliament.uk/edm/2017-19/663', description: 'That this House congratulates The Dairy Council in staging the 2017 Annual Ceremony of the Christmas Cheeses, which forms the beginning of the Chelsea...'}, {url: 'http://www.parliament.uk/edm/2015-16/659', title: 'Early day motion 659 - CHEESE WARS AND ENGLISH STILTON ...', hint: '', hintCount:'', formatted_url: 'www.parliament.uk/edm/2015-16/659', description: 'That this House notes the 250th anniversary of the Cheese Wars that led to rioting in Leicestershire and Derbyshire, which forced local militia forces being...'}, {url: 'https://www.parliament.uk/documents/commons-catering/menus/MenusSpringSummer2017/May-Cheese.pdf', title: 'Cheese Selection - parliament.uk', hint: 'pdf', hintCount:'1', formatted_url: 'https://www.parliament.uk/.../MenusSpringSummer2017/May-Cheese.pdf', description: 'Cheese Selection This May our cheese trolley features a range of cheeses from within the British Isles, with a choice of well-considered accompaniments.'}, {url: 'http://researchbriefings.files.parliament.uk/documents/SN02721/SN02721.pdf', title: 'UK Dairy Industry Statistics', hint: 'pdf', hintCount:'1', formatted_url: 'researchbriefings.files.parliament.uk/documents/SN02721/SN02721.pdf', description: 'cheese, but a positive trade balance in milk and cream. &bull; Farm-gate milk prices for August 2015 were 23.3 pence per litre, ... 9 UK Dairy Industry Statistics . 5.'}, {url: 'http://www.parliament.uk/documents/facilities/Proativepublication-menus/October%202015%20menus/Smoking-Room-Afternoon-Tea-Menu-October-12-2015.pdf', title: 'House of Commons Cheese and - UK Parliament', hint: 'pdf', hintCount:'1', formatted_url: 'www.parliament.uk/documents/facilities/Proativepublication-menus...', description: 'Available 15.00 &ndash; 17.30, Monday to Wednesday Assorted sandwiches &pound;3.50 per round Home-made scone with butter and conserve &pound;2.75 with clotted cream &pound;2.75'}]
           li
             .card

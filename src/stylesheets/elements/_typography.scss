@@ -14,6 +14,10 @@ small, .milli {
   font-weight: 400;
 }
 
+b {
+  font-weight: normal;
+}
+
 .micro {
   color: $grey-2;
   @include micro;
@@ -84,4 +88,10 @@ article header small {
   @include delta;
   display: inline-block;
   margin-bottom: $base-spacing-unit;
+}
+
+/*--- Card ---*/
+
+.card h2 b {
+  font-weight: 500;
 }
