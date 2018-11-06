@@ -5,7 +5,6 @@
   "urls": [
     "http://localhost:5000/templates/prototypes/article.html",
     "http://localhost:5000/templates/prototypes/article-new.html",
-    "http://localhost:5000/templates/prototypes/collection.html",
     "http://localhost:5000/templates/prototypes/front-page.html",
     "http://localhost:5000/templates/prototypes/people-id.html",
     "http://localhost:5000/templates/prototypes/people-constituency.html",
