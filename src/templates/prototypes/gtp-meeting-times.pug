@@ -1,0 +1,41 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+  -var article = true
+
+  article(tabindex=0)#content
+    header
+      .container
+        small #[+link('#', 'Guidance')]
+        h1
+          span Introduction to meeting times
+          span.context This article is part of MPs Guide to Procedure
+        
+        dl.meta
+          dt Found in
+          dd #[+link('#', 'Meeting times')]
+
+    div(role='main')
+      .container
+        p The time the House starts sitting each day is fixed. The time it finishes can vary according to the business. There is a usual time (known as the moment of interruption) at which the main business finishes and the half-hour adjournment debate starts, and then a usual time at which the sitting itself finishes, but you can't assume that these times will always apply.
+        p If you're not sure what time a particular day's business is likely to finish you can ask the Table Office for advice.
+        p The House usually meets at the times for a Monday sitting on the first day back after recess, whether this falls on a Monday or not.
+        
+        h2
+          span Contact an expert
+        p Table Office  
+        ul
+          li Email: tableoffice@parliament.uk
+          li Extension: 3302
+
+    footer
+      .container
+        aside
+          h2
+            +link('#', 'Meeting times')
+          ol
+            li.active Introduction to meeting times
+            li #[+link('#', 'A typical day in the chamber')]
+            li #[+link('#', 'Recesses')]
+        
+        include ../../components/utilities

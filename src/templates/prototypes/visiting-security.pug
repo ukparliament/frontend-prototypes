@@ -1,0 +1,77 @@
+extends ../../layouts/layout.pug
+block content
+  -var thingPage = true
+  -var article = true
+
+  article(tabindex=0)#content
+    header
+      .container
+        small #[+link('#', 'Article')]
+        h1
+          span Security
+        p.lead To keep Parliament safe for everyone, we have security measures we ask you to follow when you visit.
+    
+        dl.meta
+          dt Found in
+          dd #[+link('#', 'Plan your visit')]
+
+    div(role='main')
+      .container
+        h2
+          span Search and screening
+        p You and your belongings will need to go through airport-style security before entering Parliament.
+        p On average it takes 20 minutes to get through security. At busier times, like Tuesday and Wednesday afternoons, the average time is 45 minutes.
+        p The queue starts outside the building so dress for the weather. 
+
+        h2
+          span Illegal items
+        p It’s illegal in the UK to carry certain self-defence items which are allowed in other countries.
+        p You will be arrested if you are found carrying:
+        ul
+          li knife with a blade over 7.7cm (3 inches)
+          li flick knives
+          li butterfly knives
+          li personal defence sprays
+          
+        h2
+          span Restricted items
+        p If you have any of the following items when going through security, you will need to hand them in and collect them when you leave:
+        ul
+          li knives, Swiss army knives, scissors, cutlery
+          li screwdrivers
+          li paint spray
+          li padlocks, chains and climbing gear
+          li whistles and items that make a noise
+          li banners, placards and flags
+          li liquids that are not in sealable containers
+        p Items not collected on the day will be taken to the Lost Property Office.
+        p If you have sharp items for medical reasons, please speak to a member of security when you arrive.
+        
+        h2
+          span Bags and bikes
+        p There are no cloakrooms, so you need to keep your belongings with you at all times.
+        p Luggage larger than 550 mm x 360 mm is not allowed. Charing Cross, Victoria, and Waterloo stations have left luggage facilities.
+        p Non-folding bicycles are not allowed. The nearest bike racks are outside 7 Millbank.
+        
+        h2
+          span Animals
+        p Only assistance dogs are allowed into Parliament.
+        
+        h2
+          span Security cameras
+        p We use cameras, alarms, and other security devices across Parliament.
+        p Read our Security Camera Policy for further information.
+
+    footer
+      .container
+        aside
+          h2
+            +link('#', 'Plan your visit')
+          ol
+            li #[+link('#', 'How to find us')]
+            li #[+link('#', 'Eating and drinking')]
+            li.active Security
+            li #[+link('#', 'Entering parliament')]
+            li #[+link('#', 'Facilities')]
+
+        include ../../components/utilities
