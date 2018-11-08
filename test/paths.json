@@ -27,6 +27,6 @@
     "http://localhost:5000/templates/prototypes/_tracks.html",
     "http://localhost:5000/templates/prototypes/_toggles.html",
     "http://localhost:5000/templates/prototypes/gtp-meeting-times.html",
-    "http://localhost:5000/templates/visiting-security.html"
+    "http://localhost:5000/templates/prototypes/visiting-security.html"
   ]
 }
