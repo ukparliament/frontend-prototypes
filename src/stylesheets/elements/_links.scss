@@ -141,3 +141,9 @@ aside.dropdown .dropdown__details li a {
 figure a :hover {
   opacity: 0.8;
 }
+
+/*--- Article styles---*/
+
+article aside li a {
+  @include typography--light;
+}

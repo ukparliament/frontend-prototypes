@@ -104,6 +104,12 @@ article footer:first-of-type {
   @include first-child;
 }
 
+body > footer h2 {
+  color: $grey-5;
+  margin-top: $base-spacing-unit-medium;
+  margin-bottom: $base-spacing-unit-tiny;
+}
+
 /*--- Component Settings ---*/
 
 .block,

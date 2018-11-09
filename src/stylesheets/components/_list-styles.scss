@@ -335,6 +335,6 @@ article aside li:before {
   margin-right: $base-spacing-unit;
 }
 
-article aside li.active {
+article aside li {
   @include typography--heavy;
 }
