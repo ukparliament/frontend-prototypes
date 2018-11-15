@@ -22,15 +22,17 @@ block content
       .block--border__bottom
         .block
           h2 Contact
-          +dropdownToggle("When to contact an MP")
-            p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
-            ul
-              li Hospitals and the NHS
-              li Problems with benefits, pensions and national insurance
-              li Immigration
-              li School closures and funding
-              li Transport facilities
-            p #[+link('#', 'Who else can help with my issue?')]
+          .dropdown(data-toggle='item')
+            +button('When to contact an MP', 'btn--toggle')(data-toggle='parent-item')
+            .dropdown__content(data-toggle='content')
+              p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
+              ul
+                li Hospitals and the NHS
+                li Problems with benefits, pensions and national insurance
+                li Immigration
+                li School closures and funding
+                li Transport facilities
+              p #[+link('#', 'Who else can help with my issue?')]
 
           p Please include your postcode when contacting your MP.
           dl.list--definition

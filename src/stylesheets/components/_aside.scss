@@ -29,3 +29,28 @@ article + aside {
 article footer aside {
   @include border-bottom;
 }
+
+.dropdown aside {
+  @include block;
+}
+
+/*--- When JavaScript is enabled ---*/
+
+.has-js .dropdown aside {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  box-shadow: 0 0 $base-spacing-unit-tiny rgba($grey-1, 0.2);
+  margin-top: $base-spacing-unit-small;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: $base-spacing-unit-small;
+    border: $base-spacing-unit-small solid transparent;
+    border-top: 0;
+    border-bottom-color: $white;
+  }
+}

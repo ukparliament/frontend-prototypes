@@ -71,11 +71,24 @@ header .btn--toggle {
   }
 }
 
-/*--- Button Toggle [within a dropdown] ---*/
+/*--- Button Toggle within components ---*/
 
-div.dropdown .btn--toggle {
+.dropdown,
+.dropdown--block {
+  .btn--toggle {
+    margin: 0;
+  }
+}
+
+.dropdown.open,
+.dropdown--block.open {
+  .btn--toggle::after {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown--block .btn--toggle {
   border: 0;
-  margin: 0;
   width: 100%;
   display: inline;
   text-align: left;
@@ -93,14 +106,14 @@ div.dropdown .btn--toggle {
   }
 }
 
-div.dropdown.open .btn--toggle::after {
-  transform: rotate(180deg);
-}
-
-/*--- Button Toggle [within a block with a dropdown] ---*/
-
 [class*="block"] .dropdown .btn--toggle {
-  padding: 0;
+  padding: 0 $base-spacing-unit-large 0 0;
+  @include typography--heavy;
+  @include links($grey-1, none, $grey-1, $grey-1);
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
 
 /*--- Close buttons ---*/

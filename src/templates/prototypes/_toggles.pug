@@ -9,67 +9,59 @@ block content
   section
     .container
       h2 Toggle (aside)
-      aside.dropdown(data-toggle='item')
-        +button('Filter by department or body', 'btn--ghost--inverse btn--toggle')(data-toggle='parent-item')
-        .dropdown__details(data-toggle='content')
-          +link('#', 'Close')(class='btn--close', data-toggle='parent-item')
-          h2 Filter by department or body
-          h3 Government departments
-          ol
-            li #[+link('#', 'Attorney General\'s Office')]
-            li #[+link('#', 'Cabinet Office')]
-            li #[+link('#', 'Department for Business, Energy and Industrial Strategy')]
-            li #[+link('#', 'Department for Business, Innovation and Skills')]
-            li #[+link('#', 'Department for International Development')]
-            li #[+link('#', 'Department for Digital, Culture, Media and Sport')]
-            li #[+link('#', 'Department for Education')]
-            li #[+link('#', 'Department for Energy and Climate Change')]
-            li #[+link('#', 'Department for Environment, Food and Rural Affairs')]
-            li #[+link('#', 'Department for Exiting the European Union')]
-            li #[+link('#', 'Department for International Development')]
-            li #[+link('#', 'Department for International Trade')]
-            li #[+link('#', 'Department for Transport')]
-            li #[+link('#', 'Department for Work and Pensions')]
-            li #[+link('#', 'Department for Health and Social Care')]
-            li #[+link('#', 'Deputy Prime Minister')]
-            li #[+link('#', 'Foreign and Commonwealth Office')]
-            li #[+link('#', 'HM Treasury')]
-            li #[+link('#', 'Home Office')]
-            li #[+link('#', 'Ministry of Defence')]
-            li #[+link('#', 'Ministry of Housing, Communities and Local Government')]
-            li #[+link('#', 'Ministry of Justice')]
-            li #[+link('#', 'Northern Ireland Office')]
-            li #[+link('#', 'Prime Minister')]
-            li #[+link('#', 'Scotland Office')]
-            li #[+link('#', 'Wales Office')]
-            li #[+link('#', 'Women of Equalities')]
-          h3 Other departments
-          ol
-            li #[+link('#', 'Church Commissioners')]
-            li #[+link('#', 'Duchy of Lancaster Office')]
-            li #[+link('#', 'House of Commons Commission')]
-            li #[+link('#', 'Members Estimate Committee')]
-            li #[+link('#', 'Office of the Leader of the House of Lords')]
-            li #[+link('#', 'Public Accounts Commission')]
-            li #[+link('#', 'Speaker\'s Committee for the Independent Parliamentary Standards Authority')]
-            li #[+link('#', 'Speaker\'s Committee on the Electoral Commission')]
-            li #[+link('#', 'The Lord Chairman of Committees')]
-            li #[+link('#', 'The Senior Deputy Speaker')]
+      .dropdown(data-toggle='item')
+        +button('Find by department or body', 'btn--ghost--inverse btn--toggle')(data-toggle='parent-item')
+        .dropdown__content(data-toggle='content')
+          aside
+            +link('#', 'Close')(class='btn--close', data-toggle='parent-item')
+            h2 Departments and body
+            p Find &lt;subject&gt; by the department or body.
+            h3 Government departments
+            ol
+              li #[+link('#', 'Attorney General\'s Office')]
+              li #[+link('#', 'Cabinet Office')]
+              li #[+link('#', 'Department for Business, Energy and Industrial Strategy')]
+              li #[+link('#', 'Department for Business, Innovation and Skills')]
+              li #[+link('#', 'Department for International Development')]
+              li #[+link('#', 'Department for Digital, Culture, Media and Sport')]
+              li #[+link('#', 'Department for Education')]
+              li #[+link('#', 'Department for Energy and Climate Change')]
+              li #[+link('#', 'Department for Environment, Food and Rural Affairs')]
+              li #[+link('#', 'Department for Exiting the European Union')]
+              li #[+link('#', 'Department for International Development')]
+              li #[+link('#', 'Department for International Trade')]
+              li #[+link('#', 'Department for Transport')]
+              li #[+link('#', 'Department for Work and Pensions')]
+              li #[+link('#', 'Department for Health and Social Care')]
+              li #[+link('#', 'Deputy Prime Minister')]
+              li #[+link('#', 'Foreign and Commonwealth Office')]
+              li #[+link('#', 'HM Treasury')]
+              li #[+link('#', 'Home Office')]
+              li #[+link('#', 'Ministry of Defence')]
+              li #[+link('#', 'Ministry of Housing, Communities and Local Government')]
+              li #[+link('#', 'Ministry of Justice')]
+              li #[+link('#', 'Northern Ireland Office')]
+              li #[+link('#', 'Prime Minister')]
+              li #[+link('#', 'Scotland Office')]
+              li #[+link('#', 'Wales Office')]
+              li #[+link('#', 'Women of Equalities')]
+            h3 Other departments
+            ol
+              li #[+link('#', 'Church Commissioners')]
+              li #[+link('#', 'Duchy of Lancaster Office')]
+              li #[+link('#', 'House of Commons Commission')]
+              li #[+link('#', 'Members Estimate Committee')]
+              li #[+link('#', 'Office of the Leader of the House of Lords')]
+              li #[+link('#', 'Public Accounts Commission')]
+              li #[+link('#', 'Speaker\'s Committee for the Independent Parliamentary Standards Authority')]
+              li #[+link('#', 'Speaker\'s Committee on the Electoral Commission')]
+              li #[+link('#', 'The Lord Chairman of Committees')]
+              li #[+link('#', 'The Senior Deputy Speaker')]
 
       h2 Toggle (independent)
-      +dropdownToggle("When to contact an MP")
-        p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
-        ul
-          li Hospitals and the NHS
-          li Problems with benefits, pensions and national insurance
-          li Immigration
-          li School closures and funding
-          li Transport facilities
-        p #[+link('#', 'Who else can help with my issue?')]
-
-      h2 Toggle (within a block)
-      .block
-        +dropdownToggle("When to contact an MP")
+      .dropdown--block(data-toggle='item')
+        +button('When to contact an MP', 'btn--toggle')(data-toggle='parent-item')
+        .dropdown__content(data-toggle='content')
           p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
           ul
             li Hospitals and the NHS
@@ -78,6 +70,20 @@ block content
             li School closures and funding
             li Transport facilities
           p #[+link('#', 'Who else can help with my issue?')]
+
+      h2 Toggle (within a block)
+      .block
+        .dropdown(data-toggle='item')
+          +button('When to contact an MP', 'btn--toggle')(data-toggle='parent-item')
+          .dropdown__content(data-toggle='content')
+            p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
+            ul
+              li Hospitals and the NHS
+              li Problems with benefits, pensions and national insurance
+              li Immigration
+              li School closures and funding
+              li Transport facilities
+            p #[+link('#', 'Who else can help with my issue?')]
 
         p Please include your postcode when contacting your MP.
         dl.list--definition

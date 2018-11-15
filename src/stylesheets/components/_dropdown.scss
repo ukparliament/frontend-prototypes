@@ -2,75 +2,45 @@
 
 .dropdown {
   position: relative;
-  margin-bottom: $base-spacing-unit-small;
-
-  .dropdown__details {
-    padding: $base-spacing-unit-small;
-    @include last-child;
-    transition: padding-top 0.1s linear, padding-bottom 0.1s linear;
-    margin-bottom: $base-spacing-unit-small;
-  }
 }
 
-/*--- Default Dropdown [Grey bar] ---*/
+.dropdown__content {
+  @include last-child;
+  padding-top: $base-spacing-unit-small;
+  padding-bottom: $base-spacing-unit-small;
+}
 
-div.dropdown {
+/*--- Variant Styles ---*/
+
+.dropdown--block {
   background-color: $grey-4;
-
-  .dropdown__details {
-    border-top: 1px solid $grey-3;
-  }
 }
 
-/*--- Filter Dropdown [Within an aside] ---*/
-
-aside.dropdown .dropdown__details {
-  @include block;
+.dropdown--block .dropdown__content {
+  padding-right: $base-spacing-unit-small;
+  padding-left: $base-spacing-unit-small;
 }
 
-/*--- Block Dropdowns [Dropdowns inside blocks] ---*/
+/*--- Dropdowns within components ---*/
 
-[class*="block"] {
-  .dropdown {
-    background-color: transparent;
-  }
-  .dropdown__details {
-    @include border-bottom;
-    padding-right: 0;
-    padding-left: 0;
-    margin-top: $base-spacing-unit-tiny;
-  }
+// This also targets .dropdown--block
+[class*="block"] .dropdown__content {
+  @include border-top;
+}
+
+.block .dropdown__content {
+  @include border-bottom;
+  margin-top: $base-spacing-unit-tiny;
 }
 
 /*--- When JavaScript is enabled ---*/
 
-.has-js {
-  [data-toggle="content"]:not(.open) {
-    height: 0;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-    visibility: hidden;
-    overflow: hidden;
-  }
-
-  aside.dropdown .dropdown__details {
-    position: absolute;
-    left: 0;
-    z-index: 2;
-    width: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-top: $base-spacing-unit-large;
-
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 100%;
-      left: ($base-spacing-unit-small * 6);
-      border: $base-spacing-unit-small solid transparent;
-      border-top: 0;
-      border-bottom-color: #fff;
-    }
-  }
+.has-js [data-toggle="content"]:not(.open) {
+  height: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
 }

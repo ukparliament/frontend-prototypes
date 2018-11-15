@@ -298,9 +298,9 @@ footer .list {
   margin-bottom: 0;
 }
 
-/*--- Toggle styles---*/
+/*--- Dropdown styles ---*/
 
-aside.dropdown .dropdown__details {
+.dropdown aside {
   ol, ul {
     @include list;
     @include milli;
