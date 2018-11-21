@@ -1,0 +1,23 @@
+.microsite-masthead {
+  padding: $base-spacing-unit 0;
+  @include micro;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include media($medium) {
+      display: flex;
+    }
+    li {
+      margin-right: $base-spacing-unit-tiny;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

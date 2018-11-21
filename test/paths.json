@@ -22,10 +22,11 @@
     "http://localhost:5000/templates/prototypes/_icons.html",
     "http://localhost:5000/templates/prototypes/_lists.html",
     "http://localhost:5000/templates/prototypes/_map.html",
+    "http://localhost:5000/templates/prototypes/_microsite-masthead.html",
     "http://localhost:5000/templates/prototypes/_navigations.html",
     "http://localhost:5000/templates/prototypes/_tables.html",
-    "http://localhost:5000/templates/prototypes/_tracks.html",
     "http://localhost:5000/templates/prototypes/_toggles.html",
+    "http://localhost:5000/templates/prototypes/_tracks.html",
     "http://localhost:5000/templates/prototypes/gtp-meeting-times.html",
     "http://localhost:5000/templates/prototypes/visiting-security.html"
   ]

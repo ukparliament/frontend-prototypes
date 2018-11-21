@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  -var pugin = true
+  include ../../elements/head.pug
+  body
+    script.
+      document.body.className = ((document.body.className) ? document.body.className + ' has-js' : 'has-js');
+    include ../../elements/_elements.pug
+    include ../../components/microsite-masthead.pug
+    include ../../components/status__cookie.pug
+    include ../../components/status__beta.pug
+    include ../../components/header.pug
+    main
+      .section--primary(tabindex=0)#content
+        .container
+          h1
+            span A piece of placeholder content
+    include ../../components/footer.pug
+    script(src="/javascripts/main.js")
