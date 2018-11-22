@@ -8,6 +8,6 @@ header
         input(type='search', id='search_global', name='searchglobal', maxlength='1000', pattern='^(?!.*<script|<Script).*$' aria-label="enter a search term" autocomplete="off" required)
         button(type='submit', class='btn--white', data-tracking='search', aria-label='submit search')
           include ../icons/search.svg
-    +link('#', '')(class='btn--toggle' aria-label='open search')
+    +link('#', '')(aria-label='open search')
       include ../icons/search.svg
       include ../icons/close.svg

@@ -148,8 +148,13 @@
 
   @include btn;
   @include links($color, none, $color, $color);
+  @include typography--light;
   background-color: $background-color;
   border-color: $border-color;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
 
   &:hover {
     background-color: $background-hover;
@@ -176,12 +181,10 @@
     outline: none;
   }
 
-  &.btn--toggle {
-    padding-right: $base-spacing-unit-large;
-    &::after {
-      right: ($base-spacing-unit-tiny - 2);
-      border-top-color: $color;
-    }
+  // This is for carrets inside dropdowns. Might be ideal to
+  // replace this with an SVG
+  &::after {
+    border-top-color: $color;
   }
 
   path, polygon {

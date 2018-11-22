@@ -64,7 +64,7 @@ left hand side. */
 
 /*--- Header Search ---*/
 
-header .btn--toggle svg {
+header form + a svg {
   top: 15px;
   position: absolute;
 
@@ -73,7 +73,7 @@ header .btn--toggle svg {
   }
 }
 
-header form.open + .btn--toggle svg {
+header form.open + a svg {
   &[data-icon="close"] {
     opacity: 1;
   }

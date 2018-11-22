@@ -44,13 +44,31 @@ block content
         +button('Ghost deep-purple', 'btn--ghost--deep-purple')
         +button('Ghost inverse', 'btn--ghost--inverse')
 
-        h3 Toggle
-        +button('Primary', 'btn--primary btn--toggle')
-        +button('Secondary', 'btn--secondary btn--toggle')
-        +button('Deep purple', 'btn--deep-purple btn--toggle')
-        +button('Ghost', 'btn--ghost--inverse btn--toggle')
-        noscript
-          p These buttons are no showing because you have JavaScript disabled.
+        h3 Dropdown
+        .dropdown(data-toggle='item')
+          +button('Plain (not-styled)')(data-toggle='parent-item')
+          .dropdown__content(data-toggle='content')
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+        .dropdown(data-toggle='item')
+          +button('Primary', 'btn--primary')(data-toggle='parent-item')
+          .dropdown__content(data-toggle='content')
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+        .dropdown(data-toggle='item')
+          +button('Secondary', 'btn--secondary')(data-toggle='parent-item')
+          .dropdown__content(data-toggle='content')
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+        .dropdown(data-toggle='item')
+          +button('Deep purple', 'btn--deep-purple')(data-toggle='parent-item')
+          .dropdown__content(data-toggle='content')
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+        .dropdown(data-toggle='item')
+          +button('Ghost', 'btn--ghost--inverse')(data-toggle='parent-item')
+          .dropdown__content(data-toggle='content')
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 
         h3 Alternative
         +button('Grey', 'btn--grey')

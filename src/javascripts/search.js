@@ -6,7 +6,7 @@ UK_Parliament.search = function () {
     input = header.querySelector('input'),
     inputGroup = header.querySelector('.input-group'),
     button = header.querySelector('button'),
-    buttonToggle = header.querySelector('.btn--toggle'),
+    buttonToggle = header.querySelector('form + a'),
     desktop = 768;
 
   if(buttonToggle) {

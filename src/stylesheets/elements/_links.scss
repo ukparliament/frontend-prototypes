@@ -34,6 +34,43 @@ body > footer a  {
   }
 }
 
+/*--- Search ---*/
+
+// This is a toggle for the search bar on mobile. We're using
+// an <a> tag so that if JavaScript is disabled, the link will
+// redirect to the search page as a fallback.
+header form + a {
+  top: $base-spacing-unit;
+  right: 0;
+  width: 57px;
+  height: 50px;
+  position: absolute;
+  background-color: $deep-purple;
+  padding: $base-spacing-unit $base-spacing-unit-small;
+
+  @include media(0, $medium - 1) {
+    display: inline;
+  }
+  @include media($medium) {
+    display: none;
+  }
+
+  &:after {
+    display: none;
+  }
+  &:hover, &:focus, &:active {
+    background-color: transparent;
+    outline: none;
+
+    svg[data-icon="search"] g {
+      fill: $grey-3;
+    }
+    svg[data-icon="close"] g {
+      stroke: $grey-3;
+    }
+  }
+}
+
 /*--- Maps ---*/
 
 .map .leaflet-bar a {

@@ -10,7 +10,7 @@ block content
     .container
       h2 Toggle (aside)
       .dropdown(data-toggle='item')
-        +button('Find by department or body', 'btn--ghost--inverse btn--toggle')(data-toggle='parent-item')
+        +button('Find by department or body', 'btn--ghost--inverse')(data-toggle='parent-item')
         .dropdown__content(data-toggle='content')
           aside
             +link('#', 'Close')(class='btn--close', data-toggle='parent-item')
@@ -60,7 +60,7 @@ block content
 
       h2 Toggle (independent)
       .dropdown--block(data-toggle='item')
-        +button('When to contact an MP', 'btn--toggle')(data-toggle='parent-item')
+        +button('When to contact an MP')(data-toggle='parent-item')
         .dropdown__content(data-toggle='content')
           p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
           ul
@@ -74,7 +74,7 @@ block content
       h2 Toggle (within a block)
       .block
         .dropdown(data-toggle='item')
-          +button('When to contact an MP', 'btn--toggle')(data-toggle='parent-item')
+          +button('When to contact an MP')(data-toggle='parent-item')
           .dropdown__content(data-toggle='content')
             p MPs can help with issues that are the responsibility of UK Parliament. They represent their constituencies and can help with issues such as:
             ul
