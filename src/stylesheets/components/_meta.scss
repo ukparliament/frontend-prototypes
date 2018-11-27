@@ -1,11 +1,5 @@
 .meta {
-  @include list;
   @include border-top;
   @include border-bottom;
   padding: $base-container-unit-small 0;
-
-  dd {
-    margin-bottom: $base-spacing-unit;
-    @include last-child;
-  }
 }
