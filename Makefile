@@ -71,7 +71,7 @@ json:
 
 # Minifies images
 images:
-	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
+	@$(IMAGEMIN) $(IMAGES_LOC)/* --out-dir $(PUBLIC_FOLDER)/images
 
 # Optimises SVGs
 icons:
