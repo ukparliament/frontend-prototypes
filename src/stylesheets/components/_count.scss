@@ -1,0 +1,34 @@
+/*--- Settings for count ---*/
+
+.count {
+	display: inline-block;
+}
+
+.count__number {
+	display: block;
+	@include beta;
+	@include typography--heavy;
+}
+
+/*--- Component specific rules ---*/
+
+.card__details + .count {
+	@include media($extra-small) {
+		max-width: 25%;
+		align-self: center;
+		text-align: right;
+	}
+}
+
+.navigation--number .count__number {
+	display: inline-block;
+	@include epsilon;
+	@include media($small) {
+		display: block;
+		@include typography--light;
+	}
+	& + span {
+		display: block;
+		font-size: 0;
+	}
+}

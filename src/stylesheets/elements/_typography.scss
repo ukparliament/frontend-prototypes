@@ -60,27 +60,6 @@ h1 + .lead {
   @include milli;
 }
 
-/*--- Settings for count ---*/
-
-.count {
-  display: block;
-  @include beta;
-  @include typography--heavy;
-}
-
-.navigation--number .count {
-  display: inline-block;
-  @include epsilon;
-  @include media($small) {
-    display: block;
-    @include typography--light;
-  }
-  & + span {
-    display: block;
-    font-size: 0;
-  }
-}
-
 /*--- Settings for primary--section subheadings ---*/
 
 .section--primary small,

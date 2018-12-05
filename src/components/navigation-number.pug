@@ -8,12 +8,12 @@ nav(class='navigation--number', data-active-tile='5', aria-label='Pagination')
         if index === 4
           span(data-number-see='true')
             span= 'Page '
-            span.count=  val
+            span.count__number=  val
             span= ' of 8'
         else
           a(data-number-see='true', href='#')
             span= 'Page '
-            span.count=  val
+            span.count__number=  val
             span= ' of 8'
 
   a(data-number-see='true', href='#', class='navigation-control')= 'Next'

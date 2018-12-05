@@ -27,9 +27,9 @@ mixin list--block__parties(party, count)
       .card__details
         h2 #[+link('#', party)]
         p= 'All current ' + party + ' MPs'
-      .card__details
-        span.count= count
-        | MPs
+      .count
+        span.count__number= count
+        span.count__context MPs
 
 //- List Box Accessible
 mixin list--block__accessible(constituency, date)
