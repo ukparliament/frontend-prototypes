@@ -1,47 +1,14 @@
-var
-  test = require('selenium-webdriver/testing'),
-  { Builder, until } = require('selenium-webdriver'),
+const testHelper = require(process.cwd() + '/test/helpers/test-helper');
+const {until} = require('selenium-webdriver');
+const {expect} = require('chai');
 
-  { expect } = require('chai'),
+describe('toggle()', () => {
+  let seleniumSetup = testHelper.seleniumSetup('http://localhost:5000/templates/prototypes/_toggles.html');
 
-  chrome = require('chromedriver'),
+  it('should add class "open"', async () => {
+    await seleniumSetup.driver.executeScript('return UK_Parliament.toggleClass(document.querySelector(\'[data-toggle="item"]\'), \'open\');');
 
-  driver;
-
-
-describe('toggles', function() {
-
-  // setup, this is run before all tests
-  test.before(function (done) {
-    /**
-     * Using Chrome in headless mode
-     * instead of a native headless browser so that we can:
-     * visually debug issues when required
-     * add/remove browser capabilities
-     */
-    driver = new Builder()
-      .withCapabilities({
-        'browserName': 'chrome',
-        chromeOptions: {
-          args: ['--headless']
-        }
-      })
-      .build();
-    driver.get('http://localhost:5000/templates/prototypes/_toggles.html');
-    done();
-  });
-
-  // teardown, this is run after all tests
-  test.after(function (done) {
-    driver.quit(); // quit the browser
-    done();
-  });
-
-  test.it('should add class "open"', function(done) {
-
-    driver.executeScript('return UK_Parliament.toggleClass(document.querySelector(\'[data-toggle="item"]\'), \'open\');');
-
-    driver
+    await seleniumSetup.driver
       .wait(until.elementLocated({ css: '[data-toggle="item"]' }))
       .getAttribute('class')
       .then(function(string) {
@@ -50,16 +17,12 @@ describe('toggles', function() {
         });
         expect(temp).to.include('open');
       });
-
-    done();
-
   });
 
-  test.it('should remove class "open"', function(done) {
+  it('should remove class "open"', async () => {
+    await seleniumSetup.driver.executeScript('return UK_Parliament.toggleClass(document.querySelector(\'[data-toggle="item"]\'), \'open\');');
 
-    driver.executeScript('return UK_Parliament.toggleClass(document.querySelector(\'[data-toggle="item"]\'), \'open\');');
-
-    driver
+    await seleniumSetup.driver
       .wait(until.elementLocated({ css: '[data-toggle="item"]' }))
       .getAttribute('class')
       .then(function(string) {
@@ -68,9 +31,5 @@ describe('toggles', function() {
         });
         expect(temp).to.not.include('open');
       });
-
-    done();
-
   });
-
 });

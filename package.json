@@ -20,10 +20,10 @@
   },
   "main": "server.js",
   "devDependencies": {
-    "autoprefixer": "^9.3.1",
+    "autoprefixer": "^9.4.2",
     "chai": "^4.2.0",
     "chokidar": "^2.0.4",
-    "chromedriver": "^2.44.0",
+    "chromedriver": "^2.44.1",
     "cssnano": "^4.1.7",
     "eslint": "^5.9.0",
     "eslint-config-standard": "^12.0.0",
@@ -43,7 +43,7 @@
     "postcss-cli": "^6.0.1",
     "pretty-mini-json": "^1.1.4",
     "pug-cli": "^1.0.0-alpha6",
-    "selenium-webdriver": "^3.6.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
     "svgo": "^1.1.1",
     "uglify-js": "^3.4.9",
     "valimate": "^2.3.0"
