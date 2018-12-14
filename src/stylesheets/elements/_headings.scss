@@ -212,6 +212,11 @@ article + aside > h2 {
   margin-bottom: 0;
 }
 
+article aside h2 {
+  @include epsilon;
+  @include typography--light;
+}
+
 /*--- Card styles ---*/
 
 .card,

@@ -1,18 +1,35 @@
-h2
-  +link('#', 'Collection one')
-ol
-  li #[+link('#', 'Article one')]
-  li #[+link('#', 'Article two')]
-  li #[+link('#', 'Article three')]
-  li Article header
-  li #[+link('#', 'Article five')]
-  li #[+link('#', 'Article ')]
+h2 More in:  #[+link('#', 'Collection one')]
+ol.list--2
+  li
+    .card
+      .card__details
+        small Article
+        h2 #[+link('#', 'Article one')]
+  li
+    .card
+      .card__details
+        small Article
+        h2 #[+link('#', 'Article two')]
+  li
+    .card
+      .card__details
+        small Collection
+        h2 #[+link('#', 'Collection one')]
+  li
+    .card
+      .card__details
+        small Collection
+        h2 #[+link('#', 'Collection two')]
 
-h2
-  +link('#', 'Collection two')
-ol
-  li #[+link('#', 'Article one')]
-  li Article header
-  li #[+link('#', 'Article two')]
-  li #[+link('#', 'Article three')]
-  li #[+link('#', 'Article four')]
+h2 More in:  #[+link('#', 'Collection two')]
+ol.list--2
+  li
+    .card
+      .card__details
+        small Article
+        h2 #[+link('#', 'Article one')]
+  li
+    .card
+      .card__details
+        small Collection
+        h2 #[+link('#', 'Collection one')]

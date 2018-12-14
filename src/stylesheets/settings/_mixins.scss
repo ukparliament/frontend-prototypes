@@ -389,6 +389,13 @@
   }
 }
 
+@mixin list--2 {
+  @include col--2;
+  @include media($medium) {
+    @include last-row(2);
+  }
+}
+
 /*--- Global Typography Mixins ---*/
 
 @mixin alpha {

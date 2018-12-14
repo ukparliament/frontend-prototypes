@@ -179,8 +179,8 @@ figure a :hover {
   opacity: 0.8;
 }
 
-/*--- Article styles---*/
+/*--- Component Specific ---*/
 
-article aside li a {
-  @include typography--light;
+article aside h2 a {
+  @include typography--heavy;
 }

@@ -59,10 +59,7 @@ dl, dt, dd {
 /*--- List Column Options ---*/
 
 .list--2 {
-  @include col--2;
-  @include media($medium) {
-    @include last-row(2);
-  }
+  @include list--2;
 }
 
 section:not([class*="section--wide"] ) .list--3 {
@@ -280,14 +277,6 @@ article [role='main'] {
   }
 }
 
-aside [class*="list"] li {
-  display: block;
-  width: auto;
-  &.active {
-    background-color: $grey-3;
-  }
-}
-
 footer .list {
   margin: 0;
   padding: 0;
@@ -324,17 +313,5 @@ footer .list {
 }
 
 article aside ol {
-  @include list;
-  margin-bottom: $base-spacing-unit-large;
-}
-
-article aside li:before {
-  /* Dash preceeding a collection list item */
-  content: "\002014";
-  color: $grey-2;
-  margin-right: $base-spacing-unit;
-}
-
-article aside li {
-  @include typography--heavy;
+  @include list--block;
 }

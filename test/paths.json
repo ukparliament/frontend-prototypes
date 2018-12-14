@@ -4,7 +4,6 @@
   },
   "urls": [
     "http://localhost:5000/templates/prototypes/article.html",
-    "http://localhost:5000/templates/prototypes/article-new.html",
     "http://localhost:5000/templates/prototypes/front-page.html",
     "http://localhost:5000/templates/prototypes/people-id.html",
     "http://localhost:5000/templates/prototypes/people-constituency.html",
@@ -26,8 +25,6 @@
     "http://localhost:5000/templates/prototypes/_navigations.html",
     "http://localhost:5000/templates/prototypes/_tables.html",
     "http://localhost:5000/templates/prototypes/_toggles.html",
-    "http://localhost:5000/templates/prototypes/_tracks.html",
-    "http://localhost:5000/templates/prototypes/gtp-meeting-times.html",
-    "http://localhost:5000/templates/prototypes/visiting-security.html"
+    "http://localhost:5000/templates/prototypes/_tracks.html"
   ]
 }
