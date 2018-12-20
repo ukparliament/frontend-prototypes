@@ -14,16 +14,16 @@ block content
 
         include ../../components/meta
 
+    // Lead image component //
+    figure
+      picture
+        source(srcset="https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=732&quality=80, https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=1464&quality=80 2x" media="(min-width: 480px)")
+        source(srcset="https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=444&quality=80, https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=888&quality=80 2x")
+        img(src="https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?width=732&quality=80", alt="Margot James")
+      figcaption Lead image (optional) #[+link('#','example link to resource')]
+
     div(role='main')
       .container
-        // Lead image component //
-        figure
-          picture
-            source(srcset="https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=732&quality=80, https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=CU_5:2&width=1464&quality=80 2x" media="(min-width: 480px)")
-            source(srcset="https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=444&quality=80, https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?crop=MCU_3:2&width=888&quality=80 2x")
-            img(src="https://api-parliament-uk.azure-api.net/photo/0qLRSwb3.jpeg?width=732&quality=80", alt="Margot James")
-          figcaption Lead image (optional) #[+link('#','example link to resource')]
-
         // Headless CMS content
         p You can speak in debates in the Chamber and Westminster Hall. You should be aware of the Rules of behaviour and courtesies in the House, issued by the Speaker, before you do so.
         p The House reaches its decisions or highlights its opinions by debating motions. MPs argue for or against a specific motion and then reach a decision, with or without the need for a vote. Motions are listed on the Order Paper, along with the names of the MPs who support them.

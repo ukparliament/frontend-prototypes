@@ -29,6 +29,14 @@ img {
   }
 }
 
+/*--- Figure ---*/
+
+article > figure {
+
+  @include container;
+  @include section-offset;
+}
+
 figcaption {
   @include micro;
   margin-top: 0;
@@ -80,7 +88,8 @@ figcaption {
   }
 }
 
-// Section Specific Styles
+/*--- Section Specific Styles ---*/
+
 .section--primary {
   img+h1 {
     margin-bottom: $base-spacing-unit-tiny / 2;

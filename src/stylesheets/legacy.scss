@@ -70,21 +70,7 @@ section .navigation--number {
 .article--wrapper .container,
 .section--wide .container,
 .container {
-	position: relative;
-	padding: 0 $base-container-unit-small;
-	margin: 0 auto;
-	width: 100%;
-
-	@include media($medium) {
-		width: $medium;
-	}
-	@include media($large) {
-		padding: 0 $base-container-unit-large;
-		width: $large;
-	}
-	@include media($extra-large) {
-		width: $extra-large;
-	}
+	@include container;
 }
 
 .article--wrapper .container {
@@ -101,4 +87,12 @@ section .navigation--number {
 
 .article--wrapper header {
 	padding: 0;
+}
+
+.article--wrapper aside [class*=list] li {
+  display: block;
+  width: auto;
+}
+.article--wrapper aside [class*=list] li.active {
+  background-color: $grey-3;
 }

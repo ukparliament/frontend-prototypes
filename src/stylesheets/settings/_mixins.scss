@@ -618,3 +618,23 @@
   box-shadow: inset 0px 0px 0px 1px $grey-3;
   display: inline-block;
 }
+
+/*--- Container ---*/
+
+@mixin container {
+  position: relative;
+	padding: 0 $base-container-unit-small;
+	margin: 0 auto;
+	width: 100%;
+
+	@include media($medium) {
+		width: $medium;
+	}
+	@include media($large) {
+		padding: 0 $base-container-unit-large;
+		width: $large;
+	}
+	@include media($extra-large) {
+		width: $extra-large;
+	}
+}
