@@ -7,6 +7,10 @@ svg {
 
 /*--- UK Parliament Icon ---*/
 
+header .uk_parliament g {
+  fill: $white;
+}
+
 @media (max-width: $medium - 1) {
   .uk_parliament {
     z-index: 1;
@@ -68,8 +72,16 @@ header form + a svg {
   top: 15px;
   position: absolute;
 
+  &[data-icon="search"] g {
+    fill: $white;
+  }
+
   &[data-icon="close"] {
     opacity: 0;
+
+    g {
+      stroke: $white;
+    }
   }
 }
 
