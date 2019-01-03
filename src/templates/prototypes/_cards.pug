@@ -98,9 +98,9 @@ block content
         .card__details
           h2 #[+link('#', 'With count')]
           p= 'Description about the card'
-        .card__details
-          span.count= '200'
-          = 'Text'
+        .count
+          span.count__number= '200'
+          span.count__context= 'Context'
 
       .card--extended
         h2 Extended
