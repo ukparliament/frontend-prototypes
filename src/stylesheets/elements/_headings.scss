@@ -38,11 +38,11 @@ h2, .beta {
 }
 h3, .gamma {
   @include gamma;
-  margin-bottom: $base-spacing-unit;
+  margin-bottom: $base-spacing-unit-tiny;
   margin-top: $base-spacing-unit-medium;
 
   @include media($medium) {
-    margin-bottom: $base-spacing-unit;
+    margin-bottom: $base-spacing-unit-tiny;
     margin-top: $base-spacing-unit-large;
   }
 }
