@@ -16,7 +16,7 @@ block content
         .input-group
           //- type, name, id, regex pattern, max length, label, label class + additional attributes
           +input--validate('search', 'q', 'globalSearch', '^(?!.*<script|<Script).*$', '1000', 'Enter a keyword')
-          button(type='submit', class='btn--white')(aria-label='submit search')
+          button(type='submit', class='btn--white', aria-label='submit search')
             include ../../icons/search.svg
 
       h3 Find your MP and constituency

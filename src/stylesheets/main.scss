@@ -1,13 +1,14 @@
+
+/*--- Vendor Files ---*/
+@import '../../node_modules/normalize.css/normalize';
+@import '../../node_modules/leaflet/dist/leaflet';
+
 /*--- Import Settings ---*/
 @import 'settings/fonts';
 @import 'settings/colours';
 @import 'settings/spacing';
 @import 'settings/mixins';
 @import 'settings/accents';
-
-/*--- Vendor Files ---*/
-@import '../../node_modules/leaflet/dist/leaflet';
-@import '../../node_modules/normalize.css/normalize';
 
 /*--- Import Generic ---*/
 @import 'generic/box-sizing';
