@@ -184,3 +184,11 @@ figure a :hover {
 article aside h2 a {
   @include typography--heavy;
 }
+
+
+/*--- List link wrapping ---*/
+
+dd a,
+li a {
+  word-break: break-all;
+}
