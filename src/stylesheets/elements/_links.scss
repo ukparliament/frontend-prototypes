@@ -188,7 +188,6 @@ article aside h2 a {
 
 /*--- List link wrapping ---*/
 
-dd a,
-li a {
-  word-break: break-all;
+dd a {
+  word-break: break-word;
 }

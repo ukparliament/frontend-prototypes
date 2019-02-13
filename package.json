@@ -1,12 +1,9 @@
 {
   "name": "parliamentuk-pugin",
-  "version": "1.11.10",
+  "version": "1.11.11",
   "description": "UK Parliament brand",
   "author": "UK Parliament",
   "license": "MIT",
-  "engines": {
-    "node": "8.x"
-  },
   "homepage": "https://github.com/ukparliament/parliament.uk-pugin#readme",
   "repository": {
     "type": "git",
